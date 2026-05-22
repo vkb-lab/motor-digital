@@ -1,0 +1,17 @@
+# Motor Digital Multitenant — Dependências
+# Inteligência Central: Gemini 1.5 Pro via Google AI Studio
+
+# Interface e visualização
+streamlit>=1.35.0
+
+# Integração com Google Generative AI (Gemini 1.5 Pro)
+google-genai>=1.0.0
+
+# Manipulação e análise de dados
+pandas>=2.2.0
+
+# Requisições HTTP (chamadas à API Gemini e integrações externas)
+requests>=2.31.0
+
+# Utilitários de data/hora (já incluso no Python stdlib, listado para clareza)
+# python-dateutil>=2.9.0
