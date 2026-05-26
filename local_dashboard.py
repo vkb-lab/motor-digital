@@ -89,6 +89,13 @@ with col1:
                 plano = st.session_state.mkt.generate_marketing_plan()
                 st.info(plano)
                 add_log("Plano de marketing gerado.")
+    
+    st.markdown("---")
+    st.subheader("🦅 Visão Águia (Automação Real)")
+    if st.button("🚀 Iniciar Navegador IA (Auto-Login)"):
+        add_log("Iniciando Chrome com perfil de usuário...")
+        st.session_state.agent.start_automated_browser("https://www.instagram.com")
+        st.success("Navegador Automatizado aberto no Instagram.")
 
     st.markdown("---")
     st.subheader("📑 Arquivos no Workspace")

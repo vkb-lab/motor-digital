@@ -8,6 +8,9 @@ import pygetwindow as gw
 import pyautogui
 import time
 import webbrowser
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 
 class MotorDigitalCore:
@@ -111,6 +114,24 @@ class MotorDigitalCore:
         self.log(f"Abrindo navegador em: {url}")
         webbrowser.open(url)
         return f"Navegador aberto em {url}"
+
+    def start_automated_browser(self, url):
+        """Inicia o Chrome controlado pela IA com o perfil do usuário"""
+        try:
+            chrome_options = Options()
+            # Tenta usar o perfil real do usuário para manter logins (Instagram/Facebook)
+            user_data_dir = os.path.join(os.environ['LOCALAPPDATA'], 'Google', 'Chrome', 'User Data')
+            chrome_options.add_argument(f"user-data-dir={user_data_dir}")
+            chrome_options.add_argument("profile-directory=Default")
+            
+            self.log("Iniciando Chrome Automatizado...")
+            driver = webdriver.Chrome(options=chrome_options)
+            driver.get(url)
+            self.log(f"Navegador IA conectado em: {url}")
+            return driver
+        except Exception as e:
+            self.log(f"Erro ao iniciar Chrome Automatizado: {str(e)}")
+            return None
 
     def autonomous_loop(self):
         """Loop de pensamento e ação do agente"""
