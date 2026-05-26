@@ -5,7 +5,9 @@ import requests
 import json
 import google.generativeai as genai
 import pygetwindow as gw
+import pyautogui
 import time
+import webbrowser
 from datetime import datetime
 
 class MotorDigitalCore:
@@ -32,27 +34,43 @@ class MotorDigitalCore:
             return [f"Erro ao listar modelos: {str(e)}"]
 
     def call_gemini(self, prompt, system_instruction=""):
-        """Interface via SDK Oficial com Autodiagnóstico"""
+        """Interface via SDK Oficial com Autodiagnóstico e Execução de Ações"""
         if not self.api_key:
             return "Erro: Chave API não configurada."
         
         try:
             genai.configure(api_key=self.api_key)
-            # Tenta descobrir o melhor modelo disponível dinamicamente
             available = self.get_available_models()
-            if not available or "Erro" in available[0]:
-                return f"Falha no diagnóstico inicial: {available[0]}"
-            
-            # Escolhe o modelo mais moderno disponível (1.5 flash ou pro)
             model_to_use = 'models/gemini-1.5-flash' if 'models/gemini-1.5-flash' in available else available[0]
             
-            self.log(f"Conexão neural via diagnóstico: {model_to_use}")
             model = genai.GenerativeModel(model_to_use)
-            full_prompt = f"{system_instruction}\n\n{prompt}" if system_instruction else prompt
-            response = model.generate_content(full_prompt)
-            return response.text
+            
+            # Instrução de sistema reforçada para ação
+            base_instruction = (
+                "Você é o Motor Digital Core, um agente autônomo com acesso ao Windows. "
+                "Se o usuário pedir para abrir algo, responda com '[ACTION:OPEN_URL:url]'. "
+                "Se o usuário pedir para criar pastas, responda com '[ACTION:CREATE_PROJECT:nome]'. "
+                "Seja direto e execute."
+            )
+            full_system = f"{base_instruction}\n{system_instruction}"
+            
+            response = model.generate_content(f"{full_system}\n\nUsuário: {prompt}")
+            text = response.text
+            
+            # Lógica de Execução Automática de Ações
+            if "[ACTION:OPEN_URL:" in text:
+                url = text.split("[ACTION:OPEN_URL:")[1].split("]")[0]
+                self.open_browser(url)
+                return f"Ação Executada: Abrindo {url}. \n\n{text}"
+            
+            if "[ACTION:CREATE_PROJECT:" in text:
+                name = text.split("[ACTION:CREATE_PROJECT:")[1].split("]")[0]
+                self.create_project_structure(name)
+                return f"Ação Executada: Projeto {name} criado. \n\n{text}"
+
+            return text
         except Exception as e:
-            return f"Falha na conexão neural (SDK Diagnóstico): {str(e)}"
+            return f"Falha na conexão neural (SDK): {str(e)}"
 
     def list_open_windows(self):
         """Habilidade de 'ver' o que está aberto no Windows"""
