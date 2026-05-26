@@ -3,6 +3,7 @@ import os
 import subprocess
 from agent_core import MotorDigitalCore
 from self_evolution import SelfEvolution
+from marketing_manager import MarketingManager
 from datetime import datetime
 
 # Configuração da Página
@@ -12,6 +13,7 @@ st.set_page_config(page_title="Central de Comando — Motor Digital", layout="wi
 if 'agent' not in st.session_state:
     st.session_state.agent = MotorDigitalCore()
     st.session_state.evo = SelfEvolution(st.session_state.agent)
+    st.session_state.mkt = MarketingManager(st.session_state.agent)
     st.session_state.logs = []
 
 def add_log(msg):
@@ -60,6 +62,20 @@ with col1:
         if st.button("📁 Abrir Workspace"):
             subprocess.run(f"explorer {st.session_state.agent.workspace}", shell=True)
             add_log("Pasta Workspace aberta no Windows Explorer.")
+    
+    st.markdown("---")
+    st.subheader("🎨 Ferramentas de Marketing")
+    cm1, cm2 = st.columns(2)
+    with cm1:
+        if st.button("✨ Abrir Canva & IAs"):
+            msg = st.session_state.mkt.open_creative_tools()
+            add_log(msg)
+    with cm2:
+        if st.button("📊 Plano de Recuperação"):
+            with st.spinner("Gerando plano estratégico..."):
+                plano = st.session_state.mkt.generate_marketing_plan()
+                st.info(plano)
+                add_log("Plano de marketing gerado.")
 
     st.markdown("---")
     st.subheader("📑 Arquivos no Workspace")

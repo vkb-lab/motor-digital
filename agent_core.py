@@ -25,7 +25,7 @@ class MotorDigitalCore:
         if not self.api_key:
             return "Erro: Chave API não configurada."
             
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={self.api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={self.api_key}"
         headers = {'Content-Type': 'application/json'}
         payload = {
             "contents": [{
@@ -71,6 +71,13 @@ class MotorDigitalCore:
             self.log(f"Estrutura do projeto '{project_name}' criada com sucesso.")
             return True
         return False
+
+    def open_browser(self, url):
+        """Abre uma URL no navegador padrão do Windows"""
+        import webbrowser
+        self.log(f"Abrindo navegador em: {url}")
+        webbrowser.open(url)
+        return f"Navegador aberto em {url}"
 
     def autonomous_loop(self):
         """Loop de pensamento e ação do agente"""
