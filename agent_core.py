@@ -23,17 +23,29 @@ class MotorDigitalCore:
         print(f"[{timestamp}] {message}")
 
     def call_gemini(self, prompt, system_instruction=""):
-        """Interface via SDK Oficial (Ultra-Estável)"""
+        """Interface via SDK Oficial com Auto-Correção Neural"""
         if not self.api_key:
             return "Erro: Chave API não configurada."
         
-        try:
-            genai.configure(api_key=self.api_key)
-            model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_instruction)
-            response = model.generate_content(prompt)
-            return response.text
-        except Exception as e:
-            return f"Falha na conexão neural (SDK): {str(e)}"
+        # Lista de modelos por ordem de estabilidade
+        models_to_try = ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro']
+        
+        last_error = ""
+        for model_name in models_to_try:
+            try:
+                self.log(f"Tentando conexão neural via: {model_name}")
+                genai.configure(api_key=self.api_key)
+                model = genai.GenerativeModel(model_name)
+                # O SDK novo prefere o contexto dentro do prompt se o system_instruction falhar em alguns modelos
+                full_prompt = f"{system_instruction}\n\n{prompt}" if system_instruction else prompt
+                response = model.generate_content(full_prompt)
+                return response.text
+            except Exception as e:
+                last_error = str(e)
+                self.log(f"Falha no modelo {model_name}: {last_error}")
+                continue
+        
+        return f"Exauridas todas as rotas neurais. Último erro: {last_error}"
 
     def list_open_windows(self):
         """Habilidade de 'ver' o que está aberto no Windows"""
