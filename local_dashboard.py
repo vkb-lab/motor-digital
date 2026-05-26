@@ -29,6 +29,13 @@ with st.sidebar:
     
     if st.button("🔄 Reiniciar Cérebro"):
         st.rerun()
+    
+    st.markdown("---")
+    st.subheader("🔍 Diagnóstico de IA")
+    if st.button("Listar Modelos Permitidos"):
+        models = st.session_state.agent.get_available_models()
+        for m in models:
+            st.code(m)
 
 # Área Principal
 st.title("🤖 Central de Comando do Agente Autônomo")

@@ -22,30 +22,37 @@ class MotorDigitalCore:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"[{timestamp}] {message}")
 
+    def get_available_models(self):
+        """Lista os modelos que a chave de API realmente tem permissão para usar"""
+        try:
+            genai.configure(api_key=self.api_key)
+            models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
+            return models
+        except Exception as e:
+            return [f"Erro ao listar modelos: {str(e)}"]
+
     def call_gemini(self, prompt, system_instruction=""):
-        """Interface via SDK Oficial com Auto-Correção Neural"""
+        """Interface via SDK Oficial com Autodiagnóstico"""
         if not self.api_key:
             return "Erro: Chave API não configurada."
         
-        # Lista de modelos por ordem de estabilidade
-        models_to_try = ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro']
-        
-        last_error = ""
-        for model_name in models_to_try:
-            try:
-                self.log(f"Tentando conexão neural via: {model_name}")
-                genai.configure(api_key=self.api_key)
-                model = genai.GenerativeModel(model_name)
-                # O SDK novo prefere o contexto dentro do prompt se o system_instruction falhar em alguns modelos
-                full_prompt = f"{system_instruction}\n\n{prompt}" if system_instruction else prompt
-                response = model.generate_content(full_prompt)
-                return response.text
-            except Exception as e:
-                last_error = str(e)
-                self.log(f"Falha no modelo {model_name}: {last_error}")
-                continue
-        
-        return f"Exauridas todas as rotas neurais. Último erro: {last_error}"
+        try:
+            genai.configure(api_key=self.api_key)
+            # Tenta descobrir o melhor modelo disponível dinamicamente
+            available = self.get_available_models()
+            if not available or "Erro" in available[0]:
+                return f"Falha no diagnóstico inicial: {available[0]}"
+            
+            # Escolhe o modelo mais moderno disponível (1.5 flash ou pro)
+            model_to_use = 'models/gemini-1.5-flash' if 'models/gemini-1.5-flash' in available else available[0]
+            
+            self.log(f"Conexão neural via diagnóstico: {model_to_use}")
+            model = genai.GenerativeModel(model_to_use)
+            full_prompt = f"{system_instruction}\n\n{prompt}" if system_instruction else prompt
+            response = model.generate_content(full_prompt)
+            return response.text
+        except Exception as e:
+            return f"Falha na conexão neural (SDK Diagnóstico): {str(e)}"
 
     def list_open_windows(self):
         """Habilidade de 'ver' o que está aberto no Windows"""
