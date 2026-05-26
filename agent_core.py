@@ -181,6 +181,15 @@ class MotorDigitalCore:
         
         return analysis
 
+    def access_ai_studio(self):
+        """Acessa o Google AI Studio para edição de prompts"""
+        url = "https://aistudio.google.com/"
+        self.log("🧠 Acessando Google AI Studio...")
+        self.start_automated_browser(url)
+        time.sleep(5)
+        self.log("✅ Google AI Studio aberto. Pronto para comandos de edição.")
+        return "AI Studio Aberto. Use a automação de mouse/teclado para editar."
+
     def autonomous_loop(self):
         """Loop de pensamento e ação do agente"""
         self.log("Motor Digital Core Iniciado. Aguardando diretrizes...")

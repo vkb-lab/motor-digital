@@ -111,6 +111,11 @@ with col1:
             st.success("Sincronização Concluída!")
             st.markdown(analise)
             add_log("Dados da Nave Gênesis integrados ao Workspace.")
+    
+    if st.button("🧠 Abrir Google AI Studio"):
+        add_log("Iniciando ponte com AI Studio...")
+        st.session_state.agent.access_ai_studio()
+        st.success("Google AI Studio pronto para automação.")
 
     st.markdown("---")
     st.subheader("📑 Arquivos no Workspace")
