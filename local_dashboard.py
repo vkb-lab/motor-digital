@@ -103,6 +103,14 @@ with col1:
             relatorio = st.session_state.agent.call_gemini("Verifique meu gmail e faça um relatório.", system_instruction="Ação: [ACTION:READ_GMAIL]")
             st.write(relatorio)
             add_log("Relatório de e-mails concluído.")
+    
+    if st.button("🛸 Sincronizar com Nave Gênesis"):
+        add_log("Acionando protocolo de sincronização Gênesis...")
+        with st.spinner("Conectando à Nave..."):
+            analise = st.session_state.agent.sync_with_genesis()
+            st.success("Sincronização Concluída!")
+            st.markdown(analise)
+            add_log("Dados da Nave Gênesis integrados ao Workspace.")
 
     st.markdown("---")
     st.subheader("📑 Arquivos no Workspace")

@@ -162,6 +162,25 @@ class MotorDigitalCore:
                 return f"Erro ao ler página: {str(e)}"
         return "Navegador não está ativo."
 
+    def sync_with_genesis(self):
+        """Sincroniza inteligência da Nave Gênesis para o agente local"""
+        url = "https://remix-remix-nave-genesis-lan-amento-31-03-431909516385.us-east1.run.app"
+        self.log(f"🛸 Conectando à Nave Gênesis: {url}")
+        self.start_automated_browser(url)
+        time.sleep(3)
+        content = self.get_page_content()
+        self.log("📊 Dados da Nave extraídos com sucesso.")
+        
+        # Analisa os dados da nave para atualizar metas locais
+        analysis = self.call_gemini(f"Extraia as métricas financeiras e os 3 objetivos principais desta página: {content}", 
+                                   system_instruction="Você é o copiloto da Nave Gênesis.")
+        
+        # Salva o relatório no workspace
+        with open(os.path.join(self.workspace, "genesis_sync.md"), "w", encoding="utf-8") as f:
+            f.write(analysis)
+        
+        return analysis
+
     def autonomous_loop(self):
         """Loop de pensamento e ação do agente"""
         self.log("Motor Digital Core Iniciado. Aguardando diretrizes...")
