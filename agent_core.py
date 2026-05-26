@@ -25,7 +25,11 @@ class MotorDigitalCore:
 
     def log(self, message):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(f"[{timestamp}] {message}")
+        log_entry = f"[{timestamp}] {message}"
+        print(log_entry)
+        # Salva em um arquivo de log temporário para o Streamlit ler em tempo real
+        with open("agent_activity.log", "a", encoding="utf-8") as f:
+            f.write(log_entry + "\n")
 
     def get_available_models(self):
         """Lista os modelos que a chave de API realmente tem permissão para usar"""
@@ -62,11 +66,16 @@ class MotorDigitalCore:
             
             # Lógica de Execução Automática de Ações
             if "[ACTION:READ_GMAIL]" in text:
+                self.log("🚀 Iniciando Triagem de E-mails...")
                 self.start_automated_browser("https://mail.google.com")
-                time.sleep(5) # Espera carregar
+                self.log("⏳ Aguardando carregamento do Gmail (5s)...")
+                time.sleep(5)
+                self.log("👁️ Lendo conteúdo da caixa de entrada...")
                 content = self.get_page_content()
+                self.log("🧠 Analisando urgências com IA...")
                 report = self.call_gemini(f"Analise estes e-mails e crie um relatório de urgências: {content}", 
                                          system_instruction="Você é um assistente executivo sênior.")
+                self.log("✅ Relatório gerado com sucesso.")
                 return f"Relatório de E-mails:\n\n{report}"
 
             if "[ACTION:OPEN_URL:" in text:

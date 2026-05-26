@@ -114,10 +114,14 @@ with col1:
         st.write("Workspace vazio.")
 
 with col2:
-    st.subheader("📜 Logs do Sistema")
-    log_box = st.empty()
-    log_content = "\n".join(st.session_state.logs[::-1])
-    st.text_area("Atividade em tempo real:", value=log_content, height=400)
+    st.subheader("📜 Telemetria em Tempo Real")
+    if os.path.exists("agent_activity.log"):
+        with open("agent_activity.log", "r", encoding="utf-8") as f:
+            real_logs = f.readlines()
+            log_content = "".join(reversed(real_logs[-20:]))
+            st.text_area("Ações do Agente no Windows:", value=log_content, height=500)
+    else:
+        st.info("Aguardando ativação do motor...")
 
 # Rodapé
 st.markdown("---")
