@@ -3,6 +3,8 @@ import subprocess
 import platform
 import requests
 import json
+import google.generativeai as genai
+import pygetwindow as gw
 import time
 from datetime import datetime
 
@@ -21,30 +23,24 @@ class MotorDigitalCore:
         print(f"[{timestamp}] {message}")
 
     def call_gemini(self, prompt, system_instruction=""):
-        """Interface direta com o cérebro Gemini 1.5 Pro"""
+        """Interface via SDK Oficial (Ultra-Estável)"""
         if not self.api_key:
             return "Erro: Chave API não configurada."
-            
-        url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={self.api_key}"
-        headers = {'Content-Type': 'application/json'}
-        payload = {
-            "contents": [{
-                "role": "user",
-                "parts": [{"text": f"{system_instruction}\n\n{prompt}"}]
-            }],
-            "generationConfig": {
-                "temperature": 0.9,
-                "topP": 1,
-                "maxOutputTokens": 2048
-            }
-        }
         
         try:
-            response = requests.post(url, headers=headers, json=payload)
-            response.raise_for_status()
-            return response.json()['candidates'][0]['content']['parts'][0]['text']
+            genai.configure(api_key=self.api_key)
+            model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_instruction)
+            response = model.generate_content(prompt)
+            return response.text
         except Exception as e:
-            return f"Falha na conexão neural: {str(e)}"
+            return f"Falha na conexão neural (SDK): {str(e)}"
+
+    def list_open_windows(self):
+        """Habilidade de 'ver' o que está aberto no Windows"""
+        windows = gw.getAllTitles()
+        active_windows = [w for w in windows if w.strip()]
+        self.log(f"Janelas detectadas: {len(active_windows)}")
+        return active_windows
 
     def execute_system_command(self, command):
         """Executa comandos no Windows/Mac/Linux local"""

@@ -62,6 +62,12 @@ with col1:
         if st.button("📁 Abrir Workspace"):
             subprocess.run(f"explorer {st.session_state.agent.workspace}", shell=True)
             add_log("Pasta Workspace aberta no Windows Explorer.")
+        if st.button("🪟 Ver Janelas"):
+            wins = st.session_state.agent.list_open_windows()
+            st.write("**Janelas Abertas:**")
+            for w in wins:
+                st.text(f"• {w}")
+            add_log("Janelas do sistema listadas.")
     
     st.markdown("---")
     st.subheader("🎨 Ferramentas de Marketing")
