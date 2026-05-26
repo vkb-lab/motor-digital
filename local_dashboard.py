@@ -96,6 +96,13 @@ with col1:
         add_log("Iniciando Chrome com perfil de usuário...")
         st.session_state.agent.start_automated_browser("https://www.instagram.com")
         st.success("Navegador Automatizado aberto no Instagram.")
+    
+    if st.button("📧 Ler Gmail & Gerar Relatório"):
+        add_log("Acessando Gmail para triagem...")
+        with st.spinner("Lendo e-mails..."):
+            relatorio = st.session_state.agent.call_gemini("Verifique meu gmail e faça um relatório.", system_instruction="Ação: [ACTION:READ_GMAIL]")
+            st.write(relatorio)
+            add_log("Relatório de e-mails concluído.")
 
     st.markdown("---")
     st.subheader("📑 Arquivos no Workspace")

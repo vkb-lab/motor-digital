@@ -61,6 +61,14 @@ class MotorDigitalCore:
             text = response.text
             
             # Lógica de Execução Automática de Ações
+            if "[ACTION:READ_GMAIL]" in text:
+                self.start_automated_browser("https://mail.google.com")
+                time.sleep(5) # Espera carregar
+                content = self.get_page_content()
+                report = self.call_gemini(f"Analise estes e-mails e crie um relatório de urgências: {content}", 
+                                         system_instruction="Você é um assistente executivo sênior.")
+                return f"Relatório de E-mails:\n\n{report}"
+
             if "[ACTION:OPEN_URL:" in text:
                 url = text.split("[ACTION:OPEN_URL:")[1].split("]")[0]
                 self.open_browser(url)
@@ -119,19 +127,31 @@ class MotorDigitalCore:
         """Inicia o Chrome controlado pela IA com o perfil do usuário"""
         try:
             chrome_options = Options()
-            # Tenta usar o perfil real do usuário para manter logins (Instagram/Facebook)
             user_data_dir = os.path.join(os.environ['LOCALAPPDATA'], 'Google', 'Chrome', 'User Data')
             chrome_options.add_argument(f"user-data-dir={user_data_dir}")
             chrome_options.add_argument("profile-directory=Default")
+            # Mantém o navegador aberto
+            chrome_options.add_experimental_option("detach", True)
             
             self.log("Iniciando Chrome Automatizado...")
-            driver = webdriver.Chrome(options=chrome_options)
-            driver.get(url)
+            self.driver = webdriver.Chrome(options=chrome_options)
+            self.driver.get(url)
             self.log(f"Navegador IA conectado em: {url}")
-            return driver
+            return self.driver
         except Exception as e:
             self.log(f"Erro ao iniciar Chrome Automatizado: {str(e)}")
             return None
+
+    def get_page_content(self):
+        """Lê o conteúdo textual da página atual no navegador automatizado"""
+        if hasattr(self, 'driver') and self.driver:
+            try:
+                # Extrai o texto visível da página
+                content = self.driver.find_element("tag name", "body").text
+                return content[:5000] # Limita para não estourar o contexto inicial
+            except Exception as e:
+                return f"Erro ao ler página: {str(e)}"
+        return "Navegador não está ativo."
 
     def autonomous_loop(self):
         """Loop de pensamento e ação do agente"""
