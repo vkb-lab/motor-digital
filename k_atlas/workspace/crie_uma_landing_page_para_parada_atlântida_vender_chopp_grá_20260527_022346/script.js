@@ -1,4 +1,4 @@
-console.log("Landing evoluída pelo K-Atlas");
+console.log("Plano IA aplicado pelo K-Atlas");
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function(event) {

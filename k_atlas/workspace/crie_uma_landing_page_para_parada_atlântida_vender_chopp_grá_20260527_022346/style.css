@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,16 +14,16 @@ body {
 }
 
 .hero {
-  min-height: 92vh;
-  background:
-    linear-gradient(135deg, rgba(6,24,38,.96), rgba(0,119,182,.70)),
-    radial-gradient(circle at 80% 20%, rgba(255,214,10,.40), transparent 26%),
-    radial-gradient(circle at 20% 80%, rgba(46,196,182,.28), transparent 24%);
+  min-height: 94vh;
   padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(6,24,38,.97), rgba(0,119,182,.74)),
+    radial-gradient(circle at 82% 18%, rgba(255,214,10,.45), transparent 24%),
+    radial-gradient(circle at 18% 78%, rgba(46,196,182,.30), transparent 28%);
 }
 
 .nav {
-  max-width: 1120px;
+  max-width: 1140px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -27,8 +31,8 @@ body {
 }
 
 .nav strong {
-  font-size: 22px;
-  letter-spacing: .5px;
+  font-size: 23px;
+  letter-spacing: .8px;
 }
 
 .nav a,
@@ -37,13 +41,14 @@ body {
   color: #061826;
   padding: 14px 22px;
   border-radius: 999px;
-  font-weight: 800;
+  font-weight: 900;
   text-decoration: none;
+  box-shadow: 0 12px 30px rgba(255,214,10,.22);
 }
 
 .hero-content {
   max-width: 980px;
-  margin: 120px auto 0;
+  margin: 118px auto 0;
 }
 
 .badge,
@@ -51,29 +56,31 @@ body {
   display: inline-block;
   color: #ffd60a;
   background: rgba(255,214,10,.13);
-  border: 1px solid rgba(255,214,10,.38);
-  padding: 8px 14px;
+  border: 1px solid rgba(255,214,10,.42);
+  padding: 9px 15px;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 h1 {
-  font-size: clamp(46px, 9vw, 104px);
-  line-height: .92;
+  font-size: clamp(48px, 9vw, 108px);
+  line-height: .9;
   margin: 28px 0;
+  letter-spacing: -3px;
 }
 
 .hero p {
   max-width: 760px;
   color: #dbeafe;
   font-size: 23px;
+  line-height: 1.5;
 }
 
 .actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
 .secondary {
@@ -82,22 +89,23 @@ h1 {
   padding: 14px 22px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 main {
-  max-width: 1120px;
+  max-width: 1140px;
   margin: auto;
-  padding: 64px 28px;
+  padding: 68px 28px;
 }
 
 .section {
-  margin: 70px 0;
+  margin: 74px 0;
 }
 
 .section h2 {
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(34px, 5vw, 58px);
   line-height: 1;
+  letter-spacing: -1.5px;
 }
 
 .section p,
@@ -107,7 +115,8 @@ li {
   line-height: 1.65;
 }
 
-.grid {
+.grid,
+.conversion-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
@@ -115,18 +124,25 @@ li {
 
 .card,
 .rules,
-.impact {
-  background: rgba(255,255,255,.075);
-  border: 1px solid rgba(255,255,255,.12);
-  padding: 28px;
-  border-radius: 24px;
+.conversion {
+  background: rgba(255,255,255,.078);
+  border: 1px solid rgba(255,255,255,.13);
+  padding: 30px;
+  border-radius: 26px;
+  backdrop-filter: blur(10px);
+}
+
+.card span {
+  color: #ffd60a;
+  font-size: 34px;
+  font-weight: 900;
 }
 
 .cta-box {
   background: #f8fafc;
   color: #061826;
-  padding: 42px;
-  border-radius: 28px;
+  padding: 44px;
+  border-radius: 30px;
 }
 
 .cta-box p {
@@ -136,21 +152,26 @@ li {
 footer {
   text-align: center;
   color: #94a3b8;
-  padding: 34px;
+  padding: 36px;
 }
 
-@media (max-width: 820px) {
-  .grid {
+@media (max-width: 840px) {
+  .grid,
+  .conversion-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-content {
-    margin-top: 80px;
+    margin-top: 84px;
   }
 
   .nav {
     align-items: flex-start;
     gap: 16px;
     flex-direction: column;
+  }
+
+  h1 {
+    letter-spacing: -1px;
   }
 }
