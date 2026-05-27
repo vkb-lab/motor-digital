@@ -4,6 +4,7 @@ from pathlib import Path
 from datetime import datetime
 
 from k_atlas.core.project_builder import create_basic_web_files
+from k_atlas.core.landing_evolver import find_latest_landing, evolve_landing
 
 
 BASE = Path.cwd()
@@ -25,7 +26,11 @@ def log(message: str):
 
 
 def find_latest_pending():
-    files = sorted(PENDING.glob("approval_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+    files = sorted(
+        PENDING.glob("approval_*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True
+    )
     return files[0] if files else None
 
 
@@ -34,6 +39,12 @@ def find_latest_project_folder():
     if not folders:
         return None
     return sorted(folders, key=lambda p: p.stat().st_mtime, reverse=True)[0]
+
+
+def move_done(approval_file: Path):
+    done_file = DONE / approval_file.name
+    shutil.move(str(approval_file), str(done_file))
+    log(f"Aprovação movida para: {done_file}")
 
 
 def main():
@@ -57,20 +68,38 @@ def main():
             log("Nenhuma pasta de projeto encontrada no workspace.")
             return
 
-        files = create_basic_web_files(project_path)
+        original_command = data.get("original_command", "")
+
+        try:
+            files = create_basic_web_files(project_path, original_command)
+        except TypeError:
+            files = create_basic_web_files(project_path)
 
         log(f"Arquivos web criados em: {project_path}")
         for f in files:
             log(f"Arquivo criado: {f}")
 
-        done_file = DONE / approval_file.name
-        shutil.move(str(approval_file), str(done_file))
-        log(f"Aprovação movida para: {done_file}")
+        move_done(approval_file)
+        return
 
-    else:
-        log(f"Ação ainda não suportada pelo approve_next.py: {action}")
+    if action == "evolve_latest_landing":
+        project_path = find_latest_landing()
+
+        if not project_path:
+            log("Nenhuma landing encontrada para evoluir.")
+            return
+
+        files = evolve_landing(project_path)
+
+        log(f"Landing evoluída em: {project_path}")
+        for f in files:
+            log(f"Arquivo atualizado: {f}")
+
+        move_done(approval_file)
+        return
+
+    log(f"Ação ainda não suportada pelo approve_next.py: {action}")
 
 
 if __name__ == "__main__":
     main()
-
