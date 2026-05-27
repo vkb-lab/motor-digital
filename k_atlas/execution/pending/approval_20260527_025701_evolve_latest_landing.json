@@ -1,0 +1,14 @@
+﻿{
+  "created_at": "2026-05-27T02:57:01.9337842-03:00",
+  "status": "pending",
+  "plan_summary": "Evoluir a última landing criada pelo K-Atlas.",
+  "original_command": "evolua a última landing da Parada Atlântida",
+  "step": {
+    "title": "Evoluir última landing",
+    "description": "Atualizar HTML, CSS, JS e criar EVOLUCAO.md na última landing.",
+    "action": "evolve_latest_landing",
+    "risk_level": 2,
+    "payload": {}
+  },
+  "instruction": "Aprovar para aplicar evolução na última landing."
+}
