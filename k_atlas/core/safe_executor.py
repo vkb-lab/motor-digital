@@ -5,6 +5,7 @@ from k_atlas.core.task_planner import build_plan, save_plan
 from k_atlas.core.approval_gate import create_approval_request, approval_message
 from k_atlas.core.desktop_actions import open_url, create_desktop_report, suggest_desktop_organization
 from k_atlas.core.project_builder import create_project_folder, create_basic_web_files, create_architecture_doc
+from k_atlas.core.ai_brain import think
 
 
 def execute_plan(command: str, auto_confirm: bool = False):
@@ -22,7 +23,12 @@ def execute_plan(command: str, auto_confirm: bool = False):
             results.append(approval_message(step, approval_file))
             continue
 
-        if step.action == "open_url":
+        if step.action == "ask_ai_brain":
+            answer, report, model_name = think(command)
+            results.append(f"AI Brain respondeu usando {model_name}.")
+            results.append(f"Relatório IA salvo em: {report}")
+
+        elif step.action == "open_url":
             url = step.payload.get("url")
             if url:
                 results.append(open_url(url))
@@ -102,3 +108,4 @@ Permitir que o K-Atlas leia emails com autorização do usuário.
             results.append(f"Etapa registrada: {step.title}")
 
     return plan, results
+

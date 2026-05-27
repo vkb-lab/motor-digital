@@ -68,6 +68,29 @@ def build_plan(command: str) -> AgentPlan:
     text = (command or "").strip()
     low = text.lower()
 
+    if any(x in low for x in ["use ia", "com ia", "ai brain", "inteligência artificial", "inteligencia artificial"]):
+        return AgentPlan(
+            original_command=text,
+            intent="ai_brain_task",
+            summary="Usar o AI Brain com Gemini para gerar análise, estratégia, copy, código ou plano técnico.",
+            steps=[
+                PlannedStep(
+                    title="Consultar AI Brain",
+                    description="Enviar o pedido para o Gemini com contexto do K-Atlas.",
+                    action="ask_ai_brain",
+                    risk_level=0,
+                    requires_approval=False
+                ),
+                PlannedStep(
+                    title="Salvar resposta da IA",
+                    description="Registrar o relatório em k_atlas/reports.",
+                    action="save_plan",
+                    risk_level=0,
+                    requires_approval=False
+                )
+            ]
+        )
+
     if any(x in low for x in ["crie uma landing", "landing page", "site", "página", "pagina"]):
         return AgentPlan(
             original_command=text,
@@ -179,3 +202,4 @@ def save_plan(plan: AgentPlan) -> Path:
     json_path.write_text(json.dumps(plan.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
 
     return md_path
+
