@@ -43,7 +43,7 @@ def main():
         log("Nenhuma aprovação pendente encontrada.")
         return
 
-    data = json.loads(approval_file.read_text(encoding="utf-8"))
+    data = json.loads(approval_file.read_text(encoding="utf-8-sig"))
     step = data.get("step", {})
     action = step.get("action")
 
@@ -73,3 +73,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
