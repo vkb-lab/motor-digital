@@ -1,4 +1,4 @@
-console.log("Landing criada pelo K-Atlas");
+console.log("Landing evoluída pelo K-Atlas");
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function(event) {
