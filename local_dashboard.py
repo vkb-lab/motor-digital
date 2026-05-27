@@ -1,177 +1,165 @@
 ﻿import streamlit as st
-import webbrowser
 from pathlib import Path
 from datetime import datetime
+import subprocess
+import sys
 
-from k_atlas.core.intent_router import route_intent
-from k_atlas.core.visual_logger import log_visual, get_timeline, log_debug, human_error
+from k_atlas.core.safe_executor import execute_plan
+from k_atlas.scripts.approve_next import main as approve_next_main
+
+
+BASE = Path.cwd()
+K = BASE / "k_atlas"
+PENDING = K / "execution" / "pending"
+DONE = K / "execution" / "done"
+REPORTS = K / "reports"
+PLANS = K / "plans"
+WORKSPACE = K / "workspace"
 
 
 st.set_page_config(
-    page_title="K-Atlas Local",
+    page_title="K-Atlas Cowork",
     page_icon="🧭",
     layout="wide"
 )
 
-BASE_DIR = Path.cwd()
-WORKSPACE = Path.home() / "MotorDigital_Workspace"
-WORKSPACE.mkdir(parents=True, exist_ok=True)
+
+def count(path: Path, pattern="*"):
+    if not path.exists():
+        return 0
+    return len(list(path.glob(pattern)))
 
 
-def open_url(url: str):
-    webbrowser.open(url)
-    log_visual(f"Abrindo navegador em: {url}")
+def latest_file(path: Path, pattern="*"):
+    if not path.exists():
+        return None
+    files = list(path.glob(pattern))
+    if not files:
+        return None
+    return sorted(files, key=lambda p: p.stat().st_mtime, reverse=True)[0]
 
 
-def execute_safe_action(response):
-    action = response.action
-    metadata = response.metadata or {}
-
+def read_latest(path: Path, pattern="*.md"):
+    f = latest_file(path, pattern)
+    if not f:
+        return "Nada ainda."
     try:
-        if action in ["open_gmail", "open_instagram", "open_canva"]:
-            url = metadata.get("url")
-            if url:
-                open_url(url)
-                response.executed.append(f"Abri o navegador em: {url}")
-
-        elif action == "list_windows":
-            response.executed.append("Listagem de janelas ainda será reconectada ao módulo antigo.")
-
-        elif action == "analyze_desktop":
-            desktop = Path.home() / "Desktop"
-            exports = BASE_DIR / "k_atlas" / "exports"
-            exports.mkdir(parents=True, exist_ok=True)
-            out = exports / "desktop_report.txt"
-
-            lines = []
-            lines.append(f"Relatório da Área de Trabalho - {datetime.now()}")
-            lines.append("")
-            for item in desktop.iterdir():
-                lines.append(f"{item.name} | {'PASTA' if item.is_dir() else 'ARQUIVO'}")
-
-            out.write_text("\n".join(lines), encoding="utf-8")
-            response.executed.append(f"Relatório criado em: {out}")
-
-        elif action == "create_project":
-            projects_dir = BASE_DIR / "k_atlas" / "projects"
-            projects_dir.mkdir(parents=True, exist_ok=True)
-
-            project_name = "Projeto_K_Atlas_" + datetime.now().strftime("%Y%m%d_%H%M%S")
-            project_path = projects_dir / project_name
-            project_path.mkdir(parents=True, exist_ok=True)
-
-            readme = project_path / "README.md"
-            readme.write_text(
-                f"# {project_name}\n\nProjeto criado pelo K-Atlas Local.\n",
-                encoding="utf-8"
-            )
-
-            response.executed.append(f"Projeto criado em: {project_path}")
-
-        elif action == "generate_app_plan":
-            exports = BASE_DIR / "k_atlas" / "exports"
-            exports.mkdir(parents=True, exist_ok=True)
-            out = exports / f"app_plan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
-            out.write_text(response.to_markdown(), encoding="utf-8")
-            response.executed.append(f"Plano inicial de app salvo em: {out}")
-
-        else:
-            response.executed.append("Nenhuma ação local automática foi executada.")
-
+        return f.read_text(encoding="utf-8", errors="ignore")
     except Exception as e:
-        log_debug(e)
-        response.blocked.append(human_error(e))
-
-    return response
+        return f"Não consegui ler {f}: {e}"
 
 
-# Estado da sessão
-if "last_response_md" not in st.session_state:
-    st.session_state.last_response_md = "Aguardando seu primeiro comando."
+def run_git_save(message: str):
+    try:
+        subprocess.run(["git", "add", "."], cwd=BASE, check=False)
+        subprocess.run(["git", "commit", "-m", message], cwd=BASE, check=False)
+        subprocess.run(["git", "push", "origin", "main"], cwd=BASE, check=False)
+        return "Alterações salvas no GitHub."
+    except Exception as e:
+        return f"Não consegui salvar no GitHub: {e}"
 
-if "last_command" not in st.session_state:
-    st.session_state.last_command = ""
+
+def pending_files():
+    if not PENDING.exists():
+        return []
+    return sorted(PENDING.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
 
 
-# Layout
-st.title("🧭 K-Atlas Local — Cowork no seu Windows")
-st.caption("Digite o que quer resolver. Eu interpreto, planejo, executo o que for seguro e explico limites quando precisar de API/permissão.")
+if "last_board" not in st.session_state:
+    st.session_state.last_board = "K-Atlas pronto. Diga o que você quer construir, analisar ou executar."
+
+if "last_results" not in st.session_state:
+    st.session_state.last_results = []
+
+
+st.title("🧭 K-Atlas — Cowork Operacional")
+st.caption("Agente local com planejamento, execução segura e aprovação antes de ações sensíveis.")
 
 left, right = st.columns([2, 1])
 
 with left:
-    st.subheader("💬 Prompt Bar")
+    st.subheader("💬 O que você quer que eu resolva agora?")
 
-    with st.form("command_form", clear_on_submit=False):
-        command = st.text_input(
-            "O que você quer que eu resolva agora?",
-            value="",
-            placeholder="Ex: verifique os emails de ontem no gmail"
+    with st.form("pedido_form", clear_on_submit=True):
+        pedido = st.text_area(
+            "Pedido",
+            placeholder="Ex: crie uma landing page para Parada Atlântida vender chopp grátis",
+            height=120,
+            label_visibility="collapsed"
         )
-        submitted = st.form_submit_button("Executar")
+        executar = st.form_submit_button("🚀 Enviar para o K-Atlas")
 
-    if submitted and command.strip():
-        st.session_state.last_command = command.strip()
-        log_visual(f"Pedido recebido: {command.strip()}")
+    if executar and pedido.strip():
+        plan, results = execute_plan(pedido.strip(), auto_confirm=False)
 
-        response = route_intent(command)
-        log_visual(f"Intenção detectada: {response.intent}")
+        board = []
+        board.append("## Pedido recebido")
+        board.append(pedido.strip())
+        board.append("")
+        board.append("## Plano")
+        board.append(plan.to_markdown())
+        board.append("")
+        board.append("## Resultados")
+        for item in results:
+            board.append(f"- {item}")
 
-        response = execute_safe_action(response)
-
-        if response.blocked:
-            for block in response.blocked:
-                log_visual(f"Bloqueio: {block}")
-
-        for item in response.executed:
-            log_visual(f"Executado: {item}")
-
-        st.session_state.last_response_md = response.to_markdown()
+        st.session_state.last_board = "\n".join(board)
+        st.session_state.last_results = results
 
     st.subheader("🧠 Lousa do Cowork")
-    st.markdown(st.session_state.last_response_md)
+    st.markdown(st.session_state.last_board)
 
     st.divider()
 
-    st.subheader("⚡ Testes rápidos")
-    c1, c2, c3 = st.columns(3)
+    st.subheader("✅ Aprovação")
+    pendings = pending_files()
 
-    with c1:
-        if st.button("Abrir Gmail"):
-            response = route_intent("abra o gmail")
-            response = execute_safe_action(response)
-            st.session_state.last_response_md = response.to_markdown()
-            st.rerun()
+    if pendings:
+        st.warning(f"Existe {len(pendings)} aprovação pendente.")
+        st.code(str(pendings[0]))
 
-    with c2:
-        if st.button("Abrir Instagram"):
-            response = route_intent("abra o instagram")
-            response = execute_safe_action(response)
-            st.session_state.last_response_md = response.to_markdown()
+        if st.button("✅ Aprovar próxima ação"):
+            approve_next_main()
+            st.session_state.last_board += "\n\n## Aprovação executada\nA próxima ação pendente foi aprovada e executada."
             st.rerun()
+    else:
+        st.success("Sem aprovações pendentes.")
 
-    with c3:
-        if st.button("Analisar Desktop"):
-            response = route_intent("analise minha área de trabalho")
-            response = execute_safe_action(response)
-            st.session_state.last_response_md = response.to_markdown()
-            st.rerun()
+    st.divider()
+
+    st.subheader("💾 GitHub")
+    if st.button("Salvar estado no GitHub"):
+        msg = run_git_save("chore: salva estado pelo painel K-Atlas Cowork")
+        st.info(msg)
 
 with right:
-    st.subheader("📡 Linha do Tempo do Cowork")
-    timeline = get_timeline(25)
+    st.subheader("📊 Status")
 
-    if timeline:
-        for line in reversed(timeline):
-            st.write(line)
-    else:
-        st.info("Nenhuma ação registrada ainda.")
+    st.metric("Projetos", count(WORKSPACE))
+    st.metric("Planos", count(PLANS, "*.md"))
+    st.metric("Relatórios", count(REPORTS, "*.md"))
+    st.metric("Pendências", count(PENDING, "*.json"))
+    st.metric("Concluídas", count(DONE, "*.json"))
 
     st.divider()
 
-    st.subheader("🧩 Status")
-    st.success("K-Atlas Local ativo")
-    st.write(f"Workspace: `{WORKSPACE}`")
-    st.write(f"Projeto: `{BASE_DIR}`")
+    st.subheader("📁 Último plano")
+    last_plan = latest_file(PLANS, "*.md")
+    if last_plan:
+        st.write(last_plan.name)
+    else:
+        st.write("Nenhum plano.")
 
-    st.warning("Autoevolução direta está desativada nesta fase por segurança.")
+    st.subheader("📄 Último relatório")
+    last_report = latest_file(REPORTS, "*.md")
+    if last_report:
+        st.write(last_report.name)
+    else:
+        st.write("Nenhum relatório.")
+
+    st.divider()
+
+    st.subheader("🧪 Comandos locais")
+    st.code('.\\scripts\\atlas.ps1 "seu pedido"')
+    st.code('.\\scripts\\aprovar.ps1')
+    st.code('python -m k_atlas.status')
