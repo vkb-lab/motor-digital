@@ -1,24 +1,24 @@
 ﻿import streamlit as st
 from pathlib import Path
-from datetime import datetime
 import subprocess
-import sys
+import webbrowser
 
 from k_atlas.core.safe_executor import execute_plan
 from k_atlas.scripts.approve_next import main as approve_next_main
+from k_atlas.scripts.create_ai_evolution_plan import create_ai_evolution_plan
 
 
 BASE = Path.cwd()
 K = BASE / "k_atlas"
+WORKSPACE = K / "workspace"
+PLANS = K / "plans"
+REPORTS = K / "reports"
 PENDING = K / "execution" / "pending"
 DONE = K / "execution" / "done"
-REPORTS = K / "reports"
-PLANS = K / "plans"
-WORKSPACE = K / "workspace"
 
 
 st.set_page_config(
-    page_title="K-Atlas Cowork",
+    page_title="K-Atlas Cockpit",
     page_icon="🧭",
     layout="wide"
 )
@@ -30,7 +30,7 @@ def count(path: Path, pattern="*"):
     return len(list(path.glob(pattern)))
 
 
-def latest_file(path: Path, pattern="*"):
+def latest_file(path: Path, pattern: str):
     if not path.exists():
         return None
     files = list(path.glob(pattern))
@@ -39,24 +39,44 @@ def latest_file(path: Path, pattern="*"):
     return sorted(files, key=lambda p: p.stat().st_mtime, reverse=True)[0]
 
 
-def read_latest(path: Path, pattern="*.md"):
-    f = latest_file(path, pattern)
-    if not f:
-        return "Nada ainda."
-    try:
-        return f.read_text(encoding="utf-8", errors="ignore")
-    except Exception as e:
-        return f"Não consegui ler {f}: {e}"
+def latest_landing_index():
+    if not WORKSPACE.exists():
+        return None
+    files = list(WORKSPACE.glob("**/index.html"))
+    if not files:
+        return None
+    return sorted(files, key=lambda p: p.stat().st_mtime, reverse=True)[0]
 
 
-def run_git_save(message: str):
-    try:
-        subprocess.run(["git", "add", "."], cwd=BASE, check=False)
-        subprocess.run(["git", "commit", "-m", message], cwd=BASE, check=False)
-        subprocess.run(["git", "push", "origin", "main"], cwd=BASE, check=False)
-        return "Alterações salvas no GitHub."
-    except Exception as e:
-        return f"Não consegui salvar no GitHub: {e}"
+def latest_landing_folder():
+    index = latest_landing_index()
+    return index.parent if index else None
+
+
+def read_text_file(path: Path | None, limit=9000):
+    if not path or not path.exists():
+        return "Nada encontrado ainda."
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    return text[:limit]
+
+
+def run_git_save():
+    subprocess.run(["git", "add", "."], cwd=BASE, check=False)
+    commit = subprocess.run(
+        ["git", "commit", "-m", "chore: salva estado pelo K-Atlas Cockpit"],
+        cwd=BASE,
+        check=False,
+        capture_output=True,
+        text=True
+    )
+    push = subprocess.run(
+        ["git", "push", "origin", "main"],
+        cwd=BASE,
+        check=False,
+        capture_output=True,
+        text=True
+    )
+    return (commit.stdout or commit.stderr or "") + "\n" + (push.stdout or push.stderr or "")
 
 
 def pending_files():
@@ -65,76 +85,102 @@ def pending_files():
     return sorted(PENDING.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
 
 
-if "last_board" not in st.session_state:
-    st.session_state.last_board = "K-Atlas pronto. Diga o que você quer construir, analisar ou executar."
+if "board" not in st.session_state:
+    st.session_state.board = "K-Atlas pronto. Envie um pedido ou use as ações rápidas."
 
-if "last_results" not in st.session_state:
-    st.session_state.last_results = []
-
-
-st.title("🧭 K-Atlas — Cowork Operacional")
-st.caption("Agente local com planejamento, execução segura e aprovação antes de ações sensíveis.")
+st.title("🧭 K-Atlas — Cockpit Operacional")
+st.caption("Comando, IA, aprovação, landing e GitHub em um painel único.")
 
 left, right = st.columns([2, 1])
 
 with left:
-    st.subheader("💬 O que você quer que eu resolva agora?")
+    st.subheader("💬 Comando principal")
 
     with st.form("pedido_form", clear_on_submit=True):
         pedido = st.text_area(
             "Pedido",
-            placeholder="Ex: crie uma landing page para Parada Atlântida vender chopp grátis",
+            placeholder='Ex: use IA para criar uma campanha de Instagram para a promoção de chopp grátis da Parada Atlântida',
             height=120,
             label_visibility="collapsed"
         )
-        executar = st.form_submit_button("🚀 Enviar para o K-Atlas")
+        enviar = st.form_submit_button("🚀 Enviar para o K-Atlas")
 
-    if executar and pedido.strip():
+    if enviar and pedido.strip():
         plan, results = execute_plan(pedido.strip(), auto_confirm=False)
 
-        board = []
-        board.append("## Pedido recebido")
-        board.append(pedido.strip())
-        board.append("")
-        board.append("## Plano")
-        board.append(plan.to_markdown())
-        board.append("")
-        board.append("## Resultados")
-        for item in results:
-            board.append(f"- {item}")
+        lines = []
+        lines.append("## Pedido recebido")
+        lines.append(pedido.strip())
+        lines.append("")
+        lines.append("## Plano")
+        lines.append(plan.to_markdown())
+        lines.append("")
+        lines.append("## Resultados")
+        for r in results:
+            lines.append(f"- {r}")
 
-        st.session_state.last_board = "\n".join(board)
-        st.session_state.last_results = results
+        st.session_state.board = "\n".join(lines)
+
+    st.subheader("⚡ Ações rápidas")
+
+    c1, c2 = st.columns(2)
+
+    with c1:
+        if st.button("🧠 Usar IA na última landing"):
+            command = "use IA para evoluir a última landing da Parada Atlântida com foco em conversão, WhatsApp e impacto visual"
+            plan, results = execute_plan(command, auto_confirm=False)
+            st.session_state.board = "## IA acionada para última landing\n\n" + "\n".join(f"- {r}" for r in results)
+            st.rerun()
+
+    with c2:
+        if st.button("📋 Criar plano IA aplicável"):
+            try:
+                create_ai_evolution_plan()
+                st.session_state.board = "## Plano IA aplicável criado\n\nFoi criado AI_EVOLUTION_PLAN.md e uma aprovação pendente."
+            except Exception as e:
+                st.session_state.board = f"## Erro ao criar plano IA aplicável\n\n{e}"
+            st.rerun()
+
+    c3, c4 = st.columns(2)
+
+    with c3:
+        if st.button("✅ Aprovar próxima ação"):
+            try:
+                approve_next_main()
+                st.session_state.board = "## Aprovação executada\n\nA próxima ação pendente foi aprovada e executada."
+            except Exception as e:
+                st.session_state.board = f"## Erro ao aprovar\n\n{e}"
+            st.rerun()
+
+    with c4:
+        if st.button("🌐 Abrir última landing"):
+            index = latest_landing_index()
+            if index:
+                webbrowser.open(index.as_uri())
+                st.session_state.board = f"## Última landing aberta\n\n{index}"
+            else:
+                st.session_state.board = "## Nenhuma landing encontrada."
+            st.rerun()
+
+    st.divider()
 
     st.subheader("🧠 Lousa do Cowork")
-    st.markdown(st.session_state.last_board)
+    st.markdown(st.session_state.board)
 
     st.divider()
 
-    st.subheader("✅ Aprovação")
-    pendings = pending_files()
+    st.subheader("📄 Último relatório IA")
+    latest_ai = latest_file(REPORTS, "ai_brain_*.md")
+    with st.expander("Ver último relatório IA", expanded=False):
+        st.markdown(read_text_file(latest_ai))
 
-    if pendings:
-        st.warning(f"Existe {len(pendings)} aprovação pendente.")
-        st.code(str(pendings[0]))
-
-        if st.button("✅ Aprovar próxima ação"):
-            approve_next_main()
-            st.session_state.last_board += "\n\n## Aprovação executada\nA próxima ação pendente foi aprovada e executada."
-            st.rerun()
-    else:
-        st.success("Sem aprovações pendentes.")
-
-    st.divider()
-
-    st.subheader("💾 GitHub")
-    if st.button("Salvar estado no GitHub"):
-        msg = run_git_save("chore: salva estado pelo painel K-Atlas Cowork")
-        st.info(msg)
+    st.subheader("✅ Último plano aplicado")
+    latest_applied = latest_file(WORKSPACE, "**/AI_APPLIED.md")
+    with st.expander("Ver AI_APPLIED.md", expanded=False):
+        st.markdown(read_text_file(latest_applied))
 
 with right:
     st.subheader("📊 Status")
-
     st.metric("Projetos", count(WORKSPACE))
     st.metric("Planos", count(PLANS, "*.md"))
     st.metric("Relatórios", count(REPORTS, "*.md"))
@@ -143,23 +189,39 @@ with right:
 
     st.divider()
 
-    st.subheader("📁 Último plano")
-    last_plan = latest_file(PLANS, "*.md")
-    if last_plan:
-        st.write(last_plan.name)
+    st.subheader("⚠️ Pendências")
+    pendings = pending_files()
+    if pendings:
+        st.warning(f"{len(pendings)} pendência(s)")
+        st.code(str(pendings[0]))
     else:
-        st.write("Nenhum plano.")
-
-    st.subheader("📄 Último relatório")
-    last_report = latest_file(REPORTS, "*.md")
-    if last_report:
-        st.write(last_report.name)
-    else:
-        st.write("Nenhum relatório.")
+        st.success("Sem pendências.")
 
     st.divider()
 
-    st.subheader("🧪 Comandos locais")
+    st.subheader("📁 Última landing")
+    index = latest_landing_index()
+    if index:
+        st.code(str(index))
+    else:
+        st.write("Nenhuma landing.")
+
+    st.subheader("🧠 Último AI Brain")
+    latest_ai = latest_file(REPORTS, "ai_brain_*.md")
+    if latest_ai:
+        st.code(latest_ai.name)
+    else:
+        st.write("Nenhum relatório IA.")
+
+    st.divider()
+
+    if st.button("💾 Salvar no GitHub"):
+        output = run_git_save()
+        st.code(output)
+
+    st.divider()
+
+    st.subheader("🧪 PowerShell")
     st.code('.\\scripts\\atlas.ps1 "seu pedido"')
     st.code('.\\scripts\\aprovar.ps1')
     st.code('python -m k_atlas.status')
