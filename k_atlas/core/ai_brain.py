@@ -27,7 +27,14 @@ Regras:
 """
 
 
-def get_model():
+MODEL_CANDIDATES = [
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-1.5-flash",
+]
+
+
+def configure():
     api_key = get_secret("GEMINI_API_KEY")
 
     if not api_key:
@@ -35,24 +42,38 @@ def get_model():
 
     genai.configure(api_key=api_key)
 
-    return genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+
+def generate_with_model(model_name: str, prompt: str) -> str:
+    model = genai.GenerativeModel(
+        model_name=model_name,
         system_instruction=SYSTEM_PROMPT
     )
-
-
-def ask_ai(prompt: str) -> str:
-    model = get_model()
 
     response = model.generate_content(prompt)
 
     if not response or not getattr(response, "text", None):
-        return "A IA não retornou texto."
+        return ""
 
     return response.text
 
 
-def save_ai_report(prompt: str, answer: str) -> Path:
+def ask_ai(prompt: str) -> tuple[str, str]:
+    configure()
+
+    last_error = None
+
+    for model_name in MODEL_CANDIDATES:
+        try:
+            answer = generate_with_model(model_name, prompt)
+            if answer:
+                return answer, model_name
+        except Exception as e:
+            last_error = e
+
+    raise RuntimeError(f"Nenhum modelo Gemini respondeu. Último erro: {last_error}")
+
+
+def save_ai_report(prompt: str, answer: str, model_name: str) -> Path:
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out = REPORTS / f"ai_brain_{stamp}.md"
 
@@ -60,6 +81,7 @@ def save_ai_report(prompt: str, answer: str) -> Path:
     content.append("# K-Atlas AI Brain")
     content.append("")
     content.append(f"Data: {datetime.now().isoformat()}")
+    content.append(f"Modelo: {model_name}")
     content.append("")
     content.append("## Pedido")
     content.append(prompt)
@@ -72,9 +94,9 @@ def save_ai_report(prompt: str, answer: str) -> Path:
 
 
 def think(prompt: str):
-    answer = ask_ai(prompt)
-    report = save_ai_report(prompt, answer)
-    return answer, report
+    answer, model_name = ask_ai(prompt)
+    report = save_ai_report(prompt, answer, model_name)
+    return answer, report, model_name
 
 
 if __name__ == "__main__":
@@ -85,11 +107,22 @@ if __name__ == "__main__":
         raise SystemExit(0)
 
     prompt = " ".join(sys.argv[1:])
-    answer, report = think(prompt)
 
-    print("")
-    print("🧠 K-Atlas Brain")
-    print("")
-    print(answer)
-    print("")
-    print(f"Relatório salvo em: {report}")
+    try:
+        answer, report, model_name = think(prompt)
+
+        print("")
+        print("🧠 K-Atlas Brain")
+        print(f"Modelo usado: {model_name}")
+        print("")
+        print(answer)
+        print("")
+        print(f"Relatório salvo em: {report}")
+
+    except Exception as e:
+        print("")
+        print("⚠️ K-Atlas Brain não conseguiu responder.")
+        print(str(e))
+        print("")
+        print("Próximo passo:")
+        print("Verifique se GEMINI_API_KEY está correta e se existe modelo disponível para sua conta.")
