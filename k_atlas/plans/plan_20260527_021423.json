@@ -1,0 +1,43 @@
+{
+  "original_command": "crie uma landing page para Parada Atlântida vender chopp grátis",
+  "intent": "build_landing_page",
+  "summary": "Criar estrutura inicial de uma landing page com arquivos, briefing e próximos passos.",
+  "created_at": "2026-05-27T02:14:23.323271",
+  "status": "planned",
+  "steps": [
+    {
+      "title": "Criar pasta do projeto",
+      "description": "Criar uma pasta organizada dentro do workspace do K-Atlas.",
+      "action": "create_project_folder",
+      "risk_level": 1,
+      "requires_approval": false,
+      "payload": {
+        "project_type": "landing_page"
+      }
+    },
+    {
+      "title": "Gerar briefing técnico",
+      "description": "Criar README com objetivo, público, estrutura e páginas.",
+      "action": "create_project_readme",
+      "risk_level": 1,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Gerar arquivos base",
+      "description": "Criar arquivos HTML/CSS/JS iniciais ou plano Next.js conforme decisão.",
+      "action": "create_basic_web_files",
+      "risk_level": 2,
+      "requires_approval": true,
+      "payload": {}
+    },
+    {
+      "title": "Salvar plano de execução",
+      "description": "Registrar o plano em k_atlas/plans.",
+      "action": "save_plan",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    }
+  ]
+}
