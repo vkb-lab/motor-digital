@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-05-27T14:08:56.449209",
+  "status": "pending",
+  "plan_summary": "Aplicar plano de evolução gerado pela IA na última landing.",
+  "original_command": "aplicar evolução IA na última landing",
+  "step": {
+    "title": "Aplicar evolução IA na landing",
+    "description": "Usar o plano AI_EVOLUTION_PLAN.md para evoluir HTML, CSS e copy da última landing.",
+    "action": "apply_ai_landing_plan",
+    "risk_level": 2,
+    "payload": {
+      "landing_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\workspace\\crie_uma_landing_page_para_parada_atlântida_vender_chopp_grá_20260527_022346",
+      "plan_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\workspace\\crie_uma_landing_page_para_parada_atlântida_vender_chopp_grá_20260527_022346\\AI_EVOLUTION_PLAN.md",
+      "ai_report_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\reports\\ai_brain_20260527_140827.md"
+    }
+  },
+  "instruction": "Aprovar para aplicar evolução prática na landing."
+}

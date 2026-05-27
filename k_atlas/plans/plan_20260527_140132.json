@@ -1,0 +1,33 @@
+{
+  "original_command": "veja quais janelas do google estao abertas",
+  "intent": "general_digital_task",
+  "summary": "Pedido geral recebido. O agente irá planejar antes de executar.",
+  "created_at": "2026-05-27T14:01:32.609207",
+  "status": "planned",
+  "steps": [
+    {
+      "title": "Interpretar pedido",
+      "description": "Entender objetivo principal.",
+      "action": "interpret",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Criar plano",
+      "description": "Gerar etapas executáveis.",
+      "action": "save_plan",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Pedir confirmação",
+      "description": "Antes de ações sensíveis, pedir confirmação.",
+      "action": "approval_required",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    }
+  ]
+}

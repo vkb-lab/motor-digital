@@ -1,0 +1,35 @@
+{
+  "original_command": "veja se chegou algum email agora pela manha no gmail",
+  "intent": "gmail_work",
+  "summary": "Trabalhar com Gmail respeitando limites de permissão.",
+  "created_at": "2026-05-27T10:50:40.445939",
+  "status": "planned",
+  "steps": [
+    {
+      "title": "Abrir Gmail",
+      "description": "Abrir Gmail no navegador.",
+      "action": "open_url",
+      "risk_level": 1,
+      "requires_approval": false,
+      "payload": {
+        "url": "https://mail.google.com"
+      }
+    },
+    {
+      "title": "Explicar limite",
+      "description": "Informar que ler emails exige Gmail API/OAuth.",
+      "action": "explain_gmail_api_needed",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Preparar integração",
+      "description": "Criar plano para conectar Gmail API futuramente.",
+      "action": "create_gmail_integration_plan",
+      "risk_level": 1,
+      "requires_approval": false,
+      "payload": {}
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "original_command": "vamos criar uma promoção para parada atlantida onde vamos sortear um ano de chopp gratis na final da copa do mundo , para participar basta comprar um pack de 12 latas e preencher seu cupom .",
+  "intent": "general_digital_task",
+  "summary": "Pedido geral recebido. O agente irá planejar antes de executar.",
+  "created_at": "2026-05-27T04:52:50.178334",
+  "status": "planned",
+  "steps": [
+    {
+      "title": "Interpretar pedido",
+      "description": "Entender objetivo principal.",
+      "action": "interpret",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Criar plano",
+      "description": "Gerar etapas executáveis.",
+      "action": "save_plan",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Pedir confirmação",
+      "description": "Antes de ações sensíveis, pedir confirmação.",
+      "action": "approval_required",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    }
+  ]
+}
