@@ -1,0 +1,16 @@
+{
+  "input": "cliente piscina urgente",
+  "created_at": "2026-05-27T20:16:58.144313",
+  "customer_type": "profissional",
+  "intent": "informacao",
+  "urgency": "alta",
+  "emotion": "pressa",
+  "language_style": "tecnico, direto e orientado a rendimento",
+  "main_need": "manter a piscina limpa, segura e pronta para uso",
+  "best_sales_angle": "rendimento, padronizacao e economia operacional",
+  "recommended_cta": "Quer que eu monte uma sugest�o pensando em rendimento para atendimento profissional?",
+  "objections": [],
+  "signals": [
+    "interesse_em_tratamento_de_piscina"
+  ]
+}
