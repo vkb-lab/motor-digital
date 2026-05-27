@@ -1,0 +1,16 @@
+{
+  "input": "Minha piscina ficou verde e preciso resolver hoje porque meus filhos vÒo usar",
+  "created_at": "2026-05-27T18:50:34.818823",
+  "customer_type": "cliente_piscina",
+  "intent": "informacao",
+  "urgency": "alta",
+  "emotion": "cuidado",
+  "language_style": "claro, simples e consultivo",
+  "main_need": "manter a piscina limpa, segura e pronta para uso",
+  "best_sales_angle": "seguranca da familia e agua saudavel",
+  "recommended_cta": "Posso te mostrar a opþÒo mais segura para sua famÝlia?",
+  "objections": [],
+  "signals": [
+    "interesse_em_tratamento_de_piscina"
+  ]
+}
