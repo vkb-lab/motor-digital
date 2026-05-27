@@ -1,0 +1,28 @@
+{
+  "id": "20260527_174445",
+  "name": "Cloro para piscina",
+  "category": "Piscina",
+  "barcode": "",
+  "price": "29,90",
+  "source": "manual",
+  "status": "draft",
+  "created_at": "2026-05-27T17:44:45.806600",
+  "enrichment": {
+    "description_short": "",
+    "description_marketplace": "",
+    "instagram_caption": "",
+    "customer_need": "",
+    "sales_angle": "",
+    "keywords": []
+  },
+  "media": {
+    "original_image": "",
+    "processed_image": "",
+    "gallery": []
+  },
+  "publishing": {
+    "instagram": "not_ready",
+    "facebook": "not_ready",
+    "marketplaces": []
+  }
+}
