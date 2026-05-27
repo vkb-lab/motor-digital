@@ -1,0 +1,33 @@
+{
+  "original_command": "analise minha área de trabalho",
+  "intent": "analyze_desktop",
+  "summary": "Mapear a Área de Trabalho e gerar relatório sem mover nada.",
+  "created_at": "2026-05-27T02:00:28.778208",
+  "status": "planned",
+  "steps": [
+    {
+      "title": "Mapear Desktop",
+      "description": "Listar arquivos e pastas.",
+      "action": "scan_desktop",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Gerar relatório",
+      "description": "Salvar relatório em k_atlas/reports.",
+      "action": "create_desktop_report",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Sugerir organização",
+      "description": "Criar plano de organização sem mover arquivos.",
+      "action": "suggest_desktop_organization",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    }
+  ]
+}
