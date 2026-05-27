@@ -5,6 +5,7 @@ from datetime import datetime
 
 from k_atlas.core.project_builder import create_basic_web_files
 from k_atlas.core.landing_evolver import find_latest_landing, evolve_landing
+from k_atlas.core.ai_landing_applier import apply_ai_landing_plan
 
 
 BASE = Path.cwd()
@@ -98,8 +99,23 @@ def main():
         move_done(approval_file)
         return
 
+    if action == "apply_ai_landing_plan":
+        payload = step.get("payload", {})
+        landing_path = payload.get("landing_path")
+        plan_path = payload.get("plan_path")
+
+        files = apply_ai_landing_plan(landing_path, plan_path)
+
+        log(f"Plano IA aplicado na landing: {landing_path}")
+        for f in files:
+            log(f"Arquivo atualizado: {f}")
+
+        move_done(approval_file)
+        return
+
     log(f"Ação ainda não suportada pelo approve_next.py: {action}")
 
 
 if __name__ == "__main__":
     main()
+
