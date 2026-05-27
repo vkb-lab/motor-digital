@@ -1,0 +1,90 @@
+[2026-05-26 19:39:50] Abrindo navegador em: https://www.instagram.com/
+[2026-05-26 19:41:02] Abrindo navegador em: https://mail.google.com/mail/?view=cm&fs=1&to=rogger.rep@gmail.com&su=Atualização%20do%20Projeto&body=Olá%20Rogger%2C%20estou%20analisando%20o%20projeto%20e%20é%20provável%20que%20até%20amanhã%20eu%20retorne%20com%20as%20modificações%20necessárias.%20Atenciosamente%2C
+[2026-05-26 19:42:53] Abrindo navegador em: https://www.instagram.com
+[2026-05-26 20:58:51] Analisando autoevolução para: agent_core.py
+[2026-05-26 20:59:58] 🚀 Iniciando Triagem de E-mails...
+[2026-05-26 20:59:58] Iniciando Chrome Automatizado...
+[2026-05-26 21:00:05] Erro ao iniciar Chrome Automatizado: Message: session not created: Chrome failed to start: crashed.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7bdff7de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff7bdff7e50+14900]
+	chromedriver!(No symbol) [0x7ff7bdd5d5ad]
+	chromedriver!(No symbol) [0x7ff7bdd9f08b]
+	chromedriver!(No symbol) [0x7ff7bdd9a349]
+	chromedriver!(No symbol) [0x7ff7bddedd21]
+	chromedriver!(No symbol) [0x7ff7bdded586]
+	chromedriver!(No symbol) [0x7ff7bdda9df8]
+	chromedriver!(No symbol) [0x7ff7bddaace3]
+	chromedriver!GetHandleVerifier [0x7ff7be30cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff7be307375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff7be32bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff7be016045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff7be01ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff7be001bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff7be001d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff7bdfe60e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffbd3d4e957+17]
+	ntdll!RtlUserThreadStart [0x7ffbd4c8427c+2c]
+
+[2026-05-26 21:00:05] ⏳ Aguardando carregamento do Gmail (5s)...
+[2026-05-26 21:00:10] 👁️ Lendo conteúdo da caixa de entrada...
+[2026-05-26 21:00:10] 🧠 Analisando urgências com IA...
+[2026-05-26 21:00:28] ✅ Relatório gerado com sucesso.
+[2026-05-26 21:00:44] 🛸 Conectando à Nave Gênesis: https://remix-remix-nave-genesis-lan-amento-31-03-431909516385.us-east1.run.app
+[2026-05-26 21:00:44] Iniciando Chrome Automatizado...
+[2026-05-26 21:00:47] Erro ao iniciar Chrome Automatizado: Message: session not created: Chrome failed to start: crashed.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7bdff7de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff7bdff7e50+14900]
+	chromedriver!(No symbol) [0x7ff7bdd5d5ad]
+	chromedriver!(No symbol) [0x7ff7bdd9f08b]
+	chromedriver!(No symbol) [0x7ff7bdd9a349]
+	chromedriver!(No symbol) [0x7ff7bddedd21]
+	chromedriver!(No symbol) [0x7ff7bdded586]
+	chromedriver!(No symbol) [0x7ff7bdda9df8]
+	chromedriver!(No symbol) [0x7ff7bddaace3]
+	chromedriver!GetHandleVerifier [0x7ff7be30cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff7be307375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff7be32bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff7be016045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff7be01ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff7be001bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff7be001d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff7bdfe60e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffbd3d4e957+17]
+	ntdll!RtlUserThreadStart [0x7ffbd4c8427c+2c]
+
+[2026-05-26 21:00:50] 📊 Dados da Nave extraídos com sucesso.
+[2026-05-26 21:01:01] 🧠 Acessando Google AI Studio...
+[2026-05-26 21:01:01] Iniciando Chrome Automatizado...
+[2026-05-26 21:01:04] Erro ao iniciar Chrome Automatizado: Message: session not created: Chrome failed to start: crashed.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7bdff7de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff7bdff7e50+14900]
+	chromedriver!(No symbol) [0x7ff7bdd5d5ad]
+	chromedriver!(No symbol) [0x7ff7bdd9f08b]
+	chromedriver!(No symbol) [0x7ff7bdd9a349]
+	chromedriver!(No symbol) [0x7ff7bddedd21]
+	chromedriver!(No symbol) [0x7ff7bdded586]
+	chromedriver!(No symbol) [0x7ff7bdda9df8]
+	chromedriver!(No symbol) [0x7ff7bddaace3]
+	chromedriver!GetHandleVerifier [0x7ff7be30cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff7be307375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff7be32bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff7be016045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff7be01ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff7be001bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff7be001d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff7bdfe60e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffbd3d4e957+17]
+	ntdll!RtlUserThreadStart [0x7ffbd4c8427c+2c]
+
+[2026-05-26 21:01:09] ✅ Google AI Studio aberto. Pronto para comandos de edição.
+[2026-05-26 21:02:51] Abrindo navegador em: https://aistudio.google.com/
+[2026-05-26 21:03:51] Abrindo navegador em: https://aistudio.google.com/
