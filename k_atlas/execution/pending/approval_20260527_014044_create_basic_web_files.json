@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-05-27T01:40:44.925463",
+  "status": "pending",
+  "plan_summary": "Criar estrutura inicial de uma landing page com arquivos, briefing e próximos passos.",
+  "original_command": "crie uma landing page para a Parada Atlântida vender chopp grátis",
+  "step": {
+    "title": "Gerar arquivos base",
+    "description": "Criar arquivos HTML/CSS/JS iniciais ou plano Next.js conforme decisão.",
+    "action": "create_basic_web_files",
+    "risk_level": 2,
+    "payload": {}
+  },
+  "instruction": "Para aprovar, use o painel ou mova este item para execution/approved em versão futura."
+}
