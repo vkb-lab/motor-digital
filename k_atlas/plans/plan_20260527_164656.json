@@ -1,0 +1,25 @@
+{
+  "original_command": "use IA para criar um plano curto de evolução do K-Work com Supabase, worker local e cockpit multiaparelhos",
+  "intent": "ai_brain_task",
+  "summary": "Usar o AI Brain com Gemini para gerar análise, estratégia, copy, código ou plano técnico.",
+  "created_at": "2026-05-27T16:46:56.397203",
+  "status": "planned",
+  "steps": [
+    {
+      "title": "Consultar AI Brain",
+      "description": "Enviar o pedido para o Gemini com contexto do K-Atlas.",
+      "action": "ask_ai_brain",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    },
+    {
+      "title": "Salvar resposta da IA",
+      "description": "Registrar o relatório em k_atlas/reports.",
+      "action": "save_plan",
+      "risk_level": 0,
+      "requires_approval": false,
+      "payload": {}
+    }
+  ]
+}
