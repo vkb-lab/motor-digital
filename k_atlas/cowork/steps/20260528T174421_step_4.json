@@ -1,0 +1,11 @@
+{
+  "step_id": "5a6c5785-e3ad-48d0-9cd9-fcd9dddbc113",
+  "step_number": 4,
+  "title": "Gerar review parcial do Cowork",
+  "command": "Executar cowork.py status e cowork.py review para avaliar progresso parcial da sessao apos 3 passos.",
+  "result_summary": "Review parcial da sessao Cowork gerado para auditoria do progresso inicial.",
+  "status": "done",
+  "risk": "low",
+  "created_at": "2026-05-28T17:44:21.178781+00:00",
+  "updated_at": "2026-05-28T17:44:21.178781+00:00"
+}
