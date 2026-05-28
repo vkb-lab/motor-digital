@@ -2,12 +2,16 @@
 from pathlib import Path
 import subprocess
 import json
+from datetime import datetime
 
 BASE = Path.cwd()
 K = BASE / "k_atlas"
 MEMORY = K / "memory"
 CONTENT = K / "content_packs"
 REPORTS = K / "reports"
+APPROVED = K / "approved_campaigns"
+
+APPROVED.mkdir(parents=True, exist_ok=True)
 
 st.set_page_config(
     page_title="K-Atlas Cockpit",
@@ -84,11 +88,28 @@ def git_save():
     )
     return (commit.stdout or commit.stderr or "") + "\n" + (push.stdout or push.stderr or "")
 
+def approve_last_pack():
+    pack = latest_file(CONTENT, "instagram_pack_*.json")
+
+    if not pack:
+        return "Nenhum pacote Instagram para aprovar."
+
+    data = read_json(pack)
+
+    approved_file = APPROVED / f"approved_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+
+    approved_file.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False),
+        encoding="utf-8"
+    )
+
+    return f"Campanha aprovada e salva em: {approved_file}"
+
 if "board" not in st.session_state:
     st.session_state.board = "K-Atlas pronto para receber comandos."
 
 st.title("🧭 K-Atlas — Cockpit Operacional")
-st.caption("Comando central, memoria, campanhas e execucao em um painel unico.")
+st.caption("Comando central, memoria, campanhas, aprovacao e execucao em um painel unico.")
 
 left, right = st.columns([2, 1])
 
@@ -114,9 +135,29 @@ with left:
 
     st.subheader("📦 Ultimo pacote Instagram")
     pack = latest_file(CONTENT, "instagram_pack_*.json")
+
     if pack:
         data = read_json(pack)
-        st.code(data.get("full_post", "Pacote encontrado, mas sem full_post."))
+        full_post = data.get("full_post", "Pacote encontrado, mas sem full_post.")
+
+        st.text_area(
+            "Post pronto",
+            value=full_post,
+            height=260
+        )
+
+        b1, b2 = st.columns(2)
+
+        with b1:
+            if st.button("✅ Aprovar campanha"):
+                st.session_state.board = approve_last_pack()
+                st.rerun()
+
+        with b2:
+            if st.button("💾 Salvar no GitHub"):
+                st.session_state.board = git_save()
+                st.rerun()
+
         with st.expander("Ver JSON completo"):
             st.json(data)
     else:
@@ -126,6 +167,7 @@ with right:
     st.subheader("📊 Status")
     st.metric("Memorias", count_files(MEMORY, "*.json"))
     st.metric("Pacotes Instagram", count_files(CONTENT, "*.json"))
+    st.metric("Aprovadas", count_files(APPROVED, "*.json"))
     st.metric("Relatorios", count_files(REPORTS, "*"))
 
     st.divider()
@@ -140,8 +182,13 @@ with right:
 
     st.divider()
 
-    if st.button("💾 Salvar no GitHub"):
-        st.code(git_save())
+    st.subheader("✅ Ultima campanha aprovada")
+    approved = latest_file(APPROVED, "*.json")
+    if approved:
+        st.code(approved.name)
+        st.json(read_json(approved))
+    else:
+        st.info("Nenhuma campanha aprovada ainda.")
 
     st.divider()
 
