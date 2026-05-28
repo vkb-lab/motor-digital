@@ -1,0 +1,15 @@
+{
+  "review_id": "997529e0-b2b9-435d-9029-e5430ddbf4bc",
+  "session_id": "5c95271e-58d9-4867-85b3-7c64976e71a0",
+  "created_at": "2026-05-28T17:44:20.806954+00:00",
+  "goal": "Executar 10 ciclos supervisionados de desenvolvimento K-Atlas no formato pergunta, comando, teste, correção, commit e avaliação",
+  "steps_total": 3,
+  "done": 3,
+  "failed": 0,
+  "pending": 0,
+  "score": 10.0,
+  "decision": "avaliar com professor",
+  "recommendation": "Continuar apenas se os passos forem pequenos, testados e commitados.",
+  "next_safe_step": "Gerar relatorio AutoReporter da sessao Cowork.",
+  "session_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\cowork\\sessions\\20260528T173804_5c95271e-58d9-4867-85b3-7c64976e71a0.json"
+}
