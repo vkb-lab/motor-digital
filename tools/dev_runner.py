@@ -76,6 +76,11 @@ COMMANDS = [
         "required": True,
     },
     {
+        "name": "smoke_test_prompt_generator_quality",
+        "cmd": [sys.executable, "smoke_test_prompt_generator_quality.py"],
+        "required": True,
+    },
+    {
         "name": "smoke_test_orchestrator_agent",
         "cmd": [sys.executable, "smoke_test_orchestrator_agent.py"],
         "required": True,

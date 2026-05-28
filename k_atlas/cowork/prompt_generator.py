@@ -114,6 +114,107 @@ def collect_state(root_path: Optional[str | Path] = None) -> Dict[str, Any]:
     }
 
 
+
+def is_generic_title(title: str) -> bool:
+    value = title.strip().lower()
+
+    generic_titles = {
+        "proximo movimento seguro",
+        "próximo movimento seguro",
+        "proximo passo seguro",
+        "próximo passo seguro",
+        "next step",
+        "next safe step",
+    }
+
+    return value in generic_titles
+
+
+def card_specificity_score(card: Dict[str, Any]) -> int:
+    title = str(card.get("title", "")).strip()
+    description = str(card.get("description", "")).strip()
+    priority = str(card.get("priority", "normal")).strip().lower()
+    tags = card.get("tags", [])
+
+    score = 0
+
+    if title:
+        score += 10
+
+    if description:
+        score += min(len(description) // 20, 20)
+
+    if not is_generic_title(title):
+        score += 25
+    else:
+        score -= 20
+
+    if priority == "high":
+        score += 15
+    elif priority == "normal":
+        score += 5
+
+    if isinstance(tags, list):
+        score += min(len(tags) * 2, 10)
+
+    keywords = [
+        "cockpit",
+        "lousa",
+        "prompt generator",
+        "self evolution",
+        "cowork",
+        "governance",
+        "dev_runner",
+        "read-only",
+        "relatorio",
+        "teste",
+    ]
+
+    joined = (title + " " + description).lower()
+
+    for keyword in keywords:
+        if keyword in joined:
+            score += 3
+
+    return score
+
+
+def card_to_next_step(card: Dict[str, Any]) -> str:
+    title = str(card.get("title", "")).strip()
+    description = str(card.get("description", "")).strip()
+
+    if is_generic_title(title) and description:
+        return description
+
+    return title or description or "Executar proximo card especifico da Lousa."
+
+
+def select_best_backlog_card(cards: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    candidates: List[Dict[str, Any]] = []
+
+    for item in cards:
+        data = item.get("data", {})
+        if not isinstance(data, dict):
+            continue
+
+        lane = str(data.get("lane", "")).lower()
+        status = str(data.get("status", "")).lower()
+
+        if lane != "backlog":
+            continue
+
+        if status in ["done", "completed", "closed"]:
+            continue
+
+        candidates.append(data)
+
+    if not candidates:
+        return None
+
+    candidates = sorted(candidates, key=card_specificity_score, reverse=True)
+    return candidates[0]
+
+
 def choose_next_step(state: Dict[str, Any]) -> Dict[str, Any]:
     dev = state.get("dev_runner_report", {})
     cards = state.get("lousa_cards", [])
@@ -133,22 +234,23 @@ def choose_next_step(state: Dict[str, Any]) -> Dict[str, Any]:
         justification = "O gate de qualidade falhou. Expandir com validacao quebrada aumenta risco."
         dangerous = "Criar novos modulos antes de restaurar dev_runner."
     else:
-        next_step = "Integrar Lousa ao cockpit em modo read-only."
-        justification = "A Lousa ja existe e possui o primeiro movimento operacional. Exibir no cockpit aumenta observabilidade sem risco destrutivo."
-        dangerous = "Criar automacao de navegador, autoexecucao ou autoaplicacao de patches agora."
+        best_card = select_best_backlog_card(cards)
 
-    for item in cards:
-        data = item.get("data", {})
-        if isinstance(data, dict) and data.get("lane") == "backlog":
-            title = str(data.get("title", ""))
-            if title:
-                next_step = title
-                justification = "A Lousa possui este card em backlog como proximo movimento seguro."
-                break
+        if best_card:
+            next_step = card_to_next_step(best_card)
+            priority = str(best_card.get("priority", "normal")).lower() or "normal"
+            justification = "A Lousa possui um card de backlog especifico e ainda nao concluido para orientar o proximo movimento."
+            dangerous = "Ignorar a Lousa e iniciar automacao nova sem review."
+            signals.append("Card selecionado por score de especificidade: " + str(best_card.get("title", "")))
+        else:
+            next_step = "Criar novo card objetivo na Lousa antes de expandir."
+            justification = "Nao ha card de backlog especifico disponivel. O proximo movimento seguro e organizar a decisao antes de executar."
+            dangerous = "Executar desenvolvimento novo sem card, sem prioridade e sem criterio de review."
 
     if approved:
         risks.append("Existem patches aprovados apenas para revisao. Nao aplicar automaticamente.")
-        risk = "medium"
+        if risk == "low":
+            risk = "medium"
 
     if inbox:
         signals.append("Existem propostas em patch_inbox para revisar.")
