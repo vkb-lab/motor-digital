@@ -3,14 +3,6 @@
 K-Atlas OS - Official Boot
 
 Ponto unico de entrada local do K-Atlas OS.
-
-Uso:
-python k_atlas_boot.py
-python k_atlas_boot.py system_agent.status
-python k_atlas_boot.py system_agent.agents
-python k_atlas_boot.py task_agent.stats
-python k_atlas_boot.py memory_agent.stats
-python k_atlas_boot.py orchestrator_agent.status
 """
 
 from __future__ import annotations
@@ -21,6 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
 
+from agents.learning_agent import LearningAgent
 from agents.memory_agent import MemoryAgent
 from agents.orchestrator_agent import OrchestratorAgent
 from agents.system_agent import SystemAgent
@@ -42,32 +35,19 @@ def build_kernel() -> KAtlasKernel:
     kernel.start(load_state=True)
 
     system_agent = SystemAgent(kernel=kernel)
-    kernel.register_agent(
-        system_agent,
-        replace=True,
-        roles=["system"],
-    )
+    kernel.register_agent(system_agent, replace=True, roles=["system"])
 
     task_agent = TaskAgent(storage_path=ROOT / "memory" / "tasks.json")
-    kernel.register_agent(
-        task_agent,
-        replace=True,
-        roles=["agent"],
-    )
+    kernel.register_agent(task_agent, replace=True, roles=["agent"])
 
     memory_agent = MemoryAgent(storage_path=ROOT / "memory" / "entries.json")
-    kernel.register_agent(
-        memory_agent,
-        replace=True,
-        roles=["agent"],
-    )
+    kernel.register_agent(memory_agent, replace=True, roles=["agent"])
+
+    learning_agent = LearningAgent(root_path=ROOT)
+    kernel.register_agent(learning_agent, replace=True, roles=["system"])
 
     orchestrator_agent = OrchestratorAgent(kernel=kernel)
-    kernel.register_agent(
-        orchestrator_agent,
-        replace=True,
-        roles=["system"],
-    )
+    kernel.register_agent(orchestrator_agent, replace=True, roles=["system"])
 
     return kernel
 

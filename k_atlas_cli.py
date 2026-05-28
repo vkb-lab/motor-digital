@@ -3,15 +3,6 @@
 K-Atlas OS - CLI
 
 Interface de linha de comando para operar o K-Atlas OS localmente.
-
-Uso:
-python k_atlas_cli.py status
-python k_atlas_cli.py agents
-python k_atlas_cli.py events --limit 10
-python k_atlas_cli.py task-stats
-python k_atlas_cli.py memory-stats
-python k_atlas_cli.py orchestrator-status
-python k_atlas_cli.py run system_agent.ping
 """
 
 from __future__ import annotations
@@ -74,6 +65,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser("agents", help="Lista agentes registrados.")
     subparsers.add_parser("task-stats", help="Mostra estatisticas de tarefas.")
     subparsers.add_parser("memory-stats", help="Mostra estatisticas de memoria.")
+    subparsers.add_parser("learning-stats", help="Mostra estatisticas de aprendizado.")
     subparsers.add_parser("orchestrator-status", help="Mostra visao geral do orquestrador.")
 
     events = subparsers.add_parser("events", help="Lista eventos recentes.")
@@ -109,6 +101,35 @@ def build_parser() -> argparse.ArgumentParser:
     memory_list.add_argument("--type", default=None)
     memory_list.add_argument("--tag", default=None)
     memory_list.add_argument("--limit", type=int, default=50)
+
+    learning_learn = subparsers.add_parser("learning-learn", help="Registra aprendizado.")
+    learning_learn.add_argument("--title", required=True)
+    learning_learn.add_argument("--content", required=True)
+    learning_learn.add_argument("--type", default="lesson")
+    learning_learn.add_argument("--tags", default="")
+    learning_learn.add_argument("--source", default="operator")
+    learning_learn.add_argument("--importance", type=int, default=1)
+
+    learning_error = subparsers.add_parser("learning-error", help="Registra erro operacional.")
+    learning_error.add_argument("--title", required=True)
+    learning_error.add_argument("--symptom", required=True)
+    learning_error.add_argument("--cause", default="")
+    learning_error.add_argument("--fix", default="")
+    learning_error.add_argument("--prevention", default="")
+    learning_error.add_argument("--severity", default="medium")
+    learning_error.add_argument("--tags", default="")
+    learning_error.add_argument("--source", default="operator")
+
+    learning_playbook = subparsers.add_parser("learning-playbook", help="Cria playbook simples.")
+    learning_playbook.add_argument("--title", required=True)
+    learning_playbook.add_argument("--objective", required=True)
+    learning_playbook.add_argument("--steps", required=True)
+    learning_playbook.add_argument("--tags", default="")
+    learning_playbook.add_argument("--source", default="operator")
+
+    learning_search = subparsers.add_parser("learning-search", help="Busca conhecimento aprendido.")
+    learning_search.add_argument("query")
+    learning_search.add_argument("--limit", type=int, default=50)
 
     orchestrator_plan = subparsers.add_parser("orchestrator-plan", help="Cria plano via orquestrador.")
     orchestrator_plan.add_argument("--goal", required=True)
@@ -147,6 +168,9 @@ def main(argv: List[str]) -> int:
 
     if args.action == "memory-stats":
         return execute("memory_agent.stats")
+
+    if args.action == "learning-stats":
+        return execute("learning_agent.stats")
 
     if args.action == "orchestrator-status":
         return execute("orchestrator_agent.status")
@@ -196,6 +220,55 @@ def main(argv: List[str]) -> int:
         if args.tag:
             payload["tag"] = args.tag
         return execute("memory_agent.list", payload)
+
+    if args.action == "learning-learn":
+        return execute(
+            "learning_agent.learn",
+            {
+                "title": args.title,
+                "content": args.content,
+                "type": args.type,
+                "tags": parse_tags(args.tags),
+                "source": args.source,
+                "importance": args.importance,
+            },
+        )
+
+    if args.action == "learning-error":
+        return execute(
+            "learning_agent.error",
+            {
+                "title": args.title,
+                "symptom": args.symptom,
+                "cause": args.cause,
+                "fix": args.fix,
+                "prevention": args.prevention,
+                "severity": args.severity,
+                "tags": parse_tags(args.tags),
+                "source": args.source,
+            },
+        )
+
+    if args.action == "learning-playbook":
+        return execute(
+            "learning_agent.playbook",
+            {
+                "title": args.title,
+                "objective": args.objective,
+                "steps": parse_tags(args.steps),
+                "tags": parse_tags(args.tags),
+                "source": args.source,
+            },
+        )
+
+    if args.action == "learning-search":
+        return execute(
+            "learning_agent.search",
+            {
+                "query": args.query,
+                "limit": args.limit,
+            },
+        )
 
     if args.action == "orchestrator-plan":
         return execute(

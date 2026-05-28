@@ -1,6 +1,47 @@
 {
   "agents": [
     {
+      "agent_id": "learning_agent",
+      "capabilities": [
+        "best_practices",
+        "errors",
+        "learning",
+        "lessons",
+        "operational_knowledge",
+        "patterns",
+        "playbooks",
+        "training"
+      ],
+      "class_name": "LearningAgent",
+      "description": "Agente de aprendizado operacional e conhecimento treinavel do K-Atlas OS.",
+      "enabled": true,
+      "metadata": {
+        "base_class": "BaseAgent",
+        "created_for": "K-Atlas OS",
+        "learning_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\learning",
+        "module_role": "operational_learning_and_training_knowledge",
+        "stores": {
+          "errors": "C:\\Users\\oi\\Desktop\\motor-digital\\learning\\errors\\errors.json",
+          "lessons": "C:\\Users\\oi\\Desktop\\motor-digital\\learning\\lessons\\lessons.json",
+          "playbooks": "C:\\Users\\oi\\Desktop\\motor-digital\\learning\\playbooks\\playbooks.json",
+          "training": "C:\\Users\\oi\\Desktop\\motor-digital\\learning\\training\\training_items.json"
+        },
+        "type": "learning"
+      },
+      "module": "agents.learning_agent",
+      "name": "Learning Agent",
+      "permissions": [
+        "agent.execute",
+        "events.read",
+        "learning.read",
+        "learning.write",
+        "memory.read",
+        "memory.write"
+      ],
+      "registered_at": "2026-05-28T16:08:40.232230+00:00",
+      "version": "0.1.0"
+    },
+    {
       "agent_id": "memory_agent",
       "capabilities": [
         "context",
@@ -27,7 +68,7 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T15:43:18.942647+00:00",
+      "registered_at": "2026-05-28T16:08:40.230830+00:00",
       "version": "0.1.0"
     },
     {
@@ -61,7 +102,7 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T15:43:18.943794+00:00",
+      "registered_at": "2026-05-28T16:08:40.233399+00:00",
       "version": "0.1.0"
     },
     {
@@ -92,7 +133,7 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T15:43:18.939522+00:00",
+      "registered_at": "2026-05-28T16:08:40.226640+00:00",
       "version": "0.1.0"
     },
     {
@@ -123,10 +164,10 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T15:43:18.941021+00:00",
+      "registered_at": "2026-05-28T16:08:40.228393+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T15:43:18.971632+00:00",
-  "registry_id": "7b6b35ee-d9c9-48c1-9a9c-6b69978b3ec1"
+  "exported_at": "2026-05-28T16:08:40.241236+00:00",
+  "registry_id": "7a04490f-966b-40bb-91c1-292f777eedc5"
 }

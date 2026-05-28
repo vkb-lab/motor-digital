@@ -1,5 +1,13 @@
 {
   "agent_permissions": {
+    "learning_agent": [
+      "agent.execute",
+      "events.read",
+      "learning.read",
+      "learning.write",
+      "memory.read",
+      "memory.write"
+    ],
     "memory_agent": [
       "agent.execute",
       "events.read",
@@ -33,6 +41,9 @@
   },
   "agent_roles": {
     "kernel": [
+      "system"
+    ],
+    "learning_agent": [
       "system"
     ],
     "memory_agent": [
