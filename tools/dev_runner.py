@@ -6,7 +6,7 @@ Executor local para validar o estado do projeto.
 Compatível com Windows / PowerShell / UTF-8.
 
 Uso:
-python .\tools\dev_runner.py
+python tools/dev_runner.py
 """
 
 from __future__ import annotations
@@ -165,3 +165,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
