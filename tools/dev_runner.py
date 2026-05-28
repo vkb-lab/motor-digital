@@ -86,6 +86,11 @@ COMMANDS = [
         "required": True,
     },
     {
+        "name": "smoke_test_specialist_council",
+        "cmd": [sys.executable, "smoke_test_specialist_council.py"],
+        "required": True,
+    },
+    {
         "name": "smoke_test_orchestrator_agent",
         "cmd": [sys.executable, "smoke_test_orchestrator_agent.py"],
         "required": True,
