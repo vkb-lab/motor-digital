@@ -30,7 +30,7 @@ if __name__ == "__main__":
         temp_root = Path(temp_dir)
 
         kernel = create_kernel(root_path=ROOT)
-        kernel.start(load_state=True)
+        kernel.start(load_state=False)
 
         learning_agent = LearningAgent(root_path=temp_root)
         kernel.register_agent(learning_agent, replace=True, roles=["system"])
@@ -139,4 +139,4 @@ if __name__ == "__main__":
         print("stats:", stats.output["totals"])
         print("training_pack:", export_pack.output["output_path"])
 
-        kernel.stop(save_state=True)
+        kernel.stop(save_state=False)
