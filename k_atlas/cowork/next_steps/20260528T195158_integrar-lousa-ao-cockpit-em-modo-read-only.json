@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "recommendation_id": "528c9892-cf98-47f2-b35b-136d603207fc",
+  "created_at": "2026-05-28T19:51:58.508678+00:00",
+  "analysis": {
+    "priority": "normal",
+    "risk": "medium",
+    "justification": "A Lousa ja existe e possui o primeiro movimento operacional. Exibir no cockpit aumenta observabilidade sem risco destrutivo.",
+    "next_step_correct": "Integrar Lousa ao cockpit em modo read-only.",
+    "next_step_dangerous": "Criar automacao de navegador, autoexecucao ou autoaplicacao de patches agora.",
+    "prompt_for_engineer": "Quero executar o proximo passo seguro do K-Atlas OS.\n\nProximo passo correto: Integrar Lousa ao cockpit em modo read-only.\n\nPrioridade: normal\nRisco: medium\n\nJustificativa: A Lousa ja existe e possui o primeiro movimento operacional. Exibir no cockpit aumenta observabilidade sem risco destrutivo.\n\nNao fazer agora: Criar automacao de navegador, autoexecucao ou autoaplicacao de patches agora.\n\nRequisitos:\n- Python puro\n- UTF-8\n- compatibilidade Windows\n- comandos completos PowerShell\n- smoke test\n- dev_runner quando aplicavel\n- commit Git\n- modo supervisionado\n- sem autoexecucao\n- sem autoaplicacao de patch\n- sem controle automatico de navegador\n\nEntregue o comando completo para executar este passo com seguranca.",
+    "signals": [
+      "Existem propostas em patch_inbox para revisar.",
+      "dev_runner_report indica validacao OK."
+    ],
+    "bottlenecks": [],
+    "risks": [
+      "Existem patches aprovados apenas para revisao. Nao aplicar automaticamente."
+    ]
+  },
+  "state_summary": {
+    "dev_runner_success": true,
+    "lousa_cards": 4,
+    "cowork_steps": 10,
+    "cowork_reviews": 3,
+    "module_reports": 5,
+    "patch_inbox": 1,
+    "patch_approved": 1
+  },
+  "policy": {
+    "mode": "analysis-only",
+    "can_execute_commands": false,
+    "can_modify_code": false,
+    "can_approve_patches": false,
+    "can_apply_patches": false,
+    "can_control_browser": false,
+    "can_access_chatgpt": false,
+    "requires_human_operator": true
+  }
+}
