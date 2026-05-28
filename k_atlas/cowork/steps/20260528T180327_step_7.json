@@ -1,0 +1,11 @@
+{
+  "step_id": "75fe1947-3bee-48ff-9067-f4cbc9980a85",
+  "step_number": 7,
+  "title": "Aprovar proposta apenas para revisao",
+  "command": "Usar approval_gate para aprovar proposta supervisionada sem aplicar patch e mantendo auto_apply bloqueado.",
+  "result_summary": "Proposta movida para patch_approved como revisao supervisionada. Nenhum codigo foi alterado.",
+  "status": "done",
+  "risk": "medium",
+  "created_at": "2026-05-28T18:03:27.219306+00:00",
+  "updated_at": "2026-05-28T18:03:27.219306+00:00"
+}
