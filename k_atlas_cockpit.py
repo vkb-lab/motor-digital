@@ -25,6 +25,7 @@ from typing import Any, Dict, List
 
 from cockpit.components.cards import render_command_health, render_metric_grid
 from cockpit.services.kernel_service import collect_operational_snapshot
+from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
 from cockpit.state.session_state import init_session_state
 from cockpit.utils.formatting import to_display_rows
 
@@ -331,6 +332,74 @@ def render_events_tab(st: Any, snapshot: Dict[str, Any]) -> None:
                 st.code(item.get("tail", ""), language="text")
 
 
+
+def render_self_evolution_tab(st: Any, snapshot: Dict[str, Any]) -> None:
+    st.subheader("Self Evolution")
+
+    self_snapshot = collect_self_evolution_snapshot(limit=50)
+    totals = self_snapshot.get("totals", {})
+    policy = self_snapshot.get("policy", {})
+
+    render_metric_grid(
+        st,
+        [
+            {"label": "Patch Requests", "value": totals.get("patch_requests", 0)},
+            {"label": "Patch Inbox", "value": totals.get("patch_inbox", 0)},
+            {"label": "Approved", "value": totals.get("patch_approved", 0)},
+            {"label": "Rejected", "value": totals.get("patch_rejected", 0)},
+            {"label": "Snapshots", "value": totals.get("snapshots", 0)},
+            {"label": "Rollback Plans", "value": totals.get("rollback", 0)},
+        ],
+    )
+
+    st.info("Modo read-only. O cockpit nao aplica patches, nao aprova e nao rejeita propostas.")
+
+    st.markdown("#### Policy")
+    st.json(policy)
+
+    st.markdown("#### Risk Summary")
+    st.dataframe(self_snapshot.get("risk_summary", []), use_container_width=True)
+
+    data = self_snapshot.get("data", {})
+
+    sections = [
+        ("Patch Requests", "patch_requests"),
+        ("Patch Inbox", "patch_inbox"),
+        ("Patch Approved", "patch_approved"),
+        ("Patch Rejected", "patch_rejected"),
+        ("Snapshots", "snapshots"),
+        ("Rollback", "rollback"),
+    ]
+
+    for title, key in sections:
+        st.markdown("#### " + title)
+        items = data.get(key, [])
+
+        rows = []
+        for item in items:
+            payload = item.get("data", {})
+            rows.append(
+                {
+                    "name": item.get("name"),
+                    "status": payload.get("status"),
+                    "title": payload.get("title"),
+                    "risk_level": payload.get("risk", {}).get("risk_level") if isinstance(payload.get("risk"), dict) else None,
+                    "risk_score": payload.get("risk", {}).get("risk_score") if isinstance(payload.get("risk"), dict) else None,
+                    "modified_at": item.get("modified_at"),
+                    "path": item.get("path"),
+                }
+            )
+
+        st.dataframe(rows, use_container_width=True)
+
+        for item in items:
+            with st.expander(item.get("name", "item")):
+                st.json(item.get("data"))
+                if item.get("diff"):
+                    st.markdown("Diff")
+                    st.code(item.get("diff"), language="diff")
+
+
 def main() -> None:
     import streamlit as st
 
@@ -386,6 +455,7 @@ def main() -> None:
             "Memory",
             "Learning",
             "Events",
+            "Self Evolution",
         ]
     )
 
@@ -406,6 +476,9 @@ def main() -> None:
 
     with tabs[5]:
         render_events_tab(st, snapshot)
+
+    with tabs[6]:
+        render_self_evolution_tab(st, snapshot)
 
 
 if __name__ == "__main__":

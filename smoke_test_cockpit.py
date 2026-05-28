@@ -7,7 +7,7 @@ Valida:
 - importacao dos servicos
 - disponibilidade do Streamlit
 - integracao basica com kernel
-- snapshot operacional minimo
+- leitura read-only da Self Evolution
 
 Uso:
 python smoke_test_cockpit.py
@@ -18,6 +18,7 @@ from __future__ import annotations
 import importlib
 
 from cockpit.services.kernel_service import cockpit_boot_check, collect_operational_snapshot
+from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
 
 
 def assert_true(condition: bool, message: str) -> None:
@@ -48,6 +49,16 @@ if __name__ == "__main__":
     assert_true("learning_playbooks" in snapshot["data"], "learning_playbooks ausente")
     assert_true("events" in snapshot["data"], "events ausente")
 
+    self_snapshot = collect_self_evolution_snapshot()
+
+    assert_true(self_snapshot["success"], "self_evolution snapshot falhou")
+    assert_true(self_snapshot["policy"]["mode"] == "read-only", "self_evolution nao esta read-only")
+    assert_true(self_snapshot["policy"]["can_apply_patch"] is False, "cockpit nao pode aplicar patch")
+    assert_true("patch_requests" in self_snapshot["data"], "patch_requests ausente")
+    assert_true("patch_inbox" in self_snapshot["data"], "patch_inbox ausente")
+    assert_true("rollback" in self_snapshot["data"], "rollback ausente")
+
     print("Cockpit smoke test OK")
     print("health:", snapshot["health"])
     print("agents_total:", len(snapshot["data"]["agents"]))
+    print("self_evolution_totals:", self_snapshot["totals"])
