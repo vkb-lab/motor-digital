@@ -1,0 +1,5 @@
+{
+  "created_at": "2026-05-27T21:31:38.977429",
+  "command": "cliente piscina urgente criar conteudo instagram",
+  "response": "Cliente de piscina identificado e perfilado.\nInstagram/conteudo detectado. Acionando roteador e executor.\n[21:31:38] Executando agente: sales_orchestrator\n\n[21:31:38] Executando agente: instagram_content_pack\n[21:31:38] Erro no agente instagram_content_pack: 'charmap' codec can't encode character '\\ufffd' in position 193: character maps to <undefined>\n"
+}

@@ -1,89 +1,70 @@
-import subprocess
+﻿import subprocess
 from datetime import datetime
 
 
 class AutoExecutor:
 
     def __init__(self):
-
-        self.agents_map = {
-            "customer_profiler": [
-                "python",
-                "-m",
-                "k_atlas.products.customer_profiler",
-                "--message"
-            ],
-
-            "instagram_content_pack": [
-                "python",
-                "-m",
-                "k_atlas.agents.instagram_content_pack",
-                "--file"
-            ],
-
-            "sales_orchestrator": [
-                "python",
-                "-m",
-                "k_atlas.products.sales_orchestrator",
-                "--product"
-            ],
-
-            "publisher_instagram": [
-                "python",
-                "-m",
-                "k_atlas.agents.publisher_instagram"
-            ]
-        }
+        self.product_file = "k_atlas/products/data/product_20260527_174445.json"
 
     def log(self, message):
-
         now = datetime.now().strftime("%H:%M:%S")
-
         print(f"[{now}] {message}")
 
-    def run_agent(self, agent_name, value=None):
-
-        if agent_name not in self.agents_map:
-
-            self.log(f"Agente nao encontrado: {agent_name}")
+    def safe_print(self, text):
+        if not text:
             return
 
-        command = self.agents_map[agent_name].copy()
+        clean = (
+            text
+            .replace("\ufffd", "")
+            .replace("🔥", "")
+            .replace("ção", "cao")
+            .replace("ções", "coes")
+            .replace("ã", "a")
+            .replace("á", "a")
+            .replace("é", "e")
+            .replace("í", "i")
+            .replace("ó", "o")
+            .replace("ú", "u")
+            .replace("ç", "c")
+        )
 
-        if value:
-            command.append(value)
+        print(clean)
 
-        self.log(f"Executando agente: {agent_name}")
+    def run(self, command):
+        result = subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace"
+        )
 
-        try:
+        self.safe_print(result.stdout)
+        self.safe_print(result.stderr)
 
-            result = subprocess.run(
-                command,
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                errors="replace"
-            )
+    def execute(self):
+        self.log("Executando agente: sales_orchestrator")
+        self.run([
+            "python",
+            "-m",
+            "k_atlas.products.sales_orchestrator",
+            "--product",
+            self.product_file,
+            "--message",
+            "Cliente urgente de piscina precisa resolver hoje"
+        ])
 
-            print(result.stdout)
-
-        except Exception as e:
-
-            self.log(f"Erro no agente {agent_name}: {e}")
+        self.log("Executando agente: instagram_content_pack")
+        self.run([
+            "python",
+            "-m",
+            "k_atlas.agents.instagram_content_pack",
+            "--file",
+            self.product_file
+        ])
 
 
 if __name__ == "__main__":
-
-    executor = AutoExecutor()
-
-    product_file = "k_atlas/products/data/product_20260527_174445.json"
-
-    executor.run_agent(
-        "sales_orchestrator",
-        product_file
-    )
-
-    executor.run_agent(
-        "instagram_content_pack",
-        product_file
-    )
+    AutoExecutor().execute()
