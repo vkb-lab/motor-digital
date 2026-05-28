@@ -1,0 +1,11 @@
+{
+  "step_id": "8feb3b7d-2909-47fd-82a7-a84d01b76f6a",
+  "step_number": 6,
+  "title": "Criar proposta supervisionada de patch",
+  "command": "Usar patch_engine para criar proposta em patch_inbox com diff, risco, snapshot e rollback, sem aplicar alteracao.",
+  "result_summary": "Proposta de patch criada em modo supervisionado. Nenhum codigo foi alterado automaticamente.",
+  "status": "done",
+  "risk": "medium",
+  "created_at": "2026-05-28T17:51:04.948315+00:00",
+  "updated_at": "2026-05-28T17:51:04.948315+00:00"
+}

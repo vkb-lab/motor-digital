@@ -3,9 +3,9 @@
   "goal": "Executar 10 ciclos supervisionados de desenvolvimento K-Atlas no formato pergunta, comando, teste, correção, commit e avaliação",
   "status": "active",
   "max_steps": 10,
-  "current_step": 5,
+  "current_step": 6,
   "created_at": "2026-05-28T17:38:04.641925+00:00",
-  "updated_at": "2026-05-28T17:46:28.812567+00:00",
+  "updated_at": "2026-05-28T17:51:04.948315+00:00",
   "rules": {
     "supervised": true,
     "human_pastes_commands": true,
@@ -69,6 +69,17 @@
       "risk": "low",
       "created_at": "2026-05-28T17:46:28.812567+00:00",
       "updated_at": "2026-05-28T17:46:28.812567+00:00"
+    },
+    {
+      "step_id": "8feb3b7d-2909-47fd-82a7-a84d01b76f6a",
+      "step_number": 6,
+      "title": "Criar proposta supervisionada de patch",
+      "command": "Usar patch_engine para criar proposta em patch_inbox com diff, risco, snapshot e rollback, sem aplicar alteracao.",
+      "result_summary": "Proposta de patch criada em modo supervisionado. Nenhum codigo foi alterado automaticamente.",
+      "status": "done",
+      "risk": "medium",
+      "created_at": "2026-05-28T17:51:04.948315+00:00",
+      "updated_at": "2026-05-28T17:51:04.948315+00:00"
     }
   ]
 }
