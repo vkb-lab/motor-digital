@@ -9,6 +9,7 @@ python k_atlas_boot.py
 python k_atlas_boot.py system_agent.status
 python k_atlas_boot.py system_agent.agents
 python k_atlas_boot.py task_agent.stats
+python k_atlas_boot.py memory_agent.stats
 """
 
 from __future__ import annotations
@@ -19,6 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
 
+from agents.memory_agent import MemoryAgent
 from agents.system_agent import SystemAgent
 from agents.task_agent import TaskAgent
 from core.kernel import KAtlasKernel, create_kernel
@@ -47,6 +49,13 @@ def build_kernel() -> KAtlasKernel:
     task_agent = TaskAgent(storage_path=ROOT / "memory" / "tasks.json")
     kernel.register_agent(
         task_agent,
+        replace=True,
+        roles=["agent"],
+    )
+
+    memory_agent = MemoryAgent(storage_path=ROOT / "memory" / "entries.json")
+    kernel.register_agent(
+        memory_agent,
         replace=True,
         roles=["agent"],
     )

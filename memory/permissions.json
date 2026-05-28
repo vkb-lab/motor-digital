@@ -1,5 +1,11 @@
 {
   "agent_permissions": {
+    "memory_agent": [
+      "agent.execute",
+      "events.read",
+      "memory.read",
+      "memory.write"
+    ],
     "system_agent": [
       "agent.execute",
       "events.read",
@@ -18,6 +24,9 @@
   "agent_roles": {
     "kernel": [
       "system"
+    ],
+    "memory_agent": [
+      "agent"
     ],
     "system": [
       "system"

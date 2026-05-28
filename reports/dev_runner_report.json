@@ -1,7 +1,7 @@
 {
   "app": "K-Atlas OS",
   "runner": "local_dev_runner",
-  "created_at": "2026-05-28T14:08:52.435819+00:00",
+  "created_at": "2026-05-28T15:25:08.024461+00:00",
   "root": "C:\\Users\\oi\\Desktop\\motor-digital",
   "success": true,
   "failed_required": [],
@@ -15,10 +15,10 @@
       "required": true,
       "success": true,
       "returncode": 0,
-      "stdout": "2026-05-28 11:08:50,716 | INFO | k_atlas.kernel | Kernel iniciado: ba8c7c44-ac05-4dfb-903e-913538b1548f\n{'success': True, 'agent_id': 'echo_agent', 'action': 'ping', 'output': {'received_command': 'ping', 'received_payload': {'source': 'smoke_test'}, 'message': 'Kernel K-Atlas OS operacional.'}, 'error': None, 'event_id': 'e7f5d062-4f80-4315-9ae5-4403c650f3ce', 'duration_ms': 1.699, 'metadata': {}, 'created_at': '2026-05-28T14:08:50.727555+00:00'}\n{'kernel_id': 'ba8c7c44-ac05-4dfb-903e-913538b1548f', 'app_name': 'K-Atlas OS', 'environment': 'local', 'running': True, 'started_at': '2026-05-28T14:08:50.716745+00:00', 'root_path': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital', 'registry_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\registry.json', 'permissions_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\permissions.json', 'agents_total': 1, 'agents_enabled': 1, 'routes_total': 0}\n2026-05-28 11:08:50,737 | INFO | k_atlas.kernel | Kernel encerrado: ba8c7c44-ac05-4dfb-903e-913538b1548f\n",
+      "stdout": "2026-05-28 12:25:05,935 | INFO | k_atlas.kernel | Kernel iniciado: b4394d60-aaa7-4e1a-908e-caab1638f604\n{'success': True, 'agent_id': 'echo_agent', 'action': 'ping', 'output': {'received_command': 'ping', 'received_payload': {'source': 'smoke_test'}, 'message': 'Kernel K-Atlas OS operacional.'}, 'error': None, 'event_id': '09874a5e-8625-4151-99f6-33b2f3f13554', 'duration_ms': 0.828, 'metadata': {}, 'created_at': '2026-05-28T15:25:05.942745+00:00'}\n{'kernel_id': 'b4394d60-aaa7-4e1a-908e-caab1638f604', 'app_name': 'K-Atlas OS', 'environment': 'local', 'running': True, 'started_at': '2026-05-28T15:25:05.935155+00:00', 'root_path': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital', 'registry_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\registry.json', 'permissions_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\permissions.json', 'agents_total': 1, 'agents_enabled': 1, 'routes_total': 0}\n2026-05-28 12:25:05,948 | INFO | k_atlas.kernel | Kernel encerrado: b4394d60-aaa7-4e1a-908e-caab1638f604\n",
       "stderr": "",
-      "started_at": "2026-05-28T14:08:50.557562+00:00",
-      "finished_at": "2026-05-28T14:08:50.759011+00:00"
+      "started_at": "2026-05-28T15:25:05.741517+00:00",
+      "finished_at": "2026-05-28T15:25:05.965073+00:00"
     },
     {
       "name": "smoke_test_system_agent",
@@ -29,10 +29,10 @@
       "required": true,
       "success": true,
       "returncode": 0,
-      "stdout": "2026-05-28 11:08:50,926 | INFO | k_atlas.kernel | Kernel iniciado: 6cf82a52-fe9c-4c1a-a810-3a4e71c5cec3\nPING:\n{'success': True, 'agent_id': 'system_agent', 'action': 'ping', 'output': {'success': True, 'agent_id': 'system_agent', 'message': 'SystemAgent operacional.'}, 'error': None, 'event_id': 'cd3204c2-16b1-4634-9b83-bfbec0aca939', 'duration_ms': 0.872, 'metadata': {}, 'created_at': '2026-05-28T14:08:50.931052+00:00'}\nSTATUS:\n{'success': True, 'agent_id': 'system_agent', 'action': 'status', 'output': {'success': True, 'kernel': {'kernel_id': '6cf82a52-fe9c-4c1a-a810-3a4e71c5cec3', 'app_name': 'K-Atlas OS', 'environment': 'local', 'running': True, 'started_at': '2026-05-28T14:08:50.926250+00:00', 'root_path': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital', 'registry_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\registry.json', 'permissions_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\permissions.json', 'agents_total': 1, 'agents_enabled': 1, 'routes_total': 0}}, 'error': None, 'event_id': '31a95ef3-9815-498f-8541-73cc3061d1e7', 'duration_ms': 0.594, 'metadata': {}, 'created_at': '2026-05-28T14:08:50.936081+00:00'}\nAGENTS:\n{'success': True, 'agent_id': 'system_agent', 'action': 'agents', 'output': {'success': True, 'agents': [{'agent_id': 'system_agent', 'name': 'System Agent', 'description': 'Agente de controle operacional do K-Atlas OS.', 'version': '0.1.0', 'module': 'agents.system_agent', 'class_name': 'SystemAgent', 'capabilities': ['agents', 'diagnostics', 'events', 'kernel', 'permissions', 'status', 'system'], 'permissions': ['agent.execute', 'events.read', 'kernel.status', 'registry.read'], 'enabled': True, 'metadata': {'base_class': 'BaseAgent', 'type': 'system', 'created_for': 'K-Atlas OS', 'module_role': 'kernel_operations'}, 'registered_at': '2026-05-28T14:08:50.926997+00:00'}]}, 'error': None, 'event_id': 'f198fcd6-7eb4-4f66-8134-d3fbf8303e80', 'duration_ms': 0.535, 'metadata': {}, 'created_at': '2026-05-28T14:08:50.939991+00:00'}\nPERMISSIONS:\n{'success': True, 'agent_id': 'system_agent', 'action': 'permissions', 'output': {'success': True, 'agent_id': 'system_agent', 'roles': ['system'], 'permissions': ['agent.*', 'agent.execute', 'api.*', 'campaign.*', 'cloud.*', 'events.*', 'events.read', 'kernel.*', 'kernel.status', 'memory.*', 'registry.*', 'registry.read', 'router.*', 'worker.*']}, 'error': None, 'event_id': 'cc4d1503-3e8e-408e-906e-2ef60f5b02a9', 'duration_ms': 0.539, 'metadata': {}, 'created_at': '2026-05-28T14:08:50.943525+00:00'}\n2026-05-28 11:08:50,947 | INFO | k_atlas.kernel | Kernel encerrado: 6cf82a52-fe9c-4c1a-a810-3a4e71c5cec3\n",
+      "stdout": "2026-05-28 12:25:06,120 | INFO | k_atlas.kernel | Kernel iniciado: d98f09af-d500-4856-bd68-c3e5e03dacca\nPING:\n{'success': True, 'agent_id': 'system_agent', 'action': 'ping', 'output': {'success': True, 'agent_id': 'system_agent', 'message': 'SystemAgent operacional.'}, 'error': None, 'event_id': 'adbeb3b4-6fa3-42f4-85ee-92d5c0d53063', 'duration_ms': 0.897, 'metadata': {}, 'created_at': '2026-05-28T15:25:06.125969+00:00'}\nSTATUS:\n{'success': True, 'agent_id': 'system_agent', 'action': 'status', 'output': {'success': True, 'kernel': {'kernel_id': 'd98f09af-d500-4856-bd68-c3e5e03dacca', 'app_name': 'K-Atlas OS', 'environment': 'local', 'running': True, 'started_at': '2026-05-28T15:25:06.120468+00:00', 'root_path': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital', 'registry_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\registry.json', 'permissions_file': 'C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\memory\\\\permissions.json', 'agents_total': 1, 'agents_enabled': 1, 'routes_total': 0}}, 'error': None, 'event_id': '6c0f3dd6-46cf-4247-967d-ad39e67b32f4', 'duration_ms': 0.485, 'metadata': {}, 'created_at': '2026-05-28T15:25:06.129297+00:00'}\nAGENTS:\n{'success': True, 'agent_id': 'system_agent', 'action': 'agents', 'output': {'success': True, 'agents': [{'agent_id': 'system_agent', 'name': 'System Agent', 'description': 'Agente de controle operacional do K-Atlas OS.', 'version': '0.1.0', 'module': 'agents.system_agent', 'class_name': 'SystemAgent', 'capabilities': ['agents', 'diagnostics', 'events', 'kernel', 'permissions', 'status', 'system'], 'permissions': ['agent.execute', 'events.read', 'kernel.status', 'registry.read'], 'enabled': True, 'metadata': {'base_class': 'BaseAgent', 'type': 'system', 'created_for': 'K-Atlas OS', 'module_role': 'kernel_operations'}, 'registered_at': '2026-05-28T15:25:06.121435+00:00'}]}, 'error': None, 'event_id': 'fe88d7bd-e69f-4ad3-9c44-8655dc6b98f5', 'duration_ms': 0.975, 'metadata': {}, 'created_at': '2026-05-28T15:25:06.133802+00:00'}\nPERMISSIONS:\n{'success': True, 'agent_id': 'system_agent', 'action': 'permissions', 'output': {'success': True, 'agent_id': 'system_agent', 'roles': ['system'], 'permissions': ['agent.*', 'agent.execute', 'api.*', 'campaign.*', 'cloud.*', 'events.*', 'events.read', 'kernel.*', 'kernel.status', 'memory.*', 'registry.*', 'registry.read', 'router.*', 'worker.*']}, 'error': None, 'event_id': 'c6d9f4b8-9795-4a22-9161-71d9e1b89554', 'duration_ms': 0.557, 'metadata': {}, 'created_at': '2026-05-28T15:25:06.137421+00:00'}\n2026-05-28 12:25:06,142 | INFO | k_atlas.kernel | Kernel encerrado: d98f09af-d500-4856-bd68-c3e5e03dacca\n",
       "stderr": "",
-      "started_at": "2026-05-28T14:08:50.759188+00:00",
-      "finished_at": "2026-05-28T14:08:50.963987+00:00"
+      "started_at": "2026-05-28T15:25:05.965307+00:00",
+      "finished_at": "2026-05-28T15:25:06.160410+00:00"
     },
     {
       "name": "smoke_test_task_agent",
@@ -43,10 +43,24 @@
       "required": true,
       "success": true,
       "returncode": 0,
-      "stdout": "2026-05-28 11:08:51,136 | INFO | k_atlas.kernel | Kernel iniciado: 77a6cec6-cbc2-4363-92e9-ce4789716e31\nTaskAgent smoke test OK\ntask_id: b651d45f-e6c1-45e8-a82f-539ba47b5024\ntotal_tasks: 1\n2026-05-28 11:08:51,201 | INFO | k_atlas.kernel | Kernel encerrado: 77a6cec6-cbc2-4363-92e9-ce4789716e31\n",
+      "stdout": "2026-05-28 12:25:06,351 | INFO | k_atlas.kernel | Kernel iniciado: b8a74457-1c08-4b07-b1b0-d7a65b4dfbc8\nTaskAgent smoke test OK\ntask_id: 0b11d794-94e1-4ff3-a769-d298c0e33c69\ntotal_tasks: 2\n2026-05-28 12:25:06,414 | INFO | k_atlas.kernel | Kernel encerrado: b8a74457-1c08-4b07-b1b0-d7a65b4dfbc8\n",
       "stderr": "",
-      "started_at": "2026-05-28T14:08:50.964184+00:00",
-      "finished_at": "2026-05-28T14:08:51.218227+00:00"
+      "started_at": "2026-05-28T15:25:06.160639+00:00",
+      "finished_at": "2026-05-28T15:25:06.429254+00:00"
+    },
+    {
+      "name": "smoke_test_memory_agent",
+      "cmd": [
+        "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe",
+        "smoke_test_memory_agent.py"
+      ],
+      "required": true,
+      "success": true,
+      "returncode": 0,
+      "stdout": "2026-05-28 12:25:06,601 | INFO | k_atlas.kernel | Kernel iniciado: bdfa2c53-548d-4714-8a1b-5fe95f1ddcca\nMemoryAgent smoke test OK\nmemory_id: 2f830960-3126-4a15-850a-96e6626ce688\ntotal_memories: 1\n2026-05-28 12:25:06,640 | INFO | k_atlas.kernel | Kernel encerrado: bdfa2c53-548d-4714-8a1b-5fe95f1ddcca\n",
+      "stderr": "",
+      "started_at": "2026-05-28T15:25:06.429576+00:00",
+      "finished_at": "2026-05-28T15:25:06.655841+00:00"
     },
     {
       "name": "smoke_test_boot",
@@ -57,16 +71,16 @@
       "required": true,
       "success": true,
       "returncode": 0,
-      "stdout": "2026-05-28 11:08:51,526 | INFO | k_atlas.kernel | Kernel iniciado: 158d604d-2cc5-4269-aa3a-c507bf3cb739\nK-Atlas OS boot OK\nCommand: system_agent.status\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 11:08:51,539 | INFO | k_atlas.kernel | Kernel encerrado: 158d604d-2cc5-4269-aa3a-c507bf3cb739\n\n2026-05-28 11:08:51,727 | INFO | k_atlas.kernel | Kernel iniciado: 81a645dd-072a-4060-a660-33f532f8f338\nK-Atlas OS boot OK\nCommand: system_agent.ping\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 11:08:51,741 | INFO | k_atlas.kernel | Kernel encerrado: 81a645dd-072a-4060-a660-33f532f8f338\n\n2026-05-28 11:08:51,954 | INFO | k_atlas.kernel | Kernel iniciado: 2ed85d09-f7b3-484f-becd-efacf5aa6dc5\nK-Atlas OS boot OK\nCommand: system_agent.agents\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 11:08:51,969 | INFO | k_atlas.kernel | Kernel encerrado: 2ed85d09-f7b3-484f-becd-efacf5aa6dc5\n\n2026-05-28 11:08:52,178 | INFO | k_atlas.kernel | Kernel iniciado: c3ee49c1-f375-4168-a35e-9741d6d0df92\nK-Atlas OS boot OK\nCommand: task_agent.ping\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 11:08:52,193 | INFO | k_atlas.kernel | Kernel encerrado: c3ee49c1-f375-4168-a35e-9741d6d0df92\n\n2026-05-28 11:08:52,399 | INFO | k_atlas.kernel | Kernel iniciado: 11581f8e-7ac5-4f1b-b200-2131e70a8af0\nK-Atlas OS boot OK\nCommand: task_agent.stats\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 11:08:52,409 | INFO | k_atlas.kernel | Kernel encerrado: 11581f8e-7ac5-4f1b-b200-2131e70a8af0\n\nSmoke test boot OK\n",
+      "stdout": "2026-05-28 12:25:06,902 | INFO | k_atlas.kernel | Kernel iniciado: 8e636ca3-3524-4441-afad-03d3169624af\nK-Atlas OS boot OK\nCommand: system_agent.status\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:06,914 | INFO | k_atlas.kernel | Kernel encerrado: 8e636ca3-3524-4441-afad-03d3169624af\n\n2026-05-28 12:25:07,094 | INFO | k_atlas.kernel | Kernel iniciado: 9f5e8184-ad57-45b5-85f8-5d8415f6e09e\nK-Atlas OS boot OK\nCommand: system_agent.ping\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:07,113 | INFO | k_atlas.kernel | Kernel encerrado: 9f5e8184-ad57-45b5-85f8-5d8415f6e09e\n\n2026-05-28 12:25:07,294 | INFO | k_atlas.kernel | Kernel iniciado: 2a30af49-1438-487f-9b0d-c2a506abecb1\nK-Atlas OS boot OK\nCommand: system_agent.agents\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:07,306 | INFO | k_atlas.kernel | Kernel encerrado: 2a30af49-1438-487f-9b0d-c2a506abecb1\n\n2026-05-28 12:25:07,472 | INFO | k_atlas.kernel | Kernel iniciado: b185371f-c4ba-48eb-bf9a-6b5c43817897\nK-Atlas OS boot OK\nCommand: task_agent.ping\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:07,483 | INFO | k_atlas.kernel | Kernel encerrado: b185371f-c4ba-48eb-bf9a-6b5c43817897\n\n2026-05-28 12:25:07,633 | INFO | k_atlas.kernel | Kernel iniciado: c6a1fd27-fb53-4d93-8f4b-6b0f582be2d0\nK-Atlas OS boot OK\nCommand: task_agent.stats\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:07,645 | INFO | k_atlas.kernel | Kernel encerrado: c6a1fd27-fb53-4d93-8f4b-6b0f582be2d0\n\n2026-05-28 12:25:07,800 | INFO | k_atlas.kernel | Kernel iniciado: 245dca90-91bb-4fbc-a28f-f72cdf35a97d\nK-Atlas OS boot OK\nCommand: memory_agent.ping\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:07,812 | INFO | k_atlas.kernel | Kernel encerrado: 245dca90-91bb-4fbc-a28f-f72cdf35a97d\n\n2026-05-28 12:25:07,971 | INFO | k_atlas.kernel | Kernel iniciado: 85037ead-6ca1-4918-b69b-1ee943b0ddd0\nK-Atlas OS boot OK\nCommand: memory_agent.stats\nSuccess: True\nReport: C:\\Users\\oi\\Desktop\\motor-digital\\reports\\boot_report.json\n2026-05-28 12:25:07,998 | INFO | k_atlas.kernel | Kernel encerrado: 85037ead-6ca1-4918-b69b-1ee943b0ddd0\n\nSmoke test boot OK\n",
       "stderr": "",
-      "started_at": "2026-05-28T14:08:51.218480+00:00",
-      "finished_at": "2026-05-28T14:08:52.435641+00:00"
+      "started_at": "2026-05-28T15:25:06.656037+00:00",
+      "finished_at": "2026-05-28T15:25:08.024173+00:00"
     }
   ],
   "git_status": {
     "available": true,
     "returncode": 0,
-    "output": "M k_atlas_boot.py\n M memory/permissions.json\n M memory/registry.json\n M reports/boot_report.json\n M smoke_test_boot.py\n M tools/dev_runner.py\n?? agents/task_agent.py\n?? memory/tasks.json\n?? smoke_test_task_agent.py",
+    "output": "M k_atlas_boot.py\n M memory/permissions.json\n M memory/registry.json\n M memory/tasks.json\n M reports/boot_report.json\n M smoke_test_boot.py\n M tools/dev_runner.py\n?? agents/memory_agent.py\n?? memory/entries.json\n?? smoke_test_memory_agent.py",
     "error": ""
   }
 }

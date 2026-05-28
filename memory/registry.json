@@ -1,6 +1,36 @@
 {
   "agents": [
     {
+      "agent_id": "memory_agent",
+      "capabilities": [
+        "context",
+        "knowledge",
+        "memory",
+        "notes",
+        "persistence"
+      ],
+      "class_name": "MemoryAgent",
+      "description": "Agente de memoria operacional do K-Atlas OS.",
+      "enabled": true,
+      "metadata": {
+        "base_class": "BaseAgent",
+        "created_for": "K-Atlas OS",
+        "module_role": "persistent_operational_memory",
+        "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\entries.json",
+        "type": "memory"
+      },
+      "module": "agents.memory_agent",
+      "name": "Memory Agent",
+      "permissions": [
+        "agent.execute",
+        "events.read",
+        "memory.read",
+        "memory.write"
+      ],
+      "registered_at": "2026-05-28T15:25:07.990387+00:00",
+      "version": "0.1.0"
+    },
+    {
       "agent_id": "system_agent",
       "capabilities": [
         "agents",
@@ -28,7 +58,7 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T14:08:52.399939+00:00",
+      "registered_at": "2026-05-28T15:25:07.988277+00:00",
       "version": "0.1.0"
     },
     {
@@ -59,10 +89,10 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T14:08:52.400954+00:00",
+      "registered_at": "2026-05-28T15:25:07.989323+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T14:08:52.406776+00:00",
-  "registry_id": "54cbd639-7294-4d84-9080-5429036c7a15"
+  "exported_at": "2026-05-28T15:25:07.996624+00:00",
+  "registry_id": "b68f9100-8056-4809-9b50-e801b51f6c22"
 }

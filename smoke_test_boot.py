@@ -42,4 +42,6 @@ if __name__ == "__main__":
     run([sys.executable, "k_atlas_boot.py", "system_agent.agents"])
     run([sys.executable, "k_atlas_boot.py", "task_agent.ping"])
     run([sys.executable, "k_atlas_boot.py", "task_agent.stats"])
+    run([sys.executable, "k_atlas_boot.py", "memory_agent.ping"])
+    run([sys.executable, "k_atlas_boot.py", "memory_agent.stats"])
     print("Smoke test boot OK")
