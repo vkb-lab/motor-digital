@@ -51,6 +51,16 @@ COMMANDS = [
         "required": True,
     },
     {
+        "name": "smoke_test_auto_reporter",
+        "cmd": [sys.executable, "smoke_test_auto_reporter.py"],
+        "required": True,
+    },
+    {
+        "name": "smoke_test_self_evolution",
+        "cmd": [sys.executable, "smoke_test_self_evolution.py"],
+        "required": True,
+    },
+    {
         "name": "smoke_test_orchestrator_agent",
         "cmd": [sys.executable, "smoke_test_orchestrator_agent.py"],
         "required": True,
