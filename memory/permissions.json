@@ -1,5 +1,13 @@
 {
   "agent_permissions": {
+    "auto_reporter": [
+      "agent.execute",
+      "events.read",
+      "memory.read",
+      "memory.write",
+      "reports.read",
+      "reports.write"
+    ],
     "learning_agent": [
       "agent.execute",
       "events.read",
@@ -40,6 +48,9 @@
     ]
   },
   "agent_roles": {
+    "auto_reporter": [
+      "system"
+    ],
     "kernel": [
       "system"
     ],

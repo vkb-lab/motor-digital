@@ -1,6 +1,39 @@
 {
   "agents": [
     {
+      "agent_id": "auto_reporter",
+      "capabilities": [
+        "audit",
+        "governance",
+        "markdown",
+        "module_analysis",
+        "operational_review",
+        "reports"
+      ],
+      "class_name": "AutoReporter",
+      "description": "Agente gerador de relatorios operacionais padronizados do K-Atlas OS.",
+      "enabled": true,
+      "metadata": {
+        "base_class": "BaseAgent",
+        "created_for": "K-Atlas OS",
+        "module_role": "operational_reporting_and_governance",
+        "output_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\module_reports",
+        "type": "reporting"
+      },
+      "module": "agents.auto_reporter",
+      "name": "Auto Reporter",
+      "permissions": [
+        "agent.execute",
+        "events.read",
+        "memory.read",
+        "memory.write",
+        "reports.read",
+        "reports.write"
+      ],
+      "registered_at": "2026-05-28T16:50:25.033382+00:00",
+      "version": "0.1.0"
+    },
+    {
       "agent_id": "learning_agent",
       "capabilities": [
         "best_practices",
@@ -38,7 +71,7 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T16:34:53.518674+00:00",
+      "registered_at": "2026-05-28T16:50:25.032137+00:00",
       "version": "0.1.0"
     },
     {
@@ -68,7 +101,7 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T16:34:53.517301+00:00",
+      "registered_at": "2026-05-28T16:50:25.031041+00:00",
       "version": "0.1.0"
     },
     {
@@ -102,7 +135,7 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T16:34:53.519670+00:00",
+      "registered_at": "2026-05-28T16:50:25.034317+00:00",
       "version": "0.1.0"
     },
     {
@@ -133,7 +166,7 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T16:34:53.513468+00:00",
+      "registered_at": "2026-05-28T16:50:25.028663+00:00",
       "version": "0.1.0"
     },
     {
@@ -164,10 +197,10 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T16:34:53.515816+00:00",
+      "registered_at": "2026-05-28T16:50:25.029888+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T16:34:53.524563+00:00",
-  "registry_id": "51378b54-df8e-4735-998a-8ba1ab05c7c8"
+  "exported_at": "2026-05-28T16:50:25.040578+00:00",
+  "registry_id": "f324ff85-20f3-4480-b40a-3761ac315cbb"
 }

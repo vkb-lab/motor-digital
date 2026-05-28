@@ -67,6 +67,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser("memory-stats", help="Mostra estatisticas de memoria.")
     subparsers.add_parser("learning-stats", help="Mostra estatisticas de aprendizado.")
     subparsers.add_parser("orchestrator-status", help="Mostra visao geral do orquestrador.")
+    subparsers.add_parser("report-list", help="Lista relatorios operacionais gerados.")
 
     events = subparsers.add_parser("events", help="Lista eventos recentes.")
     events.add_argument("--limit", type=int, default=20)
@@ -131,6 +132,21 @@ def build_parser() -> argparse.ArgumentParser:
     learning_search.add_argument("query")
     learning_search.add_argument("--limit", type=int, default=50)
 
+    report_generate = subparsers.add_parser("report-generate", help="Gera relatorio operacional Markdown.")
+    report_generate.add_argument("--module-name", required=True)
+    report_generate.add_argument("--objective", required=True)
+    report_generate.add_argument("--files", default="")
+    report_generate.add_argument("--flow", default="")
+    report_generate.add_argument("--strengths", default="")
+    report_generate.add_argument("--bottlenecks", default="")
+    report_generate.add_argument("--risks", default="")
+    report_generate.add_argument("--next-step", default="")
+    report_generate.add_argument("--not-now", default="")
+    report_generate.add_argument("--impact", default="")
+    report_generate.add_argument("--decision", default="aprovado com ressalvas")
+    report_generate.add_argument("--decision-reason", default="")
+    report_generate.add_argument("--tags", default="")
+
     orchestrator_plan = subparsers.add_parser("orchestrator-plan", help="Cria plano via orquestrador.")
     orchestrator_plan.add_argument("--goal", required=True)
     orchestrator_plan.add_argument("--description", default="Tarefa criada pelo OrchestratorAgent.")
@@ -174,6 +190,9 @@ def main(argv: List[str]) -> int:
 
     if args.action == "orchestrator-status":
         return execute("orchestrator_agent.status")
+
+    if args.action == "report-list":
+        return execute("auto_reporter.list", {"limit": 50})
 
     if args.action == "task-create":
         return execute(
@@ -267,6 +286,27 @@ def main(argv: List[str]) -> int:
             {
                 "query": args.query,
                 "limit": args.limit,
+            },
+        )
+
+    if args.action == "report-generate":
+        return execute(
+            "auto_reporter.generate",
+            {
+                "module_name": args.module_name,
+                "objective": args.objective,
+                "files_changed": parse_tags(args.files),
+                "operational_flow": args.flow,
+                "strengths": parse_tags(args.strengths),
+                "bottlenecks": parse_tags(args.bottlenecks),
+                "future_risks": parse_tags(args.risks),
+                "next_step": args.next_step,
+                "not_now": args.not_now,
+                "impact": args.impact,
+                "professor_decision": args.decision,
+                "decision_reason": args.decision_reason,
+                "tags": parse_tags(args.tags),
+                "created_by": "k_atlas_cli",
             },
         )
 

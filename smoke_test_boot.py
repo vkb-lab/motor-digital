@@ -46,6 +46,8 @@ if __name__ == "__main__":
     run([sys.executable, "k_atlas_boot.py", "memory_agent.stats"])
     run([sys.executable, "k_atlas_boot.py", "learning_agent.ping"])
     run([sys.executable, "k_atlas_boot.py", "learning_agent.stats"])
+    run([sys.executable, "k_atlas_boot.py", "auto_reporter.ping"])
+    run([sys.executable, "k_atlas_boot.py", "auto_reporter.list"])
     run([sys.executable, "k_atlas_boot.py", "orchestrator_agent.ping"])
     run([sys.executable, "k_atlas_boot.py", "orchestrator_agent.status"])
     print("Smoke test boot OK")

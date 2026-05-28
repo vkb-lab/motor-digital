@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
 
+from agents.auto_reporter import AutoReporter
 from agents.learning_agent import LearningAgent
 from agents.memory_agent import MemoryAgent
 from agents.orchestrator_agent import OrchestratorAgent
@@ -45,6 +46,9 @@ def build_kernel() -> KAtlasKernel:
 
     learning_agent = LearningAgent(root_path=ROOT)
     kernel.register_agent(learning_agent, replace=True, roles=["system"])
+
+    auto_reporter = AutoReporter(output_dir=ROOT / "reports" / "module_reports")
+    kernel.register_agent(auto_reporter, replace=True, roles=["system"])
 
     orchestrator_agent = OrchestratorAgent(kernel=kernel)
     kernel.register_agent(orchestrator_agent, replace=True, roles=["system"])
