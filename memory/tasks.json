@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "created_at": "2026-05-28T14:08:51.143432+00:00",
-  "updated_at": "2026-05-28T14:08:51.178398+00:00",
+  "updated_at": "2026-05-28T15:43:18.567868+00:00",
   "tasks": [
     {
       "task_id": "b651d45f-e6c1-45e8-a82f-539ba47b5024",
@@ -18,6 +18,28 @@
       "created_at": "2026-05-28T14:08:51.143236+00:00",
       "updated_at": "2026-05-28T14:08:51.178203+00:00",
       "completed_at": "2026-05-28T14:08:51.178194+00:00"
+    },
+    {
+      "task_id": "99d3b263-dbcc-4a29-a959-dd10023162e7",
+      "title": "Evoluir K-Atlas OS para cockpit Streamlit multiagente conectado ao kernel",
+      "description": "Criar camada de interface operacional para status, agentes, tarefas, memoria e orquestracao.",
+      "status": "pending",
+      "priority": "high",
+      "tags": [
+        "orchestrator",
+        "cockpit",
+        "streamlit",
+        "multiagent",
+        "next-step"
+      ],
+      "assigned_agent_id": "orchestrator_agent",
+      "payload": {
+        "origin": "orchestrator_agent",
+        "goal": "Evoluir K-Atlas OS para cockpit Streamlit multiagente conectado ao kernel"
+      },
+      "created_at": "2026-05-28T15:43:18.567259+00:00",
+      "updated_at": "2026-05-28T15:43:18.567269+00:00",
+      "completed_at": null
     }
   ]
 }
