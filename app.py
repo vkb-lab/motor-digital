@@ -479,3 +479,31 @@ st.caption(
     f"Powered by Gemini 1.5 Pro · "
     f"{datetime.now().strftime('%d/%m/%Y %H:%M')}"
 )
+
+# ============================================================
+# K-SOCIAL COCKPIT INTEGRATION
+# Safe supervised social intelligence panel.
+# Does not publish content. Does not call external APIs.
+# ============================================================
+
+try:
+    import sys
+    from pathlib import Path
+
+    _K_ATLAS_PROJECT_ROOT = Path(__file__).resolve().parent
+
+    if str(_K_ATLAS_PROJECT_ROOT) not in sys.path:
+        sys.path.insert(0, str(_K_ATLAS_PROJECT_ROOT))
+
+    from k_atlas.social.ui import render_social_cockpit
+
+    st.divider()
+    st.header("K-Social Intelligence System")
+    st.caption("Painel social supervisionado: sem publicacao automatica, sem APIs reais, sem navegador.")
+
+    render_social_cockpit()
+
+except Exception as k_social_error:
+    st.warning("K-Social ainda nao foi carregado no cockpit principal.")
+    st.caption(str(k_social_error))
+
