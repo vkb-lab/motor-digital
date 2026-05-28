@@ -1,0 +1,37 @@
+{
+  "agents": [
+    {
+      "agent_id": "system_agent",
+      "capabilities": [
+        "agents",
+        "diagnostics",
+        "events",
+        "kernel",
+        "permissions",
+        "status",
+        "system"
+      ],
+      "class_name": "SystemAgent",
+      "description": "Agente de controle operacional do K-Atlas OS.",
+      "enabled": true,
+      "metadata": {
+        "base_class": "BaseAgent",
+        "created_for": "K-Atlas OS",
+        "module_role": "kernel_operations",
+        "type": "system"
+      },
+      "module": "agents.system_agent",
+      "name": "System Agent",
+      "permissions": [
+        "agent.execute",
+        "events.read",
+        "kernel.status",
+        "registry.read"
+      ],
+      "registered_at": "2026-05-28T13:54:57.282413+00:00",
+      "version": "0.1.0"
+    }
+  ],
+  "exported_at": "2026-05-28T13:54:57.301738+00:00",
+  "registry_id": "896c924a-cb07-465c-abdf-87c19ca4acee"
+}

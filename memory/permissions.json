@@ -1,0 +1,61 @@
+{
+  "agent_permissions": {
+    "system_agent": [
+      "agent.execute",
+      "events.read",
+      "kernel.status",
+      "registry.read"
+    ]
+  },
+  "agent_roles": {
+    "kernel": [
+      "system"
+    ],
+    "system": [
+      "system"
+    ],
+    "system_agent": [
+      "system"
+    ]
+  },
+  "roles": {
+    "admin": [
+      "*"
+    ],
+    "agent": [
+      "agent.execute",
+      "agent.read",
+      "events.publish",
+      "memory.read",
+      "memory.write"
+    ],
+    "operator": [
+      "agent.execute",
+      "agent.read",
+      "campaign.*",
+      "events.read",
+      "kernel.status",
+      "memory.read",
+      "registry.read",
+      "router.dispatch"
+    ],
+    "read_only": [
+      "agent.read",
+      "events.read",
+      "kernel.status",
+      "registry.read"
+    ],
+    "system": [
+      "agent.*",
+      "api.*",
+      "campaign.*",
+      "cloud.*",
+      "events.*",
+      "kernel.*",
+      "memory.*",
+      "registry.*",
+      "router.*",
+      "worker.*"
+    ]
+  }
+}
