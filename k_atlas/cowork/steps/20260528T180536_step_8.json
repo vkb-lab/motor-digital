@@ -1,0 +1,11 @@
+{
+  "step_id": "e78f0b50-4471-4b47-84d3-f0719a05e16b",
+  "step_number": 8,
+  "title": "Criar teste de governanca para patches aprovados",
+  "command": "Criar smoke_test_self_evolution_governance.py, integrar ao dev_runner e validar que approval nao libera autoaplicacao.",
+  "result_summary": "Governanca de patches aprovados validada automaticamente no dev_runner. Auto apply continua bloqueado.",
+  "status": "done",
+  "risk": "low",
+  "created_at": "2026-05-28T18:05:36.531105+00:00",
+  "updated_at": "2026-05-28T18:05:36.531105+00:00"
+}
