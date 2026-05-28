@@ -1,0 +1,75 @@
+{
+  "patch_id": "dad671db-92d7-41f1-821a-0253555a0da3",
+  "request_id": "23230c5c-2fce-4d76-948f-1114ab9c2cc3",
+  "title": "Proposta supervisionada para AutoReporter no dev_runner",
+  "objective": "Criar proposta de melhoria para que o dev_runner sugira relatorio operacional apos validacoes importantes, mantendo approval humano obrigatorio.",
+  "target_files": [
+    "tools/dev_runner.py"
+  ],
+  "proposed_content": "﻿# -*- coding: utf-8 -*-\n\"\"\"\nK-Atlas OS - Local Dev Runner\n\nExecutor local para validar o estado do projeto.\nCompativel com Windows / PowerShell / UTF-8.\n\nUso:\npython tools/dev_runner.py\n\"\"\"\n\nfrom __future__ import annotations\n\nimport json\nimport subprocess\nimport sys\nfrom datetime import datetime, timezone\nfrom pathlib import Path\nfrom typing import Any, Dict, List\n\n\nROOT = Path(__file__).resolve().parents[1]\nREPORTS_DIR = ROOT / \"reports\"\nREPORT_FILE = REPORTS_DIR / \"dev_runner_report.json\"\n\n\nCOMMANDS = [\n    {\n        \"name\": \"smoke_test_kernel\",\n        \"cmd\": [sys.executable, \"smoke_test_kernel.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_system_agent\",\n        \"cmd\": [sys.executable, \"smoke_test_system_agent.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_task_agent\",\n        \"cmd\": [sys.executable, \"smoke_test_task_agent.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_memory_agent\",\n        \"cmd\": [sys.executable, \"smoke_test_memory_agent.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_learning_agent\",\n        \"cmd\": [sys.executable, \"smoke_test_learning_agent.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_auto_reporter\",\n        \"cmd\": [sys.executable, \"smoke_test_auto_reporter.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_self_evolution\",\n        \"cmd\": [sys.executable, \"smoke_test_self_evolution.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_cowork\",\n        \"cmd\": [sys.executable, \"smoke_test_cowork.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_orchestrator_agent\",\n        \"cmd\": [sys.executable, \"smoke_test_orchestrator_agent.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_boot\",\n        \"cmd\": [sys.executable, \"smoke_test_boot.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_cli\",\n        \"cmd\": [sys.executable, \"smoke_test_cli.py\"],\n        \"required\": True,\n    },\n    {\n        \"name\": \"smoke_test_cockpit\",\n        \"cmd\": [sys.executable, \"smoke_test_cockpit.py\"],\n        \"required\": True,\n    },\n]\n\n\ndef now_iso() -> str:\n    return datetime.now(timezone.utc).isoformat()\n\n\ndef run_command(item: Dict[str, Any]) -> Dict[str, Any]:\n    started_at = now_iso()\n\n    try:\n        completed = subprocess.run(\n            item[\"cmd\"],\n            cwd=str(ROOT),\n            capture_output=True,\n            text=True,\n            encoding=\"utf-8\",\n            errors=\"replace\",\n            timeout=120,\n        )\n\n        return {\n            \"name\": item[\"name\"],\n            \"cmd\": item[\"cmd\"],\n            \"required\": item.get(\"required\", False),\n            \"success\": completed.returncode == 0,\n            \"returncode\": completed.returncode,\n            \"stdout\": completed.stdout,\n            \"stderr\": completed.stderr,\n            \"started_at\": started_at,\n            \"finished_at\": now_iso(),\n        }\n\n    except Exception as exc:\n        return {\n            \"name\": item[\"name\"],\n            \"cmd\": item[\"cmd\"],\n            \"required\": item.get(\"required\", False),\n            \"success\": False,\n            \"returncode\": None,\n            \"stdout\": \"\",\n            \"stderr\": str(exc),\n            \"started_at\": started_at,\n            \"finished_at\": now_iso(),\n        }\n\n\ndef git_status() -> Dict[str, Any]:\n    try:\n        completed = subprocess.run(\n            [\"git\", \"status\", \"--short\"],\n            cwd=str(ROOT),\n            capture_output=True,\n            text=True,\n            encoding=\"utf-8\",\n            errors=\"replace\",\n            timeout=30,\n        )\n\n        return {\n            \"available\": completed.returncode == 0,\n            \"returncode\": completed.returncode,\n            \"output\": completed.stdout.strip(),\n            \"error\": completed.stderr.strip(),\n        }\n\n    except Exception as exc:\n        return {\n            \"available\": False,\n            \"returncode\": None,\n            \"output\": \"\",\n            \"error\": str(exc),\n        }\n\n\ndef main() -> int:\n    REPORTS_DIR.mkdir(parents=True, exist_ok=True)\n\n    results: List[Dict[str, Any]] = []\n    failed_required = []\n\n    print(\"K-Atlas OS - Local Dev Runner\")\n    print(\"Root:\", ROOT)\n    print(\"Started:\", now_iso())\n    print(\"\")\n\n    for item in COMMANDS:\n        print(\"Running:\", item[\"name\"])\n        result = run_command(item)\n        results.append(result)\n\n        if result[\"success\"]:\n            print(\"OK:\", item[\"name\"])\n        else:\n            print(\"FAIL:\", item[\"name\"])\n            print(result[\"stderr\"])\n\n        if item.get(\"required\", False) and not result[\"success\"]:\n            failed_required.append(item[\"name\"])\n\n        print(\"\")\n\n    report = {\n        \"app\": \"K-Atlas OS\",\n        \"runner\": \"local_dev_runner\",\n        \"created_at\": now_iso(),\n        \"root\": str(ROOT),\n        \"success\": len(failed_required) == 0,\n        \"failed_required\": failed_required,\n        \"commands\": results,\n        \"git_status\": git_status(),\n    }\n\n    REPORT_FILE.write_text(\n        json.dumps(report, indent=2, ensure_ascii=False),\n        encoding=\"utf-8\",\n    )\n\n    print(\"Report saved:\", REPORT_FILE)\n\n    if report[\"success\"]:\n        print(\"K-Atlas validation: OK\")\n        return 0\n\n    print(\"K-Atlas validation: FAIL\")\n    return 1\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n\n# TODO K-Atlas Self Evolution:\n# Proposta futura: permitir que o dev_runner sugira relatorio operacional\n# via AutoReporter apos validacoes importantes.\n# Esta proposta NAO deve ser aplicada sem approval humano.\n",
+  "diff": "--- C:\\Users\\oi\\Desktop\\motor-digital\\tools\\dev_runner.py\n+++ C:\\Users\\oi\\Desktop\\motor-digital\\tools\\dev_runner.py proposed\n@@ -215,3 +215,8 @@\n \n\n if __name__ == \"__main__\":\n\n     raise SystemExit(main())\n\n+\n\n+# TODO K-Atlas Self Evolution:\n\n+# Proposta futura: permitir que o dev_runner sugira relatorio operacional\n\n+# via AutoReporter apos validacoes importantes.\n\n+# Esta proposta NAO deve ser aplicada sem approval humano.\n",
+  "risk": {
+    "success": true,
+    "risk_level": "low",
+    "risk_score": 15,
+    "blockers": [],
+    "warnings": [
+      "Padrao sensivel detectado: subprocess"
+    ],
+    "target_files": [
+      "tools/dev_runner.py"
+    ],
+    "requires_human_approval": true,
+    "can_auto_apply": false,
+    "policy": {
+      "autoapproval_allowed": false,
+      "destructive_changes_allowed": false,
+      "core_changes_require_special_approval": true
+    }
+  },
+  "snapshot": {
+    "snapshot_id": "d9f66e9e-805a-40c6-aa44-477cb91e5ab3",
+    "snapshot_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\self_evolution\\snapshots\\20260528T175007_dev-runner-py.snapshot.json",
+    "target_file": "C:\\Users\\oi\\Desktop\\motor-digital\\tools\\dev_runner.py",
+    "exists": true
+  },
+  "rollback": {
+    "rollback_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\self_evolution\\rollback\\20260528T175007_dad671db-92d7-41f1-821a-0253555a0da3.rollback.json",
+    "rollback": {
+      "rollback_id": "e228de64-a9b1-4710-a2a8-5b1925d4470a",
+      "patch_id": "dad671db-92d7-41f1-821a-0253555a0da3",
+      "snapshot": {
+        "snapshot_id": "d9f66e9e-805a-40c6-aa44-477cb91e5ab3",
+        "snapshot_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\self_evolution\\snapshots\\20260528T175007_dev-runner-py.snapshot.json",
+        "target_file": "C:\\Users\\oi\\Desktop\\motor-digital\\tools\\dev_runner.py",
+        "exists": true
+      },
+      "created_at": "2026-05-28T17:50:07.688088+00:00",
+      "can_auto_rollback": false,
+      "requires_human_approval": true,
+      "instructions": [
+        "Abrir snapshot indicado.",
+        "Revisar conteudo original.",
+        "Restaurar manualmente apenas apos aprovacao humana.",
+        "Rodar smoke tests e dev_runner.",
+        "Commitar rollback se necessario."
+      ]
+    }
+  },
+  "author": "cowork_step_6",
+  "tags": [
+    "auto_reporter",
+    "dev_runner",
+    "self_evolution",
+    "supervised_patch"
+  ],
+  "status": "proposed_waiting_human_approval",
+  "created_at": "2026-05-28T17:50:07.681009+00:00",
+  "updated_at": "2026-05-28T17:50:07.681009+00:00",
+  "governance": {
+    "supervised": true,
+    "requires_human_approval": true,
+    "can_auto_apply": false,
+    "destructive_changes_allowed": false
+  }
+}

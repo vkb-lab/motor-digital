@@ -1,0 +1,20 @@
+{
+  "rollback_id": "e228de64-a9b1-4710-a2a8-5b1925d4470a",
+  "patch_id": "dad671db-92d7-41f1-821a-0253555a0da3",
+  "snapshot": {
+    "snapshot_id": "d9f66e9e-805a-40c6-aa44-477cb91e5ab3",
+    "snapshot_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\self_evolution\\snapshots\\20260528T175007_dev-runner-py.snapshot.json",
+    "target_file": "C:\\Users\\oi\\Desktop\\motor-digital\\tools\\dev_runner.py",
+    "exists": true
+  },
+  "created_at": "2026-05-28T17:50:07.688088+00:00",
+  "can_auto_rollback": false,
+  "requires_human_approval": true,
+  "instructions": [
+    "Abrir snapshot indicado.",
+    "Revisar conteudo original.",
+    "Restaurar manualmente apenas apos aprovacao humana.",
+    "Rodar smoke tests e dev_runner.",
+    "Commitar rollback se necessario."
+  ]
+}
