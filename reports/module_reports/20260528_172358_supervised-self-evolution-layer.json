@@ -1,0 +1,16 @@
+{
+  "report_id": "0d5715c4-d288-4a01-a430-2326d7b60b75",
+  "module_name": "Supervised Self Evolution Layer",
+  "created_at": "2026-05-28T17:23:58.235489+00:00",
+  "created_by": "k_atlas_cli",
+  "tags": [
+    "self-evolution",
+    "governance",
+    "patches",
+    "approval",
+    "rollback",
+    "kernel"
+  ],
+  "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\module_reports\\20260528_172358_supervised-self-evolution-layer.md",
+  "valid": true
+}
