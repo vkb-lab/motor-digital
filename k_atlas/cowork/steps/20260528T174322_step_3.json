@@ -1,0 +1,11 @@
+{
+  "step_id": "094e17cc-cc1d-46b3-a96e-c8028cffd1f9",
+  "step_number": 3,
+  "title": "Expor Cowork no cockpit read-only",
+  "command": "Criar cockpit/services/cowork_service.py, atualizar k_atlas_cockpit.py, validar smoke_test_cockpit e dev_runner.",
+  "result_summary": "Cowork Mode agora aparece no cockpit em modo read-only com sessoes, passos, reviews e progresso.",
+  "status": "done",
+  "risk": "low",
+  "created_at": "2026-05-28T17:43:22.888441+00:00",
+  "updated_at": "2026-05-28T17:43:22.888441+00:00"
+}
