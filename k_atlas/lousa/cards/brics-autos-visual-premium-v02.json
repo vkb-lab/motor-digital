@@ -1,0 +1,53 @@
+{
+  "id": "2e2a6dde-6a89-421e-a274-f699a8a799c1",
+  "title": "Evoluir BRICS Autos para marketplace visual premium v0.2",
+  "description": "Melhorar o MVP BRICS Paraguay Autos para sair do visual basico de formulario Streamlit e evoluir para uma experiencia de marketplace premium. Usar referencia estrutural de classificados automotivos, mas sem copiar OLX, marca, layout, codigo, identidade visual ou assets. Criar identidade propria BRICS com tema verde e amarelo, hero visual, busca forte, filtros, cards de veiculos, CTA de anunciar com camera, IA assistida, revisao humana obrigatoria e dashboard escalavel.",
+  "lane": "backlog",
+  "status": "backlog",
+  "priority": "high",
+  "tags": [
+    "brics",
+    "autos",
+    "marketplace",
+    "ux-ui",
+    "premium",
+    "visual-identity",
+    "camera",
+    "ai-autofill",
+    "no-clone",
+    "unicorn-standard"
+  ],
+  "requirements": {
+    "must_have": [
+      "hero visual com proposta clara",
+      "barra de busca grande",
+      "filtros por cidade, preco, marca e modelo",
+      "cards de veiculos mais visuais",
+      "CTA forte para anunciar com camera",
+      "selo de IA assistida",
+      "selo de revisao humana",
+      "tema verde e amarelo com equilibrio",
+      "portugues e espanhol",
+      "dashboard com status de anuncios"
+    ],
+    "must_avoid": [
+      "copiar OLX",
+      "parecer clone",
+      "visual generico de formulario",
+      "botoes frios sem narrativa",
+      "excesso de amarelo",
+      "publicacao automatica sem revisao"
+    ],
+    "design_direction": [
+      "verde para confianca e crescimento",
+      "amarelo para oportunidade e energia comercial",
+      "branco para clareza",
+      "cards com hierarquia visual",
+      "experiencia mais moderna que classificados comuns"
+    ],
+    "next_step_correct": "Criar upgrade visual local do app BRICS Autos v0.2 mantendo JSON, camera, IA mock, revisao humana e sem deploy.",
+    "next_step_wrong": "Adicionar pagamento, login, deploy ou copiar concorrente antes de melhorar experiencia visual."
+  },
+  "created_at": "2026-05-28T22:34:58.431053+00:00",
+  "updated_at": "2026-05-28T22:34:58.431072+00:00"
+}
