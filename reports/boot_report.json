@@ -1,7 +1,7 @@
 {
   "app": "K-Atlas OS",
   "entrypoint": "k_atlas_boot.py",
-  "created_at": "2026-05-28T16:08:38.414726+00:00",
+  "created_at": "2026-05-28T16:34:51.788011+00:00",
   "success": true,
   "command": "orchestrator_agent.status",
   "payload": {},
@@ -15,11 +15,11 @@
       "kernel_status": {
         "success": true,
         "kernel": {
-          "kernel_id": "5005ba5a-8123-41e1-be69-e1c078e6f2d1",
+          "kernel_id": "5e104e21-5d4a-42a8-95ff-7504972a3c48",
           "app_name": "K-Atlas OS",
           "environment": "local",
           "running": true,
-          "started_at": "2026-05-28T16:08:38.384502+00:00",
+          "started_at": "2026-05-28T16:34:51.765546+00:00",
           "root_path": "C:\\Users\\oi\\Desktop\\motor-digital",
           "registry_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\registry.json",
           "permissions_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\permissions.json",
@@ -70,7 +70,7 @@
                 "training": "C:\\Users\\oi\\Desktop\\motor-digital\\learning\\training\\training_items.json"
               }
             },
-            "registered_at": "2026-05-28T16:08:38.389773+00:00"
+            "registered_at": "2026-05-28T16:34:51.769304+00:00"
           },
           {
             "agent_id": "memory_agent",
@@ -100,7 +100,7 @@
               "module_role": "persistent_operational_memory",
               "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\entries.json"
             },
-            "registered_at": "2026-05-28T16:08:38.387518+00:00"
+            "registered_at": "2026-05-28T16:34:51.768347+00:00"
           },
           {
             "agent_id": "orchestrator_agent",
@@ -134,7 +134,7 @@
               "created_for": "K-Atlas OS",
               "module_role": "multiagent_coordination"
             },
-            "registered_at": "2026-05-28T16:08:38.392473+00:00"
+            "registered_at": "2026-05-28T16:34:51.770284+00:00"
           },
           {
             "agent_id": "system_agent",
@@ -165,7 +165,7 @@
               "created_for": "K-Atlas OS",
               "module_role": "kernel_operations"
             },
-            "registered_at": "2026-05-28T16:08:38.385414+00:00"
+            "registered_at": "2026-05-28T16:34:51.766388+00:00"
           },
           {
             "agent_id": "task_agent",
@@ -196,7 +196,7 @@
               "module_role": "task_management",
               "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\tasks.json"
             },
-            "registered_at": "2026-05-28T16:08:38.386498+00:00"
+            "registered_at": "2026-05-28T16:34:51.767396+00:00"
           }
         ]
       },
@@ -225,17 +225,17 @@
       }
     },
     "error": null,
-    "event_id": "ecbb36a4-0e78-49ce-884e-7d1ca10e9359",
-    "duration_ms": 17.877,
+    "event_id": "84d02dc1-5b52-4ed2-8c43-9a98baa99af6",
+    "duration_ms": 14.176,
     "metadata": {},
-    "created_at": "2026-05-28T16:08:38.412752+00:00"
+    "created_at": "2026-05-28T16:34:51.786682+00:00"
   },
   "kernel_status": {
-    "kernel_id": "5005ba5a-8123-41e1-be69-e1c078e6f2d1",
+    "kernel_id": "5e104e21-5d4a-42a8-95ff-7504972a3c48",
     "app_name": "K-Atlas OS",
     "environment": "local",
     "running": true,
-    "started_at": "2026-05-28T16:08:38.384502+00:00",
+    "started_at": "2026-05-28T16:34:51.765546+00:00",
     "root_path": "C:\\Users\\oi\\Desktop\\motor-digital",
     "registry_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\registry.json",
     "permissions_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\permissions.json",

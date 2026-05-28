@@ -65,6 +65,11 @@ COMMANDS = [
         "cmd": [sys.executable, "smoke_test_cli.py"],
         "required": True,
     },
+    {
+        "name": "smoke_test_cockpit",
+        "cmd": [sys.executable, "smoke_test_cockpit.py"],
+        "required": True,
+    },
 ]
 
 
@@ -83,7 +88,7 @@ def run_command(item: Dict[str, Any]) -> Dict[str, Any]:
             text=True,
             encoding="utf-8",
             errors="replace",
-            timeout=90,
+            timeout=120,
         )
 
         return {
