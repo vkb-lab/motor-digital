@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-05-27T20:41:22.811084",
+  "command": "cliente urgente piscina instagram",
+  "agents_selected": [
+    "customer_profiler",
+    "sales_orchestrator",
+    "instagram_content_pack",
+    "publisher_instagram"
+  ]
+}

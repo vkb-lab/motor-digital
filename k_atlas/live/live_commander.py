@@ -1,4 +1,4 @@
-﻿import json
+import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -31,45 +31,66 @@ class LiveCommander:
 
         self.log(f"Memoria salva: {filename}")
 
-    def run_profiler(self, command):
-        profile_file = self.products_dir / "live_profile.json"
-
-        result = subprocess.run(
-            [
-                "python",
-                "-m",
-                "k_atlas.products.customer_profiler",
-                "--message",
-                command
-            ],
+    def run_subprocess(self, args):
+        return subprocess.run(
+            args,
             capture_output=True,
             text=True,
             encoding="utf-8",
             errors="replace"
         )
 
-        output = result.stdout or "{}"
+    def run_profiler(self, command):
+        profile_file = self.products_dir / "live_profile.json"
 
+        result = self.run_subprocess([
+            "python",
+            "-m",
+            "k_atlas.products.customer_profiler",
+            "--message",
+            command
+        ])
+
+        output = result.stdout or "{}"
         profile_file.write_text(output, encoding="utf-8")
 
         return "Cliente de piscina identificado e perfilado."
 
+    def run_router(self, command):
+        result = self.run_subprocess([
+            "python",
+            "-m",
+            "k_atlas.live.action_router"
+        ])
+
+        return result.stdout or "Router acionado."
+
+    def run_auto_executor(self):
+        result = self.run_subprocess([
+            "python",
+            "-m",
+            "k_atlas.live.auto_executor"
+        ])
+
+        return result.stdout or "Auto executor acionado."
+
     def execute_command(self, command):
         normalized = command.lower()
+        responses = []
 
-        if "piscina" in normalized:
-            response = self.run_profiler(command)
-            self.save_memory(command, response)
-            return response
+        if "piscina" in normalized or "cliente" in normalized:
+            responses.append(self.run_profiler(command))
 
-        if "instagram" in normalized:
-            response = "Instagram detectado. Modulo social pronto para acionamento."
-            self.save_memory(command, response)
-            return response
+        if "instagram" in normalized or "conteudo" in normalized or "conteúdo" in normalized:
+            responses.append("Instagram/conteudo detectado. Acionando roteador e executor.")
+            responses.append(self.run_auto_executor())
 
-        response = "Comando entendido, mas ainda sem acao programada."
-        self.save_memory(command, response)
-        return response
+        if not responses:
+            responses.append("Comando entendido, mas ainda sem acao programada.")
+
+        final_response = "\n".join(responses)
+        self.save_memory(command, final_response)
+        return final_response
 
     def run(self):
         self.log("LIVE COMMANDER INICIADO")

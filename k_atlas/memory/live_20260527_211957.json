@@ -1,0 +1,5 @@
+{
+  "created_at": "2026-05-27T21:19:57.290477",
+  "command": "cliente piscina urgente criar conteudo instagram",
+  "response": "Cliente de piscina identificado e perfilado.\nInstagram/conteudo detectado. Acionando roteador e executor.\n[21:19:57] Executando agente: sales_orchestrator\n\n[21:19:57] Executando agente: instagram_content_pack\n{\n  \"created_at\": \"2026-05-27T21:19:57.266491\",\n  \"platform\": \"instagram\",\n  \"product_name\": \"Cloro para piscina\",\n  \"price\": \"29,90\",\n  \"sales_strategy\": \"\",\n  \"caption\": \"\",\n  \"cta\": \"\",\n  \"hashtags\": [\n    \"#promocao\",\n    \"#oferta\",\n    \"#qualidade\",\n    \"#instashop\",\n    \"#marketingdigital\",\n    \"#piscina\",\n    \"#cloro\",\n    \"#verao\",\n    \"#aguacristalina\"\n  ],\n  \"full_post\": \"\\n\\n\\n\\n#promocao #oferta #qualidade #instashop #marketingdigital #piscina #cloro #verao #aguacristalina\"\n}\n[OK] Pacote salvo em: k_atlas\\content_packs\\instagram_pack_20260527_211957.json\n\n"
+}

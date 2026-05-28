@@ -24,7 +24,7 @@ class InstagramContentPack:
         cta = product.get("cta", "")
 
         hashtags = [
-            "#promoção",
+            "#promocao",
             "#oferta",
             "#qualidade",
             "#instashop",
@@ -35,7 +35,7 @@ class InstagramContentPack:
             hashtags.extend([
                 "#piscina",
                 "#cloro",
-                "#verão",
+                "#verao",
                 "#aguacristalina"
             ])
 
