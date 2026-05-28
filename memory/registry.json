@@ -27,7 +27,7 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T15:25:07.990387+00:00",
+      "registered_at": "2026-05-28T15:30:33.203218+00:00",
       "version": "0.1.0"
     },
     {
@@ -58,7 +58,7 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T15:25:07.988277+00:00",
+      "registered_at": "2026-05-28T15:30:33.199704+00:00",
       "version": "0.1.0"
     },
     {
@@ -89,10 +89,10 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T15:25:07.989323+00:00",
+      "registered_at": "2026-05-28T15:30:33.201093+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T15:25:07.996624+00:00",
-  "registry_id": "b68f9100-8056-4809-9b50-e801b51f6c22"
+  "exported_at": "2026-05-28T15:30:33.209353+00:00",
+  "registry_id": "86da544c-75fc-47d5-903a-a9807e1f7594"
 }

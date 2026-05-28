@@ -9,6 +9,7 @@ python smoke_test_memory_agent.py
 from __future__ import annotations
 
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from agents.memory_agent import MemoryAgent
 from core.kernel import create_kernel
@@ -25,45 +26,48 @@ def assert_success(result, label: str) -> None:
 
 
 if __name__ == "__main__":
-    kernel = create_kernel(root_path=ROOT)
-    kernel.start(load_state=True)
+    with TemporaryDirectory() as temp_dir:
+        temp_path = Path(temp_dir) / "entries_test.json"
 
-    memory_agent = MemoryAgent(storage_path=ROOT / "memory" / "entries.json")
-    kernel.register_agent(memory_agent, replace=True, roles=["agent"])
+        kernel = create_kernel(root_path=ROOT)
+        kernel.start(load_state=True)
 
-    ping = kernel.execute("memory_agent.ping")
-    assert_success(ping, "ping failed")
+        memory_agent = MemoryAgent(storage_path=temp_path)
+        kernel.register_agent(memory_agent, replace=True, roles=["agent"])
 
-    created = kernel.execute(
-        "memory_agent.remember",
-        payload={
-            "title": "Validar MemoryAgent",
-            "content": "Teste automatico da memoria operacional persistente do K-Atlas OS.",
-            "type": "decision",
-            "tags": ["smoke_test", "memory_agent", "kernel"],
-            "source": "smoke_test",
-            "visibility": "internal",
-            "importance": 2,
-        },
-    )
-    assert_success(created, "remember failed")
+        ping = kernel.execute("memory_agent.ping")
+        assert_success(ping, "ping failed")
 
-    memory_id = created.output["memory"]["memory_id"]
+        created = kernel.execute(
+            "memory_agent.remember",
+            payload={
+                "title": "Validar MemoryAgent",
+                "content": "Teste automatico da memoria operacional persistente do K-Atlas OS.",
+                "type": "decision",
+                "tags": ["smoke_test", "memory_agent", "kernel"],
+                "source": "smoke_test",
+                "visibility": "internal",
+                "importance": 2,
+            },
+        )
+        assert_success(created, "remember failed")
 
-    listed = kernel.execute("memory_agent.list", payload={"limit": 10})
-    assert_success(listed, "list failed")
+        memory_id = created.output["memory"]["memory_id"]
 
-    loaded = kernel.execute("memory_agent.get", payload={"memory_id": memory_id})
-    assert_success(loaded, "get failed")
+        listed = kernel.execute("memory_agent.list", payload={"limit": 10})
+        assert_success(listed, "list failed")
 
-    searched = kernel.execute("memory_agent.search", payload={"query": "MemoryAgent"})
-    assert_success(searched, "search failed")
+        loaded = kernel.execute("memory_agent.get", payload={"memory_id": memory_id})
+        assert_success(loaded, "get failed")
 
-    stats = kernel.execute("memory_agent.stats")
-    assert_success(stats, "stats failed")
+        searched = kernel.execute("memory_agent.search", payload={"query": "MemoryAgent"})
+        assert_success(searched, "search failed")
 
-    print("MemoryAgent smoke test OK")
-    print("memory_id:", memory_id)
-    print("total_memories:", stats.output["total"])
+        stats = kernel.execute("memory_agent.stats")
+        assert_success(stats, "stats failed")
 
-    kernel.stop(save_state=True)
+        print("MemoryAgent smoke test OK")
+        print("memory_id:", memory_id)
+        print("total_memories:", stats.output["total"])
+
+        kernel.stop(save_state=True)

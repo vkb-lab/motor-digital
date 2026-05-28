@@ -9,6 +9,7 @@ python smoke_test_task_agent.py
 from __future__ import annotations
 
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from agents.task_agent import TaskAgent
 from core.kernel import create_kernel
@@ -25,43 +26,46 @@ def assert_success(result, label: str) -> None:
 
 
 if __name__ == "__main__":
-    kernel = create_kernel(root_path=ROOT)
-    kernel.start(load_state=True)
+    with TemporaryDirectory() as temp_dir:
+        temp_path = Path(temp_dir) / "tasks_test.json"
 
-    task_agent = TaskAgent(storage_path=ROOT / "memory" / "tasks.json")
-    kernel.register_agent(task_agent, replace=True, roles=["agent"])
+        kernel = create_kernel(root_path=ROOT)
+        kernel.start(load_state=True)
 
-    ping = kernel.execute("task_agent.ping")
-    assert_success(ping, "ping failed")
+        task_agent = TaskAgent(storage_path=temp_path)
+        kernel.register_agent(task_agent, replace=True, roles=["agent"])
 
-    created = kernel.execute(
-        "task_agent.create",
-        payload={
-            "title": "Validar TaskAgent",
-            "description": "Teste automatico do agente de tarefas.",
-            "priority": "high",
-            "tags": ["smoke_test", "task_agent"],
-            "assigned_agent_id": "task_agent",
-        },
-    )
-    assert_success(created, "create failed")
+        ping = kernel.execute("task_agent.ping")
+        assert_success(ping, "ping failed")
 
-    task_id = created.output["task"]["task_id"]
+        created = kernel.execute(
+            "task_agent.create",
+            payload={
+                "title": "Validar TaskAgent",
+                "description": "Teste automatico do agente de tarefas.",
+                "priority": "high",
+                "tags": ["smoke_test", "task_agent"],
+                "assigned_agent_id": "task_agent",
+            },
+        )
+        assert_success(created, "create failed")
 
-    listed = kernel.execute("task_agent.list", payload={"limit": 10})
-    assert_success(listed, "list failed")
+        task_id = created.output["task"]["task_id"]
 
-    loaded = kernel.execute("task_agent.get", payload={"task_id": task_id})
-    assert_success(loaded, "get failed")
+        listed = kernel.execute("task_agent.list", payload={"limit": 10})
+        assert_success(listed, "list failed")
 
-    completed = kernel.execute("task_agent.complete", payload={"task_id": task_id})
-    assert_success(completed, "complete failed")
+        loaded = kernel.execute("task_agent.get", payload={"task_id": task_id})
+        assert_success(loaded, "get failed")
 
-    stats = kernel.execute("task_agent.stats")
-    assert_success(stats, "stats failed")
+        completed = kernel.execute("task_agent.complete", payload={"task_id": task_id})
+        assert_success(completed, "complete failed")
 
-    print("TaskAgent smoke test OK")
-    print("task_id:", task_id)
-    print("total_tasks:", stats.output["total"])
+        stats = kernel.execute("task_agent.stats")
+        assert_success(stats, "stats failed")
 
-    kernel.stop(save_state=True)
+        print("TaskAgent smoke test OK")
+        print("task_id:", task_id)
+        print("total_tasks:", stats.output["total"])
+
+        kernel.stop(save_state=True)
