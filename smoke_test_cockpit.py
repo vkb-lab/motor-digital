@@ -9,6 +9,7 @@ Valida:
 - integracao basica com kernel
 - leitura read-only da Self Evolution
 - leitura read-only do Cowork Mode
+- leitura read-only do Prompt Generator
 
 Uso:
 python smoke_test_cockpit.py
@@ -20,6 +21,7 @@ import importlib
 
 from cockpit.services.cowork_service import collect_cowork_snapshot
 from cockpit.services.kernel_service import cockpit_boot_check, collect_operational_snapshot
+from cockpit.services.prompt_generator_service import collect_prompt_generator_snapshot
 from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
 
 
@@ -69,8 +71,18 @@ if __name__ == "__main__":
     assert_true("steps" in cowork_snapshot["data"], "cowork steps ausente")
     assert_true("reviews" in cowork_snapshot["data"], "cowork reviews ausente")
 
+    prompt_snapshot = collect_prompt_generator_snapshot()
+
+    assert_true(prompt_snapshot["success"], "prompt generator snapshot falhou")
+    assert_true(prompt_snapshot["policy"]["mode"] == "read-only", "prompt generator nao esta read-only")
+    assert_true(prompt_snapshot["policy"]["can_execute_commands"] is False, "prompt generator nao pode executar comandos")
+    assert_true(prompt_snapshot["policy"]["can_modify_code"] is False, "prompt generator nao pode modificar codigo")
+    assert_true("next_steps" in prompt_snapshot["data"], "prompt next_steps ausente")
+    assert_true("recommendations" in prompt_snapshot["data"], "prompt recommendations ausente")
+
     print("Cockpit smoke test OK")
     print("health:", snapshot["health"])
     print("agents_total:", len(snapshot["data"]["agents"]))
     print("self_evolution_totals:", self_snapshot["totals"])
     print("cowork_totals:", cowork_snapshot["totals"])
+    print("prompt_generator_totals:", prompt_snapshot["totals"])

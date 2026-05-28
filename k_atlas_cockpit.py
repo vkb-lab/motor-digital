@@ -27,6 +27,7 @@ from cockpit.components.cards import render_command_health, render_metric_grid
 from cockpit.services.kernel_service import collect_operational_snapshot
 from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
 from cockpit.services.cowork_service import collect_cowork_snapshot
+from cockpit.services.prompt_generator_service import collect_prompt_generator_snapshot
 from cockpit.state.session_state import init_session_state
 from cockpit.utils.formatting import to_display_rows
 
@@ -487,6 +488,99 @@ def render_cowork_tab(st: Any, snapshot: Dict[str, Any]) -> None:
     st.dataframe(review_rows, use_container_width=True)
 
 
+
+def render_prompt_generator_tab(st: Any, snapshot: Dict[str, Any]) -> None:
+    st.subheader("Prompt Generator")
+
+    prompt_snapshot = collect_prompt_generator_snapshot(limit=50)
+    totals = prompt_snapshot.get("totals", {})
+    policy = prompt_snapshot.get("policy", {})
+    latest_analysis = prompt_snapshot.get("latest_analysis", {})
+
+    render_metric_grid(
+        st,
+        [
+            {"label": "Next Steps", "value": totals.get("next_steps", 0)},
+            {"label": "Recommendations", "value": totals.get("recommendations", 0)},
+            {"label": "Priority", "value": latest_analysis.get("priority", "-")},
+            {"label": "Risk", "value": latest_analysis.get("risk", "-")},
+        ],
+    )
+
+    st.info("Modo read-only. O cockpit nao executa comandos, nao modifica codigo e nao envia prompt ao ChatGPT.")
+
+    st.markdown("#### Policy")
+    st.json(policy)
+
+    st.markdown("#### Recomendacao mais recente")
+
+    if latest_analysis:
+        st.markdown("**Proximo passo correto**")
+        st.write(latest_analysis.get("next_step_correct", "-"))
+
+        st.markdown("**Proximo passo perigoso**")
+        st.warning(latest_analysis.get("next_step_dangerous", "-"))
+
+        st.markdown("**Justificativa**")
+        st.write(latest_analysis.get("justification", "-"))
+
+        st.markdown("**Prompt sugerido para engenheiro IA**")
+        st.code(latest_analysis.get("prompt_for_engineer", ""), language="text")
+
+        st.markdown("**Sinais observados**")
+        st.json(latest_analysis.get("signals", []))
+
+        st.markdown("**Riscos observados**")
+        st.json(latest_analysis.get("risks", []))
+    else:
+        st.warning("Nenhuma recomendacao gerada ainda.")
+
+    data = prompt_snapshot.get("data", {})
+
+    st.markdown("#### Recommendations")
+    recommendation_rows = []
+    for item in data.get("recommendations", []):
+        payload = item.get("data", {})
+        analysis = payload.get("analysis", {}) if isinstance(payload, dict) else {}
+        recommendation_rows.append(
+            {
+                "name": item.get("name"),
+                "priority": analysis.get("priority"),
+                "risk": analysis.get("risk"),
+                "next_step": analysis.get("next_step_correct"),
+                "created_at": payload.get("created_at"),
+                "path": item.get("path"),
+            }
+        )
+
+    st.dataframe(recommendation_rows, use_container_width=True)
+
+    st.markdown("#### Next Steps")
+    next_step_rows = []
+    for item in data.get("next_steps", []):
+        payload = item.get("data", {})
+        analysis = payload.get("analysis", {}) if isinstance(payload, dict) else {}
+        next_step_rows.append(
+            {
+                "name": item.get("name"),
+                "priority": analysis.get("priority"),
+                "risk": analysis.get("risk"),
+                "next_step": analysis.get("next_step_correct"),
+                "markdown_path": item.get("markdown_path"),
+                "path": item.get("path"),
+            }
+        )
+
+    st.dataframe(next_step_rows, use_container_width=True)
+
+    for item in data.get("next_steps", []):
+        with st.expander(item.get("name", "next_step")):
+            st.json(item.get("data"))
+            if item.get("markdown"):
+                st.markdown("Markdown")
+                st.code(item.get("markdown"), language="markdown")
+
+
 def main() -> None:
     import streamlit as st
 
@@ -544,6 +638,7 @@ def main() -> None:
             "Events",
             "Self Evolution",
             "Cowork",
+            "Prompt Generator",
         ]
     )
 
@@ -570,6 +665,9 @@ def main() -> None:
 
     with tabs[7]:
         render_cowork_tab(st, snapshot)
+
+    with tabs[8]:
+        render_prompt_generator_tab(st, snapshot)
 
 
 if __name__ == "__main__":
