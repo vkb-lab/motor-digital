@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "global_rules": [
+    "Nenhum produto novo deve nascer sem Creative Brief.",
+    "Nenhum produto regulado deve nascer sem checklist juridico/tributario.",
+    "Nenhum produto internacional deve nascer sem localization_agent.",
+    "Nenhum marketplace deve nascer sem marketplace_agent, legal_context_agent, tax_context_agent e dashboard_scale_agent.",
+    "Nenhum app deve ser copiado fielmente de concorrente.",
+    "Toda referencia externa deve ser tratada como inspiracao estrutural, nao copia.",
+    "Toda criacao deve pensar em dominio proprio e documentacao futura.",
+    "Toda interface deve buscar padrao acima da media, evitando aparencia de template comum."
+  ],
+  "product_type_rules": {
+    "marketplace": [
+      "marketplace_agent",
+      "legal_context_agent",
+      "tax_context_agent",
+      "localization_agent",
+      "documentation_agent",
+      "domain_launch_agent",
+      "growth_marketing_agent",
+      "dashboard_scale_agent"
+    ],
+    "micro_saas": [
+      "product_strategy_agent",
+      "creative_intelligence_agent",
+      "ux_ui_agent",
+      "documentation_agent",
+      "domain_launch_agent"
+    ],
+    "fashion_lifestyle": [
+      "creative_intelligence_agent",
+      "ux_ui_agent",
+      "growth_marketing_agent",
+      "product_strategy_agent"
+    ]
+  },
+  "country_rules": {
+    "paraguay": [
+      "localization_agent",
+      "legal_context_agent",
+      "tax_context_agent"
+    ],
+    "brasil": [
+      "legal_context_agent",
+      "tax_context_agent"
+    ],
+    "brazil": [
+      "legal_context_agent",
+      "tax_context_agent"
+    ]
+  },
+  "language_rules": {
+    "multilingual": [
+      "localization_agent",
+      "documentation_agent"
+    ]
+  },
+  "scale_rules": {
+    "domain_required": [
+      "domain_launch_agent",
+      "documentation_agent"
+    ],
+    "dashboard_required": [
+      "dashboard_scale_agent"
+    ]
+  }
+}

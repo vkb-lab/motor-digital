@@ -1,0 +1,121 @@
+{
+  "success": true,
+  "review_id": "9bade852-35c8-4449-8009-cea7293814fc",
+  "created_at": "2026-05-28T21:15:19.679218+00:00",
+  "context": {
+    "project": "Closet Pilot",
+    "product_type": "fashion_lifestyle",
+    "country": "brasil",
+    "languages": [
+      "pt"
+    ],
+    "audience": "mulheres que organizam guarda-roupa e looks",
+    "theme": "premium feminino inverno 2026",
+    "inspiration": "assistente visual de closet, nao planilha",
+    "domain_required": true,
+    "dashboard_required": false,
+    "legal_sensitive": false,
+    "tax_sensitive": false,
+    "scale_intent": "micro_saas_to_premium",
+    "notes": "Produto deve evoluir com foto, memoria de localizacao, looks e experiencia acima da media."
+  },
+  "required_specialists": [
+    {
+      "id": "product_strategy_agent",
+      "area": "produto",
+      "mission": "Definir proposta de valor, publico, diferencial, risco de produto generico e criterio de MVP."
+    },
+    {
+      "id": "creative_intelligence_agent",
+      "area": "criatividade",
+      "mission": "Validar branding, psicologia das cores, naming, sazonalidade, cultura e padrao unicornio."
+    },
+    {
+      "id": "ux_ui_agent",
+      "area": "experiencia",
+      "mission": "Evitar interface generica, botoes comuns, telas frias e excesso de friccao."
+    },
+    {
+      "id": "growth_marketing_agent",
+      "area": "marketing",
+      "mission": "Avaliar posicionamento, promessa, canais, aquisicao, copy, narrativa e funil."
+    },
+    {
+      "id": "legal_context_agent",
+      "area": "juridico",
+      "mission": "Gerar checklist de riscos juridicos e exigir validacao humana/profissional antes de operar."
+    },
+    {
+      "id": "tax_context_agent",
+      "area": "tributario_contabil",
+      "mission": "Gerar checklist de impostos, notas, comissoes e obrigacoes fiscais para validacao profissional."
+    },
+    {
+      "id": "domain_launch_agent",
+      "area": "lancamento",
+      "mission": "Pensar dominio proprio, ambiente, deploy, DNS, analytics, monitoramento e escalabilidade."
+    },
+    {
+      "id": "documentation_agent",
+      "area": "documentacao",
+      "mission": "Preparar README, manual operacional, politica, termos, setup e guia de implantacao."
+    }
+  ],
+  "checklists": {
+    "product": [
+      "definir proposta de valor",
+      "definir publico e dor principal",
+      "definir MVP minimo",
+      "definir criterio de sucesso",
+      "definir o que nao fazer agora"
+    ],
+    "creative": [
+      "confirmar Creative Brief",
+      "validar psicologia das cores",
+      "avaliar naming",
+      "avaliar risco de parecer generico",
+      "definir padrao visual acima da media"
+    ],
+    "documentation": [
+      "criar README operacional",
+      "criar guia de setup",
+      "criar guia de uso",
+      "registrar politica do produto",
+      "preparar documentacao de dominio/deploy"
+    ],
+    "scale_dashboard": [
+      "definir metricas principais",
+      "definir status operacional",
+      "definir ultimas acoes",
+      "definir painel administrativo",
+      "preparar estrutura para multiusuario no futuro"
+    ],
+    "localization": [
+      "idioma principal",
+      "idioma secundario se existir",
+      "moeda local",
+      "termos culturais",
+      "formatos de telefone/endereco",
+      "tom de comunicacao regional"
+    ]
+  },
+  "risk": {
+    "level": "low",
+    "items": [],
+    "legal_notice": "Este conselho nao substitui advogado, contador ou especialista local. Serve como checklist operacional."
+  },
+  "governance": {
+    "scaffold_allowed_now": false,
+    "requires_human_operator": true,
+    "requires_creative_brief": true,
+    "requires_product_spec": true,
+    "requires_legal_validation_if_sensitive": false,
+    "requires_tax_validation_if_sensitive": false,
+    "blockers": [
+      "Creative Brief deve existir antes do Product Spec.",
+      "Specialist Council deve ser revisado antes do scaffold."
+    ]
+  },
+  "next_step_correct": "Gerar Product Spec supervisionado somente depois de revisar este conselho e confirmar Creative Brief.",
+  "next_step_wrong": "Criar app diretamente sem especialistas, sem brief, sem checklist juridico/tributario e sem estrategia de escala."
+}

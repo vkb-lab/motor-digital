@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "purpose": "Registrar especialistas operacionais que o K-Atlas deve consultar antes de criar produtos, apps, campanhas, dashboards ou automacoes.",
+  "specialists": {
+    "product_strategy_agent": {
+      "area": "produto",
+      "mission": "Definir proposta de valor, publico, diferencial, risco de produto generico e criterio de MVP."
+    },
+    "creative_intelligence_agent": {
+      "area": "criatividade",
+      "mission": "Validar branding, psicologia das cores, naming, sazonalidade, cultura e padrao unicornio."
+    },
+    "marketplace_agent": {
+      "area": "marketplace",
+      "mission": "Avaliar oferta, demanda, anuncios, categorias, filtros, publicacao e sinais de confianca."
+    },
+    "localization_agent": {
+      "area": "localizacao",
+      "mission": "Adaptar idioma, pais, cultura, moeda, termos locais e experiencia regional."
+    },
+    "legal_context_agent": {
+      "area": "juridico",
+      "mission": "Gerar checklist de riscos juridicos e exigir validacao humana/profissional antes de operar."
+    },
+    "tax_context_agent": {
+      "area": "tributario_contabil",
+      "mission": "Gerar checklist de impostos, notas, comissoes e obrigacoes fiscais para validacao profissional."
+    },
+    "ux_ui_agent": {
+      "area": "experiencia",
+      "mission": "Evitar interface generica, botoes comuns, telas frias e excesso de friccao."
+    },
+    "documentation_agent": {
+      "area": "documentacao",
+      "mission": "Preparar README, manual operacional, politica, termos, setup e guia de implantacao."
+    },
+    "domain_launch_agent": {
+      "area": "lancamento",
+      "mission": "Pensar dominio proprio, ambiente, deploy, DNS, analytics, monitoramento e escalabilidade."
+    },
+    "growth_marketing_agent": {
+      "area": "marketing",
+      "mission": "Avaliar posicionamento, promessa, canais, aquisicao, copy, narrativa e funil."
+    },
+    "dashboard_scale_agent": {
+      "area": "dashboard_escala",
+      "mission": "Preparar metricas, painel executivo, multiusuario, multitenant, receita e operacao em escala."
+    }
+  }
+}
