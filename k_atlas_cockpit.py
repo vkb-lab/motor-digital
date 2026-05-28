@@ -26,6 +26,7 @@ from typing import Any, Dict, List
 from cockpit.components.cards import render_command_health, render_metric_grid
 from cockpit.services.kernel_service import collect_operational_snapshot
 from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
+from cockpit.services.cowork_service import collect_cowork_snapshot
 from cockpit.state.session_state import init_session_state
 from cockpit.utils.formatting import to_display_rows
 
@@ -400,6 +401,92 @@ def render_self_evolution_tab(st: Any, snapshot: Dict[str, Any]) -> None:
                     st.code(item.get("diff"), language="diff")
 
 
+
+def render_cowork_tab(st: Any, snapshot: Dict[str, Any]) -> None:
+    st.subheader("Cowork Mode")
+
+    cowork_snapshot = collect_cowork_snapshot(limit=50)
+    totals = cowork_snapshot.get("totals", {})
+    policy = cowork_snapshot.get("policy", {})
+    progress = cowork_snapshot.get("progress", {})
+    latest_session = cowork_snapshot.get("latest_session", {})
+
+    render_metric_grid(
+        st,
+        [
+            {"label": "Sessions", "value": totals.get("sessions", 0)},
+            {"label": "Steps", "value": totals.get("steps", 0)},
+            {"label": "Reviews", "value": totals.get("reviews", 0)},
+            {"label": "Current Step", "value": progress.get("current_step", 0)},
+            {"label": "Max Steps", "value": progress.get("max_steps", 10)},
+            {"label": "Progress", "value": str(progress.get("progress_percent", 0)) + "%"},
+        ],
+    )
+
+    st.info("Modo read-only. O cockpit nao executa comandos, nao controla navegador e nao aplica patches.")
+
+    st.markdown("#### Policy")
+    st.json(policy)
+
+    st.markdown("#### Sessao atual")
+    if latest_session:
+        st.json(latest_session)
+    else:
+        st.warning("Nenhuma sessao Cowork encontrada.")
+
+    data = cowork_snapshot.get("data", {})
+
+    st.markdown("#### Steps")
+    step_rows = []
+    for item in data.get("steps", []):
+        payload = item.get("data", {})
+        step_rows.append(
+            {
+                "step_number": payload.get("step_number"),
+                "title": payload.get("title"),
+                "status": payload.get("status"),
+                "risk": payload.get("risk"),
+                "created_at": payload.get("created_at"),
+                "path": item.get("path"),
+            }
+        )
+    st.dataframe(step_rows, use_container_width=True)
+
+    st.markdown("#### Sessions")
+    session_rows = []
+    for item in data.get("sessions", []):
+        payload = item.get("data", {})
+        session_rows.append(
+            {
+                "session_id": payload.get("session_id"),
+                "status": payload.get("status"),
+                "goal": payload.get("goal"),
+                "current_step": payload.get("current_step"),
+                "max_steps": payload.get("max_steps"),
+                "created_at": payload.get("created_at"),
+                "path": item.get("path"),
+            }
+        )
+    st.dataframe(session_rows, use_container_width=True)
+
+    st.markdown("#### Reviews")
+    review_rows = []
+    for item in data.get("reviews", []):
+        payload = item.get("data", {})
+        review_rows.append(
+            {
+                "review_id": payload.get("review_id"),
+                "goal": payload.get("goal"),
+                "steps_total": payload.get("steps_total"),
+                "score": payload.get("score"),
+                "decision": payload.get("decision"),
+                "created_at": payload.get("created_at"),
+                "path": item.get("path"),
+            }
+        )
+    st.dataframe(review_rows, use_container_width=True)
+
+
 def main() -> None:
     import streamlit as st
 
@@ -456,6 +543,7 @@ def main() -> None:
             "Learning",
             "Events",
             "Self Evolution",
+            "Cowork",
         ]
     )
 
@@ -479,6 +567,9 @@ def main() -> None:
 
     with tabs[6]:
         render_self_evolution_tab(st, snapshot)
+
+    with tabs[7]:
+        render_cowork_tab(st, snapshot)
 
 
 if __name__ == "__main__":

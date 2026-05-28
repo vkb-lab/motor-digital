@@ -8,6 +8,7 @@ Valida:
 - disponibilidade do Streamlit
 - integracao basica com kernel
 - leitura read-only da Self Evolution
+- leitura read-only do Cowork Mode
 
 Uso:
 python smoke_test_cockpit.py
@@ -17,6 +18,7 @@ from __future__ import annotations
 
 import importlib
 
+from cockpit.services.cowork_service import collect_cowork_snapshot
 from cockpit.services.kernel_service import cockpit_boot_check, collect_operational_snapshot
 from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
 
@@ -58,7 +60,17 @@ if __name__ == "__main__":
     assert_true("patch_inbox" in self_snapshot["data"], "patch_inbox ausente")
     assert_true("rollback" in self_snapshot["data"], "rollback ausente")
 
+    cowork_snapshot = collect_cowork_snapshot()
+
+    assert_true(cowork_snapshot["success"], "cowork snapshot falhou")
+    assert_true(cowork_snapshot["policy"]["mode"] == "read-only", "cowork nao esta read-only")
+    assert_true(cowork_snapshot["policy"]["can_execute_command"] is False, "cowork nao pode executar comando pelo cockpit")
+    assert_true("sessions" in cowork_snapshot["data"], "cowork sessions ausente")
+    assert_true("steps" in cowork_snapshot["data"], "cowork steps ausente")
+    assert_true("reviews" in cowork_snapshot["data"], "cowork reviews ausente")
+
     print("Cockpit smoke test OK")
     print("health:", snapshot["health"])
     print("agents_total:", len(snapshot["data"]["agents"]))
     print("self_evolution_totals:", self_snapshot["totals"])
+    print("cowork_totals:", cowork_snapshot["totals"])
