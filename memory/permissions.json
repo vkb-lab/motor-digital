@@ -5,6 +5,14 @@
       "events.read",
       "kernel.status",
       "registry.read"
+    ],
+    "task_agent": [
+      "agent.execute",
+      "events.read",
+      "memory.read",
+      "memory.write",
+      "task.read",
+      "task.write"
     ]
   },
   "agent_roles": {
@@ -16,6 +24,9 @@
     ],
     "system_agent": [
       "system"
+    ],
+    "task_agent": [
+      "agent"
     ]
   },
   "roles": {

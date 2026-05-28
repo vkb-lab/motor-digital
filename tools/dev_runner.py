@@ -36,6 +36,11 @@ COMMANDS = [
         "required": True,
     },
     {
+        "name": "smoke_test_task_agent",
+        "cmd": [sys.executable, "smoke_test_task_agent.py"],
+        "required": True,
+    },
+    {
         "name": "smoke_test_boot",
         "cmd": [sys.executable, "smoke_test_boot.py"],
         "required": True,

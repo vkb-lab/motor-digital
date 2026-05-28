@@ -8,7 +8,7 @@ Uso:
 python k_atlas_boot.py
 python k_atlas_boot.py system_agent.status
 python k_atlas_boot.py system_agent.agents
-python k_atlas_boot.py system_agent.events
+python k_atlas_boot.py task_agent.stats
 """
 
 from __future__ import annotations
@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from agents.system_agent import SystemAgent
+from agents.task_agent import TaskAgent
 from core.kernel import KAtlasKernel, create_kernel
 
 
@@ -41,6 +42,13 @@ def build_kernel() -> KAtlasKernel:
         system_agent,
         replace=True,
         roles=["system"],
+    )
+
+    task_agent = TaskAgent(storage_path=ROOT / "memory" / "tasks.json")
+    kernel.register_agent(
+        task_agent,
+        replace=True,
+        roles=["agent"],
     )
 
     return kernel
