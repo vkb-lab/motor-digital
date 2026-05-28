@@ -61,6 +61,11 @@ COMMANDS = [
         "required": True,
     },
     {
+        "name": "smoke_test_self_evolution_governance",
+        "cmd": [sys.executable, "smoke_test_self_evolution_governance.py"],
+        "required": True,
+    },
+    {
         "name": "smoke_test_cowork",
         "cmd": [sys.executable, "smoke_test_cowork.py"],
         "required": True,
