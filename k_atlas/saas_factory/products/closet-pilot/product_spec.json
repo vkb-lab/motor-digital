@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "product_id": "0c9f2e97-9412-431e-a835-d6e2a8f12b52",
+  "created_at": "2026-05-28T20:08:03.188343+00:00",
+  "name": "Closet Pilot",
+  "slug": "closet-pilot",
+  "category": "micro_saas",
+  "audience": "Mulheres que querem organizar guarda-roupa, montar looks e reduzir indecisao na rotina.",
+  "problem": "Muitas mulheres possuem um guarda-roupa com roupas suficientes, mas perdem tempo decidindo o que vestir, esquecem pecas que ja possuem e compram itens repetidos por falta de organizacao visual.",
+  "solution": "Um micro-SaaS simples para cadastrar pecas do guarda-roupa, classificar por categoria, cor, ocasiao e estacao, montar combinacoes basicas e planejar looks para trabalho, eventos, viagens e rotina.",
+  "mvp_scope": [
+    "Cadastro manual de pecas",
+    "Categorias: blusa, calca, saia, vestido, casaco, sapato, acessorio",
+    "Cores e ocasioes",
+    "Status da peca: ativa, pouco usada, favorita",
+    "Gerador simples de combinacoes por ocasiao",
+    "Planejador semanal de looks",
+    "Resumo do guarda-roupa por categoria e cor"
+  ],
+  "not_now": [
+    "IA externa obrigatoria",
+    "Upload automatico de imagem",
+    "Marketplace",
+    "Login multiusuario",
+    "Pagamento",
+    "Deploy cloud",
+    "Recomendacao fashion complexa"
+  ],
+  "first_test": {
+    "type": "streamlit_local_mvp",
+    "goal": "Validar se a experiencia basica de cadastro e sugestao de looks funciona localmente.",
+    "input_data": [
+      "peca",
+      "categoria",
+      "cor",
+      "ocasiao",
+      "estacao",
+      "favorita"
+    ],
+    "expected_output": [
+      "lista de pecas cadastradas",
+      "metricas simples do guarda-roupa",
+      "sugestao basica de combinacao",
+      "planejamento semanal manual"
+    ]
+  },
+  "success_criteria": [
+    "App local abre sem erro",
+    "Usuario consegue cadastrar pecas",
+    "Usuario consegue visualizar pecas",
+    "Sistema sugere pelo menos uma combinacao simples",
+    "Smoke test valida estrutura do produto"
+  ],
+  "risks": [
+    "Escopo virar app de moda complexo cedo demais",
+    "Adicionar IA visual antes de validar fluxo manual",
+    "Criar login e pagamento antes do MVP",
+    "Focar em design antes de validar utilidade"
+  ],
+  "next_step_correct": "Gerar scaffold local Streamlit do Closet Pilot com dados JSON e smoke test.",
+  "next_step_wrong": "Criar marketplace, login, pagamento ou IA visual antes do MVP local.",
+  "policy": {
+    "mode": "supervised",
+    "can_generate_files": true,
+    "can_deploy": false,
+    "can_charge_users": false,
+    "requires_human_operator": true
+  }
+}
