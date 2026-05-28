@@ -1,11 +1,12 @@
 {
   "product": "BRICS Paraguay Autos",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "url": "http://localhost:8602",
   "port": 8602,
   "policy": {
     "human_review_required": true,
     "ai_assistive_only": true,
-    "no_auto_publish": true
+    "no_auto_publish": true,
+    "no_clone": true
   }
 }
