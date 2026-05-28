@@ -1,16 +1,14 @@
 {
-  "input": "cliente piscina urgente criar conteudo instagram",
-  "created_at": "2026-05-28T06:47:50.054287",
+  "input": "cliente restaurante gordura pesada cozinha industrial",
+  "created_at": "2026-05-28T07:31:05.047554",
   "customer_type": "profissional",
   "intent": "informacao",
-  "urgency": "alta",
-  "emotion": "pressa",
+  "urgency": "media",
+  "emotion": "neutro",
   "language_style": "tecnico, direto e orientado a rendimento",
-  "main_need": "manter a piscina limpa, segura e pronta para uso",
+  "main_need": "resolver uma necessidade pratica com confianca",
   "best_sales_angle": "rendimento, padronizacao e economia operacional",
   "recommended_cta": "Quer que eu monte uma sugest�o pensando em rendimento para atendimento profissional?",
   "objections": [],
-  "signals": [
-    "interesse_em_tratamento_de_piscina"
-  ]
+  "signals": []
 }

@@ -1,4 +1,4 @@
-import json
+﻿import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -54,9 +54,9 @@ class LiveCommander:
         output = result.stdout or "{}"
         profile_file.write_text(output, encoding="utf-8")
 
-        return "Cliente de piscina identificado e perfilado."
+        return "Cliente identificado e perfilado."
 
-    def run_router(self, command):
+    def run_router(self):
         result = self.run_subprocess([
             "python",
             "-m",
@@ -78,12 +78,42 @@ class LiveCommander:
         normalized = command.lower()
         responses = []
 
-        if "piscina" in normalized or "cliente" in normalized:
+        if any(word in normalized for word in [
+            "cliente",
+            "piscina",
+            "cozinha",
+            "restaurante",
+            "gordura",
+            "campanha",
+            "black friday"
+        ]):
             responses.append(self.run_profiler(command))
 
-        if "instagram" in normalized or "conteudo" in normalized or "conteúdo" in normalized:
-            responses.append("Instagram/conteudo detectado. Acionando roteador e executor.")
+        if any(word in normalized for word in [
+            "instagram",
+            "conteudo",
+            "conteúdo",
+            "post",
+            "social"
+        ]):
+            responses.append("Instagram/conteudo detectado. Acionando executor.")
             responses.append(self.run_auto_executor())
+
+        if any(word in normalized for word in [
+            "gordura",
+            "cozinha",
+            "restaurante",
+            "desengordurante"
+        ]):
+            responses.append("Segmento de limpeza pesada identificado.")
+
+        if any(word in normalized for word in [
+            "black friday",
+            "campanha",
+            "promocao",
+            "promoção"
+        ]):
+            responses.append("Campanha promocional detectada.")
 
         if not responses:
             responses.append("Comando entendido, mas ainda sem acao programada.")
@@ -104,7 +134,6 @@ class LiveCommander:
                     break
 
                 response = self.execute_command(command)
-
                 print(f"\n[K-ATLAS]: {response}")
 
             except KeyboardInterrupt:
