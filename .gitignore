@@ -1,33 +1,8 @@
-﻿# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Ambientes virtuais
-venv/
+﻿__pycache__/
+*.pyc
 .venv/
+venv/
 env/
-
-# Logs
+logs/
 *.log
-k_atlas/logs/*.log
-k_atlas/execution/logs/*.log
-
-# Backups
-*.bak
-*.bak.*
-*.backup
-
-# Ambiente
-.env
-.env.local
-
-# Sistema
-.DS_Store
-Thumbs.db
-
-# Cache
-.streamlit/
-.pytest_cache/
-.mypy_cache/
+.streamlit/secrets.toml
