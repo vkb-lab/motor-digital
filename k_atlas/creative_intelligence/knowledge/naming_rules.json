@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "criteria": [
+    "curto",
+    "memoravel",
+    "pronunciavel",
+    "visual",
+    "com energia",
+    "com potencial de marca",
+    "sem depender de explicacao longa"
+  ],
+  "avoid": [
+    "nomes genericos",
+    "nomes longos demais",
+    "copiar sonoridade de concorrente",
+    "termos que limitam expansao futura",
+    "palavras dificeis no pais alvo"
+  ],
+  "score_dimensions": [
+    "memorability",
+    "sound",
+    "market_fit",
+    "visual_identity",
+    "expansion_potential",
+    "cultural_risk"
+  ]
+}

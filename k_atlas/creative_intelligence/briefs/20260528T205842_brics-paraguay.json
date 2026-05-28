@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "brief_id": "7600774b-ab19-41de-87e3-58edd087bb4c",
+  "created_at": "2026-05-28T20:58:42.139796+00:00",
+  "project": "BRICS Paraguay",
+  "context_key": "paraguay_marketplace",
+  "type": "classifieds_marketplace",
+  "audience": "compradores e vendedores locais no Paraguai",
+  "strategic_intent": "Criar um marketplace local de classificados com energia comercial, confianca e identidade propria.",
+  "emotional_goal": [
+    "oportunidade",
+    "preco",
+    "confiança",
+    "rapidez",
+    "negocio local"
+  ],
+  "market_reading": "Classificados locais vencem quando parecem rapidos, confiaveis e populares. O diferencial nao deve ser copiar OLX, mas melhorar percepcao de seguranca, organizacao e oportunidade.",
+  "visual_direction": "verde e amarelo com energia comercial, mas sem parecer copia de classificados existentes.",
+  "palette": {
+    "primary": "green",
+    "secondary": "yellow",
+    "support": [
+      "white",
+      "deep green",
+      "warm gray"
+    ],
+    "psychology": "verde transmite confianca e crescimento; amarelo transmite oportunidade e movimento comercial.",
+    "warning": "nao usar amarelo em excesso para evitar percepcao barata."
+  },
+  "name_analysis": {
+    "name": "BRICS",
+    "score": 7.67,
+    "memorability": 9,
+    "sound": 8,
+    "market_fit": 7,
+    "visual_identity": 9,
+    "expansion_potential": 8,
+    "cultural_risk": 5
+  },
+  "positioning": [
+    "compra e venda local",
+    "negocio rapido",
+    "visual mais confiavel",
+    "foco Paraguai",
+    "verde e amarelo com energia de oportunidade"
+  ],
+  "legal_guardrail": [
+    "nao copiar OLX",
+    "nao copiar marca, layout, codigo, iconografia ou identidade visual de concorrentes",
+    "usar apenas categoria de produto como referencia: classificados"
+  ],
+  "ux_principles": [
+    "busca grande e clara",
+    "cards visuais fortes",
+    "sinais de confianca",
+    "destaque para preco e local",
+    "publicar anuncio com baixa friccao",
+    "evitar aparencia de clone"
+  ],
+  "avoid": [
+    "copia fiel de concorrente",
+    "visual barato",
+    "excesso de amarelo",
+    "botoes genericos",
+    "fluxo pesado para publicar anuncio"
+  ],
+  "next_product_move": "Criar Product Spec supervisionado para BRICS Paraguay antes de qualquer scaffold de app.",
+  "unicorn_delta": "Transformar classificados em uma experiencia mais confiavel, visual e localmente posicionada."
+}

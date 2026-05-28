@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "purpose": "Governar decisoes criativas, estrategicas e emocionais antes da criacao de produtos, apps, campanhas e interfaces.",
+  "rules": [
+    "Nenhum produto deve ser criado sem Creative Brief.",
+    "Nunca copiar marca, codigo, identidade visual ou assets de concorrentes.",
+    "Usar referencias de mercado apenas como inspiracao estrutural.",
+    "Todo app deve ter intencao emocional clara.",
+    "Toda interface deve evitar aparencia generica.",
+    "Toda cor deve ter motivo psicologico e comercial.",
+    "Todo nome deve ser avaliado por memorabilidade, sonoridade, energia e risco cultural.",
+    "Toda criacao deve considerar pais, epoca, publico, tendencia e maturidade do mercado.",
+    "Antes de expandir funcionalidades, validar desejo, uso e clareza."
+  ],
+  "unicorn_standard": {
+    "definition": "Padrao minimo para produtos que parecem acima da media.",
+    "criteria": [
+      "clareza imediata",
+      "identidade propria",
+      "sensacao premium",
+      "fluxo simples",
+      "linguagem humana",
+      "diferencial visivel",
+      "baixa friccao",
+      "narrativa forte",
+      "evitar botoes comuns sem contexto",
+      "evitar telas frias de formulario"
+    ]
+  }
+}

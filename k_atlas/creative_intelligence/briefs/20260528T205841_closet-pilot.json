@@ -1,0 +1,57 @@
+{
+  "success": true,
+  "brief_id": "957727ff-1429-498d-98dd-b416c72ce5e6",
+  "created_at": "2026-05-28T20:58:41.972126+00:00",
+  "project": "Closet Pilot",
+  "context_key": "female_wardrobe_winter_2026",
+  "type": "fashion_lifestyle_micro_saas",
+  "audience": "mulheres",
+  "season": "inverno 2026",
+  "strategic_intent": "Transformar o guarda-roupa feminino em uma experiencia visual, organizada e emocionalmente inteligente.",
+  "emotional_goal": [
+    "autoestima",
+    "controle",
+    "elegancia",
+    "praticidade",
+    "redescoberta do que ja possui"
+  ],
+  "market_reading": "Em 2026, produtos femininos de organizacao pessoal precisam parecer assistentes de estilo, nao planilhas. O valor esta em reduzir indecisao, recuperar pecas esquecidas e aumentar autoestima.",
+  "visual_direction": "sofisticado, quente, editorial, menos formulario e mais experiencia de closet inteligente.",
+  "palette": {
+    "primary": "burgundy",
+    "secondary": "cream",
+    "support": [
+      "black",
+      "warm gray",
+      "soft gold"
+    ],
+    "psychology": "burgundy e preto elevam sofisticacao; cream aquece a experiencia; dourado suave sugere cuidado e valor.",
+    "warning": "nao transformar em tela fria de cadastro; usar linguagem editorial."
+  },
+  "name_analysis": {
+    "name": "Closet Pilot",
+    "score": 8.33,
+    "memorability": 8,
+    "sound": 8,
+    "market_fit": 9,
+    "visual_identity": 8,
+    "expansion_potential": 9,
+    "cultural_risk": 2
+  },
+  "ux_principles": [
+    "menos formulario frio, mais experiencia de closet",
+    "mostrar foto antes de tabela sempre que possivel",
+    "destacar onde a peca esta guardada",
+    "transformar cadastro em sensacao de curadoria",
+    "sugerir looks como consultora pratica, nao como planilha"
+  ],
+  "avoid": [
+    "interface generica",
+    "botoes sem contexto emocional",
+    "cadastro longo demais",
+    "IA visual antes de validar uso manual",
+    "design frio de dashboard"
+  ],
+  "next_product_move": "Criar modo visual premium para cards de pecas e looks, mantendo persistencia JSON local.",
+  "unicorn_delta": "Sair de app de cadastro para experiencia de closet inteligente com memoria visual e narrativa de estilo."
+}

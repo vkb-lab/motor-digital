@@ -1,0 +1,107 @@
+{
+  "green": {
+    "meanings": [
+      "crescimento",
+      "seguranca",
+      "natureza",
+      "dinheiro",
+      "confianza pratica"
+    ],
+    "use_when": [
+      "marketplace",
+      "financas",
+      "sustentabilidade",
+      "organização",
+      "compra e venda"
+    ],
+    "risks": [
+      "pode parecer comum se usado sem contraste"
+    ]
+  },
+  "yellow": {
+    "meanings": [
+      "energia",
+      "oportunidade",
+      "otimismo",
+      "alerta positivo",
+      "movimento"
+    ],
+    "use_when": [
+      "ofertas",
+      "marketplace",
+      "chamadas de acao",
+      "descoberta"
+    ],
+    "risks": [
+      "excesso pode parecer barato ou cansativo"
+    ]
+  },
+  "black": {
+    "meanings": [
+      "sofisticacao",
+      "autoridade",
+      "luxo",
+      "controle"
+    ],
+    "use_when": [
+      "moda",
+      "premium",
+      "produtos femininos sofisticados"
+    ],
+    "risks": [
+      "pode pesar se nao houver espaco visual"
+    ]
+  },
+  "cream": {
+    "meanings": [
+      "acolhimento",
+      "calor",
+      "elegancia suave",
+      "feminino adulto"
+    ],
+    "use_when": [
+      "moda",
+      "bem-estar",
+      "lifestyle",
+      "inverno"
+    ],
+    "risks": [
+      "pode parecer sem energia se usado sozinho"
+    ]
+  },
+  "burgundy": {
+    "meanings": [
+      "inverno",
+      "luxo",
+      "profundidade",
+      "autoestima",
+      "moda"
+    ],
+    "use_when": [
+      "fashion",
+      "feminino",
+      "colecao de inverno",
+      "produto premium"
+    ],
+    "risks": [
+      "usar com cuidado para nao ficar pesado"
+    ]
+  },
+  "blue": {
+    "meanings": [
+      "confiança",
+      "tecnologia",
+      "estabilidade",
+      "clareza"
+    ],
+    "use_when": [
+      "SaaS",
+      "dashboards",
+      "B2B",
+      "segurança"
+    ],
+    "risks": [
+      "pode parecer corporativo demais"
+    ]
+  }
+}

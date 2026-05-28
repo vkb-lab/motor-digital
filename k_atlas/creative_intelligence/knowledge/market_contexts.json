@@ -1,0 +1,35 @@
+{
+  "paraguay_marketplace": {
+    "country": "Paraguay",
+    "language": [
+      "es",
+      "pt"
+    ],
+    "market_type": "classifieds_marketplace",
+    "emotional_drivers": [
+      "oportunidade",
+      "preco",
+      "confiança",
+      "rapidez",
+      "negocio local"
+    ],
+    "design_direction": "verde e amarelo com energia comercial, mas sem parecer copia de classificados existentes.",
+    "risk": "parecer copia simples de marketplace tradicional.",
+    "strategic_angle": "classificados mais confiaveis, visuais e inteligentes para compra e venda local."
+  },
+  "female_wardrobe_winter_2026": {
+    "audience": "mulheres",
+    "season": "inverno 2026",
+    "market_type": "fashion_lifestyle_saas",
+    "emotional_drivers": [
+      "autoestima",
+      "controle",
+      "elegancia",
+      "praticidade",
+      "redescoberta do que ja possui"
+    ],
+    "design_direction": "sofisticado, quente, editorial, menos formulario e mais experiencia de closet inteligente.",
+    "risk": "parecer planilha de roupas ou app frio de cadastro.",
+    "strategic_angle": "memoria visual do guarda-roupa, combinacao inteligente e reducao da indecisao diaria."
+  }
+}
