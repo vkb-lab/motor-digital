@@ -1,0 +1,11 @@
+{
+  "step_id": "62e357c4-4157-4971-854e-7beaf10b0a79",
+  "step_number": 1,
+  "title": "Integrar Cowork no dev_runner",
+  "command": "Adicionar smoke_test_cowork.py ao tools/dev_runner.py, executar validacao completa e commitar checkpoint.",
+  "result_summary": "Cowork passou a fazer parte da validacao oficial do K-Atlas OS via dev_runner.",
+  "status": "done",
+  "risk": "low",
+  "created_at": "2026-05-28T17:39:24.934448+00:00",
+  "updated_at": "2026-05-28T17:39:24.934448+00:00"
+}
