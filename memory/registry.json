@@ -30,7 +30,7 @@
         "reports.read",
         "reports.write"
       ],
-      "registered_at": "2026-05-28T18:34:03.652326+00:00",
+      "registered_at": "2026-05-28T18:40:48.437323+00:00",
       "version": "0.1.0"
     },
     {
@@ -71,7 +71,7 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T18:34:03.651002+00:00",
+      "registered_at": "2026-05-28T18:40:48.434601+00:00",
       "version": "0.1.0"
     },
     {
@@ -101,7 +101,7 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T18:34:03.649921+00:00",
+      "registered_at": "2026-05-28T18:40:48.433445+00:00",
       "version": "0.1.0"
     },
     {
@@ -135,7 +135,7 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T18:34:03.653509+00:00",
+      "registered_at": "2026-05-28T18:40:48.438524+00:00",
       "version": "0.1.0"
     },
     {
@@ -166,7 +166,7 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T18:34:03.647517+00:00",
+      "registered_at": "2026-05-28T18:40:48.429814+00:00",
       "version": "0.1.0"
     },
     {
@@ -197,10 +197,10 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T18:34:03.648760+00:00",
+      "registered_at": "2026-05-28T18:40:48.431896+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T18:34:03.659380+00:00",
-  "registry_id": "8cfdd8cb-e3c7-4280-97db-6a8c0744b25f"
+  "exported_at": "2026-05-28T18:40:48.447183+00:00",
+  "registry_id": "ff0e6a0f-0259-4ef8-9964-db69f452b5ef"
 }
