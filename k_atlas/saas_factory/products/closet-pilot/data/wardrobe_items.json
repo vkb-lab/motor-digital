@@ -1,30 +1,58 @@
 [
   {
+    "id": "1",
     "nome": "Camisa branca",
     "categoria": "blusa",
     "cor": "branco",
     "ocasiao": "trabalho",
-    "favorita": true
+    "favorita": true,
+    "local_tipo": "closet",
+    "local_nome": "Closet principal",
+    "local_detalhe": "cabideiro superior",
+    "caixa": "",
+    "foto": "",
+    "notas": "Base para trabalho"
   },
   {
+    "id": "2",
     "nome": "Calca jeans",
     "categoria": "calca",
     "cor": "azul",
     "ocasiao": "casual",
-    "favorita": true
+    "favorita": true,
+    "local_tipo": "gaveta",
+    "local_nome": "Comoda",
+    "local_detalhe": "gaveta 2",
+    "caixa": "",
+    "foto": "",
+    "notas": "Rotina"
   },
   {
+    "id": "3",
     "nome": "Blazer preto",
-    "categoria": "casaco",
+    "categoria": "blazer",
     "cor": "preto",
     "ocasiao": "trabalho",
-    "favorita": false
+    "favorita": false,
+    "local_tipo": "closet",
+    "local_nome": "Closet principal",
+    "local_detalhe": "cabideiro lateral",
+    "caixa": "",
+    "foto": "",
+    "notas": "Eleva looks simples"
   },
   {
+    "id": "4",
     "nome": "Vestido floral",
     "categoria": "vestido",
     "cor": "colorido",
     "ocasiao": "evento",
-    "favorita": true
+    "favorita": true,
+    "local_tipo": "caixa",
+    "local_nome": "Caixa eventos",
+    "local_detalhe": "prateleira alta",
+    "caixa": "CX-EVENTOS-01",
+    "foto": "",
+    "notas": "Eventos leves"
   }
 ]
