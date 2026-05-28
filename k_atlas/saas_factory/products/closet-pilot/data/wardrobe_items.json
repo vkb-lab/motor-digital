@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "Camisa branca",
+    "categoria": "blusa",
+    "cor": "branco",
+    "ocasiao": "trabalho",
+    "favorita": true
+  },
+  {
+    "nome": "Calca jeans",
+    "categoria": "calca",
+    "cor": "azul",
+    "ocasiao": "casual",
+    "favorita": true
+  },
+  {
+    "nome": "Blazer preto",
+    "categoria": "casaco",
+    "cor": "preto",
+    "ocasiao": "trabalho",
+    "favorita": false
+  },
+  {
+    "nome": "Vestido floral",
+    "categoria": "vestido",
+    "cor": "colorido",
+    "ocasiao": "evento",
+    "favorita": true
+  }
+]
