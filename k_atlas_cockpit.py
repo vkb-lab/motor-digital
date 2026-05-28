@@ -28,6 +28,7 @@ from cockpit.services.kernel_service import collect_operational_snapshot
 from cockpit.services.self_evolution_service import collect_self_evolution_snapshot
 from cockpit.services.cowork_service import collect_cowork_snapshot
 from cockpit.services.prompt_generator_service import collect_prompt_generator_snapshot
+from cockpit.services.lousa_service import collect_lousa_snapshot
 from cockpit.state.session_state import init_session_state
 from cockpit.utils.formatting import to_display_rows
 
@@ -581,6 +582,77 @@ def render_prompt_generator_tab(st: Any, snapshot: Dict[str, Any]) -> None:
                 st.code(item.get("markdown"), language="markdown")
 
 
+
+def render_lousa_tab(st: Any, snapshot: Dict[str, Any]) -> None:
+    st.subheader("Lousa Operacional")
+
+    lousa_snapshot = collect_lousa_snapshot(limit=100)
+    totals = lousa_snapshot.get("totals", {})
+    policy = lousa_snapshot.get("policy", {})
+    latest_board = lousa_snapshot.get("latest_board", {})
+    lanes = lousa_snapshot.get("lanes", {})
+
+    render_metric_grid(
+        st,
+        [
+            {"label": "Boards", "value": totals.get("boards", 0)},
+            {"label": "Cards", "value": totals.get("cards", 0)},
+            {"label": "Backlog", "value": totals.get("backlog", 0)},
+            {"label": "Doing", "value": totals.get("doing", 0)},
+            {"label": "Done", "value": totals.get("done", 0)},
+            {"label": "Professor Review", "value": totals.get("professor_review", 0)},
+        ],
+    )
+
+    st.info("Modo read-only. A Lousa organiza decisao operacional, mas nao executa comandos e nao aprova mudancas.")
+
+    st.markdown("#### Policy")
+    st.json(policy)
+
+    st.markdown("#### Board atual")
+    if latest_board:
+        st.json(latest_board)
+    else:
+        st.warning("Nenhuma lousa encontrada.")
+
+    st.markdown("#### Cards por lane")
+
+    for lane_name in ["professor_review", "doing", "blocked", "backlog", "done"]:
+        st.markdown("##### " + lane_name)
+        rows = []
+
+        for card in lanes.get(lane_name, []):
+            rows.append(
+                {
+                    "title": card.get("title"),
+                    "priority": card.get("priority"),
+                    "status": card.get("status"),
+                    "description": card.get("description"),
+                    "tags": ", ".join(card.get("tags", [])) if isinstance(card.get("tags"), list) else card.get("tags"),
+                    "created_at": card.get("created_at"),
+                }
+            )
+
+        st.dataframe(rows, use_container_width=True)
+
+    data = lousa_snapshot.get("data", {})
+
+    st.markdown("#### Boards")
+    board_rows = []
+    for item in data.get("boards", []):
+        payload = item.get("data", {})
+        board_rows.append(
+            {
+                "title": payload.get("title"),
+                "phase": payload.get("phase"),
+                "status": payload.get("status"),
+                "created_at": payload.get("created_at"),
+                "path": item.get("path"),
+            }
+        )
+    st.dataframe(board_rows, use_container_width=True)
+
+
 def main() -> None:
     import streamlit as st
 
@@ -639,6 +711,7 @@ def main() -> None:
             "Self Evolution",
             "Cowork",
             "Prompt Generator",
+            "Lousa",
         ]
     )
 
@@ -668,6 +741,9 @@ def main() -> None:
 
     with tabs[8]:
         render_prompt_generator_tab(st, snapshot)
+
+    with tabs[9]:
+        render_lousa_tab(st, snapshot)
 
 
 if __name__ == "__main__":
