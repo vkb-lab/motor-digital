@@ -1,0 +1,18 @@
+--- C:\Users\oi\Desktop\motor-digital\tools\dev_runner.py
++++ C:\Users\oi\Desktop\motor-digital\tools\dev_runner.py proposed
+@@ -215,3 +215,8 @@
+ 
+
+ if __name__ == "__main__":
+
+     raise SystemExit(main())
+
++
+
++# TODO K-Atlas Self Evolution:
+
++# Proposta futura: permitir que o dev_runner sugira relatorio operacional
+
++# via AutoReporter apos validacoes importantes.
+
++# Esta proposta NAO deve ser aplicada sem approval humano.
