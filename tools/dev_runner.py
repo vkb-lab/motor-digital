@@ -3,7 +3,7 @@
 K-Atlas OS - Local Dev Runner
 
 Executor local para validar o estado do projeto.
-Compatível com Windows / PowerShell / UTF-8.
+Compativel com Windows / PowerShell / UTF-8.
 
 Uso:
 python tools/dev_runner.py
@@ -35,6 +35,11 @@ COMMANDS = [
         "cmd": [sys.executable, "smoke_test_system_agent.py"],
         "required": True,
     },
+    {
+        "name": "smoke_test_boot",
+        "cmd": [sys.executable, "smoke_test_boot.py"],
+        "required": True,
+    },
 ]
 
 
@@ -53,7 +58,7 @@ def run_command(item: Dict[str, Any]) -> Dict[str, Any]:
             text=True,
             encoding="utf-8",
             errors="replace",
-            timeout=60,
+            timeout=90,
         )
 
         return {
@@ -165,4 +170,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -28,10 +28,10 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T14:00:25.445970+00:00",
+      "registered_at": "2026-05-28T14:01:45.362136+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T14:00:25.459800+00:00",
-  "registry_id": "df32558b-e402-4dfe-bf32-0de1477ed44a"
+  "exported_at": "2026-05-28T14:01:45.376064+00:00",
+  "registry_id": "8eac7faf-f2eb-4ed8-8c52-9d32ff473819"
 }
