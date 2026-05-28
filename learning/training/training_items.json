@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "created_at": "2026-05-28T16:11:09.627397+00:00",
+  "updated_at": "2026-05-28T16:11:09.856955+00:00",
+  "training_items": [
+    {
+      "training_id": "2fc87688-1863-4875-80b8-dc2c6ea1996a",
+      "title": "Correcao aprendida: CLI sem comando learning-stats",
+      "content": "Erro operacional aprendido.\nTitulo: CLI sem comando learning-stats\nSintoma: smoke_test_cli falhou porque o comando learning-stats ainda nao existia na CLI instalada.\nCausa: CLI antiga permaneceu no disco apos integracao parcial.\nCorrecao: Reescrever k_atlas_cli.py completo com learning-stats e comandos do LearningAgent.\nPrevencao: Sempre rodar smoke_test_cli e dev_runner apos alterar comandos CLI.",
+      "type": "correction",
+      "tags": [
+        "error",
+        "correction",
+        "cli",
+        "learning",
+        "smoke_test",
+        "regression"
+      ],
+      "source": "learning_agent",
+      "importance": 2,
+      "target_agents": [],
+      "created_at": "2026-05-28T16:11:09.625340+00:00",
+      "updated_at": "2026-05-28T16:11:09.625353+00:00"
+    },
+    {
+      "training_id": "3bff9fac-35c1-4322-abde-55dc313f3543",
+      "title": "Playbook treinavel: Integrar novo agente ao K-Atlas OS",
+      "content": "Playbook treinavel.\nTitulo: Integrar novo agente ao K-Atlas OS\nObjetivo: Padronizar integracao segura de agentes no kernel multiagente.\nContexto: \nPassos:\n1. Criar agente em agents\n2. criar smoke test isolado\n3. integrar no boot\n4. integrar na CLI quando necessario\n5. adicionar ao dev_runner\n6. executar validacao completa\n7. commitar checkpoint\nResultado esperado:",
+      "type": "playbook",
+      "tags": [
+        "playbook",
+        "procedure",
+        "agents",
+        "kernel",
+        "dev_runner",
+        "quality"
+      ],
+      "source": "learning_agent",
+      "importance": 2,
+      "target_agents": [],
+      "created_at": "2026-05-28T16:11:09.837498+00:00",
+      "updated_at": "2026-05-28T16:11:09.837511+00:00"
+    }
+  ]
+}

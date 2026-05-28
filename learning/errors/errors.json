@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "created_at": "2026-05-28T16:11:09.622842+00:00",
+  "updated_at": "2026-05-28T16:11:09.623590+00:00",
+  "errors": [
+    {
+      "error_id": "05f0d2f2-f4fd-422d-bf28-b27abb99fc49",
+      "title": "CLI sem comando learning-stats",
+      "symptom": "smoke_test_cli falhou porque o comando learning-stats ainda nao existia na CLI instalada.",
+      "cause": "CLI antiga permaneceu no disco apos integracao parcial.",
+      "fix": "Reescrever k_atlas_cli.py completo com learning-stats e comandos do LearningAgent.",
+      "prevention": "Sempre rodar smoke_test_cli e dev_runner apos alterar comandos CLI.",
+      "severity": "medium",
+      "tags": [
+        "cli",
+        "learning",
+        "smoke_test",
+        "regression"
+      ],
+      "source": "operator",
+      "related_agents": [],
+      "status": "resolved",
+      "created_at": "2026-05-28T16:11:09.620680+00:00",
+      "updated_at": "2026-05-28T16:11:09.620692+00:00"
+    }
+  ]
+}

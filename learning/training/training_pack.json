@@ -1,0 +1,118 @@
+{
+  "app": "K-Atlas OS",
+  "type": "training_pack",
+  "version": "0.1.0",
+  "created_at": "2026-05-28T16:11:10.054648+00:00",
+  "lessons": [
+    {
+      "lesson_id": "ed3a88cf-ae18-4ab6-b5ed-051575122ca1",
+      "title": "LearningAgent integrado ao K-Atlas OS",
+      "content": "O K-Atlas OS agora possui sistema de aprendizado operacional com lessons, errors, playbooks e training items persistidos em JSON para treinamento futuro de agentes e robos.",
+      "type": "decision",
+      "tags": [
+        "learning",
+        "kernel",
+        "multiagent",
+        "training",
+        "v0.1"
+      ],
+      "source": "operator",
+      "importance": 3,
+      "related_agents": [],
+      "reusable": true,
+      "created_at": "2026-05-28T16:11:09.389750+00:00",
+      "updated_at": "2026-05-28T16:11:09.389758+00:00"
+    }
+  ],
+  "errors": [
+    {
+      "error_id": "05f0d2f2-f4fd-422d-bf28-b27abb99fc49",
+      "title": "CLI sem comando learning-stats",
+      "symptom": "smoke_test_cli falhou porque o comando learning-stats ainda nao existia na CLI instalada.",
+      "cause": "CLI antiga permaneceu no disco apos integracao parcial.",
+      "fix": "Reescrever k_atlas_cli.py completo com learning-stats e comandos do LearningAgent.",
+      "prevention": "Sempre rodar smoke_test_cli e dev_runner apos alterar comandos CLI.",
+      "severity": "medium",
+      "tags": [
+        "cli",
+        "learning",
+        "smoke_test",
+        "regression"
+      ],
+      "source": "operator",
+      "related_agents": [],
+      "status": "resolved",
+      "created_at": "2026-05-28T16:11:09.620680+00:00",
+      "updated_at": "2026-05-28T16:11:09.620692+00:00"
+    }
+  ],
+  "playbooks": [
+    {
+      "playbook_id": "61d184f1-245b-4f12-a84a-68ae0a8c7cf5",
+      "title": "Integrar novo agente ao K-Atlas OS",
+      "objective": "Padronizar integracao segura de agentes no kernel multiagente.",
+      "context": "",
+      "steps": [
+        "Criar agente em agents",
+        "criar smoke test isolado",
+        "integrar no boot",
+        "integrar na CLI quando necessario",
+        "adicionar ao dev_runner",
+        "executar validacao completa",
+        "commitar checkpoint"
+      ],
+      "expected_result": "",
+      "failure_modes": [],
+      "tags": [
+        "agents",
+        "kernel",
+        "dev_runner",
+        "quality"
+      ],
+      "source": "operator",
+      "version": "0.1.0",
+      "created_at": "2026-05-28T16:11:09.833206+00:00",
+      "updated_at": "2026-05-28T16:11:09.833214+00:00"
+    }
+  ],
+  "training_items": [
+    {
+      "training_id": "2fc87688-1863-4875-80b8-dc2c6ea1996a",
+      "title": "Correcao aprendida: CLI sem comando learning-stats",
+      "content": "Erro operacional aprendido.\nTitulo: CLI sem comando learning-stats\nSintoma: smoke_test_cli falhou porque o comando learning-stats ainda nao existia na CLI instalada.\nCausa: CLI antiga permaneceu no disco apos integracao parcial.\nCorrecao: Reescrever k_atlas_cli.py completo com learning-stats e comandos do LearningAgent.\nPrevencao: Sempre rodar smoke_test_cli e dev_runner apos alterar comandos CLI.",
+      "type": "correction",
+      "tags": [
+        "error",
+        "correction",
+        "cli",
+        "learning",
+        "smoke_test",
+        "regression"
+      ],
+      "source": "learning_agent",
+      "importance": 2,
+      "target_agents": [],
+      "created_at": "2026-05-28T16:11:09.625340+00:00",
+      "updated_at": "2026-05-28T16:11:09.625353+00:00"
+    },
+    {
+      "training_id": "3bff9fac-35c1-4322-abde-55dc313f3543",
+      "title": "Playbook treinavel: Integrar novo agente ao K-Atlas OS",
+      "content": "Playbook treinavel.\nTitulo: Integrar novo agente ao K-Atlas OS\nObjetivo: Padronizar integracao segura de agentes no kernel multiagente.\nContexto: \nPassos:\n1. Criar agente em agents\n2. criar smoke test isolado\n3. integrar no boot\n4. integrar na CLI quando necessario\n5. adicionar ao dev_runner\n6. executar validacao completa\n7. commitar checkpoint\nResultado esperado:",
+      "type": "playbook",
+      "tags": [
+        "playbook",
+        "procedure",
+        "agents",
+        "kernel",
+        "dev_runner",
+        "quality"
+      ],
+      "source": "learning_agent",
+      "importance": 2,
+      "target_agents": [],
+      "created_at": "2026-05-28T16:11:09.837498+00:00",
+      "updated_at": "2026-05-28T16:11:09.837511+00:00"
+    }
+  ]
+}

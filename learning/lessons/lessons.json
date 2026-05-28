@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "created_at": "2026-05-28T16:11:09.390809+00:00",
+  "updated_at": "2026-05-28T16:11:09.391793+00:00",
+  "lessons": [
+    {
+      "lesson_id": "ed3a88cf-ae18-4ab6-b5ed-051575122ca1",
+      "title": "LearningAgent integrado ao K-Atlas OS",
+      "content": "O K-Atlas OS agora possui sistema de aprendizado operacional com lessons, errors, playbooks e training items persistidos em JSON para treinamento futuro de agentes e robos.",
+      "type": "decision",
+      "tags": [
+        "learning",
+        "kernel",
+        "multiagent",
+        "training",
+        "v0.1"
+      ],
+      "source": "operator",
+      "importance": 3,
+      "related_agents": [],
+      "reusable": true,
+      "created_at": "2026-05-28T16:11:09.389750+00:00",
+      "updated_at": "2026-05-28T16:11:09.389758+00:00"
+    }
+  ]
+}
