@@ -42,5 +42,7 @@ if __name__ == "__main__":
     run([sys.executable, "k_atlas_cli.py", "agents"])
     run([sys.executable, "k_atlas_cli.py", "task-stats"])
     run([sys.executable, "k_atlas_cli.py", "memory-stats"])
+    run([sys.executable, "k_atlas_cli.py", "orchestrator-status"])
     run([sys.executable, "k_atlas_cli.py", "run", "system_agent.ping"])
+    run([sys.executable, "k_atlas_cli.py", "run", "orchestrator_agent.ping"])
     print("Smoke test CLI OK")

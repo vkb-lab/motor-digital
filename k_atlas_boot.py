@@ -10,6 +10,7 @@ python k_atlas_boot.py system_agent.status
 python k_atlas_boot.py system_agent.agents
 python k_atlas_boot.py task_agent.stats
 python k_atlas_boot.py memory_agent.stats
+python k_atlas_boot.py orchestrator_agent.status
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from agents.memory_agent import MemoryAgent
+from agents.orchestrator_agent import OrchestratorAgent
 from agents.system_agent import SystemAgent
 from agents.task_agent import TaskAgent
 from core.kernel import KAtlasKernel, create_kernel
@@ -58,6 +60,13 @@ def build_kernel() -> KAtlasKernel:
         memory_agent,
         replace=True,
         roles=["agent"],
+    )
+
+    orchestrator_agent = OrchestratorAgent(kernel=kernel)
+    kernel.register_agent(
+        orchestrator_agent,
+        replace=True,
+        roles=["system"],
     )
 
     return kernel

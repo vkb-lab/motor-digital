@@ -10,6 +10,7 @@ python k_atlas_cli.py agents
 python k_atlas_cli.py events --limit 10
 python k_atlas_cli.py task-stats
 python k_atlas_cli.py memory-stats
+python k_atlas_cli.py orchestrator-status
 python k_atlas_cli.py run system_agent.ping
 """
 
@@ -73,6 +74,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser("agents", help="Lista agentes registrados.")
     subparsers.add_parser("task-stats", help="Mostra estatisticas de tarefas.")
     subparsers.add_parser("memory-stats", help="Mostra estatisticas de memoria.")
+    subparsers.add_parser("orchestrator-status", help="Mostra visao geral do orquestrador.")
 
     events = subparsers.add_parser("events", help="Lista eventos recentes.")
     events.add_argument("--limit", type=int, default=20)
@@ -108,6 +110,18 @@ def build_parser() -> argparse.ArgumentParser:
     memory_list.add_argument("--tag", default=None)
     memory_list.add_argument("--limit", type=int, default=50)
 
+    orchestrator_plan = subparsers.add_parser("orchestrator-plan", help="Cria plano via orquestrador.")
+    orchestrator_plan.add_argument("--goal", required=True)
+    orchestrator_plan.add_argument("--description", default="Tarefa criada pelo OrchestratorAgent.")
+    orchestrator_plan.add_argument("--priority", default="normal")
+    orchestrator_plan.add_argument("--tags", default="")
+    orchestrator_plan.add_argument("--assigned-agent-id", default="task_agent")
+
+    daily_start = subparsers.add_parser("daily-start", help="Inicia operacao diaria.")
+    daily_start.add_argument("--focus", default="Operacao diaria do K-Atlas OS")
+    daily_start.add_argument("--priority", default="normal")
+    daily_start.add_argument("--tags", default="daily,operations")
+
     run = subparsers.add_parser("run", help="Executa comando bruto no kernel.")
     run.add_argument("command")
     run.add_argument("--payload", default=None)
@@ -134,6 +148,9 @@ def main(argv: List[str]) -> int:
     if args.action == "memory-stats":
         return execute("memory_agent.stats")
 
+    if args.action == "orchestrator-status":
+        return execute("orchestrator_agent.status")
+
     if args.action == "task-create":
         return execute(
             "task_agent.create",
@@ -147,13 +164,9 @@ def main(argv: List[str]) -> int:
         )
 
     if args.action == "task-list":
-        payload: Dict[str, Any] = {
-            "limit": args.limit,
-        }
-
+        payload: Dict[str, Any] = {"limit": args.limit}
         if args.status:
             payload["status"] = args.status
-
         return execute("task_agent.list", payload)
 
     if args.action == "task-complete":
@@ -174,26 +187,37 @@ def main(argv: List[str]) -> int:
         )
 
     if args.action == "memory-search":
+        return execute("memory_agent.search", {"query": args.query, "limit": args.limit})
+
+    if args.action == "memory-list":
+        payload: Dict[str, Any] = {"limit": args.limit}
+        if args.type:
+            payload["type"] = args.type
+        if args.tag:
+            payload["tag"] = args.tag
+        return execute("memory_agent.list", payload)
+
+    if args.action == "orchestrator-plan":
         return execute(
-            "memory_agent.search",
+            "orchestrator_agent.plan",
             {
-                "query": args.query,
-                "limit": args.limit,
+                "goal": args.goal,
+                "description": args.description,
+                "priority": args.priority,
+                "tags": parse_tags(args.tags),
+                "assigned_agent_id": args.assigned_agent_id,
             },
         )
 
-    if args.action == "memory-list":
-        payload = {
-            "limit": args.limit,
-        }
-
-        if args.type:
-            payload["type"] = args.type
-
-        if args.tag:
-            payload["tag"] = args.tag
-
-        return execute("memory_agent.list", payload)
+    if args.action == "daily-start":
+        return execute(
+            "orchestrator_agent.daily_start",
+            {
+                "focus": args.focus,
+                "priority": args.priority,
+                "tags": parse_tags(args.tags),
+            },
+        )
 
     if args.action == "run":
         return execute(args.command, parse_json_payload(args.payload))

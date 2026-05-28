@@ -6,6 +6,16 @@
       "memory.read",
       "memory.write"
     ],
+    "orchestrator_agent": [
+      "agent.execute",
+      "events.read",
+      "kernel.status",
+      "memory.read",
+      "memory.write",
+      "registry.read",
+      "task.read",
+      "task.write"
+    ],
     "system_agent": [
       "agent.execute",
       "events.read",
@@ -27,6 +37,9 @@
     ],
     "memory_agent": [
       "agent"
+    ],
+    "orchestrator_agent": [
+      "system"
     ],
     "system": [
       "system"

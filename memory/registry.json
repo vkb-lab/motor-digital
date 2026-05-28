@@ -27,7 +27,41 @@
         "memory.read",
         "memory.write"
       ],
-      "registered_at": "2026-05-28T15:36:28.716848+00:00",
+      "registered_at": "2026-05-28T15:41:07.632772+00:00",
+      "version": "0.1.0"
+    },
+    {
+      "agent_id": "orchestrator_agent",
+      "capabilities": [
+        "coordination",
+        "memory",
+        "multiagent",
+        "orchestration",
+        "planning",
+        "tasks"
+      ],
+      "class_name": "OrchestratorAgent",
+      "description": "Agente coordenador multiagente inicial do K-Atlas OS.",
+      "enabled": true,
+      "metadata": {
+        "base_class": "BaseAgent",
+        "created_for": "K-Atlas OS",
+        "module_role": "multiagent_coordination",
+        "type": "orchestrator"
+      },
+      "module": "agents.orchestrator_agent",
+      "name": "Orchestrator Agent",
+      "permissions": [
+        "agent.execute",
+        "events.read",
+        "kernel.status",
+        "memory.read",
+        "memory.write",
+        "registry.read",
+        "task.read",
+        "task.write"
+      ],
+      "registered_at": "2026-05-28T15:41:07.633787+00:00",
       "version": "0.1.0"
     },
     {
@@ -58,7 +92,7 @@
         "kernel.status",
         "registry.read"
       ],
-      "registered_at": "2026-05-28T15:36:28.714345+00:00",
+      "registered_at": "2026-05-28T15:41:07.630480+00:00",
       "version": "0.1.0"
     },
     {
@@ -89,10 +123,10 @@
         "task.read",
         "task.write"
       ],
-      "registered_at": "2026-05-28T15:36:28.715718+00:00",
+      "registered_at": "2026-05-28T15:41:07.631661+00:00",
       "version": "0.1.0"
     }
   ],
-  "exported_at": "2026-05-28T15:36:28.723902+00:00",
-  "registry_id": "1cb79c3d-31f1-4ff5-8c80-12631e41bf10"
+  "exported_at": "2026-05-28T15:41:07.639145+00:00",
+  "registry_id": "ecb24933-cd2d-467b-8aeb-334acab37c6b"
 }

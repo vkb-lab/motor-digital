@@ -1,42 +1,204 @@
 {
   "app": "K-Atlas OS",
   "entrypoint": "k_atlas_boot.py",
-  "created_at": "2026-05-28T15:36:27.571152+00:00",
+  "created_at": "2026-05-28T15:41:06.232874+00:00",
   "success": true,
-  "command": "memory_agent.stats",
+  "command": "orchestrator_agent.status",
   "payload": {},
   "result": {
     "success": true,
-    "agent_id": "memory_agent",
-    "action": "stats",
+    "agent_id": "orchestrator_agent",
+    "action": "status",
     "output": {
       "success": true,
-      "total": 1,
-      "by_type": {
-        "decision": 1
+      "message": "Visao geral do K-Atlas OS.",
+      "kernel_status": {
+        "success": true,
+        "kernel": {
+          "kernel_id": "cb4fa74d-0f7c-4a6b-a59a-8bd96028ccfc",
+          "app_name": "K-Atlas OS",
+          "environment": "local",
+          "running": true,
+          "started_at": "2026-05-28T15:41:06.210174+00:00",
+          "root_path": "C:\\Users\\oi\\Desktop\\motor-digital",
+          "registry_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\registry.json",
+          "permissions_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\permissions.json",
+          "agents_total": 4,
+          "agents_enabled": 4,
+          "routes_total": 0
+        }
       },
-      "by_visibility": {
-        "internal": 1
+      "agents": {
+        "success": true,
+        "agents": [
+          {
+            "agent_id": "memory_agent",
+            "name": "Memory Agent",
+            "description": "Agente de memoria operacional do K-Atlas OS.",
+            "version": "0.1.0",
+            "module": "agents.memory_agent",
+            "class_name": "MemoryAgent",
+            "capabilities": [
+              "context",
+              "knowledge",
+              "memory",
+              "notes",
+              "persistence"
+            ],
+            "permissions": [
+              "agent.execute",
+              "events.read",
+              "memory.read",
+              "memory.write"
+            ],
+            "enabled": true,
+            "metadata": {
+              "base_class": "BaseAgent",
+              "type": "memory",
+              "created_for": "K-Atlas OS",
+              "module_role": "persistent_operational_memory",
+              "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\entries.json"
+            },
+            "registered_at": "2026-05-28T15:41:06.213357+00:00"
+          },
+          {
+            "agent_id": "orchestrator_agent",
+            "name": "Orchestrator Agent",
+            "description": "Agente coordenador multiagente inicial do K-Atlas OS.",
+            "version": "0.1.0",
+            "module": "agents.orchestrator_agent",
+            "class_name": "OrchestratorAgent",
+            "capabilities": [
+              "coordination",
+              "memory",
+              "multiagent",
+              "orchestration",
+              "planning",
+              "tasks"
+            ],
+            "permissions": [
+              "agent.execute",
+              "events.read",
+              "kernel.status",
+              "memory.read",
+              "memory.write",
+              "registry.read",
+              "task.read",
+              "task.write"
+            ],
+            "enabled": true,
+            "metadata": {
+              "base_class": "BaseAgent",
+              "type": "orchestrator",
+              "created_for": "K-Atlas OS",
+              "module_role": "multiagent_coordination"
+            },
+            "registered_at": "2026-05-28T15:41:06.214336+00:00"
+          },
+          {
+            "agent_id": "system_agent",
+            "name": "System Agent",
+            "description": "Agente de controle operacional do K-Atlas OS.",
+            "version": "0.1.0",
+            "module": "agents.system_agent",
+            "class_name": "SystemAgent",
+            "capabilities": [
+              "agents",
+              "diagnostics",
+              "events",
+              "kernel",
+              "permissions",
+              "status",
+              "system"
+            ],
+            "permissions": [
+              "agent.execute",
+              "events.read",
+              "kernel.status",
+              "registry.read"
+            ],
+            "enabled": true,
+            "metadata": {
+              "base_class": "BaseAgent",
+              "type": "system",
+              "created_for": "K-Atlas OS",
+              "module_role": "kernel_operations"
+            },
+            "registered_at": "2026-05-28T15:41:06.211137+00:00"
+          },
+          {
+            "agent_id": "task_agent",
+            "name": "Task Agent",
+            "description": "Agente de tarefas operacionais do K-Atlas OS.",
+            "version": "0.1.0",
+            "module": "agents.task_agent",
+            "class_name": "TaskAgent",
+            "capabilities": [
+              "operations",
+              "task",
+              "tasks",
+              "workflow"
+            ],
+            "permissions": [
+              "agent.execute",
+              "events.read",
+              "memory.read",
+              "memory.write",
+              "task.read",
+              "task.write"
+            ],
+            "enabled": true,
+            "metadata": {
+              "base_class": "BaseAgent",
+              "type": "operations",
+              "created_for": "K-Atlas OS",
+              "module_role": "task_management",
+              "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\tasks.json"
+            },
+            "registered_at": "2026-05-28T15:41:06.212283+00:00"
+          }
+        ]
       },
-      "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\entries.json"
+      "task_stats": {
+        "success": true,
+        "total": 1,
+        "by_status": {
+          "done": 1
+        },
+        "by_priority": {
+          "high": 1
+        },
+        "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\tasks.json"
+      },
+      "memory_stats": {
+        "success": true,
+        "total": 1,
+        "by_type": {
+          "decision": 1
+        },
+        "by_visibility": {
+          "internal": 1
+        },
+        "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\entries.json"
+      }
     },
     "error": null,
-    "event_id": "67435cee-5fcd-4a9f-8772-bb8f26bbca60",
-    "duration_ms": 1.813,
+    "event_id": "08b8594d-221c-4ed8-8790-7bf31f364de5",
+    "duration_ms": 14.643,
     "metadata": {},
-    "created_at": "2026-05-28T15:36:27.568264+00:00"
+    "created_at": "2026-05-28T15:41:06.231167+00:00"
   },
   "kernel_status": {
-    "kernel_id": "bfe449ed-e9fe-4428-840f-ef98899bf212",
+    "kernel_id": "cb4fa74d-0f7c-4a6b-a59a-8bd96028ccfc",
     "app_name": "K-Atlas OS",
     "environment": "local",
     "running": true,
-    "started_at": "2026-05-28T15:36:27.559660+00:00",
+    "started_at": "2026-05-28T15:41:06.210174+00:00",
     "root_path": "C:\\Users\\oi\\Desktop\\motor-digital",
     "registry_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\registry.json",
     "permissions_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\permissions.json",
-    "agents_total": 3,
-    "agents_enabled": 3,
+    "agents_total": 4,
+    "agents_enabled": 4,
     "routes_total": 0
   }
 }
