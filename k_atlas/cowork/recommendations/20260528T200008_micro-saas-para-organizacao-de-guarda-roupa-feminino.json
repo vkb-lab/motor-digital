@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "recommendation_id": "23ac2789-e2b4-409f-bfc9-0d2b89950607",
+  "created_at": "2026-05-28T20:00:08.541431+00:00",
+  "analysis": {
+    "priority": "high",
+    "risk": "medium",
+    "justification": "A Lousa possui um card de backlog especifico e ainda nao concluido para orientar o proximo movimento.",
+    "next_step_correct": "Micro SaaS para organizacao de guarda-roupa feminino",
+    "next_step_dangerous": "Ignorar a Lousa e iniciar automacao nova sem review.",
+    "prompt_for_engineer": "Quero executar o proximo passo seguro do K-Atlas OS.\n\nProximo passo correto: Micro SaaS para organizacao de guarda-roupa feminino\n\nPrioridade: high\nRisco: medium\n\nJustificativa: A Lousa possui um card de backlog especifico e ainda nao concluido para orientar o proximo movimento.\n\nNao fazer agora: Ignorar a Lousa e iniciar automacao nova sem review.\n\nRequisitos:\n- Python puro\n- UTF-8\n- compatibilidade Windows\n- comandos completos PowerShell\n- smoke test\n- dev_runner quando aplicavel\n- commit Git\n- modo supervisionado\n- sem autoexecucao\n- sem autoaplicacao de patch\n- sem controle automatico de navegador\n\nEntregue o comando completo para executar este passo com seguranca.",
+    "signals": [
+      "Card selecionado por score de especificidade: Micro SaaS para organizacao de guarda-roupa feminino",
+      "Existem propostas em patch_inbox para revisar.",
+      "dev_runner_report indica validacao OK."
+    ],
+    "bottlenecks": [],
+    "risks": [
+      "Existem patches aprovados apenas para revisao. Nao aplicar automaticamente."
+    ]
+  },
+  "state_summary": {
+    "dev_runner_success": true,
+    "lousa_cards": 5,
+    "cowork_steps": 10,
+    "cowork_reviews": 3,
+    "module_reports": 5,
+    "patch_inbox": 1,
+    "patch_approved": 1
+  },
+  "policy": {
+    "mode": "analysis-only",
+    "can_execute_commands": false,
+    "can_modify_code": false,
+    "can_approve_patches": false,
+    "can_apply_patches": false,
+    "can_control_browser": false,
+    "can_access_chatgpt": false,
+    "requires_human_operator": true
+  }
+}
