@@ -50,6 +50,11 @@ COMMANDS = [
         "cmd": [sys.executable, "smoke_test_boot.py"],
         "required": True,
     },
+    {
+        "name": "smoke_test_cli",
+        "cmd": [sys.executable, "smoke_test_cli.py"],
+        "required": True,
+    },
 ]
 
 

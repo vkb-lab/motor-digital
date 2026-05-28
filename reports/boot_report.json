@@ -1,7 +1,7 @@
 {
   "app": "K-Atlas OS",
   "entrypoint": "k_atlas_boot.py",
-  "created_at": "2026-05-28T15:30:33.208124+00:00",
+  "created_at": "2026-05-28T15:36:27.571152+00:00",
   "success": true,
   "command": "memory_agent.stats",
   "payload": {},
@@ -21,17 +21,17 @@
       "storage_path": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\entries.json"
     },
     "error": null,
-    "event_id": "a795c996-1be8-4b7b-a88a-dfd3ded08869",
-    "duration_ms": 1.394,
+    "event_id": "67435cee-5fcd-4a9f-8772-bb8f26bbca60",
+    "duration_ms": 1.813,
     "metadata": {},
-    "created_at": "2026-05-28T15:30:33.206815+00:00"
+    "created_at": "2026-05-28T15:36:27.568264+00:00"
   },
   "kernel_status": {
-    "kernel_id": "7b569406-d1d1-4784-a072-56b11dc19c94",
+    "kernel_id": "bfe449ed-e9fe-4428-840f-ef98899bf212",
     "app_name": "K-Atlas OS",
     "environment": "local",
     "running": true,
-    "started_at": "2026-05-28T15:30:33.198814+00:00",
+    "started_at": "2026-05-28T15:36:27.559660+00:00",
     "root_path": "C:\\Users\\oi\\Desktop\\motor-digital",
     "registry_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\registry.json",
     "permissions_file": "C:\\Users\\oi\\Desktop\\motor-digital\\memory\\permissions.json",
