@@ -6,3 +6,7 @@ env/
 logs/
 *.log
 .streamlit/secrets.toml
+.env
+k_atlas_kernel/
+k_atlas_kernel_inicial.zip
+*.bak.*
