@@ -1,0 +1,15 @@
+{
+  "card_id": "e8b6c97d-ceef-40c6-8172-41485e26b1ff",
+  "title": "Self Evolution supervisionada ativa",
+  "description": "Camada criada com patch_requests, patch_inbox, risk_analyzer, diff_viewer, approval_gate, snapshots e rollback sem autoaplicacao.",
+  "lane": "done",
+  "priority": "high",
+  "tags": [
+    "self-evolution",
+    "governance",
+    "approval"
+  ],
+  "status": "done",
+  "created_at": "2026-05-28T18:12:36.031634+00:00",
+  "updated_at": "2026-05-28T18:12:36.031634+00:00"
+}

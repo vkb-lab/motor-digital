@@ -1,0 +1,15 @@
+{
+  "card_id": "17bc12f5-b502-4006-8e22-71944568176e",
+  "title": "Proximo movimento seguro",
+  "description": "Integrar Lousa ao cockpit em modo read-only antes de qualquer automacao nova.",
+  "lane": "backlog",
+  "priority": "normal",
+  "tags": [
+    "cockpit",
+    "lousa",
+    "read-only"
+  ],
+  "status": "backlog",
+  "created_at": "2026-05-28T18:12:36.430287+00:00",
+  "updated_at": "2026-05-28T18:12:36.430287+00:00"
+}

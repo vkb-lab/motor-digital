@@ -1,0 +1,29 @@
+{
+  "board_id": "332d0559-6c8f-4904-8c9f-8eb4976ed6cd",
+  "title": "Lousa Operacional K-Atlas - Professor",
+  "objective": "Organizar a avaliacao do professor apos Cowork 10 passos, Self Evolution supervisionada, Cockpit read-only e governanca inicial.",
+  "phase": "professor_review",
+  "status": "active",
+  "created_at": "2026-05-28T18:12:35.603189+00:00",
+  "updated_at": "2026-05-28T18:12:36.430287+00:00",
+  "lanes": {
+    "backlog": [
+      "17bc12f5-b502-4006-8e22-71944568176e"
+    ],
+    "doing": [],
+    "blocked": [],
+    "done": [
+      "31f1f2c5-384b-476d-af71-94d192cf19db",
+      "e8b6c97d-ceef-40c6-8172-41485e26b1ff"
+    ],
+    "professor_review": [
+      "a3715c20-d015-44a9-ad46-3c05186fb85e"
+    ]
+  },
+  "policy": {
+    "read_only_by_default": true,
+    "requires_human_operator": true,
+    "does_not_execute_commands": true,
+    "does_not_apply_patches": true
+  }
+}

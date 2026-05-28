@@ -1,0 +1,15 @@
+{
+  "card_id": "a3715c20-d015-44a9-ad46-3c05186fb85e",
+  "title": "Professor avaliar primeiro ciclo Cowork",
+  "description": "Avaliar desempenho da dupla operador + K-Atlas Engineer nos 10 passos supervisionados.",
+  "lane": "professor_review",
+  "priority": "high",
+  "tags": [
+    "professor",
+    "review",
+    "cowork"
+  ],
+  "status": "professor_review",
+  "created_at": "2026-05-28T18:12:36.224891+00:00",
+  "updated_at": "2026-05-28T18:12:36.224891+00:00"
+}

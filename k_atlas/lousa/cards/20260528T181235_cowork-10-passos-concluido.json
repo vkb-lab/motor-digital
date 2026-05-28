@@ -1,0 +1,15 @@
+{
+  "card_id": "31f1f2c5-384b-476d-af71-94d192cf19db",
+  "title": "Cowork 10 passos concluido",
+  "description": "Primeira sessao Cowork executada com comandos, testes, commits, reviews e relatorio operacional final.",
+  "lane": "done",
+  "priority": "high",
+  "tags": [
+    "cowork",
+    "10-passos",
+    "professor"
+  ],
+  "status": "done",
+  "created_at": "2026-05-28T18:12:35.850400+00:00",
+  "updated_at": "2026-05-28T18:12:35.850400+00:00"
+}
