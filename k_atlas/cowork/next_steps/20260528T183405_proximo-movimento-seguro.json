@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "recommendation_id": "52315bbb-13fd-467b-b66b-b18f7ba1e3b4",
+  "created_at": "2026-05-28T18:34:05.826124+00:00",
+  "analysis": {
+    "priority": "normal",
+    "risk": "medium",
+    "justification": "A Lousa possui este card em backlog como proximo movimento seguro.",
+    "next_step_correct": "Proximo movimento seguro",
+    "next_step_dangerous": "Criar automacao de navegador, autoexecucao ou autoaplicacao de patches agora.",
+    "prompt_for_engineer": "Quero executar o proximo passo seguro do K-Atlas OS.\n\nProximo passo correto: Proximo movimento seguro\n\nPrioridade: normal\nRisco: medium\n\nJustificativa: A Lousa possui este card em backlog como proximo movimento seguro.\n\nNao fazer agora: Criar automacao de navegador, autoexecucao ou autoaplicacao de patches agora.\n\nRequisitos:\n- Python puro\n- UTF-8\n- compatibilidade Windows\n- comandos completos PowerShell\n- smoke test\n- dev_runner quando aplicavel\n- commit Git\n- modo supervisionado\n- sem autoexecucao\n- sem autoaplicacao de patch\n- sem controle automatico de navegador\n\nEntregue o comando completo para executar este passo com seguranca.",
+    "signals": [
+      "Existem propostas em patch_inbox para revisar.",
+      "dev_runner_report indica validacao OK."
+    ],
+    "bottlenecks": [],
+    "risks": [
+      "Existem patches aprovados apenas para revisao. Nao aplicar automaticamente."
+    ]
+  },
+  "state_summary": {
+    "dev_runner_success": true,
+    "lousa_cards": 4,
+    "cowork_steps": 10,
+    "cowork_reviews": 3,
+    "module_reports": 4,
+    "patch_inbox": 1,
+    "patch_approved": 1
+  },
+  "policy": {
+    "mode": "analysis-only",
+    "can_execute_commands": false,
+    "can_modify_code": false,
+    "can_approve_patches": false,
+    "can_apply_patches": false,
+    "can_control_browser": false,
+    "can_access_chatgpt": false,
+    "requires_human_operator": true
+  }
+}
