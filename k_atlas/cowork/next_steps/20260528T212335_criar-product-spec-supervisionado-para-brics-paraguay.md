@@ -14,7 +14,7 @@ A Lousa possui um card de backlog especifico e ainda nao concluido para orientar
 
 ## Proximo passo correto
 
-Micro SaaS para organizacao de guarda-roupa feminino
+Criar Product Spec supervisionado para BRICS Paraguay
 
 ## Proximo passo perigoso
 
@@ -25,7 +25,7 @@ Ignorar a Lousa e iniciar automacao nova sem review.
 ```text
 Quero executar o proximo passo seguro do K-Atlas OS.
 
-Proximo passo correto: Micro SaaS para organizacao de guarda-roupa feminino
+Proximo passo correto: Criar Product Spec supervisionado para BRICS Paraguay
 
 Prioridade: high
 Risco: medium

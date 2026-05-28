@@ -1,0 +1,21 @@
+{
+  "id": "22645b38-87e8-4a47-930e-2f4a82271708",
+  "title": "Criar Product Spec supervisionado para BRICS Paraguay",
+  "description": "Criar especificacao estrategica do marketplace BRICS Paraguay antes de qualquer app. Deve considerar portugues e espanhol, Paraguai, tema verde e amarelo, dominio proprio, documentacao, dashboard escalavel, checklist juridico, checklist tributario, localizacao cultural e proibicao de copiar OLX.",
+  "lane": "backlog",
+  "status": "backlog",
+  "priority": "high",
+  "tags": [
+    "brics",
+    "paraguay",
+    "marketplace",
+    "creative-intelligence",
+    "specialist-council",
+    "legal",
+    "tax",
+    "localization",
+    "dashboard-scale"
+  ],
+  "created_at": "2026-05-28T21:23:33.612222+00:00",
+  "updated_at": "2026-05-28T21:23:33.612238+00:00"
+}

@@ -2,7 +2,7 @@
   "card_id": "08b61d3b-748b-4777-82c0-b1d0fea8553a",
   "title": "Micro SaaS para organizacao de guarda-roupa feminino",
   "description": "Pensar uma solucao simples para mulheres organizarem guarda-roupa, criarem combinacoes de looks, registrarem pecas, receberem sugestoes de uso e planejarem roupas para eventos, trabalho, viagem e rotina. O primeiro teste deve ser um micro SaaS Streamlit supervisionado, sem IA externa obrigatoria, com cadastro manual de pecas, categorias, cores, ocasioes e sugestao basica de combinacoes.",
-  "lane": "backlog",
+  "lane": "done",
   "priority": "high",
   "tags": [
     "micro-saas",
@@ -12,7 +12,8 @@
     "streamlit",
     "teste"
   ],
-  "status": "backlog",
+  "status": "done",
   "created_at": "2026-05-28T20:00:08.338105+00:00",
-  "updated_at": "2026-05-28T20:00:08.338105+00:00"
+  "updated_at": "2026-05-28T21:23:33.610149+00:00",
+  "completion_note": "Closet Pilot v0.2 criado, testado, hospedado localmente e reportado."
 }
