@@ -1,6 +1,6 @@
 # Refinar legenda principal
 
-Generated at: 2026-05-29T11:06:17.076897+00:00
+Generated at: 2026-05-29T11:11:02.628853+00:00
 
 ## Context
 
