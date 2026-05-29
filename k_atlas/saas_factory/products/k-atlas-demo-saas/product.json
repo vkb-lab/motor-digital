@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-05-29T23:50:29.809724+00:00",
+  "status": "scaffold_created",
+  "spec": {
+    "product_name": "K-Atlas Demo SaaS",
+    "slug": "k-atlas-demo-saas",
+    "audience": "founders, operadores e negocios locais",
+    "problem": "falta de cockpit digital simples para validar operacoes com IA",
+    "solution": "MVP Streamlit com dashboard, modulos e estado JSON",
+    "monetization": "assinatura mensal + setup",
+    "modules": [
+      "dashboard",
+      "lead_capture",
+      "campaigns",
+      "reports",
+      "admin"
+    ],
+    "governance": {
+      "official_publish": false,
+      "external_api_enabled": false,
+      "human_review_required": true,
+      "generated_by": "k_saas_builder"
+    }
+  }
+}
