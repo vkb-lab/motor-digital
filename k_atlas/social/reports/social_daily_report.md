@@ -1,10 +1,10 @@
 # K-Social Daily Report
 
-Generated at: 2026-05-29T09:56:43.482452+00:00
+Generated at: 2026-05-29T09:58:36.272576+00:00
 
 ## Summary
 
-- Total operations: 1
+- Total operations: 0
 - Ready for review: 0
 - Blocked operations: 0
 - Total content items: 0
@@ -24,16 +24,7 @@ Generated at: 2026-05-29T09:56:43.482452+00:00
 
 ## Operations
 
-### produto nao informado
-
-- Market: mercado nao informado
-- Objective: objetivo nao informado
-- Audit status: unknown
-- Channels: 
-- Content items: 0
-- Human review required: True
-- Publication permission: False
-
+- No social operations found.
 ## Governance
 
 - Auto-publishing is blocked.

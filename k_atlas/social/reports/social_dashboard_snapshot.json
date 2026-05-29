@@ -1,28 +1,13 @@
 {
   "system": "K-Social Cockpit Snapshot",
-  "generated_at": "2026-05-29T09:56:43.328330+00:00",
+  "generated_at": "2026-05-29T09:58:36.102357+00:00",
   "reports_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports",
-  "total_operations": 1,
+  "total_operations": 0,
   "ready_for_review": 0,
   "blocked_operations": 0,
   "total_content_items": 0,
   "publication_permission": false,
   "external_api_used": false,
   "human_review_required": true,
-  "operations": [
-    {
-      "source_file": "social_daily_report.json",
-      "product": "produto nao informado",
-      "market": "mercado nao informado",
-      "objective": "objetivo nao informado",
-      "operation_status": "unknown",
-      "audit_status": "unknown",
-      "channels": [],
-      "duration_days": 0,
-      "content_items": 0,
-      "human_review_required": true,
-      "publication_permission": false,
-      "external_api_used": false
-    }
-  ]
+  "operations": []
 }

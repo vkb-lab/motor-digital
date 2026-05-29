@@ -14,7 +14,21 @@ from typing import Any, Dict, List, Optional
 
 
 class SocialCockpitAdapter:
-    """Builds dashboard snapshots from K-Social reports."""
+    """Builds dashboard snapshots from K-Social operation reports."""
+
+    IGNORED_REPORT_FILES = {
+        "social_dashboard_snapshot.json",
+        "social_daily_report.json",
+    }
+
+    REQUIRED_OPERATION_KEYS = {
+        "system",
+        "operation_status",
+        "audience",
+        "creative_brief",
+        "campaign",
+        "audit",
+    }
 
     def __init__(
         self,
@@ -29,11 +43,43 @@ class SocialCockpitAdapter:
     def _now(self) -> str:
         return datetime.now(timezone.utc).isoformat()
 
+    def _is_operation_report(self, data: Dict[str, Any]) -> bool:
+        """Return True only for real K-Social operation reports."""
+
+        if not isinstance(data, dict):
+            return False
+
+        missing_keys = self.REQUIRED_OPERATION_KEYS.difference(set(data.keys()))
+        if missing_keys:
+            return False
+
+        if data.get("publication_permission") is not False:
+            return False
+
+        if data.get("external_api_used") is not False:
+            return False
+
+        if data.get("human_review_required") is not True:
+            return False
+
+        campaign = data.get("campaign", {})
+        audit = data.get("audit", {})
+
+        if not isinstance(campaign, dict):
+            return False
+
+        if not isinstance(audit, dict):
+            return False
+
+        return True
+
     def load_reports(self) -> List[Dict[str, Any]]:
+        """Load only valid operation reports from reports_dir."""
+
         reports: List[Dict[str, Any]] = []
 
         for path in sorted(self.reports_dir.glob("*.json")):
-            if path.name == self.output_file.name:
+            if path.name in self.IGNORED_REPORT_FILES:
                 continue
 
             try:
@@ -42,7 +88,7 @@ class SocialCockpitAdapter:
             except (json.JSONDecodeError, OSError):
                 continue
 
-            if isinstance(data, dict):
+            if self._is_operation_report(data):
                 reports.append(
                     {
                         "file": path.name,
