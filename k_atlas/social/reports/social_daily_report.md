@@ -1,13 +1,13 @@
 # K-Social Daily Report
 
-Generated at: 2026-05-29T10:06:53.804400+00:00
+Generated at: 2026-05-29T10:09:01.399370+00:00
 
 ## Summary
 
-- Total operations: 0
-- Ready for review: 0
+- Total operations: 1
+- Ready for review: 1
 - Blocked operations: 0
-- Total content items: 0
+- Total content items: 15
 - Human review required: True
 - Publication permission: False
 - External API used: False
@@ -18,13 +18,23 @@ Generated at: 2026-05-29T10:06:53.804400+00:00
 
 ## Next actions
 
-- Generate or update at least one supervised social operation.
+- Review approved-for-human-review social operations.
+- Select top draft content items for human refinement.
 - Keep auto-publishing disabled.
 - Use reports as cockpit input, not as publishing authorization.
 
 ## Operations
 
-- No social operations found.
+### BRICS Paraguay Autos
+
+- Market: marketplace automotivo Paraguai-Brasil
+- Objective: validar campanha local supervisionada para captacao inicial
+- Audit status: approved_for_human_review
+- Channels: Instagram, Facebook, WhatsApp
+- Content items: 15
+- Human review required: True
+- Publication permission: False
+
 ## Governance
 
 - Auto-publishing is blocked.

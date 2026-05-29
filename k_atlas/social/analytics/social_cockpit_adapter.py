@@ -83,7 +83,7 @@ class SocialCockpitAdapter:
                 continue
 
             try:
-                with path.open("r", encoding="utf-8") as file:
+                with path.open("r", encoding="utf-8-sig") as file:
                     data = json.load(file)
             except (json.JSONDecodeError, OSError):
                 continue
@@ -161,7 +161,7 @@ class SocialCockpitAdapter:
     def save_snapshot(self) -> Dict[str, Any]:
         snapshot = self.build_snapshot()
 
-        with self.output_file.open("w", encoding="utf-8") as file:
+        with self.output_file.open("w", encoding="utf-8-sig") as file:
             json.dump(snapshot, file, ensure_ascii=False, indent=2)
 
         return snapshot

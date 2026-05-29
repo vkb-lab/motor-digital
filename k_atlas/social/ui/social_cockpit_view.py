@@ -51,7 +51,7 @@ def load_social_snapshot(snapshot_path: Optional[Path] = None) -> Dict[str, Any]
             "operations": [],
         }
 
-    with path.open("r", encoding="utf-8") as file:
+    with path.open("r", encoding="utf-8-sig") as file:
         data = json.load(file)
 
     data["snapshot_found"] = True
@@ -78,7 +78,7 @@ def load_social_report(
     }
 
     if json_path.exists():
-        with json_path.open("r", encoding="utf-8") as file:
+        with json_path.open("r", encoding="utf-8-sig") as file:
             data = json.load(file)
 
         if isinstance(data, dict):

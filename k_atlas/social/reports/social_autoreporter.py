@@ -52,7 +52,7 @@ class SocialAutoReporter:
                 "operations": [],
             }
 
-        with self.snapshot_path.open("r", encoding="utf-8") as file:
+        with self.snapshot_path.open("r", encoding="utf-8-sig") as file:
             data = json.load(file)
 
         data["snapshot_found"] = True
@@ -126,7 +126,7 @@ class SocialAutoReporter:
     def save_json_report(self, report: Dict[str, Any]) -> Path:
         """Save report as JSON."""
 
-        with self.json_report_path.open("w", encoding="utf-8") as file:
+        with self.json_report_path.open("w", encoding="utf-8-sig") as file:
             json.dump(report, file, ensure_ascii=False, indent=2)
 
         return self.json_report_path

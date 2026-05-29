@@ -62,7 +62,7 @@ class SocialOperationBuilder:
         if not path.exists():
             raise FileNotFoundError(f"Request file not found: {path}")
 
-        with path.open("r", encoding="utf-8") as file:
+        with path.open("r", encoding="utf-8-sig") as file:
             request = json.load(file)
 
         if not isinstance(request, dict):
@@ -131,7 +131,7 @@ class SocialOperationBuilder:
 
         output_path = self.reports_dir / f"operation_{slug}_{timestamp}.json"
 
-        with output_path.open("w", encoding="utf-8") as file:
+        with output_path.open("w", encoding="utf-8-sig") as file:
             json.dump(operation, file, ensure_ascii=False, indent=2)
 
         return output_path

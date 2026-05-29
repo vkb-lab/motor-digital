@@ -1,13 +1,32 @@
-{
+﻿{
   "system": "K-Social Cockpit Snapshot",
-  "generated_at": "2026-05-29T10:06:53.635035+00:00",
+  "generated_at": "2026-05-29T10:09:01.203847+00:00",
   "reports_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports",
-  "total_operations": 0,
-  "ready_for_review": 0,
+  "total_operations": 1,
+  "ready_for_review": 1,
   "blocked_operations": 0,
-  "total_content_items": 0,
+  "total_content_items": 15,
   "publication_permission": false,
   "external_api_used": false,
   "human_review_required": true,
-  "operations": []
+  "operations": [
+    {
+      "source_file": "operation_brics_paraguay_autos_recovery.json",
+      "product": "BRICS Paraguay Autos",
+      "market": "marketplace automotivo Paraguai-Brasil",
+      "objective": "validar campanha local supervisionada para captacao inicial",
+      "operation_status": "draft_ready_for_human_review",
+      "audit_status": "approved_for_human_review",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp"
+      ],
+      "duration_days": 5,
+      "content_items": 15,
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false
+    }
+  ]
 }
