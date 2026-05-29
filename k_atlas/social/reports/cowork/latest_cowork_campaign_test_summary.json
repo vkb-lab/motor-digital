@@ -1,0 +1,51 @@
+{
+  "system": "K-Social Cowork Campaign Test Runner",
+  "generated_at": "2026-05-29T12:51:53.196478+00:00",
+  "product_filter": "Parada Atlantida + Chopp Ecobier",
+  "latest_campaign": {
+    "file_name": "parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.json",
+    "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.json",
+    "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.md",
+    "package_name": "Parada Atlantida + Chopp Ecobier - Campanha Futebol 2026",
+    "product_filter": "Parada Atlantida + Chopp Ecobier",
+    "owner": "K-Atlas Operator",
+    "generated_at": "2026-05-29T12:27:01.576483+00:00",
+    "approval_status": "approved_for_manual_use",
+    "approval_time": "2026-05-29T12:31:43.267830+00:00",
+    "total_assets": 5,
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false,
+    "approved_for_auto_publish": false,
+    "manual_use_only": true
+  },
+  "publish_result": {
+    "system": "K-Social Test Page Publisher",
+    "generated_at": "2026-05-29T12:51:53.090696+00:00",
+    "config_file": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\memory\\test_page_config.json",
+    "plan_file": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\test_page_publish_plan\\latest_test_page_publish_plan.json",
+    "package_name": "Parada Atlantida + Chopp Ecobier - Campanha Futebol 2026",
+    "payloads_planned": 5,
+    "payloads_validated": 5,
+    "publication_permission": false,
+    "external_api_used": false,
+    "approved_for_auto_publish": false,
+    "human_review_required": true,
+    "dry_run": true
+  },
+  "command_center": {
+    "operations": 2,
+    "refinements": 10,
+    "packages": 8,
+    "manual_approvals": 2
+  },
+  "supervisor_report": {
+    "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\supervisor_reports\\k_social_supervisor_report_ecobier_campaign.json",
+    "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\supervisor_reports\\k_social_supervisor_report_ecobier_campaign.md"
+  },
+  "publication_permission": false,
+  "external_api_used": false,
+  "approved_for_auto_publish": false,
+  "human_review_required": true,
+  "dry_run": true
+}

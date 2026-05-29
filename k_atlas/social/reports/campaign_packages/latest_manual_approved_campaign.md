@@ -1,6 +1,6 @@
 # K-Social Latest Manual Approved Campaign
 
-Generated at: 2026-05-29T12:38:54.870310+00:00
+Generated at: 2026-05-29T12:51:53.063988+00:00
 
 ## Campaign
 
