@@ -252,6 +252,15 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
 
     st.subheader("K-Social Intelligence System")
     try:
+        from k_atlas.social.ui.social_latest_campaign_view import render_latest_manual_approved_campaign
+
+        render_latest_manual_approved_campaign()
+        st.divider()
+    except Exception as latest_campaign_error:
+        st.warning("Campanha principal aprovada ainda nao foi carregada.")
+        st.caption(str(latest_campaign_error))
+
+    try:
         from k_atlas.social.ui.social_command_center_view import render_social_command_center
 
         render_social_command_center()

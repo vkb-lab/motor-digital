@@ -10,6 +10,7 @@ from .campaign_generator import CampaignGenerator
 __all__ = [
     "AutonomousSocialCampaignRunner",
     "CampaignGenerator",
+    "SocialCampaignPackageCleanup",
     "SocialCampaignPackageExporter",
     "SocialCampaignPackageIndexer",
     "SocialOperationBuilder",
@@ -30,10 +31,13 @@ def __getattr__(name: str):
         from .social_campaign_package_indexer import SocialCampaignPackageIndexer
         return SocialCampaignPackageIndexer
 
-
     if name == "SocialProductCampaignPackageExporter":
         from .social_product_campaign_package_exporter import SocialProductCampaignPackageExporter
         return SocialProductCampaignPackageExporter
+
+    if name == "SocialCampaignPackageCleanup":
+        from .social_campaign_package_cleanup import SocialCampaignPackageCleanup
+        return SocialCampaignPackageCleanup
 
     if name == "AutonomousSocialCampaignRunner":
         from .autonomous_social_campaign_runner import AutonomousSocialCampaignRunner
