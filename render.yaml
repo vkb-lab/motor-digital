@@ -1,8 +1,16 @@
-services:
+﻿services:
   - type: web
-    name: k-social-publishing-gateway
-    env: python
-    plan: starter
+    name: k-atlas-os
+    runtime: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app_ksocial_gateway.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false
-    autoDeploy: true
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: K_ATLAS_ENV
+        value: render
+      - key: K_SOCIAL_AUTO_PUBLISH
+        value: "false"
+      - key: K_SOCIAL_EXTERNAL_API_ENABLED
+        value: "false"
