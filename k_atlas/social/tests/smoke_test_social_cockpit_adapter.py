@@ -29,8 +29,7 @@ class TestSocialCockpitAdapter(unittest.TestCase):
                     "product": "BRICS Paraguay Autos",
                     "market": "marketplace automotivo Paraguai-Brasil",
                     "segments": [
-                        {"persona": "compradores brasileiros interessados em carros no Paraguai"},
-                        {"persona": "lojistas paraguaios que precisam melhorar anuncios"},
+                        {"persona": "compradores brasileiros interessados em carros no Paraguai"}
                     ],
                 },
                 "creative_brief": {
