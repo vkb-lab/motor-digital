@@ -1,14 +1,14 @@
 {
   "system": "K-Social Cockpit Snapshot",
-  "generated_at": "2026-05-29T12:00:58.585666+00:00",
+  "generated_at": "2026-05-29T12:27:02.171146+00:00",
   "reports_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports",
   "total_operations": 2,
   "ready_for_review": 2,
   "blocked_operations": 0,
   "total_content_items": 55,
   "approval_counts": {
-    "pending_human_review": 1,
-    "approved_for_content_refinement": 0,
+    "pending_human_review": 0,
+    "approved_for_content_refinement": 1,
     "needs_revision": 1,
     "rejected": 0
   },
@@ -44,7 +44,7 @@
       "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
       "operation_status": "draft_ready_for_human_review",
       "audit_status": "approved_for_human_review",
-      "approval_status": "pending_human_review",
+      "approval_status": "approved_for_content_refinement",
       "channels": [
         "Instagram",
         "Facebook",

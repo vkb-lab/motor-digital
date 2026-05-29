@@ -1,9 +1,9 @@
 {
   "system": "K-Social Content Refinement Queue",
-  "generated_at": "2026-05-29T12:00:56.759459+00:00",
-  "total_tasks": 5,
+  "generated_at": "2026-05-29T12:27:01.016778+00:00",
+  "total_tasks": 10,
   "counts": {
-    "pending_refinement": 5,
+    "pending_refinement": 10,
     "in_progress": 0,
     "done": 0,
     "blocked": 0
@@ -19,7 +19,7 @@
   "tasks": [
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_01",
-      "created_at": "2026-05-29T12:00:56.759418+00:00",
+      "created_at": "2026-05-29T12:27:01.016244+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -42,7 +42,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_02",
-      "created_at": "2026-05-29T12:00:56.759440+00:00",
+      "created_at": "2026-05-29T12:27:01.016268+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -65,7 +65,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_03",
-      "created_at": "2026-05-29T12:00:56.759445+00:00",
+      "created_at": "2026-05-29T12:27:01.016273+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -88,7 +88,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_04",
-      "created_at": "2026-05-29T12:00:56.759448+00:00",
+      "created_at": "2026-05-29T12:27:01.016276+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -111,7 +111,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_05",
-      "created_at": "2026-05-29T12:00:56.759451+00:00",
+      "created_at": "2026-05-29T12:27:01.016279+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -124,6 +124,126 @@
       "objective": "validar campanha local supervisionada para captacao inicial",
       "approval_status": "needs_revision",
       "review_notes": "",
+      "publication_permission": false,
+      "external_api_used": false,
+      "human_review_required": true,
+      "approved_for_auto_publish": false,
+      "task_type": "ai_video_prompt",
+      "title": "Preparar prompt de video IA",
+      "instructions": "Criar estrutura de cenas para video IA com revisao humana obrigatoria."
+    },
+    {
+      "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_01",
+      "created_at": "2026-05-29T12:27:01.016753+00:00",
+      "status": "pending_refinement",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp",
+        "Google Business Profile"
+      ],
+      "content_items_available": 40,
+      "source_file": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+      "product": "Parada Atlantida + Chopp Ecobier",
+      "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+      "approval_status": "approved_for_content_refinement",
+      "review_notes": "Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.",
+      "publication_permission": false,
+      "external_api_used": false,
+      "human_review_required": true,
+      "approved_for_auto_publish": false,
+      "task_type": "caption_refinement",
+      "title": "Refinar legenda principal",
+      "instructions": "Ajustar clareza, promessa, tom e chamada para acao sem publicar."
+    },
+    {
+      "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_02",
+      "created_at": "2026-05-29T12:27:01.016759+00:00",
+      "status": "pending_refinement",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp",
+        "Google Business Profile"
+      ],
+      "content_items_available": 40,
+      "source_file": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+      "product": "Parada Atlantida + Chopp Ecobier",
+      "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+      "approval_status": "approved_for_content_refinement",
+      "review_notes": "Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.",
+      "publication_permission": false,
+      "external_api_used": false,
+      "human_review_required": true,
+      "approved_for_auto_publish": false,
+      "task_type": "hook_variations",
+      "title": "Criar variacoes de gancho",
+      "instructions": "Criar alternativas de abertura para testar atencao inicial."
+    },
+    {
+      "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_03",
+      "created_at": "2026-05-29T12:27:01.016762+00:00",
+      "status": "pending_refinement",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp",
+        "Google Business Profile"
+      ],
+      "content_items_available": 40,
+      "source_file": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+      "product": "Parada Atlantida + Chopp Ecobier",
+      "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+      "approval_status": "approved_for_content_refinement",
+      "review_notes": "Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.",
+      "publication_permission": false,
+      "external_api_used": false,
+      "human_review_required": true,
+      "approved_for_auto_publish": false,
+      "task_type": "reel_script",
+      "title": "Preparar roteiro de reel",
+      "instructions": "Criar roteiro curto com gancho, desenvolvimento, prova e CTA supervisionado."
+    },
+    {
+      "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_04",
+      "created_at": "2026-05-29T12:27:01.016764+00:00",
+      "status": "pending_refinement",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp",
+        "Google Business Profile"
+      ],
+      "content_items_available": 40,
+      "source_file": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+      "product": "Parada Atlantida + Chopp Ecobier",
+      "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+      "approval_status": "approved_for_content_refinement",
+      "review_notes": "Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.",
+      "publication_permission": false,
+      "external_api_used": false,
+      "human_review_required": true,
+      "approved_for_auto_publish": false,
+      "task_type": "ai_image_prompt",
+      "title": "Preparar prompt de imagem IA",
+      "instructions": "Descrever cena visual sem usar marcas de terceiros sem autorizacao."
+    },
+    {
+      "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_05",
+      "created_at": "2026-05-29T12:27:01.016766+00:00",
+      "status": "pending_refinement",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp",
+        "Google Business Profile"
+      ],
+      "content_items_available": 40,
+      "source_file": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+      "product": "Parada Atlantida + Chopp Ecobier",
+      "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+      "approval_status": "approved_for_content_refinement",
+      "review_notes": "Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.",
       "publication_permission": false,
       "external_api_used": false,
       "human_review_required": true,

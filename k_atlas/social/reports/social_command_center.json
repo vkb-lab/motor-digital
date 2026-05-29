@@ -1,6 +1,6 @@
 {
   "system": "K-Social Command Center",
-  "generated_at": "2026-05-29T12:00:58.913499+00:00",
+  "generated_at": "2026-05-29T12:27:02.554536+00:00",
   "status": "operational",
   "operations": {
     "total": 2,
@@ -10,28 +10,28 @@
   },
   "approval_queue": {
     "total": 2,
-    "pending": 1,
-    "approved_for_refinement": 0,
+    "pending": 0,
+    "approved_for_refinement": 1,
     "needs_revision": 1,
     "rejected": 0
   },
   "refinement_queue": {
-    "total_tasks": 5,
-    "pending": 5,
+    "total_tasks": 10,
+    "pending": 10,
     "in_progress": 0,
     "done": 0,
     "blocked": 0
   },
   "campaign_packages": {
-    "total": 7,
+    "total": 8,
     "recent": 5,
     "latest": {
-      "file_name": "brics-paraguay-autos-campaign-package_20260529_120057.json",
-      "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.json",
-      "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.md",
-      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "file_name": "parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.json",
+      "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.json",
+      "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.md",
+      "package_name": "Parada Atlantida + Chopp Ecobier - Campanha Futebol 2026",
       "owner": "K-Atlas Operator",
-      "generated_at": "2026-05-29T12:00:57.121293+00:00",
+      "generated_at": "2026-05-29T12:27:01.576483+00:00",
       "total_assets": 5,
       "human_review_required": true,
       "publication_permission": false,
@@ -41,8 +41,8 @@
     }
   },
   "package_approval": {
-    "total": 7,
-    "pending_final_review": 6,
+    "total": 8,
+    "pending_final_review": 7,
     "approved_for_manual_use": 1,
     "needs_package_revision": 0,
     "rejected": 0

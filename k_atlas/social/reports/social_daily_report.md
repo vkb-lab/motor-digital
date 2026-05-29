@@ -1,6 +1,6 @@
 # K-Social Daily Report
 
-Generated at: 2026-05-29T12:00:58.729194+00:00
+Generated at: 2026-05-29T12:27:02.339434+00:00
 
 ## Summary
 
@@ -8,8 +8,8 @@ Generated at: 2026-05-29T12:00:58.729194+00:00
 - Ready for review: 2
 - Blocked operations: 0
 - Total content items: 55
-- Pending human review: 1
-- Approved for content refinement: 0
+- Pending human review: 0
+- Approved for content refinement: 1
 - Needs revision: 1
 - Rejected: 0
 - Human review required: True
@@ -24,7 +24,7 @@ Generated at: 2026-05-29T12:00:58.729194+00:00
 ## Next actions
 
 - Review operations marked as needs_revision.
-- Process pending human review operations.
+- Move approved operations to content refinement.
 - Select top draft content items for human refinement.
 - Keep auto-publishing disabled.
 - Use reports as cockpit input, not as publishing authorization.
@@ -50,7 +50,7 @@ Generated at: 2026-05-29T12:00:58.729194+00:00
 - Market: turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis
 - Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026
 - Audit status: approved_for_human_review
-- Approval status: pending_human_review
+- Approval status: approved_for_content_refinement
 - Channels: Instagram, Facebook, WhatsApp, Google Business Profile
 - Content items: 40
 - Human review required: True

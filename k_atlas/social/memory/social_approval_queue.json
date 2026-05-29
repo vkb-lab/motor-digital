@@ -1,10 +1,10 @@
 {
   "system": "K-Social Human Approval Queue",
-  "generated_at": "2026-05-29T12:00:58.456190+00:00",
+  "generated_at": "2026-05-29T12:27:00.889411+00:00",
   "total_items": 2,
   "counts": {
-    "pending_human_review": 1,
-    "approved_for_content_refinement": 0,
+    "pending_human_review": 0,
+    "approved_for_content_refinement": 1,
     "needs_revision": 1,
     "rejected": 0
   },
@@ -38,7 +38,7 @@
       "market": "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis",
       "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
       "audit_status": "approved_for_human_review",
-      "approval_status": "pending_human_review",
+      "approval_status": "approved_for_content_refinement",
       "channels": [
         "Instagram",
         "Facebook",

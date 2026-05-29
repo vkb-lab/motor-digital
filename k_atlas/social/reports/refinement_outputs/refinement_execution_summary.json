@@ -1,16 +1,21 @@
 {
   "system": "K-Social Content Refinement Executor",
-  "generated_at": "2026-05-29T12:00:56.930261+00:00",
+  "generated_at": "2026-05-29T12:27:01.173565+00:00",
   "queue_file": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\memory\\social_content_refinement_queue.json",
   "output_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs",
-  "tasks_found": 5,
-  "files_generated": 5,
+  "tasks_found": 10,
+  "files_generated": 10,
   "generated_files": [
     "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\brics-paraguay-autos_caption-refinement.md",
     "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\brics-paraguay-autos_hook-variations.md",
     "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\brics-paraguay-autos_reel-script.md",
     "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\brics-paraguay-autos_ai-image-prompt.md",
-    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\brics-paraguay-autos_ai-video-prompt.md"
+    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\brics-paraguay-autos_ai-video-prompt.md",
+    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_caption-refinement.md",
+    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_hook-variations.md",
+    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_reel-script.md",
+    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_ai-image-prompt.md",
+    "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_ai-video-prompt.md"
   ],
   "publication_permission": false,
   "external_api_used": false,

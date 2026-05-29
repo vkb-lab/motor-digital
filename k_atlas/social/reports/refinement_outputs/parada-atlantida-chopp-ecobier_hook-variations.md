@@ -1,15 +1,15 @@
 # Criar variacoes de gancho
 
-Generated at: 2026-05-29T12:27:01.158193+00:00
+Generated at: 2026-05-29T12:27:01.165554+00:00
 
 ## Context
 
-- Product: BRICS Paraguay Autos
-- Objective: validar campanha local supervisionada para captacao inicial
+- Product: Parada Atlantida + Chopp Ecobier
+- Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026
 - Task type: hook_variations
-- Channels: Instagram, Facebook, WhatsApp
-- Approval status: needs_revision
-- Review notes: 
+- Channels: Instagram, Facebook, WhatsApp, Google Business Profile
+- Approval status: approved_for_content_refinement
+- Review notes: Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.
 
 ## Governance
 

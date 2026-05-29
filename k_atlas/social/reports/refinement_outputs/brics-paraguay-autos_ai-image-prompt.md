@@ -1,6 +1,6 @@
 # Preparar prompt de imagem IA
 
-Generated at: 2026-05-29T12:00:56.927416+00:00
+Generated at: 2026-05-29T12:27:01.161910+00:00
 
 ## Context
 
