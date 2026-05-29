@@ -1,0 +1,21 @@
+﻿{
+    "stage":  "7/9",
+    "month":  "setembro",
+    "name":  "independencia",
+    "render_url":  "https://k-atlas-os.onrender.com",
+    "status":  "render_online_validated",
+    "validated_at":  "2026-05-29T16:49:40.7795131-03:00",
+    "governance":  {
+                       "auto_publish":  false,
+                       "external_api_enabled_by_default":  false,
+                       "official_publish_allowed":  false,
+                       "credential_vault_required":  true,
+                       "human_review_required":  true
+                   },
+    "next":  [
+                 "integrar status da etapa 7 no cockpit",
+                 "criar creative_media_gateway",
+                 "preparar prompt pack audiovisual Parada Atlantida",
+                 "conectar pacote criativo ao publishing_gateway"
+             ]
+}
