@@ -10,3 +10,5 @@ logs/
 k_atlas_kernel/
 k_atlas_kernel_inicial.zip
 *.bak.*
+.env.*
+!.env.example

@@ -1,0 +1,24 @@
+{
+  "stage": "7/9",
+  "month": "setembro",
+  "name": "independencia",
+  "status": "started",
+  "render_url": "https://k-atlas-os.onrender.com",
+  "checkpoint": "Credential Vault + Test Page API Adapter",
+  "governance": {
+    "auto_publish": false,
+    "external_api_enabled_by_default": false,
+    "official_publish_allowed": false,
+    "mass_messaging_allowed": false,
+    "browser_automation_allowed": false,
+    "human_review_required": true,
+    "credential_vault_required": true
+  },
+  "next": [
+    "validar vault local",
+    "configurar secrets no Render sem expor token",
+    "criar test page endpoint controlado",
+    "integrar creative media gateway",
+    "liberar somente sandbox com logs"
+  ]
+}
