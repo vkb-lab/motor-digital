@@ -46,9 +46,16 @@ class SocialAutoReporter:
                 "ready_for_review": 0,
                 "blocked_operations": 0,
                 "total_content_items": 0,
+                "approval_counts": {
+                    "pending_human_review": 0,
+                    "approved_for_content_refinement": 0,
+                    "needs_revision": 0,
+                    "rejected": 0,
+                },
                 "publication_permission": False,
                 "external_api_used": False,
                 "human_review_required": True,
+                "approved_for_auto_publish": False,
                 "operations": [],
             }
 
@@ -56,6 +63,16 @@ class SocialAutoReporter:
             data = json.load(file)
 
         data["snapshot_found"] = True
+        data.setdefault(
+            "approval_counts",
+            {
+                "pending_human_review": 0,
+                "approved_for_content_refinement": 0,
+                "needs_revision": 0,
+                "rejected": 0,
+            },
+        )
+
         return data
 
     def build_report(self) -> Dict[str, Any]:
@@ -63,6 +80,7 @@ class SocialAutoReporter:
 
         snapshot = self.load_snapshot()
         operations = snapshot.get("operations", [])
+        approval_counts = snapshot.get("approval_counts", {})
 
         risks: List[str] = []
         next_actions: List[str] = []
@@ -73,13 +91,20 @@ class SocialAutoReporter:
         if snapshot.get("external_api_used") is not False:
             risks.append("External API usage detected. Review integration permissions.")
 
+        if snapshot.get("approved_for_auto_publish") is not False:
+            risks.append("Auto-publish approval detected. This is blocked by governance.")
+
         if snapshot.get("blocked_operations", 0) > 0:
             risks.append("There are blocked social operations requiring review.")
 
-        if snapshot.get("ready_for_review", 0) > 0:
-            next_actions.append("Review approved-for-human-review social operations.")
-        else:
-            next_actions.append("Generate or update at least one supervised social operation.")
+        if approval_counts.get("needs_revision", 0) > 0:
+            next_actions.append("Review operations marked as needs_revision.")
+
+        if approval_counts.get("pending_human_review", 0) > 0:
+            next_actions.append("Process pending human review operations.")
+
+        if approval_counts.get("approved_for_content_refinement", 0) > 0:
+            next_actions.append("Move approved operations to content refinement.")
 
         if snapshot.get("total_content_items", 0) > 0:
             next_actions.append("Select top draft content items for human refinement.")
@@ -92,14 +117,17 @@ class SocialAutoReporter:
         for operation in operations:
             operation_summaries.append(
                 {
+                    "source_file": operation.get("source_file", "unknown"),
                     "product": operation.get("product", "unknown"),
                     "market": operation.get("market", "unknown"),
                     "objective": operation.get("objective", "unknown"),
                     "audit_status": operation.get("audit_status", "unknown"),
+                    "approval_status": operation.get("approval_status", "pending_human_review"),
                     "channels": operation.get("channels", []),
                     "content_items": operation.get("content_items", 0),
                     "human_review_required": operation.get("human_review_required", True),
                     "publication_permission": operation.get("publication_permission", False),
+                    "approved_for_auto_publish": False,
                 }
             )
 
@@ -112,9 +140,16 @@ class SocialAutoReporter:
                 "ready_for_review": snapshot.get("ready_for_review", 0),
                 "blocked_operations": snapshot.get("blocked_operations", 0),
                 "total_content_items": snapshot.get("total_content_items", 0),
+                "approval_counts": {
+                    "pending_human_review": approval_counts.get("pending_human_review", 0),
+                    "approved_for_content_refinement": approval_counts.get("approved_for_content_refinement", 0),
+                    "needs_revision": approval_counts.get("needs_revision", 0),
+                    "rejected": approval_counts.get("rejected", 0),
+                },
                 "human_review_required": True,
                 "publication_permission": False,
                 "external_api_used": False,
+                "approved_for_auto_publish": False,
             },
             "risks": risks,
             "next_actions": next_actions,
@@ -124,17 +159,15 @@ class SocialAutoReporter:
         return report
 
     def save_json_report(self, report: Dict[str, Any]) -> Path:
-        """Save report as JSON."""
-
-        with self.json_report_path.open("w", encoding="utf-8-sig") as file:
+        with self.json_report_path.open("w", encoding="utf-8") as file:
             json.dump(report, file, ensure_ascii=False, indent=2)
 
         return self.json_report_path
 
     def save_markdown_report(self, report: Dict[str, Any]) -> Path:
-        """Save report as Markdown."""
-
         summary = report["summary"]
+        approval_counts = summary.get("approval_counts", {})
+
         lines: List[str] = []
 
         lines.append("# K-Social Daily Report")
@@ -147,9 +180,14 @@ class SocialAutoReporter:
         lines.append(f"- Ready for review: {summary['ready_for_review']}")
         lines.append(f"- Blocked operations: {summary['blocked_operations']}")
         lines.append(f"- Total content items: {summary['total_content_items']}")
+        lines.append(f"- Pending human review: {approval_counts.get('pending_human_review', 0)}")
+        lines.append(f"- Approved for content refinement: {approval_counts.get('approved_for_content_refinement', 0)}")
+        lines.append(f"- Needs revision: {approval_counts.get('needs_revision', 0)}")
+        lines.append(f"- Rejected: {approval_counts.get('rejected', 0)}")
         lines.append(f"- Human review required: {summary['human_review_required']}")
         lines.append(f"- Publication permission: {summary['publication_permission']}")
         lines.append(f"- External API used: {summary['external_api_used']}")
+        lines.append(f"- Approved for auto publish: {summary['approved_for_auto_publish']}")
         lines.append("")
         lines.append("## Risks")
         lines.append("")
@@ -177,13 +215,16 @@ class SocialAutoReporter:
             for operation in report["operations"]:
                 lines.append(f"### {operation['product']}")
                 lines.append("")
+                lines.append(f"- Source file: {operation['source_file']}")
                 lines.append(f"- Market: {operation['market']}")
                 lines.append(f"- Objective: {operation['objective']}")
                 lines.append(f"- Audit status: {operation['audit_status']}")
+                lines.append(f"- Approval status: {operation['approval_status']}")
                 lines.append(f"- Channels: {', '.join(operation['channels'])}")
                 lines.append(f"- Content items: {operation['content_items']}")
                 lines.append(f"- Human review required: {operation['human_review_required']}")
                 lines.append(f"- Publication permission: {operation['publication_permission']}")
+                lines.append(f"- Approved for auto publish: {operation['approved_for_auto_publish']}")
                 lines.append("")
 
         lines.append("## Governance")
@@ -191,6 +232,7 @@ class SocialAutoReporter:
         lines.append("- Auto-publishing is blocked.")
         lines.append("- External APIs are blocked in this checkpoint.")
         lines.append("- Human review is mandatory.")
+        lines.append("- Approval can only move work to content refinement, revision or rejection.")
         lines.append("- This report is operational intelligence, not publishing approval.")
         lines.append("")
 
@@ -198,8 +240,6 @@ class SocialAutoReporter:
         return self.md_report_path
 
     def run(self) -> Dict[str, Any]:
-        """Build and save JSON plus Markdown reports."""
-
         report = self.build_report()
         self.save_json_report(report)
         self.save_markdown_report(report)
@@ -209,6 +249,7 @@ class SocialAutoReporter:
 def main() -> None:
     reporter = SocialAutoReporter()
     report = reporter.run()
+    approval_counts = report["summary"]["approval_counts"]
 
     print("K-Social AutoReporter completed.")
     print("JSON report:", reporter.json_report_path)
@@ -216,6 +257,10 @@ def main() -> None:
     print("Total operations:", report["summary"]["total_operations"])
     print("Ready for review:", report["summary"]["ready_for_review"])
     print("Blocked operations:", report["summary"]["blocked_operations"])
+    print("Pending:", approval_counts["pending_human_review"])
+    print("Approved for refinement:", approval_counts["approved_for_content_refinement"])
+    print("Needs revision:", approval_counts["needs_revision"])
+    print("Rejected:", approval_counts["rejected"])
     print("Publication permission:", report["summary"]["publication_permission"])
 
 

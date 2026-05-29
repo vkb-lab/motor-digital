@@ -1,29 +1,38 @@
-﻿{
+{
   "system": "K-Social AutoReporter",
-  "generated_at": "2026-05-29T10:38:26.884004+00:00",
+  "generated_at": "2026-05-29T10:40:26.365798+00:00",
   "snapshot_found": true,
   "summary": {
     "total_operations": 1,
     "ready_for_review": 1,
     "blocked_operations": 0,
     "total_content_items": 15,
+    "approval_counts": {
+      "pending_human_review": 1,
+      "approved_for_content_refinement": 0,
+      "needs_revision": 0,
+      "rejected": 0
+    },
     "human_review_required": true,
     "publication_permission": false,
-    "external_api_used": false
+    "external_api_used": false,
+    "approved_for_auto_publish": false
   },
   "risks": [],
   "next_actions": [
-    "Review approved-for-human-review social operations.",
+    "Process pending human review operations.",
     "Select top draft content items for human refinement.",
     "Keep auto-publishing disabled.",
     "Use reports as cockpit input, not as publishing authorization."
   ],
   "operations": [
     {
+      "source_file": "operation_brics_paraguay_autos_recovery.json",
       "product": "BRICS Paraguay Autos",
       "market": "marketplace automotivo Paraguai-Brasil",
       "objective": "validar campanha local supervisionada para captacao inicial",
       "audit_status": "approved_for_human_review",
+      "approval_status": "pending_human_review",
       "channels": [
         "Instagram",
         "Facebook",
@@ -31,7 +40,8 @@
       ],
       "content_items": 15,
       "human_review_required": true,
-      "publication_permission": false
+      "publication_permission": false,
+      "approved_for_auto_publish": false
     }
   ]
 }

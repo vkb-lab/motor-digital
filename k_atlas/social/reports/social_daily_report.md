@@ -1,6 +1,6 @@
 # K-Social Daily Report
 
-Generated at: 2026-05-29T10:38:26.884004+00:00
+Generated at: 2026-05-29T10:40:26.365798+00:00
 
 ## Summary
 
@@ -8,9 +8,14 @@ Generated at: 2026-05-29T10:38:26.884004+00:00
 - Ready for review: 1
 - Blocked operations: 0
 - Total content items: 15
+- Pending human review: 1
+- Approved for content refinement: 0
+- Needs revision: 0
+- Rejected: 0
 - Human review required: True
 - Publication permission: False
 - External API used: False
+- Approved for auto publish: False
 
 ## Risks
 
@@ -18,7 +23,7 @@ Generated at: 2026-05-29T10:38:26.884004+00:00
 
 ## Next actions
 
-- Review approved-for-human-review social operations.
+- Process pending human review operations.
 - Select top draft content items for human refinement.
 - Keep auto-publishing disabled.
 - Use reports as cockpit input, not as publishing authorization.
@@ -27,17 +32,21 @@ Generated at: 2026-05-29T10:38:26.884004+00:00
 
 ### BRICS Paraguay Autos
 
+- Source file: operation_brics_paraguay_autos_recovery.json
 - Market: marketplace automotivo Paraguai-Brasil
 - Objective: validar campanha local supervisionada para captacao inicial
 - Audit status: approved_for_human_review
+- Approval status: pending_human_review
 - Channels: Instagram, Facebook, WhatsApp
 - Content items: 15
 - Human review required: True
 - Publication permission: False
+- Approved for auto publish: False
 
 ## Governance
 
 - Auto-publishing is blocked.
 - External APIs are blocked in this checkpoint.
 - Human review is mandatory.
+- Approval can only move work to content refinement, revision or rejection.
 - This report is operational intelligence, not publishing approval.
