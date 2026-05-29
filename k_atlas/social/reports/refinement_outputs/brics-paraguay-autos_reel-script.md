@@ -1,6 +1,6 @@
 # Preparar roteiro de reel
 
-Generated at: 2026-05-29T10:51:34.040223+00:00
+Generated at: 2026-05-29T11:00:56.028580+00:00
 
 ## Context
 

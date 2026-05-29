@@ -1,6 +1,6 @@
 # Preparar prompt de video IA
 
-Generated at: 2026-05-29T10:51:34.044066+00:00
+Generated at: 2026-05-29T11:00:56.029812+00:00
 
 ## Context
 

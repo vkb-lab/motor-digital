@@ -305,6 +305,15 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
         st.warning("Fila de refinamento criativo ainda nao foi carregada.")
         st.caption(str(refinement_error))
 
+    try:
+        from k_atlas.social.ui.social_refinement_outputs_view import render_social_refinement_outputs
+
+        st.divider()
+        render_social_refinement_outputs()
+    except Exception as outputs_error:
+        st.warning("Refinamentos criativos ainda nao foram carregados.")
+        st.caption(str(outputs_error))
+
     report = load_social_report()
     report_summary = build_social_report_summary(report)
 
