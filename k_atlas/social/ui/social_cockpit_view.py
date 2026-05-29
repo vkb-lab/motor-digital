@@ -287,6 +287,15 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
                 st.write("Revisao humana obrigatoria:", operation.get("human_review_required", True))
                 st.write("Permissao de publicacao:", operation.get("publication_permission", False))
 
+    try:
+        from k_atlas.social.ui.social_approval_view import render_social_approval_queue
+
+        st.divider()
+        render_social_approval_queue()
+    except Exception as approval_error:
+        st.warning("Fila de aprovacao humana ainda nao foi carregada.")
+        st.caption(str(approval_error))
+
     report = load_social_report()
     report_summary = build_social_report_summary(report)
 
