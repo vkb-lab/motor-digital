@@ -13,6 +13,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from k_atlas.core.control_plane.agent_registry import build_default_agent_registry
 from k_atlas.core.control_plane.event_bus import EventBus
+from k_atlas.core.control_plane.executor import ControlPlaneExecutor
 from k_atlas.core.control_plane.health_check import run_control_plane_health_check
 from k_atlas.core.control_plane.supervisor_queue import SupervisorQueue
 from k_atlas.core.control_plane.task_router import TaskRouter
@@ -21,6 +22,7 @@ from k_atlas.core.control_plane.task_router import TaskRouter
 EVENTS_PATH = Path("memory/control_plane/events.jsonl")
 SUPERVISOR_QUEUE_PATH = Path("memory/control_plane/supervisor_queue.json")
 SYSTEM_STATE_PATH = Path("memory/control_plane/system_state.json")
+EXECUTIONS_DIR = Path("reports/control_plane/executions")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -51,25 +53,50 @@ def load_jsonl(path: Path, limit: int = 80) -> list[dict[str, Any]]:
     return rows[-limit:]
 
 
+def load_execution_records(limit: int = 50) -> list[dict[str, Any]]:
+    if not EXECUTIONS_DIR.exists():
+        return []
+
+    rows: list[dict[str, Any]] = []
+
+    for path in sorted(EXECUTIONS_DIR.glob("*.json"), key=lambda item: item.stat().st_mtime):
+        try:
+            rows.append(json.loads(path.read_text(encoding="utf-8")))
+        except json.JSONDecodeError:
+            continue
+
+    return rows[-limit:]
+
+
 st.set_page_config(
     page_title="K-Atlas Control Plane",
     layout="wide",
 )
 
 st.title("K-Atlas Control Plane")
-st.caption("Centro operacional do K-Atlas OS: agentes, tarefas, permissoes, supervisao e eventos.")
+st.caption("Centro operacional do K-Atlas OS: agentes, tarefas, permissoes, supervisao, execucao e eventos.")
 
 registry = build_default_agent_registry()
 event_bus = EventBus(EVENTS_PATH)
 supervisor_queue = SupervisorQueue(SUPERVISOR_QUEUE_PATH)
+executor = ControlPlaneExecutor(
+    event_bus=event_bus,
+    supervisor_queue=supervisor_queue,
+    output_dir=EXECUTIONS_DIR,
+)
 
 agents = registry.list_agents()
 events = load_jsonl(EVENTS_PATH)
 approvals = supervisor_queue.load() if SUPERVISOR_QUEUE_PATH.exists() else []
 pending_approvals = [item for item in approvals if item.get("status") == "pending_approval"]
+approved_waiting_execution = [
+    item for item in approvals
+    if item.get("status") == "approved" and item.get("execution_status") != "executed"
+]
+executed_items = [item for item in approvals if item.get("status") == "executed"]
 system_state = load_json(SYSTEM_STATE_PATH)
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
     st.metric("Agentes", len(agents))
@@ -78,17 +105,21 @@ with col2:
     st.metric("Eventos", len(events))
 
 with col3:
-    st.metric("Aprovacoes pendentes", len(pending_approvals))
+    st.metric("Pendentes", len(pending_approvals))
 
 with col4:
-    st.metric("Status", system_state.get("status", "online"))
+    st.metric("Aprovadas", len(approved_waiting_execution))
+
+with col5:
+    st.metric("Executadas", len(executed_items))
 
 st.divider()
 
-tab_overview, tab_route, tab_supervisor, tab_events, tab_health = st.tabs([
+tab_overview, tab_route, tab_supervisor, tab_executor, tab_events, tab_health = st.tabs([
     "Visao geral",
     "Roteador de tarefas",
     "Supervisor Queue",
+    "Executor",
     "Event Bus",
     "Health Check",
 ])
@@ -101,7 +132,7 @@ with tab_overview:
         "cloud": "Render",
         "memoria": "GitHub + JSON",
         "cockpit": "Streamlit",
-        "estado": "autonomia supervisionada em construcao",
+        "estado": "autonomia supervisionada em execucao inicial",
     })
 
     st.subheader("Agentes registrados")
@@ -203,6 +234,53 @@ with tab_supervisor:
                         )
                         st.success("Aprovado.")
                         st.json(approved)
+
+with tab_executor:
+    st.subheader("Executor supervisionado")
+
+    st.caption("Executa apenas acoes aprovadas e consideradas seguras.")
+
+    approvals = supervisor_queue.load() if SUPERVISOR_QUEUE_PATH.exists() else []
+    executable = [
+        item for item in approvals
+        if item.get("status") == "approved" and item.get("execution_status") != "executed"
+    ]
+
+    if not executable:
+        st.info("Nenhuma tarefa aprovada aguardando execucao.")
+    else:
+        if st.button("Executar todas as aprovadas", type="primary"):
+            results = executor.execute_all_approved(executor_id="streamlit_executor")
+            st.success(f"Execucoes realizadas: {len(results)}")
+            st.json(results)
+
+        for item in reversed(executable):
+            task = item.get("task", {})
+            label = f"{item.get('approval_id')} | {task.get('agent_name')} | {task.get('action')}"
+            with st.expander(label):
+                st.json(item)
+
+                if st.button("Executar esta tarefa", key=f"execute_{item.get('approval_id')}"):
+                    result = executor.execute_approved(
+                        approval_id=item["approval_id"],
+                        executor_id="streamlit_executor",
+                    )
+                    if result.get("ok"):
+                        st.success("Tarefa executada.")
+                    else:
+                        st.warning("Execucao bloqueada.")
+                    st.json(result)
+
+    st.subheader("Registros de execucao")
+
+    records = load_execution_records()
+
+    if not records:
+        st.info("Nenhuma execucao registrada ainda.")
+    else:
+        for record in reversed(records[-30:]):
+            with st.expander(f"{record.get('executed_at')} | {record.get('action')} | {record.get('status')}"):
+                st.json(record)
 
 with tab_events:
     st.subheader("Event Bus")
