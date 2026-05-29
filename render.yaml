@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: k-social-publishing-gateway
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app_ksocial_gateway.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false
+    autoDeploy: true
