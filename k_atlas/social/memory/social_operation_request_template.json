@@ -1,0 +1,28 @@
+﻿{
+  "request_name": "brics_paraguay_autos_growth_test",
+  "owner": "K-Atlas Operator",
+  "product": "BRICS Paraguay Autos",
+  "market": "marketplace automotivo Paraguai-Brasil",
+  "personas": [
+    "compradores brasileiros interessados em carros no Paraguai",
+    "lojistas paraguaios que precisam melhorar anuncios",
+    "investidores buscando oportunidades automotivas regionais"
+  ],
+  "objective": "validar campanha local supervisionada para captacao inicial",
+  "channels": [
+    "Instagram",
+    "Facebook",
+    "WhatsApp"
+  ],
+  "duration_days": 5,
+  "key_messages": [
+    "anuncios automotivos mais claros e confiaveis",
+    "revisao humana antes de qualquer publicacao",
+    "ponte comercial entre Paraguai e Brasil com mais organizacao"
+  ],
+  "format_type": "reel",
+  "brand_tone": "premium, confiavel e direto",
+  "region": "Paraguai e Brasil",
+  "language": "pt-BR",
+  "seasonal_context": "campanha inicial de validacao comercial"
+}
