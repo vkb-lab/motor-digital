@@ -1,6 +1,6 @@
 {
   "system": "K-Social Content Refinement Queue",
-  "generated_at": "2026-05-29T12:27:01.016778+00:00",
+  "generated_at": "2026-05-29T12:32:14.338200+00:00",
   "total_tasks": 10,
   "counts": {
     "pending_refinement": 10,
@@ -19,7 +19,7 @@
   "tasks": [
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_01",
-      "created_at": "2026-05-29T12:27:01.016244+00:00",
+      "created_at": "2026-05-29T12:32:14.337162+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -42,7 +42,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_02",
-      "created_at": "2026-05-29T12:27:01.016268+00:00",
+      "created_at": "2026-05-29T12:32:14.337197+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -65,7 +65,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_03",
-      "created_at": "2026-05-29T12:27:01.016273+00:00",
+      "created_at": "2026-05-29T12:32:14.337204+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -88,7 +88,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_04",
-      "created_at": "2026-05-29T12:27:01.016276+00:00",
+      "created_at": "2026-05-29T12:32:14.337210+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -111,7 +111,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_05",
-      "created_at": "2026-05-29T12:27:01.016279+00:00",
+      "created_at": "2026-05-29T12:32:14.337216+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -134,7 +134,7 @@
     },
     {
       "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_01",
-      "created_at": "2026-05-29T12:27:01.016753+00:00",
+      "created_at": "2026-05-29T12:32:14.338158+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -158,7 +158,7 @@
     },
     {
       "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_02",
-      "created_at": "2026-05-29T12:27:01.016759+00:00",
+      "created_at": "2026-05-29T12:32:14.338176+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -182,7 +182,7 @@
     },
     {
       "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_03",
-      "created_at": "2026-05-29T12:27:01.016762+00:00",
+      "created_at": "2026-05-29T12:32:14.338179+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -206,7 +206,7 @@
     },
     {
       "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_04",
-      "created_at": "2026-05-29T12:27:01.016764+00:00",
+      "created_at": "2026-05-29T12:32:14.338183+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -230,7 +230,7 @@
     },
     {
       "task_id": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json::task_05",
-      "created_at": "2026-05-29T12:27:01.016766+00:00",
+      "created_at": "2026-05-29T12:32:14.338186+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",

@@ -1,6 +1,6 @@
 {
   "system": "K-Social Command Center",
-  "generated_at": "2026-05-29T12:27:02.554536+00:00",
+  "generated_at": "2026-05-29T12:34:09.704403+00:00",
   "status": "operational",
   "operations": {
     "total": 2,
@@ -42,8 +42,8 @@
   },
   "package_approval": {
     "total": 8,
-    "pending_final_review": 7,
-    "approved_for_manual_use": 1,
+    "pending_final_review": 6,
+    "approved_for_manual_use": 2,
     "needs_package_revision": 0,
     "rejected": 0
   },
