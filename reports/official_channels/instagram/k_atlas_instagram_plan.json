@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "checkpoint": "31",
+  "name": "Instagram Oficial do K-Atlas - Identidade e Plano Operacional",
+  "strategy": {
+    "channel": "instagram",
+    "status": "planning_only",
+    "official_publish_allowed": false,
+    "auto_publish_allowed": false,
+    "identity": {
+      "handle_options": [
+        "katlas.os",
+        "k.atlas.os",
+        "katlas.ai",
+        "katlas.engine"
+      ],
+      "display_name": "K-Atlas OS",
+      "positioning": "Sistema operacional de agentes IA para criar, operar e escalar produtos digitais, campanhas, SaaS, automações e inteligência comercial com supervisão humana.",
+      "bio_options": [
+        "Sistema operacional de agentes IA. Criamos SaaS, campanhas e automações com supervisão humana.",
+        "AI Operating System para produtos digitais, campanhas e automações. Construindo unicórnios que geram unicórnios.",
+        "K-Atlas OS: agentes IA, SaaS Factory, campanhas, automações e cockpit operacional."
+      ],
+      "content_pillars": [
+        "Construção pública do K-Atlas OS",
+        "Agentes IA em operação real",
+        "SaaS Factory e produtos digitais",
+        "Marketing inteligente e automações",
+        "Bastidores técnicos e evolução supervisionada",
+        "Cases, protótipos e validações",
+        "Manifesto: unicórnio gerador de unicórnios"
+      ],
+      "visual_direction": [
+        "visual futurista limpo",
+        "cockpit operacional",
+        "prints reais do sistema",
+        "diagramas de arquitetura simples",
+        "vídeos curtos mostrando execução",
+        "antes/depois de automações",
+        "identidade preta, branca, azul, cinza e vermelho pontual"
+      ],
+      "tone_of_voice": [
+        "arrojado",
+        "técnico",
+        "direto",
+        "growth-minded",
+        "ambicioso",
+        "sem hype vazio",
+        "execução real acima de promessa"
+      ],
+      "prohibited_actions": [
+        "publicar sem aprovação humana",
+        "enviar DM automática",
+        "seguir/deixar de seguir automaticamente",
+        "curtir/comentar automaticamente",
+        "usar token em texto puro",
+        "usar automação de navegador para operação oficial",
+        "usar API externa sem Credential Vault"
+      ],
+      "approval_rules": [
+        "todo post oficial precisa de aprovação humana",
+        "todo criativo precisa passar por audit log",
+        "toda API oficial precisa usar vault",
+        "toda publicação deve ser reversível ou rastreável",
+        "nenhuma mensagem em massa sem consentimento explícito"
+      ]
+    },
+    "launch_sequence": [
+      {
+        "step": 1,
+        "name": "definir handle final",
+        "output": "handle aprovado manualmente"
+      },
+      {
+        "step": 2,
+        "name": "criar bio e foto de perfil",
+        "output": "perfil pronto para aprovação"
+      },
+      {
+        "step": 3,
+        "name": "criar 9 posts base",
+        "output": "grade inicial conceitual"
+      },
+      {
+        "step": 4,
+        "name": "criar 3 reels demonstrativos",
+        "output": "vídeos curtos do sistema em operação"
+      },
+      {
+        "step": 5,
+        "name": "publicar manualmente ou via API oficial futura",
+        "output": "publicação somente após vault + aprovação"
+      }
+    ],
+    "first_9_posts": [
+      "O que é o K-Atlas OS",
+      "Por que agentes IA precisam de governança",
+      "Control Plane em operação",
+      "Lousa Operacional + PowerShell Runner",
+      "SaaS Factory: criando produtos digitais",
+      "K-Social: mídia digital supervisionada",
+      "Creative Media Gateway: audiovisual para produtos",
+      "Autonomy Ladder: níveis de independência",
+      "Manifesto: unicórnio gerador de unicórnios"
+    ],
+    "first_3_reels": [
+      {
+        "title": "O K-Atlas executando comandos supervisionados",
+        "format": "screen recording vertical 9:16",
+        "hook": "Isso não é chatbot. É um sistema operacional de agentes IA."
+      },
+      {
+        "title": "Do objetivo ao executor",
+        "format": "motion diagram + cockpit",
+        "hook": "Um objetivo vira tarefa, aprovação, execução e log."
+      },
+      {
+        "title": "Construindo SaaS com agentes",
+        "format": "screen recording + narração",
+        "hook": "O próximo SaaS não nasce em uma reunião. Nasce em um cockpit."
+      }
+    ]
+  },
+  "governance_validation": {
+    "ok": true,
+    "reasons": [
+      "payload_allowed_for_planning"
+    ],
+    "mode": "planning_only"
+  }
+}
