@@ -1,0 +1,95 @@
+{
+  "system": "K-Social Campaign Package Approval Queue",
+  "generated_at": "2026-05-29T11:32:52.593940+00:00",
+  "total_items": 6,
+  "counts": {
+    "pending_final_review": 6,
+    "approved_for_manual_use": 0,
+    "needs_package_revision": 0,
+    "rejected": 0
+  },
+  "human_review_required": true,
+  "publication_permission": false,
+  "external_api_used": false,
+  "approved_for_auto_publish": false,
+  "items": [
+    {
+      "source_file": "brics-paraguay-autos-campaign-package_20260529_110236.json",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T11:02:36.385241+00:00",
+      "total_assets": 5,
+      "final_approval_status": "pending_final_review",
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    },
+    {
+      "source_file": "brics-paraguay-autos-campaign-package_20260529_110237.json",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T11:02:37.018915+00:00",
+      "total_assets": 5,
+      "final_approval_status": "pending_final_review",
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    },
+    {
+      "source_file": "brics-paraguay-autos-campaign-package_20260529_110501.json",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T11:05:01.784546+00:00",
+      "total_assets": 5,
+      "final_approval_status": "pending_final_review",
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    },
+    {
+      "source_file": "brics-paraguay-autos-campaign-package_20260529_110502.json",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T11:05:02.270561+00:00",
+      "total_assets": 5,
+      "final_approval_status": "pending_final_review",
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    },
+    {
+      "source_file": "brics-paraguay-autos-campaign-package_20260529_110617.json",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T11:06:17.271179+00:00",
+      "total_assets": 5,
+      "final_approval_status": "pending_final_review",
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    },
+    {
+      "source_file": "brics-paraguay-autos-campaign-package_20260529_111102.json",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T11:11:02.860664+00:00",
+      "total_assets": 5,
+      "final_approval_status": "pending_final_review",
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    }
+  ]
+}

@@ -323,6 +323,15 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
         st.warning("Pacotes de campanha ainda nao foram carregados.")
         st.caption(str(packages_error))
 
+    try:
+        from k_atlas.social.ui.social_campaign_package_approval_view import render_social_campaign_package_approval_queue
+
+        st.divider()
+        render_social_campaign_package_approval_queue()
+    except Exception as package_approval_error:
+        st.warning("Aprovacao final de pacotes ainda nao foi carregada.")
+        st.caption(str(package_approval_error))
+
     report = load_social_report()
     report_summary = build_social_report_summary(report)
 

@@ -1,6 +1,6 @@
 {
   "system": "K-Social Content Refinement Queue",
-  "generated_at": "2026-05-29T11:11:02.328427+00:00",
+  "generated_at": "2026-05-29T11:15:08.450601+00:00",
   "total_tasks": 5,
   "counts": {
     "pending_refinement": 5,
@@ -19,7 +19,7 @@
   "tasks": [
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_01",
-      "created_at": "2026-05-29T11:11:02.328378+00:00",
+      "created_at": "2026-05-29T11:15:08.450510+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -42,7 +42,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_02",
-      "created_at": "2026-05-29T11:11:02.328407+00:00",
+      "created_at": "2026-05-29T11:15:08.450560+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -65,7 +65,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_03",
-      "created_at": "2026-05-29T11:11:02.328412+00:00",
+      "created_at": "2026-05-29T11:15:08.450568+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -88,7 +88,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_04",
-      "created_at": "2026-05-29T11:11:02.328415+00:00",
+      "created_at": "2026-05-29T11:15:08.450574+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
@@ -111,7 +111,7 @@
     },
     {
       "task_id": "operation_brics_paraguay_autos_recovery.json::task_05",
-      "created_at": "2026-05-29T11:11:02.328418+00:00",
+      "created_at": "2026-05-29T11:15:08.450580+00:00",
       "status": "pending_refinement",
       "channels": [
         "Instagram",
