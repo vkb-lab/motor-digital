@@ -54,6 +54,13 @@ def load_campaign_package_index(
     return data
 
 
+
+def load_campaign_packages(packages_dir: Optional[Path] = None) -> Dict[str, Any]:
+    """Backward-compatible alias for older imports."""
+
+    return load_campaign_package_index(packages_dir=packages_dir)
+
+
 def render_social_campaign_packages() -> None:
     """Render campaign package index viewer in Streamlit."""
 
