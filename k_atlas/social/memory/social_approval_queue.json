@@ -1,11 +1,11 @@
 {
   "system": "K-Social Human Approval Queue",
-  "generated_at": "2026-05-29T10:40:25.996186+00:00",
+  "generated_at": "2026-05-29T10:44:18.561235+00:00",
   "total_items": 1,
   "counts": {
-    "pending_human_review": 1,
+    "pending_human_review": 0,
     "approved_for_content_refinement": 0,
-    "needs_revision": 0,
+    "needs_revision": 1,
     "rejected": 0
   },
   "human_review_required": true,
@@ -19,7 +19,7 @@
       "market": "marketplace automotivo Paraguai-Brasil",
       "objective": "validar campanha local supervisionada para captacao inicial",
       "audit_status": "approved_for_human_review",
-      "approval_status": "pending_human_review",
+      "approval_status": "needs_revision",
       "channels": [
         "Instagram",
         "Facebook",

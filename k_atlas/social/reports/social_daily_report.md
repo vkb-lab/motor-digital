@@ -1,6 +1,6 @@
 # K-Social Daily Report
 
-Generated at: 2026-05-29T10:40:26.365798+00:00
+Generated at: 2026-05-29T10:44:18.840876+00:00
 
 ## Summary
 
@@ -8,9 +8,9 @@ Generated at: 2026-05-29T10:40:26.365798+00:00
 - Ready for review: 1
 - Blocked operations: 0
 - Total content items: 15
-- Pending human review: 1
+- Pending human review: 0
 - Approved for content refinement: 0
-- Needs revision: 0
+- Needs revision: 1
 - Rejected: 0
 - Human review required: True
 - Publication permission: False
@@ -23,7 +23,7 @@ Generated at: 2026-05-29T10:40:26.365798+00:00
 
 ## Next actions
 
-- Process pending human review operations.
+- Review operations marked as needs_revision.
 - Select top draft content items for human refinement.
 - Keep auto-publishing disabled.
 - Use reports as cockpit input, not as publishing authorization.
@@ -36,7 +36,7 @@ Generated at: 2026-05-29T10:40:26.365798+00:00
 - Market: marketplace automotivo Paraguai-Brasil
 - Objective: validar campanha local supervisionada para captacao inicial
 - Audit status: approved_for_human_review
-- Approval status: pending_human_review
+- Approval status: needs_revision
 - Channels: Instagram, Facebook, WhatsApp
 - Content items: 15
 - Human review required: True

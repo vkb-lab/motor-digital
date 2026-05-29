@@ -1,4 +1,4 @@
-﻿{
+{
   "system": "K-Social Intelligence System",
   "operation_status": "draft_ready_for_human_review",
   "human_review_required": true,
@@ -38,7 +38,11 @@
   },
   "campaign": {
     "objective": "validar campanha local supervisionada para captacao inicial",
-    "channels": ["Instagram", "Facebook", "WhatsApp"],
+    "channels": [
+      "Instagram",
+      "Facebook",
+      "WhatsApp"
+    ],
     "duration_days": 5,
     "content_calendar": [
       {
@@ -140,5 +144,21 @@
     "human_review_required": true,
     "publication_permission": false,
     "approved_for_auto_publish": false
-  }
+  },
+  "request_metadata": {
+    "approval_status": "needs_revision",
+    "last_reviewed_at": "2026-05-29T10:43:32.180975+00:00",
+    "last_reviewer": "K-Atlas Operator",
+    "last_review_notes": ""
+  },
+  "approval_events": [
+    {
+      "created_at": "2026-05-29T10:43:32.181002+00:00",
+      "reviewer": "K-Atlas Operator",
+      "decision": "needs_revision",
+      "notes": "",
+      "publication_permission": false,
+      "approved_for_auto_publish": false
+    }
+  ]
 }
