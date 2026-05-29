@@ -1,2 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
-"""Social reports placeholder module."""
+"""K-Social reports module."""
+
+from .social_autoreporter import SocialAutoReporter
+
+__all__ = ["SocialAutoReporter"]
