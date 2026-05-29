@@ -12,6 +12,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from k_atlas.core.blackboard.blackboard_store import BlackboardStore
+from k_atlas.social.social_audit.live_status import SocialAuditLiveStatus
 
 
 MESSAGES_PATH = Path("memory/blackboard/messages.json")
@@ -47,6 +48,7 @@ st.title("K-Atlas Social Audit Local")
 st.caption("Auditoria visual supervisionada em rede social publica. Somente leitura. Sem publicacao.")
 
 store = BlackboardStore(MESSAGES_PATH, COMMANDS_PATH, RESULTS_PATH)
+live = SocialAuditLiveStatus()
 
 commands = load_json_list(COMMANDS_PATH)
 results = load_json_list(RESULTS_PATH)
@@ -74,8 +76,9 @@ with col3:
 
 st.divider()
 
-tab_new, tab_queue, tab_reports = st.tabs([
+tab_new, tab_live, tab_queue, tab_reports = st.tabs([
     "Nova auditoria",
+    "Live status",
     "Fila",
     "Relatorios",
 ])
@@ -89,25 +92,58 @@ with tab_new:
     )
 
     slow_mo = st.number_input("Velocidade visual (ms entre acoes)", min_value=100, max_value=2000, value=500, step=100)
+    observe_seconds = st.number_input("Tempo de observacao final", min_value=1, max_value=60, value=5, step=1)
 
     if st.button("Enviar auditoria para fila local", type="primary"):
         command = (
             '.\\venv\\Scripts\\python.exe -m k_atlas.social.social_audit.profile_audit '
-            f'--url "{url}" --output-root "reports/social_audit" --headed --slow-mo {int(slow_mo)}'
+            f'--url "{url}" --output-root "reports/social_audit" --headed '
+            f'--slow-mo {int(slow_mo)} --observe-seconds {int(observe_seconds)}'
         )
 
         item = store.queue_command(
-            title="Auditoria social visual",
+            title="Auditoria social visual live",
             command=command,
             requested_by="streamlit_operator",
             metadata={
                 "kind": "social_audit",
+                "mode": "live_status",
                 "target_url": url,
             },
         )
 
         st.success("Auditoria enviada para a fila local.")
         st.json(item)
+
+with tab_live:
+    st.subheader("Status ao vivo")
+
+    if st.button("Atualizar status"):
+        st.rerun()
+
+    status = live.load()
+
+    if not status:
+        st.info("Nenhuma auditoria live em andamento ou registrada.")
+    else:
+        st.json(status)
+
+        data = status.get("data", {})
+        screenshot = data.get("screenshot") or data.get("screenshot_path")
+
+        if screenshot and Path(screenshot).exists():
+            st.image(screenshot, caption=screenshot, use_container_width=True)
+
+    st.subheader("Eventos live recentes")
+
+    events = live.load_events(limit=80)
+
+    if not events:
+        st.info("Nenhum evento live registrado.")
+    else:
+        for event in reversed(events[-40:]):
+            with st.expander(f"{event.get('timestamp')} | {event.get('status')} | {event.get('step')}"):
+                st.json(event)
 
 with tab_queue:
     st.subheader("Fila de auditorias")
