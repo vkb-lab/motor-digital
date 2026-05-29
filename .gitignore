@@ -12,3 +12,9 @@ k_atlas_kernel_inicial.zip
 *.bak.*
 .env.*
 !.env.example
+memory/blackboard/
+memory/control_plane/
+memory/social_audit/
+reports/social_audit/
+reports/blackboard/
+*.tmp
