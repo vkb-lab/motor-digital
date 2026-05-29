@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T22:23:07.592989+00:00",
+  "generated_at": "2026-05-29T22:25:05.266576+00:00",
   "project": "K-Atlas OS",
   "checkpoint": "30C",
   "name": "Autonomy Ladder Runner",
@@ -25,26 +25,26 @@
       "ok": true,
       "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.control_plane.smoke_test_control_plane",
       "returncode": 0,
-      "started_at": "2026-05-29T22:23:05.567209+00:00",
-      "finished_at": "2026-05-29T22:23:05.812792+00:00",
+      "started_at": "2026-05-29T22:25:03.042324+00:00",
+      "finished_at": "2026-05-29T22:25:03.391536+00:00",
       "stdout": "",
-      "stderr": "test_default_agents_registered (__main__.ControlPlaneSmokeTest.test_default_agents_registered) ... ok\ntest_event_bus_writes_events (__main__.ControlPlaneSmokeTest.test_event_bus_writes_events) ... ok\ntest_health_check (__main__.ControlPlaneSmokeTest.test_health_check) ... ok\ntest_policy_blocks_plaintext_secret (__main__.ControlPlaneSmokeTest.test_policy_blocks_plaintext_secret) ... ok\ntest_router_denies_blocked_action (__main__.ControlPlaneSmokeTest.test_router_denies_blocked_action) ... ok\ntest_router_sends_supervised_task_to_approval_queue (__main__.ControlPlaneSmokeTest.test_router_sends_supervised_task_to_approval_queue) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.079s\n\nOK\n"
+      "stderr": "test_default_agents_registered (__main__.ControlPlaneSmokeTest.test_default_agents_registered) ... ok\ntest_event_bus_writes_events (__main__.ControlPlaneSmokeTest.test_event_bus_writes_events) ... ok\ntest_health_check (__main__.ControlPlaneSmokeTest.test_health_check) ... ok\ntest_policy_blocks_plaintext_secret (__main__.ControlPlaneSmokeTest.test_policy_blocks_plaintext_secret) ... ok\ntest_router_denies_blocked_action (__main__.ControlPlaneSmokeTest.test_router_denies_blocked_action) ... ok\ntest_router_sends_supervised_task_to_approval_queue (__main__.ControlPlaneSmokeTest.test_router_sends_supervised_task_to_approval_queue) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.138s\n\nOK\n"
     },
     {
       "ok": true,
       "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.control_plane.smoke_test_control_plane_executor",
       "returncode": 0,
-      "started_at": "2026-05-29T22:23:05.813004+00:00",
-      "finished_at": "2026-05-29T22:23:06.169817+00:00",
+      "started_at": "2026-05-29T22:25:03.391694+00:00",
+      "finished_at": "2026-05-29T22:25:03.765019+00:00",
       "stdout": "",
-      "stderr": "test_blocks_unapproved_task (__main__.ControlPlaneExecutorSmokeTest.test_blocks_unapproved_task) ... ok\ntest_execute_all_approved (__main__.ControlPlaneExecutorSmokeTest.test_execute_all_approved) ... ok\ntest_execute_approved_content_package (__main__.ControlPlaneExecutorSmokeTest.test_execute_approved_content_package) ... ok\ntest_run_smoke_test_safe_action (__main__.ControlPlaneExecutorSmokeTest.test_run_smoke_test_safe_action) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.162s\n\nOK\n"
+      "stderr": "test_blocks_unapproved_task (__main__.ControlPlaneExecutorSmokeTest.test_blocks_unapproved_task) ... ok\ntest_execute_all_approved (__main__.ControlPlaneExecutorSmokeTest.test_execute_all_approved) ... ok\ntest_execute_approved_content_package (__main__.ControlPlaneExecutorSmokeTest.test_execute_approved_content_package) ... ok\ntest_run_smoke_test_safe_action (__main__.ControlPlaneExecutorSmokeTest.test_run_smoke_test_safe_action) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.178s\n\nOK\n"
     },
     {
       "ok": false,
       "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.workflows.smoke_test_agent_workflows",
       "returncode": 1,
-      "started_at": "2026-05-29T22:23:06.169974+00:00",
-      "finished_at": "2026-05-29T22:23:06.344747+00:00",
+      "started_at": "2026-05-29T22:25:03.765192+00:00",
+      "finished_at": "2026-05-29T22:25:03.939122+00:00",
       "stdout": "",
       "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\core\\workflows\\smoke_test_agent_workflows.py\", line 11, in <module>\n    from k_atlas.core.workflows.workflow_definitions import build_default_workflows, get_workflow\nModuleNotFoundError: No module named 'k_atlas.core.workflows.workflow_definitions'\n"
     },
@@ -52,36 +52,36 @@
       "ok": true,
       "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.blackboard.smoke_test_blackboard",
       "returncode": 0,
-      "started_at": "2026-05-29T22:23:06.345003+00:00",
-      "finished_at": "2026-05-29T22:23:07.190307+00:00",
+      "started_at": "2026-05-29T22:25:03.939294+00:00",
+      "finished_at": "2026-05-29T22:25:04.823990+00:00",
       "stdout": "",
-      "stderr": "test_agent_creates_safe_plan (__main__.BlackboardSmokeTest.test_agent_creates_safe_plan) ... ok\ntest_page_compiles (__main__.BlackboardSmokeTest.test_page_compiles) ... ok\ntest_policy_allows_safe_git_status (__main__.BlackboardSmokeTest.test_policy_allows_safe_git_status) ... ok\ntest_policy_blocks_destructive_command (__main__.BlackboardSmokeTest.test_policy_blocks_destructive_command) ... ok\ntest_runner_executes_approved_safe_command_once (__main__.BlackboardSmokeTest.test_runner_executes_approved_safe_command_once) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.678s\n\nOK\n"
+      "stderr": "test_agent_creates_safe_plan (__main__.BlackboardSmokeTest.test_agent_creates_safe_plan) ... ok\ntest_page_compiles (__main__.BlackboardSmokeTest.test_page_compiles) ... ok\ntest_policy_allows_safe_git_status (__main__.BlackboardSmokeTest.test_policy_allows_safe_git_status) ... ok\ntest_policy_blocks_destructive_command (__main__.BlackboardSmokeTest.test_policy_blocks_destructive_command) ... ok\ntest_runner_executes_approved_safe_command_once (__main__.BlackboardSmokeTest.test_runner_executes_approved_safe_command_once) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.706s\n\nOK\n"
     },
     {
       "ok": true,
       "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.social.social_audit.smoke_test_social_audit_live",
       "returncode": 0,
-      "started_at": "2026-05-29T22:23:07.190501+00:00",
-      "finished_at": "2026-05-29T22:23:07.431295+00:00",
+      "started_at": "2026-05-29T22:25:04.824187+00:00",
+      "finished_at": "2026-05-29T22:25:05.108482+00:00",
       "stdout": "",
-      "stderr": "test_live_status_writes_and_reads (__main__.SocialAuditLiveSmokeTest.test_live_status_writes_and_reads) ... ok\ntest_page_compiles (__main__.SocialAuditLiveSmokeTest.test_page_compiles) ... ok\ntest_profile_audit_compiles (__main__.SocialAuditLiveSmokeTest.test_profile_audit_compiles) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.059s\n\nOK\n"
+      "stderr": "test_live_status_writes_and_reads (__main__.SocialAuditLiveSmokeTest.test_live_status_writes_and_reads) ... ok\ntest_page_compiles (__main__.SocialAuditLiveSmokeTest.test_page_compiles) ... ok\ntest_profile_audit_compiles (__main__.SocialAuditLiveSmokeTest.test_profile_audit_compiles) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.111s\n\nOK\n"
     },
     {
       "ok": true,
       "command": "git status --short",
       "returncode": 0,
-      "started_at": "2026-05-29T22:23:07.431416+00:00",
-      "finished_at": "2026-05-29T22:23:07.541837+00:00",
-      "stdout": " M k_atlas/social/memory/campaign_package_approval_queue.json\n M k_atlas/social/memory/social_approval_queue.json\n M k_atlas/social/memory/social_content_refinement_queue.json\n M k_atlas/social/reports/campaign_packages/campaign_package_index.json\n M k_atlas/social/reports/social_command_center.json\n?? README_AUTONOMY_LADDER.md\n?? k_atlas/core/autonomy/\n?? k_atlas/core/workflows/\n?? memory/blackboard/\n?? memory/control_plane/\n?? memory/social_audit/\n?? ops/run_autonomy_ladder.ps1\n?? reports/autonomy/\n?? reports/social_audit/\n",
+      "started_at": "2026-05-29T22:25:05.108720+00:00",
+      "finished_at": "2026-05-29T22:25:05.215215+00:00",
+      "stdout": " M k_atlas/social/memory/campaign_package_approval_queue.json\n M k_atlas/social/memory/social_approval_queue.json\n M k_atlas/social/memory/social_content_refinement_queue.json\n M k_atlas/social/reports/campaign_packages/campaign_package_index.json\n M k_atlas/social/reports/social_command_center.json\n?? README_AUTONOMY_LADDER.md\n?? k_atlas/core/autonomy/\n?? memory/blackboard/\n?? memory/control_plane/\n?? memory/social_audit/\n?? ops/run_autonomy_ladder.ps1\n?? reports/social_audit/\n",
       "stderr": ""
     },
     {
       "ok": true,
       "command": "git log --oneline -5",
       "returncode": 0,
-      "started_at": "2026-05-29T22:23:07.541857+00:00",
-      "finished_at": "2026-05-29T22:23:07.592239+00:00",
-      "stdout": "6982cad feat: add social audit live mode\n0dac5ad feat: add local social audit queue\na7f45ae feat: add k atlas operational blackboard\n5149a31 feat: add control plane executor\n058f039 feat: expose k atlas control plane in cockpit\n",
+      "started_at": "2026-05-29T22:25:05.215238+00:00",
+      "finished_at": "2026-05-29T22:25:05.266032+00:00",
+      "stdout": "13bb5d4 fix: stabilize agent workflows autonomy smoke test\n6982cad feat: add social audit live mode\n0dac5ad feat: add local social audit queue\na7f45ae feat: add k atlas operational blackboard\n5149a31 feat: add control plane executor\n",
       "stderr": ""
     }
   ],
