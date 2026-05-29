@@ -7,6 +7,7 @@ from .social_cockpit_view import (
     load_social_report,
     load_social_snapshot,
     render_social_cockpit,
+    render_social_operation_builder,
 )
 
 __all__ = [
@@ -15,4 +16,5 @@ __all__ = [
     "load_social_report",
     "load_social_snapshot",
     "render_social_cockpit",
+    "render_social_operation_builder",
 ]

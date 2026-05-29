@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 
 DEFAULT_SNAPSHOT_PATH = (
@@ -29,6 +29,27 @@ DEFAULT_REPORT_MD_PATH = (
     / "reports"
     / "social_daily_report.md"
 )
+
+
+def _split_lines(value: str) -> List[str]:
+    """Split multiline text into clean list items."""
+
+    return [
+        item.strip()
+        for item in value.splitlines()
+        if item.strip()
+    ]
+
+
+def _split_channels(value: str) -> List[str]:
+    """Split channel input using commas or lines."""
+
+    raw = value.replace(",", "\n")
+    return [
+        item.strip()
+        for item in raw.splitlines()
+        if item.strip()
+    ]
 
 
 def load_social_snapshot(snapshot_path: Optional[Path] = None) -> Dict[str, Any]:
@@ -85,7 +106,7 @@ def load_social_report(
             result["json"] = data
 
     if md_path.exists():
-        result["markdown"] = md_path.read_text(encoding="utf-8")
+        result["markdown"] = md_path.read_text(encoding="utf-8-sig")
 
     result["report_found"] = bool(result["json_found"] or result["markdown_found"])
     return result
@@ -132,11 +153,94 @@ def build_social_report_summary(report: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
-    """Render K-Social dashboard section in Streamlit.
+def render_social_operation_builder() -> None:
+    """Render a safe operation builder form in Streamlit."""
 
-    Streamlit is imported only inside this function to keep smoke tests independent.
-    """
+    try:
+        import streamlit as st
+    except ImportError as exc:
+        raise RuntimeError("Streamlit nao esta instalado neste ambiente.") from exc
+
+    from k_atlas.social.campaign_factory.social_operation_builder import SocialOperationBuilder
+
+    st.subheader("Criar nova operacao social supervisionada")
+    st.caption("Este formulario gera rascunho local. Nao publica, nao chama API e exige revisao humana.")
+
+    with st.form("k_social_operation_builder_form"):
+        product = st.text_input("Produto", value="BRICS Paraguay Autos")
+        market = st.text_input("Mercado", value="marketplace automotivo Paraguai-Brasil")
+        objective = st.text_input(
+            "Objetivo",
+            value="validar campanha local supervisionada para captacao inicial",
+        )
+
+        personas_text = st.text_area(
+            "Personas",
+            value=(
+                "compradores brasileiros interessados em carros no Paraguai\n"
+                "lojistas paraguaios que precisam melhorar anuncios\n"
+                "investidores buscando oportunidades automotivas regionais"
+            ),
+            height=120,
+        )
+
+        channels_text = st.text_input("Canais", value="Instagram, Facebook, WhatsApp")
+        duration_days = st.number_input("Duracao em dias", min_value=1, max_value=90, value=5)
+
+        key_messages_text = st.text_area(
+            "Mensagens principais",
+            value=(
+                "anuncios automotivos mais claros e confiaveis\n"
+                "revisao humana antes de qualquer publicacao\n"
+                "ponte comercial entre Paraguai e Brasil com mais organizacao"
+            ),
+            height=120,
+        )
+
+        format_type = st.selectbox("Formato", ["reel", "post", "story", "video", "imagem", "anuncio"])
+        brand_tone = st.text_input("Tom da marca", value="premium, confiavel e direto")
+        region = st.text_input("Regiao", value="Paraguai e Brasil")
+        language = st.text_input("Idioma", value="pt-BR")
+        seasonal_context = st.text_input(
+            "Contexto sazonal",
+            value="campanha inicial de validacao comercial",
+        )
+
+        submitted = st.form_submit_button("Gerar operacao supervisionada")
+
+    if submitted:
+        request = {
+            "request_name": "cockpit_social_operation",
+            "owner": "K-Atlas Operator",
+            "product": product,
+            "market": market,
+            "personas": _split_lines(personas_text),
+            "objective": objective,
+            "channels": _split_channels(channels_text),
+            "duration_days": int(duration_days),
+            "key_messages": _split_lines(key_messages_text),
+            "format_type": format_type,
+            "brand_tone": brand_tone,
+            "region": region,
+            "language": language,
+            "seasonal_context": seasonal_context,
+        }
+
+        try:
+            builder = SocialOperationBuilder()
+            result = builder.run_from_request_data(request)
+            st.success("Operacao social criada e enviada para revisao humana.")
+            st.write("Arquivo:", result["operation_file"])
+            st.write("Operacoes no snapshot:", result["snapshot_total_operations"])
+            st.write("Publicacao automatica:", result["publication_permission"])
+            st.info("Atualize a pagina para ver as metricas atualizadas.")
+        except Exception as exc:
+            st.error("Falha ao criar operacao social.")
+            st.caption(str(exc))
+
+
+def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
+    """Render K-Social dashboard section in Streamlit."""
 
     try:
         import streamlit as st
@@ -147,6 +251,9 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
     summary = build_social_cockpit_summary(snapshot)
 
     st.subheader("K-Social Intelligence System")
+
+    with st.expander("Nova operacao social"):
+        render_social_operation_builder()
 
     if not summary["snapshot_found"]:
         st.info(summary.get("message", "Snapshot social ainda nao foi gerado."))

@@ -1,7 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 """K-Social Operation Builder.
 
-Builds supervised social operations from JSON request files.
+Builds supervised social operations from JSON request files or validated dictionaries.
 It does not publish content, does not call external APIs and does not operate browsers.
 """
 
@@ -19,7 +19,7 @@ from k_atlas.social.social_orchestrator import SocialOrchestrator
 
 
 class SocialOperationBuilder:
-    """Creates supervised K-Social operations from request JSON files."""
+    """Creates supervised K-Social operations from request data."""
 
     REQUIRED_FIELDS = {
         "product",
@@ -54,6 +54,82 @@ class SocialOperationBuilder:
         value = value.strip("-")
         return value or "social-operation"
 
+    def validate_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
+        """Validate and normalize request data."""
+
+        if not isinstance(request, dict):
+            raise ValueError("Request must be a dictionary.")
+
+        missing = self.REQUIRED_FIELDS.difference(set(request.keys()))
+        if missing:
+            missing_list = ", ".join(sorted(missing))
+            raise ValueError(f"Missing required fields: {missing_list}")
+
+        request["product"] = str(request["product"]).strip()
+        request["market"] = str(request["market"]).strip()
+        request["objective"] = str(request["objective"]).strip()
+        request["duration_days"] = int(request["duration_days"])
+
+        if not request["product"]:
+            raise ValueError("product cannot be empty.")
+
+        if not request["market"]:
+            raise ValueError("market cannot be empty.")
+
+        if not request["objective"]:
+            raise ValueError("objective cannot be empty.")
+
+        if not isinstance(request["personas"], list) or not request["personas"]:
+            raise ValueError("personas must be a non-empty list.")
+
+        if not isinstance(request["channels"], list) or not request["channels"]:
+            raise ValueError("channels must be a non-empty list.")
+
+        if not isinstance(request["key_messages"], list) or not request["key_messages"]:
+            raise ValueError("key_messages must be a non-empty list.")
+
+        if request["duration_days"] <= 0:
+            raise ValueError("duration_days must be greater than zero.")
+
+        request["personas"] = [
+            str(item).strip()
+            for item in request["personas"]
+            if str(item).strip()
+        ]
+
+        request["channels"] = [
+            str(item).strip()
+            for item in request["channels"]
+            if str(item).strip()
+        ]
+
+        request["key_messages"] = [
+            str(item).strip()
+            for item in request["key_messages"]
+            if str(item).strip()
+        ]
+
+        if not request["personas"]:
+            raise ValueError("personas must contain valid values.")
+
+        if not request["channels"]:
+            raise ValueError("channels must contain valid values.")
+
+        if not request["key_messages"]:
+            raise ValueError("key_messages must contain valid values.")
+
+        request["format_type"] = str(request.get("format_type", "reel")).strip() or "reel"
+        request["brand_tone"] = str(
+            request.get("brand_tone", "profissional, claro e direto")
+        ).strip() or "profissional, claro e direto"
+        request["region"] = str(request.get("region", "Brasil")).strip() or "Brasil"
+        request["language"] = str(request.get("language", "pt-BR")).strip() or "pt-BR"
+        request["seasonal_context"] = request.get("seasonal_context") or "sem sazonalidade definida"
+        request["request_name"] = request.get("request_name", "cockpit_social_request")
+        request["owner"] = request.get("owner", "K-Atlas Operator")
+
+        return request
+
     def load_request(self, request_path: Path) -> Dict[str, Any]:
         """Load and validate request JSON."""
 
@@ -65,31 +141,12 @@ class SocialOperationBuilder:
         with path.open("r", encoding="utf-8-sig") as file:
             request = json.load(file)
 
-        if not isinstance(request, dict):
-            raise ValueError("Request JSON must be an object.")
-
-        missing = self.REQUIRED_FIELDS.difference(set(request.keys()))
-        if missing:
-            missing_list = ", ".join(sorted(missing))
-            raise ValueError(f"Missing required fields: {missing_list}")
-
-        if not isinstance(request["personas"], list) or not request["personas"]:
-            raise ValueError("personas must be a non-empty list.")
-
-        if not isinstance(request["channels"], list) or not request["channels"]:
-            raise ValueError("channels must be a non-empty list.")
-
-        if not isinstance(request["key_messages"], list) or not request["key_messages"]:
-            raise ValueError("key_messages must be a non-empty list.")
-
-        if int(request["duration_days"]) <= 0:
-            raise ValueError("duration_days must be greater than zero.")
-
-        return request
+        return self.validate_request(request)
 
     def build_operation(self, request: Dict[str, Any]) -> Dict[str, Any]:
         """Build a supervised social operation from a validated request."""
 
+        request = self.validate_request(request)
         orchestrator = SocialOrchestrator()
 
         operation = orchestrator.plan_social_operation(
@@ -131,7 +188,7 @@ class SocialOperationBuilder:
 
         output_path = self.reports_dir / f"operation_{slug}_{timestamp}.json"
 
-        with output_path.open("w", encoding="utf-8-sig") as file:
+        with output_path.open("w", encoding="utf-8") as file:
             json.dump(operation, file, ensure_ascii=False, indent=2)
 
         return output_path
@@ -153,11 +210,11 @@ class SocialOperationBuilder:
             "daily_report": daily_report,
         }
 
-    def run_from_request_file(self, request_path: Path) -> Dict[str, Any]:
-        """Run the complete operation creation flow."""
+    def run_from_request_data(self, request: Dict[str, Any]) -> Dict[str, Any]:
+        """Run the complete operation creation flow from a dictionary."""
 
-        request = self.load_request(Path(request_path))
-        operation = self.build_operation(request)
+        validated_request = self.validate_request(request)
+        operation = self.build_operation(validated_request)
         output_path = self.save_operation(operation)
         dashboard_outputs = self.refresh_dashboard_outputs()
 
@@ -170,6 +227,12 @@ class SocialOperationBuilder:
             "snapshot_total_operations": dashboard_outputs["snapshot"]["total_operations"],
             "daily_report_total_operations": dashboard_outputs["daily_report"]["summary"]["total_operations"],
         }
+
+    def run_from_request_file(self, request_path: Path) -> Dict[str, Any]:
+        """Run the complete operation creation flow from a JSON file."""
+
+        request = self.load_request(Path(request_path))
+        return self.run_from_request_data(request)
 
 
 def main() -> None:
