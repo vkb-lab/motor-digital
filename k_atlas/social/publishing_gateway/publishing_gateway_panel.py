@@ -1,8 +1,13 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Any
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import streamlit as st
 
@@ -54,6 +59,12 @@ def save_json_list(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def render_social_publishing_gateway_panel() -> None:
+    st.set_page_config(
+        page_title="K-Social Publishing Gateway",
+        page_icon="KS",
+        layout="wide",
+    )
+
     st.title("K-Social Publishing Gateway")
     st.caption("LEVEL 2 - sandbox/test page. Sem API real. Sem publicacao oficial.")
 
@@ -150,7 +161,11 @@ def render_social_publishing_gateway_panel() -> None:
 
                     with col2:
                         can_publish_test = status == "approved_for_test_page"
-                        if st.button("Publicar em test_page local", key=f"test_{request_id}", disabled=not can_publish_test):
+                        if st.button(
+                            "Publicar em test_page local",
+                            key=f"test_{request_id}",
+                            disabled=not can_publish_test,
+                        ):
                             result = test_page.publish(item, actor="streamlit_operator")
                             if result.get("ok"):
                                 items[index]["status"] = "published_to_test_page"
