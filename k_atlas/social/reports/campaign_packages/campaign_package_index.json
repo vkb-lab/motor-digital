@@ -1,15 +1,15 @@
 {
   "system": "K-Social Campaign Package Index",
-  "generated_at": "2026-05-29T11:37:31.593706+00:00",
+  "generated_at": "2026-05-29T12:00:57.260694+00:00",
   "packages_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages",
-  "total_packages": 6,
+  "total_packages": 7,
   "latest_package": {
-    "file_name": "brics-paraguay-autos-campaign-package_20260529_111102.json",
-    "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_111102.json",
-    "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_111102.md",
+    "file_name": "brics-paraguay-autos-campaign-package_20260529_120057.json",
+    "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.json",
+    "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.md",
     "package_name": "BRICS Paraguay Autos Campaign Package",
     "owner": "K-Atlas Operator",
-    "generated_at": "2026-05-29T11:11:02.860664+00:00",
+    "generated_at": "2026-05-29T12:00:57.121293+00:00",
     "total_assets": 5,
     "human_review_required": true,
     "publication_permission": false,
@@ -18,6 +18,20 @@
     "requires_final_approval": true
   },
   "recent_packages": [
+    {
+      "file_name": "brics-paraguay-autos-campaign-package_20260529_120057.json",
+      "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.json",
+      "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.md",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T12:00:57.121293+00:00",
+      "total_assets": 5,
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    },
     {
       "file_name": "brics-paraguay-autos-campaign-package_20260529_111102.json",
       "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_111102.json",
@@ -73,23 +87,23 @@
       "external_api_used": false,
       "approved_for_auto_publish": false,
       "requires_final_approval": true
-    },
+    }
+  ],
+  "all_packages": [
     {
-      "file_name": "brics-paraguay-autos-campaign-package_20260529_110237.json",
-      "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_110237.json",
-      "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_110237.md",
+      "file_name": "brics-paraguay-autos-campaign-package_20260529_120057.json",
+      "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.json",
+      "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.md",
       "package_name": "BRICS Paraguay Autos Campaign Package",
       "owner": "K-Atlas Operator",
-      "generated_at": "2026-05-29T11:02:37.018915+00:00",
+      "generated_at": "2026-05-29T12:00:57.121293+00:00",
       "total_assets": 5,
       "human_review_required": true,
       "publication_permission": false,
       "external_api_used": false,
       "approved_for_auto_publish": false,
       "requires_final_approval": true
-    }
-  ],
-  "all_packages": [
+    },
     {
       "file_name": "brics-paraguay-autos-campaign-package_20260529_111102.json",
       "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_111102.json",

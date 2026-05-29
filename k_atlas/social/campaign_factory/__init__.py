@@ -8,6 +8,7 @@ Other builders are loaded lazily to avoid circular imports.
 from .campaign_generator import CampaignGenerator
 
 __all__ = [
+    "AutonomousSocialCampaignRunner",
     "CampaignGenerator",
     "SocialCampaignPackageExporter",
     "SocialCampaignPackageIndexer",
@@ -27,5 +28,9 @@ def __getattr__(name: str):
     if name == "SocialCampaignPackageIndexer":
         from .social_campaign_package_indexer import SocialCampaignPackageIndexer
         return SocialCampaignPackageIndexer
+
+    if name == "AutonomousSocialCampaignRunner":
+        from .autonomous_social_campaign_runner import AutonomousSocialCampaignRunner
+        return AutonomousSocialCampaignRunner
 
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

@@ -251,6 +251,15 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
     summary = build_social_cockpit_summary(snapshot)
 
     st.subheader("K-Social Intelligence System")
+    try:
+        from k_atlas.social.ui.social_command_center_view import render_social_command_center
+
+        render_social_command_center()
+        st.divider()
+    except Exception as command_center_error:
+        st.warning("K-Social Command Center ainda nao foi carregado.")
+        st.caption(str(command_center_error))
+
 
     with st.expander("Nova operacao social"):
         render_social_operation_builder()

@@ -1,0 +1,62 @@
+{
+  "system": "K-Social Command Center",
+  "generated_at": "2026-05-29T12:00:58.913499+00:00",
+  "status": "operational",
+  "operations": {
+    "total": 2,
+    "ready_for_review": 2,
+    "blocked": 0,
+    "content_items": 55
+  },
+  "approval_queue": {
+    "total": 2,
+    "pending": 1,
+    "approved_for_refinement": 0,
+    "needs_revision": 1,
+    "rejected": 0
+  },
+  "refinement_queue": {
+    "total_tasks": 5,
+    "pending": 5,
+    "in_progress": 0,
+    "done": 0,
+    "blocked": 0
+  },
+  "campaign_packages": {
+    "total": 7,
+    "recent": 5,
+    "latest": {
+      "file_name": "brics-paraguay-autos-campaign-package_20260529_120057.json",
+      "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.json",
+      "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\brics-paraguay-autos-campaign-package_20260529_120057.md",
+      "package_name": "BRICS Paraguay Autos Campaign Package",
+      "owner": "K-Atlas Operator",
+      "generated_at": "2026-05-29T12:00:57.121293+00:00",
+      "total_assets": 5,
+      "human_review_required": true,
+      "publication_permission": false,
+      "external_api_used": false,
+      "approved_for_auto_publish": false,
+      "requires_final_approval": true
+    }
+  },
+  "package_approval": {
+    "total": 7,
+    "pending_final_review": 6,
+    "approved_for_manual_use": 1,
+    "needs_package_revision": 0,
+    "rejected": 0
+  },
+  "daily_report": {
+    "found": true,
+    "risks": 0,
+    "next_actions": 5
+  },
+  "governance": {
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false,
+    "approved_for_auto_publish": false,
+    "manual_use_only_after_final_approval": true
+  }
+}

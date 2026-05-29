@@ -1,0 +1,872 @@
+{
+  "system": "K-Social Intelligence System",
+  "operation_status": "draft_ready_for_human_review",
+  "audience": {
+    "audience_id": "d073cc67e44a441b",
+    "created_at": "2026-05-29T12:00:58.147494+00:00",
+    "product": "Parada Atlantida + Chopp Ecobier",
+    "market": "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis",
+    "region": "Florianopolis, Santa Catarina, Brasil",
+    "language": "pt-BR",
+    "segments": [
+      {
+        "segment_id": "seg_01",
+        "persona": "moradores de Florianopolis que querem assistir jogos com amigos",
+        "region": "Florianopolis, Santa Catarina, Brasil",
+        "language": "pt-BR",
+        "interests": [
+          "Parada Atlantida + Chopp Ecobier",
+          "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis"
+        ],
+        "likely_needs": [
+          "clareza sobre valor",
+          "prova de confianca",
+          "conteudo simples e direto"
+        ],
+        "content_angles": [
+          "educacao",
+          "beneficio pratico",
+          "prova social supervisionada"
+        ],
+        "risk_notes": [
+          "nao usar dados pessoais sensiveis",
+          "nao prometer resultado garantido",
+          "validar contexto local antes de publicar"
+        ]
+      },
+      {
+        "segment_id": "seg_02",
+        "persona": "turistas em busca de experiencia local com comida, praia e chopp",
+        "region": "Florianopolis, Santa Catarina, Brasil",
+        "language": "pt-BR",
+        "interests": [
+          "Parada Atlantida + Chopp Ecobier",
+          "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis"
+        ],
+        "likely_needs": [
+          "clareza sobre valor",
+          "prova de confianca",
+          "conteudo simples e direto"
+        ],
+        "content_angles": [
+          "educacao",
+          "beneficio pratico",
+          "prova social supervisionada"
+        ],
+        "risk_notes": [
+          "nao usar dados pessoais sensiveis",
+          "nao prometer resultado garantido",
+          "validar contexto local antes de publicar"
+        ]
+      },
+      {
+        "segment_id": "seg_03",
+        "persona": "grupos que procuram ambiente descontraido para jogos importantes",
+        "region": "Florianopolis, Santa Catarina, Brasil",
+        "language": "pt-BR",
+        "interests": [
+          "Parada Atlantida + Chopp Ecobier",
+          "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis"
+        ],
+        "likely_needs": [
+          "clareza sobre valor",
+          "prova de confianca",
+          "conteudo simples e direto"
+        ],
+        "content_angles": [
+          "educacao",
+          "beneficio pratico",
+          "prova social supervisionada"
+        ],
+        "risk_notes": [
+          "nao usar dados pessoais sensiveis",
+          "nao prometer resultado garantido",
+          "validar contexto local antes de publicar"
+        ]
+      },
+      {
+        "segment_id": "seg_04",
+        "persona": "clientes que valorizam chopp gelado, atendimento e clima de celebracao",
+        "region": "Florianopolis, Santa Catarina, Brasil",
+        "language": "pt-BR",
+        "interests": [
+          "Parada Atlantida + Chopp Ecobier",
+          "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis"
+        ],
+        "likely_needs": [
+          "clareza sobre valor",
+          "prova de confianca",
+          "conteudo simples e direto"
+        ],
+        "content_angles": [
+          "educacao",
+          "beneficio pratico",
+          "prova social supervisionada"
+        ],
+        "risk_notes": [
+          "nao usar dados pessoais sensiveis",
+          "nao prometer resultado garantido",
+          "validar contexto local antes de publicar"
+        ]
+      }
+    ],
+    "classification": "social_strategy_draft",
+    "source": "manual_input",
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false
+  },
+  "creative_brief": {
+    "created_at": "2026-05-29T12:00:58.169628+00:00",
+    "product": "Parada Atlantida + Chopp Ecobier",
+    "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+    "target_audience": [
+      "moradores de Florianopolis que querem assistir jogos com amigos",
+      "turistas em busca de experiencia local com comida, praia e chopp",
+      "grupos que procuram ambiente descontraido para jogos importantes",
+      "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+    ],
+    "key_messages": [
+      "o encontro do futebol com o clima da praia",
+      "Chopp Ecobier gelado para acompanhar os grandes jogos",
+      "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores",
+      "experiencia local com gastronomia, conversa boa e clima de celebracao",
+      "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio"
+    ],
+    "format_type": "reel",
+    "brand_tone": "alegre, local, convidativo, responsavel e comercial",
+    "seasonal_context": "Copa do Mundo 2026; campanha tematica nao oficial; evitar logos, nomes oficiais e insinuacao de patrocinio",
+    "creative_direction": {
+      "hook": "abrir com uma dor ou desejo claro do publico",
+      "body": "explicar o valor de forma simples e local",
+      "cta": "convidar para proximo passo sem pressao enganosa"
+    },
+    "ai_image_ready": {
+      "enabled_for_future": true,
+      "prompt_requirements": [
+        "descrever cena",
+        "descrever estilo visual",
+        "evitar marcas de terceiros sem autorizacao",
+        "validar direitos de uso antes de publicar"
+      ]
+    },
+    "ai_video_ready": {
+      "enabled_for_future": true,
+      "script_requirements": [
+        "roteiro curto",
+        "cenas numeradas",
+        "legendas planejadas",
+        "revisao humana obrigatoria"
+      ]
+    },
+    "reels_ready": {
+      "enabled_for_future": true,
+      "duration_hint": "15 a 45 segundos",
+      "structure": [
+        "gancho",
+        "valor",
+        "prova",
+        "chamada para acao"
+      ]
+    },
+    "ads_ready": {
+      "enabled_for_future": true,
+      "requires_budget_approval": true,
+      "requires_legal_review": true
+    },
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false
+  },
+  "campaign": {
+    "created_at": "2026-05-29T12:00:58.169765+00:00",
+    "campaign_name": "Parada Atlantida + Chopp Ecobier - criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+    "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+    "seasonal_context": "Copa do Mundo 2026; campanha tematica nao oficial; evitar logos, nomes oficiais e insinuacao de patrocinio",
+    "channels": [
+      "Instagram",
+      "Facebook",
+      "WhatsApp",
+      "Google Business Profile"
+    ],
+    "duration_days": 10,
+    "segments_count": 4,
+    "content_calendar": [
+      {
+        "day": 1,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 1,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 1,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 1,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 2,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 2,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 2,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 2,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 3,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 3,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 3,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 3,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 4,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 4,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 4,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 4,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 5,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 5,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 5,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 5,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 6,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 6,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 6,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 6,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "o encontro do futebol com o clima da praia. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 7,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 7,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 7,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 7,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Chopp Ecobier gelado para acompanhar os grandes jogos. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 8,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 8,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 8,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 8,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "Parada Atlantida como ponto de encontro para amigos, turistas e torcedores. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 9,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 9,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 9,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 9,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "experiencia local com gastronomia, conversa boa e clima de celebracao. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 10,
+        "channel": "Instagram",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 10,
+        "channel": "Facebook",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 10,
+        "channel": "WhatsApp",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      },
+      {
+        "day": 10,
+        "channel": "Google Business Profile",
+        "target_segments": [
+          "moradores de Florianopolis que querem assistir jogos com amigos",
+          "turistas em busca de experiencia local com comida, praia e chopp",
+          "grupos que procuram ambiente descontraido para jogos importantes",
+          "clientes que valorizam chopp gelado, atendimento e clima de celebracao"
+        ],
+        "content_status": "draft_needs_human_review",
+        "format_suggestion": "post, story, reel ou anuncio supervisionado",
+        "caption_draft": "campanha tematica nao oficial, sem uso de marcas ou logos oficiais do torneio. Conteudo pensado para moradores de Florianopolis que querem assistir jogos com amigos, turistas em busca de experiencia local com comida, praia e chopp, grupos que procuram ambiente descontraido para jogos importantes, clientes que valorizam chopp gelado, atendimento e clima de celebracao. Revisao humana obrigatoria antes de publicar.",
+        "cta_suggestion": "falar com atendimento, solicitar proposta ou salvar conteudo",
+        "publish_automatically": false
+      }
+    ],
+    "allowed_actions": [
+      "gerar estrategia",
+      "gerar briefing",
+      "gerar calendario",
+      "gerar auditoria"
+    ],
+    "blocked_actions": [
+      "publicar automaticamente",
+      "enviar posts",
+      "operar navegador",
+      "chamar APIs reais sem modulo aprovado"
+    ],
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false
+  },
+  "audit": {
+    "created_at": "2026-05-29T12:00:58.169842+00:00",
+    "audit_status": "approved_for_human_review",
+    "errors": [],
+    "warnings": [
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura",
+      "termo sensivel detectado: cura"
+    ],
+    "human_review_required": true,
+    "publication_permission": false,
+    "approved_for_auto_publish": false
+  },
+  "human_review_required": true,
+  "publication_permission": false,
+  "external_api_used": false,
+  "request_metadata": {
+    "created_from": "SocialOperationBuilder",
+    "built_at": "2026-05-29T12:00:58.169848+00:00",
+    "request_name": "parada_atlantida_chopp_ecobier_temporada_futebol_2026",
+    "owner": "K-Atlas Operator",
+    "approval_status": "pending_human_review"
+  }
+}

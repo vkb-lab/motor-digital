@@ -1,14 +1,14 @@
 {
   "system": "K-Social AutoReporter",
-  "generated_at": "2026-05-29T10:46:40.999468+00:00",
+  "generated_at": "2026-05-29T12:00:58.729194+00:00",
   "snapshot_found": true,
   "summary": {
-    "total_operations": 1,
-    "ready_for_review": 1,
+    "total_operations": 2,
+    "ready_for_review": 2,
     "blocked_operations": 0,
-    "total_content_items": 15,
+    "total_content_items": 55,
     "approval_counts": {
-      "pending_human_review": 0,
+      "pending_human_review": 1,
       "approved_for_content_refinement": 0,
       "needs_revision": 1,
       "rejected": 0
@@ -21,6 +21,7 @@
   "risks": [],
   "next_actions": [
     "Review operations marked as needs_revision.",
+    "Process pending human review operations.",
     "Select top draft content items for human refinement.",
     "Keep auto-publishing disabled.",
     "Use reports as cockpit input, not as publishing authorization."
@@ -39,6 +40,24 @@
         "WhatsApp"
       ],
       "content_items": 15,
+      "human_review_required": true,
+      "publication_permission": false,
+      "approved_for_auto_publish": false
+    },
+    {
+      "source_file": "operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+      "product": "Parada Atlantida + Chopp Ecobier",
+      "market": "turismo, gastronomia, experiencia local e encontros para jogos em Florianopolis",
+      "objective": "criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026",
+      "audit_status": "approved_for_human_review",
+      "approval_status": "pending_human_review",
+      "channels": [
+        "Instagram",
+        "Facebook",
+        "WhatsApp",
+        "Google Business Profile"
+      ],
+      "content_items": 40,
       "human_review_required": true,
       "publication_permission": false,
       "approved_for_auto_publish": false

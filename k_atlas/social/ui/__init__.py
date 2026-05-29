@@ -8,6 +8,7 @@ from .social_campaign_packages_view import (
     load_campaign_packages,
     render_social_campaign_packages,
 )
+from .social_command_center_view import render_social_command_center
 from .social_content_refinement_view import render_social_content_refinement_queue
 from .social_cockpit_view import (
     build_social_cockpit_summary,
@@ -33,6 +34,7 @@ __all__ = [
     "render_social_approval_queue",
     "render_social_campaign_package_approval_queue",
     "render_social_campaign_packages",
+    "render_social_command_center",
     "render_social_content_refinement_queue",
     "render_social_cockpit",
     "render_social_operation_builder",
