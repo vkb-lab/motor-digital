@@ -314,6 +314,15 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
         st.warning("Refinamentos criativos ainda nao foram carregados.")
         st.caption(str(outputs_error))
 
+    try:
+        from k_atlas.social.ui.social_campaign_packages_view import render_social_campaign_packages
+
+        st.divider()
+        render_social_campaign_packages()
+    except Exception as packages_error:
+        st.warning("Pacotes de campanha ainda nao foram carregados.")
+        st.caption(str(packages_error))
+
     report = load_social_report()
     report_summary = build_social_report_summary(report)
 
