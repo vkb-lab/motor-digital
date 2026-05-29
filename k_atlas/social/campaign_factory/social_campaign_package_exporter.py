@@ -75,7 +75,7 @@ class SocialCampaignPackageExporter:
 
         outputs = self.load_refinement_outputs()
 
-        package = {
+        return {
             "system": "K-Social Campaign Package Exporter",
             "package_name": package_name,
             "owner": owner,
@@ -97,8 +97,6 @@ class SocialCampaignPackageExporter:
                 "Keep auto-publishing disabled.",
             ],
         }
-
-        return package
 
     def save_package(self, package: Dict[str, Any]) -> Dict[str, str]:
         """Save campaign package as JSON and Markdown."""
