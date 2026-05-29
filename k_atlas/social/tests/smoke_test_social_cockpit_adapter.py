@@ -20,6 +20,7 @@ class TestSocialCockpitAdapter(unittest.TestCase):
             output_file = reports_dir / "social_dashboard_snapshot.json"
 
             sample_report = {
+                "system": "K-Social Intelligence System",
                 "operation_status": "draft_ready_for_human_review",
                 "human_review_required": True,
                 "publication_permission": False,
@@ -27,8 +28,13 @@ class TestSocialCockpitAdapter(unittest.TestCase):
                 "audience": {
                     "product": "BRICS Paraguay Autos",
                     "market": "marketplace automotivo Paraguai-Brasil",
+                    "segments": [
+                        {"persona": "compradores brasileiros interessados em carros no Paraguai"},
+                        {"persona": "lojistas paraguaios que precisam melhorar anuncios"},
+                    ],
                 },
                 "creative_brief": {
+                    "product": "BRICS Paraguay Autos",
                     "objective": "validar campanha supervisionada",
                 },
                 "campaign": {
@@ -43,10 +49,16 @@ class TestSocialCockpitAdapter(unittest.TestCase):
                 },
                 "audit": {
                     "audit_status": "approved_for_human_review",
+                    "errors": [],
+                    "warnings": [],
+                    "human_review_required": True,
+                    "publication_permission": False,
+                    "approved_for_auto_publish": False,
                 },
             }
 
             report_file = reports_dir / "social_demo_operation.json"
+
             with report_file.open("w", encoding="utf-8") as file:
                 json.dump(sample_report, file, ensure_ascii=False, indent=2)
 
