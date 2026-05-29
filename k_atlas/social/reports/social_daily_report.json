@@ -1,9 +1,9 @@
 {
   "system": "K-Social AutoReporter",
-  "generated_at": "2026-05-29T09:55:04.628003+00:00",
+  "generated_at": "2026-05-29T09:56:43.482452+00:00",
   "snapshot_found": true,
   "summary": {
-    "total_operations": 0,
+    "total_operations": 1,
     "ready_for_review": 0,
     "blocked_operations": 0,
     "total_content_items": 0,
@@ -17,5 +17,16 @@
     "Keep auto-publishing disabled.",
     "Use reports as cockpit input, not as publishing authorization."
   ],
-  "operations": []
+  "operations": [
+    {
+      "product": "produto nao informado",
+      "market": "mercado nao informado",
+      "objective": "objetivo nao informado",
+      "audit_status": "unknown",
+      "channels": [],
+      "content_items": 0,
+      "human_review_required": true,
+      "publication_permission": false
+    }
+  ]
 }

@@ -18,6 +18,18 @@ DEFAULT_SNAPSHOT_PATH = (
     / "social_dashboard_snapshot.json"
 )
 
+DEFAULT_REPORT_JSON_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "reports"
+    / "social_daily_report.json"
+)
+
+DEFAULT_REPORT_MD_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "reports"
+    / "social_daily_report.md"
+)
+
 
 def load_social_snapshot(snapshot_path: Optional[Path] = None) -> Dict[str, Any]:
     """Load the K-Social dashboard snapshot from JSON."""
@@ -46,6 +58,39 @@ def load_social_snapshot(snapshot_path: Optional[Path] = None) -> Dict[str, Any]
     return data
 
 
+def load_social_report(
+    report_json_path: Optional[Path] = None,
+    report_md_path: Optional[Path] = None,
+) -> Dict[str, Any]:
+    """Load the K-Social daily report from JSON and Markdown."""
+
+    json_path = Path(report_json_path) if report_json_path else DEFAULT_REPORT_JSON_PATH
+    md_path = Path(report_md_path) if report_md_path else DEFAULT_REPORT_MD_PATH
+
+    result: Dict[str, Any] = {
+        "report_found": False,
+        "json_found": json_path.exists(),
+        "markdown_found": md_path.exists(),
+        "json_path": str(json_path),
+        "markdown_path": str(md_path),
+        "json": {},
+        "markdown": "",
+    }
+
+    if json_path.exists():
+        with json_path.open("r", encoding="utf-8") as file:
+            data = json.load(file)
+
+        if isinstance(data, dict):
+            result["json"] = data
+
+    if md_path.exists():
+        result["markdown"] = md_path.read_text(encoding="utf-8")
+
+    result["report_found"] = bool(result["json_found"] or result["markdown_found"])
+    return result
+
+
 def build_social_cockpit_summary(snapshot: Dict[str, Any]) -> Dict[str, Any]:
     """Build a compact summary for cockpit rendering."""
 
@@ -54,6 +99,7 @@ def build_social_cockpit_summary(snapshot: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "system": snapshot.get("system", "K-Social Cockpit Snapshot"),
         "snapshot_found": snapshot.get("snapshot_found", True),
+        "message": snapshot.get("message", ""),
         "total_operations": int(snapshot.get("total_operations", len(operations))),
         "ready_for_review": int(snapshot.get("ready_for_review", 0)),
         "blocked_operations": int(snapshot.get("blocked_operations", 0)),
@@ -62,6 +108,27 @@ def build_social_cockpit_summary(snapshot: Dict[str, Any]) -> Dict[str, Any]:
         "external_api_used": bool(snapshot.get("external_api_used", False)),
         "human_review_required": bool(snapshot.get("human_review_required", True)),
         "operations": operations,
+    }
+
+
+def build_social_report_summary(report: Dict[str, Any]) -> Dict[str, Any]:
+    """Build compact report metadata for cockpit rendering."""
+
+    report_json = report.get("json", {})
+    summary = report_json.get("summary", {}) if isinstance(report_json, dict) else {}
+
+    return {
+        "report_found": bool(report.get("report_found", False)),
+        "json_found": bool(report.get("json_found", False)),
+        "markdown_found": bool(report.get("markdown_found", False)),
+        "generated_at": report_json.get("generated_at", "nao informado"),
+        "total_operations": int(summary.get("total_operations", 0)),
+        "ready_for_review": int(summary.get("ready_for_review", 0)),
+        "blocked_operations": int(summary.get("blocked_operations", 0)),
+        "total_content_items": int(summary.get("total_content_items", 0)),
+        "risks": report_json.get("risks", []),
+        "next_actions": report_json.get("next_actions", []),
+        "markdown": report.get("markdown", ""),
     }
 
 
@@ -100,16 +167,52 @@ def render_social_cockpit(snapshot_path: Optional[Path] = None) -> None:
 
     if not operations:
         st.warning("Nenhuma operacao social encontrada.")
+    else:
+        for operation in operations:
+            with st.expander(operation.get("product", "Produto nao informado")):
+                st.write("Mercado:", operation.get("market", "nao informado"))
+                st.write("Objetivo:", operation.get("objective", "nao informado"))
+                st.write("Status:", operation.get("operation_status", "unknown"))
+                st.write("Auditoria:", operation.get("audit_status", "unknown"))
+                st.write("Canais:", ", ".join(operation.get("channels", [])))
+                st.write("Duracao:", operation.get("duration_days", 0), "dias")
+                st.write("Itens de conteudo:", operation.get("content_items", 0))
+                st.write("Revisao humana obrigatoria:", operation.get("human_review_required", True))
+                st.write("Permissao de publicacao:", operation.get("publication_permission", False))
+
+    report = load_social_report()
+    report_summary = build_social_report_summary(report)
+
+    st.divider()
+    st.subheader("Relatorio Diario K-Social")
+
+    if not report_summary["report_found"]:
+        st.info("Relatorio diario ainda nao foi gerado.")
         return
 
-    for operation in operations:
-        with st.expander(operation.get("product", "Produto nao informado")):
-            st.write("Mercado:", operation.get("market", "nao informado"))
-            st.write("Objetivo:", operation.get("objective", "nao informado"))
-            st.write("Status:", operation.get("operation_status", "unknown"))
-            st.write("Auditoria:", operation.get("audit_status", "unknown"))
-            st.write("Canais:", ", ".join(operation.get("channels", [])))
-            st.write("Duracao:", operation.get("duration_days", 0), "dias")
-            st.write("Itens de conteudo:", operation.get("content_items", 0))
-            st.write("Revisao humana obrigatoria:", operation.get("human_review_required", True))
-            st.write("Permissao de publicacao:", operation.get("publication_permission", False))
+    col_a, col_b, col_c = st.columns(3)
+    col_a.metric("Operacoes no relatorio", report_summary["total_operations"])
+    col_b.metric("Riscos", len(report_summary["risks"]))
+    col_c.metric("Proximas acoes", len(report_summary["next_actions"]))
+
+    st.caption("Gerado em: " + str(report_summary["generated_at"]))
+
+    with st.expander("Riscos detectados"):
+        if report_summary["risks"]:
+            for risk in report_summary["risks"]:
+                st.write("- " + str(risk))
+        else:
+            st.write("Nenhum risco critico detectado.")
+
+    with st.expander("Proximas acoes recomendadas"):
+        if report_summary["next_actions"]:
+            for action in report_summary["next_actions"]:
+                st.write("- " + str(action))
+        else:
+            st.write("Nenhuma acao recomendada.")
+
+    with st.expander("Relatorio completo"):
+        if report_summary["markdown"]:
+            st.markdown(report_summary["markdown"])
+        else:
+            st.json(report.get("json", {}))
