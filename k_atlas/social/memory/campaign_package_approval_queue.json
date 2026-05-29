@@ -1,10 +1,10 @@
 {
   "system": "K-Social Campaign Package Approval Queue",
-  "generated_at": "2026-05-29T11:32:52.593940+00:00",
+  "generated_at": "2026-05-29T11:38:54.493806+00:00",
   "total_items": 6,
   "counts": {
-    "pending_final_review": 6,
-    "approved_for_manual_use": 0,
+    "pending_final_review": 5,
+    "approved_for_manual_use": 1,
     "needs_package_revision": 0,
     "rejected": 0
   },
@@ -19,7 +19,7 @@
       "owner": "K-Atlas Operator",
       "generated_at": "2026-05-29T11:02:36.385241+00:00",
       "total_assets": 5,
-      "final_approval_status": "pending_final_review",
+      "final_approval_status": "approved_for_manual_use",
       "human_review_required": true,
       "publication_permission": false,
       "external_api_used": false,

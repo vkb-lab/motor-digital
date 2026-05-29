@@ -44,5 +44,21 @@
     "Check legal and brand safety before any real campaign.",
     "Select approved assets for future scheduling module.",
     "Keep auto-publishing disabled."
+  ],
+  "package_metadata": {
+    "final_approval_status": "approved_for_manual_use",
+    "last_reviewed_at": "2026-05-29T11:37:31.701967+00:00",
+    "last_reviewer": "K-Atlas Operator",
+    "last_review_notes": "Aprovado apenas para uso manual supervisionado."
+  },
+  "final_approval_events": [
+    {
+      "created_at": "2026-05-29T11:37:31.701982+00:00",
+      "reviewer": "K-Atlas Operator",
+      "decision": "approved_for_manual_use",
+      "notes": "Aprovado apenas para uso manual supervisionado.",
+      "publication_permission": false,
+      "approved_for_auto_publish": false
+    }
   ]
 }
