@@ -1,0 +1,65 @@
+{
+  "system": "K-Atlas OS",
+  "module": "executor_package_builder",
+  "stage": 64,
+  "status": "PASS",
+  "generated_at": "2026-05-30T05:34:58+00:00",
+  "validations": [
+    {
+      "name": "approved_decision_generates_executor_package",
+      "status": "PASS"
+    },
+    {
+      "name": "denied_decision_does_not_generate_executor_package",
+      "status": "PASS"
+    },
+    {
+      "name": "adjustment_decision_does_not_generate_executor_package",
+      "status": "PASS"
+    },
+    {
+      "name": "queue_file_exists",
+      "status": "PASS"
+    },
+    {
+      "name": "events_log_exists",
+      "status": "PASS"
+    },
+    {
+      "name": "packages_log_exists",
+      "status": "PASS"
+    },
+    {
+      "name": "all_executor_packages_are_not_executed",
+      "status": "PASS"
+    }
+  ],
+  "build_summary": {
+    "human_decisions_read": 9,
+    "approved_decisions": 3,
+    "executor_packages_built": 3,
+    "denied_decisions_skipped": 3,
+    "adjustment_decisions_skipped": 3,
+    "unknown_decisions_skipped": 0
+  },
+  "artifacts": {
+    "queue": "live/executor_package_builder/executor_package_queue.json",
+    "latest_state": "live/executor_package_builder/latest_executor_package_state.json",
+    "events_log": "memory/executor_package_builder/events.jsonl",
+    "packages_log": "memory/executor_package_builder/executor_packages.jsonl",
+    "builder_report": "reports/executor_package_builder/stage_064_builder_report.md",
+    "smoke_report": "reports/executor_package_builder/stage_064_smoke_report.md",
+    "next_prompt": "reports/executor_package_builder/stage_065_next_prompt.md",
+    "executor_packages_dir": "reports/executor_packages"
+  },
+  "governance": {
+    "human_approval_required": true,
+    "runner_confirmation_required": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "auto_send": false,
+    "external_api_calls": false,
+    "plain_text_tokens_allowed": false,
+    "real_action_executed": false
+  }
+}

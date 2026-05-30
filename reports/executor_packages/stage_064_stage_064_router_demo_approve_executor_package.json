@@ -1,0 +1,75 @@
+{
+  "executor_package_id": "execpkg_499bb6bcab95ab3014",
+  "system": "K-Atlas OS",
+  "module": "executor_package_builder",
+  "stage": 64,
+  "created_at": "2026-05-30T05:34:58+00:00",
+  "source_module": "human_decision_center",
+  "source_decision_id": "stage_064_smoke_approve",
+  "source_package_id": "stage_064_router_demo_approve",
+  "source_package_title": "Smoke router demo - aprovado",
+  "source_package_path": "reports/planning_approval_packages/stage_064_router_demo_approve.json",
+  "human_operator": "smoke_test",
+  "human_decision": "APPROVE",
+  "human_status": "APPROVED",
+  "human_reason": "Smoke test: aprovado para continuidade interna supervisionada.",
+  "package_status": "BUILT_NOT_EXECUTED",
+  "execution_mode": "FUTURE_SUPERVISED_LOCAL_ONLY",
+  "next_required_action": "HUMAN_RUNNER_CONFIRMATION_REQUIRED",
+  "can_execute_now": false,
+  "real_action_executed": false,
+  "tasks": [
+    {
+      "task_id": "execpkg_499bb6bcab95ab3014_task_001",
+      "task_type": "LOCAL_CONTEXT_PRECHECK",
+      "title": "Validar contexto local antes de qualquer execucao futura",
+      "execution_status": "NOT_EXECUTED",
+      "requires_human_confirmation": true
+    },
+    {
+      "task_id": "execpkg_499bb6bcab95ab3014_task_002",
+      "task_type": "FUTURE_EXECUTION_PLAN_DRAFT",
+      "title": "Preparar plano de execucao futura em modo supervisionado",
+      "execution_status": "NOT_EXECUTED",
+      "requires_human_confirmation": true
+    },
+    {
+      "task_id": "execpkg_499bb6bcab95ab3014_task_003",
+      "task_type": "SAFETY_GATE",
+      "title": "Confirmar travas de seguranca antes do runner executar qualquer acao",
+      "execution_status": "NOT_EXECUTED",
+      "requires_human_confirmation": true
+    }
+  ],
+  "governance": {
+    "human_approval_required": true,
+    "runner_confirmation_required": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "auto_send": false,
+    "external_api_calls": false,
+    "browser_automation": false,
+    "mouse_automation": false,
+    "plain_text_tokens_allowed": false,
+    "unsafe_automation_allowed": false
+  },
+  "allowed_future_scope": [
+    "local_file_generation",
+    "local_report_generation",
+    "dry_run_only",
+    "supervised_runner_execution_after_confirmation"
+  ],
+  "blocked_scope": [
+    "real_external_api_call",
+    "automatic_publication",
+    "automatic_deploy",
+    "automatic_sending",
+    "plain_text_token_usage",
+    "browser_automation",
+    "mouse_automation"
+  ],
+  "artifact_paths": {
+    "json": "reports/executor_packages/stage_064_stage_064_router_demo_approve_executor_package.json",
+    "markdown": "reports/executor_packages/stage_064_stage_064_router_demo_approve_executor_package.md"
+  }
+}

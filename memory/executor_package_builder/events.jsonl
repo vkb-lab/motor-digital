@@ -1,0 +1,14 @@
+{"created_at": "2026-05-30T05:34:58+00:00", "decision": "APPROVE", "decision_id": "stage_064_epb_smoke_approve", "event_type": "SMOKE_HUMAN_DECISION_CREATED", "package_id": "stage_064_epb_demo_approved", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "decision": "DENY", "decision_id": "stage_064_epb_smoke_deny", "event_type": "SMOKE_HUMAN_DECISION_CREATED", "package_id": "stage_064_epb_demo_denied", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "decision": "REQUEST_ADJUSTMENTS", "decision_id": "stage_064_epb_smoke_adjustments", "event_type": "SMOKE_HUMAN_DECISION_CREATED", "package_id": "stage_064_epb_demo_adjustments", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "DECISION_SKIPPED_ADJUSTMENTS_REQUESTED", "source_package_id": "stage_063_demo_adjustments", "stage": 64}
+{"artifact_json": "reports/executor_packages/stage_064_stage_063_demo_approval_executor_package.json", "created_at": "2026-05-30T05:34:58+00:00", "event_type": "EXECUTOR_PACKAGE_BUILT", "executor_package_id": "execpkg_f03c2df98c85961fc2", "source_package_id": "stage_063_demo_approval", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "DECISION_SKIPPED_DENIED", "source_package_id": "stage_063_demo_denial", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "DECISION_SKIPPED_ADJUSTMENTS_REQUESTED", "source_package_id": "stage_064_epb_demo_adjustments", "stage": 64}
+{"artifact_json": "reports/executor_packages/stage_064_stage_064_epb_demo_approved_executor_package.json", "created_at": "2026-05-30T05:34:58+00:00", "event_type": "EXECUTOR_PACKAGE_BUILT", "executor_package_id": "execpkg_9e274570f4151cbde6", "source_package_id": "stage_064_epb_demo_approved", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "DECISION_SKIPPED_DENIED", "source_package_id": "stage_064_epb_demo_denied", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "DECISION_SKIPPED_ADJUSTMENTS_REQUESTED", "source_package_id": "stage_064_router_demo_adjustments", "stage": 64}
+{"artifact_json": "reports/executor_packages/stage_064_stage_064_router_demo_approve_executor_package.json", "created_at": "2026-05-30T05:34:58+00:00", "event_type": "EXECUTOR_PACKAGE_BUILT", "executor_package_id": "execpkg_499bb6bcab95ab3014", "source_package_id": "stage_064_router_demo_approve", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "DECISION_SKIPPED_DENIED", "source_package_id": "stage_064_router_demo_deny", "stage": 64}
+{"created_at": "2026-05-30T05:34:58+00:00", "event_type": "EXECUTOR_PACKAGE_QUEUE_BUILT", "executor_packages_built": 3, "queue_path": "live/executor_package_builder/executor_package_queue.json", "stage": 64}
+{"artifact_path": "reports/executor_package_builder/stage_064_smoke_report.md", "created_at": "2026-05-30T05:34:58+00:00", "event_type": "SMOKE_TEST_COMPLETED", "stage": 64, "status": "PASS"}
