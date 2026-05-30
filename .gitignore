@@ -62,3 +62,6 @@ reports/ai_provider_router/
 memory/google_audiovisual_adapter/
 reports/google_audiovisual_adapter/
 .checkpoint_51_google_audiovisual_sandbox.py
+memory/instagram_graph_readiness/
+reports/instagram_graph_readiness/
+.checkpoint_52_instagram_graph_readiness.py
