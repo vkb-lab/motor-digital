@@ -199,3 +199,14 @@ live/local_action_router/
 live/local_execution_queue/
 .batch_84_88_assisted_execution_layer.py
 K_ATLAS_BATCH_*_INSTALL.ps1
+memory/secure_local_api_runtime/
+reports/secure_local_api_runtime/
+live/secure_local_api_runtime/
+memory/local_api_approval_bridge/
+reports/local_api_approval_bridge/
+live/local_api_approval_bridge/
+memory/local_api_audit_ledger/
+reports/local_api_audit_ledger/
+memory/secure_local_api_dashboard/
+reports/secure_local_api_dashboard/
+.batch_89_93_secure_local_api_runtime.py
