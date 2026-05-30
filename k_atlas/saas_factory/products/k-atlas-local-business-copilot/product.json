@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-05-30T00:17:58.298926+00:00",
+  "status": "scaffold_created",
+  "spec": {
+    "product_name": "K-Atlas Local Business Copilot",
+    "slug": "k-atlas-local-business-copilot",
+    "audience": "negocios locais, prestadores de servico e operadores comerciais",
+    "problem": "falta de cockpit simples para leads, tarefas, campanhas e relatorios",
+    "solution": "SaaS MVP em Streamlit com dashboard, CRM leve, campanhas, relatorios e admin",
+    "monetization": "setup inicial + assinatura mensal",
+    "modules": [
+      "dashboard",
+      "lead_capture",
+      "crm_light",
+      "campaigns",
+      "reports",
+      "admin"
+    ],
+    "governance": {
+      "official_publish": false,
+      "external_api_enabled": false,
+      "human_review_required": true,
+      "generated_by": "k_saas_builder"
+    }
+  }
+}

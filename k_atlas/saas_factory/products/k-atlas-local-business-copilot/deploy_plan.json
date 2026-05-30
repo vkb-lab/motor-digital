@@ -1,0 +1,13 @@
+{
+  "local_run_command": "cd k_atlas\\saas_factory\\products\\k-atlas-local-business-copilot && streamlit run app.py",
+  "notes": [
+    "deploy automatico bloqueado neste checkpoint",
+    "produto pronto para revisao local",
+    "deploy real sera tratado no Checkpoint 39"
+  ],
+  "product_dir": "k_atlas/saas_factory/products/k-atlas-local-business-copilot",
+  "product_slug": "k-atlas-local-business-copilot",
+  "render_ready": false,
+  "requires_human_review": true,
+  "status": "prepared_not_deployed"
+}
