@@ -74,3 +74,6 @@ reports/publish_approval_gate/
 memory/external_action_stub/
 reports/external_action_stub/
 .checkpoint_55_external_action_stub.py
+memory/live_adapter_contract_registry/
+reports/live_adapter_contract_registry/
+.checkpoint_56_live_adapter_contract_registry.py
