@@ -1,0 +1,15 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_007_marketplace_ia_public_landing",
+    "status":  "created",
+    "outputs":  [
+                    "pages/907_K_Uni_Marketplace_IA_Public_Landing.py",
+                    "public_pages/marketplace_ia/index.html",
+                    "content_packs/marketplace_ia/public_landing_copy.md",
+                    "ops/open_marketplace_ia_public_landing.ps1"
+                ],
+    "reads_live_data":  false,
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Validar landing publica e preparar pagina de captura controlada."
+}
