@@ -136,3 +136,7 @@ reports/cowork_pilot_studio/cowork_session_65_70_index.md
 memory/autoprogramming_cycle_dashboard/
 reports/autoprogramming_cycle_dashboard/
 .checkpoint_71_autoprogramming_cycle_dashboard.py
+memory/autoprogramming_cycle_controller/
+reports/autoprogramming_cycle_controller/
+live/autoprogramming_cycle_controller/
+.checkpoint_72_autoprogramming_cycle_controller.py
