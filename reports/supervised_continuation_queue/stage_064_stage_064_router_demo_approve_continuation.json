@@ -1,0 +1,49 @@
+{
+  "artifact_type": "supervised_continuation_task",
+  "created_at": "2026-05-30T05:13:53+00:00",
+  "route": {
+    "route_id": "route_bb22d7a3424fa1f9",
+    "system": "K-Atlas OS",
+    "module": "decision_flow_router",
+    "stage": 64,
+    "created_at": "2026-05-30T05:13:53+00:00",
+    "source_module": "human_decision_center",
+    "source_decision_id": "stage_064_smoke_approve",
+    "package_id": "stage_064_router_demo_approve",
+    "package_title": "Smoke router demo - aprovado",
+    "package_source_path": "reports/planning_approval_packages/stage_064_router_demo_approve.json",
+    "human_decision": "APPROVE",
+    "human_status": "APPROVED",
+    "human_reason": "Smoke test: aprovado para continuidade interna supervisionada.",
+    "operator": "smoke_test",
+    "route_type": "SUPERVISED_CONTINUATION",
+    "route_status": "READY_FOR_SUPERVISED_INTERNAL_CONTINUATION",
+    "next_action": "ALLOW_INTERNAL_SUPERVISED_CONTINUATION",
+    "queue_name": "approved_continuation_queue",
+    "effect": "A decisao humana aprovou continuidade interna supervisionada. Publicacao e deploy seguem bloqueados.",
+    "requires_human_governance": true,
+    "requires_runner_confirmation": true,
+    "governance": {
+      "human_approval_required": true,
+      "auto_publish": false,
+      "auto_deploy": false,
+      "external_api_calls": false,
+      "browser_automation": false,
+      "mouse_automation": false,
+      "unsafe_automation_allowed": false
+    }
+  },
+  "allowed_scope": [
+    "internal_planning",
+    "local_file_generation",
+    "local_report_generation",
+    "supervised_runner_execution"
+  ],
+  "blocked_scope": [
+    "auto_publish",
+    "auto_deploy",
+    "external_api_call",
+    "browser_automation",
+    "mouse_automation"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "artifact_type": "planner_revision_request",
+  "created_at": "2026-05-30T05:13:53+00:00",
+  "route": {
+    "route_id": "route_31c983bd5afc2a95",
+    "system": "K-Atlas OS",
+    "module": "decision_flow_router",
+    "stage": 64,
+    "created_at": "2026-05-30T05:13:53+00:00",
+    "source_module": "human_decision_center",
+    "source_decision_id": "hdc_20260530T050952Z_a26da9ac",
+    "package_id": "stage_063_demo_adjustments",
+    "package_title": "Pacote demo para pedido de ajustes",
+    "package_source_path": "reports/planning_approval_packages/stage_063_demo_package_3_adjustments.json",
+    "human_decision": "REQUEST_ADJUSTMENTS",
+    "human_status": "ADJUSTMENTS_REQUESTED",
+    "human_reason": "Smoke test: ajustes solicitados antes de continuidade.",
+    "operator": "smoke_test",
+    "route_type": "PLANNER_REVISION_REQUEST",
+    "route_status": "RETURNED_TO_PLANNER_FOR_REVISION",
+    "next_action": "REQUEST_PLANNER_ADJUSTMENTS",
+    "queue_name": "adjustment_request_queue",
+    "effect": "A decisao humana pediu ajustes. O pacote deve voltar ao planejador antes de qualquer continuidade.",
+    "requires_human_governance": true,
+    "requires_runner_confirmation": true,
+    "governance": {
+      "human_approval_required": true,
+      "auto_publish": false,
+      "auto_deploy": false,
+      "external_api_calls": false,
+      "browser_automation": false,
+      "mouse_automation": false,
+      "unsafe_automation_allowed": false
+    }
+  },
+  "requested_adjustments": "Smoke test: ajustes solicitados antes de continuidade.",
+  "return_to_module": "planning_approval_packager",
+  "required_output": "novo pacote revisado para decisao humana"
+}

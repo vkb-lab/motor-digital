@@ -1,0 +1,39 @@
+{
+  "artifact_type": "execution_block",
+  "created_at": "2026-05-30T05:13:53+00:00",
+  "route": {
+    "route_id": "route_e635fe3c8a84f83f",
+    "system": "K-Atlas OS",
+    "module": "decision_flow_router",
+    "stage": 64,
+    "created_at": "2026-05-30T05:13:53+00:00",
+    "source_module": "human_decision_center",
+    "source_decision_id": "stage_064_smoke_deny",
+    "package_id": "stage_064_router_demo_deny",
+    "package_title": "Smoke router demo - negado",
+    "package_source_path": "reports/planning_approval_packages/stage_064_router_demo_deny.json",
+    "human_decision": "DENY",
+    "human_status": "DENIED",
+    "human_reason": "Smoke test: negado e bloqueado por decisao humana.",
+    "operator": "smoke_test",
+    "route_type": "EXECUTION_BLOCK",
+    "route_status": "BLOCKED_BY_HUMAN_DECISION",
+    "next_action": "BLOCK_EXECUTION",
+    "queue_name": "blocked_denied_queue",
+    "effect": "A decisao humana negou o pacote. Qualquer continuidade automatica deve ser bloqueada.",
+    "requires_human_governance": true,
+    "requires_runner_confirmation": true,
+    "governance": {
+      "human_approval_required": true,
+      "auto_publish": false,
+      "auto_deploy": false,
+      "external_api_calls": false,
+      "browser_automation": false,
+      "mouse_automation": false,
+      "unsafe_automation_allowed": false
+    }
+  },
+  "blocked": true,
+  "block_reason": "Smoke test: negado e bloqueado por decisao humana.",
+  "unlock_condition": "Criar novo pacote ou nova decisao humana aprovada."
+}
