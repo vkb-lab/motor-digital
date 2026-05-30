@@ -100,3 +100,5 @@ memory/command_center/planning_approval_packages.json
 .checkpoint_62_planning_approval_packager.py
 memory/chatgpt_handoff/
 reports/chatgpt_handoff/
+memory/local_clipboard_runner/
+reports/local_clipboard_runner/
