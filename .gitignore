@@ -145,3 +145,4 @@ reports/local_mission_installer/
 live/local_mission_installer/
 *.kmission.json
 .checkpoint_73_local_mission_installer.py
+K_ATLAS_CHECKPOINT_*_INSTALL*.ps1
