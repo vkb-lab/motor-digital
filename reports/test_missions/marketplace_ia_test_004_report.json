@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_004_marketplace_ia_local_proposal",
+    "status":  "created",
+    "outputs":  [
+                    "pages/904_K_Uni_Marketplace_IA_Local_Proposal.py",
+                    "ops/open_marketplace_ia_proposal.ps1"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Abrir painel e salvar proposta local."
+}
