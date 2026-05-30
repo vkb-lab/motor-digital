@@ -1,0 +1,19 @@
+$ErrorActionPreference = "Stop"
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+cd "C:\Users\oi\Desktop\motor-digital"
+
+if (Test-Path ".\venv\Scripts\python.exe") {
+    $Python = ".\venv\Scripts\python.exe"
+} elseif (Test-Path ".\.venv\Scripts\python.exe") {
+    $Python = ".\.venv\Scripts\python.exe"
+} else {
+    python -m venv venv
+    $Python = ".\venv\Scripts\python.exe"
+}
+
+$env:PYTHONPATH = (Get-Location).Path
+$env:PYTHONIOENCODING = "utf-8"
+
+& $Python -m k_atlas.core.publish_approval_gate.smoke_test_publish_approval_gate
+& $Python -m k_atlas.core.publish_approval_gate.run_gate_demo

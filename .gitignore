@@ -68,3 +68,6 @@ reports/instagram_graph_readiness/
 memory/whatsapp_cloud_readiness/
 reports/whatsapp_cloud_readiness/
 .checkpoint_53_whatsapp_cloud_readiness.py
+memory/publish_approval_gate/
+reports/publish_approval_gate/
+.checkpoint_54_publish_approval_gate.py
