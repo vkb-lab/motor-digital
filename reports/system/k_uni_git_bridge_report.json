@@ -1,0 +1,13 @@
+﻿{
+    "ok":  true,
+    "module":  "k_uni_git_bridge",
+    "status":  "created",
+    "repo_url":  "https://github.com/vkb-lab/motor-digital.git",
+    "branch":  "main",
+    "outputs":  [
+                    "ops/k_git_bridge.ps1",
+                    "pages/913_K_Uni_Git_Bridge.py"
+                ],
+    "sensitive_data_policy":  "live/ stays out of git",
+    "next_step":  "Use the cockpit page to run status, pull and safe push."
+}
