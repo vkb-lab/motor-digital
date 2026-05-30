@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_009_marketplace_ia_public_capture_review_gate",
+    "status":  "created",
+    "outputs":  [
+                    "pages/909_K_Uni_Marketplace_IA_Public_Capture_Review_Gate.py",
+                    "ops/open_marketplace_ia_public_capture_review_gate.ps1"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Aprovar captura publica e mover para fila de diagnostico local."
+}
