@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_010_marketplace_ia_public_lead_diagnostic",
+    "status":  "created",
+    "outputs":  [
+                    "pages/910_K_Uni_Marketplace_IA_Public_Lead_Diagnostic.py",
+                    "ops/open_marketplace_ia_public_lead_diagnostic.ps1"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Salvar diagnostico publico aprovado."
+}
