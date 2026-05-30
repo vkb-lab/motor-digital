@@ -86,3 +86,6 @@ reports/service_readiness_matrix/
 memory/operator_mission_queue/
 reports/operator_mission_queue/
 .checkpoint_59_operator_mission_queue.py
+memory/command_center_mission_intake/
+reports/command_center_mission_intake/
+.checkpoint_60_command_center_mission_intake.py
