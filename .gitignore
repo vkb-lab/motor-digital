@@ -150,3 +150,7 @@ memory/mission_pack_generator/
 reports/mission_pack_generator/
 live/mission_pack_generator/
 .checkpoint_74_mission_pack_generator.py
+memory/mission_pack_bridge/
+reports/mission_pack_bridge/
+live/mission_pack_bridge/
+.checkpoint_75_mission_pack_bridge.py
