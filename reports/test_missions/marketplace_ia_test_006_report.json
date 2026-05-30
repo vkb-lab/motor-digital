@@ -1,0 +1,14 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_006_marketplace_ia_mission_dashboard",
+    "status":  "created",
+    "outputs":  [
+                    "pages/906_K_Uni_Marketplace_IA_Mission_Dashboard.py",
+                    "ops/open_marketplace_ia_mission_dashboard.ps1",
+                    "content_packs/marketplace_ia/manual_send_pack_template.md"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "next_step":  "Criar landing publica sanitizada."
+}
