@@ -47,3 +47,6 @@ reports/mission_executor_bridge/
 memory/social_growth_mission_pack/
 reports/social_growth_mission_pack/
 .checkpoint_46_social_growth_pack.py
+memory/saas_product_mission_pack/
+reports/saas_product_mission_pack/
+.checkpoint_47_saas_product_pack.py
