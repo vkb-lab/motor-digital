@@ -167,3 +167,7 @@ reports/local_control_plane/
 live/local_control_plane/
 .checkpoint_77_local_control_plane.py
 K_ATLAS_FIX_*.ps1
+memory/remote_assist_readiness/
+reports/remote_assist_readiness/
+live/remote_assist_readiness/
+.checkpoint_78_remote_assist_readiness.py
