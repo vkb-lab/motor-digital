@@ -32,3 +32,6 @@ reports/assisted_autonomy/deploy_pipeline/
 reports/assisted_autonomy/sandbox_api_requests.json
 memory/local_daemon/
 .checkpoint_41_min.py
+memory/command_center/
+reports/command_center/*.json
+.checkpoint_42_command_center.py
