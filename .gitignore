@@ -185,3 +185,17 @@ memory/local_os_shell_dashboard/
 reports/local_os_shell_dashboard/
 .checkpoint_79_83_local_os_remote_foundation.py
 K_ATLAS_BATCH_79_83_INSTALL.ps1
+memory/local_action_contracts/
+memory/local_action_router/
+memory/local_execution_queue/
+memory/local_action_audit_ledger/
+reports/local_action_contracts/
+reports/local_action_router/
+reports/local_execution_queue/
+reports/local_action_audit_ledger/
+reports/assisted_execution_dashboard/
+live/local_action_contracts/
+live/local_action_router/
+live/local_execution_queue/
+.batch_84_88_assisted_execution_layer.py
+K_ATLAS_BATCH_*_INSTALL.ps1
