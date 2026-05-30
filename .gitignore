@@ -102,3 +102,7 @@ memory/chatgpt_handoff/
 reports/chatgpt_handoff/
 memory/local_clipboard_runner/
 reports/local_clipboard_runner/
+memory/assisted_autoprogramming/
+reports/assisted_autoprogramming/
+live/assisted_autoprogramming/
+.checkpoint_65_assisted_autoprogramming.py
