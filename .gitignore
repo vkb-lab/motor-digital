@@ -155,3 +155,7 @@ reports/mission_pack_bridge/
 live/mission_pack_bridge/
 .checkpoint_75_mission_pack_bridge.py
 reports/autoprog_generated/
+memory/mission_pipeline_runner/
+reports/mission_pipeline_runner/
+live/mission_pipeline_runner/
+.checkpoint_76_mission_pipeline_runner.py
