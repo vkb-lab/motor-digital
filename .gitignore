@@ -94,3 +94,7 @@ reports/command_center_planning_runner/
 memory/command_center/planning_queue.json
 memory/command_center/planning_runs.json
 .checkpoint_61_command_center_planning_runner.py
+memory/planning_approval_packager/
+reports/planning_approval_packager/
+memory/command_center/planning_approval_packages.json
+.checkpoint_62_planning_approval_packager.py
