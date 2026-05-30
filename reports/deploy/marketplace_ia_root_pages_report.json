@@ -1,0 +1,10 @@
+﻿{
+    "ok":  true,
+    "deploy":  "marketplace_ia_root_pages",
+    "status":  "root_index_created",
+    "source_branch":  "main",
+    "source_path":  "/",
+    "public_url":  "https://vkb-lab.github.io/motor-digital/",
+    "note":  "GitHub Pages deve ser configurado como Deploy from a branch \u003e main \u003e /root.",
+    "created_at":  "2026-05-30T22:27:36.9631442Z"
+}
