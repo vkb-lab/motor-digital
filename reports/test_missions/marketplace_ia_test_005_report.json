@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_005_marketplace_ia_proposal_approval_gate",
+    "status":  "created",
+    "outputs":  [
+                    "pages/905_K_Uni_Marketplace_IA_Proposal_Approval_Gate.py",
+                    "ops/open_marketplace_ia_proposal_gate.ps1"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Aprovar proposta localmente e gerar pacote manual de envio."
+}
