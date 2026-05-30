@@ -80,3 +80,6 @@ reports/live_adapter_contract_registry/
 memory/adapter_dry_run_orchestrator/
 reports/adapter_dry_run_orchestrator/
 .checkpoint_57_adapter_dry_run_orchestrator.py
+memory/service_readiness_matrix/
+reports/service_readiness_matrix/
+.checkpoint_58_service_readiness_matrix.py
