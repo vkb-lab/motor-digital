@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import uuid
@@ -155,7 +155,7 @@ st.divider()
 st.header("Campanha Instagram V2")
 
 if POSTS_PATH.exists():
-    posts = json.loads(POSTS_PATH.read_text(encoding="utf-8"))
+    posts = json.loads(POSTS_PATH.read_text(encoding="utf-8-sig"))
     for post in posts:
         with st.expander(post["title"]):
             st.write(post["caption"])

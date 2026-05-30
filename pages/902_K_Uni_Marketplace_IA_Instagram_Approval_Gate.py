@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -19,7 +19,7 @@ if not POSTS_PATH.exists():
     st.error("Arquivo de campanha nao encontrado.")
     st.stop()
 
-posts = json.loads(POSTS_PATH.read_text(encoding="utf-8"))
+posts = json.loads(POSTS_PATH.read_text(encoding="utf-8-sig"))
 
 st.warning("Publicacao real esta bloqueada. Este gate apenas registra aprovacao ou reprova localmente.")
 
@@ -75,4 +75,4 @@ with col2:
 if APPROVAL_PATH.exists():
     st.divider()
     st.subheader("Ultima decisao")
-    st.json(json.loads(APPROVAL_PATH.read_text(encoding="utf-8")))
+    st.json(json.loads(APPROVAL_PATH.read_text(encoding="utf-8-sig")))
