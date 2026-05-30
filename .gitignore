@@ -77,3 +77,6 @@ reports/external_action_stub/
 memory/live_adapter_contract_registry/
 reports/live_adapter_contract_registry/
 .checkpoint_56_live_adapter_contract_registry.py
+memory/adapter_dry_run_orchestrator/
+reports/adapter_dry_run_orchestrator/
+.checkpoint_57_adapter_dry_run_orchestrator.py
