@@ -133,3 +133,6 @@ reports/manual_apply_rollback_executor/
 *.flv
 reports/cowork_pilot_studio/latest_recording.json
 reports/cowork_pilot_studio/cowork_session_65_70_index.md
+memory/autoprogramming_cycle_dashboard/
+reports/autoprogramming_cycle_dashboard/
+.checkpoint_71_autoprogramming_cycle_dashboard.py
