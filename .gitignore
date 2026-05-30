@@ -146,3 +146,7 @@ live/local_mission_installer/
 *.kmission.json
 .checkpoint_73_local_mission_installer.py
 K_ATLAS_CHECKPOINT_*_INSTALL*.ps1
+memory/mission_pack_generator/
+reports/mission_pack_generator/
+live/mission_pack_generator/
+.checkpoint_74_mission_pack_generator.py
