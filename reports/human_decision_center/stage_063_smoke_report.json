@@ -3,7 +3,7 @@
   "module": "human_decision_center",
   "stage": 63,
   "status": "PASS",
-  "generated_at": "2026-05-30T05:07:49+00:00",
+  "generated_at": "2026-05-30T05:09:52+00:00",
   "demo_packages": [
     "reports/planning_approval_packages/stage_063_demo_package_1_approval.json",
     "reports/planning_approval_packages/stage_063_demo_package_2_denial.json",
@@ -21,19 +21,19 @@
   },
   "decisions_recorded": [
     {
-      "decision_id": "hdc_20260530T050749Z_98e31d7c",
+      "decision_id": "hdc_20260530T050952Z_94646f53",
       "package_id": "stage_063_demo_approval",
       "decision": "APPROVE",
       "status": "APPROVED"
     },
     {
-      "decision_id": "hdc_20260530T050749Z_09c9d74a",
+      "decision_id": "hdc_20260530T050952Z_35ec344d",
       "package_id": "stage_063_demo_denial",
       "decision": "DENY",
       "status": "DENIED"
     },
     {
-      "decision_id": "hdc_20260530T050749Z_0f6e7ccb",
+      "decision_id": "hdc_20260530T050952Z_a26da9ac",
       "package_id": "stage_063_demo_adjustments",
       "decision": "REQUEST_ADJUSTMENTS",
       "status": "ADJUSTMENTS_REQUESTED"
