@@ -127,3 +127,9 @@ reports/manual_apply_executor/
 memory/manual_apply_rollback_executor/
 reports/manual_apply_rollback_executor/
 .checkpoint_70_manual_apply_rollback_executor.py
+*.mp4
+*.mkv
+*.mov
+*.flv
+reports/cowork_pilot_studio/latest_recording.json
+reports/cowork_pilot_studio/cowork_session_65_70_index.md
