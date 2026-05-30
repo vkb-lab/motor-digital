@@ -2,10 +2,10 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 $CreatedNew = $false
-$Mutex = New-Object System.Threading.Mutex($true, "KAtlasClipboardRunnerV4Guard", [ref]$CreatedNew)
+$Mutex = New-Object System.Threading.Mutex($true, "KAtlasClipboardRunnerV41Guard", [ref]$CreatedNew)
 
 if (-not $CreatedNew) {
-    Write-Host "Ja existe um K-Atlas Clipboard Runner V4 Guard rodando."
+    Write-Host "Ja existe um K-Atlas Clipboard Runner V4.1 Guard rodando."
     Read-Host "Pressione Enter para sair"
     exit 0
 }
@@ -17,6 +17,7 @@ $RejectedDir = Join-Path $MemoryDir "rejected_clipboard"
 $LogDir = Join-Path $MemoryDir "logs"
 $ReportDir = Join-Path $Root "reports\local_clipboard_runner"
 $ReportPath = Join-Path $ReportDir "latest_local_clipboard_runner.json"
+$Fence = ([string][char]96) + ([string][char]96) + ([string][char]96)
 
 New-Item -ItemType Directory -Force -Path $InboxDir, $RejectedDir, $LogDir, $ReportDir | Out-Null
 
@@ -25,11 +26,13 @@ function Write-JsonFile {
         [string]$Path,
         [object]$Data
     )
+
     $Data | ConvertTo-Json -Depth 30 | Set-Content -Path $Path -Encoding UTF8
 }
 
 function Get-TextHash {
     param([string]$Text)
+
     $sha = [System.Security.Cryptography.SHA256]::Create()
     $bytes = [System.Text.Encoding]::UTF8.GetBytes($Text)
     $hash = $sha.ComputeHash($bytes)
@@ -41,18 +44,22 @@ function Normalize-ScriptText {
 
     $Clean = $Text.Trim()
 
-    if ($Clean.StartsWith("```")) {
-        $Lines = $Clean -split "`r?`n"
+    if ($Clean.StartsWith($Fence)) {
+        $Lines = @($Clean -split "\r?\n")
 
         if ($Lines.Count -gt 1) {
-            $Lines = $Lines | Select-Object -Skip 1
+            $Lines = @($Lines | Select-Object -Skip 1)
         }
 
-        if ($Lines.Count -gt 0 -and $Lines[-1].Trim() -eq "```") {
-            $Lines = $Lines | Select-Object -First ($Lines.Count - 1)
+        if ($Lines.Count -gt 0 -and $Lines[$Lines.Count - 1].Trim() -eq $Fence) {
+            if ($Lines.Count -gt 1) {
+                $Lines = @($Lines | Select-Object -First ($Lines.Count - 1))
+            } else {
+                $Lines = @()
+            }
         }
 
-        $Clean = ($Lines -join "`n").Trim()
+        $Clean = [string]::Join([Environment]::NewLine, $Lines).Trim()
     }
 
     return $Clean
@@ -107,9 +114,9 @@ function Test-KAtlasScript {
         "Criou 8 arquivos",
         "contents have been truncated",
         "The file is too long",
-        "```text",
-        "```python",
-        "```html",
+        ($Fence + "text"),
+        ($Fence + "python"),
+        ($Fence + "html"),
         "selenium",
         "pyautogui",
         "Start-Process chrome",
@@ -130,11 +137,11 @@ function Test-KAtlasScript {
 
     foreach ($Term in $Blocked) {
         if ($Lower.Contains($Term.ToLowerInvariant())) {
-            $Reasons += "blocked_term:$Term"
+            $Reasons += ("blocked_term:" + $Term)
         }
     }
 
-    if ($T.Contains("```")) {
+    if ($T.Contains($Fence)) {
         $Reasons += "markdown_fence_inside_script"
     }
 
@@ -151,7 +158,7 @@ function Show-Preview {
     Write-Host ""
     Write-Host "Preview do bloco:"
     Write-Host "----------------"
-    $Lines = $Text -split "`r?`n"
+    $Lines = $Text -split "\r?\n"
     foreach ($Line in ($Lines | Select-Object -First 20)) {
         Write-Host $Line
     }
@@ -160,7 +167,7 @@ function Show-Preview {
 }
 
 Write-Host ""
-Write-Host "K-Atlas Local Clipboard Runner V4 Guard iniciado."
+Write-Host "K-Atlas Local Clipboard Runner V4.1 Guard iniciado."
 Write-Host "Modo: supervisionado rigido."
 Write-Host "Aceita apenas bloco PowerShell limpo."
 Write-Host "Bloqueia texto de chat, prompt misturado, bloco gigante e automacao insegura."
@@ -200,7 +207,7 @@ while ($true) {
 
         $Report = @{
             ok = $false
-            runner = "v4_guard"
+            runner = "v4_1_guard"
             status = "clipboard_rejected"
             timestamp = (Get-Date).ToUniversalTime().ToString("o")
             reasons = $Validation.reasons
@@ -212,7 +219,7 @@ while ($true) {
         Write-JsonFile -Path $ReportPath -Data $Report
 
         Write-Host ""
-        Write-Host "Clipboard rejeitado pelo Runner V4."
+        Write-Host "Clipboard rejeitado pelo Runner V4.1."
         Write-Host "Motivos:" ($Validation.reasons -join ", ")
         Write-Host "Salvo em:" $RejectedPath
         Write-Host ""
@@ -247,7 +254,7 @@ while ($true) {
 
         Write-JsonFile -Path $ReportPath -Data @{
             ok = $true
-            runner = "v4_guard"
+            runner = "v4_1_guard"
             status = "saved_without_execution"
             timestamp = (Get-Date).ToUniversalTime().ToString("o")
             script_path = $ScriptPath
@@ -270,7 +277,7 @@ while ($true) {
 
         Write-JsonFile -Path $ReportPath -Data @{
             ok = ($ExitCode -eq 0)
-            runner = "v4_guard"
+            runner = "v4_1_guard"
             status = if ($ExitCode -eq 0) { "executed" } else { "failed" }
             timestamp = (Get-Date).ToUniversalTime().ToString("o")
             started_at = $Start.ToUniversalTime().ToString("o")

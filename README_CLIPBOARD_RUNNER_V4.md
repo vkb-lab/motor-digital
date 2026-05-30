@@ -1,6 +1,8 @@
-﻿# K-Atlas Clipboard Runner V4 Guard
+﻿# K-Atlas Clipboard Runner V4.1 Guard
 
 Runner supervisionado rigido.
+
+## Faz
 
 - aceita apenas PowerShell limpo
 - exige aprovacao humana
@@ -10,3 +12,7 @@ Runner supervisionado rigido.
 - salva rejeitados
 - gera logs
 - gera relatorio
+
+## Comando
+
+powershell -ExecutionPolicy Bypass -File "C:\Users\oi\Desktop\motor-digital\ops\start_k_atlas_clipboard_runner.ps1"
