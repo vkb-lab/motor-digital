@@ -56,3 +56,6 @@ reports/daily_operator/
 memory/external_api_adapter/
 reports/external_api_adapter/
 .checkpoint_49_external_api_readiness.py
+memory/ai_provider_router/
+reports/ai_provider_router/
+.checkpoint_50_ai_provider_router.py
