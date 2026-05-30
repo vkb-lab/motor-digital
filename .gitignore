@@ -35,3 +35,6 @@ memory/local_daemon/
 memory/command_center/
 reports/command_center/*.json
 .checkpoint_42_command_center.py
+memory/command_center_scheduler/
+reports/command_center_scheduler/
+.checkpoint_43_scheduler.py
