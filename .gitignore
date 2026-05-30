@@ -38,3 +38,6 @@ reports/command_center/*.json
 memory/command_center_scheduler/
 reports/command_center_scheduler/
 .checkpoint_43_scheduler.py
+memory/mission_planner/
+reports/mission_planner/
+.checkpoint_44_mission_planner.py
