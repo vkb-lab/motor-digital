@@ -65,6 +65,7 @@ class MissionPipelineRunner:
                 "page": "pages/74_K_Atlas_Mission_Pack_Generator.py",
                 "demo_script_candidates": [
                     "ops/run_mission_pack_generator_demo.ps1",
+                    "ops/generate_local_mission_pack.ps1",
                     "ops/generate_mission_pack_demo.ps1",
                 ],
             },

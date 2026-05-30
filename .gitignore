@@ -159,3 +159,6 @@ memory/mission_pipeline_runner/
 reports/mission_pipeline_runner/
 live/mission_pipeline_runner/
 .checkpoint_76_mission_pipeline_runner.py
+.mission_pipeline_*.json
+.mission_pipeline_*.py
+K_ATLAS_FIX_76*.ps1
