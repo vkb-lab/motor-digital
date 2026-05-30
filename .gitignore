@@ -71,3 +71,6 @@ reports/whatsapp_cloud_readiness/
 memory/publish_approval_gate/
 reports/publish_approval_gate/
 .checkpoint_54_publish_approval_gate.py
+memory/external_action_stub/
+reports/external_action_stub/
+.checkpoint_55_external_action_stub.py
