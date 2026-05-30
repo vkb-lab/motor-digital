@@ -53,3 +53,6 @@ reports/saas_product_mission_pack/
 memory/daily_operator/
 reports/daily_operator/
 .checkpoint_48_daily_operator.py
+memory/external_api_adapter/
+reports/external_api_adapter/
+.checkpoint_49_external_api_readiness.py
