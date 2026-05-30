@@ -59,3 +59,6 @@ reports/external_api_adapter/
 memory/ai_provider_router/
 reports/ai_provider_router/
 .checkpoint_50_ai_provider_router.py
+memory/google_audiovisual_adapter/
+reports/google_audiovisual_adapter/
+.checkpoint_51_google_audiovisual_sandbox.py
