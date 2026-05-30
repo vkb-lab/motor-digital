@@ -89,3 +89,8 @@ reports/operator_mission_queue/
 memory/command_center_mission_intake/
 reports/command_center_mission_intake/
 .checkpoint_60_command_center_mission_intake.py
+memory/command_center_planning_runner/
+reports/command_center_planning_runner/
+memory/command_center/planning_queue.json
+memory/command_center/planning_runs.json
+.checkpoint_61_command_center_planning_runner.py
