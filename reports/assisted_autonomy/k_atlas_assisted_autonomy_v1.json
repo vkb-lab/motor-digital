@@ -1,0 +1,223 @@
+{
+  "autonomy_level": "level_3_assisted_autonomy_v1",
+  "autoreporter": {
+    "json_path": "reports/assisted_autonomy/autoreporter/k_atlas_central_report.json",
+    "md_path": "reports/assisted_autonomy/autoreporter/k_atlas_central_report.md",
+    "ok": true
+  },
+  "checkpoint": "40",
+  "deploy_pipeline": {
+    "checkpoint": "39",
+    "checks": {
+      "app_py_exists": true,
+      "git_repo": true,
+      "k_atlas_package": true,
+      "render_yaml_exists": true,
+      "requirements_exists": true,
+      "runtime_txt_exists": false,
+      "streamlit_pages": 14
+    },
+    "deploy_plan": {
+      "auto_deploy": false,
+      "manual_steps": [
+        "revisar git status",
+        "rodar smoke tests principais",
+        "fazer commit dos arquivos aprovados",
+        "fazer git push origin main",
+        "acompanhar Render Events",
+        "abrir URL publica e rodar health check manual"
+      ],
+      "mode": "assisted",
+      "rollback_plan": [
+        "identificar ultimo commit estavel",
+        "usar Render Manual Deploy para commit anterior ou git revert",
+        "validar app publico apos rollback",
+        "registrar evento no AutoReporter"
+      ],
+      "service": "k-atlas-os",
+      "target": "render"
+    },
+    "generated_at": "2026-05-30T00:25:30.338406+00:00",
+    "git": {
+      "branch": {
+        "command": "git branch --show-current",
+        "ok": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "main\n"
+      },
+      "last_commits": {
+        "command": "git log --oneline -5",
+        "ok": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "a2397ee feat: add assisted deploy pipeline\n815c7f1 feat: add saas factory workflow\nb2b1ff9 feat: add saas factory workflow\n87b3f68 feat: add autoreporter central\ndf5bea6 feat: add sandbox api adapter\n"
+      },
+      "status": {
+        "command": "git status --short",
+        "ok": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": " M k_atlas/social/memory/campaign_package_approval_queue.json\n M k_atlas/social/memory/social_approval_queue.json\n M k_atlas/social/memory/social_content_refinement_queue.json\n M k_atlas/social/reports/campaign_packages/campaign_package_index.json\n M k_atlas/social/reports/social_command_center.json\n?? .checkpoint_40_assisted_autonomy.py\n?? README_ASSISTED_AUTONOMY_V1.md\n?? k_atlas/core/assisted_autonomy/\n?? ops/run_assisted_autonomy_v1.ps1\n?? pages/21_K_Atlas_Assisted_Autonomy.py\n?? reports/assisted_autonomy/\n?? reports/deploy_pipeline/e081acb4-0eca-44dc-b0a6-12612f000ffc.json\n?? reports/saas_factory/workflows/5336c982-6dbd-4c0d-bd65-d0caf0301608.json\n?? reports/saas_factory/workflows/6fb0ea47-1229-4bdb-babd-c191fdc975f6.json\n"
+      }
+    },
+    "name": "Deploy Pipeline Assistido",
+    "ok": true,
+    "payload": {
+      "auto_deploy": false,
+      "force_push": false,
+      "official_publish": false,
+      "production_mutation": false,
+      "service": "k-atlas-os",
+      "target": "render"
+    },
+    "run_id": "85c3989e-1b31-49ad-ade6-a49751c18073",
+    "side_effects": "report_only_no_deploy",
+    "status": "ready_for_human_review",
+    "validation": {
+      "ok": true,
+      "reasons": [
+        "deploy_allowed_for_assisted_pipeline"
+      ],
+      "status": "deploy_payload_valid"
+    },
+    "warnings": [
+      "git_has_uncommitted_changes"
+    ]
+  },
+  "finished_at": "2026-05-30T00:25:30.342817+00:00",
+  "guardrails": [
+    "sem publicação oficial automática",
+    "sem auto deploy",
+    "sem mensagem em massa",
+    "sem browser automation para operação oficial",
+    "sem API externa sem Credential Vault",
+    "sem token em texto puro",
+    "execução real continua supervisionada"
+  ],
+  "metrics": {
+    "modules_ok": 13,
+    "modules_total": 13,
+    "smoke_tests_ok": 5,
+    "smoke_tests_total": 6
+  },
+  "modules": {
+    "autoreporter": true,
+    "blackboard": true,
+    "control_plane": true,
+    "creative_media_gateway": true,
+    "credential_vault": true,
+    "deploy_pipeline": true,
+    "saas_builder": true,
+    "saas_factory_workflow": true,
+    "sandbox_api_adapter": true,
+    "social_audit": true,
+    "social_publishing_gateway": true,
+    "supervisor_autopilot": true,
+    "workflows": true
+  },
+  "name": "K-Atlas Assisted Autonomy v1",
+  "next_cycle": [
+    "Conectar Runner local com fila online de forma sincronizada",
+    "Criar Creative Media API Adapter real com Credential Vault",
+    "Preparar Instagram oficial com API Meta, ainda em rascunho",
+    "Criar SaaS deploy assistant por produto",
+    "Criar observabilidade 24/7"
+  ],
+  "ok": false,
+  "requested_by": "checkpoint_40",
+  "run_id": "2cb348aa-d11a-4122-9a90-59ca24722179",
+  "sandbox_api": {
+    "credential_required_future": [
+      "vault://env/GOOGLE_AI_API_KEY"
+    ],
+    "credential_required_now": false,
+    "external_api_used": false,
+    "network_used": false,
+    "ok": true,
+    "operation": "plan_video_generation",
+    "provider": {
+      "category": "creative_media",
+      "name": "Google AI Sandbox",
+      "operations": [
+        "plan_image_generation",
+        "plan_video_generation",
+        "validate_prompt_pack"
+      ],
+      "provider_id": "google_ai_sandbox",
+      "real_api_enabled": false,
+      "required_vault_refs_future": [
+        "vault://env/GOOGLE_AI_API_KEY"
+      ]
+    },
+    "side_effects": "none",
+    "simulated_response": {
+      "creative_job_status": "planned",
+      "output_type": "image_or_video_plan",
+      "prompt_preview": "Validar audiovisual do K-Atlas OS em modo sandbox."
+    },
+    "status": "sandbox_simulation_completed",
+    "validation": {
+      "mode": "sandbox_only",
+      "network": "disabled",
+      "ok": true,
+      "reasons": [
+        "sandbox_payload_allowed"
+      ]
+    }
+  },
+  "side_effects": "reports_and_sandbox_only_no_real_publish_no_auto_deploy",
+  "smoke_results": [
+    {
+      "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.credential_vault.smoke_test_credential_vault",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "test_allows_vault_ref (__main__.CredentialVaultSmokeTest.test_allows_vault_ref) ... ok\ntest_blocks_plaintext_secret (__main__.CredentialVaultSmokeTest.test_blocks_plaintext_secret) ... ok\ntest_env_contract (__main__.CredentialVaultSmokeTest.test_env_contract) ... ok\ntest_mask_secret (__main__.CredentialVaultSmokeTest.test_mask_secret) ... ok\ntest_vault_inspects_env_without_exposing (__main__.CredentialVaultSmokeTest.test_vault_inspects_env_without_exposing) ... ok\ntest_vault_ref_parsing (__main__.CredentialVaultSmokeTest.test_vault_ref_parsing) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.sandbox_api_adapter.smoke_test_sandbox_api_adapter",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "test_blocks_unsupported_provider (__main__.SandboxAPIAdapterSmokeTest.test_blocks_unsupported_provider) ... ok\ntest_execute_google_sandbox (__main__.SandboxAPIAdapterSmokeTest.test_execute_google_sandbox) ... ok\ntest_page_compiles (__main__.SandboxAPIAdapterSmokeTest.test_page_compiles) ... ok\ntest_policy_blocks_plaintext_secret (__main__.SandboxAPIAdapterSmokeTest.test_policy_blocks_plaintext_secret) ... ok\ntest_policy_blocks_real_network (__main__.SandboxAPIAdapterSmokeTest.test_policy_blocks_real_network) ... ok\ntest_provider_registry (__main__.SandboxAPIAdapterSmokeTest.test_provider_registry) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.049s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.autoreporter.smoke_test_autoreporter_central",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "test_generate_report (__main__.AutoReporterCentralSmokeTest.test_generate_report) ... ok\ntest_page_compiles (__main__.AutoReporterCentralSmokeTest.test_page_compiles) ... ok\ntest_snapshot (__main__.AutoReporterCentralSmokeTest.test_snapshot) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.480s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.deploy_pipeline.smoke_test_deploy_pipeline",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "test_page_compiles (__main__.DeployPipelineSmokeTest.test_page_compiles) ... ok\ntest_policy_allows_assisted (__main__.DeployPipelineSmokeTest.test_policy_allows_assisted) ... ok\ntest_policy_blocks_auto_deploy (__main__.DeployPipelineSmokeTest.test_policy_blocks_auto_deploy) ... ok\ntest_run_assisted_check (__main__.DeployPipelineSmokeTest.test_run_assisted_check) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.221s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.core.supervisor_autopilot.smoke_test_supervisor_autopilot",
+      "ok": false,
+      "returncode": 1,
+      "stderr": "test_autopilot_approves_safe_task (__main__.SupervisorAutopilotSmokeTest.test_autopilot_approves_safe_task) ... ok\ntest_page_compiles (__main__.SupervisorAutopilotSmokeTest.test_page_compiles) ... ok\ntest_policy_allows_safe_content_package (__main__.SupervisorAutopilotSmokeTest.test_policy_allows_safe_content_package) ... ok\ntest_policy_blocks_official_publish (__main__.SupervisorAutopilotSmokeTest.test_policy_blocks_official_publish) ... ERROR\n\n======================================================================\nERROR: test_policy_blocks_official_publish (__main__.SupervisorAutopilotSmokeTest.test_policy_blocks_official_publish)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\core\\supervisor_autopilot\\smoke_test_supervisor_autopilot.py\", line 55, in test_policy_blocks_official_publish\n    item = self.queue.load()[0]\n           ~~~~~~~~~~~~~~~~~^^^\nIndexError: list index out of range\n\n----------------------------------------------------------------------\nRan 4 tests in 0.141s\n\nFAILED (errors=1)\n",
+      "stdout": ""
+    },
+    {
+      "command": "C:\\Users\\oi\\Desktop\\motor-digital\\venv\\Scripts\\python.exe -m k_atlas.saas_factory.workflows.smoke_test_saas_factory_workflow",
+      "ok": true,
+      "returncode": 0,
+      "stderr": "test_blocks_auto_deploy (__main__.SaaSFactoryWorkflowSmokeTest.test_blocks_auto_deploy) ... ok\ntest_default_payload_validates (__main__.SaaSFactoryWorkflowSmokeTest.test_default_payload_validates) ... ok\ntest_page_compiles (__main__.SaaSFactoryWorkflowSmokeTest.test_page_compiles) ... ok\ntest_report_can_be_loaded (__main__.SaaSFactoryWorkflowSmokeTest.test_report_can_be_loaded) ... ok\ntest_workflow_runs_and_generates_product (__main__.SaaSFactoryWorkflowSmokeTest.test_workflow_runs_and_generates_product) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.199s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "started_at": "2026-05-30T00:25:26.853576+00:00",
+  "status": "needs_review",
+  "validation": {
+    "ok": true,
+    "reasons": [
+      "assisted_autonomy_allowed"
+    ],
+    "status": "autonomy_payload_allowed"
+  }
+}
