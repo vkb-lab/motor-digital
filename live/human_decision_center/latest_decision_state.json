@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-30T05:09:52+00:00",
+  "generated_at": "2026-05-30T05:14:32+00:00",
   "latest_decision": {
-    "decision_id": "hdc_20260530T050952Z_a26da9ac",
+    "decision_id": "hdc_20260530T051432Z_2fd8e6b6",
     "system": "K-Atlas OS",
     "module": "human_decision_center",
     "stage": 63,
-    "created_at": "2026-05-30T05:09:52+00:00",
+    "created_at": "2026-05-30T05:14:32+00:00",
     "operator": "smoke_test",
     "package_id": "stage_063_demo_adjustments",
     "package_title": "Pacote demo para pedido de ajustes",
@@ -23,7 +23,7 @@
       "mouse_automation": false
     },
     "audit": {
-      "decision_file": "memory/human_decision_center/hdc_20260530T050952Z_a26da9ac.json",
+      "decision_file": "memory/human_decision_center/hdc_20260530T051432Z_2fd8e6b6.json",
       "events_file": "memory/human_decision_center/events.jsonl",
       "decisions_file": "memory/human_decision_center/decisions.jsonl"
     }

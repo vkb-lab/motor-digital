@@ -3,7 +3,7 @@
   "title": "Pacote demo para negacao humana",
   "summary": "Validar bloqueio humano quando o pacote nao possui contexto suficiente.",
   "risk_level": "MEDIUM",
-  "created_at": "2026-05-30T05:09:51+00:00",
+  "created_at": "2026-05-30T05:14:31+00:00",
   "source_module": "planning_approval_packager_demo",
   "stage": 63,
   "proposed_actions": [

@@ -2,7 +2,7 @@
   "system": "K-Atlas OS",
   "module": "human_decision_center",
   "stage": 63,
-  "generated_at": "2026-05-30T05:09:52+00:00",
+  "generated_at": "2026-05-30T05:14:32+00:00",
   "source_module": "planning_approval_packager",
   "governance": {
     "human_approval_required": true,
@@ -24,8 +24,8 @@
       "summary": "Validar bloqueio humano quando o pacote nao possui contexto suficiente.",
       "risk_level": "MEDIUM",
       "source_path": "reports/planning_approval_packages/stage_063_demo_package_2_denial.json",
-      "source_modified_at": "2026-05-30T05:09:51+00:00",
-      "created_at": "2026-05-30T05:09:51+00:00",
+      "source_modified_at": "2026-05-30T05:14:31+00:00",
+      "created_at": "2026-05-30T05:14:31+00:00",
       "requires_human_decision": true,
       "allowed_decisions": [
         "APPROVE",
@@ -47,7 +47,7 @@
       ],
       "decision_status": "DENIED",
       "latest_decision": "DENY",
-      "latest_decision_id": "hdc_20260530T050952Z_35ec344d",
+      "latest_decision_id": "hdc_20260530T051431Z_74e71925",
       "latest_reason": "Smoke test: negacao humana registrada com bloqueio operacional.",
       "next_required_action": "NO_AUTOMATIC_ACTION"
     },
@@ -57,8 +57,8 @@
       "summary": "Validar se uma campanha interna pode avancar para a proxima etapa supervisionada.",
       "risk_level": "LOW",
       "source_path": "reports/planning_approval_packages/stage_063_demo_package_1_approval.json",
-      "source_modified_at": "2026-05-30T05:09:51+00:00",
-      "created_at": "2026-05-30T05:09:51+00:00",
+      "source_modified_at": "2026-05-30T05:14:31+00:00",
+      "created_at": "2026-05-30T05:14:31+00:00",
       "requires_human_decision": true,
       "allowed_decisions": [
         "APPROVE",
@@ -80,7 +80,7 @@
       ],
       "decision_status": "APPROVED",
       "latest_decision": "APPROVE",
-      "latest_decision_id": "hdc_20260530T050952Z_94646f53",
+      "latest_decision_id": "hdc_20260530T051431Z_f1a650c3",
       "latest_reason": "Smoke test: aprovacao humana registrada sem publicacao automatica.",
       "next_required_action": "NO_AUTOMATIC_ACTION"
     },
@@ -90,8 +90,8 @@
       "summary": "Validar retorno do pacote ao planejamento para revisao antes de qualquer continuidade.",
       "risk_level": "MEDIUM",
       "source_path": "reports/planning_approval_packages/stage_063_demo_package_3_adjustments.json",
-      "source_modified_at": "2026-05-30T05:09:51+00:00",
-      "created_at": "2026-05-30T05:09:51+00:00",
+      "source_modified_at": "2026-05-30T05:14:31+00:00",
+      "created_at": "2026-05-30T05:14:31+00:00",
       "requires_human_decision": true,
       "allowed_decisions": [
         "APPROVE",
@@ -113,7 +113,7 @@
       ],
       "decision_status": "ADJUSTMENTS_REQUESTED",
       "latest_decision": "REQUEST_ADJUSTMENTS",
-      "latest_decision_id": "hdc_20260530T050952Z_a26da9ac",
+      "latest_decision_id": "hdc_20260530T051432Z_2fd8e6b6",
       "latest_reason": "Smoke test: ajustes solicitados antes de continuidade.",
       "next_required_action": "NO_AUTOMATIC_ACTION"
     },
