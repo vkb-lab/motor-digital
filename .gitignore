@@ -140,3 +140,8 @@ memory/autoprogramming_cycle_controller/
 reports/autoprogramming_cycle_controller/
 live/autoprogramming_cycle_controller/
 .checkpoint_72_autoprogramming_cycle_controller.py
+memory/local_mission_installer/
+reports/local_mission_installer/
+live/local_mission_installer/
+*.kmission.json
+.checkpoint_73_local_mission_installer.py
