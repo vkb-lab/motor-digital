@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "mission_id": "test_mission_001_marketplace_ia",
+  "name": "Marketplace de Solucoes em IA",
+  "status": "draft_created",
+  "generated_at": "2026-05-30T20:30:11.365651+00:00",
+  "publish_enabled": false,
+  "instagram_publish_enabled": false,
+  "human_approval_required": true,
+  "outputs": [
+    "pages/901_K_Uni_Marketplace_IA.py",
+    "content_packs/marketplace_ia/instagram_campaign.md",
+    "content_packs/marketplace_ia/instagram_posts.json",
+    "content_packs/marketplace_ia/landing_copy.md",
+    "ops/open_marketplace_ia_test.ps1"
+  ],
+  "positioning": "Marketplace curado de solucoes de IA para pequenos negocios, criadores, consultores e times comerciais.",
+  "next_step": "Revisar pagina, ajustar oferta e aprovar ou reprovar campanha."
+}
