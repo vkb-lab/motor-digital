@@ -1,6 +1,6 @@
 {
   "checkpoint": "38",
-  "finished_at": "2026-05-30T00:17:58.359818+00:00",
+  "finished_at": "2026-05-30T00:18:40.668296+00:00",
   "name": "SaaS Factory Workflow Real",
   "next_actions": [
     "revisar produto gerado",
@@ -32,7 +32,7 @@
   },
   "product_dir": "k_atlas/saas_factory/products/k-atlas-local-business-copilot",
   "requested_by": "checkpoint_38",
-  "started_at": "2026-05-30T00:17:58.288471+00:00",
+  "started_at": "2026-05-30T00:18:40.641118+00:00",
   "status": "completed",
   "steps": [
     {
@@ -131,5 +131,5 @@
     ],
     "status": "valid"
   },
-  "workflow_id": "5336c982-6dbd-4c0d-bd65-d0caf0301608"
+  "workflow_id": "6fb0ea47-1229-4bdb-babd-c191fdc975f6"
 }
