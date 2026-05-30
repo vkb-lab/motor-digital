@@ -237,3 +237,5 @@ reports/startup_manager/
 reports/one_click_launcher/
 reports/operator_home/
 reports/mvp_validation_report/
+reports/download_intake_ux/
+K_ATLAS_BATCH_*_INSTALL*.ps1
