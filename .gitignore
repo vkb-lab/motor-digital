@@ -21,3 +21,12 @@ reports/blackboard/
 memory/sandbox_api_adapter/
 memory/supervisor_autopilot/
 reports/autoreporter/tmp/
+# K-Atlas runtime state
+k_atlas/social/memory/*.json
+k_atlas/social/reports/**/*.json
+reports/deploy_pipeline/*.json
+reports/saas_factory/workflows/*.json
+reports/assisted_autonomy/*.json
+reports/assisted_autonomy/autoreporter/
+reports/assisted_autonomy/deploy_pipeline/
+reports/assisted_autonomy/sandbox_api_requests.json
