@@ -14,6 +14,7 @@ if (Test-Path ".\venv\Scripts\streamlit.exe") {
 $Port = 8520
 
 $PreferredPages = @(
+    "pages\999_K_Atlas_K_Uni_Master_Dashboard.py",
     "pages\543_K_Atlas_KUniMainConsoleDashboard.py",
     "pages\538_K_Atlas_KUniMainOperatorConsole.py",
     "pages\523_K_Atlas_KUniLauncherDashboard.py",
@@ -48,11 +49,12 @@ $Session = [ordered]@{
     status = "opening"
 }
 
+New-Item -ItemType Directory -Force -Path "memory\k_uni_runtime" | Out-Null
 $Session | ConvertTo-Json -Depth 10 | Set-Content -Path "memory\k_uni_runtime\latest_open_session.json" -Encoding UTF8
 
 Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd 'C:\Users\oi\Desktop\motor-digital'; & '$Streamlit' run '$Page' --server.port $Port --server.address 127.0.0.1"
 Start-Process "http://127.0.0.1:$Port"
 
-Write-Host "K-UNI ABERTO."
+Write-Host "K-UNI MASTER ABERTO."
 Write-Host "URL: http://127.0.0.1:$Port"
 Write-Host "Pagina:" $Page
