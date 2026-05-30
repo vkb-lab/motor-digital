@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "block":  "k_uni_git_bridge_and_marketplace_public_flow",
+    "status":  "closed_with_governance",
+    "branch":  "main",
+    "origin":  "https://github.com/vkb-lab/motor-digital.git",
+    "git_bridge":  "enabled",
+    "cockpit_git_access":  true,
+    "sensitive_paths_ignored":  [
+                                    "live/",
+                                    "memory/k_uni_runtime/",
+                                    "reports/k_uni_hygiene/",
+                                    "reports/k_uni_master/"
+                                ],
+    "validated_modules":  [
+                              "Marketplace IA public landing",
+                              "public capture",
+                              "capture review gate",
+                              "public diagnostic",
+                              "public proposal",
+                              "public proposal approval gate",
+                              "manual send pack",
+                              "K-Uni Git Bridge"
+                          ],
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "next_step":  "Activate GitHub Pages and validate public evaluator link.",
+    "closed_at":  "2026-05-30T22:18:15.6803253Z"
+}
