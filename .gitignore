@@ -18,3 +18,6 @@ memory/social_audit/
 reports/social_audit/
 reports/blackboard/
 *.tmp
+memory/sandbox_api_adapter/
+memory/supervisor_autopilot/
+reports/autoreporter/tmp/

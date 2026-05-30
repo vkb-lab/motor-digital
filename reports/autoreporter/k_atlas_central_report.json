@@ -1,0 +1,62 @@
+{
+  "autonomy_status": {
+    "current_level": "level_3_assisted_execution",
+    "guardrails": [
+      "sem publicação oficial automática",
+      "sem token em texto puro",
+      "sem browser automation para conta oficial",
+      "sem mensagem em massa",
+      "human review obrigatório para risco médio/alto"
+    ],
+    "next_target": "level_4_limited_real_publish_after_vault_api_and_approval"
+  },
+  "checkpoint": "37",
+  "generated_at": "2026-05-30T00:15:25.663677+00:00",
+  "git": {
+    "branch": "main",
+    "last_commits": "df5bea6 feat: add sandbox api adapter\na20e790 feat: add credential vault governance\nf078fa1 feat: add supervisor autopilot\n3c996cf feat: add saas builder agent bridge\n4b5ac31 feat: add creative media gateway\n7c41a9f feat: add k atlas official instagram plan\nd8b3ce9 feat: add k atlas autonomy ladder runner\na19fbc5 fix: stabilize agent workflows autonomy smoke test\n13bb5d4 fix: stabilize agent workflows autonomy smoke test\n6982cad feat: add social audit live mode",
+    "status_short": "M k_atlas/social/memory/campaign_package_approval_queue.json\n M k_atlas/social/memory/social_approval_queue.json\n M k_atlas/social/memory/social_content_refinement_queue.json\n M k_atlas/social/reports/campaign_packages/campaign_package_index.json\n M k_atlas/social/reports/social_command_center.json\n?? .checkpoint_37_autoreporter.py\n?? README_AUTOREPORTER_CENTRAL.md\n?? k_atlas/core/autoreporter/\n?? memory/sandbox_api_adapter/\n?? ops/run_autoreporter_central.ps1\n?? pages/18_K_Atlas_AutoReporter_Central.py"
+  },
+  "metrics": {
+    "blackboard_commands": 5,
+    "blackboard_messages": 1,
+    "control_plane_events": 0,
+    "modules_ok": 10,
+    "modules_total": 10,
+    "sandbox_api_requests": 1,
+    "streamlit_pages": 11,
+    "supervisor_queue_items": 0
+  },
+  "module": "AutoReporter Central",
+  "modules": {
+    "blackboard": true,
+    "control_plane": true,
+    "creative_media_gateway": true,
+    "credential_vault": true,
+    "publishing_gateway": true,
+    "saas_builder": true,
+    "sandbox_api_adapter": true,
+    "social_audit": true,
+    "supervisor_autopilot": true,
+    "workflows": true
+  },
+  "next_checkpoints": [
+    "38 - SaaS Factory workflow real",
+    "39 - Deploy pipeline assistido",
+    "40 - K-Atlas Assisted Autonomy v1"
+  ],
+  "pages": [
+    "pages/07_K_Social_Publishing_Gateway.py",
+    "pages/08_Etapa_7_Independencia.py",
+    "pages/09_K_Atlas_Control_Plane.py",
+    "pages/11_K_Atlas_Lousa_Operacional.py",
+    "pages/12_K_Atlas_Social_Audit_Local.py",
+    "pages/13_K_Atlas_Creative_Media_Gateway.py",
+    "pages/14_K_Atlas_SaaS_Builder.py",
+    "pages/15_K_Atlas_Supervisor_Autopilot.py",
+    "pages/16_K_Atlas_Credential_Vault.py",
+    "pages/17_K_Atlas_Sandbox_API_Adapter.py",
+    "pages/18_K_Atlas_AutoReporter_Central.py"
+  ],
+  "project": "K-Atlas OS"
+}
