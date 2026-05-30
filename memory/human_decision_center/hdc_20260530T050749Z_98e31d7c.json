@@ -1,0 +1,28 @@
+{
+  "decision_id": "hdc_20260530T050749Z_98e31d7c",
+  "system": "K-Atlas OS",
+  "module": "human_decision_center",
+  "stage": 63,
+  "created_at": "2026-05-30T05:07:49+00:00",
+  "operator": "smoke_test",
+  "package_id": "stage_063_demo_approval",
+  "package_title": "Pacote demo para aprovacao humana",
+  "package_source_path": "reports/planning_approval_packages/stage_063_demo_package_1_approval.json",
+  "decision": "APPROVE",
+  "status": "APPROVED",
+  "reason": "Smoke test: aprovacao humana registrada sem publicacao automatica.",
+  "effect": "Pacote aprovado para proxima etapa interna. Nenhuma publicacao automatica sera feita.",
+  "governance": {
+    "human_approval_required": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "external_api_calls": false,
+    "browser_automation": false,
+    "mouse_automation": false
+  },
+  "audit": {
+    "decision_file": "memory/human_decision_center/hdc_20260530T050749Z_98e31d7c.json",
+    "events_file": "memory/human_decision_center/events.jsonl",
+    "decisions_file": "memory/human_decision_center/decisions.jsonl"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "decision_id": "hdc_20260530T050749Z_09c9d74a",
+  "system": "K-Atlas OS",
+  "module": "human_decision_center",
+  "stage": 63,
+  "created_at": "2026-05-30T05:07:49+00:00",
+  "operator": "smoke_test",
+  "package_id": "stage_063_demo_denial",
+  "package_title": "Pacote demo para negacao humana",
+  "package_source_path": "reports/planning_approval_packages/stage_063_demo_package_2_denial.json",
+  "decision": "DENY",
+  "status": "DENIED",
+  "reason": "Smoke test: negacao humana registrada com bloqueio operacional.",
+  "effect": "Pacote negado. A execucao deve ser bloqueada ate nova criacao ou revisao manual.",
+  "governance": {
+    "human_approval_required": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "external_api_calls": false,
+    "browser_automation": false,
+    "mouse_automation": false
+  },
+  "audit": {
+    "decision_file": "memory/human_decision_center/hdc_20260530T050749Z_09c9d74a.json",
+    "events_file": "memory/human_decision_center/events.jsonl",
+    "decisions_file": "memory/human_decision_center/decisions.jsonl"
+  }
+}
