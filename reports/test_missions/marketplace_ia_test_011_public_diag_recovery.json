@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "mission_id": "test_mission_011_public_diag_recovery",
+  "status": "public_diagnostic_ready",
+  "source": "recovered_from_latest_lead_diagnostic",
+  "public_diagnostic_exists": true,
+  "external_send_enabled": false,
+  "sensitive_data_committed": false,
+  "next_step": "Refresh page 911 and save public proposal."
+}
