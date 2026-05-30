@@ -83,3 +83,6 @@ reports/adapter_dry_run_orchestrator/
 memory/service_readiness_matrix/
 reports/service_readiness_matrix/
 .checkpoint_58_service_readiness_matrix.py
+memory/operator_mission_queue/
+reports/operator_mission_queue/
+.checkpoint_59_operator_mission_queue.py
