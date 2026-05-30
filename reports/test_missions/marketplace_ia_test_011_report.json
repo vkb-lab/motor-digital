@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_011_marketplace_ia_public_proposal",
+    "status":  "created",
+    "outputs":  [
+                    "pages/911_K_Uni_Marketplace_IA_Public_Proposal.py",
+                    "ops/open_marketplace_ia_public_proposal.ps1"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Salvar proposta publica local e enviar para approval gate."
+}
