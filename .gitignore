@@ -210,3 +210,16 @@ reports/local_api_audit_ledger/
 memory/secure_local_api_dashboard/
 reports/secure_local_api_dashboard/
 .batch_89_93_secure_local_api_runtime.py
+memory/autonomy_policy_engine/
+reports/autonomy_policy_engine/
+memory/safe_task_planner/
+reports/safe_task_planner/
+live/safe_task_planner/
+memory/supervised_autonomy_queue/
+reports/supervised_autonomy_queue/
+live/supervised_autonomy_queue/
+memory/autonomy_audit_monitor/
+reports/autonomy_audit_monitor/
+memory/supervised_autonomy_dashboard/
+reports/supervised_autonomy_dashboard/
+.batch_94_98_supervised_autonomy_layer.py
