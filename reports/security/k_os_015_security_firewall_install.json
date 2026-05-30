@@ -1,0 +1,26 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "015",
+    "module":  "k_os_security_firewall",
+    "status":  "installed",
+    "capabilities":  [
+                         "pre_commit_guard",
+                         "secret_scanner",
+                         "sensitive_path_blocker",
+                         "audit_report",
+                         "ai_accountability_register",
+                         "security_doctrine"
+                     ],
+    "protected_paths":  [
+                            "live/",
+                            "secrets/",
+                            "credentials/",
+                            "private/",
+                            "local_secrets/"
+                        ],
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "016 - K-Schema Guard",
+    "installed_at":  "2026-05-30T23:57:58.5917007Z"
+}
