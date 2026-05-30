@@ -124,3 +124,6 @@ live/autoprogramming_apply_package_gate/
 memory/manual_apply_executor/
 reports/manual_apply_executor/
 .checkpoint_69_manual_apply_executor.py
+memory/manual_apply_rollback_executor/
+reports/manual_apply_rollback_executor/
+.checkpoint_70_manual_apply_rollback_executor.py
