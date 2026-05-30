@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "mission_id": "test_mission_009_queue_recovery",
+  "status": "public_capture_queue_ready",
+  "source": "recovered_from_lead_intake",
+  "created_queue": true,
+  "public_queue_exists": true,
+  "public_queue_valid_rows": 1,
+  "lead_intake_valid_rows": 1,
+  "sensitive_data_committed": false,
+  "external_send_enabled": false,
+  "next_step": "Refresh page 009 and approve public capture."
+}
