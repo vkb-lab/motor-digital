@@ -1,0 +1,19 @@
+﻿{
+    "ok":  true,
+    "mission_group":  "marketplace_ia_test_001_005",
+    "status":  "validated_local_commercial_flow",
+    "validated_at":  "2026-05-30T21:05:12.6737420Z",
+    "lead_count":  1,
+    "artifacts":  {
+                      "lead_intake":  true,
+                      "instagram_approval":  true,
+                      "diagnostic":  true,
+                      "proposal":  true,
+                      "proposal_approval":  true,
+                      "manual_send_pack":  true
+                  },
+    "external_publish_enabled":  false,
+    "external_send_enabled":  false,
+    "sensitive_data_committed":  false,
+    "next_step":  "Criar versao publica da landing sem dados sensiveis e preparar campanha manual."
+}
