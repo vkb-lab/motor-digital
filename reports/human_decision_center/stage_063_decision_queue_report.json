@@ -1,0 +1,158 @@
+{
+  "system": "K-Atlas OS",
+  "module": "human_decision_center",
+  "stage": 63,
+  "generated_at": "2026-05-30T05:01:06+00:00",
+  "source_module": "planning_approval_packager",
+  "governance": {
+    "human_approval_required": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "external_api_calls": false,
+    "browser_automation": false,
+    "mouse_automation": false
+  },
+  "summary": {
+    "total_packages": 4,
+    "pending_decisions": 1,
+    "decided_packages": 3
+  },
+  "packages": [
+    {
+      "package_id": "stage_063_demo_denial",
+      "title": "Pacote demo para negacao humana",
+      "summary": "Validar bloqueio humano quando o pacote nao possui contexto suficiente.",
+      "risk_level": "MEDIUM",
+      "source_path": "reports/planning_approval_packages/stage_063_demo_package_2_denial.json",
+      "source_modified_at": "2026-05-30T05:01:06+00:00",
+      "created_at": "2026-05-30T05:01:06+00:00",
+      "requires_human_decision": true,
+      "allowed_decisions": [
+        "APPROVE",
+        "DENY",
+        "REQUEST_ADJUSTMENTS"
+      ],
+      "no_auto_publish": true,
+      "raw_keys": [
+        "created_at",
+        "governance",
+        "package_id",
+        "proposed_actions",
+        "risk_level",
+        "source_module",
+        "stage",
+        "suggested_smoke_decision",
+        "summary",
+        "title"
+      ],
+      "decision_status": "DENIED",
+      "latest_decision": "DENY",
+      "latest_decision_id": "hdc_20260530T050106Z_20be6492",
+      "latest_reason": "Smoke test: negacao humana registrada com bloqueio operacional.",
+      "next_required_action": "NO_AUTOMATIC_ACTION"
+    },
+    {
+      "package_id": "stage_063_demo_approval",
+      "title": "Pacote demo para aprovacao humana",
+      "summary": "Validar se uma campanha interna pode avancar para a proxima etapa supervisionada.",
+      "risk_level": "LOW",
+      "source_path": "reports/planning_approval_packages/stage_063_demo_package_1_approval.json",
+      "source_modified_at": "2026-05-30T05:01:06+00:00",
+      "created_at": "2026-05-30T05:01:06+00:00",
+      "requires_human_decision": true,
+      "allowed_decisions": [
+        "APPROVE",
+        "DENY",
+        "REQUEST_ADJUSTMENTS"
+      ],
+      "no_auto_publish": true,
+      "raw_keys": [
+        "created_at",
+        "governance",
+        "package_id",
+        "proposed_actions",
+        "risk_level",
+        "source_module",
+        "stage",
+        "suggested_smoke_decision",
+        "summary",
+        "title"
+      ],
+      "decision_status": "APPROVED",
+      "latest_decision": "APPROVE",
+      "latest_decision_id": "hdc_20260530T050106Z_84c6b757",
+      "latest_reason": "Smoke test: aprovacao humana registrada sem publicacao automatica.",
+      "next_required_action": "NO_AUTOMATIC_ACTION"
+    },
+    {
+      "package_id": "stage_063_demo_adjustments",
+      "title": "Pacote demo para pedido de ajustes",
+      "summary": "Validar retorno do pacote ao planejamento para revisao antes de qualquer continuidade.",
+      "risk_level": "MEDIUM",
+      "source_path": "reports/planning_approval_packages/stage_063_demo_package_3_adjustments.json",
+      "source_modified_at": "2026-05-30T05:01:06+00:00",
+      "created_at": "2026-05-30T05:01:06+00:00",
+      "requires_human_decision": true,
+      "allowed_decisions": [
+        "APPROVE",
+        "DENY",
+        "REQUEST_ADJUSTMENTS"
+      ],
+      "no_auto_publish": true,
+      "raw_keys": [
+        "created_at",
+        "governance",
+        "package_id",
+        "proposed_actions",
+        "risk_level",
+        "source_module",
+        "stage",
+        "suggested_smoke_decision",
+        "summary",
+        "title"
+      ],
+      "decision_status": "ADJUSTMENTS_REQUESTED",
+      "latest_decision": "REQUEST_ADJUSTMENTS",
+      "latest_decision_id": "hdc_20260530T050106Z_4f02868f",
+      "latest_reason": "Smoke test: ajustes solicitados antes de continuidade.",
+      "next_required_action": "NO_AUTOMATIC_ACTION"
+    },
+    {
+      "package_id": "pkg_63f63a8919ff0325",
+      "title": "Planning Approval Packager",
+      "summary": "{\"approval_packages_total\": 25, \"candidates_found\": 25, \"execution_enabled\": false, \"external_side_effects\": \"none\", \"next_action\": \"revisar pacotes e aprovar manualmente no proximo checkpoint\", \"packages_created\": 25, \"planning_queue_total\": 75, \"real_execution_enabled\": false, \"scope\": \"all\"}",
+      "risk_level": "UNKNOWN",
+      "source_path": "reports/planning_approval_packager/latest_planning_approval_packager.json",
+      "source_modified_at": "2026-05-30T03:37:16+00:00",
+      "created_at": "2026-05-30T03:37:16.545486+00:00",
+      "requires_human_decision": true,
+      "allowed_decisions": [
+        "APPROVE",
+        "DENY",
+        "REQUEST_ADJUSTMENTS"
+      ],
+      "no_auto_publish": true,
+      "raw_keys": [
+        "checkpoint",
+        "generated_at",
+        "guardrails",
+        "name",
+        "next_checkpoint",
+        "ok",
+        "package_queue_path",
+        "packages",
+        "payload",
+        "planning_queue_path",
+        "run_id",
+        "status",
+        "summary",
+        "validation"
+      ],
+      "decision_status": "PENDING",
+      "latest_decision": null,
+      "latest_decision_id": null,
+      "latest_reason": null,
+      "next_required_action": "HUMAN_DECISION"
+    }
+  ]
+}

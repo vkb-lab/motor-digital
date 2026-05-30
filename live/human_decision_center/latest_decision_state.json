@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-05-30T05:01:06+00:00",
+  "latest_decision": {
+    "decision_id": "hdc_20260530T050106Z_4f02868f",
+    "system": "K-Atlas OS",
+    "module": "human_decision_center",
+    "stage": 63,
+    "created_at": "2026-05-30T05:01:06+00:00",
+    "operator": "smoke_test",
+    "package_id": "stage_063_demo_adjustments",
+    "package_title": "Pacote demo para pedido de ajustes",
+    "package_source_path": "reports/planning_approval_packages/stage_063_demo_package_3_adjustments.json",
+    "decision": "REQUEST_ADJUSTMENTS",
+    "status": "ADJUSTMENTS_REQUESTED",
+    "reason": "Smoke test: ajustes solicitados antes de continuidade.",
+    "effect": "Pacote devolvido para ajustes. O planejamento deve gerar uma nova versao revisada.",
+    "governance": {
+      "human_approval_required": true,
+      "auto_publish": false,
+      "auto_deploy": false,
+      "external_api_calls": false,
+      "browser_automation": false,
+      "mouse_automation": false
+    },
+    "audit": {
+      "decision_file": "memory/human_decision_center/hdc_20260530T050106Z_4f02868f.json",
+      "events_file": "memory/human_decision_center/events.jsonl",
+      "decisions_file": "memory/human_decision_center/decisions.jsonl"
+    }
+  },
+  "queue_path": "live/human_decision_center/decision_queue.json"
+}

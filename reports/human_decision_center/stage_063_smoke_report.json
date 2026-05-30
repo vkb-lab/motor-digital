@@ -1,0 +1,58 @@
+{
+  "system": "K-Atlas OS",
+  "module": "human_decision_center",
+  "stage": 63,
+  "status": "PASS",
+  "generated_at": "2026-05-30T05:01:06+00:00",
+  "demo_packages": [
+    "reports/planning_approval_packages/stage_063_demo_package_1_approval.json",
+    "reports/planning_approval_packages/stage_063_demo_package_2_denial.json",
+    "reports/planning_approval_packages/stage_063_demo_package_3_adjustments.json"
+  ],
+  "queue_before": {
+    "total_packages": 4,
+    "pending_decisions": 4,
+    "decided_packages": 0
+  },
+  "queue_after": {
+    "total_packages": 4,
+    "pending_decisions": 1,
+    "decided_packages": 3
+  },
+  "decisions_recorded": [
+    {
+      "decision_id": "hdc_20260530T050106Z_84c6b757",
+      "package_id": "stage_063_demo_approval",
+      "decision": "APPROVE",
+      "status": "APPROVED"
+    },
+    {
+      "decision_id": "hdc_20260530T050106Z_20be6492",
+      "package_id": "stage_063_demo_denial",
+      "decision": "DENY",
+      "status": "DENIED"
+    },
+    {
+      "decision_id": "hdc_20260530T050106Z_4f02868f",
+      "package_id": "stage_063_demo_adjustments",
+      "decision": "REQUEST_ADJUSTMENTS",
+      "status": "ADJUSTMENTS_REQUESTED"
+    }
+  ],
+  "artifacts": {
+    "queue": "live/human_decision_center/decision_queue.json",
+    "decisions_jsonl": "memory/human_decision_center/decisions.jsonl",
+    "events_jsonl": "memory/human_decision_center/events.jsonl",
+    "latest_state": "live/human_decision_center/latest_decision_state.json",
+    "queue_report": "reports/human_decision_center/stage_063_decision_queue_report.md",
+    "next_prompt": "reports/human_decision_center/stage_064_next_prompt.md"
+  },
+  "missing_files": [],
+  "governance": {
+    "external_api_calls": false,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "browser_automation": false,
+    "mouse_automation": false
+  }
+}
