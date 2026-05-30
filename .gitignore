@@ -110,3 +110,7 @@ memory/autoprogramming_proposal_reviewer/
 reports/autoprogramming_proposal_reviewer/
 live/autoprogramming_proposal_reviewer/
 .checkpoint_66_autoprogramming_proposal_reviewer.py
+memory/autoprogramming_apply_package_builder/
+reports/autoprogramming_apply_package_builder/
+live/autoprogramming_apply_package_builder/
+.checkpoint_67_autoprogramming_apply_package_builder.py
