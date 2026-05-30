@@ -121,3 +121,6 @@ memory/autoprogramming_apply_package_gate/
 reports/autoprogramming_apply_package_gate/
 live/autoprogramming_apply_package_gate/
 .checkpoint_68_autoprogramming_apply_package_gate.py
+memory/manual_apply_executor/
+reports/manual_apply_executor/
+.checkpoint_69_manual_apply_executor.py
