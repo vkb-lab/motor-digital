@@ -44,3 +44,6 @@ reports/mission_planner/
 memory/mission_executor_bridge/
 reports/mission_executor_bridge/
 .checkpoint_45_mission_executor_bridge.py
+memory/social_growth_mission_pack/
+reports/social_growth_mission_pack/
+.checkpoint_46_social_growth_pack.py
