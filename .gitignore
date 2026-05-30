@@ -248,3 +248,6 @@ reports/auto_update_ux_dashboard/
 live/auto_update_notification_bridge/
 live/operator_clipboard_return/
 .batch_118_122_auto_update_ux_hardening.py
+memory/principal_shell_cover/
+reports/principal_shell_cover/
+.checkpoint_123_principal_shell_cover.py
