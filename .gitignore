@@ -171,3 +171,17 @@ memory/remote_assist_readiness/
 reports/remote_assist_readiness/
 live/remote_assist_readiness/
 .checkpoint_78_remote_assist_readiness.py
+memory/secure_local_api_readiness/
+reports/secure_local_api_readiness/
+memory/operator_approval_console/
+reports/operator_approval_console/
+live/operator_approval_console/
+memory/lan_cockpit_access/
+reports/lan_cockpit_access/
+memory/remote_tunnel_gate/
+reports/remote_tunnel_gate/
+live/remote_tunnel_gate/
+memory/local_os_shell_dashboard/
+reports/local_os_shell_dashboard/
+.checkpoint_79_83_local_os_remote_foundation.py
+K_ATLAS_BATCH_79_83_INSTALL.ps1
