@@ -1,8 +1,4 @@
-﻿param(
-    [switch]$SmokeTest
-)
-
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 $Root = "C:\Users\oi\Desktop\motor-digital"
@@ -10,27 +6,37 @@ $MemoryDir = Join-Path $Root "memory\local_clipboard_runner"
 $ReportsDir = Join-Path $Root "reports\local_clipboard_runner"
 $InboxDir = Join-Path $MemoryDir "approved_scripts"
 $LogDir = Join-Path $MemoryDir "logs"
-$StatePath = Join-Path $MemoryDir "state.json"
 $ReportPath = Join-Path $ReportsDir "latest_local_clipboard_runner.json"
 
 New-Item -ItemType Directory -Force -Path $MemoryDir, $ReportsDir, $InboxDir, $LogDir | Out-Null
 
 function Write-JsonFile {
-    param(
-        [string]$Path,
-        [object]$Data
-    )
-
+    param([string]$Path, [object]$Data)
     $Data | ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8
 }
 
 function Get-TextHash {
     param([string]$Text)
-
     $sha = [System.Security.Cryptography.SHA256]::Create()
     $bytes = [System.Text.Encoding]::UTF8.GetBytes($Text)
     $hash = $sha.ComputeHash($bytes)
     return ([BitConverter]::ToString($hash)).Replace("-", "").ToLowerInvariant()
+}
+
+function Clean-ClipboardScript {
+    param([string]$Text)
+
+    $Clean = $Text.Trim()
+
+    if ($Clean.StartsWith("```powershell")) {
+        $Clean = $Clean -replace "^```powershell", ""
+        $Clean = $Clean -replace "```$", ""
+    } elseif ($Clean.StartsWith("```")) {
+        $Clean = $Clean -replace "^```", ""
+        $Clean = $Clean -replace "```$", ""
+    }
+
+    return $Clean.Trim()
 }
 
 function Test-KAtlasClipboardCommand {
@@ -79,25 +85,8 @@ function Test-KAtlasClipboardCommand {
     }
 }
 
-if ($SmokeTest) {
-    $Smoke = @{
-        ok = $true
-        checkpoint = "local_clipboard_runner"
-        status = "smoke_test_ok"
-        generated_at = (Get-Date).ToUniversalTime().ToString("o")
-        external_side_effects = "none"
-        real_execution_enabled = $false
-        browser_automation_enabled = $false
-        mouse_automation_enabled = $false
-    }
-
-    Write-JsonFile -Path $ReportPath -Data $Smoke
-    Write-Host "Smoke test OK: Local Clipboard Runner instalado."
-    exit 0
-}
-
 Write-Host ""
-Write-Host "K-Atlas Local Clipboard Runner iniciado."
+Write-Host "K-Atlas Local Clipboard Runner V2 iniciado."
 Write-Host "Modo: supervisionado."
 Write-Host "Uso: copie um bloco PowerShell do ChatGPT. O runner detecta e pede aprovacao."
 Write-Host "Seguranca: sem mouse, sem navegador, sem execucao sem aprovacao."
@@ -110,15 +99,16 @@ while ($true) {
     Start-Sleep -Seconds 2
 
     try {
-        $Clip = Get-Clipboard -Raw -ErrorAction Stop
+        $ClipRaw = Get-Clipboard -Raw -ErrorAction Stop
     } catch {
         continue
     }
 
-    if ([string]::IsNullOrWhiteSpace($Clip)) {
+    if ([string]::IsNullOrWhiteSpace($ClipRaw)) {
         continue
     }
 
+    $Clip = Clean-ClipboardScript -Text $ClipRaw
     $Hash = Get-TextHash -Text $Clip
 
     if ($Hash -eq $LastHash) {
@@ -183,8 +173,9 @@ while ($true) {
 
         $Start = Get-Date
 
-        powershell -ExecutionPolicy Bypass -File $ScriptPath *> $LogPath
+        $Output = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $ScriptPath 2>&1
         $ExitCode = $LASTEXITCODE
+        $Output | Out-File -FilePath $LogPath -Encoding UTF8
 
         $End = Get-Date
 
