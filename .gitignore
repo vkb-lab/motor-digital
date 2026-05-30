@@ -65,3 +65,6 @@ reports/google_audiovisual_adapter/
 memory/instagram_graph_readiness/
 reports/instagram_graph_readiness/
 .checkpoint_52_instagram_graph_readiness.py
+memory/whatsapp_cloud_readiness/
+reports/whatsapp_cloud_readiness/
+.checkpoint_53_whatsapp_cloud_readiness.py
