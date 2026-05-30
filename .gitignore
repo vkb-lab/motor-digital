@@ -228,3 +228,4 @@ reports/local_os_mvp_readiness/
 memory/local_os_release_capsule/
 reports/local_os_release_capsule/
 .batch_99_100_local_os_release.py
+memory/download_intake/
