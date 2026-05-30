@@ -50,3 +50,6 @@ reports/social_growth_mission_pack/
 memory/saas_product_mission_pack/
 reports/saas_product_mission_pack/
 .checkpoint_47_saas_product_pack.py
+memory/daily_operator/
+reports/daily_operator/
+.checkpoint_48_daily_operator.py
