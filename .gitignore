@@ -106,3 +106,7 @@ memory/assisted_autoprogramming/
 reports/assisted_autoprogramming/
 live/assisted_autoprogramming/
 .checkpoint_65_assisted_autoprogramming.py
+memory/autoprogramming_proposal_reviewer/
+reports/autoprogramming_proposal_reviewer/
+live/autoprogramming_proposal_reviewer/
+.checkpoint_66_autoprogramming_proposal_reviewer.py
