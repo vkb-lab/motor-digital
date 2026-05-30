@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Continue"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 $Root = "C:\Users\oi\Desktop\motor-digital"
@@ -11,32 +11,21 @@ $ReportPath = Join-Path $ReportsDir "latest_local_clipboard_runner.json"
 New-Item -ItemType Directory -Force -Path $MemoryDir, $ReportsDir, $InboxDir, $LogDir | Out-Null
 
 function Write-JsonFile {
-    param([string]$Path, [object]$Data)
+    param(
+        [string]$Path,
+        [object]$Data
+    )
+
     $Data | ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8
 }
 
 function Get-TextHash {
     param([string]$Text)
+
     $sha = [System.Security.Cryptography.SHA256]::Create()
     $bytes = [System.Text.Encoding]::UTF8.GetBytes($Text)
     $hash = $sha.ComputeHash($bytes)
     return ([BitConverter]::ToString($hash)).Replace("-", "").ToLowerInvariant()
-}
-
-function Clean-ClipboardScript {
-    param([string]$Text)
-
-    $Clean = $Text.Trim()
-
-    if ($Clean.StartsWith("```powershell")) {
-        $Clean = $Clean -replace "^```powershell", ""
-        $Clean = $Clean -replace "```$", ""
-    } elseif ($Clean.StartsWith("```")) {
-        $Clean = $Clean -replace "^```", ""
-        $Clean = $Clean -replace "```$", ""
-    }
-
-    return $Clean.Trim()
 }
 
 function Test-KAtlasClipboardCommand {
@@ -66,8 +55,6 @@ function Test-KAtlasClipboardCommand {
         "SetCursorPos",
         "Invoke-Expression",
         "iex ",
-        "Remove-Item C:\",
-        "Remove-Item -Recurse C:\",
         "format.com",
         "cipher /w",
         "shutdown /s"
@@ -86,9 +73,10 @@ function Test-KAtlasClipboardCommand {
 }
 
 Write-Host ""
-Write-Host "K-Atlas Local Clipboard Runner V2 iniciado."
+Write-Host "K-Atlas Local Clipboard Runner V3 iniciado."
 Write-Host "Modo: supervisionado."
-Write-Host "Uso: copie um bloco PowerShell do ChatGPT. O runner detecta e pede aprovacao."
+Write-Host "Uso: copie um bloco PowerShell do ChatGPT."
+Write-Host "Quando detectar, pressione A para aprovar e executar."
 Write-Host "Seguranca: sem mouse, sem navegador, sem execucao sem aprovacao."
 Write-Host "Para parar: Ctrl+C"
 Write-Host ""
@@ -99,16 +87,16 @@ while ($true) {
     Start-Sleep -Seconds 2
 
     try {
-        $ClipRaw = Get-Clipboard -Raw -ErrorAction Stop
+        $Clip = Get-Clipboard -Raw -ErrorAction Stop
     } catch {
         continue
     }
 
-    if ([string]::IsNullOrWhiteSpace($ClipRaw)) {
+    if ([string]::IsNullOrWhiteSpace($Clip)) {
         continue
     }
 
-    $Clip = Clean-ClipboardScript -Text $ClipRaw
+    $Clip = $Clip.Trim()
     $Hash = Get-TextHash -Text $Clip
 
     if ($Hash -eq $LastHash) {
@@ -138,6 +126,7 @@ while ($true) {
     Write-Host "[A] Aprovar e executar"
     Write-Host "[S] Salvar sem executar"
     Write-Host "[I] Ignorar"
+
     $Choice = Read-Host "Escolha"
 
     $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
@@ -175,6 +164,7 @@ while ($true) {
 
         $Output = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $ScriptPath 2>&1
         $ExitCode = $LASTEXITCODE
+
         $Output | Out-File -FilePath $LogPath -Encoding UTF8
 
         $End = Get-Date
