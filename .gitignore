@@ -240,3 +240,11 @@ reports/mvp_validation_report/
 reports/download_intake_ux/
 K_ATLAS_BATCH_*_INSTALL*.ps1
 memory/auto_update_watcher/
+reports/silent_update_status_center/
+reports/auto_update_notification_bridge/
+reports/download_cleanup_policy/
+reports/operator_clipboard_return/
+reports/auto_update_ux_dashboard/
+live/auto_update_notification_bridge/
+live/operator_clipboard_return/
+.batch_118_122_auto_update_ux_hardening.py
