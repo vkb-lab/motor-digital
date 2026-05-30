@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_002_marketplace_ia_validation",
+    "status":  "validated",
+    "lead_count":  1,
+    "instagram_approval_status":  "approved_local_only",
+    "external_publish_enabled":  false,
+    "external_send_enabled":  false,
+    "sensitive_data_committed":  false,
+    "validated_at":  "2026-05-30T20:55:27.5688875Z",
+    "next_step":  "Gerar diagnostico local do lead capturado."
+}
