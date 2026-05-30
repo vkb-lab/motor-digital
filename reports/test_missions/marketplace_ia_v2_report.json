@@ -1,0 +1,10 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_001_marketplace_ia_v2",
+    "status":  "v2_created",
+    "page":  "pages/901_K_Uni_Marketplace_IA.py",
+    "instagram_pack":  "content_packs/marketplace_ia/instagram_posts_v2.json",
+    "publish_enabled":  false,
+    "human_approval_required":  true,
+    "next_step":  "Criar formulario local de captura e lead queue."
+}

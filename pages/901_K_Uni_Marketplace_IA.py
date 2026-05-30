@@ -1,8 +1,7 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from pathlib import Path
-from datetime import datetime, timezone
 
 import streamlit as st
 
@@ -14,65 +13,96 @@ st.set_page_config(
 )
 
 st.title("K-Uni Marketplace de Solucoes em IA")
-st.caption("Teste real 001 - pagina comercial gerada pelo K-Uni Local OS.")
+st.caption("Marketplace curado para aplicar IA em negocios reais, com diagnostico, implementacao assistida e governanca.")
 
 st.markdown("""
-## Solucoes de IA prontas para acelerar negocios
+# Pare de testar IA no escuro.
 
-Um marketplace curado para empresas, criadores e profissionais que querem aplicar IA sem perder tempo com complexidade tecnica.
+O K-Uni Marketplace organiza solucoes de IA por objetivo de negocio:
 
-Encontre solucoes para:
+- vender mais
+- produzir conteudo com consistencia
+- automatizar atendimento
+- criar funis
+- gerar SaaS
+- operar campanhas
+- reduzir tarefas repetitivas
 
-- atendimento automatizado
-- criacao de conteudo
-- automacao comercial
-- analise de dados
-- funis de venda
-- criacao de SaaS
-- campanhas para Instagram e WhatsApp
+A proposta e simples: transformar ferramentas soltas em solucoes aplicaveis.
 """)
 
-col1, col2, col3 = st.columns(3)
+st.divider()
 
-with col1:
+c1, c2, c3 = st.columns(3)
+
+with c1:
     st.subheader("IA para Vendas")
-    st.write("Scripts, follow-up, CRM leve, propostas e atendimento.")
-    st.button("Ver solucoes de vendas", disabled=True)
+    st.write("Follow-up, propostas, CRM leve, scripts, qualificacao e atendimento comercial.")
+    st.info("Ideal para consultores, prestadores e times comerciais.")
 
-with col2:
+with c2:
     st.subheader("IA para Conteudo")
-    st.write("Posts, roteiros, landing pages, criativos e calendario editorial.")
-    st.button("Ver solucoes de conteudo", disabled=True)
+    st.write("Posts, roteiros, calendario editorial, copy, landing pages e criativos.")
+    st.info("Ideal para criadores, social media e negocios locais.")
 
-with col3:
-    st.subheader("IA para Operacoes")
-    st.write("Automacoes, dashboards, relatorios e agentes internos.")
-    st.button("Ver solucoes de operacao", disabled=True)
+with c3:
+    st.subheader("IA para Operacao")
+    st.write("Dashboards, automacoes, relatorios, agentes internos e processos.")
+    st.info("Ideal para empresas que querem ganhar eficiencia.")
 
 st.divider()
 
-st.header("Oferta inicial")
+st.header("Oferta de entrada")
 
-st.success("Diagnostico gratuito: descubra 3 automacoes de IA que podem economizar tempo ou gerar receita no seu negocio.")
+left, right = st.columns([1.2, 1])
 
-st.markdown("""
-### Como funciona
+with left:
+    st.markdown("""
+## Diagnostico gratuito de IA aplicada
 
-1. Voce informa seu tipo de negocio.
-2. O K-Uni analisa oportunidades de IA.
-3. Recebe um plano simples com 3 solucoes recomendadas.
-4. Pode escolher implementar com suporte assistido.
+Receba um plano com **3 automacoes de IA** recomendadas para o seu negocio.
 
-### Chamada principal
+### Voce recebe:
 
-**Pare de testar IA no escuro. Comece com um plano pratico para seu negocio.**
+1. Mapa rapido do seu processo atual.
+2. Tres oportunidades de IA.
+3. Prioridade por impacto e facilidade.
+4. Sugestao de implementacao.
+5. Proximo passo claro.
 """)
 
+with right:
+    st.success("CTA: Quero meu diagnostico de IA")
+    st.write("Status: rascunho local. Nenhum formulario real conectado ainda.")
+    st.write("Proximo: conectar formulario local e approval gate.")
+
 st.divider()
 
-st.header("Campanha Instagram - rascunho")
+st.header("Pacotes iniciais")
 
-campaign_path = PROJECT_ROOT / "content_packs" / "marketplace_ia" / "instagram_posts.json"
+p1, p2, p3, p4 = st.columns(4)
+
+with p1:
+    st.metric("Pacote", "Starter")
+    st.write("Diagnostico + 1 automacao simples.")
+
+with p2:
+    st.metric("Pacote", "Growth")
+    st.write("Funil + conteudo + automacao comercial.")
+
+with p3:
+    st.metric("Pacote", "Ops")
+    st.write("Dashboard + agente interno + rotina operacional.")
+
+with p4:
+    st.metric("Pacote", "SaaS")
+    st.write("Blueprint + prototipo + plano de validacao.")
+
+st.divider()
+
+st.header("Campanha Instagram V2")
+
+campaign_path = PROJECT_ROOT / "content_packs" / "marketplace_ia" / "instagram_posts_v2.json"
 
 if campaign_path.exists():
     posts = json.loads(campaign_path.read_text(encoding="utf-8"))
@@ -81,8 +111,8 @@ if campaign_path.exists():
             st.write(post["caption"])
             st.code("\\n".join(post["hashtags"]), language="text")
 else:
-    st.info("Campanha ainda nao encontrada.")
+    st.info("Campanha V2 ainda nao encontrada.")
 
 st.divider()
 
-st.caption("Publicacao externa bloqueada. Esta pagina e apenas um teste local supervisionado.")
+st.caption("Publicacao externa bloqueada. Esta pagina e um teste local supervisionado.")
