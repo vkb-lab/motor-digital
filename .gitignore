@@ -162,3 +162,8 @@ live/mission_pipeline_runner/
 .mission_pipeline_*.json
 .mission_pipeline_*.py
 K_ATLAS_FIX_76*.ps1
+memory/local_control_plane/
+reports/local_control_plane/
+live/local_control_plane/
+.checkpoint_77_local_control_plane.py
+K_ATLAS_FIX_*.ps1
