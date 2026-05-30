@@ -1,0 +1,17 @@
+﻿{
+    "ok":  true,
+    "module":  "k_os_github_admin_api_bridge",
+    "status":  "installed",
+    "repo":  "vkb-lab/motor-digital",
+    "capabilities":  [
+                         "repo_status",
+                         "pages_status",
+                         "enable_pages_root",
+                         "make_public_with_explicit_confirmation",
+                         "open_github_settings",
+                         "audit_report"
+                     ],
+    "token_policy":  "no_token_saved_in_code",
+    "next_step":  "Run Doctor, then MakePublicAndEnablePages if public evaluator link is required.",
+    "installed_at":  "2026-05-30T22:35:18.0599084Z"
+}
