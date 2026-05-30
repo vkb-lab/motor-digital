@@ -1,0 +1,15 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_002_marketplace_ia_lead_and_instagram_gate",
+    "status":  "created",
+    "outputs":  [
+                    "pages/901_K_Uni_Marketplace_IA.py",
+                    "pages/902_K_Uni_Marketplace_IA_Instagram_Approval_Gate.py",
+                    "live/marketplace_ia/lead_intake.jsonl",
+                    "live/marketplace_ia/instagram_approval_decision.json"
+                ],
+    "external_publish_enabled":  false,
+    "external_send_enabled":  false,
+    "human_approval_required":  true,
+    "next_step":  "Testar formulario local e approval gate."
+}
