@@ -30,3 +30,5 @@ reports/assisted_autonomy/*.json
 reports/assisted_autonomy/autoreporter/
 reports/assisted_autonomy/deploy_pipeline/
 reports/assisted_autonomy/sandbox_api_requests.json
+memory/local_daemon/
+.checkpoint_41_min.py
