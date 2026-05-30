@@ -117,3 +117,7 @@ live/autoprogramming_apply_package_builder/
 memory/cowork_pilot_studio/
 reports/cowork_pilot_studio/
 .checkpoint_675_cowork_pilot_studio.py
+memory/autoprogramming_apply_package_gate/
+reports/autoprogramming_apply_package_gate/
+live/autoprogramming_apply_package_gate/
+.checkpoint_68_autoprogramming_apply_package_gate.py
