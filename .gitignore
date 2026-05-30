@@ -41,3 +41,6 @@ reports/command_center_scheduler/
 memory/mission_planner/
 reports/mission_planner/
 .checkpoint_44_mission_planner.py
+memory/mission_executor_bridge/
+reports/mission_executor_bridge/
+.checkpoint_45_mission_executor_bridge.py
