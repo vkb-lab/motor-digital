@@ -1,0 +1,12 @@
+﻿{
+    "ok":  true,
+    "mission_id":  "test_mission_003_marketplace_ia_lead_diagnostic",
+    "status":  "created",
+    "outputs":  [
+                    "pages/903_K_Uni_Marketplace_IA_Lead_Diagnostic.py",
+                    "ops/open_marketplace_ia_diagnostic.ps1"
+                ],
+    "sensitive_data_committed":  false,
+    "external_send_enabled":  false,
+    "next_step":  "Abrir painel, gerar diagnostico local e revisar recomendacoes."
+}
