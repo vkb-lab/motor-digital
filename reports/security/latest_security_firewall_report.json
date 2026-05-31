@@ -1,15 +1,10 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T20:45:25.917836+00:00",
+  "generated_at": "2026-05-31T20:54:24.937537+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    "reports/context_api/k_os_043_closure_report.json",
-    "reports/context_api/latest_context_api_catalog.json",
-    "reports/context_api/latest_context_retrieval_api_report.json",
-    "reports/context_api/latest_context_retrieval_api_report.md",
-    "reports/context_api/latest_context_retrieval_report.json",
-    "reports/context_api/latest_context_retrieval_report.md"
+    "reports/context_injection/k_os_044_closure_report.json"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,
