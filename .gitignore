@@ -299,3 +299,6 @@ memory/enterprise/
 reports/enterprise/runtime/
 memory/legal/
 reports/legal/runtime/
+memory/billing/
+reports/billing/runtime/
+local_secrets/k_os_billing/

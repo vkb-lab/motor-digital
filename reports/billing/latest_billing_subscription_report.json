@@ -1,0 +1,73 @@
+{
+  "ok": true,
+  "checkpoint": "026",
+  "module": "k_os_billing_subscription_ledger",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T16:22:04+00:00",
+  "ledger_path": "local_secrets/k_os_billing/billing_ledger.json",
+  "ledger_committed": false,
+  "real_payment_processor_enabled": false,
+  "real_charge_enabled": false,
+  "invoice_generation_enabled": false,
+  "tax_document_generation_enabled": false,
+  "manual_payment_status_only": true,
+  "customers": [
+    {
+      "customer_id": "cus_12fbdbe91c60",
+      "customer_alias": "demo_customer",
+      "status": "demo",
+      "created_at": "2026-05-31T16:22:04+00:00",
+      "commercial_owner": "k_os_operator"
+    }
+  ],
+  "subscriptions": [
+    {
+      "subscription_id": "sub_5eb90805e732",
+      "customer_alias": "demo_customer",
+      "agent_id": "marketplace_ia_agent",
+      "plan_id": "trial_7d",
+      "status": "trial",
+      "currency": "BRL",
+      "amount": 0.0,
+      "billing_cycle": "trial",
+      "started_at": "2026-05-31T16:22:04+00:00",
+      "expires_at": "2026-06-07T16:22:04+00:00",
+      "payment_status": "not_required_trial",
+      "license_gate_status": "requires_license_gate_validation",
+      "approval_required": false,
+      "last_status_reason": "demo_created"
+    }
+  ],
+  "metrics": {
+    "subscription_count": 1,
+    "active_count": 0,
+    "trial_count": 1,
+    "past_due_count": 0,
+    "suspended_count": 0,
+    "expired_count": 0,
+    "mrr_estimate_brl": 0.0,
+    "arr_estimate_brl": 0.0
+  },
+  "required_gates_before_paid_activation": [
+    "commercial_order_form",
+    "legal_review_if_required",
+    "billing_subscription_active",
+    "license_gate_active",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "real_charge_without_processor_policy",
+    "tax_invoice_without_accounting_review",
+    "activate_agent_without_license_gate",
+    "activate_agent_without_active_subscription",
+    "silent_customer_data_wipe",
+    "delete_billing_audit_logs",
+    "external_payment_api_call_without_sandbox"
+  ],
+  "safe_suspension_meaning": "suspend_subscription_revoke_or_suspend_license_disable_agent_preserve_audit",
+  "silent_customer_data_wipe_allowed": false,
+  "audit_log_deletion_allowed": false,
+  "next_checkpoint": "027 - K-Customer Registry and CRM Core"
+}

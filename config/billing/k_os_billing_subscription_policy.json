@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "026",
+  "module": "billing_subscription_ledger",
+  "purpose": "Registrar clientes, planos, assinaturas, status de pagamento, vencimentos e vinculo operacional com License Gate.",
+  "financial_policy": {
+    "real_payment_processor_enabled": false,
+    "real_charge_enabled": false,
+    "invoice_generation_enabled": false,
+    "tax_document_generation_enabled": false,
+    "manual_payment_status_only": true,
+    "accounting_review_required": true,
+    "tax_review_required": true,
+    "commercial_approval_required": true,
+    "no_external_payment_api_call": true
+  },
+  "commercial_policy": {
+    "agents_can_be_sold_or_subscribed": true,
+    "active_subscription_required": true,
+    "license_gate_required": true,
+    "activation_requires_kos_permission": true,
+    "past_due_blocks_new_activation": true,
+    "expired_subscription_requires_suspension_review": true,
+    "safe_suspension_only": true,
+    "safe_suspension_meaning": "suspend_subscription_revoke_or_suspend_license_disable_agent_preserve_audit",
+    "silent_customer_data_wipe_allowed": false,
+    "audit_log_deletion_allowed": false
+  },
+  "subscription_statuses": [
+    "draft",
+    "trial",
+    "active",
+    "past_due",
+    "suspended",
+    "cancelled",
+    "expired",
+    "pending_legal_review",
+    "pending_payment_confirmation"
+  ],
+  "plans": [
+    {
+      "plan_id": "trial_7d",
+      "name": "Trial 7 dias",
+      "billing_cycle": "trial",
+      "price_brl": 0.0,
+      "default_days": 7,
+      "requires_legal_review": false
+    },
+    {
+      "plan_id": "starter_monthly",
+      "name": "Starter Mensal",
+      "billing_cycle": "monthly",
+      "price_brl": 297.0,
+      "default_days": 30,
+      "requires_legal_review": true
+    },
+    {
+      "plan_id": "pro_monthly",
+      "name": "Pro Mensal",
+      "billing_cycle": "monthly",
+      "price_brl": 997.0,
+      "default_days": 30,
+      "requires_legal_review": true
+    },
+    {
+      "plan_id": "enterprise_custom",
+      "name": "Enterprise Custom",
+      "billing_cycle": "custom",
+      "price_brl": 0.0,
+      "default_days": 30,
+      "requires_legal_review": true
+    }
+  ],
+  "required_fields": [
+    "subscription_id",
+    "customer_alias",
+    "agent_id",
+    "plan_id",
+    "status",
+    "currency",
+    "amount",
+    "billing_cycle",
+    "started_at",
+    "expires_at",
+    "payment_status",
+    "license_gate_status",
+    "commercial_owner",
+    "approval_required"
+  ],
+  "blocked_actions": [
+    "real_charge_without_processor_policy",
+    "tax_invoice_without_accounting_review",
+    "activate_agent_without_license_gate",
+    "activate_agent_without_active_subscription",
+    "silent_customer_data_wipe",
+    "delete_billing_audit_logs",
+    "external_payment_api_call_without_sandbox"
+  ],
+  "required_gates_before_paid_activation": [
+    "commercial_order_form",
+    "legal_review_if_required",
+    "billing_subscription_active",
+    "license_gate_active",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "027 - K-Customer Registry and CRM Core"
+}

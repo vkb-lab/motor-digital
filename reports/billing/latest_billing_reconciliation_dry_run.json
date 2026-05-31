@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "checkpoint": "026",
+  "module": "k_os_billing_subscription_ledger",
+  "status": "reconciliation_dry_run",
+  "generated_at": "2026-05-31T16:22:04+00:00",
+  "actions_count": 0,
+  "actions": [],
+  "real_charge_performed": false,
+  "license_revocation_performed": false,
+  "customer_data_deleted": false,
+  "audit_log_deleted": false,
+  "manual_approval_required_before_enforcement": true,
+  "safe_suspension_meaning": "suspend_subscription_revoke_or_suspend_license_disable_agent_preserve_audit",
+  "next_checkpoint": "027 - K-Customer Registry and CRM Core"
+}
