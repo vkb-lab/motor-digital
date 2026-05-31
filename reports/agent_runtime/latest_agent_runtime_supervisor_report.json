@@ -3,7 +3,7 @@
   "checkpoint": "040",
   "module": "k_os_agent_runtime_supervisor_core",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T20:23:42+00:00",
+  "generated_at": "2026-05-31T20:25:40+00:00",
   "runtime_state_path": "local_secrets/k_os_agent_runtime/agent_runtime_supervisor_state.json",
   "runtime_state_committed": false,
   "sanitized_reports_only": true,
@@ -22,14 +22,14 @@
       "agent_id": "k_atlas_engineer",
       "status": "idle",
       "health": "healthy",
-      "current_task_id": "install_runtime_validation",
+      "current_task_id": "closure_runtime_validation",
       "last_action_id": "cockpit_audit",
-      "last_heartbeat_at": "2026-05-31T20:23:41+00:00",
-      "heartbeat_age_minutes": 0.02,
+      "last_heartbeat_at": "2026-05-31T20:25:40+00:00",
+      "heartbeat_age_minutes": 0.01,
       "failure_count": 0,
       "blocked_reason": "",
       "registered_at": "2026-05-31T20:23:41+00:00",
-      "updated_at": "2026-05-31T20:23:42+00:00"
+      "updated_at": "2026-05-31T20:25:40+00:00"
     }
   ],
   "queue_summary": {
@@ -113,6 +113,26 @@
       "status": "idle",
       "summary": "install_heartbeat_validation",
       "created_at": "2026-05-31T20:23:41+00:00"
+    },
+    {
+      "event_id": "rte_329da1c163c0",
+      "event_type": "agent_registered",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "",
+      "action_id": "",
+      "status": "",
+      "summary": "closure_runtime_registration",
+      "created_at": "2026-05-31T20:25:39+00:00"
+    },
+    {
+      "event_id": "rte_10b5e4dc5839",
+      "event_type": "heartbeat",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "closure_runtime_validation",
+      "action_id": "cockpit_audit",
+      "status": "idle",
+      "summary": "closure_heartbeat_validation",
+      "created_at": "2026-05-31T20:25:40+00:00"
     }
   ],
   "required_gates_before_runtime_execution": [
