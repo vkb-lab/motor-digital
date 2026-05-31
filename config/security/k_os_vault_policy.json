@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "018",
+  "module": "vault_guard",
+  "policy": {
+    "no_raw_key_in_code": true,
+    "no_raw_key_in_git": true,
+    "local_only_storage": true,
+    "windows_dpapi_current_user": true,
+    "manual_approval_required": true,
+    "external_api_enabled_by_default": false,
+    "secret_reveal_blocked_by_default": true,
+    "audit_required": true
+  },
+  "allowed_providers_future": [
+    "openai",
+    "runway",
+    "elevenlabs",
+    "instagram",
+    "whatsapp",
+    "google",
+    "github",
+    "luma",
+    "sora",
+    "midjourney",
+    "comfyui"
+  ],
+  "agent_access_policy": {
+    "k_atlas_engineer": "no_direct_access",
+    "k_uni_cockpit": "metadata_only",
+    "k_os_git_bridge": "no_direct_access",
+    "k_os_security_firewall": "metadata_only",
+    "k_os_schema_guard": "metadata_only",
+    "marketplace_ia_agent": "request_only",
+    "future_multimodal_connector": "request_only_sandbox_only"
+  },
+  "required_gates": [
+    "human_operator_approval",
+    "security_firewall",
+    "schema_guard",
+    "security_council_approval"
+  ]
+}

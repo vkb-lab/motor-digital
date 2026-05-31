@@ -1,0 +1,21 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "018",
+    "module":  "vault_guard",
+    "status":  "passed",
+    "generated_at":  "2026-05-31T12:20:52.3626875Z",
+    "vault_exists":  true,
+    "vault_path":  "local_secrets/k_os_vault/vault.json",
+    "storage":  "windows_dpapi_current_user",
+    "gitignore_local_secrets":  true,
+    "item_count":  0,
+    "items":  [
+
+              ],
+    "raw_values_exposed":  false,
+    "external_api_enabled":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "019 - K-Audit Evidence Pack"
+}

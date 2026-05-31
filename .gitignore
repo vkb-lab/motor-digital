@@ -280,3 +280,7 @@ reports/schema/runtime/
 memory/security/
 memory/governance/
 reports/governance/runtime/
+memory/vault/
+reports/vault/runtime/
+*.vault.json
+*vault_local*.json

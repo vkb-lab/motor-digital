@@ -1,0 +1,20 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "018",
+    "module":  "vault_guard",
+    "status":  "installed",
+    "capabilities":  [
+                         "local_vault",
+                         "windows_dpapi_current_user",
+                         "metadata_only_listing",
+                         "no_raw_value_report",
+                         "api_provider_ready",
+                         "security_council_required"
+                     ],
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "raw_secret_exposure_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "019 - K-Audit Evidence Pack",
+    "installed_at":  "2026-05-31T12:20:50.6804908Z"
+}
