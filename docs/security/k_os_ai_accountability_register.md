@@ -55,3 +55,5 @@ Toda IA ou agente precisa ter:
 | K-OS Legal Commercial License Templates | Gera templates comerciais para licenca, assinatura, SLA, uso aceitavel e revogacao segura | Operador K-OS | Sim, local | Não | Não | Human Approval + Legal Review + Security Council | reports/legal |
 
 | K-OS Billing and Subscription Ledger | Registra assinaturas, status de pagamento, vencimentos e bloqueios comerciais seguros | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + License Gate | reports/billing |
+
+| K-OS Customer Registry and CRM Core | Registra clientes, leads, status comercial, vinculos e historico CRM sanitizado | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Privacy Review | reports/crm |

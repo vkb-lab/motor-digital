@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "checkpoint": "027",
+  "module": "k_os_customer_registry_crm_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T16:27:25+00:00",
+  "crm_registry_path": "local_secrets/k_os_crm/customer_registry.json",
+  "crm_registry_committed": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "sanitized_reports_only": true,
+  "customers": [
+    {
+      "customer_id": "cus_85220a57e183",
+      "customer_alias": "demo_customer",
+      "status": "trial",
+      "source": "internal_demo",
+      "created_at": "2026-05-31T16:27:25+00:00",
+      "commercial_owner": "k_os_operator",
+      "next_action": "validar proposta demo e assinatura trial",
+      "risk_level": "low",
+      "subscription_id": "linked_by_billing_demo",
+      "license_id": "pending_license_gate",
+      "proposal_id": "demo_marketplace_ia",
+      "agent_id": "marketplace_ia_agent"
+    }
+  ],
+  "contacts_sanitized": [
+    {
+      "contact_id": "con_ccd349143080",
+      "customer_id": "cus_85220a57e183",
+      "contact_type": "email_alias",
+      "contact_masked": "***ocal",
+      "is_primary": true,
+      "consent_status": "demo_only"
+    }
+  ],
+  "recent_activities": [
+    {
+      "activity_id": "act_6d9af229f4b9",
+      "customer_id": "cus_85220a57e183",
+      "activity_type": "demo_created",
+      "summary": "Cliente demo criado para validar CRM Core.",
+      "created_at": "2026-05-31T16:27:25+00:00",
+      "created_by": "k_os_crm_core",
+      "requires_follow_up": true
+    }
+  ],
+  "pipeline": {
+    "customer_count": 1,
+    "open_pipeline_count": 1,
+    "status_counts": {
+      "trial": 1
+    },
+    "active_customer_count": 0,
+    "trial_count": 1,
+    "past_due_count": 0,
+    "suspended_count": 0
+  },
+  "required_gates_before_customer_activation": [
+    "crm_customer_exists",
+    "billing_subscription_active",
+    "license_gate_active",
+    "commercial_order_form",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "commit_raw_customer_contacts",
+    "external_message_without_approval",
+    "automatic_whatsapp_without_gate",
+    "automatic_email_without_gate",
+    "customer_data_delete_without_policy",
+    "audit_log_delete",
+    "activate_customer_without_subscription_or_license"
+  ],
+  "next_checkpoint": "028 - K-Sales Pipeline and Deal Desk"
+}

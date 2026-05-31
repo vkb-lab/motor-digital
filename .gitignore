@@ -302,3 +302,6 @@ reports/legal/runtime/
 memory/billing/
 reports/billing/runtime/
 local_secrets/k_os_billing/
+memory/crm/
+reports/crm/runtime/
+local_secrets/k_os_crm/

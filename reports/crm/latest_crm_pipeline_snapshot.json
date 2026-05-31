@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "checkpoint": "027",
+  "module": "k_os_customer_registry_crm_core",
+  "status": "pipeline_snapshot",
+  "generated_at": "2026-05-31T16:27:25+00:00",
+  "pipeline": {
+    "customer_count": 1,
+    "open_pipeline_count": 1,
+    "status_counts": {
+      "trial": 1
+    },
+    "active_customer_count": 0,
+    "trial_count": 1,
+    "past_due_count": 0,
+    "suspended_count": 0
+  },
+  "customers": [
+    {
+      "customer_id": "cus_85220a57e183",
+      "customer_alias": "demo_customer",
+      "status": "trial",
+      "source": "internal_demo",
+      "created_at": "2026-05-31T16:27:25+00:00",
+      "commercial_owner": "k_os_operator",
+      "next_action": "validar proposta demo e assinatura trial",
+      "risk_level": "low",
+      "subscription_id": "linked_by_billing_demo",
+      "license_id": "pending_license_gate",
+      "proposal_id": "demo_marketplace_ia",
+      "agent_id": "marketplace_ia_agent"
+    }
+  ],
+  "next_checkpoint": "028 - K-Sales Pipeline and Deal Desk"
+}

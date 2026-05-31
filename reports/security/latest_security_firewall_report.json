@@ -1,14 +1,21 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T16:23:34.518703+00:00",
+  "generated_at": "2026-05-31T16:27:26.653183+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    "reports/billing/k_os_026_closure_report.json",
-    "reports/billing/latest_billing_reconciliation_dry_run.json",
-    "reports/billing/latest_billing_reconciliation_dry_run.md",
-    "reports/billing/latest_billing_subscription_report.json",
-    "reports/billing/latest_billing_subscription_report.md"
+    ".gitignore",
+    "config/crm/k_os_customer_registry_crm_policy.json",
+    "docs/commercial/k_os_customer_registry_crm_core.md",
+    "docs/security/k_os_ai_accountability_register.md",
+    "ops/k_os_customer_registry_crm_core.ps1",
+    "ops/k_os_customer_registry_crm_core.py",
+    "pages/927_K_OS_Customer_Registry_CRM_Core.py",
+    "reports/crm/k_os_027_customer_registry_crm_install.json",
+    "reports/crm/latest_crm_pipeline_snapshot.json",
+    "reports/crm/latest_crm_pipeline_snapshot.md",
+    "reports/crm/latest_customer_registry_report.json",
+    "reports/crm/latest_customer_registry_report.md"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,

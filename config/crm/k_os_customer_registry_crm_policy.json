@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "027",
+  "module": "customer_registry_crm_core",
+  "purpose": "Registrar clientes, contatos, leads, status comercial, historico, propostas, assinaturas, licencas e proximas acoes.",
+  "privacy_policy": {
+    "crm_local_only": true,
+    "raw_customer_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "manual_approval_required": true,
+    "customer_data_export_requires_approval": true,
+    "customer_delete_requires_policy_review": true,
+    "audit_log_deletion_allowed": false
+  },
+  "commercial_policy": {
+    "customer_activation_requires_subscription": true,
+    "customer_activation_requires_license_gate": true,
+    "customer_activation_requires_commercial_order": true,
+    "customer_activation_requires_legal_review_if_paid": true,
+    "safe_suspension_only": true,
+    "safe_suspension_meaning": "suspend_customer_status_review_subscription_review_license_preserve_audit"
+  },
+  "customer_statuses": [
+    "lead",
+    "qualified",
+    "proposal_sent",
+    "negotiation",
+    "trial",
+    "active_customer",
+    "past_due",
+    "suspended",
+    "cancelled",
+    "lost",
+    "archived"
+  ],
+  "lead_sources": [
+    "manual",
+    "marketplace_ia",
+    "instagram_manual",
+    "whatsapp_manual",
+    "referral",
+    "website",
+    "event",
+    "internal_demo"
+  ],
+  "required_customer_fields": [
+    "customer_id",
+    "customer_alias",
+    "status",
+    "source",
+    "created_at",
+    "commercial_owner",
+    "next_action",
+    "risk_level",
+    "subscription_id",
+    "license_id",
+    "proposal_id"
+  ],
+  "blocked_actions": [
+    "commit_raw_customer_contacts",
+    "external_message_without_approval",
+    "automatic_whatsapp_without_gate",
+    "automatic_email_without_gate",
+    "customer_data_delete_without_policy",
+    "audit_log_delete",
+    "activate_customer_without_subscription_or_license"
+  ],
+  "required_gates_before_customer_activation": [
+    "crm_customer_exists",
+    "billing_subscription_active",
+    "license_gate_active",
+    "commercial_order_form",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "028 - K-Sales Pipeline and Deal Desk"
+}

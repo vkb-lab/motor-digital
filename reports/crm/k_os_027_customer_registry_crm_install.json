@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "027",
+    "module":  "k_os_customer_registry_crm_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "customer_registry",
+                         "lead_registry",
+                         "contact_registry_sanitized_reports",
+                         "commercial_status_tracking",
+                         "subscription_link",
+                         "license_link",
+                         "proposal_link",
+                         "activity_history",
+                         "pipeline_snapshot"
+                     ],
+    "crm_local_only":  true,
+    "raw_customer_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "customer_activation_requires_subscription":  true,
+    "customer_activation_requires_license_gate":  true,
+    "audit_log_deletion_allowed":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "028 - K-Sales Pipeline and Deal Desk",
+    "installed_at":  "2026-05-31T16:27:24.3381860Z"
+}
