@@ -387,3 +387,6 @@ local_secrets/k_os_rollback_release_gate/
 memory/rollback_dry_run/
 reports/rollback_dry_run/runtime/
 local_secrets/k_os_rollback_dry_run/
+memory/rollback_final_gate/
+reports/rollback_final_gate/runtime/
+local_secrets/k_os_rollback_final_gate/

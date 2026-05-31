@@ -1,0 +1,121 @@
+{
+  "ok": true,
+  "checkpoint": "056",
+  "module": "k_os_agent_rollback_execution_final_gate_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T23:13:25+00:00",
+  "final_gate_state_path": "local_secrets/k_os_rollback_final_gate/agent_rollback_final_gate_state.json",
+  "final_gate_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "final_gate_executes_rollback": false,
+  "final_gate_deletes_data": false,
+  "final_gate_modifies_files": false,
+  "final_gate_runs_git_reset": false,
+  "final_gate_runs_git_force_push": false,
+  "rollback_dry_run_available": true,
+  "rollback_dry_run_validation_available": true,
+  "release_record_available": true,
+  "rollback_plan_available": true,
+  "incident_record_available": true,
+  "forensics_bundle_available": true,
+  "ledger_record_available": true,
+  "metrics": {
+    "final_gate_record_count": 1,
+    "validation_count": 1,
+    "approved_count": 0,
+    "blocked_count": 1,
+    "revoked_count": 0,
+    "rollback_execution_count": 0,
+    "data_delete_count": 0,
+    "file_modify_count": 0,
+    "git_reset_count": 0,
+    "git_force_push_count": 0,
+    "raw_payload_count": 0,
+    "status_counts": {
+      "blocked": 1
+    }
+  },
+  "recent_final_gate_records": [
+    {
+      "final_gate_id": "rfg_8e6fb9e9116b",
+      "created_at": "2026-05-31T23:13:24+00:00",
+      "status": "blocked",
+      "decision": "block_execution",
+      "simulation_id": "rds_f88727f867b9",
+      "rollback_plan_id": "rbp_8004b3ca46e3",
+      "release_id": "rbg_ff638f05f0bd",
+      "final_gate_record_hash": "9a354bb880896a1252315b6d9d912224d2b7572a472a75d0089f856a060057eb",
+      "rollback_dry_run_hash": "a0acc0f60e22ce27811ece12e97fb581b8455b42a0bade9fa36f531dadaa4a0a",
+      "final_gate_executes_rollback": false,
+      "final_gate_deletes_data": false,
+      "final_gate_modifies_files": false,
+      "final_gate_runs_git_reset": false,
+      "final_gate_runs_git_force_push": false,
+      "release_token_included": false,
+      "raw_payload_included": false,
+      "blockers": [
+        "operator_blocked_final_execution"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": true,
+      "checkpoint": "056",
+      "module": "k_os_agent_rollback_execution_final_gate_core",
+      "status": "validated",
+      "generated_at": "2026-05-31T23:13:24+00:00",
+      "final_gate_id": "rfg_8e6fb9e9116b",
+      "final_gate_status": "blocked",
+      "decision": "block_execution",
+      "simulation_id": "rds_f88727f867b9",
+      "rollback_dry_run_hash": "a0acc0f60e22ce27811ece12e97fb581b8455b42a0bade9fa36f531dadaa4a0a",
+      "final_gate_record_hash": "9a354bb880896a1252315b6d9d912224d2b7572a472a75d0089f856a060057eb",
+      "final_gate_executes_rollback": false,
+      "final_gate_deletes_data": false,
+      "final_gate_modifies_files": false,
+      "final_gate_runs_git_reset": false,
+      "final_gate_runs_git_force_push": false,
+      "release_token_included": false,
+      "raw_payload_included": false,
+      "blockers": [],
+      "warnings": [
+        "rollback_execution_blocked_by_final_gate"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_final_gate_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "required_gates_before_any_future_execution": [
+    "rollback_dry_run_exists",
+    "rollback_dry_run_hash_exists",
+    "rollback_release_record_exists",
+    "rollback_plan_exists",
+    "incident_lockdown_exists",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "operator_confirmation_present",
+    "destructive_actions_blocked",
+    "final_gate_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "057 - K-Agent Rollback Manual Execution Stub Core"
+}

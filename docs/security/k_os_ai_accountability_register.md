@@ -111,3 +111,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Rollback Approval and Release Gate Core | Registra aprovação, bloqueio ou revogação para rollback futuro sem executar mudanças | Operador K-OS | Sim, local sanitizado | Não | Não | Human Operator + Release Hash + No Rollback Execution | reports/rollback_release_gate |
 
 | K-OS Agent Rollback Dry Run Simulator Core | Simula rollback sem executar mudanças, respeitando gate de release e registrando evidência auditável | Operador K-OS | Sim, local sanitizado | Não | Não | Dry Run + Release Gate + No File Change + No Data Delete | reports/rollback_dry_run |
+
+| K-OS Agent Rollback Execution Final Gate Core | Cria último gate antes de rollback real futuro, com bloqueio destrutivo e confirmação explícita | Operador K-OS | Sim, local sanitizado | Não | Não | Dry Run + Release Gate + Operator Confirmation + No Rollback Execution | reports/rollback_final_gate |

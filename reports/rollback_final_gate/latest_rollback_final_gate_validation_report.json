@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "checkpoint": "056",
+  "module": "k_os_agent_rollback_execution_final_gate_core",
+  "status": "validated",
+  "generated_at": "2026-05-31T23:13:24+00:00",
+  "final_gate_id": "rfg_8e6fb9e9116b",
+  "final_gate_status": "blocked",
+  "decision": "block_execution",
+  "simulation_id": "rds_f88727f867b9",
+  "rollback_dry_run_hash": "a0acc0f60e22ce27811ece12e97fb581b8455b42a0bade9fa36f531dadaa4a0a",
+  "final_gate_record_hash": "9a354bb880896a1252315b6d9d912224d2b7572a472a75d0089f856a060057eb",
+  "final_gate_executes_rollback": false,
+  "final_gate_deletes_data": false,
+  "final_gate_modifies_files": false,
+  "final_gate_runs_git_reset": false,
+  "final_gate_runs_git_force_push": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "rollback_execution_blocked_by_final_gate"
+  ]
+}
