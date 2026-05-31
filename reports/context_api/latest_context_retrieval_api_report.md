@@ -2,7 +2,7 @@
 
 - Status: audit_generated
 - OK: True
-- Generated at: 2026-05-31T20:43:58+00:00
+- Generated at: 2026-05-31T20:45:24+00:00
 - Local only: True
 - Bind address: 127.0.0.1
 - Default port: 8583
@@ -38,6 +38,8 @@
 ## Recent retrievals
 
 - ret_b7f9219562b7 | query=agent | events=10 | contexts=5
+- ret_24d1005c1883 | query=agent | events=10 | contexts=5
+- ret_7432b524fc8d | query=agent | events=10 | contexts=1
 
 ## Required gates before external context export
 

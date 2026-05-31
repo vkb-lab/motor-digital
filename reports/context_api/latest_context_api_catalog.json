@@ -3,7 +3,7 @@
   "checkpoint": "043",
   "module": "k_os_context_retrieval_api_core",
   "status": "endpoint_catalog_generated",
-  "generated_at": "2026-05-31T20:43:58+00:00",
+  "generated_at": "2026-05-31T20:45:24+00:00",
   "bind_address": "127.0.0.1",
   "default_port": 8583,
   "local_only": true,

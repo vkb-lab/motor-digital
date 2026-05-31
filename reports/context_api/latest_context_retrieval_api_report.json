@@ -3,7 +3,7 @@
   "checkpoint": "043",
   "module": "k_os_context_retrieval_api_core",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T20:43:58+00:00",
+  "generated_at": "2026-05-31T20:45:24+00:00",
   "context_api_state_path": "local_secrets/k_os_context_api/context_retrieval_api_state.json",
   "context_api_state_committed": false,
   "sanitized_reports_only": true,
@@ -92,6 +92,26 @@
       "module_filter": "",
       "event_match_count": 10,
       "context_match_count": 5,
+      "raw_payload_included": false
+    },
+    {
+      "retrieval_id": "ret_24d1005c1883",
+      "created_at": "2026-05-31T20:45:23+00:00",
+      "query": "agent",
+      "domain": "",
+      "module_filter": "",
+      "event_match_count": 10,
+      "context_match_count": 5,
+      "raw_payload_included": false
+    },
+    {
+      "retrieval_id": "ret_7432b524fc8d",
+      "created_at": "2026-05-31T20:45:23+00:00",
+      "query": "agent",
+      "domain": "agent_ledger",
+      "module_filter": "",
+      "event_match_count": 10,
+      "context_match_count": 1,
       "raw_payload_included": false
     }
   ],

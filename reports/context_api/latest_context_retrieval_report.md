@@ -1,12 +1,12 @@
 # K-OS Context Retrieval Report
 
 - Status: retrieval_completed
-- Retrieval ID: ret_b7f9219562b7
+- Retrieval ID: ret_7432b524fc8d
 - Query: agent
-- Domain: 
+- Domain: agent_ledger
 - Module: 
 - Events: 10
-- Contexts: 5
+- Contexts: 1
 - Raw payload included: False
 - External publish enabled: False
 
@@ -25,8 +25,4 @@
 
 ## Context items
 
-- governance | agent_permission_matrix | status=passed | path=reports/governance/latest_agent_permission_matrix_report.json
-- command_center | command_center | status=audit_generated | path=reports/command_center/latest_command_center_action_router_report.json
-- agent_queue | agent_queue | status=audit_generated | path=reports/agent_queue/latest_agent_orchestration_queue_report.json
-- agent_runtime | agent_runtime | status=audit_generated | path=reports/agent_runtime/latest_agent_runtime_supervisor_report.json
 - agent_ledger | agent_ledger | status=audit_generated | path=reports/agent_ledger/latest_agent_execution_ledger_report.json
