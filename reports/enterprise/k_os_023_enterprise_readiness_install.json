@@ -1,0 +1,21 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "023",
+    "module":  "k_os_enterprise_readiness_report",
+    "status":  "installed",
+    "capabilities":  [
+                         "enterprise_readiness_score",
+                         "control_matrix",
+                         "due_diligence_pack",
+                         "known_gap_register",
+                         "certification_claim_guard",
+                         "executive_report"
+                     ],
+    "formal_certification_claimed":  false,
+    "external_auditor_required_for_certification":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "024 - K-Incident Response and Rollback Runbook",
+    "installed_at":  "2026-05-31T13:00:46.7021070Z"
+}

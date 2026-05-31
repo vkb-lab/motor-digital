@@ -49,3 +49,5 @@ Toda IA ou agente precisa ter:
 | K-OS License Gate | Controla ativação comercial, assinatura e revogação segura de agentes | Operador K-OS | Sim, local | Não | Não | License Gate + Security Council | reports/license |
 
 | K-OS External API Sandbox | Simula conectores externos sem chamada real, com risco, licença e vault | Operador K-OS | Sim, sandbox local | Não | Não | Human Approval + Security Council + License Gate | reports/external_sandbox |
+
+| K-OS Enterprise Readiness Report | Consolida evidencias enterprise, maturidade, gaps e pacote de due diligence | Operador K-OS | Sim, leitura local | Não | Não | Human Approval + Security Council | reports/enterprise |
