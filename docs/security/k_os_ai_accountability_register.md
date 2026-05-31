@@ -77,3 +77,5 @@ Toda IA ou agente precisa ter:
 | K-OS Analytics and Executive Metrics Core | Consolida métricas executivas sanitizadas, KPIs, saúde operacional e score de controles | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Security Review | reports/analytics |
 
 | K-OS Executive Cockpit Consolidation Layer | Consolida painéis, módulos, navegação, métricas executivas e health operacional em cockpit central | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Security Review + Commercial Review | reports/cockpit |
+
+| K-OS Command Center Action Router | Roteia ações controladas por allowlist, dry-run, approval gate e auditoria | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Action Allowlist + Security Gate | reports/command_center |

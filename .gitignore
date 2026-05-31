@@ -335,3 +335,5 @@ local_secrets/k_os_analytics/
 memory/cockpit/
 reports/cockpit/runtime/
 local_secrets/k_os_cockpit/
+reports/command_center/runtime/
+local_secrets/k_os_command_center/
