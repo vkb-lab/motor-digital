@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "checkpoint": "029",
+  "module": "k_os_proposal_factory_quote_builder",
+  "status": "approval_dry_run",
+  "generated_at": "2026-05-31T16:40:53+00:00",
+  "proposal": {
+    "proposal_id": "prop_cd60683010d3",
+    "deal_id": "deal_3ea6bff3bf5e",
+    "customer_alias": "demo_customer",
+    "agent_id": "marketplace_ia_agent",
+    "proposal_title": "Proposta K-OS para demo_customer",
+    "status": "draft",
+    "currency": "BRL",
+    "setup_total": 1500.0,
+    "recurring_total": 997.0,
+    "valid_until": "2026-06-07",
+    "commercial_owner": "k_os_operator",
+    "approval_status": "pending_commercial_review",
+    "manual_send_allowed": false,
+    "created_at": "2026-05-31T16:39:45+00:00"
+  },
+  "approval_decision": "blocked_until_requirements_met",
+  "blockers": [
+    "commercial_approval_required",
+    "proposal_must_be_in_review_or_approved_status"
+  ],
+  "required_gates_before_manual_send": [
+    "proposal_exists",
+    "deal_exists",
+    "crm_customer_exists",
+    "quote_totals_validated",
+    "commercial_owner_approval",
+    "legal_review_if_paid",
+    "ai_risk_classifier",
+    "human_operator_approval"
+  ],
+  "external_send_performed": false,
+  "manual_send_allowed": false,
+  "customer_activation_performed": false,
+  "manual_approval_required": true,
+  "next_checkpoint": "030 - K-Onboarding and Activation Gate"
+}

@@ -1,21 +1,14 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T16:39:47.550359+00:00",
+  "generated_at": "2026-05-31T16:40:54.889784+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    ".gitignore",
-    "config/proposals/k_os_proposal_factory_policy.json",
-    "docs/commercial/k_os_proposal_factory_quote_builder.md",
-    "docs/security/k_os_ai_accountability_register.md",
-    "ops/k_os_proposal_factory_quote_builder.ps1",
-    "ops/k_os_proposal_factory_quote_builder.py",
-    "pages/929_K_OS_Proposal_Factory_Quote_Builder.py",
-    "reports/proposals/k_os_029_proposal_factory_quote_builder_install.json",
+    "reports/proposals/k_os_029_closure_report.json",
+    "reports/proposals/latest_proposal_approval_dry_run.json",
+    "reports/proposals/latest_proposal_approval_dry_run.md",
     "reports/proposals/latest_proposal_factory_report.json",
-    "reports/proposals/latest_proposal_factory_report.md",
-    "reports/proposals/templates/proposal_brief_template.md",
-    "reports/proposals/templates/quote_items_template.md"
+    "reports/proposals/latest_proposal_factory_report.md"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,

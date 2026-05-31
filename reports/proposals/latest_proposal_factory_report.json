@@ -3,7 +3,7 @@
   "checkpoint": "029",
   "module": "k_os_proposal_factory_quote_builder",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T16:39:46+00:00",
+  "generated_at": "2026-05-31T16:40:52+00:00",
   "proposal_registry_path": "local_secrets/k_os_proposals/proposal_registry.json",
   "proposal_registry_committed": false,
   "sanitized_reports_only": true,
