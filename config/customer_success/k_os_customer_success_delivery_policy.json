@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "031",
+  "module": "customer_success_delivery_tracker",
+  "purpose": "Acompanhar clientes depois do onboarding, registrando entregas, tarefas, marcos, saude, riscos, pendencias e proximas acoes.",
+  "success_policy": {
+    "customer_success_local_only": true,
+    "raw_delivery_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "manual_approval_required": true,
+    "customer_data_export_requires_approval": true,
+    "support_response_does_not_replace_contractual_sla": true,
+    "delivery_completion_requires_operator_review": true,
+    "churn_risk_requires_commercial_review": true,
+    "audit_log_deletion_allowed": false
+  },
+  "delivery_statuses": [
+    "planned",
+    "in_progress",
+    "waiting_customer",
+    "waiting_internal",
+    "blocked",
+    "delivered_pending_review",
+    "completed",
+    "cancelled"
+  ],
+  "task_statuses": [
+    "todo",
+    "doing",
+    "blocked",
+    "waiting_customer",
+    "review",
+    "done",
+    "cancelled"
+  ],
+  "health_levels": [
+    "green",
+    "yellow",
+    "red",
+    "unknown"
+  ],
+  "risk_levels": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "required_account_fields": [
+    "success_account_id",
+    "customer_alias",
+    "agent_id",
+    "onboarding_id",
+    "subscription_id",
+    "license_id",
+    "health",
+    "risk_level",
+    "next_action",
+    "success_owner"
+  ],
+  "blocked_actions": [
+    "send_customer_message_without_approval",
+    "publish_customer_update_externally",
+    "mark_delivery_complete_without_review",
+    "delete_customer_success_audit_logs",
+    "commit_raw_customer_notes",
+    "ignore_high_churn_risk"
+  ],
+  "required_gates_before_delivery_completion": [
+    "customer_success_account_exists",
+    "delivery_items_reviewed",
+    "operator_review",
+    "customer_acceptance_if_required",
+    "commercial_review_if_risk_high",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "032 - K-Support Desk and Ticketing Core"
+}

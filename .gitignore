@@ -314,3 +314,6 @@ local_secrets/k_os_proposals/
 memory/onboarding/
 reports/onboarding/runtime/
 local_secrets/k_os_onboarding/
+memory/customer_success/
+reports/customer_success/runtime/
+local_secrets/k_os_customer_success/

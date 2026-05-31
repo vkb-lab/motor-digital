@@ -1,0 +1,25 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "031",
+    "module":  "k_os_customer_success_delivery_tracker",
+    "status":  "installed",
+    "capabilities":  [
+                         "customer_success_accounts",
+                         "delivery_tracking",
+                         "task_tracking",
+                         "health_tracking",
+                         "churn_risk_tracking",
+                         "next_action_tracking",
+                         "health_snapshot",
+                         "sanitized_delivery_report"
+                     ],
+    "customer_success_local_only":  true,
+    "raw_delivery_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "032 - K-Support Desk and Ticketing Core",
+    "installed_at":  "2026-05-31T18:29:01.7616287Z"
+}

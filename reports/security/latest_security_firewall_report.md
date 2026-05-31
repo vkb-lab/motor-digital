@@ -2,8 +2,8 @@
 
 - Status: passed
 - OK: True
-- Generated at: 2026-05-31T17:01:18.589574+00:00
-- Files scanned: 1
+- Generated at: 2026-05-31T18:29:04.681450+00:00
+- Files scanned: 12
 - Findings: 0
 - Blocking findings: 0
 

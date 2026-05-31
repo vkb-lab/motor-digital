@@ -63,3 +63,5 @@ Toda IA ou agente precisa ter:
 | K-OS Proposal Factory and Quote Builder | Gera propostas e orcamentos locais com approval gate antes de envio manual | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Legal Review | reports/proposals |
 
 | K-OS Onboarding and Activation Gate | Valida CRM, assinatura, licença, deal, proposta, risco e permissões antes de ativação manual | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Security Review | reports/onboarding |
+
+| K-OS Customer Success and Delivery Tracker | Acompanha entregas, tarefas, saúde do cliente, riscos e próximas ações | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Customer Success Review + Commercial Review | reports/customer_success |
