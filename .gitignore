@@ -332,3 +332,6 @@ local_secrets/k_os_roadmap/
 memory/analytics/
 reports/analytics/runtime/
 local_secrets/k_os_analytics/
+memory/cockpit/
+reports/cockpit/runtime/
+local_secrets/k_os_cockpit/

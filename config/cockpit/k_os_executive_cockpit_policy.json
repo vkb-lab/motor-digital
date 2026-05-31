@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "037",
+  "module": "executive_cockpit_consolidation_layer",
+  "purpose": "Consolidar todos os paineis, modulos, relatorios, metricas e navegacao em um cockpit executivo central do K-OS.",
+  "cockpit_policy": {
+    "cockpit_local_only": true,
+    "raw_cockpit_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "executive_cockpit_sanitized_only": true,
+    "customer_identifiable_data_blocked": true,
+    "module_navigation_enabled": true,
+    "security_modules_visible": true,
+    "commercial_modules_visible": true,
+    "product_modules_visible": true,
+    "analytics_modules_visible": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "cockpit_domains": [
+    "foundation",
+    "security",
+    "governance",
+    "commercial",
+    "customer_ops",
+    "support",
+    "product",
+    "analytics",
+    "cockpit"
+  ],
+  "blocked_actions": [
+    "publish_cockpit_without_approval",
+    "export_customer_identifiable_data",
+    "expose_local_secret_paths",
+    "delete_cockpit_audit_logs",
+    "claim_external_certification_without_audit",
+    "activate_external_integrations_from_cockpit"
+  ],
+  "required_gates_before_external_cockpit_export": [
+    "sanitized_snapshot_generated",
+    "customer_identifiers_removed",
+    "security_review",
+    "commercial_review_if_revenue_metrics",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "038 - K-Command Center Action Router"
+}

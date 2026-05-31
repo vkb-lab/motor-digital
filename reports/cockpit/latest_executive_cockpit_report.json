@@ -1,0 +1,589 @@
+{
+  "ok": true,
+  "checkpoint": "037",
+  "module": "k_os_executive_cockpit_consolidation_layer",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T20:03:31+00:00",
+  "cockpit_state_path": "local_secrets/k_os_cockpit/cockpit_state.json",
+  "cockpit_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "executive_cockpit_sanitized_only": true,
+  "customer_identifiable_data_blocked": true,
+  "streamlit_entrypoint": "pages/937_K_OS_Executive_Cockpit_Consolidation_Layer.py",
+  "analytics": {
+    "metrics": {
+      "customer_count": 1,
+      "subscription_count": 1,
+      "active_license_count": 0,
+      "estimated_mrr_brl": 0.0,
+      "deal_count": 1,
+      "weighted_pipeline_brl": 348.95,
+      "proposal_count": 1,
+      "onboarding_case_count": 0,
+      "onboarding_blocked_count": 0,
+      "open_task_count": 5,
+      "open_ticket_count": 1,
+      "support_ticket_count": 1,
+      "critical_ticket_count": 0,
+      "high_risk_customer_count": 0,
+      "red_health_count": 0,
+      "feedback_count": 1,
+      "critical_feedback_count": 0,
+      "feature_count": 1,
+      "roadmap_candidate_count": 1,
+      "roadmap_release_count": 0,
+      "knowledge_article_count": 1,
+      "knowledge_playbook_count": 1,
+      "foundation_control_ok_count": 18,
+      "foundation_control_total_count": 21,
+      "foundation_control_score": 85.71
+    },
+    "operational_health": {
+      "health_level": "blocked",
+      "blockers": [
+        "foundation_control_score_below_90"
+      ],
+      "warnings": [
+        "some_source_reports_missing",
+        "some_source_reports_not_ok"
+      ],
+      "missing_sources": [
+        "onboarding",
+        "incident"
+      ],
+      "failed_sources": [
+        "schema",
+        "enterprise"
+      ]
+    },
+    "dashboard": {
+      "ok": true,
+      "checkpoint": "036",
+      "module": "k_os_analytics_executive_metrics_core",
+      "status": "executive_dashboard_snapshot",
+      "generated_at": "2026-05-31T19:58:01+00:00",
+      "health_level": "blocked",
+      "top_kpis": {
+        "customers": 1,
+        "subscriptions": 1,
+        "estimated_mrr_brl": 0.0,
+        "weighted_pipeline_brl": 348.95,
+        "open_tickets": 1,
+        "open_tasks": 5,
+        "high_risk_customers": 0,
+        "features": 1,
+        "roadmap_releases": 0,
+        "foundation_score": 85.71
+      },
+      "external_publish_enabled": false,
+      "customer_identifiable_data_included": false,
+      "manual_approval_required": true,
+      "next_checkpoint": "037 - K-Executive Cockpit Consolidation Layer"
+    },
+    "health_snapshot": {
+      "ok": true,
+      "checkpoint": "036",
+      "module": "k_os_analytics_executive_metrics_core",
+      "status": "operational_health_snapshot",
+      "generated_at": "2026-05-31T19:58:01+00:00",
+      "health_level": "blocked",
+      "blockers": [
+        "foundation_control_score_below_90"
+      ],
+      "warnings": [
+        "some_source_reports_missing",
+        "some_source_reports_not_ok"
+      ],
+      "foundation_control_score": 85.71,
+      "critical_ticket_count": 0,
+      "high_risk_customer_count": 0,
+      "onboarding_blocked_count": 0,
+      "external_publish_enabled": false,
+      "next_checkpoint": "037 - K-Executive Cockpit Consolidation Layer"
+    },
+    "analytics_report_exists": true,
+    "dashboard_exists": true,
+    "health_exists": true
+  },
+  "modules": [
+    {
+      "checkpoint": "015",
+      "domain": "security",
+      "name": "Security Firewall",
+      "page": "pages/915_K_OS_Security_Firewall.py",
+      "report": "reports/security/latest_security_firewall_report.json",
+      "closure": "reports/security/k_os_015_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "passed",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "016",
+      "domain": "security",
+      "name": "Schema Guard",
+      "page": "pages/916_K_OS_Schema_Guard.py",
+      "report": "reports/schema/latest_schema_guard_report.json",
+      "closure": "reports/schema/k_os_016_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": false,
+      "closure_ok": true,
+      "report_status": "blocked_by_schema",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "017",
+      "domain": "governance",
+      "name": "Agent Permission Matrix",
+      "page": "pages/917_K_OS_Agent_Permission_Matrix.py",
+      "report": "reports/governance/latest_agent_permission_matrix_report.json",
+      "closure": "reports/governance/k_os_017_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "passed",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "018",
+      "domain": "security",
+      "name": "Vault Guard",
+      "page": "pages/918_K_OS_Vault_Guard.py",
+      "report": "reports/vault/latest_vault_guard_report.json",
+      "closure": "reports/vault/k_os_018_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": false,
+      "report_ok": true,
+      "closure_ok": false,
+      "report_status": "passed",
+      "closure_status": "missing"
+    },
+    {
+      "checkpoint": "019",
+      "domain": "audit",
+      "name": "Audit Evidence Pack",
+      "page": "pages/919_K_OS_Audit_Evidence_Pack.py",
+      "report": "reports/audit/latest_audit_evidence_pack.json",
+      "closure": "reports/audit/k_os_019_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "020",
+      "domain": "foundation",
+      "name": "Mission Control 2.0",
+      "page": "pages/920_K_OS_Mission_Control_2.py",
+      "report": "reports/mission_control/latest_mission_control_status.json",
+      "closure": "reports/mission_control/k_os_020_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": false,
+      "closure_ok": true,
+      "report_status": "needs_attention",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "021",
+      "domain": "security",
+      "name": "AI Risk Classifier + License Gate",
+      "page": "pages/921_K_OS_AI_Risk_Classifier.py",
+      "report": "reports/risk/latest_ai_risk_classifier_report.json",
+      "closure": "reports/risk/k_os_021_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "classified",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "022",
+      "domain": "security",
+      "name": "External API Sandbox",
+      "page": "pages/922_K_OS_External_API_Sandbox.py",
+      "report": "reports/external_sandbox/latest_external_api_sandbox_report.json",
+      "closure": "reports/external_sandbox/k_os_022_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "smoke_passed",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "023",
+      "domain": "audit",
+      "name": "Enterprise Readiness Report",
+      "page": "pages/923_K_OS_Enterprise_Readiness_Report.py",
+      "report": "reports/enterprise/latest_enterprise_readiness_report.json",
+      "closure": "reports/enterprise/k_os_023_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": false,
+      "closure_ok": true,
+      "report_status": "generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "024",
+      "domain": "security",
+      "name": "Incident Response and Rollback Runbook",
+      "page": "pages/924_K_OS_Incident_Response_Rollback_Runbook.py",
+      "report": "reports/incident/latest_incident_readiness_report.json",
+      "closure": "reports/incident/k_os_024_closure_report.json",
+      "page_exists": false,
+      "report_exists": false,
+      "closure_exists": true,
+      "report_ok": false,
+      "closure_ok": true,
+      "report_status": "missing",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "025",
+      "domain": "commercial",
+      "name": "Legal Commercial License Templates",
+      "page": "pages/925_K_OS_Legal_Commercial_License_Templates.py",
+      "report": "reports/legal/latest_legal_commercial_templates_report.json",
+      "closure": "reports/legal/k_os_025_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": false,
+      "closure_ok": true,
+      "report_status": "generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "026",
+      "domain": "commercial",
+      "name": "Billing and Subscription Ledger",
+      "page": "pages/926_K_OS_Billing_Subscription_Ledger.py",
+      "report": "reports/billing/latest_billing_subscription_report.json",
+      "closure": "reports/billing/k_os_026_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "027",
+      "domain": "commercial",
+      "name": "Customer Registry and CRM Core",
+      "page": "pages/927_K_OS_Customer_Registry_CRM_Core.py",
+      "report": "reports/crm/latest_customer_registry_report.json",
+      "closure": "reports/crm/k_os_027_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "028",
+      "domain": "commercial",
+      "name": "Sales Pipeline and Deal Desk",
+      "page": "pages/928_K_OS_Sales_Pipeline_Deal_Desk.py",
+      "report": "reports/sales/latest_sales_pipeline_report.json",
+      "closure": "reports/sales/k_os_028_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": false,
+      "report_ok": true,
+      "closure_ok": false,
+      "report_status": "audit_generated",
+      "closure_status": "missing"
+    },
+    {
+      "checkpoint": "029",
+      "domain": "commercial",
+      "name": "Proposal Factory and Quote Builder",
+      "page": "pages/929_K_OS_Proposal_Factory_Quote_Builder.py",
+      "report": "reports/proposals/latest_proposal_factory_report.json",
+      "closure": "reports/proposals/k_os_029_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "030",
+      "domain": "customer_ops",
+      "name": "Onboarding and Activation Gate",
+      "page": "pages/930_K_OS_Onboarding_Activation_Gate.py",
+      "report": "reports/onboarding/latest_onboarding_activation_report.json",
+      "closure": "reports/onboarding/k_os_030_closure_report.json",
+      "page_exists": true,
+      "report_exists": false,
+      "closure_exists": true,
+      "report_ok": false,
+      "closure_ok": true,
+      "report_status": "missing",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "031",
+      "domain": "customer_ops",
+      "name": "Customer Success and Delivery Tracker",
+      "page": "pages/931_K_OS_Customer_Success_Delivery_Tracker.py",
+      "report": "reports/customer_success/latest_customer_success_delivery_report.json",
+      "closure": "reports/customer_success/k_os_031_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": false,
+      "report_ok": true,
+      "closure_ok": false,
+      "report_status": "audit_generated",
+      "closure_status": "missing"
+    },
+    {
+      "checkpoint": "032",
+      "domain": "support",
+      "name": "Support Desk and Ticketing Core",
+      "page": "pages/932_K_OS_Support_Desk_Ticketing_Core.py",
+      "report": "reports/support/latest_support_desk_report.json",
+      "closure": "reports/support/k_os_032_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "033",
+      "domain": "support",
+      "name": "Knowledge Base and Support Playbooks",
+      "page": "pages/933_K_OS_Knowledge_Base_Support_Playbooks.py",
+      "report": "reports/knowledge_base/latest_knowledge_base_report.json",
+      "closure": "reports/knowledge_base/k_os_033_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "034",
+      "domain": "product",
+      "name": "Product Feedback and Feature Request Core",
+      "page": "pages/934_K_OS_Product_Feedback_Feature_Request_Core.py",
+      "report": "reports/product_feedback/latest_product_feedback_report.json",
+      "closure": "reports/product_feedback/k_os_034_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "035",
+      "domain": "product",
+      "name": "Roadmap Planner and Release Notes Core",
+      "page": "pages/935_K_OS_Roadmap_Planner_Release_Notes_Core.py",
+      "report": "reports/roadmap/latest_roadmap_release_report.json",
+      "closure": "reports/roadmap/k_os_035_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "036",
+      "domain": "analytics",
+      "name": "Analytics and Executive Metrics Core",
+      "page": "pages/936_K_OS_Analytics_Executive_Metrics_Core.py",
+      "report": "reports/analytics/latest_executive_metrics_report.json",
+      "closure": "reports/analytics/k_os_036_closure_report.json",
+      "page_exists": true,
+      "report_exists": true,
+      "closure_exists": true,
+      "report_ok": true,
+      "closure_ok": true,
+      "report_status": "audit_generated",
+      "closure_status": "closed_and_validated"
+    }
+  ],
+  "domain_summary": {
+    "security": {
+      "module_count": 6,
+      "page_ok": 5,
+      "report_ok": 4,
+      "closure_ok": 5
+    },
+    "governance": {
+      "module_count": 1,
+      "page_ok": 1,
+      "report_ok": 1,
+      "closure_ok": 1
+    },
+    "audit": {
+      "module_count": 2,
+      "page_ok": 2,
+      "report_ok": 1,
+      "closure_ok": 2
+    },
+    "foundation": {
+      "module_count": 1,
+      "page_ok": 1,
+      "report_ok": 0,
+      "closure_ok": 1
+    },
+    "commercial": {
+      "module_count": 5,
+      "page_ok": 5,
+      "report_ok": 4,
+      "closure_ok": 4
+    },
+    "customer_ops": {
+      "module_count": 2,
+      "page_ok": 2,
+      "report_ok": 1,
+      "closure_ok": 1
+    },
+    "support": {
+      "module_count": 2,
+      "page_ok": 2,
+      "report_ok": 2,
+      "closure_ok": 2
+    },
+    "product": {
+      "module_count": 2,
+      "page_ok": 2,
+      "report_ok": 2,
+      "closure_ok": 2
+    },
+    "analytics": {
+      "module_count": 1,
+      "page_ok": 1,
+      "report_ok": 1,
+      "closure_ok": 1
+    }
+  },
+  "cockpit_health": {
+    "health_level": "blocked",
+    "module_total": 22,
+    "module_complete_count": 18,
+    "completion_score": 81.82,
+    "blockers": [
+      "module_pages_missing",
+      "checkpoint_closures_missing",
+      "analytics_health_blocked"
+    ],
+    "warnings": [
+      "some_latest_reports_missing",
+      "some_latest_reports_not_ok"
+    ],
+    "missing_pages": [
+      {
+        "checkpoint": "024",
+        "name": "Incident Response and Rollback Runbook",
+        "path": "pages/924_K_OS_Incident_Response_Rollback_Runbook.py"
+      }
+    ],
+    "missing_reports": [
+      {
+        "checkpoint": "024",
+        "name": "Incident Response and Rollback Runbook",
+        "path": "reports/incident/latest_incident_readiness_report.json"
+      },
+      {
+        "checkpoint": "030",
+        "name": "Onboarding and Activation Gate",
+        "path": "reports/onboarding/latest_onboarding_activation_report.json"
+      }
+    ],
+    "missing_closures": [
+      {
+        "checkpoint": "018",
+        "name": "Vault Guard",
+        "path": "reports/vault/k_os_018_closure_report.json"
+      },
+      {
+        "checkpoint": "028",
+        "name": "Sales Pipeline and Deal Desk",
+        "path": "reports/sales/k_os_028_closure_report.json"
+      },
+      {
+        "checkpoint": "031",
+        "name": "Customer Success and Delivery Tracker",
+        "path": "reports/customer_success/k_os_031_closure_report.json"
+      }
+    ],
+    "failed_reports": [
+      {
+        "checkpoint": "016",
+        "name": "Schema Guard",
+        "status": "blocked_by_schema"
+      },
+      {
+        "checkpoint": "020",
+        "name": "Mission Control 2.0",
+        "status": "needs_attention"
+      },
+      {
+        "checkpoint": "023",
+        "name": "Enterprise Readiness Report",
+        "status": "generated"
+      },
+      {
+        "checkpoint": "025",
+        "name": "Legal Commercial License Templates",
+        "status": "generated"
+      }
+    ],
+    "failed_closures": []
+  },
+  "required_gates_before_external_cockpit_export": [
+    "sanitized_snapshot_generated",
+    "customer_identifiers_removed",
+    "security_review",
+    "commercial_review_if_revenue_metrics",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "publish_cockpit_without_approval",
+    "export_customer_identifiable_data",
+    "expose_local_secret_paths",
+    "delete_cockpit_audit_logs",
+    "claim_external_certification_without_audit",
+    "activate_external_integrations_from_cockpit"
+  ],
+  "next_checkpoint": "038 - K-Command Center Action Router"
+}

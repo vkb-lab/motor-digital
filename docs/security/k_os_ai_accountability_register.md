@@ -75,3 +75,5 @@ Toda IA ou agente precisa ter:
 | K-OS Roadmap Planner and Release Notes Core | Organiza roadmap interno, releases, features por versao e notas de release com bloqueio de publicacao externa | Product Owner K-OS | Sim, local sanitizado | Não | Não | Human Approval + Product Review + QA/Security/Legal Review | reports/roadmap |
 
 | K-OS Analytics and Executive Metrics Core | Consolida métricas executivas sanitizadas, KPIs, saúde operacional e score de controles | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Security Review | reports/analytics |
+
+| K-OS Executive Cockpit Consolidation Layer | Consolida painéis, módulos, navegação, métricas executivas e health operacional em cockpit central | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Security Review + Commercial Review | reports/cockpit |

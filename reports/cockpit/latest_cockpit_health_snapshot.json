@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checkpoint": "037",
+  "module": "k_os_executive_cockpit_consolidation_layer",
+  "status": "cockpit_health_snapshot",
+  "generated_at": "2026-05-31T20:03:31+00:00",
+  "health_level": "blocked",
+  "completion_score": 81.82,
+  "module_complete_count": 18,
+  "module_total": 22,
+  "blockers": [
+    "module_pages_missing",
+    "checkpoint_closures_missing",
+    "analytics_health_blocked"
+  ],
+  "warnings": [
+    "some_latest_reports_missing",
+    "some_latest_reports_not_ok"
+  ],
+  "external_publish_enabled": false,
+  "next_checkpoint": "038 - K-Command Center Action Router"
+}
