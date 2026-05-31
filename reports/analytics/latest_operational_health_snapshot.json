@@ -3,7 +3,7 @@
   "checkpoint": "036",
   "module": "k_os_analytics_executive_metrics_core",
   "status": "operational_health_snapshot",
-  "generated_at": "2026-05-31T19:51:32+00:00",
+  "generated_at": "2026-05-31T19:53:29+00:00",
   "health_level": "blocked",
   "blockers": [
     "foundation_control_score_below_90"

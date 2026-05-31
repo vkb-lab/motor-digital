@@ -1,6 +1,6 @@
 # K-OS Executive Dashboard Snapshot
 
-- Generated at: 2026-05-31T19:51:32+00:00
+- Generated at: 2026-05-31T19:53:29+00:00
 - Health: blocked
 - External publish enabled: False
 - Customer identifiable data included: False
