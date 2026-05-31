@@ -3,7 +3,7 @@
     "checkpoint":  "018",
     "module":  "vault_guard",
     "status":  "passed",
-    "generated_at":  "2026-05-31T12:20:52.3626875Z",
+    "generated_at":  "2026-05-31T12:23:16.0603503Z",
     "vault_exists":  true,
     "vault_path":  "local_secrets/k_os_vault/vault.json",
     "storage":  "windows_dpapi_current_user",
