@@ -3,14 +3,14 @@
   "checkpoint": "019",
   "module": "k_os_audit_evidence_pack",
   "status": "generated",
-  "generated_at": "2026-05-31T12:28:54+00:00",
+  "generated_at": "2026-05-31T12:30:54+00:00",
   "system": "K-OS",
   "repository": {
     "root": "C:\\Users\\oi\\Desktop\\motor-digital",
     "branch": "main",
-    "last_commit": "236f280 security: add k-os vault guard checkpoint 018",
+    "last_commit": "4cb59c1 audit: add k-os evidence pack checkpoint 019",
     "remote": "origin\thttps://github.com/vkb-lab/motor-digital.git (fetch)\norigin\thttps://github.com/vkb-lab/motor-digital.git (push)",
-    "working_tree_status": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md\n?? config/audit/\n?? docs/security/k_os_audit_evidence_pack.md\n?? ops/k_os_audit_evidence_pack.ps1\n?? ops/k_os_audit_evidence_pack.py\n?? pages/919_K_OS_Audit_Evidence_Pack.py\n?? reports/audit/"
+    "working_tree_status": "M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md"
   },
   "audit_scope": {
     "product": "K-Atlas / K-Uni / K-OS",
@@ -110,7 +110,7 @@
           "path": "reports/security/latest_security_firewall_report.json",
           "exists": true,
           "is_file": true,
-          "size_bytes": 736
+          "size_bytes": 1144
         },
         {
           "path": "docs/security/k_os_security_doctrine.md",
