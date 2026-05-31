@@ -1,0 +1,158 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "019",
+  "module": "audit_evidence_pack",
+  "audit_scope": {
+    "product": "K-Atlas / K-Uni / K-OS",
+    "mode": "local_first_ai_business_operating_system",
+    "repository": "vkb-lab/motor-digital",
+    "public_data_policy": "public assets only",
+    "sensitive_data_policy": "local only",
+    "external_send_enabled": false,
+    "external_publish_enabled": false
+  },
+  "control_domains": [
+    {
+      "domain_id": "GOV",
+      "name": "Governance",
+      "purpose": "Definir dono humano, conselhos, limites de autonomia e responsabilidade das IAs."
+    },
+    {
+      "domain_id": "SEC",
+      "name": "Security",
+      "purpose": "Prevenir vazamento de credenciais, dados sensíveis e execução externa indevida."
+    },
+    {
+      "domain_id": "VAL",
+      "name": "Validation",
+      "purpose": "Validar estruturas JSON, entradas e saídas antes do uso operacional."
+    },
+    {
+      "domain_id": "AUD",
+      "name": "Auditability",
+      "purpose": "Gerar evidências, relatórios e rastreabilidade por checkpoint."
+    },
+    {
+      "domain_id": "HITL",
+      "name": "Human-in-the-loop",
+      "purpose": "Garantir aprovação humana para ações críticas."
+    },
+    {
+      "domain_id": "REC",
+      "name": "Recovery",
+      "purpose": "Permitir diagnóstico, correção e fechamento após falhas operacionais."
+    }
+  ],
+  "controls": [
+    {
+      "control_id": "SEC-001",
+      "name": "Sensitive path blocking",
+      "checkpoint": "015",
+      "evidence": [
+        "ops/k_os_security_firewall.py",
+        "reports/security/latest_security_firewall_report.json",
+        "docs/security/k_os_security_doctrine.md"
+      ]
+    },
+    {
+      "control_id": "SEC-002",
+      "name": "Pre-commit secret scanner",
+      "checkpoint": "015",
+      "evidence": [
+        ".git/hooks/pre-commit",
+        "ops/k_os_security_firewall.py",
+        "reports/security/k_os_015_closure_report.json"
+      ]
+    },
+    {
+      "control_id": "VAL-001",
+      "name": "Operational JSON validation",
+      "checkpoint": "016",
+      "evidence": [
+        "ops/k_os_schema_guard.py",
+        "reports/schema/latest_schema_guard_report.json",
+        "docs/security/k_os_schema_guard.md"
+      ]
+    },
+    {
+      "control_id": "GOV-001",
+      "name": "Agent permission matrix",
+      "checkpoint": "017",
+      "evidence": [
+        "config/governance/k_os_agent_permission_matrix.json",
+        "reports/governance/latest_agent_permission_matrix_report.json",
+        "docs/security/k_os_agent_permission_matrix.md"
+      ]
+    },
+    {
+      "control_id": "GOV-002",
+      "name": "AI accountability register",
+      "checkpoint": "017",
+      "evidence": [
+        "docs/security/k_os_ai_accountability_register.md"
+      ]
+    },
+    {
+      "control_id": "SEC-003",
+      "name": "Local credential vault policy",
+      "checkpoint": "018",
+      "evidence": [
+        "config/security/k_os_vault_policy.json",
+        "ops/k_os_vault_guard.ps1",
+        "reports/vault/latest_vault_guard_report.json",
+        "docs/security/k_os_vault_guard.md"
+      ]
+    },
+    {
+      "control_id": "HITL-001",
+      "name": "Manual approval required by default",
+      "checkpoint": "015-018",
+      "evidence": [
+        "config/governance/k_os_agent_permission_matrix.json",
+        "config/security/k_os_vault_policy.json",
+        "reports/security/k_os_015_closure_report.json",
+        "reports/schema/k_os_016_closure_report.json",
+        "reports/governance/k_os_017_closure_report.json",
+        "reports/vault/k_os_018_closure_report.json"
+      ]
+    },
+    {
+      "control_id": "AUD-001",
+      "name": "Checkpoint closure reports",
+      "checkpoint": "015-018",
+      "evidence": [
+        "reports/security/k_os_015_closure_report.json",
+        "reports/schema/k_os_016_closure_report.json",
+        "reports/governance/k_os_017_closure_report.json",
+        "reports/vault/k_os_018_closure_report.json"
+      ]
+    }
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "GAP-001",
+      "name": "External audit not yet performed",
+      "severity": "medium",
+      "next_action": "Prepare enterprise readiness report and external review checklist."
+    },
+    {
+      "gap_id": "GAP-002",
+      "name": "Credential use approval flow not yet connected to external API sandbox",
+      "severity": "high",
+      "next_action": "Implement External API Sandbox before any real provider call."
+    },
+    {
+      "gap_id": "GAP-003",
+      "name": "Formal incident response workflow not yet complete",
+      "severity": "medium",
+      "next_action": "Create K-OS incident response and rollback package."
+    },
+    {
+      "gap_id": "GAP-004",
+      "name": "No formal SOC 2 or ISO 27001 certification",
+      "severity": "medium",
+      "next_action": "Generate readiness documentation, but do not claim certification."
+    }
+  ]
+}

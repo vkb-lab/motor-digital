@@ -1,0 +1,19 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "019",
+    "module":  "k_os_audit_evidence_pack",
+    "status":  "installed",
+    "capabilities":  [
+                         "audit_pack_generation",
+                         "control_evidence_mapping",
+                         "checkpoint_closure_inventory",
+                         "enterprise_readiness_score",
+                         "known_gap_register",
+                         "audit_checklist"
+                     ],
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "020 - K-Mission Control 2.0",
+    "installed_at":  "2026-05-31T12:28:53.3366869Z"
+}

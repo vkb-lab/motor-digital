@@ -284,3 +284,5 @@ memory/vault/
 reports/vault/runtime/
 *.vault.json
 *vault_local*.json
+memory/audit/
+reports/audit/runtime/

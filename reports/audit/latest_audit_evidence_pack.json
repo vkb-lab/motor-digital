@@ -1,0 +1,387 @@
+{
+  "ok": true,
+  "checkpoint": "019",
+  "module": "k_os_audit_evidence_pack",
+  "status": "generated",
+  "generated_at": "2026-05-31T12:28:54+00:00",
+  "system": "K-OS",
+  "repository": {
+    "root": "C:\\Users\\oi\\Desktop\\motor-digital",
+    "branch": "main",
+    "last_commit": "236f280 security: add k-os vault guard checkpoint 018",
+    "remote": "origin\thttps://github.com/vkb-lab/motor-digital.git (fetch)\norigin\thttps://github.com/vkb-lab/motor-digital.git (push)",
+    "working_tree_status": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md\n?? config/audit/\n?? docs/security/k_os_audit_evidence_pack.md\n?? ops/k_os_audit_evidence_pack.ps1\n?? ops/k_os_audit_evidence_pack.py\n?? pages/919_K_OS_Audit_Evidence_Pack.py\n?? reports/audit/"
+  },
+  "audit_scope": {
+    "product": "K-Atlas / K-Uni / K-OS",
+    "mode": "local_first_ai_business_operating_system",
+    "repository": "vkb-lab/motor-digital",
+    "public_data_policy": "public assets only",
+    "sensitive_data_policy": "local only",
+    "external_send_enabled": false,
+    "external_publish_enabled": false
+  },
+  "control_domains": [
+    {
+      "domain_id": "GOV",
+      "name": "Governance",
+      "purpose": "Definir dono humano, conselhos, limites de autonomia e responsabilidade das IAs."
+    },
+    {
+      "domain_id": "SEC",
+      "name": "Security",
+      "purpose": "Prevenir vazamento de credenciais, dados sensíveis e execução externa indevida."
+    },
+    {
+      "domain_id": "VAL",
+      "name": "Validation",
+      "purpose": "Validar estruturas JSON, entradas e saídas antes do uso operacional."
+    },
+    {
+      "domain_id": "AUD",
+      "name": "Auditability",
+      "purpose": "Gerar evidências, relatórios e rastreabilidade por checkpoint."
+    },
+    {
+      "domain_id": "HITL",
+      "name": "Human-in-the-loop",
+      "purpose": "Garantir aprovação humana para ações críticas."
+    },
+    {
+      "domain_id": "REC",
+      "name": "Recovery",
+      "purpose": "Permitir diagnóstico, correção e fechamento após falhas operacionais."
+    }
+  ],
+  "checkpoint_evidence": [
+    {
+      "checkpoint": "015",
+      "name": "Security Firewall",
+      "closure_path": "reports/security/k_os_015_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "summary": "security firewall and pre-commit guard"
+    },
+    {
+      "checkpoint": "016",
+      "name": "Schema Guard",
+      "closure_path": "reports/schema/k_os_016_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "summary": "operational JSON validation"
+    },
+    {
+      "checkpoint": "017",
+      "name": "Agent Permission Matrix",
+      "closure_path": "reports/governance/k_os_017_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "summary": "agent permissions and councils"
+    },
+    {
+      "checkpoint": "018",
+      "name": "Vault Guard",
+      "closure_path": "reports/vault/k_os_018_closure_report.json",
+      "closure_exists": false,
+      "closure_ok": false,
+      "closure_status": "missing",
+      "summary": "local credential vault policy"
+    }
+  ],
+  "control_evidence": [
+    {
+      "control_id": "SEC-001",
+      "name": "Sensitive path blocking",
+      "checkpoint": "015",
+      "evidence_total": 3,
+      "evidence_found": 3,
+      "evidence_complete": true,
+      "evidence": [
+        {
+          "path": "ops/k_os_security_firewall.py",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 12207
+        },
+        {
+          "path": "reports/security/latest_security_firewall_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 736
+        },
+        {
+          "path": "docs/security/k_os_security_doctrine.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 852
+        }
+      ]
+    },
+    {
+      "control_id": "SEC-002",
+      "name": "Pre-commit secret scanner",
+      "checkpoint": "015",
+      "evidence_total": 3,
+      "evidence_found": 3,
+      "evidence_complete": true,
+      "evidence": [
+        {
+          "path": ".git/hooks/pre-commit",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 291
+        },
+        {
+          "path": "ops/k_os_security_firewall.py",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 12207
+        },
+        {
+          "path": "reports/security/k_os_015_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 575
+        }
+      ]
+    },
+    {
+      "control_id": "VAL-001",
+      "name": "Operational JSON validation",
+      "checkpoint": "016",
+      "evidence_total": 3,
+      "evidence_found": 3,
+      "evidence_complete": true,
+      "evidence": [
+        {
+          "path": "ops/k_os_schema_guard.py",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 21401
+        },
+        {
+          "path": "reports/schema/latest_schema_guard_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 5965
+        },
+        {
+          "path": "docs/security/k_os_schema_guard.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 976
+        }
+      ]
+    },
+    {
+      "control_id": "GOV-001",
+      "name": "Agent permission matrix",
+      "checkpoint": "017",
+      "evidence_total": 3,
+      "evidence_found": 3,
+      "evidence_complete": true,
+      "evidence": [
+        {
+          "path": "config/governance/k_os_agent_permission_matrix.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 9708
+        },
+        {
+          "path": "reports/governance/latest_agent_permission_matrix_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1908
+        },
+        {
+          "path": "docs/security/k_os_agent_permission_matrix.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1106
+        }
+      ]
+    },
+    {
+      "control_id": "GOV-002",
+      "name": "AI accountability register",
+      "checkpoint": "017",
+      "evidence_total": 1,
+      "evidence_found": 1,
+      "evidence_complete": true,
+      "evidence": [
+        {
+          "path": "docs/security/k_os_ai_accountability_register.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 2108
+        }
+      ]
+    },
+    {
+      "control_id": "SEC-003",
+      "name": "Local credential vault policy",
+      "checkpoint": "018",
+      "evidence_total": 4,
+      "evidence_found": 4,
+      "evidence_complete": true,
+      "evidence": [
+        {
+          "path": "config/security/k_os_vault_policy.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1093
+        },
+        {
+          "path": "ops/k_os_vault_guard.ps1",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 8918
+        },
+        {
+          "path": "reports/vault/latest_vault_guard_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 644
+        },
+        {
+          "path": "docs/security/k_os_vault_guard.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1489
+        }
+      ]
+    },
+    {
+      "control_id": "HITL-001",
+      "name": "Manual approval required by default",
+      "checkpoint": "015-018",
+      "evidence_total": 6,
+      "evidence_found": 5,
+      "evidence_complete": false,
+      "evidence": [
+        {
+          "path": "config/governance/k_os_agent_permission_matrix.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 9708
+        },
+        {
+          "path": "config/security/k_os_vault_policy.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1093
+        },
+        {
+          "path": "reports/security/k_os_015_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 575
+        },
+        {
+          "path": "reports/schema/k_os_016_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 507
+        },
+        {
+          "path": "reports/governance/k_os_017_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 633
+        },
+        {
+          "path": "reports/vault/k_os_018_closure_report.json",
+          "exists": false,
+          "is_file": false,
+          "size_bytes": 0
+        }
+      ]
+    },
+    {
+      "control_id": "AUD-001",
+      "name": "Checkpoint closure reports",
+      "checkpoint": "015-018",
+      "evidence_total": 4,
+      "evidence_found": 3,
+      "evidence_complete": false,
+      "evidence": [
+        {
+          "path": "reports/security/k_os_015_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 575
+        },
+        {
+          "path": "reports/schema/k_os_016_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 507
+        },
+        {
+          "path": "reports/governance/k_os_017_closure_report.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 633
+        },
+        {
+          "path": "reports/vault/k_os_018_closure_report.json",
+          "exists": false,
+          "is_file": false,
+          "size_bytes": 0
+        }
+      ]
+    }
+  ],
+  "readiness": {
+    "score": 75.0,
+    "level": "partial_internal_readiness",
+    "checkpoint_ok": 3,
+    "checkpoint_total": 4,
+    "control_ok": 6,
+    "control_total": 8
+  },
+  "known_gaps": [
+    {
+      "gap_id": "GAP-001",
+      "name": "External audit not yet performed",
+      "severity": "medium",
+      "next_action": "Prepare enterprise readiness report and external review checklist."
+    },
+    {
+      "gap_id": "GAP-002",
+      "name": "Credential use approval flow not yet connected to external API sandbox",
+      "severity": "high",
+      "next_action": "Implement External API Sandbox before any real provider call."
+    },
+    {
+      "gap_id": "GAP-003",
+      "name": "Formal incident response workflow not yet complete",
+      "severity": "medium",
+      "next_action": "Create K-OS incident response and rollback package."
+    },
+    {
+      "gap_id": "GAP-004",
+      "name": "No formal SOC 2 or ISO 27001 certification",
+      "severity": "medium",
+      "next_action": "Generate readiness documentation, but do not claim certification."
+    }
+  ],
+  "security_position": {
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "credential_access_enabled_by_default": false,
+    "manual_approval_required": true,
+    "no_agent_decides_alone": true,
+    "sensitive_data_local_only": true,
+    "raw_secret_exposure_enabled": false
+  },
+  "disclaimer": {
+    "not_a_certification": true,
+    "requires_external_auditor_for_formal_certification": true,
+    "use_as_internal_readiness_pack": true
+  },
+  "next_checkpoint": "020 - K-Mission Control 2.0"
+}
