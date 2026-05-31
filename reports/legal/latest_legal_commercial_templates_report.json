@@ -1,0 +1,163 @@
+{
+  "ok": false,
+  "checkpoint": "025",
+  "module": "k_os_legal_commercial_license_templates",
+  "status": "generated",
+  "generated_at": "2026-05-31T16:15:48+00:00",
+  "templates_generated": 8,
+  "template_files": [
+    {
+      "filename": "agent_subscription_terms_template.md",
+      "path": "reports/legal/templates/agent_subscription_terms_template.md",
+      "size_bytes": 1984
+    },
+    {
+      "filename": "agent_license_agreement_template.md",
+      "path": "reports/legal/templates/agent_license_agreement_template.md",
+      "size_bytes": 1635
+    },
+    {
+      "filename": "commercial_order_form_template.md",
+      "path": "reports/legal/templates/commercial_order_form_template.md",
+      "size_bytes": 1240
+    },
+    {
+      "filename": "acceptable_use_policy_template.md",
+      "path": "reports/legal/templates/acceptable_use_policy_template.md",
+      "size_bytes": 996
+    },
+    {
+      "filename": "sla_support_terms_template.md",
+      "path": "reports/legal/templates/sla_support_terms_template.md",
+      "size_bytes": 1005
+    },
+    {
+      "filename": "data_processing_addendum_outline.md",
+      "path": "reports/legal/templates/data_processing_addendum_outline.md",
+      "size_bytes": 1012
+    },
+    {
+      "filename": "emergency_suspension_revocation_policy.md",
+      "path": "reports/legal/templates/emergency_suspension_revocation_policy.md",
+      "size_bytes": 1116
+    },
+    {
+      "filename": "commercial_readiness_checklist.md",
+      "path": "reports/legal/templates/commercial_readiness_checklist.md",
+      "size_bytes": 1148
+    }
+  ],
+  "prerequisites_ok": 9,
+  "prerequisites_total": 10,
+  "prerequisites": [
+    {
+      "path": "reports/security/k_os_015_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/schema/k_os_016_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/governance/k_os_017_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/vault/k_os_018_closure_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing"
+    },
+    {
+      "path": "reports/audit/k_os_019_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/mission_control/k_os_020_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/risk/k_os_021_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/external_sandbox/k_os_022_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/enterprise/k_os_023_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "path": "reports/incident/k_os_024_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    }
+  ],
+  "blockers": [
+    {
+      "type": "missing_prerequisite",
+      "path": "reports/vault/k_os_018_closure_report.json"
+    }
+  ],
+  "legal_status": {
+    "not_legal_advice": true,
+    "attorney_review_required_before_use": true,
+    "jurisdiction_review_required": true,
+    "commercial_review_required": true,
+    "privacy_review_required": true,
+    "final_contract_signature_required": true
+  },
+  "commercial_policy": {
+    "agents_can_be_sold_or_subscribed": true,
+    "activation_requires_kos_permission": true,
+    "license_gate_required": true,
+    "active_subscription_required": true,
+    "scope_defined_by_order_form": true,
+    "external_connectors_disabled_by_default": true,
+    "human_approval_required_for_external_actions": true,
+    "emergency_suspension_allowed": true,
+    "safe_autodestruct_allowed": true,
+    "safe_autodestruct_meaning": "deactivate_revoke_disable_connectors_freeze_execution_preserve_audit",
+    "silent_customer_data_wipe_allowed": false,
+    "audit_log_deletion_allowed": false
+  },
+  "required_gates_before_customer_activation": [
+    "license_gate",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "vault_guard_if_connector_needed",
+    "external_api_sandbox_if_connector_needed",
+    "human_operator_approval",
+    "commercial_order_form_signed",
+    "legal_review_completed"
+  ],
+  "blocked_commercial_claims": [
+    "certified_compliance_without_external_audit",
+    "guaranteed_revenue",
+    "unlimited_liability",
+    "unreviewed_data_processing_claims",
+    "automatic_external_publish_without_approval",
+    "silent_data_deletion_as_penalty"
+  ],
+  "safe_claim": "Templates comerciais operacionais criados para venda/assinatura de agentes IA sob permissao K-OS, com revogacao segura e revisao juridica obrigatoria.",
+  "restricted_claim": "Nao usar como contrato final sem revisao juridica, revisao comercial e adequacao ao caso concreto.",
+  "next_checkpoint": "026 - K-Billing and Subscription Ledger"
+}

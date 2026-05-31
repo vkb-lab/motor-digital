@@ -51,3 +51,5 @@ Toda IA ou agente precisa ter:
 | K-OS External API Sandbox | Simula conectores externos sem chamada real, com risco, licença e vault | Operador K-OS | Sim, sandbox local | Não | Não | Human Approval + Security Council + License Gate | reports/external_sandbox |
 
 | K-OS Enterprise Readiness Report | Consolida evidencias enterprise, maturidade, gaps e pacote de due diligence | Operador K-OS | Sim, leitura local | Não | Não | Human Approval + Security Council | reports/enterprise |
+
+| K-OS Legal Commercial License Templates | Gera templates comerciais para licenca, assinatura, SLA, uso aceitavel e revogacao segura | Operador K-OS | Sim, local | Não | Não | Human Approval + Legal Review + Security Council | reports/legal |

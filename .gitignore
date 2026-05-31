@@ -297,3 +297,5 @@ memory/external_sandbox/
 reports/external_sandbox/runtime/
 memory/enterprise/
 reports/enterprise/runtime/
+memory/legal/
+reports/legal/runtime/

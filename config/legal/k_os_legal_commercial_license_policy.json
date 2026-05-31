@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "025",
+  "module": "legal_commercial_license_templates",
+  "purpose": "Criar templates comerciais para venda, assinatura, licenciamento, revogacao segura, SLA e uso controlado de agentes IA.",
+  "legal_status": {
+    "not_legal_advice": true,
+    "attorney_review_required_before_use": true,
+    "jurisdiction_review_required": true,
+    "commercial_review_required": true,
+    "privacy_review_required": true,
+    "final_contract_signature_required": true
+  },
+  "commercial_policy": {
+    "agents_can_be_sold_or_subscribed": true,
+    "activation_requires_kos_permission": true,
+    "license_gate_required": true,
+    "active_subscription_required": true,
+    "scope_defined_by_order_form": true,
+    "external_connectors_disabled_by_default": true,
+    "human_approval_required_for_external_actions": true,
+    "emergency_suspension_allowed": true,
+    "safe_autodestruct_allowed": true,
+    "safe_autodestruct_meaning": "deactivate_revoke_disable_connectors_freeze_execution_preserve_audit",
+    "silent_customer_data_wipe_allowed": false,
+    "audit_log_deletion_allowed": false
+  },
+  "template_set": [
+    "agent_subscription_terms",
+    "agent_license_agreement",
+    "commercial_order_form",
+    "acceptable_use_policy",
+    "sla_support_terms",
+    "data_processing_addendum_outline",
+    "emergency_suspension_revocation_policy",
+    "commercial_readiness_checklist"
+  ],
+  "required_business_fields": [
+    "customer_legal_name",
+    "customer_alias",
+    "agent_id",
+    "plan",
+    "billing_cycle",
+    "license_start",
+    "license_end",
+    "allowed_capabilities",
+    "allowed_connectors",
+    "support_channel",
+    "emergency_contact",
+    "approval_contact",
+    "commercial_owner",
+    "legal_review_status"
+  ],
+  "blocked_commercial_claims": [
+    "certified_compliance_without_external_audit",
+    "guaranteed_revenue",
+    "unlimited_liability",
+    "unreviewed_data_processing_claims",
+    "automatic_external_publish_without_approval",
+    "silent_data_deletion_as_penalty"
+  ],
+  "required_gates_before_customer_activation": [
+    "license_gate",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "vault_guard_if_connector_needed",
+    "external_api_sandbox_if_connector_needed",
+    "human_operator_approval",
+    "commercial_order_form_signed",
+    "legal_review_completed"
+  ],
+  "next_checkpoint": "026 - K-Billing and Subscription Ledger"
+}

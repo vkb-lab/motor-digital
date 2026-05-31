@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "025",
+    "module":  "k_os_legal_commercial_license_templates",
+    "status":  "installed",
+    "capabilities":  [
+                         "agent_subscription_terms",
+                         "agent_license_agreement",
+                         "commercial_order_form",
+                         "acceptable_use_policy",
+                         "sla_support_terms",
+                         "data_processing_addendum_outline",
+                         "emergency_suspension_revocation_policy",
+                         "commercial_readiness_checklist"
+                     ],
+    "agents_can_be_sold_or_subscribed":  true,
+    "activation_requires_kos_permission":  true,
+    "attorney_review_required_before_use":  true,
+    "safe_autodestruct_enabled":  true,
+    "safe_autodestruct_meaning":  "deactivate_revoke_disable_connectors_freeze_execution_preserve_audit",
+    "silent_customer_data_wipe_allowed":  false,
+    "audit_log_deletion_allowed":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "026 - K-Billing and Subscription Ledger",
+    "installed_at":  "2026-05-31T16:15:47.8435925Z"
+}
