@@ -1,0 +1,16 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "017",
+    "module":  "k_os_agent_permission_matrix",
+    "status":  "closed_and_validated",
+    "purpose":  "Definir agentes, permissoes, limites, conselhos, evidencias e responsibility map do K-OS.",
+    "agents_registered":  true,
+    "governance_councils_registered":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "credential_access_enabled":  false,
+    "manual_approval_required":  true,
+    "no_agent_decides_alone":  true,
+    "next_checkpoint":  "018 - K-Credential Vault",
+    "closed_at":  "2026-05-31T12:03:20.9745597Z"
+}

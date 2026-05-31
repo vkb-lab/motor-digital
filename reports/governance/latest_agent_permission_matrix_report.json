@@ -3,7 +3,7 @@
   "checkpoint": "017",
   "module": "k_os_agent_permission_matrix",
   "status": "passed",
-  "generated_at": "2026-05-31T12:02:03+00:00",
+  "generated_at": "2026-05-31T12:03:20+00:00",
   "matrix_path": "config/governance/k_os_agent_permission_matrix.json",
   "agent_count": 7,
   "council_count": 3,
