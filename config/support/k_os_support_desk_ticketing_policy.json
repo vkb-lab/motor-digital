@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "032",
+  "module": "support_desk_ticketing_core",
+  "purpose": "Registrar tickets, prioridades, status, cliente, delivery, incidente, SLA operacional, triagem e escalonamento.",
+  "support_policy": {
+    "support_desk_local_only": true,
+    "raw_ticket_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "manual_approval_required": true,
+    "ticket_response_drafts_only": true,
+    "sla_tracking_is_operational_not_contractual": true,
+    "incident_escalation_required_for_security_or_data_risk": true,
+    "customer_data_export_requires_approval": true,
+    "audit_log_deletion_allowed": false
+  },
+  "ticket_statuses": [
+    "new",
+    "triage",
+    "in_progress",
+    "waiting_customer",
+    "waiting_internal",
+    "escalated",
+    "resolved_pending_review",
+    "closed",
+    "cancelled"
+  ],
+  "ticket_priorities": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "ticket_categories": [
+    "question",
+    "bug",
+    "delivery",
+    "billing",
+    "license",
+    "onboarding",
+    "access",
+    "incident",
+    "feature_request",
+    "legal",
+    "security"
+  ],
+  "sla_targets_hours": {
+    "low": 72,
+    "medium": 24,
+    "high": 8,
+    "critical": 2
+  },
+  "required_ticket_fields": [
+    "ticket_id",
+    "customer_alias",
+    "category",
+    "priority",
+    "status",
+    "subject",
+    "summary",
+    "support_owner",
+    "created_at",
+    "next_action"
+  ],
+  "blocked_actions": [
+    "send_customer_reply_without_approval",
+    "publish_ticket_externally",
+    "commit_raw_ticket_notes",
+    "delete_support_audit_logs",
+    "close_critical_ticket_without_review",
+    "ignore_security_or_data_incident",
+    "expose_customer_contact_in_report"
+  ],
+  "required_gates_before_ticket_close": [
+    "ticket_exists",
+    "operator_review",
+    "customer_success_review_if_delivery_related",
+    "commercial_review_if_billing_or_license_related",
+    "incident_review_if_security_or_data_related",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "033 - K-Knowledge Base and Support Playbooks"
+}

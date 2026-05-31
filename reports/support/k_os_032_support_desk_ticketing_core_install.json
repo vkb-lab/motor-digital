@@ -1,0 +1,25 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "032",
+    "module":  "k_os_support_desk_ticketing_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "ticket_registry",
+                         "priority_tracking",
+                         "status_tracking",
+                         "customer_link",
+                         "delivery_link",
+                         "incident_escalation",
+                         "sla_operational_snapshot",
+                         "sanitized_support_report"
+                     ],
+    "support_desk_local_only":  true,
+    "raw_ticket_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "033 - K-Knowledge Base and Support Playbooks",
+    "installed_at":  "2026-05-31T18:35:39.1107925Z"
+}

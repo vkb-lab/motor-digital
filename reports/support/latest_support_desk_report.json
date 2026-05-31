@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "checkpoint": "032",
+  "module": "k_os_support_desk_ticketing_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T18:35:40+00:00",
+  "support_registry_path": "local_secrets/k_os_support/support_ticket_registry.json",
+  "support_registry_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "tickets": [
+    {
+      "ticket_id": "tkt_c45e3d6002a2",
+      "customer_alias": "demo_customer",
+      "agent_id": "marketplace_ia_agent",
+      "success_account_id": "csa_35f68b36bf98",
+      "delivery_id": "del_c91de45c8121",
+      "incident_id": "",
+      "category": "delivery",
+      "priority": "medium",
+      "status": "new",
+      "subject": "Validar primeira entrega operacional",
+      "summary": "Ticket demo para acompanhar suporte de entrega inicial.",
+      "support_owner": "k_os_operator",
+      "next_action": "triagem inicial e definição de resposta manual",
+      "sla_due_at": "2026-06-01T18:35:40+00:00",
+      "sla_state": "ok",
+      "created_at": "2026-05-31T18:35:40+00:00",
+      "updated_at": "2026-05-31T18:35:40+00:00"
+    }
+  ],
+  "recent_notes": [],
+  "recent_activities": [
+    {
+      "activity_id": "act_4d736a02a331",
+      "ticket_id": "tkt_c45e3d6002a2",
+      "activity_type": "ticket_created",
+      "summary": "Ticket criado em delivery/medium.",
+      "created_at": "2026-05-31T18:35:40+00:00",
+      "created_by": "k_os_support_desk"
+    }
+  ],
+  "metrics": {
+    "ticket_count": 1,
+    "open_ticket_count": 1,
+    "critical_ticket_count": 0,
+    "high_ticket_count": 0,
+    "sla_at_risk_count": 0,
+    "sla_breached_count": 0,
+    "status_counts": {
+      "new": 1
+    },
+    "priority_counts": {
+      "medium": 1
+    },
+    "category_counts": {
+      "delivery": 1
+    },
+    "sla_counts": {
+      "ok": 1
+    }
+  },
+  "required_gates_before_ticket_close": [
+    "ticket_exists",
+    "operator_review",
+    "customer_success_review_if_delivery_related",
+    "commercial_review_if_billing_or_license_related",
+    "incident_review_if_security_or_data_related",
+    "audit_event_recorded"
+  ],
+  "blocked_actions": [
+    "send_customer_reply_without_approval",
+    "publish_ticket_externally",
+    "commit_raw_ticket_notes",
+    "delete_support_audit_logs",
+    "close_critical_ticket_without_review",
+    "ignore_security_or_data_incident",
+    "expose_customer_contact_in_report"
+  ],
+  "next_checkpoint": "033 - K-Knowledge Base and Support Playbooks"
+}
