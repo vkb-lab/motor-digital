@@ -1,0 +1,24 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "021",
+    "module":  "k_os_ai_risk_classifier",
+    "status":  "installed",
+    "capabilities":  [
+                         "ai_action_risk_classification",
+                         "approval_gate_by_risk",
+                         "license_required_for_customer_use",
+                         "subscription_ready_policy",
+                         "safe_emergency_kill_switch",
+                         "destructive_data_wipe_blocked",
+                         "audit_evidence"
+                     ],
+    "agents_can_be_sold_or_subscribed":  true,
+    "activation_requires_kos_permission":  true,
+    "emergency_kill_switch_enabled":  true,
+    "silent_data_wipe_allowed":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "022 - K-External API Sandbox",
+    "installed_at":  "2026-05-31T12:47:22.7545779Z"
+}

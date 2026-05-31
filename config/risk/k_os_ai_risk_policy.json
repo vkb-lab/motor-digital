@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "021",
+  "module": "ai_risk_classifier",
+  "policy": {
+    "no_agent_decides_alone": true,
+    "manual_approval_required": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "credential_access_enabled_by_default": false,
+    "license_required_for_customer_use": true,
+    "emergency_kill_switch_enabled": true,
+    "destructive_data_wipe_blocked_by_default": true
+  },
+  "risk_levels": [
+    {
+      "level": "low",
+      "score_min": 0,
+      "score_max": 24,
+      "required_gates": [
+        "local_log"
+      ]
+    },
+    {
+      "level": "medium",
+      "score_min": 25,
+      "score_max": 49,
+      "required_gates": [
+        "human_operator_approval",
+        "audit_event"
+      ]
+    },
+    {
+      "level": "high",
+      "score_min": 50,
+      "score_max": 79,
+      "required_gates": [
+        "human_operator_approval",
+        "security_firewall",
+        "schema_guard",
+        "audit_event"
+      ]
+    },
+    {
+      "level": "critical",
+      "score_min": 80,
+      "score_max": 100,
+      "required_gates": [
+        "human_operator_approval",
+        "security_council_approval",
+        "security_firewall",
+        "schema_guard",
+        "vault_guard_if_needed",
+        "audit_event",
+        "rollback_plan"
+      ]
+    }
+  ],
+  "critical_action_keywords": [
+    "external_send",
+    "external_publish",
+    "publish_instagram",
+    "send_whatsapp",
+    "send_email",
+    "credential_access",
+    "raw_secret",
+    "provider_api_call",
+    "delete_customer_data",
+    "wipe_data",
+    "license_revoke",
+    "license_issue",
+    "subscription_change",
+    "emergency_lockdown",
+    "kill_switch",
+    "self_destruct"
+  ],
+  "blocked_by_default": [
+    "external_send",
+    "external_publish",
+    "raw_secret_access",
+    "unapproved_provider_api_call",
+    "unapproved_customer_agent_activation",
+    "irreversible_data_deletion"
+  ],
+  "safe_emergency_actions": [
+    "deactivate_agent",
+    "revoke_license",
+    "disable_connectors",
+    "freeze_scheduled_tasks",
+    "seal_local_vault_access",
+    "preserve_audit_logs",
+    "generate_incident_report"
+  ]
+}

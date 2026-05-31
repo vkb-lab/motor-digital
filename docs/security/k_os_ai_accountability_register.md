@@ -44,3 +44,6 @@ Toda IA ou agente precisa ter:
 | K-OS Audit Evidence Pack | Consolida evidências, controles, gaps e readiness de auditoria | Operador K-OS | Sim, relatório local | Não | Não | Security Council + AI Accountability Council | reports/audit |
 
 | K-OS Mission Control 2.0 | Consolida status, risco, gates e próximos passos da nave | Operador K-OS | Sim, leitura local | Não | Não | Human Approval + Security Council | reports/mission_control |
+
+| K-OS AI Risk Classifier | Classifica risco, exige gates e bloqueia ações perigosas | Operador K-OS | Sim, validação local | Não | Não | Human Approval + Security Council | reports/risk |
+| K-OS License Gate | Controla ativação comercial, assinatura e revogação segura de agentes | Operador K-OS | Sim, local | Não | Não | License Gate + Security Council | reports/license |

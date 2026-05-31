@@ -288,3 +288,8 @@ memory/audit/
 reports/audit/runtime/
 memory/mission_control/
 reports/mission_control/runtime/
+memory/risk/
+memory/license/
+reports/risk/runtime/
+reports/license/runtime/
+local_secrets/k_os_licenses/

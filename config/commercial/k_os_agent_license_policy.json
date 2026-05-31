@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "module": "agent_license_policy",
+  "commercial_model": {
+    "agents_can_be_sold_or_subscribed": true,
+    "activation_requires_kos_permission": true,
+    "default_license_status": "inactive",
+    "supported_models": [
+      "trial",
+      "monthly_subscription",
+      "annual_subscription",
+      "enterprise_contract",
+      "internal_use"
+    ]
+  },
+  "license_required_fields": [
+    "license_id",
+    "customer_alias",
+    "agent_id",
+    "plan",
+    "status",
+    "issued_at",
+    "expires_at",
+    "allowed_capabilities",
+    "allowed_connectors",
+    "emergency_lockdown"
+  ],
+  "safe_autodestruct_policy": {
+    "name": "Emergency Kill Switch",
+    "purpose": "Desativar uso comercial ou operacional quando houver emergencia, falta de acordo, inadimplencia, risco juridico, risco de seguranca ou violacao contratual.",
+    "allowed_actions": [
+      "revoke_license",
+      "deactivate_agent",
+      "disable_external_connectors",
+      "freeze_execution",
+      "block_new_outputs",
+      "preserve_audit_logs",
+      "generate_incident_report"
+    ],
+    "blocked_actions": [
+      "silent_data_wipe",
+      "destroy_customer_records_without_policy",
+      "delete_audit_logs",
+      "damage_customer_assets",
+      "bypass_legal_retention"
+    ],
+    "requires": [
+      "human_operator_approval",
+      "security_council_approval",
+      "audit_evidence_pack",
+      "incident_reason"
+    ]
+  }
+}

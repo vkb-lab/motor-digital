@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "checkpoint": "021",
+  "module": "k_os_license_gate",
+  "status": "passed",
+  "generated_at": "2026-05-31T12:47:24+00:00",
+  "registry_path": "local_secrets/k_os_licenses/license_registry.json",
+  "registry_committed": false,
+  "emergency_lockdown": false,
+  "license_count": 0,
+  "licenses": [],
+  "agents_can_be_sold_or_subscribed": true,
+  "activation_requires_kos_permission": true,
+  "safe_autodestruct_available": true,
+  "silent_data_wipe_allowed": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false
+}

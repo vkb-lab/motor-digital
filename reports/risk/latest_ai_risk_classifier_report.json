@@ -1,0 +1,334 @@
+{
+  "ok": true,
+  "checkpoint": "021",
+  "module": "k_os_ai_risk_classifier",
+  "status": "smoke_passed",
+  "generated_at": "2026-05-31T12:47:23+00:00",
+  "results": [
+    {
+      "ok": true,
+      "action": "Ler relatorio local de auditoria",
+      "agent_id": "k_uni_cockpit",
+      "target": "reports/audit",
+      "risk_score": 25,
+      "risk_level": "medium",
+      "decision": "allowed_local",
+      "blocked_by_default": false,
+      "license_required": false,
+      "emergency_mode": false,
+      "required_gates": [
+        "human_operator_approval",
+        "audit_event"
+      ],
+      "reasons": [
+        {
+          "level": "medium",
+          "matches": [
+            "report"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    },
+    {
+      "ok": true,
+      "action": "Gerar proposta comercial local",
+      "agent_id": "marketplace_ia_agent",
+      "target": "live/marketplace_ia",
+      "risk_score": 60,
+      "risk_level": "high",
+      "decision": "requires_approval",
+      "blocked_by_default": false,
+      "license_required": false,
+      "emergency_mode": false,
+      "required_gates": [
+        "human_operator_approval",
+        "security_firewall",
+        "schema_guard",
+        "audit_event"
+      ],
+      "reasons": [
+        {
+          "level": "medium",
+          "matches": [
+            "gerar"
+          ]
+        },
+        {
+          "level": "high",
+          "matches": [
+            "proposta",
+            "live/",
+            "comercial"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    },
+    {
+      "ok": true,
+      "action": "Fazer commit e push seguro",
+      "agent_id": "k_os_git_bridge",
+      "target": "git",
+      "risk_score": 35,
+      "risk_level": "medium",
+      "decision": "allowed_local",
+      "blocked_by_default": false,
+      "license_required": false,
+      "emergency_mode": false,
+      "required_gates": [
+        "human_operator_approval",
+        "audit_event"
+      ],
+      "reasons": [
+        {
+          "level": "high",
+          "matches": [
+            "commit",
+            "push"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    },
+    {
+      "ok": true,
+      "action": "Vender agente por assinatura para cliente",
+      "agent_id": "marketplace_ia_agent",
+      "target": "customer_license",
+      "risk_score": 100,
+      "risk_level": "critical",
+      "decision": "requires_approval",
+      "blocked_by_default": false,
+      "license_required": true,
+      "emergency_mode": false,
+      "required_gates": [
+        "human_operator_approval",
+        "security_council_approval",
+        "security_firewall",
+        "schema_guard",
+        "vault_guard_if_needed",
+        "audit_event",
+        "rollback_plan",
+        "license_gate"
+      ],
+      "reasons": [
+        {
+          "level": "high",
+          "matches": [
+            "customer",
+            "cliente"
+          ]
+        },
+        {
+          "level": "critical",
+          "matches": [
+            "license",
+            "assinatura",
+            "vender",
+            "cliente"
+          ]
+        },
+        {
+          "level": "license",
+          "matches": [
+            "license_required_for_customer_use"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    },
+    {
+      "ok": true,
+      "action": "Acionar autodestrutivo por falta de acordo",
+      "agent_id": "future_multimodal_connector",
+      "target": "emergency_lockdown",
+      "risk_score": 70,
+      "risk_level": "high",
+      "decision": "requires_approval",
+      "blocked_by_default": false,
+      "license_required": false,
+      "emergency_mode": true,
+      "required_gates": [
+        "human_operator_approval",
+        "security_firewall",
+        "schema_guard",
+        "audit_event",
+        "emergency_reason_required",
+        "incident_report_required"
+      ],
+      "reasons": [
+        {
+          "level": "critical",
+          "matches": [
+            "autodestrutivo",
+            "emergency",
+            "lockdown"
+          ]
+        },
+        {
+          "level": "emergency",
+          "matches": [
+            "emergency_kill_switch"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    },
+    {
+      "ok": true,
+      "action": "Enviar WhatsApp automatico para cliente",
+      "agent_id": "marketplace_ia_agent",
+      "target": "external_send",
+      "risk_score": 100,
+      "risk_level": "critical",
+      "decision": "blocked_until_explicit_approval",
+      "blocked_by_default": true,
+      "license_required": true,
+      "emergency_mode": false,
+      "required_gates": [
+        "human_operator_approval",
+        "security_council_approval",
+        "security_firewall",
+        "schema_guard",
+        "vault_guard_if_needed",
+        "audit_event",
+        "rollback_plan",
+        "license_gate"
+      ],
+      "reasons": [
+        {
+          "level": "high",
+          "matches": [
+            "cliente"
+          ]
+        },
+        {
+          "level": "critical",
+          "matches": [
+            "external_send",
+            "whatsapp",
+            "cliente"
+          ]
+        },
+        {
+          "level": "license",
+          "matches": [
+            "license_required_for_customer_use"
+          ]
+        },
+        {
+          "level": "blocked",
+          "matches": [
+            "external_or_secret_action_blocked_by_default"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    },
+    {
+      "ok": true,
+      "action": "Apagar dados do cliente silenciosamente",
+      "agent_id": "unknown_agent",
+      "target": "delete_customer_data",
+      "risk_score": 100,
+      "risk_level": "critical",
+      "decision": "blocked_until_explicit_approval",
+      "blocked_by_default": true,
+      "license_required": true,
+      "emergency_mode": false,
+      "required_gates": [
+        "human_operator_approval",
+        "security_council_approval",
+        "security_firewall",
+        "schema_guard",
+        "vault_guard_if_needed",
+        "audit_event",
+        "rollback_plan",
+        "license_gate"
+      ],
+      "reasons": [
+        {
+          "level": "high",
+          "matches": [
+            "customer",
+            "cliente"
+          ]
+        },
+        {
+          "level": "critical",
+          "matches": [
+            "apagar dados",
+            "cliente"
+          ]
+        },
+        {
+          "level": "license",
+          "matches": [
+            "license_required_for_customer_use"
+          ]
+        },
+        {
+          "level": "blocked",
+          "matches": [
+            "irreversible_data_destruction_blocked"
+          ]
+        }
+      ],
+      "safe_emergency_policy": {
+        "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+        "silent_data_wipe_allowed": false,
+        "audit_logs_must_be_preserved": true
+      },
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "manual_approval_required": true
+    }
+  ],
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "manual_approval_required": true,
+  "next_checkpoint": "022 - K-External API Sandbox"
+}
