@@ -2,7 +2,7 @@
 
 Snapshot interno. Não publicar externamente sem aprovação.
 
-- Generated at: 2026-05-31T19:32:45+00:00
+- Generated at: 2026-05-31T19:33:54+00:00
 - Candidate count: 1
 - Customer-facing roadmap allowed: False
 - Roadmap commitment performed: False
