@@ -3,7 +3,7 @@
   "checkpoint": "026",
   "module": "k_os_billing_subscription_ledger",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T16:22:04+00:00",
+  "generated_at": "2026-05-31T16:23:32+00:00",
   "ledger_path": "local_secrets/k_os_billing/billing_ledger.json",
   "ledger_committed": false,
   "real_payment_processor_enabled": false,
