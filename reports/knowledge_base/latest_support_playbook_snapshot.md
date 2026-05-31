@@ -1,6 +1,6 @@
 # K-OS Support Playbook Snapshot
 
-- Generated at: 2026-05-31T19:22:34+00:00
+- Generated at: 2026-05-31T19:25:12+00:00
 - Approved playbooks: 0
 - Draft playbooks: 1
 - Linked articles: 1

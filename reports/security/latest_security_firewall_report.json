@@ -1,21 +1,18 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T19:22:35.421317+00:00",
+  "generated_at": "2026-05-31T19:25:14.590842+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    ".gitignore",
-    "config/knowledge_base/k_os_knowledge_base_playbooks_policy.json",
-    "docs/commercial/k_os_knowledge_base_support_playbooks.md",
-    "docs/security/k_os_ai_accountability_register.md",
-    "ops/k_os_knowledge_base_support_playbooks.ps1",
-    "ops/k_os_knowledge_base_support_playbooks.py",
-    "pages/933_K_OS_Knowledge_Base_Support_Playbooks.py",
-    "reports/knowledge_base/k_os_033_knowledge_base_support_playbooks_install.json",
+    "reports/knowledge_base/k_os_033_closure_report.json",
     "reports/knowledge_base/latest_knowledge_base_report.json",
     "reports/knowledge_base/latest_knowledge_base_report.md",
+    "reports/knowledge_base/latest_response_draft.json",
+    "reports/knowledge_base/latest_response_draft.md",
     "reports/knowledge_base/latest_support_playbook_snapshot.json",
-    "reports/knowledge_base/latest_support_playbook_snapshot.md"
+    "reports/knowledge_base/latest_support_playbook_snapshot.md",
+    "reports/risk/latest_ai_risk_classifier_report.json",
+    "reports/risk/latest_ai_risk_classifier_report.md"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,

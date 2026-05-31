@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "checkpoint": "033",
+  "module": "k_os_knowledge_base_support_playbooks",
+  "status": "response_draft_generated",
+  "generated_at": "2026-05-31T19:25:12+00:00",
+  "ticket_id": "tkt_c45e3d6002a2",
+  "customer_alias": "demo_customer",
+  "template_id": "tpl_deedf3fe1a05",
+  "subject": "Validar primeira entrega operacional",
+  "draft_body": "Rascunho interno: recebemos a solicitação, estamos revisando a entrega e retornaremos após aprovação do operador.",
+  "external_send_enabled": false,
+  "external_send_performed": false,
+  "requires_approval_before_send": true,
+  "manual_approval_required": true,
+  "next_checkpoint": "034 - K-Product Feedback and Feature Request Core"
+}
