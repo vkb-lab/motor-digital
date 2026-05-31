@@ -3,7 +3,7 @@
   "checkpoint": "039",
   "module": "k_os_agent_orchestration_queue_core",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T20:17:38+00:00",
+  "generated_at": "2026-05-31T20:19:12+00:00",
   "agent_queue_path": "local_secrets/k_os_agent_queue/agent_orchestration_queue.json",
   "agent_queue_committed": false,
   "sanitized_reports_only": true,
@@ -25,16 +25,28 @@
       "domain": "cockpit",
       "priority": "medium",
       "risk": "low",
-      "status": "queued",
+      "status": "dispatched_dry_run",
       "requires_approval": false,
-      "approved": false,
+      "approved": true,
       "blocked_reason": "",
-      "next_action": "aguardar approval ou dispatch dry-run",
+      "next_action": "pronto para dispatch controlado",
       "created_at": "2026-05-31T20:17:38+00:00",
-      "updated_at": "2026-05-31T20:17:38+00:00"
+      "updated_at": "2026-05-31T20:19:12+00:00"
     }
   ],
-  "recent_dispatches": [],
+  "recent_dispatches": [
+    {
+      "dispatch_id": "disp_e18dd12228c5",
+      "task_id": "agtq_57ac77ce7032",
+      "agent_id": "k_atlas_engineer",
+      "action_id": "cockpit_audit",
+      "status": "dispatch_completed",
+      "dry_run": true,
+      "command_executed": false,
+      "ok": true,
+      "created_at": "2026-05-31T20:19:12+00:00"
+    }
+  ],
   "recent_activities": [
     {
       "activity_id": "act_8720007c3bd8",
@@ -42,16 +54,30 @@
       "summary": "Tarefa criada para agente k_atlas_engineer e ação cockpit_audit.",
       "created_at": "2026-05-31T20:17:38+00:00",
       "created_by": "k_os_agent_queue"
+    },
+    {
+      "activity_id": "act_d66da115a622",
+      "activity_type": "task_approved",
+      "summary": "Tarefa agtq_57ac77ce7032 aprovada para dispatch.",
+      "created_at": "2026-05-31T20:19:12+00:00",
+      "created_by": "operator"
+    },
+    {
+      "activity_id": "act_df72c9295a99",
+      "activity_type": "task_dispatched",
+      "summary": "Dispatch registrado para task agtq_57ac77ce7032.",
+      "created_at": "2026-05-31T20:19:12+00:00",
+      "created_by": "k_os_agent_queue"
     }
   ],
   "metrics": {
     "task_count": 1,
-    "dispatch_count": 0,
+    "dispatch_count": 1,
     "blocked_task_count": 0,
-    "queued_task_count": 1,
+    "queued_task_count": 0,
     "approved_task_count": 0,
     "status_counts": {
-      "queued": 1
+      "dispatched_dry_run": 1
     },
     "priority_counts": {
       "medium": 1

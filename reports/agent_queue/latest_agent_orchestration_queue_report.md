@@ -2,7 +2,7 @@
 
 - Status: audit_generated
 - OK: True
-- Generated at: 2026-05-31T20:17:38+00:00
+- Generated at: 2026-05-31T20:19:12+00:00
 - Queue committed: False
 - Command Center available: True
 - Permission Matrix available: True
@@ -12,21 +12,21 @@
 ## Metrics
 
 - task_count: 1
-- dispatch_count: 0
+- dispatch_count: 1
 - blocked_task_count: 0
-- queued_task_count: 1
+- queued_task_count: 0
 - approved_task_count: 0
-- status_counts: {'queued': 1}
+- status_counts: {'dispatched_dry_run': 1}
 - priority_counts: {'medium': 1}
 - agent_counts: {'k_atlas_engineer': 1}
 
 ## Tasks
 
-- agtq_57ac77ce7032 | k_atlas_engineer | cockpit_audit | priority=medium | status=queued | approved=False
+- agtq_57ac77ce7032 | k_atlas_engineer | cockpit_audit | priority=medium | status=dispatched_dry_run | approved=True
 
 ## Recent dispatches
 
-- Nenhum dispatch registrado.
+- disp_e18dd12228c5 | task=agtq_57ac77ce7032 | status=dispatch_completed | dry_run=True | executed=False
 
 ## Required gates before dispatch
 
