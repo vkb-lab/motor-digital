@@ -1,0 +1,347 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "policy": {
+    "default_external_send_enabled": false,
+    "default_external_publish_enabled": false,
+    "manual_approval_required": true,
+    "security_firewall_required": true,
+    "schema_guard_required": true,
+    "no_agent_decides_alone": true
+  },
+  "councils": [
+    {
+      "council_id": "security_council",
+      "name": "K-OS Security Council",
+      "purpose": "Revisar risco, credenciais, dados sensíveis, permissões e integrações externas.",
+      "required_for": [
+        "external_api_activation",
+        "credential_policy_change",
+        "public_deploy",
+        "agent_permission_escalation"
+      ],
+      "human_owner": "Operador K-OS"
+    },
+    {
+      "council_id": "ai_accountability_council",
+      "name": "K-OS AI Accountability Council",
+      "purpose": "Documentar responsabilidade das IAs, limites de atuação e evidências obrigatórias.",
+      "required_for": [
+        "new_agent_registration",
+        "autonomy_level_change",
+        "enterprise_audit_package"
+      ],
+      "human_owner": "Operador K-OS"
+    },
+    {
+      "council_id": "commercial_governance_council",
+      "name": "K-OS Commercial Governance Council",
+      "purpose": "Revisar campanhas, propostas, promessas comerciais e comunicação externa.",
+      "required_for": [
+        "manual_send_pack_approval",
+        "instagram_publication",
+        "whatsapp_activation",
+        "client_proposal_send"
+      ],
+      "human_owner": "Operador K-OS"
+    }
+  ],
+  "agents": [
+    {
+      "agent_id": "k_atlas_engineer",
+      "name": "K-Atlas Engineer",
+      "type": "human_supervised_ai",
+      "purpose": "Arquitetura, programação supervisionada, diagnóstico técnico e orquestração de evolução do K-OS.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "high",
+      "autonomy_level": 1,
+      "can_read": [
+        "docs/",
+        "ops/",
+        "pages/",
+        "reports/",
+        "content_packs/",
+        "config/"
+      ],
+      "can_write": [
+        "ops/",
+        "pages/",
+        "reports/",
+        "docs/",
+        "config/",
+        "content_packs/"
+      ],
+      "can_execute_local": false,
+      "can_commit": false,
+      "can_push": false,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": true,
+      "required_gates": [
+        "human_operator_approval",
+        "security_firewall",
+        "schema_guard"
+      ],
+      "forbidden_actions": [
+        "direct_external_send",
+        "direct_publication",
+        "credential_access",
+        "silent_deploy",
+        "bypass_approval_gate"
+      ],
+      "evidence_required": [
+        "chat_instruction",
+        "generated_command",
+        "operator_result",
+        "git_commit",
+        "closure_report"
+      ]
+    },
+    {
+      "agent_id": "k_uni_cockpit",
+      "name": "K-Uni Cockpit",
+      "type": "local_operator_interface",
+      "purpose": "Interface Streamlit local para operar missões, gates, dashboards e módulos do K-OS.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "medium",
+      "autonomy_level": 1,
+      "can_read": [
+        "reports/",
+        "content_packs/",
+        "config/",
+        "live/"
+      ],
+      "can_write": [
+        "reports/",
+        "live/"
+      ],
+      "can_execute_local": true,
+      "can_commit": false,
+      "can_push": false,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": true,
+      "required_gates": [
+        "human_operator_approval"
+      ],
+      "forbidden_actions": [
+        "commit_without_operator",
+        "external_send",
+        "external_publish",
+        "credential_storage"
+      ],
+      "evidence_required": [
+        "local_report",
+        "event_log",
+        "operator_decision"
+      ]
+    },
+    {
+      "agent_id": "k_os_git_bridge",
+      "name": "K-OS Git Bridge",
+      "type": "local_git_operator",
+      "purpose": "Executar status, pull, commit e push seguro com caminhos permitidos.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "high",
+      "autonomy_level": 2,
+      "can_read": [
+        ".git/",
+        "ops/",
+        "pages/",
+        "reports/",
+        "docs/",
+        "content_packs/",
+        "public_pages/",
+        "config/"
+      ],
+      "can_write": [
+        "reports/"
+      ],
+      "can_execute_local": true,
+      "can_commit": true,
+      "can_push": true,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": true,
+      "required_gates": [
+        "human_operator_approval",
+        "security_firewall"
+      ],
+      "forbidden_actions": [
+        "add_live_folder",
+        "add_credentials",
+        "force_push",
+        "delete_history",
+        "bypass_security_firewall"
+      ],
+      "evidence_required": [
+        "git_status",
+        "security_scan",
+        "commit_hash",
+        "push_result"
+      ]
+    },
+    {
+      "agent_id": "k_os_security_firewall",
+      "name": "K-OS Security Firewall",
+      "type": "local_security_guard",
+      "purpose": "Bloquear dados sensíveis, credenciais, leads brutos e arquivos proibidos antes de commit.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "critical",
+      "autonomy_level": 3,
+      "can_read": [
+        "working_tree",
+        "staged_files"
+      ],
+      "can_write": [
+        "reports/security/",
+        "memory/security/"
+      ],
+      "can_execute_local": true,
+      "can_commit": false,
+      "can_push": false,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": false,
+      "required_gates": [
+        "automatic_blocking_policy"
+      ],
+      "forbidden_actions": [
+        "ignore_critical_secret",
+        "allow_live_commit",
+        "allow_credentials_commit"
+      ],
+      "evidence_required": [
+        "security_report",
+        "blocked_findings",
+        "pre_commit_result"
+      ]
+    },
+    {
+      "agent_id": "k_os_schema_guard",
+      "name": "K-OS Schema Guard",
+      "type": "local_validation_guard",
+      "purpose": "Validar JSONs operacionais de leads, diagnósticos, propostas, campanhas e gates.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "high",
+      "autonomy_level": 3,
+      "can_read": [
+        "content_packs/",
+        "live/",
+        "reports/"
+      ],
+      "can_write": [
+        "reports/schema/",
+        "memory/schema_guard/"
+      ],
+      "can_execute_local": true,
+      "can_commit": false,
+      "can_push": false,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": false,
+      "required_gates": [
+        "automatic_schema_validation"
+      ],
+      "forbidden_actions": [
+        "validate_external_send_true",
+        "accept_broken_json",
+        "skip_required_fields"
+      ],
+      "evidence_required": [
+        "schema_report",
+        "validated_file",
+        "blocking_errors"
+      ]
+    },
+    {
+      "agent_id": "marketplace_ia_agent",
+      "name": "Marketplace IA Agent",
+      "type": "commercial_ai_operator",
+      "purpose": "Gerar diagnóstico, proposta, campanha e pacote manual do Marketplace IA.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "high",
+      "autonomy_level": 1,
+      "can_read": [
+        "content_packs/marketplace_ia/",
+        "live/marketplace_ia/"
+      ],
+      "can_write": [
+        "live/marketplace_ia/",
+        "reports/test_missions/"
+      ],
+      "can_execute_local": true,
+      "can_commit": false,
+      "can_push": false,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": true,
+      "required_gates": [
+        "lead_review_gate",
+        "proposal_approval_gate",
+        "manual_send_gate"
+      ],
+      "forbidden_actions": [
+        "send_whatsapp",
+        "send_email",
+        "publish_instagram",
+        "commit_lead_data",
+        "bypass_manual_send_gate"
+      ],
+      "evidence_required": [
+        "lead_status",
+        "diagnostic_json",
+        "proposal_json",
+        "approval_decision",
+        "manual_send_pack"
+      ]
+    },
+    {
+      "agent_id": "future_multimodal_connector",
+      "name": "Future Multimodal Connector",
+      "type": "external_api_connector_sandbox",
+      "purpose": "Preparar integração futura com imagem, vídeo, voz e mídia multimodal em modo sandbox.",
+      "human_owner": "Operador K-OS",
+      "risk_level": "critical",
+      "autonomy_level": 0,
+      "can_read": [
+        "content_packs/",
+        "config/governance/"
+      ],
+      "can_write": [
+        "reports/multimodal/"
+      ],
+      "can_execute_local": false,
+      "can_commit": false,
+      "can_push": false,
+      "can_publish_external": false,
+      "can_send_external": false,
+      "can_access_credentials": false,
+      "approval_gate_required": true,
+      "required_gates": [
+        "security_council_approval",
+        "credential_vault_ready",
+        "external_api_sandbox",
+        "media_approval_gate"
+      ],
+      "forbidden_actions": [
+        "call_real_api_without_sandbox",
+        "store_provider_key_in_code",
+        "publish_generated_media",
+        "use_client_data_without_review"
+      ],
+      "evidence_required": [
+        "sandbox_payload",
+        "provider_selection",
+        "cost_estimate",
+        "approval_decision"
+      ]
+    }
+  ]
+}

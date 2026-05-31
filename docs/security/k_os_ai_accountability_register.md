@@ -36,3 +36,5 @@ Toda IA ou agente precisa ter:
 - humano responsável
 - conselho de revisão
 | K-Schema Guard | Validação estrutural de JSON operacional | Operador K-OS | Sim, validação local | Não | Não | Automático + humano | reports/schema |
+
+| K-OS Agent Permission Matrix | Define permissões, limites e responsabilidade dos agentes | Operador K-OS | Sim, validação local | Não | Não | Security Council + AI Accountability Council | reports/governance |

@@ -1,0 +1,75 @@
+{
+  "ok": true,
+  "checkpoint": "017",
+  "module": "k_os_agent_permission_matrix",
+  "status": "passed",
+  "generated_at": "2026-05-31T12:02:03+00:00",
+  "matrix_path": "config/governance/k_os_agent_permission_matrix.json",
+  "agent_count": 7,
+  "council_count": 3,
+  "errors_count": 0,
+  "blocking_errors_count": 0,
+  "errors": [],
+  "agent_results": [
+    {
+      "agent_id": "k_atlas_engineer",
+      "name": "K-Atlas Engineer",
+      "risk_level": "high",
+      "autonomy_level": 1,
+      "errors_count": 0,
+      "ok": true
+    },
+    {
+      "agent_id": "k_uni_cockpit",
+      "name": "K-Uni Cockpit",
+      "risk_level": "medium",
+      "autonomy_level": 1,
+      "errors_count": 0,
+      "ok": true
+    },
+    {
+      "agent_id": "k_os_git_bridge",
+      "name": "K-OS Git Bridge",
+      "risk_level": "high",
+      "autonomy_level": 2,
+      "errors_count": 0,
+      "ok": true
+    },
+    {
+      "agent_id": "k_os_security_firewall",
+      "name": "K-OS Security Firewall",
+      "risk_level": "critical",
+      "autonomy_level": 3,
+      "errors_count": 0,
+      "ok": true
+    },
+    {
+      "agent_id": "k_os_schema_guard",
+      "name": "K-OS Schema Guard",
+      "risk_level": "high",
+      "autonomy_level": 3,
+      "errors_count": 0,
+      "ok": true
+    },
+    {
+      "agent_id": "marketplace_ia_agent",
+      "name": "Marketplace IA Agent",
+      "risk_level": "high",
+      "autonomy_level": 1,
+      "errors_count": 0,
+      "ok": true
+    },
+    {
+      "agent_id": "future_multimodal_connector",
+      "name": "Future Multimodal Connector",
+      "risk_level": "critical",
+      "autonomy_level": 0,
+      "errors_count": 0,
+      "ok": true
+    }
+  ],
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "manual_approval_required": true,
+  "next_checkpoint": "018 - K-Credential Vault"
+}

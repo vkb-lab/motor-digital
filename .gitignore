@@ -278,3 +278,5 @@ local_secrets/
 memory/schema_guard/
 reports/schema/runtime/
 memory/security/
+memory/governance/
+reports/governance/runtime/
