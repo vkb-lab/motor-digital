@@ -35,3 +35,4 @@ Toda IA ou agente precisa ter:
 - política de retenção
 - humano responsável
 - conselho de revisão
+| K-Schema Guard | Validação estrutural de JSON operacional | Operador K-OS | Sim, validação local | Não | Não | Automático + humano | reports/schema |

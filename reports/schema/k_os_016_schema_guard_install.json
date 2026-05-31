@@ -1,0 +1,20 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "016",
+    "module":  "k_os_schema_guard",
+    "status":  "installed",
+    "capabilities":  [
+                         "json_schema_validation",
+                         "lead_validation",
+                         "diagnostic_validation",
+                         "proposal_validation",
+                         "gate_decision_validation",
+                         "instagram_posts_validation",
+                         "audit_report"
+                     ],
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "017 - K-Agent Permission Matrix",
+    "installed_at":  "2026-05-31T11:53:31.6302176Z"
+}

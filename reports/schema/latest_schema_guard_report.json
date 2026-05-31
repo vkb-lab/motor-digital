@@ -1,0 +1,215 @@
+{
+  "ok": false,
+  "checkpoint": "016",
+  "module": "k_os_schema_guard",
+  "status": "blocked_by_schema",
+  "generated_at": "2026-05-31T11:53:33+00:00",
+  "targets_found": 11,
+  "files_validated": 11,
+  "errors_count": 11,
+  "blocking_errors_count": 11,
+  "results": [
+    {
+      "path": "content_packs/marketplace_ia/instagram_posts.json",
+      "exists": true,
+      "ok": true,
+      "schema": "instagram_posts_v1",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": []
+    },
+    {
+      "path": "content_packs/marketplace_ia/instagram_posts_v2.json",
+      "exists": true,
+      "ok": true,
+      "schema": "instagram_posts_v1",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": []
+    },
+    {
+      "path": "live/marketplace_ia/lead_intake.jsonl",
+      "exists": true,
+      "ok": true,
+      "schema": "auto_jsonl",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": [],
+      "row_results": [
+        {
+          "row": 1,
+          "schema": "lead_v1",
+          "ok": true,
+          "errors_count": 0,
+          "blocking_errors_count": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "live/marketplace_ia/public_capture_queue.jsonl",
+      "exists": true,
+      "ok": true,
+      "schema": "auto_jsonl",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": [],
+      "row_results": [
+        {
+          "row": 1,
+          "schema": "lead_v1",
+          "ok": true,
+          "errors_count": 0,
+          "blocking_errors_count": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "live/marketplace_ia/latest_lead_diagnostic.json",
+      "exists": true,
+      "ok": true,
+      "schema": "diagnostic_v1",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": []
+    },
+    {
+      "path": "live/marketplace_ia/latest_public_lead_diagnostic.json",
+      "exists": true,
+      "ok": true,
+      "schema": "diagnostic_v1",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": []
+    },
+    {
+      "path": "live/marketplace_ia/latest_commercial_proposal.json",
+      "exists": true,
+      "ok": true,
+      "schema": "proposal_v1",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": []
+    },
+    {
+      "path": "live/marketplace_ia/latest_public_commercial_proposal.json",
+      "exists": true,
+      "ok": true,
+      "schema": "proposal_v1",
+      "rows_validated": 1,
+      "errors_count": 0,
+      "blocking_errors_count": 0,
+      "errors": []
+    },
+    {
+      "path": "live/marketplace_ia/instagram_approval_decision.json",
+      "exists": true,
+      "ok": false,
+      "schema": "gate_decision_v1",
+      "rows_validated": 1,
+      "errors_count": 1,
+      "blocking_errors_count": 1,
+      "errors": [
+        {
+          "code": "missing_required_field",
+          "field": "external_send_enabled",
+          "message": "Campo obrigatorio ausente: external_send_enabled",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "path": "live/marketplace_ia/proposal_approval_decision.json",
+      "exists": true,
+      "ok": false,
+      "schema": "proposal_v1",
+      "rows_validated": 1,
+      "errors_count": 5,
+      "blocking_errors_count": 5,
+      "errors": [
+        {
+          "code": "missing_required_field",
+          "field": "created_at",
+          "message": "Campo obrigatorio ausente: created_at",
+          "severity": "high"
+        },
+        {
+          "code": "missing_required_field",
+          "field": "source",
+          "message": "Campo obrigatorio ausente: source",
+          "severity": "high"
+        },
+        {
+          "code": "missing_required_field",
+          "field": "human_review_required",
+          "message": "Campo obrigatorio ausente: human_review_required",
+          "severity": "high"
+        },
+        {
+          "code": "invalid_offer",
+          "field": "offer",
+          "message": "offer deve ser objeto",
+          "severity": "high"
+        },
+        {
+          "code": "invalid_recommendations",
+          "field": "recommendations",
+          "message": "recommendations deve ser lista",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "path": "live/marketplace_ia/public_proposal_approval_decision.json",
+      "exists": true,
+      "ok": false,
+      "schema": "proposal_v1",
+      "rows_validated": 1,
+      "errors_count": 5,
+      "blocking_errors_count": 5,
+      "errors": [
+        {
+          "code": "missing_required_field",
+          "field": "created_at",
+          "message": "Campo obrigatorio ausente: created_at",
+          "severity": "high"
+        },
+        {
+          "code": "missing_required_field",
+          "field": "source",
+          "message": "Campo obrigatorio ausente: source",
+          "severity": "high"
+        },
+        {
+          "code": "missing_required_field",
+          "field": "human_review_required",
+          "message": "Campo obrigatorio ausente: human_review_required",
+          "severity": "high"
+        },
+        {
+          "code": "invalid_offer",
+          "field": "offer",
+          "message": "offer deve ser objeto",
+          "severity": "high"
+        },
+        {
+          "code": "invalid_recommendations",
+          "field": "recommendations",
+          "message": "recommendations deve ser lista",
+          "severity": "high"
+        }
+      ]
+    }
+  ],
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "manual_approval_required": true
+}

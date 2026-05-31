@@ -275,3 +275,5 @@ local_secrets/
 *token*.json
 *lead_intake*.jsonl
 *manual_send_pack*.md
+memory/schema_guard/
+reports/schema/runtime/
