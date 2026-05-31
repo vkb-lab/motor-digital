@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "checkpoint": "051",
+  "module": "k_os_agent_replay_forensics_viewer_core",
+  "status": "blocked",
+  "generated_at": "2026-05-31T22:02:37+00:00",
+  "forensics_bundle_id": "for_c43b46d433e5",
+  "ledger_record_id": "led_d89f1ee8fa5f",
+  "execution_id": "exec_b9502903779e",
+  "forensics_bundle_hash": "bbd81cd547fa89042e24c551545d945f7af00873d2dac1c4b828885b79ee8b74",
+  "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+  "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+  "read_only_viewer": true,
+  "replay_executes_actions": false,
+  "replay_performs_side_effects": false,
+  "approval_token_included": false,
+  "raw_payload_included": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "blockers": [
+    "forensics_bundle_not_created"
+  ],
+  "warnings": []
+}

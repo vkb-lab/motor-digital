@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "046",
+  "module": "agent_dry_run_executor_core",
+  "purpose": "Executar plano de agente em dry-run, validar prompt package, simular passos sem efeito real, registrar evidencia e preparar execucao real governada.",
+  "dry_run_policy": {
+    "dry_run_executor_local_only": true,
+    "raw_dry_run_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "real_execution_enabled": false,
+    "side_effects_allowed": false,
+    "prompt_package_required": true,
+    "execution_plan_required": true,
+    "context_packet_required": true,
+    "command_center_required": true,
+    "agent_runtime_required": true,
+    "agent_queue_required": true,
+    "dry_run_default": true,
+    "approval_required_for_real_execution": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "dry_run_statuses": [
+    "created",
+    "validated",
+    "dry_run_completed",
+    "blocked",
+    "failed",
+    "ready_for_review",
+    "archived"
+  ],
+  "blocked_actions": [
+    "perform_real_side_effect",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "modify_files_without_gate",
+    "commit_without_security_scan",
+    "execute_without_prompt_package",
+    "execute_without_plan",
+    "execute_real_action_without_approval",
+    "commit_raw_dry_run_state",
+    "delete_dry_run_logs"
+  ],
+  "required_gates_before_real_execution": [
+    "prompt_package_validated",
+    "execution_plan_validated",
+    "dry_run_completed",
+    "dry_run_result_reviewed",
+    "blockers_resolved",
+    "operator_approval_present",
+    "command_center_route_available",
+    "security_scan_required",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "047 - K-Agent Real Execution Approval Gate Core"
+}

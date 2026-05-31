@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "checkpoint": "050",
+  "module": "k_os_agent_execution_result_ledger_core",
+  "status": "blocked",
+  "generated_at": "2026-05-31T21:56:51+00:00",
+  "ledger_record_id": "led_d89f1ee8fa5f",
+  "execution_id": "exec_b9502903779e",
+  "executed_action": "safe_internal_noop",
+  "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+  "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+  "approval_token_included": false,
+  "raw_payload_included": false,
+  "arbitrary_command_executed": false,
+  "shell_command_executed": false,
+  "external_send_performed": false,
+  "external_publish_performed": false,
+  "blockers": [
+    "ledger_record_not_recorded"
+  ],
+  "warnings": [
+    "first_ledger_record"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "checkpoint": "048",
+  "module": "k_os_agent_safe_execution_router_core",
+  "status": "blocked",
+  "generated_at": "2026-05-31T21:41:56+00:00",
+  "route_id": "route_2e1782e22c1c",
+  "route_target": "cockpit_audit",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "action_id": "cockpit_audit",
+  "route_hash": "4f8c50ae53d7ca5b51f64d2cf2c764c2428a8be56ea9b67efa6a80fcfc5bbff2",
+  "approval_token_hash": "",
+  "approval_token_included": false,
+  "router_performs_real_execution": false,
+  "side_effects_performed_by_router": false,
+  "external_send_performed": false,
+  "external_publish_performed": false,
+  "blockers": [
+    "route_not_ready_for_allowlisted_executor",
+    "approval_token_hash_missing"
+  ],
+  "warnings": []
+}

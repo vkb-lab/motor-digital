@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "048",
+  "module": "agent_safe_execution_router_core",
+  "purpose": "Roteia execucao aprovada com seguranca, valida aprovacao local, permissao, allowlist e Command Center antes de qualquer executor real.",
+  "safe_execution_router_policy": {
+    "router_local_only": true,
+    "raw_router_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "router_performs_real_execution": false,
+    "side_effects_performed_by_router": false,
+    "approval_gate_required": true,
+    "approval_token_hash_required": true,
+    "dry_run_required": true,
+    "command_center_required": true,
+    "agent_runtime_required": true,
+    "agent_queue_required": true,
+    "permission_matrix_required": true,
+    "security_scan_required_before_execution": true,
+    "allowlist_only": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "allowed_route_targets": [
+    "safe_internal_noop",
+    "command_center_dry_route",
+    "security_scan_staged",
+    "analytics_audit",
+    "cockpit_audit",
+    "memory_bus_audit",
+    "context_api_audit",
+    "agent_runtime_audit",
+    "agent_queue_audit"
+  ],
+  "blocked_route_targets": [
+    "external_send",
+    "external_publish",
+    "external_provider_call",
+    "file_delete",
+    "secret_export",
+    "raw_memory_export",
+    "git_push_without_security_scan",
+    "payment_charge",
+    "customer_message_send"
+  ],
+  "route_statuses": [
+    "created",
+    "validated",
+    "ready_for_allowlisted_executor",
+    "blocked",
+    "revoked",
+    "expired",
+    "archived"
+  ],
+  "required_gates_before_safe_route": [
+    "approval_decision_exists",
+    "approval_decision_validated",
+    "approval_token_hash_exists",
+    "dry_run_evidence_hash_exists",
+    "route_target_allowlisted",
+    "route_has_no_external_send",
+    "route_has_no_external_publish",
+    "route_has_no_side_effect",
+    "permission_matrix_checked",
+    "command_center_available",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "049 - K-Agent Allowlisted Action Executor Core"
+}

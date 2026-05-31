@@ -1,0 +1,119 @@
+{
+  "ok": true,
+  "checkpoint": "051",
+  "module": "k_os_agent_replay_forensics_viewer_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T22:02:37+00:00",
+  "forensics_state_path": "local_secrets/k_os_replay_forensics/agent_replay_forensics_state.json",
+  "forensics_state_committed": false,
+  "read_only_viewer": true,
+  "replay_executes_actions": false,
+  "replay_performs_side_effects": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "raw_payload_storage_allowed": false,
+  "approval_token_storage_in_reports_allowed": false,
+  "ledger_record_available": true,
+  "ledger_validation_available": true,
+  "allowlisted_execution_available": true,
+  "safe_route_available": true,
+  "approval_decision_available": true,
+  "dry_run_result_available": true,
+  "prompt_package_available": true,
+  "metrics": {
+    "forensics_bundle_count": 1,
+    "validation_count": 1,
+    "bundle_created_count": 0,
+    "validated_count": 0,
+    "blocked_count": 1,
+    "replay_execution_count": 0,
+    "side_effect_count": 0,
+    "approval_token_in_report_count": 0,
+    "raw_payload_bundle_count": 0,
+    "status_counts": {
+      "blocked": 1
+    }
+  },
+  "recent_bundles": [
+    {
+      "forensics_bundle_id": "for_c43b46d433e5",
+      "created_at": "2026-05-31T22:02:37+00:00",
+      "status": "blocked",
+      "ok": false,
+      "ledger_record_id": "led_d89f1ee8fa5f",
+      "execution_id": "exec_b9502903779e",
+      "executed_action": "safe_internal_noop",
+      "forensics_bundle_hash": "bbd81cd547fa89042e24c551545d945f7af00873d2dac1c4b828885b79ee8b74",
+      "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+      "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+      "timeline_count": 6,
+      "read_only_viewer": true,
+      "replay_executes_actions": false,
+      "replay_performs_side_effects": false,
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "blockers": [
+        "ledger_record_status_invalid",
+        "ledger_validation_not_ok",
+        "ledger_validation_status_not_validated"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": false,
+      "checkpoint": "051",
+      "module": "k_os_agent_replay_forensics_viewer_core",
+      "status": "blocked",
+      "generated_at": "2026-05-31T22:02:37+00:00",
+      "forensics_bundle_id": "for_c43b46d433e5",
+      "ledger_record_id": "led_d89f1ee8fa5f",
+      "execution_id": "exec_b9502903779e",
+      "forensics_bundle_hash": "bbd81cd547fa89042e24c551545d945f7af00873d2dac1c4b828885b79ee8b74",
+      "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+      "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+      "read_only_viewer": true,
+      "replay_executes_actions": false,
+      "replay_performs_side_effects": false,
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "blockers": [
+        "forensics_bundle_not_created"
+      ],
+      "warnings": []
+    }
+  ],
+  "blocked_actions": [
+    "execute_replay_action",
+    "perform_side_effect",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "store_raw_payload",
+    "store_approval_token_in_report",
+    "delete_forensics_record",
+    "mutate_ledger_record",
+    "export_raw_memory",
+    "commit_raw_forensics_state"
+  ],
+  "required_gates_before_forensics_bundle": [
+    "ledger_record_exists",
+    "ledger_record_validated",
+    "ledger_record_hash_exists",
+    "chain_hash_exists",
+    "execution_evidence_hash_exists",
+    "source_refs_sanitized",
+    "approval_token_not_included",
+    "raw_payload_not_included",
+    "timeline_generated",
+    "forensics_bundle_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "052 - K-Agent Incident Lockdown and Quarantine Core"
+}

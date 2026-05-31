@@ -1,0 +1,122 @@
+{
+  "ok": false,
+  "checkpoint": "050",
+  "module": "k_os_agent_execution_result_ledger_core",
+  "status": "blocked",
+  "ledger_record_id": "led_d89f1ee8fa5f",
+  "created_at": "2026-05-31T21:56:51+00:00",
+  "reason": "closure_execution_result_ledger_record",
+  "previous_record_hash": "",
+  "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+  "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+  "execution_id": "exec_b9502903779e",
+  "executed_action": "safe_internal_noop",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "route_id": "route_2e1782e22c1c",
+  "execution_status": "blocked",
+  "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+  "pre_execution_evidence_hash": "c39a8031141a633ece0c2134081b37643cf02f8096ae837a4a4db344905acf26",
+  "post_execution_evidence_hash": "f57ed62ad58d7eeb96a9c7a63a01987ad5ea9594ce281675ffe7a7b4b53ab992",
+  "approval_token_hash": "",
+  "approval_token_included": false,
+  "dry_run_evidence_hash": "817bf2f91181fc2a6bbba847ece56cca0e317955ee0d199d45c60b2a88dec1fe",
+  "arbitrary_command_executed": false,
+  "shell_command_executed": false,
+  "external_send_performed": false,
+  "external_publish_performed": false,
+  "external_provider_called": false,
+  "raw_payload_included": false,
+  "source_refs": {
+    "allowlisted_execution": {
+      "available": true,
+      "path": "reports\\allowlisted_action_executor\\latest_allowlisted_action_execution.json",
+      "checkpoint": "049",
+      "module": "k_os_agent_allowlisted_action_executor_core",
+      "status": "blocked",
+      "ok": false,
+      "generated_at": "2026-05-31T21:50:15+00:00",
+      "hash": "e0b60ac73fd336c3a89db7dec3a02d585cdb4983e3ee986a44677f3c8c3584e8"
+    },
+    "allowlisted_validation": {
+      "available": true,
+      "path": "reports\\allowlisted_action_executor\\latest_allowlisted_action_execution_validation_report.json",
+      "checkpoint": "049",
+      "module": "k_os_agent_allowlisted_action_executor_core",
+      "status": "blocked",
+      "ok": false,
+      "generated_at": "2026-05-31T21:50:15+00:00",
+      "hash": "230094548a91ac9f10c0db4be27e3468e71bf5fc9470c7350e05d866ecc4ab34"
+    },
+    "safe_route": {
+      "available": true,
+      "path": "reports\\safe_execution_router\\latest_safe_execution_route.json",
+      "checkpoint": "048",
+      "module": "k_os_agent_safe_execution_router_core",
+      "status": "blocked",
+      "ok": false,
+      "generated_at": "2026-05-31T21:41:55+00:00",
+      "hash": "1818f5302c096ff59d0ef3489e6452b875f71ba71e71f0de1acf0f98c4a3b3f7"
+    },
+    "approval_decision": {
+      "available": true,
+      "path": "reports\\real_execution_gate\\latest_real_execution_approval_decision.json",
+      "checkpoint": "047",
+      "module": "k_os_agent_real_execution_approval_gate_core",
+      "status": "blocked",
+      "ok": false,
+      "generated_at": "2026-05-31T21:36:53+00:00",
+      "hash": "3fade1b58ff1f98e248f00eb7ea49a7674fe3a31108a4e4c1703ac19b2c1b529"
+    },
+    "dry_run_result": {
+      "available": true,
+      "path": "reports\\dry_run_executor\\latest_agent_dry_run_result.json",
+      "checkpoint": "046",
+      "module": "k_os_agent_dry_run_executor_core",
+      "status": "blocked",
+      "ok": false,
+      "generated_at": "2026-05-31T21:30:34+00:00",
+      "hash": "bfb232b47d6d629fa1f0139ae9cd4319b7755f6a57745ea973fc7dae8ab35289"
+    },
+    "prompt_package": {
+      "available": true,
+      "path": "reports\\prompt_assembly\\latest_agent_prompt_package.json",
+      "checkpoint": "045",
+      "module": "k_os_agent_prompt_assembly_execution_plan_core",
+      "status": "blocked",
+      "ok": false,
+      "generated_at": "2026-05-31T21:16:40+00:00",
+      "hash": "e200e84741a160243f23b1d4860ca4928f73f5ef0d9d3090ae74afaf337225ca"
+    },
+    "execution_plan": {
+      "available": true,
+      "path": "reports\\prompt_assembly\\latest_agent_execution_plan.json",
+      "checkpoint": "",
+      "module": "",
+      "status": "",
+      "ok": null,
+      "generated_at": "2026-05-31T21:16:40+00:00",
+      "hash": "8c40386673ae5ba382382b0b746fdfe5abfb4f806e78981b0fb75b5dc73dfe89"
+    }
+  },
+  "blockers": [
+    "execution_status_not_executed",
+    "execution_validation_not_ok",
+    "execution_validation_status_not_validated"
+  ],
+  "required_gates_before_ledger_record": [
+    "allowlisted_execution_exists",
+    "allowlisted_execution_validated",
+    "execution_evidence_hash_exists",
+    "pre_execution_evidence_hash_exists",
+    "post_execution_evidence_hash_exists",
+    "approval_token_not_included",
+    "no_arbitrary_command_executed",
+    "no_shell_command_executed",
+    "no_external_send_performed",
+    "no_external_publish_performed",
+    "ledger_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_action": "resolve_blockers"
+}

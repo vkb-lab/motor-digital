@@ -1,0 +1,133 @@
+{
+  "ok": true,
+  "checkpoint": "045",
+  "module": "k_os_agent_prompt_assembly_execution_plan_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T21:16:40+00:00",
+  "prompt_assembly_state_path": "local_secrets/k_os_prompt_assembly/agent_prompt_assembly_state.json",
+  "prompt_assembly_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "raw_payload_prompt_allowed": false,
+  "secret_in_prompt_allowed": false,
+  "dry_run_default": true,
+  "context_packet_report_available": false,
+  "context_injection_report_available": false,
+  "agent_queue_report_available": true,
+  "agent_runtime_report_available": true,
+  "command_center_report_available": true,
+  "metrics": {
+    "prompt_package_count": 2,
+    "validation_count": 1,
+    "assembled_count": 0,
+    "validated_count": 0,
+    "blocked_count": 2,
+    "raw_payload_package_count": 0,
+    "secret_package_count": 0,
+    "status_counts": {
+      "blocked": 2
+    },
+    "agent_counts": {
+      "k_atlas_engineer": 2
+    }
+  },
+  "recent_prompt_packages": [
+    {
+      "prompt_package_id": "prmpt_85de1293d01a",
+      "created_at": "2026-05-31T21:16:40+00:00",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "closure_prompt_assembly_validation",
+      "action_id": "cockpit_audit",
+      "status": "blocked",
+      "ok": false,
+      "objective": "Atualizar e auditar o cockpit executivo do K-OS usando contexto operacional sanitizado.",
+      "context_packet_id": "",
+      "context_packet_hash": "",
+      "prompt_package_hash": "67a0ed7f2be371fa95de3ad49cb495a40d9f482440ef432b014b5683cd9aea32",
+      "execution_plan_id": "plan_68e35c606d06",
+      "execution_plan_hash": "8c40386673ae5ba382382b0b746fdfe5abfb4f806e78981b0fb75b5dc73dfe89",
+      "raw_payload_included": false,
+      "secret_included": false,
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "dry_run": true,
+      "blockers": [
+        "context_packet_missing",
+        "context_packet_not_validated_or_ready"
+      ]
+    },
+    {
+      "prompt_package_id": "prmpt_00c0daca2d42",
+      "created_at": "2026-05-31T21:16:40+00:00",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "manual_prompt_task",
+      "action_id": "cockpit_audit",
+      "status": "blocked",
+      "ok": false,
+      "objective": "Atualizar e auditar o cockpit executivo do K-OS usando contexto operacional sanitizado.",
+      "context_packet_id": "",
+      "context_packet_hash": "",
+      "prompt_package_hash": "ff42ce096258ef1b4237558777dbdccd633a1f234c7be74351840f100a805c93",
+      "execution_plan_id": "plan_bc6ed9bca56f",
+      "execution_plan_hash": "38c162abf487fb960208caab81dbb6a635c7d37edbd20528956dfebcf60cd48f",
+      "raw_payload_included": false,
+      "secret_included": false,
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "dry_run": true,
+      "blockers": [
+        "context_packet_missing",
+        "context_packet_not_validated_or_ready"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": true,
+      "checkpoint": "045",
+      "module": "k_os_agent_prompt_assembly_execution_plan_core",
+      "status": "validated",
+      "generated_at": "2026-05-31T21:16:40+00:00",
+      "prompt_package_id": "prmpt_85de1293d01a",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "closure_prompt_assembly_validation",
+      "action_id": "cockpit_audit",
+      "prompt_package_hash": "67a0ed7f2be371fa95de3ad49cb495a40d9f482440ef432b014b5683cd9aea32",
+      "execution_plan_hash": "8c40386673ae5ba382382b0b746fdfe5abfb4f806e78981b0fb75b5dc73dfe89",
+      "blockers": [],
+      "warnings": [
+        "context_packet_hash_missing"
+      ],
+      "raw_payload_included": false,
+      "secret_included": false,
+      "external_send_enabled": false,
+      "external_publish_enabled": false
+    }
+  ],
+  "required_gates_before_agent_execution": [
+    "context_packet_exists",
+    "context_packet_validated",
+    "prompt_assembled",
+    "execution_plan_created",
+    "raw_payload_removed",
+    "secret_scan_passed",
+    "dry_run_completed",
+    "operator_approval_if_real_execution",
+    "audit_event_recorded"
+  ],
+  "blocked_actions": [
+    "assemble_prompt_with_raw_payload",
+    "assemble_prompt_with_secret",
+    "execute_without_plan",
+    "execute_without_approval",
+    "bypass_command_center",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_prompt_state",
+    "delete_prompt_audit_logs"
+  ],
+  "next_checkpoint": "046 - K-Agent Dry Run Executor Core"
+}

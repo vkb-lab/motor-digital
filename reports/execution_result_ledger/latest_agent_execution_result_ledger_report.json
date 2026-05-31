@@ -1,0 +1,121 @@
+{
+  "ok": true,
+  "checkpoint": "050",
+  "module": "k_os_agent_execution_result_ledger_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T21:56:52+00:00",
+  "ledger_state_path": "local_secrets/k_os_execution_result_ledger/agent_execution_result_ledger_state.json",
+  "ledger_state_committed": false,
+  "ledger_append_only": true,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "raw_payload_storage_allowed": false,
+  "approval_token_storage_in_reports_allowed": false,
+  "allowlisted_execution_available": true,
+  "allowlisted_validation_available": true,
+  "safe_route_available": true,
+  "approval_decision_available": true,
+  "dry_run_result_available": true,
+  "prompt_package_available": true,
+  "execution_plan_available": true,
+  "agent_ledger_report_available": true,
+  "metrics": {
+    "ledger_record_count": 1,
+    "validation_count": 1,
+    "recorded_count": 0,
+    "validated_count": 0,
+    "blocked_count": 1,
+    "approval_token_in_report_count": 0,
+    "raw_payload_record_count": 0,
+    "external_send_count": 0,
+    "external_publish_count": 0,
+    "status_counts": {
+      "blocked": 1
+    },
+    "action_counts": {
+      "safe_internal_noop": 1
+    }
+  },
+  "recent_records": [
+    {
+      "ledger_record_id": "led_d89f1ee8fa5f",
+      "created_at": "2026-05-31T21:56:51+00:00",
+      "status": "blocked",
+      "ok": false,
+      "execution_id": "exec_b9502903779e",
+      "executed_action": "safe_internal_noop",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "closure_prompt_assembly_validation",
+      "route_id": "route_2e1782e22c1c",
+      "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+      "previous_record_hash": "",
+      "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+      "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "arbitrary_command_executed": false,
+      "shell_command_executed": false,
+      "external_send_performed": false,
+      "external_publish_performed": false,
+      "blockers": [
+        "execution_status_not_executed",
+        "execution_validation_not_ok",
+        "execution_validation_status_not_validated"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": false,
+      "checkpoint": "050",
+      "module": "k_os_agent_execution_result_ledger_core",
+      "status": "blocked",
+      "generated_at": "2026-05-31T21:56:51+00:00",
+      "ledger_record_id": "led_d89f1ee8fa5f",
+      "execution_id": "exec_b9502903779e",
+      "executed_action": "safe_internal_noop",
+      "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+      "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "arbitrary_command_executed": false,
+      "shell_command_executed": false,
+      "external_send_performed": false,
+      "external_publish_performed": false,
+      "blockers": [
+        "ledger_record_not_recorded"
+      ],
+      "warnings": [
+        "first_ledger_record"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "commit_raw_ledger_state",
+    "store_raw_payload",
+    "store_approval_token_in_report",
+    "delete_ledger_record",
+    "mutate_existing_record_without_append",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "export_raw_memory"
+  ],
+  "required_gates_before_ledger_record": [
+    "allowlisted_execution_exists",
+    "allowlisted_execution_validated",
+    "execution_evidence_hash_exists",
+    "pre_execution_evidence_hash_exists",
+    "post_execution_evidence_hash_exists",
+    "approval_token_not_included",
+    "no_arbitrary_command_executed",
+    "no_shell_command_executed",
+    "no_external_send_performed",
+    "no_external_publish_performed",
+    "ledger_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "051 - K-Agent Replay and Forensics Viewer Core"
+}

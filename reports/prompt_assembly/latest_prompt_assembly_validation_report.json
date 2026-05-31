@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "checkpoint": "045",
+  "module": "k_os_agent_prompt_assembly_execution_plan_core",
+  "status": "validated",
+  "generated_at": "2026-05-31T21:16:40+00:00",
+  "prompt_package_id": "prmpt_85de1293d01a",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "action_id": "cockpit_audit",
+  "prompt_package_hash": "67a0ed7f2be371fa95de3ad49cb495a40d9f482440ef432b014b5683cd9aea32",
+  "execution_plan_hash": "8c40386673ae5ba382382b0b746fdfe5abfb4f806e78981b0fb75b5dc73dfe89",
+  "blockers": [],
+  "warnings": [
+    "context_packet_hash_missing"
+  ],
+  "raw_payload_included": false,
+  "secret_included": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false
+}

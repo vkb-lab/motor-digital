@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "050",
+  "module": "agent_execution_result_ledger_core",
+  "purpose": "Registrar resultados de execucao allowlisted, consolidar evidencias antes/depois, hashes, validacoes e trilha auditavel para replay e governanca.",
+  "ledger_policy": {
+    "ledger_local_only": true,
+    "raw_ledger_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "ledger_append_only": true,
+    "raw_payload_storage_allowed": false,
+    "approval_token_storage_in_reports_allowed": false,
+    "execution_result_required": true,
+    "execution_validation_required": true,
+    "evidence_hash_required": true,
+    "pre_post_evidence_required": true,
+    "allowlisted_executor_required": true,
+    "safe_route_required": true,
+    "approval_gate_required": true,
+    "dry_run_required": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "record_statuses": [
+    "recorded",
+    "validated",
+    "blocked",
+    "archived"
+  ],
+  "blocked_actions": [
+    "commit_raw_ledger_state",
+    "store_raw_payload",
+    "store_approval_token_in_report",
+    "delete_ledger_record",
+    "mutate_existing_record_without_append",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "export_raw_memory"
+  ],
+  "required_gates_before_ledger_record": [
+    "allowlisted_execution_exists",
+    "allowlisted_execution_validated",
+    "execution_evidence_hash_exists",
+    "pre_execution_evidence_hash_exists",
+    "post_execution_evidence_hash_exists",
+    "approval_token_not_included",
+    "no_arbitrary_command_executed",
+    "no_shell_command_executed",
+    "no_external_send_performed",
+    "no_external_publish_performed",
+    "ledger_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "051 - K-Agent Replay and Forensics Viewer Core"
+}

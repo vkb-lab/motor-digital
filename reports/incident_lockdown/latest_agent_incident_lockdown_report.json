@@ -1,0 +1,124 @@
+{
+  "ok": true,
+  "checkpoint": "052",
+  "module": "k_os_agent_incident_lockdown_quarantine_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T22:07:51+00:00",
+  "lockdown_state_path": "local_secrets/k_os_incident_lockdown/agent_incident_lockdown_state.json",
+  "lockdown_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "lockdown_performs_destructive_action": false,
+  "lockdown_deletes_data": false,
+  "quarantine_deletes_data": false,
+  "new_agent_actions_blocked": false,
+  "real_execution_blocked": false,
+  "human_review_required_to_release": true,
+  "rollback_preparation_enabled": true,
+  "forensics_bundle_available": true,
+  "forensics_validation_available": true,
+  "ledger_record_available": true,
+  "ledger_validation_available": true,
+  "allowlisted_execution_available": true,
+  "safe_route_available": true,
+  "approval_decision_available": true,
+  "metrics": {
+    "incident_count": 1,
+    "validation_count": 1,
+    "active_quarantine_count": 0,
+    "blocked_count": 1,
+    "released_count": 0,
+    "data_delete_count": 0,
+    "raw_payload_incident_count": 0,
+    "approval_token_in_report_count": 0,
+    "status_counts": {
+      "blocked": 1
+    },
+    "severity_counts": {
+      "SEV3": 1
+    }
+  },
+  "recent_incidents": [
+    {
+      "incident_id": "inc_66fb283052e6",
+      "quarantine_id": "qua_4b0cb9303592",
+      "created_at": "2026-05-31T22:07:51+00:00",
+      "status": "blocked",
+      "ok": false,
+      "severity": "SEV3",
+      "scope": "agent_execution_chain",
+      "forensics_bundle_id": "for_c43b46d433e5",
+      "ledger_record_id": "led_d89f1ee8fa5f",
+      "execution_id": "exec_b9502903779e",
+      "lockdown_record_hash": "9a3fa8624bde067bdbc08cbcb104cd9fbdbb89f69285764f1db5a66fc955ad0e",
+      "quarantine_record_hash": "82f2a3d8ae37d82deed5f00d07674bb1ebf235b4209f2e11933442296426a589",
+      "new_agent_actions_blocked": false,
+      "real_execution_blocked": false,
+      "release_requires_human_review": true,
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "lockdown_deletes_data": false,
+      "quarantine_deletes_data": false,
+      "blockers": [
+        "forensics_validation_not_ok",
+        "forensics_validation_status_not_validated"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": false,
+      "checkpoint": "052",
+      "module": "k_os_agent_incident_lockdown_quarantine_core",
+      "status": "blocked",
+      "generated_at": "2026-05-31T22:07:51+00:00",
+      "incident_id": "inc_66fb283052e6",
+      "quarantine_id": "qua_4b0cb9303592",
+      "severity": "SEV3",
+      "scope": "agent_execution_chain",
+      "lockdown_record_hash": "9a3fa8624bde067bdbc08cbcb104cd9fbdbb89f69285764f1db5a66fc955ad0e",
+      "quarantine_record_hash": "82f2a3d8ae37d82deed5f00d07674bb1ebf235b4209f2e11933442296426a589",
+      "new_agent_actions_blocked": false,
+      "real_execution_blocked": false,
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "lockdown_deletes_data": false,
+      "quarantine_deletes_data": false,
+      "blockers": [
+        "incident_not_quarantine_active",
+        "new_agent_actions_not_blocked",
+        "real_execution_not_blocked"
+      ],
+      "warnings": []
+    }
+  ],
+  "blocked_actions": [
+    "execute_new_agent_action",
+    "perform_real_execution",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "release_without_human_review",
+    "commit_raw_lockdown_state",
+    "export_raw_memory",
+    "export_secret"
+  ],
+  "required_gates_before_lockdown": [
+    "incident_reason_present",
+    "scope_present",
+    "severity_present",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "quarantine_record_created",
+    "lockdown_record_hash_created",
+    "release_requires_human_review",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "053 - K-Agent Rollback Preparation Core"
+}

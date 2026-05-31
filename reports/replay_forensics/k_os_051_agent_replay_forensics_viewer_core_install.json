@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "051",
+    "module":  "k_os_agent_replay_forensics_viewer_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "forensics_bundle",
+                         "execution_timeline",
+                         "ledger_hash_review",
+                         "source_ref_verification",
+                         "read_only_replay_viewer",
+                         "incident_response_preparation",
+                         "sanitized_forensics_report"
+                     ],
+    "viewer_local_only":  true,
+    "raw_forensics_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "read_only_viewer":  true,
+    "replay_executes_actions":  false,
+    "replay_performs_side_effects":  false,
+    "raw_payload_storage_allowed":  false,
+    "approval_token_storage_in_reports_allowed":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "052 - K-Agent Incident Lockdown and Quarantine Core",
+    "installed_at":  "2026-05-31T22:02:36.1001124Z"
+}

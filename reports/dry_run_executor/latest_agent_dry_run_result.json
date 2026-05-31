@@ -1,0 +1,41 @@
+{
+  "ok": false,
+  "checkpoint": "046",
+  "module": "k_os_agent_dry_run_executor_core",
+  "status": "blocked",
+  "dry_run_id": "dry_19e80d925ddb",
+  "generated_at": "2026-05-31T21:30:34+00:00",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "action_id": "cockpit_audit",
+  "prompt_package_id": "prmpt_85de1293d01a",
+  "execution_plan_id": "plan_68e35c606d06",
+  "reason": "install_dry_run_execution",
+  "dry_run": true,
+  "real_execution_performed": false,
+  "side_effects_performed": false,
+  "external_send_performed": false,
+  "external_publish_performed": false,
+  "command_center_called": false,
+  "simulated_step_count": 0,
+  "simulated_steps": [],
+  "blockers": [
+    "prompt_package_not_validated_or_assembled"
+  ],
+  "warnings": [],
+  "evidence_hash": "817bf2f91181fc2a6bbba847ece56cca0e317955ee0d199d45c60b2a88dec1fe",
+  "prompt_package_hash": "67a0ed7f2be371fa95de3ad49cb495a40d9f482440ef432b014b5683cd9aea32",
+  "execution_plan_hash": "8c40386673ae5ba382382b0b746fdfe5abfb4f806e78981b0fb75b5dc73dfe89",
+  "required_gates_before_real_execution": [
+    "prompt_package_validated",
+    "execution_plan_validated",
+    "dry_run_completed",
+    "dry_run_result_reviewed",
+    "blockers_resolved",
+    "operator_approval_present",
+    "command_center_route_available",
+    "security_scan_required",
+    "audit_event_recorded"
+  ],
+  "next_action": "resolve_blockers"
+}

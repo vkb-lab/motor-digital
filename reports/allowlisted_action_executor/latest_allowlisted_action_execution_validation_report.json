@@ -1,0 +1,23 @@
+{
+  "ok": false,
+  "checkpoint": "049",
+  "module": "k_os_agent_allowlisted_action_executor_core",
+  "status": "blocked",
+  "generated_at": "2026-05-31T21:50:15+00:00",
+  "execution_id": "exec_b9502903779e",
+  "executed_action": "safe_internal_noop",
+  "route_id": "route_2e1782e22c1c",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+  "approval_token_included": false,
+  "arbitrary_command_executed": false,
+  "shell_command_executed": false,
+  "external_send_performed": false,
+  "external_publish_performed": false,
+  "external_provider_called": false,
+  "blockers": [
+    "execution_not_completed"
+  ],
+  "warnings": []
+}

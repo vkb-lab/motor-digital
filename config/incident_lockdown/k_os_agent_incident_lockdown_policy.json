@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "052",
+  "module": "agent_incident_lockdown_quarantine_core",
+  "purpose": "Bloquear agente, rota ou execucao em incidente, criar quarentena local, congelar evidencias e impedir novas acoes ate revisao humana.",
+  "incident_lockdown_policy": {
+    "lockdown_local_only": true,
+    "raw_lockdown_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "lockdown_performs_destructive_action": false,
+    "lockdown_deletes_data": false,
+    "quarantine_deletes_data": false,
+    "new_agent_actions_blocked": true,
+    "real_execution_blocked": true,
+    "external_provider_call_blocked": true,
+    "forensics_bundle_required": true,
+    "ledger_record_required": true,
+    "execution_evidence_required": true,
+    "human_review_required_to_release": true,
+    "rollback_preparation_enabled": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "incident_severities": [
+    "SEV1",
+    "SEV2",
+    "SEV3",
+    "SEV4"
+  ],
+  "lockdown_statuses": [
+    "draft",
+    "lockdown_active",
+    "quarantine_active",
+    "under_review",
+    "released",
+    "revoked",
+    "archived"
+  ],
+  "blocked_actions": [
+    "execute_new_agent_action",
+    "perform_real_execution",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "release_without_human_review",
+    "commit_raw_lockdown_state",
+    "export_raw_memory",
+    "export_secret"
+  ],
+  "required_gates_before_lockdown": [
+    "incident_reason_present",
+    "scope_present",
+    "severity_present",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "quarantine_record_created",
+    "lockdown_record_hash_created",
+    "release_requires_human_review",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "053 - K-Agent Rollback Preparation Core"
+}

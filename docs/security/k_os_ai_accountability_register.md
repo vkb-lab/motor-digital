@@ -89,3 +89,21 @@ Toda IA ou agente precisa ter:
 | K-OS Memory Event Bus and Context Index Core | Indexa eventos operacionais, contexto sanitizado, buscas locais e trilha de memoria evolutiva | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Security Review + Payload Hashing | reports/memory_bus |
 
 | K-OS Context Retrieval API Core | API local para recuperar contexto sanitizado da memoria indexada e servir agentes/cockpit | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Local API + Payload Hashing | reports/context_api |
+
+| K-OS Agent Prompt Assembly and Execution Plan Core | Monta prompt operacional sanitizado e plano de execução governado para agentes | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Context Packet + Secret Scan + Dry Run Gate | reports/prompt_assembly |
+
+| K-OS Agent Dry Run Executor Core | Executa plano de agente em dry-run, simula passos, registra evidência e bloqueia efeitos reais | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Prompt Package + Execution Plan + Dry Run Evidence | reports/dry_run_executor |
+
+| K-OS Agent Real Execution Approval Gate Core | Aprova, bloqueia ou revoga execução real de agentes após dry-run validado e decisão humana | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Dry Run Evidence + Local Authorization Hash | reports/real_execution_gate |
+
+| K-OS Agent Safe Execution Router Core | Roteia execução aprovada para executor allowlisted com validação de aprovação, dry-run, permissão e allowlist | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Local Authorization Hash + Allowlist + Router Gate | reports/safe_execution_router |
+
+| K-OS Agent Allowlisted Action Executor Core | Executa somente ações internas permitidas por allowlist com rota segura validada e evidência antes/depois | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Safe Route + Allowlist + Evidence Hash | reports/allowlisted_action_executor |
+
+| K-OS Agent Execution Result Ledger Core | Registra resultados de execução allowlisted com hashes, cadeia auditável e referências sanitizadas | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Execution Evidence + Append-Only Ledger | reports/execution_result_ledger |
+
+| K-OS Agent Replay and Forensics Viewer Core | Reconstrói timeline e bundle forensics de execução governada sem replay ativo ou payload bruto | Operador K-OS | Sim, local sanitizado | Não | Não | Read-Only Viewer + Ledger Hash + Source Verification | reports/replay_forensics |
+
+| K-OS Agent Incident Lockdown and Quarantine Core | Bloqueia agentes/execuções em incidente, cria quarentena local e preserva evidências sem apagar dados | Operador K-OS | Sim, local sanitizado | Não | Não | Human Review + Forensics Bundle + Quarantine Hash | reports/incident_lockdown |
+
+| K-OS Agent Rollback Preparation Core | Prepara plano de rollback seguro a partir de incidente/quarentena sem executar mudanças ou apagar dados | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Incident Lockdown + Forensics + Ledger | reports/rollback_preparation |

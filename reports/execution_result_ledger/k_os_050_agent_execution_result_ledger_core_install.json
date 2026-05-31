@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "050",
+    "module":  "k_os_agent_execution_result_ledger_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "execution_result_recording",
+                         "pre_post_evidence_linking",
+                         "ledger_record_hashing",
+                         "chain_hashing",
+                         "append_only_local_ledger",
+                         "sanitized_source_refs",
+                         "execution_validation",
+                         "replay_forensics_preparation"
+                     ],
+    "ledger_local_only":  true,
+    "raw_ledger_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "ledger_append_only":  true,
+    "raw_payload_storage_allowed":  false,
+    "approval_token_storage_in_reports_allowed":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "051 - K-Agent Replay and Forensics Viewer Core",
+    "installed_at":  "2026-05-31T21:56:50.3129064Z"
+}

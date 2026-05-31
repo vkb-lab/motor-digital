@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "checkpoint": "046",
+  "module": "k_os_agent_dry_run_executor_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T21:30:34+00:00",
+  "dry_run_state_path": "local_secrets/k_os_dry_run_executor/agent_dry_run_executor_state.json",
+  "dry_run_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "real_execution_enabled": false,
+  "side_effects_allowed": false,
+  "dry_run_default": true,
+  "prompt_package_report_available": true,
+  "execution_plan_report_available": true,
+  "prompt_assembly_report_available": true,
+  "context_injection_report_available": false,
+  "agent_queue_report_available": true,
+  "agent_runtime_report_available": true,
+  "command_center_report_available": true,
+  "metrics": {
+    "dry_run_count": 1,
+    "validation_count": 1,
+    "completed_count": 0,
+    "ready_for_review_count": 0,
+    "blocked_count": 1,
+    "real_execution_count": 0,
+    "side_effect_count": 0,
+    "external_send_count": 0,
+    "external_publish_count": 0,
+    "status_counts": {
+      "blocked": 1
+    },
+    "agent_counts": {
+      "k_atlas_engineer": 1
+    }
+  },
+  "recent_dry_runs": [
+    {
+      "dry_run_id": "dry_19e80d925ddb",
+      "generated_at": "2026-05-31T21:30:34+00:00",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "closure_prompt_assembly_validation",
+      "action_id": "cockpit_audit",
+      "status": "blocked",
+      "ok": false,
+      "dry_run": true,
+      "real_execution_performed": false,
+      "side_effects_performed": false,
+      "external_send_performed": false,
+      "external_publish_performed": false,
+      "simulated_step_count": 0,
+      "evidence_hash": "817bf2f91181fc2a6bbba847ece56cca0e317955ee0d199d45c60b2a88dec1fe",
+      "prompt_package_hash": "67a0ed7f2be371fa95de3ad49cb495a40d9f482440ef432b014b5683cd9aea32",
+      "execution_plan_hash": "8c40386673ae5ba382382b0b746fdfe5abfb4f806e78981b0fb75b5dc73dfe89",
+      "blockers": [
+        "prompt_package_not_validated_or_assembled"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": false,
+      "checkpoint": "046",
+      "module": "k_os_agent_dry_run_executor_core",
+      "status": "blocked",
+      "generated_at": "2026-05-31T21:30:34+00:00",
+      "dry_run_id": "dry_19e80d925ddb",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "closure_prompt_assembly_validation",
+      "action_id": "cockpit_audit",
+      "evidence_hash": "817bf2f91181fc2a6bbba847ece56cca0e317955ee0d199d45c60b2a88dec1fe",
+      "blockers": [
+        "dry_run_not_completed"
+      ],
+      "warnings": [
+        "no_steps_simulated"
+      ],
+      "dry_run": true,
+      "real_execution_performed": false,
+      "side_effects_performed": false,
+      "external_send_performed": false,
+      "external_publish_performed": false
+    }
+  ],
+  "required_gates_before_real_execution": [
+    "prompt_package_validated",
+    "execution_plan_validated",
+    "dry_run_completed",
+    "dry_run_result_reviewed",
+    "blockers_resolved",
+    "operator_approval_present",
+    "command_center_route_available",
+    "security_scan_required",
+    "audit_event_recorded"
+  ],
+  "blocked_actions": [
+    "perform_real_side_effect",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "modify_files_without_gate",
+    "commit_without_security_scan",
+    "execute_without_prompt_package",
+    "execute_without_plan",
+    "execute_real_action_without_approval",
+    "commit_raw_dry_run_state",
+    "delete_dry_run_logs"
+  ],
+  "next_checkpoint": "047 - K-Agent Real Execution Approval Gate Core"
+}

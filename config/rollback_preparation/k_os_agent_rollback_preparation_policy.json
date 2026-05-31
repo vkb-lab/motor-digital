@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "053",
+  "module": "agent_rollback_preparation_core",
+  "purpose": "Preparar plano de rollback seguro a partir de incidente, quarentena, forensics e ledger, sem executar rollback real e sem apagar dados.",
+  "rollback_policy": {
+    "rollback_preparation_local_only": true,
+    "raw_rollback_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "rollback_executes_changes": false,
+    "rollback_deletes_data": false,
+    "rollback_modifies_files": false,
+    "rollback_requires_incident_lockdown": true,
+    "rollback_requires_forensics_bundle": true,
+    "rollback_requires_ledger_record": true,
+    "rollback_plan_hash_required": true,
+    "human_approval_required_for_execution": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "rollback_statuses": [
+    "draft",
+    "prepared",
+    "validated",
+    "blocked",
+    "approved_for_future_execution",
+    "archived"
+  ],
+  "rollback_plan_sections": [
+    "incident_summary",
+    "rollback_scope",
+    "preserved_evidence",
+    "candidate_restore_points",
+    "blocked_destructive_actions",
+    "manual_review_checklist",
+    "execution_preconditions",
+    "post_rollback_validation"
+  ],
+  "blocked_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "release_quarantine_without_review",
+    "commit_raw_rollback_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "required_gates_before_rollback_plan": [
+    "incident_lockdown_exists",
+    "quarantine_active_or_under_review",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "rollback_scope_defined",
+    "destructive_actions_blocked",
+    "rollback_plan_hash_created",
+    "human_review_required",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "054 - K-Agent Rollback Approval and Release Gate Core"
+}

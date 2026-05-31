@@ -1,0 +1,215 @@
+{
+  "ok": false,
+  "checkpoint": "053",
+  "module": "k_os_agent_rollback_preparation_core",
+  "status": "blocked",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "created_at": "2026-05-31T22:50:48+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_rollback_preparation_validation",
+  "incident_id": "inc_66fb283052e6",
+  "quarantine_id": "qua_4b0cb9303592",
+  "severity": "SEV3",
+  "rollback_scope": "agent_execution_chain",
+  "forensics_bundle_id": "for_c43b46d433e5",
+  "forensics_bundle_hash": "bbd81cd547fa89042e24c551545d945f7af00873d2dac1c4b828885b79ee8b74",
+  "ledger_record_id": "led_d89f1ee8fa5f",
+  "ledger_record_hash": "72586b704e202491271d004c29df56681ee6a4d40674c797ea9cd4d8fdf7b702",
+  "chain_hash": "6fbabb43c3168b7fc28d4b67f6e2ae3ddb66a9496a2b292401a413b5645a2cb3",
+  "execution_id": "exec_b9502903779e",
+  "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+  "rollback_plan_hash": "cf13c76567a6b3422d592f09efa252bac02019b803bd00be3fed440bf8181130",
+  "candidate_restore_points": [
+    {
+      "type": "git_commit_reference",
+      "description": "Selecionar manualmente um commit anterior ao incidente, sem executar reset automático.",
+      "auto_selected": false,
+      "executes_changes": false
+    }
+  ],
+  "rollback_steps": [
+    {
+      "step": 1,
+      "name": "preservar_evidencias",
+      "description": "Manter incident, forensics, ledger e execution evidence intactos.",
+      "executes_changes": false
+    },
+    {
+      "step": 2,
+      "name": "confirmar_escopo",
+      "description": "Confirmar manualmente o escopo do rollback antes de qualquer ação real.",
+      "executes_changes": false
+    },
+    {
+      "step": 3,
+      "name": "definir_ponto_restauracao",
+      "description": "Selecionar commit/estado anterior somente após revisão humana.",
+      "executes_changes": false
+    },
+    {
+      "step": 4,
+      "name": "preparar_execucao_futura",
+      "description": "Encaminhar para gate de aprovação e release do rollback.",
+      "executes_changes": false
+    }
+  ],
+  "manual_review_checklist": [
+    "Confirmar incidente e severidade.",
+    "Confirmar escopo do rollback.",
+    "Confirmar evidências preservadas.",
+    "Confirmar ponto de restauração.",
+    "Confirmar plano de validação pós-rollback.",
+    "Aprovação humana obrigatória antes de execução real."
+  ],
+  "blocked_destructive_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "release_quarantine_without_review",
+    "commit_raw_rollback_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "execution_preconditions": [
+    "rollback approval gate validado",
+    "rollback release autorizado",
+    "security scan limpo",
+    "backup/evidência preservados",
+    "operador humano aprovado"
+  ],
+  "post_rollback_validation": [
+    "validar Git status",
+    "validar módulos críticos",
+    "validar ledger",
+    "validar cockpit",
+    "registrar relatório final"
+  ],
+  "rollback_executes_changes": false,
+  "rollback_deletes_data": false,
+  "rollback_modifies_files": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "approval_token_included": false,
+  "raw_payload_included": false,
+  "release_requires_human_review": true,
+  "source_refs": {
+    "incident_record": {
+      "available": true,
+      "path": "reports/incident_lockdown/latest_incident_lockdown_record.json",
+      "checkpoint": "052",
+      "module": "k_os_agent_incident_lockdown_quarantine_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:07:51+00:00",
+      "hash": "f58e3500340e2f2e3913248c8fa94c49d373e81e00e75e3a95343a1c790b3b4f"
+    },
+    "incident_validation": {
+      "available": true,
+      "path": "reports/incident_lockdown/latest_incident_lockdown_validation_report.json",
+      "checkpoint": "052",
+      "module": "k_os_agent_incident_lockdown_quarantine_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:07:51+00:00",
+      "hash": "83256f7d1001f64a9261b05dd83dde2f02251e42b73c4dbfcc7fd1a674865630"
+    },
+    "incident_report": {
+      "available": true,
+      "path": "reports/incident_lockdown/latest_agent_incident_lockdown_report.json",
+      "checkpoint": "052",
+      "module": "k_os_agent_incident_lockdown_quarantine_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-05-31T22:07:51+00:00",
+      "hash": "90e6b98abb7feae89b7a8a7d211da056b786dc03c345a16f2553f346c8a08c94"
+    },
+    "forensics_bundle": {
+      "available": true,
+      "path": "reports/replay_forensics/latest_replay_forensics_bundle.json",
+      "checkpoint": "051",
+      "module": "k_os_agent_replay_forensics_viewer_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:02:37+00:00",
+      "hash": "9102cc74fc35eafff61fd2549462fbb110cb8653a2e803e32d1751fcde476d08"
+    },
+    "ledger_record": {
+      "available": true,
+      "path": "reports/execution_result_ledger/latest_execution_result_ledger_record.json",
+      "checkpoint": "050",
+      "module": "k_os_agent_execution_result_ledger_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:56:51+00:00",
+      "hash": "52a76785fa818cb8c93cbafd7ace660dbfca42ebf3933cb9b7f974b041c753cc"
+    },
+    "allowlisted_execution": {
+      "available": true,
+      "path": "reports/allowlisted_action_executor/latest_allowlisted_action_execution.json",
+      "checkpoint": "049",
+      "module": "k_os_agent_allowlisted_action_executor_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:50:15+00:00",
+      "hash": "e0b60ac73fd336c3a89db7dec3a02d585cdb4983e3ee986a44677f3c8c3584e8"
+    },
+    "safe_route": {
+      "available": true,
+      "path": "reports/safe_execution_router/latest_safe_execution_route.json",
+      "checkpoint": "048",
+      "module": "k_os_agent_safe_execution_router_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:41:55+00:00",
+      "hash": "1818f5302c096ff59d0ef3489e6452b875f71ba71e71f0de1acf0f98c4a3b3f7"
+    },
+    "approval_decision": {
+      "available": true,
+      "path": "reports/real_execution_gate/latest_real_execution_approval_decision.json",
+      "checkpoint": "047",
+      "module": "k_os_agent_real_execution_approval_gate_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:36:53+00:00",
+      "hash": "3fade1b58ff1f98e248f00eb7ea49a7674fe3a31108a4e4c1703ac19b2c1b529"
+    },
+    "dry_run_result": {
+      "available": true,
+      "path": "reports/dry_run_executor/latest_agent_dry_run_result.json",
+      "checkpoint": "046",
+      "module": "k_os_agent_dry_run_executor_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:30:34+00:00",
+      "hash": "bfb232b47d6d629fa1f0139ae9cd4319b7755f6a57745ea973fc7dae8ab35289"
+    }
+  },
+  "blockers": [
+    "incident_not_in_quarantine_or_review",
+    "incident_validation_not_ok",
+    "incident_validation_status_not_validated",
+    "new_agent_actions_not_blocked",
+    "real_execution_not_blocked"
+  ],
+  "required_gates_before_rollback_plan": [
+    "incident_lockdown_exists",
+    "quarantine_active_or_under_review",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "rollback_scope_defined",
+    "destructive_actions_blocked",
+    "rollback_plan_hash_created",
+    "human_review_required",
+    "audit_event_recorded"
+  ],
+  "next_action": "resolve_rollback_plan_blockers"
+}

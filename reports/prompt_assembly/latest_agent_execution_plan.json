@@ -1,0 +1,64 @@
+{
+  "plan_id": "plan_68e35c606d06",
+  "created_at": "2026-05-31T21:16:40+00:00",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "action_id": "cockpit_audit",
+  "objective": "Atualizar e auditar o cockpit executivo do K-OS usando contexto operacional sanitizado.",
+  "risk_level": "medium",
+  "dry_run": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "requires_human_approval_for_real_execution": true,
+  "context_packet_hash": "",
+  "steps": [
+    {
+      "step": 1,
+      "name": "validar_contexto",
+      "description": "Confirmar que o pacote de contexto existe, está sanitizado e possui hash.",
+      "gate": "context_packet_validated"
+    },
+    {
+      "step": 2,
+      "name": "confirmar_permissao",
+      "description": "Confirmar que o agente e a ação são compatíveis com fila, runtime e Command Center.",
+      "gate": "agent_permission_and_command_center_gate"
+    },
+    {
+      "step": 3,
+      "name": "executar_dry_run",
+      "description": "Preparar execução apenas em dry-run, sem envio externo e sem publicação.",
+      "gate": "dry_run_completed"
+    },
+    {
+      "step": 4,
+      "name": "registrar_evidencia",
+      "description": "Registrar pacote, plano, hashes e resultado esperado para auditoria.",
+      "gate": "audit_event_recorded"
+    }
+  ],
+  "expected_output": {
+    "type": "sanitized_execution_plan",
+    "must_include": [
+      "status",
+      "dry_run_result",
+      "blockers",
+      "evidence_hash",
+      "next_action"
+    ],
+    "must_not_include": [
+      "raw_payload",
+      "secret",
+      "token",
+      "api_key",
+      "password"
+    ]
+  },
+  "blocked_actions": [
+    "external_send",
+    "external_publish",
+    "raw_payload_use",
+    "secret_use",
+    "real_execution_without_approval"
+  ]
+}

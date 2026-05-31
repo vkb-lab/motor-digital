@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "checkpoint": "053",
+  "module": "k_os_agent_rollback_preparation_core",
+  "status": "blocked",
+  "generated_at": "2026-05-31T22:50:48+00:00",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "incident_id": "inc_66fb283052e6",
+  "quarantine_id": "qua_4b0cb9303592",
+  "rollback_plan_hash": "cf13c76567a6b3422d592f09efa252bac02019b803bd00be3fed440bf8181130",
+  "rollback_executes_changes": false,
+  "rollback_deletes_data": false,
+  "rollback_modifies_files": false,
+  "approval_token_included": false,
+  "raw_payload_included": false,
+  "blockers": [
+    "rollback_plan_not_prepared"
+  ],
+  "warnings": []
+}

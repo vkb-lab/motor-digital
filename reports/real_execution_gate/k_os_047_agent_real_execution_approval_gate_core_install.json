@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "047",
+    "module":  "k_os_agent_real_execution_approval_gate_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "human_approval_gate",
+                         "dry_run_validation_gate",
+                         "real_execution_blocking",
+                         "approval_hashing",
+                         "approval_revocation",
+                         "sanitized_decision_report",
+                         "local_authorization_state",
+                         "safe_execution_router_preparation"
+                     ],
+    "approval_gate_local_only":  true,
+    "raw_approval_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "real_execution_performed_by_gate":  false,
+    "side_effects_performed_by_gate":  false,
+    "dry_run_required":  true,
+    "dry_run_validation_required":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "048 - K-Agent Safe Execution Router Core",
+    "installed_at":  "2026-05-31T21:36:52.7426416Z"
+}

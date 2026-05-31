@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "047",
+  "module": "agent_real_execution_approval_gate_core",
+  "purpose": "Aprovar ou bloquear execucao real de agente somente apos dry-run validado, decisao humana, evidencia hash e registro auditavel.",
+  "approval_gate_policy": {
+    "approval_gate_local_only": true,
+    "raw_approval_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "real_execution_performed_by_gate": false,
+    "side_effects_performed_by_gate": false,
+    "dry_run_required": true,
+    "dry_run_validation_required": true,
+    "human_decision_required": true,
+    "approval_token_stored_local_only": true,
+    "approval_token_hash_only_in_reports": true,
+    "command_center_required": true,
+    "agent_runtime_required": true,
+    "agent_queue_required": true,
+    "security_scan_required_before_execution": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "decision_statuses": [
+    "draft",
+    "approved_for_real_execution",
+    "blocked",
+    "revoked",
+    "expired",
+    "used",
+    "archived"
+  ],
+  "allowed_decisions": [
+    "approve",
+    "block",
+    "revoke"
+  ],
+  "blocked_actions": [
+    "perform_real_execution",
+    "perform_side_effect",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "approve_without_dry_run",
+    "approve_without_validation",
+    "approve_without_human_decision",
+    "commit_raw_approval_state",
+    "commit_raw_approval_token",
+    "delete_approval_logs"
+  ],
+  "required_gates_before_execution_token": [
+    "dry_run_result_exists",
+    "dry_run_validated",
+    "dry_run_has_no_real_execution",
+    "dry_run_has_no_side_effects",
+    "dry_run_has_evidence_hash",
+    "operator_decision_present",
+    "approval_record_created",
+    "approval_token_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "048 - K-Agent Safe Execution Router Core"
+}

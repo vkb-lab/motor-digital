@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "049",
+  "module": "agent_allowlisted_action_executor_core",
+  "purpose": "Executar somente ações internas permitidas por allowlist, usando rota segura validada, bloqueando comando arbitrário, envio externo e publicação externa.",
+  "executor_policy": {
+    "executor_local_only": true,
+    "raw_executor_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "arbitrary_command_execution_allowed": false,
+    "shell_command_execution_allowed": false,
+    "external_provider_call_allowed": false,
+    "safe_route_required": true,
+    "safe_route_validation_required": true,
+    "approval_gate_required": true,
+    "allowlist_only": true,
+    "pre_execution_evidence_required": true,
+    "post_execution_evidence_required": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "allowed_actions": {
+    "safe_internal_noop": {
+      "type": "internal",
+      "side_effect": false,
+      "description": "Ação interna nula para validação segura."
+    },
+    "cockpit_audit": {
+      "type": "internal_audit",
+      "side_effect": false,
+      "description": "Registrar auditoria sanitizada do cockpit."
+    },
+    "analytics_audit": {
+      "type": "internal_audit",
+      "side_effect": false,
+      "description": "Registrar auditoria sanitizada de analytics."
+    },
+    "security_scan_staged": {
+      "type": "security_audit",
+      "side_effect": false,
+      "description": "Preparar evidência de scan de segurança staged."
+    },
+    "memory_bus_audit": {
+      "type": "internal_audit",
+      "side_effect": false,
+      "description": "Registrar auditoria sanitizada do memory bus."
+    },
+    "context_api_audit": {
+      "type": "internal_audit",
+      "side_effect": false,
+      "description": "Registrar auditoria sanitizada da Context API."
+    },
+    "agent_runtime_audit": {
+      "type": "internal_audit",
+      "side_effect": false,
+      "description": "Registrar auditoria sanitizada do runtime."
+    },
+    "agent_queue_audit": {
+      "type": "internal_audit",
+      "side_effect": false,
+      "description": "Registrar auditoria sanitizada da agent queue."
+    }
+  },
+  "blocked_actions": [
+    "run_arbitrary_command",
+    "execute_shell",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_file",
+    "delete_memory",
+    "export_secret",
+    "export_raw_memory",
+    "charge_payment",
+    "send_customer_message",
+    "git_push_without_security_scan",
+    "commit_raw_executor_state"
+  ],
+  "execution_statuses": [
+    "created",
+    "executed",
+    "validated",
+    "blocked",
+    "failed",
+    "archived"
+  ],
+  "required_gates_before_action_execution": [
+    "safe_route_exists",
+    "safe_route_validated",
+    "route_target_allowlisted",
+    "approval_hash_present",
+    "dry_run_evidence_hash_present",
+    "arbitrary_command_blocked",
+    "external_send_blocked",
+    "external_publish_blocked",
+    "pre_execution_evidence_created",
+    "post_execution_evidence_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "050 - K-Agent Execution Result Ledger Core"
+}

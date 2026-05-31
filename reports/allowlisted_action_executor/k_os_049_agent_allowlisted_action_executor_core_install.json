@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "049",
+    "module":  "k_os_agent_allowlisted_action_executor_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "allowlisted_action_execution",
+                         "safe_route_validation",
+                         "arbitrary_command_blocking",
+                         "shell_command_blocking",
+                         "external_send_blocking",
+                         "external_publish_blocking",
+                         "pre_post_evidence_hashing",
+                         "execution_validation"
+                     ],
+    "executor_local_only":  true,
+    "raw_executor_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "arbitrary_command_execution_allowed":  false,
+    "shell_command_execution_allowed":  false,
+    "allowlist_only":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "050 - K-Agent Execution Result Ledger Core",
+    "installed_at":  "2026-05-31T21:50:14.0378202Z"
+}

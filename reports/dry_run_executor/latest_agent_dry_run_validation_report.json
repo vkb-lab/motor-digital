@@ -1,0 +1,23 @@
+{
+  "ok": false,
+  "checkpoint": "046",
+  "module": "k_os_agent_dry_run_executor_core",
+  "status": "blocked",
+  "generated_at": "2026-05-31T21:30:34+00:00",
+  "dry_run_id": "dry_19e80d925ddb",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "action_id": "cockpit_audit",
+  "evidence_hash": "817bf2f91181fc2a6bbba847ece56cca0e317955ee0d199d45c60b2a88dec1fe",
+  "blockers": [
+    "dry_run_not_completed"
+  ],
+  "warnings": [
+    "no_steps_simulated"
+  ],
+  "dry_run": true,
+  "real_execution_performed": false,
+  "side_effects_performed": false,
+  "external_send_performed": false,
+  "external_publish_performed": false
+}

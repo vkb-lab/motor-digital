@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "checkpoint": "047",
+  "module": "k_os_agent_real_execution_approval_gate_core",
+  "status": "validated",
+  "generated_at": "2026-05-31T21:36:54+00:00",
+  "decision_id": "appr_257095907aa7",
+  "decision_status": "blocked",
+  "dry_run_id": "dry_19e80d925ddb",
+  "agent_id": "k_atlas_engineer",
+  "task_id": "closure_prompt_assembly_validation",
+  "action_id": "cockpit_audit",
+  "approval_token_hash": "",
+  "approval_token_included": false,
+  "real_execution_performed_by_gate": false,
+  "side_effects_performed_by_gate": false,
+  "external_send_performed": false,
+  "external_publish_performed": false,
+  "blockers": [],
+  "warnings": [
+    "latest_decision_blocked"
+  ]
+}

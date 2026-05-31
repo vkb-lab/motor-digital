@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "checkpoint": "053",
+  "module": "k_os_agent_rollback_preparation_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T22:50:49+00:00",
+  "rollback_state_path": "local_secrets/k_os_rollback_preparation/agent_rollback_preparation_state.json",
+  "rollback_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "rollback_executes_changes": false,
+  "rollback_deletes_data": false,
+  "rollback_modifies_files": false,
+  "human_approval_required_for_execution": true,
+  "incident_record_available": true,
+  "incident_validation_available": true,
+  "forensics_bundle_available": true,
+  "ledger_record_available": true,
+  "metrics": {
+    "rollback_plan_count": 1,
+    "validation_count": 1,
+    "prepared_count": 0,
+    "validated_count": 0,
+    "blocked_count": 1,
+    "rollback_execution_count": 0,
+    "data_delete_count": 0,
+    "file_modify_count": 0,
+    "raw_payload_plan_count": 0,
+    "status_counts": {
+      "blocked": 1
+    }
+  },
+  "recent_plans": [
+    {
+      "rollback_plan_id": "rbp_8004b3ca46e3",
+      "created_at": "2026-05-31T22:50:48+00:00",
+      "status": "blocked",
+      "ok": false,
+      "incident_id": "inc_66fb283052e6",
+      "quarantine_id": "qua_4b0cb9303592",
+      "severity": "SEV3",
+      "rollback_scope": "agent_execution_chain",
+      "rollback_plan_hash": "cf13c76567a6b3422d592f09efa252bac02019b803bd00be3fed440bf8181130",
+      "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+      "rollback_executes_changes": false,
+      "rollback_deletes_data": false,
+      "rollback_modifies_files": false,
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "blockers": [
+        "incident_not_in_quarantine_or_review",
+        "incident_validation_not_ok",
+        "incident_validation_status_not_validated",
+        "new_agent_actions_not_blocked",
+        "real_execution_not_blocked"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": false,
+      "checkpoint": "053",
+      "module": "k_os_agent_rollback_preparation_core",
+      "status": "blocked",
+      "generated_at": "2026-05-31T22:50:48+00:00",
+      "rollback_plan_id": "rbp_8004b3ca46e3",
+      "incident_id": "inc_66fb283052e6",
+      "quarantine_id": "qua_4b0cb9303592",
+      "rollback_plan_hash": "cf13c76567a6b3422d592f09efa252bac02019b803bd00be3fed440bf8181130",
+      "rollback_executes_changes": false,
+      "rollback_deletes_data": false,
+      "rollback_modifies_files": false,
+      "approval_token_included": false,
+      "raw_payload_included": false,
+      "blockers": [
+        "rollback_plan_not_prepared"
+      ],
+      "warnings": []
+    }
+  ],
+  "blocked_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "release_quarantine_without_review",
+    "commit_raw_rollback_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "required_gates_before_rollback_plan": [
+    "incident_lockdown_exists",
+    "quarantine_active_or_under_review",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "rollback_scope_defined",
+    "destructive_actions_blocked",
+    "rollback_plan_hash_created",
+    "human_review_required",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "054 - K-Agent Rollback Approval and Release Gate Core"
+}

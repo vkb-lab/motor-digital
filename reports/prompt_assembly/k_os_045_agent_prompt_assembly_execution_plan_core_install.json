@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "045",
+    "module":  "k_os_agent_prompt_assembly_execution_plan_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "agent_prompt_package",
+                         "execution_plan",
+                         "context_packet_binding",
+                         "secret_scan",
+                         "raw_payload_blocking",
+                         "dry_run_default",
+                         "approval_gate",
+                         "sanitized_prompt_report"
+                     ],
+    "prompt_assembly_local_only":  true,
+    "raw_prompt_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "raw_payload_prompt_allowed":  false,
+    "secret_in_prompt_allowed":  false,
+    "dry_run_default":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "046 - K-Agent Dry Run Executor Core",
+    "installed_at":  "2026-05-31T21:16:39.0489944Z"
+}
