@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "checkpoint": "055",
+  "module": "k_os_agent_rollback_dry_run_simulator_core",
+  "status": "validated",
+  "generated_at": "2026-05-31T23:08:46+00:00",
+  "simulation_id": "rds_f88727f867b9",
+  "simulation_status": "simulated_blocked",
+  "release_id": "rbg_ff638f05f0bd",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "rollback_dry_run_hash": "a0acc0f60e22ce27811ece12e97fb581b8455b42a0bade9fa36f531dadaa4a0a",
+  "safe_blocked_by_release_gate": true,
+  "dry_run_executes_rollback": false,
+  "dry_run_deletes_data": false,
+  "dry_run_modifies_files": false,
+  "dry_run_runs_git_reset": false,
+  "dry_run_runs_git_force_push": false,
+  "approval_token_included": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "rollback_dry_run_safely_blocked_by_release_gate"
+  ]
+}
