@@ -343,3 +343,6 @@ local_secrets/k_os_agent_queue/
 memory/agent_runtime/
 reports/agent_runtime/runtime/
 local_secrets/k_os_agent_runtime/
+memory/agent_ledger/
+reports/agent_ledger/runtime/
+local_secrets/k_os_agent_ledger/

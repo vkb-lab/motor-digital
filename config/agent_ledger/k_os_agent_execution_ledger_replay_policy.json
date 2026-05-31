@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "041",
+  "module": "agent_execution_ledger_replay_core",
+  "purpose": "Registrar historico auditavel de execucoes dos agentes, preservar evidencias, calcular hashes e permitir replay controlado via Command Center.",
+  "ledger_policy": {
+    "agent_ledger_local_only": true,
+    "raw_ledger_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "replay_dry_run_default": true,
+    "replay_execution_requires_approval": true,
+    "replay_via_command_center_only": true,
+    "agent_runtime_required": true,
+    "agent_queue_required": true,
+    "command_center_router_required": true,
+    "preserve_evidence_hashes": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "entry_statuses": [
+    "recorded",
+    "pending_review",
+    "reviewed",
+    "replay_ready",
+    "replay_blocked",
+    "replayed_dry_run",
+    "replayed_executed",
+    "failed"
+  ],
+  "blocked_actions": [
+    "replay_without_approval",
+    "execute_replay_without_command_center",
+    "delete_execution_ledger",
+    "delete_replay_evidence",
+    "commit_raw_ledger_data",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "modify_hashes",
+    "bypass_approval_gate"
+  ],
+  "required_gates_before_replay": [
+    "ledger_entry_exists",
+    "action_exists_in_command_center",
+    "input_hash_available",
+    "output_hash_available",
+    "dry_run_completed",
+    "approval_present_if_execute",
+    "operator_reason_present_if_execute",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "042 - K-Memory Event Bus and Context Index Core"
+}

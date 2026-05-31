@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "041",
+    "module":  "k_os_agent_execution_ledger_replay_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "agent_execution_ledger",
+                         "evidence_hashing",
+                         "input_output_hashes",
+                         "replay_controlled",
+                         "dry_run_default",
+                         "approval_gate",
+                         "command_center_replay",
+                         "sanitized_evidence_snapshot"
+                     ],
+    "agent_ledger_local_only":  true,
+    "raw_ledger_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "replay_dry_run_default":  true,
+    "replay_execution_requires_approval":  true,
+    "replay_via_command_center_only":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "042 - K-Memory Event Bus and Context Index Core",
+    "installed_at":  "2026-05-31T20:31:16.6597196Z"
+}
