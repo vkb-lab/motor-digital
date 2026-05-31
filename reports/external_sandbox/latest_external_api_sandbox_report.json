@@ -3,7 +3,7 @@
   "checkpoint": "022",
   "module": "k_os_external_api_sandbox",
   "status": "smoke_passed",
-  "generated_at": "2026-05-31T12:54:43+00:00",
+  "generated_at": "2026-05-31T12:56:26+00:00",
   "results_count": 6,
   "results": [
     {
@@ -11,10 +11,10 @@
       "checkpoint": "022",
       "module": "k_os_external_api_sandbox",
       "status": "simulated",
-      "generated_at": "2026-05-31T12:54:43+00:00",
+      "generated_at": "2026-05-31T12:56:25+00:00",
       "payload": {
-        "payload_id": "sandbox_1c437a3175de",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "payload_id": "sandbox_ce266b85c940",
+        "created_at": "2026-05-31T12:56:25+00:00",
         "provider": "openai",
         "use_case": "text_brief",
         "agent_id": "marketplace_ia_agent",
@@ -97,8 +97,8 @@
         "ok": true
       },
       "simulation": {
-        "simulation_id": "sim_a6dabec505ba",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "simulation_id": "sim_bcfdf875b414",
+        "created_at": "2026-05-31T12:56:25+00:00",
         "provider": "openai",
         "use_case": "text_brief",
         "status": "simulated_only",
@@ -117,10 +117,10 @@
       "checkpoint": "022",
       "module": "k_os_external_api_sandbox",
       "status": "simulated",
-      "generated_at": "2026-05-31T12:54:43+00:00",
+      "generated_at": "2026-05-31T12:56:25+00:00",
       "payload": {
-        "payload_id": "sandbox_d5501671a5da",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "payload_id": "sandbox_4be7d1a37a23",
+        "created_at": "2026-05-31T12:56:25+00:00",
         "provider": "runway",
         "use_case": "video_storyboard",
         "agent_id": "future_multimodal_connector",
@@ -201,8 +201,8 @@
         "ok": true
       },
       "simulation": {
-        "simulation_id": "sim_d1ebfdf01751",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "simulation_id": "sim_5ff92e76adb2",
+        "created_at": "2026-05-31T12:56:25+00:00",
         "provider": "runway",
         "use_case": "video_storyboard",
         "status": "simulated_only",
@@ -221,10 +221,10 @@
       "checkpoint": "022",
       "module": "k_os_external_api_sandbox",
       "status": "simulated",
-      "generated_at": "2026-05-31T12:54:43+00:00",
+      "generated_at": "2026-05-31T12:56:25+00:00",
       "payload": {
-        "payload_id": "sandbox_799e2029ecea",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "payload_id": "sandbox_a2cd4d89b8d7",
+        "created_at": "2026-05-31T12:56:25+00:00",
         "provider": "elevenlabs",
         "use_case": "voice_narration",
         "agent_id": "future_multimodal_connector",
@@ -305,8 +305,8 @@
         "ok": true
       },
       "simulation": {
-        "simulation_id": "sim_2b78eca0001f",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "simulation_id": "sim_44de4628d877",
+        "created_at": "2026-05-31T12:56:25+00:00",
         "provider": "elevenlabs",
         "use_case": "voice_narration",
         "status": "simulated_only",
@@ -325,10 +325,10 @@
       "checkpoint": "022",
       "module": "k_os_external_api_sandbox",
       "status": "simulated",
-      "generated_at": "2026-05-31T12:54:43+00:00",
+      "generated_at": "2026-05-31T12:56:26+00:00",
       "payload": {
-        "payload_id": "sandbox_0d9136b4055e",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "payload_id": "sandbox_0b7f5840a2b7",
+        "created_at": "2026-05-31T12:56:26+00:00",
         "provider": "instagram",
         "use_case": "post_draft",
         "agent_id": "marketplace_ia_agent",
@@ -422,8 +422,8 @@
         "ok": true
       },
       "simulation": {
-        "simulation_id": "sim_f0435b5f2c8c",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "simulation_id": "sim_868b16518e64",
+        "created_at": "2026-05-31T12:56:26+00:00",
         "provider": "instagram",
         "use_case": "post_draft",
         "status": "simulated_only",
@@ -442,10 +442,10 @@
       "checkpoint": "022",
       "module": "k_os_external_api_sandbox",
       "status": "simulated",
-      "generated_at": "2026-05-31T12:54:43+00:00",
+      "generated_at": "2026-05-31T12:56:26+00:00",
       "payload": {
-        "payload_id": "sandbox_c06d382dd4a8",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "payload_id": "sandbox_5439f18a7ae9",
+        "created_at": "2026-05-31T12:56:26+00:00",
         "provider": "whatsapp",
         "use_case": "manual_send_pack",
         "agent_id": "marketplace_ia_agent",
@@ -540,8 +540,8 @@
         "ok": true
       },
       "simulation": {
-        "simulation_id": "sim_dbd1ec2bd683",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "simulation_id": "sim_b0c0776725f4",
+        "created_at": "2026-05-31T12:56:26+00:00",
         "provider": "whatsapp",
         "use_case": "manual_send_pack",
         "status": "simulated_only",
@@ -560,10 +560,10 @@
       "checkpoint": "022",
       "module": "k_os_external_api_sandbox",
       "status": "simulated",
-      "generated_at": "2026-05-31T12:54:43+00:00",
+      "generated_at": "2026-05-31T12:56:26+00:00",
       "payload": {
-        "payload_id": "sandbox_301ffa4df3b1",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "payload_id": "sandbox_31e0c6923c06",
+        "created_at": "2026-05-31T12:56:26+00:00",
         "provider": "google",
         "use_case": "analytics_review",
         "agent_id": "k_uni_cockpit",
@@ -645,8 +645,8 @@
         "ok": true
       },
       "simulation": {
-        "simulation_id": "sim_079ca1c9d278",
-        "created_at": "2026-05-31T12:54:43+00:00",
+        "simulation_id": "sim_ada408dc56a4",
+        "created_at": "2026-05-31T12:56:26+00:00",
         "provider": "google",
         "use_case": "analytics_review",
         "status": "simulated_only",

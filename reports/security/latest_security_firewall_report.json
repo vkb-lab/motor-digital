@@ -1,17 +1,10 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T12:54:44.800950+00:00",
+  "generated_at": "2026-05-31T12:56:27.418615+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    ".gitignore",
-    "config/external_sandbox/k_os_external_api_sandbox_policy.json",
-    "docs/security/k_os_ai_accountability_register.md",
-    "docs/security/k_os_external_api_sandbox.md",
-    "ops/k_os_external_api_sandbox.ps1",
-    "ops/k_os_external_api_sandbox.py",
-    "pages/922_K_OS_External_API_Sandbox.py",
-    "reports/external_sandbox/k_os_022_external_api_sandbox_install.json",
+    "reports/external_sandbox/k_os_022_closure_report.json",
     "reports/external_sandbox/latest_external_api_sandbox_report.json",
     "reports/external_sandbox/latest_external_api_sandbox_report.md"
   ],
