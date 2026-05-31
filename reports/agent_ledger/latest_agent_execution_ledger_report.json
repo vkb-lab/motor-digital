@@ -3,7 +3,7 @@
   "checkpoint": "041",
   "module": "k_os_agent_execution_ledger_replay_core",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T20:31:18+00:00",
+  "generated_at": "2026-05-31T20:32:33+00:00",
   "ledger_path": "local_secrets/k_os_agent_ledger/agent_execution_ledger.json",
   "ledger_committed": false,
   "sanitized_reports_only": true,
@@ -18,6 +18,27 @@
   "agent_runtime_report_available": true,
   "permission_matrix_available": true,
   "entries": [
+    {
+      "ledger_id": "led_41940b4ebda6",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "source_type": "agent_queue_dispatch",
+      "source_execution_id": "disp_e18dd12228c5",
+      "agent_id": "k_atlas_engineer",
+      "action_id": "cockpit_audit",
+      "task_id": "agtq_57ac77ce7032",
+      "status": "dispatch_completed",
+      "ok": true,
+      "risk": "low",
+      "dry_run": true,
+      "command_executed": false,
+      "input_hash": "746c062125815b9a4cc5684d98755f86fdbadd16d2000ce3621f71ac15663974",
+      "output_hash": "a37cd0864b9afc239ad5a02174c9ea3c98de5e398c7f971a27da79e203cc089b",
+      "payload_hash": "c41d9a381574b918d1941a8aa9f82ed6cc7591f4d75d03bd322e03830b9b7b2f",
+      "review_status": "pending_review",
+      "replay_allowed": true,
+      "external_send_performed": false,
+      "external_publish_performed": false
+    },
     {
       "ledger_id": "led_6c01e8eb39e2",
       "created_at": "2026-05-31T20:31:17+00:00",
@@ -42,6 +63,17 @@
   ],
   "recent_replays": [
     {
+      "replay_id": "rpl_bb38b9f45743",
+      "ledger_id": "led_41940b4ebda6",
+      "action_id": "cockpit_audit",
+      "status": "replay_completed",
+      "ok": true,
+      "dry_run": true,
+      "command_executed": false,
+      "approved": false,
+      "created_at": "2026-05-31T20:32:32+00:00"
+    },
+    {
       "replay_id": "rpl_d1fb62ffe6a9",
       "ledger_id": "led_6c01e8eb39e2",
       "action_id": "cockpit_audit",
@@ -54,21 +86,21 @@
     }
   ],
   "metrics": {
-    "ledger_entry_count": 1,
-    "replay_count": 1,
+    "ledger_entry_count": 2,
+    "replay_count": 2,
     "executed_entry_count": 0,
-    "dry_run_entry_count": 1,
+    "dry_run_entry_count": 2,
     "failed_entry_count": 0,
-    "replay_dry_run_count": 1,
+    "replay_dry_run_count": 2,
     "replay_executed_count": 0,
     "status_counts": {
-      "dispatch_completed": 1
+      "dispatch_completed": 2
     },
     "action_counts": {
-      "cockpit_audit": 1
+      "cockpit_audit": 2
     },
     "agent_counts": {
-      "k_atlas_engineer": 1
+      "k_atlas_engineer": 2
     }
   },
   "required_gates_before_replay": [
