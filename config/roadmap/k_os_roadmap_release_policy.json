@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "035",
+  "module": "roadmap_planner_release_notes_core",
+  "purpose": "Organizar roadmap interno, planejar releases, ligar features a versoes e gerar notas de release internas e publicas em draft.",
+  "roadmap_policy": {
+    "roadmap_local_only": true,
+    "raw_roadmap_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "automatic_release_publish_enabled": false,
+    "automatic_roadmap_commitment_enabled": false,
+    "public_release_notes_require_approval": true,
+    "customer_facing_roadmap_requires_approval": true,
+    "feature_commitment_requires_product_review": true,
+    "commercial_commitment_requires_commercial_review": true,
+    "security_related_release_requires_security_review": true,
+    "legal_related_release_requires_legal_review": true,
+    "release_completion_requires_operator_review": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "release_statuses": [
+    "draft",
+    "internal_review",
+    "planned",
+    "in_progress",
+    "qa_review",
+    "ready_internal",
+    "released_internal",
+    "public_draft",
+    "approved_for_manual_publish",
+    "published_manually",
+    "cancelled",
+    "archived"
+  ],
+  "release_channels": [
+    "internal",
+    "private_beta",
+    "customer_pilot",
+    "public"
+  ],
+  "release_types": [
+    "patch",
+    "minor",
+    "major",
+    "experiment",
+    "security",
+    "commercial"
+  ],
+  "feature_release_statuses": [
+    "candidate",
+    "accepted",
+    "in_progress",
+    "done_pending_review",
+    "done",
+    "removed",
+    "blocked"
+  ],
+  "blocked_actions": [
+    "publish_release_notes_without_approval",
+    "promise_roadmap_to_customer_without_approval",
+    "mark_release_public_without_review",
+    "mark_security_release_without_security_review",
+    "commit_raw_roadmap_data",
+    "delete_roadmap_audit_logs",
+    "claim_feature_shipped_without_evidence"
+  ],
+  "required_release_fields": [
+    "release_id",
+    "title",
+    "version_label",
+    "release_type",
+    "channel",
+    "status",
+    "target_date",
+    "owner",
+    "created_at"
+  ],
+  "required_gates_before_public_release": [
+    "release_exists",
+    "linked_features_reviewed",
+    "product_owner_review",
+    "qa_or_operator_review",
+    "commercial_review_if_customer_facing",
+    "security_review_if_security_related",
+    "legal_review_if_legal_or_commercial_related",
+    "release_notes_reviewed",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "036 - K-Analytics and Executive Metrics Core"
+}

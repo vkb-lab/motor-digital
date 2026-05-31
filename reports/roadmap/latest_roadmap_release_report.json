@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "checkpoint": "035",
+  "module": "k_os_roadmap_planner_release_notes_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T19:40:03+00:00",
+  "roadmap_registry_path": "local_secrets/k_os_roadmap/roadmap_release_registry.json",
+  "roadmap_registry_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "automatic_release_publish_enabled": false,
+  "automatic_roadmap_commitment_enabled": false,
+  "releases": [],
+  "release_feature_links": [],
+  "release_notes": [],
+  "recent_activities": [
+    {
+      "activity_id": "act_d4e7956b5017",
+      "activity_type": "demo_created",
+      "summary": "Demo de roadmap criada localmente.",
+      "created_at": "2026-05-31T19:40:03+00:00",
+      "created_by": "k_os_roadmap_planner"
+    }
+  ],
+  "metrics": {
+    "release_count": 0,
+    "release_feature_link_count": 0,
+    "release_notes_count": 0,
+    "public_sensitive_release_count": 0,
+    "status_counts": {},
+    "channel_counts": {},
+    "type_counts": {}
+  },
+  "required_gates_before_public_release": [
+    "release_exists",
+    "linked_features_reviewed",
+    "product_owner_review",
+    "qa_or_operator_review",
+    "commercial_review_if_customer_facing",
+    "security_review_if_security_related",
+    "legal_review_if_legal_or_commercial_related",
+    "release_notes_reviewed",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "publish_release_notes_without_approval",
+    "promise_roadmap_to_customer_without_approval",
+    "mark_release_public_without_review",
+    "mark_security_release_without_security_review",
+    "commit_raw_roadmap_data",
+    "delete_roadmap_audit_logs",
+    "claim_feature_shipped_without_evidence"
+  ],
+  "next_checkpoint": "036 - K-Analytics and Executive Metrics Core"
+}

@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "checkpoint": "035",
+  "module": "k_os_roadmap_planner_release_notes_core",
+  "status": "internal_roadmap_snapshot",
+  "generated_at": "2026-05-31T19:40:03+00:00",
+  "active_release_count": 0,
+  "active_releases": [],
+  "release_feature_links": [],
+  "customer_facing_roadmap_allowed": false,
+  "automatic_roadmap_commitment_enabled": false,
+  "external_publish_enabled": false,
+  "next_checkpoint": "036 - K-Analytics and Executive Metrics Core"
+}

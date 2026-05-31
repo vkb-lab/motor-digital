@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "035",
+    "module":  "k_os_roadmap_planner_release_notes_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "internal_roadmap",
+                         "release_planning",
+                         "feature_to_release_link",
+                         "release_notes_draft",
+                         "internal_public_release_separation",
+                         "manual_publish_gate",
+                         "sanitized_roadmap_report"
+                     ],
+    "roadmap_local_only":  true,
+    "raw_roadmap_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "automatic_release_publish_enabled":  false,
+    "automatic_roadmap_commitment_enabled":  false,
+    "public_release_notes_require_approval":  true,
+    "customer_facing_roadmap_requires_approval":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "036 - K-Analytics and Executive Metrics Core",
+    "installed_at":  "2026-05-31T19:40:02.9955378Z"
+}
