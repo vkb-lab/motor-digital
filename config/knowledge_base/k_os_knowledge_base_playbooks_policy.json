@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "033",
+  "module": "knowledge_base_support_playbooks",
+  "purpose": "Criar base de conhecimento, playbooks de suporte, templates internos de resposta e vinculo com tickets recorrentes.",
+  "knowledge_policy": {
+    "knowledge_base_local_only": true,
+    "raw_article_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "response_drafts_only": true,
+    "manual_approval_required": true,
+    "customer_facing_content_requires_review": true,
+    "legal_content_requires_legal_review": true,
+    "security_content_requires_security_review": true,
+    "support_templates_are_internal_until_approved": true,
+    "audit_log_deletion_allowed": false
+  },
+  "article_statuses": [
+    "draft",
+    "internal_review",
+    "approved_internal",
+    "deprecated",
+    "archived"
+  ],
+  "playbook_statuses": [
+    "draft",
+    "internal_review",
+    "approved_internal",
+    "deprecated",
+    "archived"
+  ],
+  "article_categories": [
+    "onboarding",
+    "delivery",
+    "support",
+    "billing",
+    "license",
+    "security",
+    "incident",
+    "technical",
+    "commercial",
+    "faq"
+  ],
+  "playbook_categories": [
+    "triage",
+    "bug",
+    "delivery",
+    "billing",
+    "license",
+    "incident",
+    "security",
+    "customer_success",
+    "commercial"
+  ],
+  "required_article_fields": [
+    "article_id",
+    "title",
+    "category",
+    "status",
+    "summary",
+    "owner",
+    "created_at"
+  ],
+  "required_playbook_fields": [
+    "playbook_id",
+    "title",
+    "category",
+    "status",
+    "steps",
+    "owner",
+    "created_at"
+  ],
+  "blocked_actions": [
+    "send_response_without_approval",
+    "publish_article_externally",
+    "commit_raw_customer_examples",
+    "delete_knowledge_audit_logs",
+    "use_legal_template_without_review",
+    "use_security_playbook_without_security_review",
+    "expose_customer_contact_in_article"
+  ],
+  "required_gates_before_customer_facing_use": [
+    "article_or_playbook_exists",
+    "operator_review",
+    "support_owner_review",
+    "security_review_if_security_related",
+    "legal_review_if_legal_or_commercial_related",
+    "customer_data_sanitized",
+    "approval_event_recorded"
+  ],
+  "next_checkpoint": "034 - K-Product Feedback and Feature Request Core"
+}

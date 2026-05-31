@@ -320,3 +320,6 @@ local_secrets/k_os_customer_success/
 memory/support/
 reports/support/runtime/
 local_secrets/k_os_support/
+memory/knowledge_base/
+reports/knowledge_base/runtime/
+local_secrets/k_os_knowledge_base/

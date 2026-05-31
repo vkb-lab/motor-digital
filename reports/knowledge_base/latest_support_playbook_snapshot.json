@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "checkpoint": "033",
+  "module": "k_os_knowledge_base_support_playbooks",
+  "status": "playbook_snapshot",
+  "generated_at": "2026-05-31T19:22:34+00:00",
+  "approved_playbooks": [],
+  "draft_playbooks": [
+    {
+      "playbook_id": "pb_3b663a5dbf29",
+      "title": "Playbook de triagem de ticket de delivery",
+      "category": "delivery",
+      "status": "draft",
+      "steps_count": 7,
+      "owner": "k_os_operator",
+      "linked_ticket_ids": [
+        "tkt_c45e3d6002a2"
+      ],
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "updated_at": "2026-05-31T19:22:33+00:00"
+    }
+  ],
+  "linked_articles": [
+    {
+      "article_id": "kb_88e483f385d6",
+      "title": "Como validar primeira entrega K-OS",
+      "category": "delivery",
+      "status": "draft",
+      "summary": "Checklist interno para revisar primeira entrega antes de marcar como concluída.",
+      "owner": "k_os_operator",
+      "linked_ticket_ids": [
+        "tkt_c45e3d6002a2"
+      ],
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "updated_at": "2026-05-31T19:22:33+00:00"
+    }
+  ],
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "next_checkpoint": "034 - K-Product Feedback and Feature Request Core"
+}

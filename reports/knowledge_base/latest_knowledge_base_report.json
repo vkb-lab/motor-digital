@@ -1,0 +1,128 @@
+{
+  "ok": true,
+  "checkpoint": "033",
+  "module": "k_os_knowledge_base_support_playbooks",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T19:22:34+00:00",
+  "knowledge_base_registry_path": "local_secrets/k_os_knowledge_base/knowledge_base_registry.json",
+  "knowledge_base_registry_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "response_drafts_only": true,
+  "articles": [
+    {
+      "article_id": "kb_88e483f385d6",
+      "title": "Como validar primeira entrega K-OS",
+      "category": "delivery",
+      "status": "draft",
+      "summary": "Checklist interno para revisar primeira entrega antes de marcar como concluída.",
+      "owner": "k_os_operator",
+      "linked_ticket_ids": [
+        "tkt_c45e3d6002a2"
+      ],
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "updated_at": "2026-05-31T19:22:33+00:00"
+    }
+  ],
+  "playbooks": [
+    {
+      "playbook_id": "pb_3b663a5dbf29",
+      "title": "Playbook de triagem de ticket de delivery",
+      "category": "delivery",
+      "status": "draft",
+      "steps_count": 7,
+      "owner": "k_os_operator",
+      "linked_ticket_ids": [
+        "tkt_c45e3d6002a2"
+      ],
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "updated_at": "2026-05-31T19:22:33+00:00"
+    }
+  ],
+  "response_templates": [
+    {
+      "template_id": "tpl_deedf3fe1a05",
+      "title": "Resposta interna para atualização de entrega",
+      "category": "delivery",
+      "status": "draft",
+      "requires_approval_before_send": true,
+      "created_at": "2026-05-31T19:22:33+00:00"
+    }
+  ],
+  "ticket_links": [
+    {
+      "link_id": "lnk_fc6b7b5bd74e",
+      "ticket_id": "tkt_c45e3d6002a2",
+      "article_id": "kb_88e483f385d6",
+      "playbook_id": "pb_3b663a5dbf29",
+      "reason": "demo_link_to_support_ticket",
+      "created_at": "2026-05-31T19:22:33+00:00"
+    }
+  ],
+  "recent_activities": [
+    {
+      "activity_id": "act_0a64fc2f5c4c",
+      "activity_type": "article_created",
+      "summary": "Artigo criado: Como validar primeira entrega K-OS",
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "created_by": "k_os_operator"
+    },
+    {
+      "activity_id": "act_c1b405395dc0",
+      "activity_type": "playbook_created",
+      "summary": "Playbook criado: Playbook de triagem de ticket de delivery",
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "created_by": "k_os_operator"
+    },
+    {
+      "activity_id": "act_38873c877f8a",
+      "activity_type": "response_template_created",
+      "summary": "Template criado: Resposta interna para atualização de entrega",
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "created_by": "k_os_operator"
+    },
+    {
+      "activity_id": "act_7b406566662a",
+      "activity_type": "ticket_linked",
+      "summary": "Ticket vinculado a base de conhecimento: tkt_c45e3d6002a2",
+      "created_at": "2026-05-31T19:22:33+00:00",
+      "created_by": "operator"
+    }
+  ],
+  "metrics": {
+    "article_count": 1,
+    "playbook_count": 1,
+    "template_count": 1,
+    "ticket_link_count": 1,
+    "article_status_counts": {
+      "draft": 1
+    },
+    "playbook_status_counts": {
+      "draft": 1
+    },
+    "category_counts": {
+      "delivery": 2
+    }
+  },
+  "required_gates_before_customer_facing_use": [
+    "article_or_playbook_exists",
+    "operator_review",
+    "support_owner_review",
+    "security_review_if_security_related",
+    "legal_review_if_legal_or_commercial_related",
+    "customer_data_sanitized",
+    "approval_event_recorded"
+  ],
+  "blocked_actions": [
+    "send_response_without_approval",
+    "publish_article_externally",
+    "commit_raw_customer_examples",
+    "delete_knowledge_audit_logs",
+    "use_legal_template_without_review",
+    "use_security_playbook_without_security_review",
+    "expose_customer_contact_in_article"
+  ],
+  "next_checkpoint": "034 - K-Product Feedback and Feature Request Core"
+}
