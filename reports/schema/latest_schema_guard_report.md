@@ -4,7 +4,7 @@
 - Module: k_os_schema_guard
 - Status: blocked_by_schema
 - OK: False
-- Generated at: 2026-05-31T11:53:33+00:00
+- Generated at: 2026-05-31T11:57:18+00:00
 - Errors: 11
 - Blocking errors: 11
 

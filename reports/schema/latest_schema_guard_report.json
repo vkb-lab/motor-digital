@@ -3,7 +3,7 @@
   "checkpoint": "016",
   "module": "k_os_schema_guard",
   "status": "blocked_by_schema",
-  "generated_at": "2026-05-31T11:53:33+00:00",
+  "generated_at": "2026-05-31T11:57:18+00:00",
   "targets_found": 11,
   "files_validated": 11,
   "errors_count": 11,
