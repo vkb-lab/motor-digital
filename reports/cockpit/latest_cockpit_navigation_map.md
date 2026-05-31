@@ -1,6 +1,6 @@
 # K-OS Cockpit Navigation Map
 
-- Generated at: 2026-05-31T20:03:31+00:00
+- Generated at: 2026-05-31T20:05:48+00:00
 - External publish enabled: False
 - Entrypoint: pages/937_K_OS_Executive_Cockpit_Consolidation_Layer.py
 

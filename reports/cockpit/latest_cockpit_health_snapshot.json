@@ -3,7 +3,7 @@
   "checkpoint": "037",
   "module": "k_os_executive_cockpit_consolidation_layer",
   "status": "cockpit_health_snapshot",
-  "generated_at": "2026-05-31T20:03:31+00:00",
+  "generated_at": "2026-05-31T20:05:48+00:00",
   "health_level": "blocked",
   "completion_score": 81.82,
   "module_complete_count": 18,

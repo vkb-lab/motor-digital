@@ -1,6 +1,6 @@
 # K-OS Executive Cockpit Health Snapshot
 
-- Generated at: 2026-05-31T20:03:31+00:00
+- Generated at: 2026-05-31T20:05:48+00:00
 - Health: blocked
 - Completion score: 81.82
 - Complete modules: 18/22
