@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "029",
+  "module": "proposal_factory_quote_builder",
+  "purpose": "Gerar propostas comerciais e orcamentos padronizados ligados ao CRM, Deal Desk, Billing e License Gate.",
+  "proposal_policy": {
+    "proposal_factory_local_only": true,
+    "raw_proposal_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_send_enabled": false,
+    "manual_approval_required": true,
+    "commercial_approval_required": true,
+    "legal_review_required_for_paid_deals": true,
+    "proposal_approval_gate_required": true,
+    "quote_expiration_required": true,
+    "human_review_before_customer_delivery": true
+  },
+  "proposal_statuses": [
+    "draft",
+    "internal_review",
+    "commercial_review",
+    "legal_review",
+    "approved_for_manual_send",
+    "sent_manually",
+    "accepted",
+    "rejected",
+    "expired",
+    "cancelled"
+  ],
+  "quote_item_types": [
+    "setup",
+    "monthly_subscription",
+    "annual_subscription",
+    "usage_package",
+    "custom_service",
+    "support",
+    "training",
+    "integration"
+  ],
+  "default_quote_terms": {
+    "currency": "BRL",
+    "validity_days": 7,
+    "payment_terms": "A definir no pedido comercial",
+    "tax_note": "Valores nao incluem tributos, salvo indicacao expressa.",
+    "legal_note": "Proposta sujeita a revisao comercial e juridica antes de assinatura."
+  },
+  "required_proposal_fields": [
+    "proposal_id",
+    "deal_id",
+    "customer_alias",
+    "agent_id",
+    "proposal_title",
+    "status",
+    "currency",
+    "setup_total",
+    "recurring_total",
+    "valid_until",
+    "commercial_owner",
+    "approval_status",
+    "manual_send_allowed"
+  ],
+  "blocked_actions": [
+    "send_proposal_without_approval",
+    "mark_sent_without_manual_confirmation",
+    "activate_customer_from_proposal",
+    "commit_raw_customer_data",
+    "publish_quote_externally",
+    "guarantee_revenue_claim",
+    "skip_legal_review_for_paid_deal"
+  ],
+  "required_gates_before_manual_send": [
+    "proposal_exists",
+    "deal_exists",
+    "crm_customer_exists",
+    "quote_totals_validated",
+    "commercial_owner_approval",
+    "legal_review_if_paid",
+    "ai_risk_classifier",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "030 - K-Onboarding and Activation Gate"
+}

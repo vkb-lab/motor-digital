@@ -59,3 +59,5 @@ Toda IA ou agente precisa ter:
 | K-OS Customer Registry and CRM Core | Registra clientes, leads, status comercial, vinculos e historico CRM sanitizado | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Privacy Review | reports/crm |
 
 | K-OS Sales Pipeline and Deal Desk | Organiza oportunidades, funil, valores, propostas e aprovacoes comerciais | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Legal Review | reports/sales |
+
+| K-OS Proposal Factory and Quote Builder | Gera propostas e orcamentos locais com approval gate antes de envio manual | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Legal Review | reports/proposals |

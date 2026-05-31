@@ -308,3 +308,6 @@ local_secrets/k_os_crm/
 memory/sales/
 reports/sales/runtime/
 local_secrets/k_os_sales/
+memory/proposals/
+reports/proposals/runtime/
+local_secrets/k_os_proposals/
