@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "039",
+  "module": "agent_orchestration_queue_core",
+  "purpose": "Criar fila governada de tarefas para agentes, com prioridade, status, permissao, dry-run, approval gate e despacho via Command Center.",
+  "queue_policy": {
+    "agent_queue_local_only": true,
+    "raw_queue_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "arbitrary_agent_execution_allowed": false,
+    "agent_permission_matrix_required": true,
+    "command_center_router_required": true,
+    "dispatch_via_command_center_only": true,
+    "dry_run_default": true,
+    "approval_required_for_dispatch": true,
+    "approval_required_for_execute": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "task_statuses": [
+    "queued",
+    "triage",
+    "approved_for_dispatch",
+    "dispatched_dry_run",
+    "in_progress",
+    "completed_pending_review",
+    "completed",
+    "blocked",
+    "cancelled",
+    "failed"
+  ],
+  "priority_levels": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "allowed_agent_ids": [
+    "k_atlas_engineer",
+    "k_uni_cockpit",
+    "k_os_git_bridge",
+    "k_os_security_firewall",
+    "k_os_schema_guard",
+    "marketplace_ia_agent",
+    "future_multimodal_connector"
+  ],
+  "allowed_task_domains": [
+    "security",
+    "analytics",
+    "cockpit",
+    "commercial",
+    "customer_ops",
+    "support",
+    "product",
+    "roadmap",
+    "command_center"
+  ],
+  "blocked_actions": [
+    "dispatch_agent_without_permission",
+    "execute_task_without_approval",
+    "run_arbitrary_agent_command",
+    "bypass_command_center",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_queue_audit_logs",
+    "commit_raw_queue_data"
+  ],
+  "required_gates_before_dispatch": [
+    "task_exists",
+    "agent_allowed",
+    "action_exists_in_command_center",
+    "risk_level_classified",
+    "operator_reason_present",
+    "approval_present_if_required",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "040 - K-Agent Runtime Supervisor Core"
+}

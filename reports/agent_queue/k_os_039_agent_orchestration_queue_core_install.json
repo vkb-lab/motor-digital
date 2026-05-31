@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "039",
+    "module":  "k_os_agent_orchestration_queue_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "agent_task_queue",
+                         "agent_permission_check",
+                         "command_center_dispatch",
+                         "priority_tracking",
+                         "status_tracking",
+                         "dry_run_default",
+                         "approval_gate",
+                         "sanitized_queue_report"
+                     ],
+    "agent_queue_local_only":  true,
+    "raw_queue_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "arbitrary_agent_execution_allowed":  false,
+    "dispatch_via_command_center_only":  true,
+    "dry_run_default":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "040 - K-Agent Runtime Supervisor Core",
+    "installed_at":  "2026-05-31T20:17:37.6800372Z"
+}
