@@ -1,18 +1,14 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T11:53:34.420791+00:00",
+  "generated_at": "2026-05-31T12:39:04.871739+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    ".gitignore",
-    "docs/security/k_os_ai_accountability_register.md",
-    "docs/security/k_os_schema_guard.md",
-    "ops/k_os_schema_guard.ps1",
-    "ops/k_os_schema_guard.py",
-    "pages/916_K_OS_Schema_Guard.py",
-    "reports/schema/k_os_016_schema_guard_install.json",
-    "reports/schema/latest_schema_guard_report.json",
-    "reports/schema/latest_schema_guard_report.md"
+    "reports/mission_control/k_os_020_closure_report.json",
+    "reports/mission_control/latest_mission_control_status.json",
+    "reports/mission_control/latest_mission_control_status.md",
+    "reports/security/latest_security_firewall_report.json",
+    "reports/security/latest_security_firewall_report.md"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,

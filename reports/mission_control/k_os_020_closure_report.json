@@ -1,0 +1,15 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "020",
+    "module":  "k_os_mission_control_2",
+    "status":  "closed_and_validated",
+    "purpose":  "Unificar status de seguranca, schema, governanca, vault, auditoria, git, blockers e proximos passos.",
+    "cockpit_enabled":  true,
+    "checkpoint_dashboard_enabled":  true,
+    "blocker_detection_enabled":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "021 - K-AI Risk Classifier",
+    "closed_at":  "2026-05-31T12:39:03.6394575Z"
+}

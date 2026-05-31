@@ -3,7 +3,7 @@
   "checkpoint": "020",
   "module": "k_os_mission_control_2",
   "status": "needs_attention",
-  "generated_at": "2026-05-31T12:35:52+00:00",
+  "generated_at": "2026-05-31T12:39:03+00:00",
   "readiness_score": 66.67,
   "checkpoint_ok": 4,
   "checkpoint_total": 6,
@@ -71,9 +71,9 @@
   ],
   "git": {
     "branch": "main",
-    "last_commit": "f33d02a audit: close k-os checkpoint 019",
+    "last_commit": "2008a81 ops: add k-os mission control checkpoint 020",
     "remote": "origin\thttps://github.com/vkb-lab/motor-digital.git (fetch)\norigin\thttps://github.com/vkb-lab/motor-digital.git (push)",
-    "status_short": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md\n?? config/mission_control/\n?? docs/security/k_os_mission_control_2.md\n?? ops/k_os_mission_control_2.ps1\n?? ops/k_os_mission_control_2.py\n?? pages/920_K_OS_Mission_Control_2.py\n?? reports/mission_control/",
+    "status_short": "M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md",
     "clean": false
   },
   "security": {
@@ -107,7 +107,7 @@
     {
       "type": "git_dirty",
       "message": "Working tree possui alteracoes pendentes.",
-      "details": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md\n?? config/mission_control/\n?? docs/security/k_os_mission_control_2.md\n?? ops/k_os_mission_control_2.ps1\n?? ops/k_os_mission_control_2.py\n?? pages/920_K_OS_Mission_Control_2.py\n?? reports/mission_control/"
+      "details": "M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md"
     },
     {
       "type": "schema_blocker",
