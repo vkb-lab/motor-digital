@@ -1,0 +1,19 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "021",
+    "module":  "k_os_ai_risk_classifier",
+    "status":  "closed_and_validated",
+    "purpose":  "Classificar risco de ações de IA, exigir gates, preparar venda/assinatura de agentes e emergency kill switch seguro.",
+    "ai_risk_classifier_enabled":  true,
+    "license_gate_enabled":  true,
+    "agents_can_be_sold_or_subscribed":  true,
+    "activation_requires_kos_permission":  true,
+    "emergency_kill_switch_enabled":  true,
+    "safe_autodestruct_means":  "deactivate_revoke_disable_connectors_freeze_tasks_preserve_audit_logs",
+    "silent_data_wipe_allowed":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "022 - K-External API Sandbox",
+    "closed_at":  "2026-05-31T12:48:41.2331884Z"
+}

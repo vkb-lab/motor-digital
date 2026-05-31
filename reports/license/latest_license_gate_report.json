@@ -3,7 +3,7 @@
   "checkpoint": "021",
   "module": "k_os_license_gate",
   "status": "passed",
-  "generated_at": "2026-05-31T12:47:24+00:00",
+  "generated_at": "2026-05-31T12:48:41+00:00",
   "registry_path": "local_secrets/k_os_licenses/license_registry.json",
   "registry_committed": false,
   "emergency_lockdown": false,
