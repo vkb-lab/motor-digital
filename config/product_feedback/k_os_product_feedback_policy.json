@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "034",
+  "module": "product_feedback_feature_request_core",
+  "purpose": "Registrar feedback de clientes, pedidos de melhoria, priorizar features, classificar impacto e preparar backlog de produto SaaS.",
+  "feedback_policy": {
+    "product_feedback_local_only": true,
+    "raw_feedback_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "automatic_roadmap_commitment_enabled": false,
+    "customer_facing_roadmap_requires_approval": true,
+    "feature_commitment_requires_product_review": true,
+    "commercial_commitment_requires_commercial_review": true,
+    "security_related_feature_requires_security_review": true,
+    "legal_related_feature_requires_legal_review": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "feedback_types": [
+    "bug",
+    "improvement",
+    "feature_request",
+    "compliment",
+    "complaint",
+    "usability",
+    "performance",
+    "billing",
+    "security",
+    "integration",
+    "automation"
+  ],
+  "feedback_statuses": [
+    "new",
+    "triaged",
+    "linked_to_feature",
+    "in_review",
+    "closed",
+    "archived"
+  ],
+  "feature_statuses": [
+    "new",
+    "triage",
+    "backlog",
+    "planned",
+    "in_progress",
+    "blocked",
+    "shipped",
+    "rejected",
+    "archived"
+  ],
+  "priority_levels": [
+    "low",
+    "medium",
+    "high",
+    "critical",
+    "strategic"
+  ],
+  "impact_levels": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "effort_levels": [
+    "small",
+    "medium",
+    "large",
+    "unknown"
+  ],
+  "feature_categories": [
+    "cockpit",
+    "agents",
+    "memory",
+    "automation",
+    "campaigns",
+    "crm",
+    "billing",
+    "license",
+    "support",
+    "security",
+    "integrations",
+    "analytics",
+    "content",
+    "marketplace"
+  ],
+  "required_feedback_fields": [
+    "feedback_id",
+    "customer_alias",
+    "feedback_type",
+    "status",
+    "summary",
+    "impact",
+    "urgency",
+    "owner",
+    "created_at"
+  ],
+  "required_feature_fields": [
+    "feature_id",
+    "title",
+    "category",
+    "status",
+    "priority",
+    "impact",
+    "effort",
+    "impact_score",
+    "owner",
+    "created_at"
+  ],
+  "blocked_actions": [
+    "promise_feature_to_customer_without_approval",
+    "publish_roadmap_without_approval",
+    "commit_raw_customer_feedback",
+    "delete_product_feedback_audit_logs",
+    "mark_feature_shipped_without_review",
+    "ignore_security_related_feedback",
+    "ignore_critical_customer_feedback"
+  ],
+  "required_gates_before_roadmap_commitment": [
+    "feature_exists",
+    "linked_feedback_reviewed",
+    "product_owner_review",
+    "commercial_review_if_revenue_related",
+    "security_review_if_security_related",
+    "legal_review_if_legal_related",
+    "delivery_feasibility_review",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "035 - K-Roadmap Planner and Release Notes Core"
+}

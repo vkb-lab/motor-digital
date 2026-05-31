@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "034",
+    "module":  "k_os_product_feedback_feature_request_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "customer_feedback_registry",
+                         "feature_request_registry",
+                         "ticket_feedback_link",
+                         "customer_success_feedback_link",
+                         "impact_scoring",
+                         "priority_classification",
+                         "product_backlog_snapshot",
+                         "roadmap_candidate_snapshot",
+                         "sanitized_product_report"
+                     ],
+    "product_feedback_local_only":  true,
+    "raw_feedback_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "automatic_roadmap_commitment_enabled":  false,
+    "customer_facing_roadmap_requires_approval":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "035 - K-Roadmap Planner and Release Notes Core",
+    "installed_at":  "2026-05-31T19:32:43.9807623Z"
+}

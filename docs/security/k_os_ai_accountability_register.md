@@ -69,3 +69,5 @@ Toda IA ou agente precisa ter:
 | K-OS Support Desk and Ticketing Core | Registra tickets, prioridades, SLA operacional, triagem e escalonamento de suporte | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Support Review + Incident Review | reports/support |
 
 | K-OS Knowledge Base and Support Playbooks | Cria artigos, playbooks, templates internos e vinculos com tickets recorrentes | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Support Review + Security/Legal Review | reports/knowledge_base |
+
+| K-OS Product Feedback and Feature Request Core | Registra feedback, pedidos de melhoria, features, impacto, esforço, backlog e candidatos de roadmap | Product Owner K-OS | Sim, local sanitizado | Não | Não | Human Approval + Product Review + Commercial/Security/Legal Review | reports/product_feedback |

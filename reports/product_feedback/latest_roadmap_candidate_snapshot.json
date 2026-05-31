@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "checkpoint": "034",
+  "module": "k_os_product_feedback_feature_request_core",
+  "status": "roadmap_candidate_snapshot",
+  "generated_at": "2026-05-31T19:32:45+00:00",
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "feature_id": "feat_c28307c17183",
+      "title": "Cockpit unificado de cliente",
+      "category": "cockpit",
+      "status": "backlog",
+      "priority": "critical",
+      "impact": "high",
+      "urgency": "medium",
+      "effort": "medium",
+      "revenue_signal": "medium",
+      "impact_score": 15,
+      "linked_feedback_count": 1,
+      "linked_feedback_ids": [
+        "fb_bb2bd7e00e37"
+      ],
+      "owner": "k_os_operator",
+      "next_action": "revisar escopo do cockpit e dependências de Customer Success, Support e CRM",
+      "created_at": "2026-05-31T19:32:44+00:00",
+      "updated_at": "2026-05-31T19:32:44+00:00"
+    }
+  ],
+  "customer_facing_roadmap_allowed": false,
+  "roadmap_commitment_performed": false,
+  "manual_approval_required": true,
+  "next_checkpoint": "035 - K-Roadmap Planner and Release Notes Core"
+}
