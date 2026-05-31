@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "028",
+  "module": "sales_pipeline_deal_desk",
+  "purpose": "Organizar oportunidades comerciais, funil de vendas, propostas, valores estimados, aprovacoes e proximas acoes antes da ativacao de cliente.",
+  "commercial_policy": {
+    "deal_desk_local_only": true,
+    "raw_deal_data_committed": false,
+    "sanitized_reports_only": true,
+    "automatic_close_enabled": false,
+    "automatic_customer_activation_enabled": false,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "manual_approval_required": true,
+    "commercial_approval_required": true,
+    "legal_review_required_for_paid_deals": true,
+    "license_gate_required_before_activation": true,
+    "billing_subscription_required_before_activation": true,
+    "crm_customer_required": true
+  },
+  "deal_stages": [
+    "lead",
+    "qualified",
+    "discovery",
+    "proposal_draft",
+    "proposal_sent",
+    "negotiation",
+    "legal_review",
+    "commercial_approval",
+    "won_pending_activation",
+    "active",
+    "lost",
+    "on_hold"
+  ],
+  "deal_priorities": [
+    "low",
+    "medium",
+    "high",
+    "strategic"
+  ],
+  "approval_levels": [
+    "operator_review",
+    "commercial_owner_approval",
+    "legal_review",
+    "security_review",
+    "final_human_approval"
+  ],
+  "required_deal_fields": [
+    "deal_id",
+    "customer_alias",
+    "customer_id",
+    "agent_id",
+    "stage",
+    "priority",
+    "estimated_mrr_brl",
+    "estimated_setup_brl",
+    "probability",
+    "next_action",
+    "commercial_owner",
+    "proposal_id",
+    "subscription_id",
+    "license_id",
+    "approval_status"
+  ],
+  "blocked_actions": [
+    "activate_customer_from_deal_without_approval",
+    "send_proposal_externally_without_gate",
+    "mark_won_without_commercial_approval",
+    "mark_active_without_subscription",
+    "mark_active_without_license_gate",
+    "commit_raw_customer_data",
+    "delete_deal_audit_logs"
+  ],
+  "required_gates_before_marking_active": [
+    "crm_customer_exists",
+    "commercial_order_form",
+    "legal_review_if_paid",
+    "commercial_owner_approval",
+    "billing_subscription_active",
+    "license_gate_active",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "029 - K-Proposal Factory and Quote Builder"
+}

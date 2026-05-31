@@ -57,3 +57,5 @@ Toda IA ou agente precisa ter:
 | K-OS Billing and Subscription Ledger | Registra assinaturas, status de pagamento, vencimentos e bloqueios comerciais seguros | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + License Gate | reports/billing |
 
 | K-OS Customer Registry and CRM Core | Registra clientes, leads, status comercial, vinculos e historico CRM sanitizado | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Privacy Review | reports/crm |
+
+| K-OS Sales Pipeline and Deal Desk | Organiza oportunidades, funil, valores, propostas e aprovacoes comerciais | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Legal Review | reports/sales |

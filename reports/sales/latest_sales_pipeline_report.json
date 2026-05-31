@@ -1,0 +1,84 @@
+{
+  "ok": true,
+  "checkpoint": "028",
+  "module": "k_os_sales_pipeline_deal_desk",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T16:33:33+00:00",
+  "sales_pipeline_path": "local_secrets/k_os_sales/sales_pipeline.json",
+  "sales_pipeline_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_close_enabled": false,
+  "automatic_customer_activation_enabled": false,
+  "deals": [
+    {
+      "deal_id": "deal_3ea6bff3bf5e",
+      "customer_alias": "demo_customer",
+      "customer_id": "linked_by_crm_demo",
+      "agent_id": "marketplace_ia_agent",
+      "stage": "proposal_draft",
+      "priority": "medium",
+      "estimated_mrr_brl": 997.0,
+      "estimated_setup_brl": 1500.0,
+      "probability": 35,
+      "weighted_mrr_brl": 348.95,
+      "next_action": "revisar proposta demo e validar ordem comercial",
+      "commercial_owner": "k_os_operator",
+      "proposal_id": "demo_marketplace_ia",
+      "subscription_id": "linked_by_billing_demo",
+      "license_id": "pending_license_gate",
+      "approval_status": "pending_operator_review",
+      "created_at": "2026-05-31T16:33:33+00:00",
+      "last_stage_reason": "demo_created"
+    }
+  ],
+  "recent_activities": [
+    {
+      "activity_id": "act_0b2dbaa3522a",
+      "deal_id": "deal_3ea6bff3bf5e",
+      "activity_type": "deal_created",
+      "summary": "Deal demo criado para validar Sales Pipeline and Deal Desk.",
+      "created_at": "2026-05-31T16:33:33+00:00",
+      "created_by": "k_os_sales_pipeline",
+      "requires_follow_up": true
+    }
+  ],
+  "pipeline": {
+    "deal_count": 1,
+    "open_deal_count": 1,
+    "won_count": 0,
+    "lost_count": 0,
+    "stage_counts": {
+      "proposal_draft": 1
+    },
+    "priority_counts": {
+      "medium": 1
+    },
+    "open_mrr_estimate_brl": 997.0,
+    "weighted_mrr_estimate_brl": 348.95,
+    "open_setup_estimate_brl": 1500.0,
+    "weighted_arr_estimate_brl": 4187.4
+  },
+  "required_gates_before_marking_active": [
+    "crm_customer_exists",
+    "commercial_order_form",
+    "legal_review_if_paid",
+    "commercial_owner_approval",
+    "billing_subscription_active",
+    "license_gate_active",
+    "ai_risk_classifier",
+    "agent_permission_matrix",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "activate_customer_from_deal_without_approval",
+    "send_proposal_externally_without_gate",
+    "mark_won_without_commercial_approval",
+    "mark_active_without_subscription",
+    "mark_active_without_license_gate",
+    "commit_raw_customer_data",
+    "delete_deal_audit_logs"
+  ],
+  "next_checkpoint": "029 - K-Proposal Factory and Quote Builder"
+}

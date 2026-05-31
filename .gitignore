@@ -305,3 +305,6 @@ local_secrets/k_os_billing/
 memory/crm/
 reports/crm/runtime/
 local_secrets/k_os_crm/
+memory/sales/
+reports/sales/runtime/
+local_secrets/k_os_sales/

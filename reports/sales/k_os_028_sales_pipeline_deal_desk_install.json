@@ -1,0 +1,30 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "028",
+    "module":  "k_os_sales_pipeline_deal_desk",
+    "status":  "installed",
+    "capabilities":  [
+                         "deal_registry",
+                         "sales_pipeline",
+                         "stage_tracking",
+                         "estimated_mrr",
+                         "weighted_forecast",
+                         "commercial_approval_dry_run",
+                         "proposal_link",
+                         "subscription_link",
+                         "license_link"
+                     ],
+    "deal_desk_local_only":  true,
+    "raw_deal_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "automatic_close_enabled":  false,
+    "automatic_customer_activation_enabled":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "commercial_approval_required":  true,
+    "license_gate_required_before_activation":  true,
+    "billing_subscription_required_before_activation":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "029 - K-Proposal Factory and Quote Builder",
+    "installed_at":  "2026-05-31T16:33:32.2341607Z"
+}
