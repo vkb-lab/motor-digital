@@ -3,7 +3,7 @@
   "checkpoint": "036",
   "module": "k_os_analytics_executive_metrics_core",
   "status": "executive_dashboard_snapshot",
-  "generated_at": "2026-05-31T19:53:29+00:00",
+  "generated_at": "2026-05-31T19:58:01+00:00",
   "health_level": "blocked",
   "top_kpis": {
     "customers": 1,
@@ -15,7 +15,7 @@
     "high_risk_customers": 0,
     "features": 1,
     "roadmap_releases": 0,
-    "foundation_score": 76.19
+    "foundation_score": 85.71
   },
   "external_publish_enabled": false,
   "customer_identifiable_data_included": false,

@@ -1,6 +1,6 @@
 # K-OS Executive Dashboard Snapshot
 
-- Generated at: 2026-05-31T19:53:29+00:00
+- Generated at: 2026-05-31T19:58:01+00:00
 - Health: blocked
 - External publish enabled: False
 - Customer identifiable data included: False
@@ -16,4 +16,4 @@
 - high_risk_customers: 0
 - features: 1
 - roadmap_releases: 0
-- foundation_score: 76.19
+- foundation_score: 85.71

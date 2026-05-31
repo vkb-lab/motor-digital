@@ -47,10 +47,10 @@ DATA_SOURCES = {
 FOUNDATION_CLOSURES = {
     "015_security_firewall": "reports/security/k_os_015_closure_report.json",
     "016_schema_guard": "reports/schema/k_os_016_closure_report.json",
-    "017_agent_permission_matrix": "reports/governance/k_os_017_agent_permission_matrix_closure_report.json",
+    "017_agent_permission_matrix": "reports/governance/k_os_017_closure_report.json",
     "018_vault_guard": "reports/vault/k_os_018_closure_report.json",
     "019_audit_evidence_pack": "reports/audit/k_os_019_closure_report.json",
-    "020_mission_control": "reports/mission_control/k_os_020_mission_control_closure_report.json",
+    "020_mission_control": "reports/mission_control/k_os_020_closure_report.json",
     "021_risk_license": "reports/risk/k_os_021_closure_report.json",
     "022_external_sandbox": "reports/external_sandbox/k_os_022_closure_report.json",
     "023_enterprise_readiness": "reports/enterprise/k_os_023_closure_report.json",

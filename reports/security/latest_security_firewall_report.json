@@ -1,10 +1,11 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T19:53:31.169665+00:00",
+  "generated_at": "2026-05-31T19:58:03.555391+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    "reports/analytics/k_os_036_analytics_executive_metrics_core_install.json",
+    "ops/k_os_analytics_executive_metrics_core.py",
+    "reports/analytics/k_os_036_closure_report.json",
     "reports/analytics/latest_executive_dashboard_snapshot.json",
     "reports/analytics/latest_executive_dashboard_snapshot.md",
     "reports/analytics/latest_executive_metrics_report.json",

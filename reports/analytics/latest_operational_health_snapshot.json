@@ -3,7 +3,7 @@
   "checkpoint": "036",
   "module": "k_os_analytics_executive_metrics_core",
   "status": "operational_health_snapshot",
-  "generated_at": "2026-05-31T19:53:29+00:00",
+  "generated_at": "2026-05-31T19:58:01+00:00",
   "health_level": "blocked",
   "blockers": [
     "foundation_control_score_below_90"
@@ -12,7 +12,7 @@
     "some_source_reports_missing",
     "some_source_reports_not_ok"
   ],
-  "foundation_control_score": 76.19,
+  "foundation_control_score": 85.71,
   "critical_ticket_count": 0,
   "high_risk_customer_count": 0,
   "onboarding_blocked_count": 0,

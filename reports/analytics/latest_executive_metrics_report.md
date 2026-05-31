@@ -2,7 +2,7 @@
 
 - Status: audit_generated
 - OK: True
-- Generated at: 2026-05-31T19:53:29+00:00
+- Generated at: 2026-05-31T19:58:01+00:00
 - Health: blocked
 - Sanitized only: True
 - External publish enabled: False
@@ -31,9 +31,9 @@
 - roadmap_release_count: 0
 - knowledge_article_count: 1
 - knowledge_playbook_count: 1
-- foundation_control_ok_count: 16
+- foundation_control_ok_count: 18
 - foundation_control_total_count: 21
-- foundation_control_score: 76.19
+- foundation_control_score: 85.71
 
 ## Blockers
 

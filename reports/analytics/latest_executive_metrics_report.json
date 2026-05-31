@@ -3,7 +3,7 @@
   "checkpoint": "036",
   "module": "k_os_analytics_executive_metrics_core",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T19:53:29+00:00",
+  "generated_at": "2026-05-31T19:58:01+00:00",
   "analytics_history_path": "local_secrets/k_os_analytics/analytics_history.json",
   "analytics_history_committed": false,
   "sanitized_reports_only": true,
@@ -35,9 +35,9 @@
     "roadmap_release_count": 0,
     "knowledge_article_count": 1,
     "knowledge_playbook_count": 1,
-    "foundation_control_ok_count": 16,
+    "foundation_control_ok_count": 18,
     "foundation_control_total_count": 21,
-    "foundation_control_score": 76.19
+    "foundation_control_score": 85.71
   },
   "operational_health": {
     "health_level": "blocked",
@@ -212,10 +212,10 @@
     },
     {
       "checkpoint": "017_agent_permission_matrix",
-      "path": "reports/governance/k_os_017_agent_permission_matrix_closure_report.json",
-      "exists": false,
-      "ok": false,
-      "status": "missing"
+      "path": "reports/governance/k_os_017_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
     },
     {
       "checkpoint": "018_vault_guard",
@@ -233,10 +233,10 @@
     },
     {
       "checkpoint": "020_mission_control",
-      "path": "reports/mission_control/k_os_020_mission_control_closure_report.json",
-      "exists": false,
-      "ok": false,
-      "status": "missing"
+      "path": "reports/mission_control/k_os_020_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
     },
     {
       "checkpoint": "021_risk_license",
