@@ -5,7 +5,7 @@
 - Enterprise readiness score: 88.89%
 - Maturity level: advanced_internal_governance
 - Controls passed: 8/9
-- Generated at: 2026-05-31T13:00:47+00:00
+- Generated at: 2026-05-31T13:02:00+00:00
 
 ## Executive Summary
 

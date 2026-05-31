@@ -1,0 +1,23 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "023",
+    "module":  "k_os_enterprise_readiness_report",
+    "status":  "closed_and_validated",
+    "purpose":  "Consolidar controles internos dos checkpoints 015-022, maturidade enterprise, gaps, matriz de controles e pacote de due diligence.",
+    "enterprise_report_enabled":  true,
+    "due_diligence_pack_enabled":  true,
+    "control_matrix_enabled":  true,
+    "known_gap_register_enabled":  true,
+    "certification_claim_guard_enabled":  true,
+    "formal_certification_claimed":  false,
+    "soc2_certified":  false,
+    "iso27001_certified":  false,
+    "lgpd_certified":  false,
+    "gdpr_certified":  false,
+    "external_auditor_required_for_certification":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "024 - K-Incident Response and Rollback Runbook",
+    "closed_at":  "2026-05-31T13:02:00.2614466Z"
+}

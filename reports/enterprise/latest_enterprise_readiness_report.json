@@ -3,7 +3,7 @@
   "checkpoint": "023",
   "module": "k_os_enterprise_readiness_report",
   "status": "generated",
-  "generated_at": "2026-05-31T13:00:47+00:00",
+  "generated_at": "2026-05-31T13:02:00+00:00",
   "enterprise_readiness_score": 88.89,
   "maturity_level": "advanced_internal_governance",
   "controls_total": 9,
@@ -145,7 +145,7 @@
     {
       "type": "git_dirty",
       "message": "Working tree possui alteracoes pendentes.",
-      "details": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/risk/latest_ai_risk_classifier_report.json\n M reports/risk/latest_ai_risk_classifier_report.md\n?? config/enterprise/\n?? docs/security/k_os_enterprise_readiness_report.md\n?? ops/k_os_enterprise_readiness_report.ps1\n?? ops/k_os_enterprise_readiness_report.py\n?? pages/923_K_OS_Enterprise_Readiness_Report.py\n?? reports/enterprise/"
+      "details": "M reports/risk/latest_ai_risk_classifier_report.json\n M reports/risk/latest_ai_risk_classifier_report.md"
     },
     {
       "type": "missing_evidence",
@@ -163,9 +163,9 @@
   ],
   "git": {
     "branch": "main",
-    "last_commit": "de05c95 sandbox: close k-os checkpoint 022",
+    "last_commit": "3ef5fe3 enterprise: add k-os readiness checkpoint 023",
     "clean": false,
-    "status_short": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/risk/latest_ai_risk_classifier_report.json\n M reports/risk/latest_ai_risk_classifier_report.md\n?? config/enterprise/\n?? docs/security/k_os_enterprise_readiness_report.md\n?? ops/k_os_enterprise_readiness_report.ps1\n?? ops/k_os_enterprise_readiness_report.py\n?? pages/923_K_OS_Enterprise_Readiness_Report.py\n?? reports/enterprise/"
+    "status_short": "M reports/risk/latest_ai_risk_classifier_report.json\n M reports/risk/latest_ai_risk_classifier_report.md"
   },
   "statement": {
     "safe_claim": "K-OS possui base interna de governanca, seguranca, validacao, auditoria, risco, licenciamento e sandbox para operacao IA human-in-the-loop.",
