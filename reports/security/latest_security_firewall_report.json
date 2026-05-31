@@ -1,12 +1,10 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T13:02:01.768513+00:00",
+  "generated_at": "2026-05-31T13:20:37.252839+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    "reports/enterprise/k_os_023_closure_report.json",
-    "reports/enterprise/latest_enterprise_readiness_report.json",
-    "reports/enterprise/latest_enterprise_readiness_report.md"
+    "reports/incident/k_os_024_closure_report.json"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,
