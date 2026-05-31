@@ -1,0 +1,117 @@
+{
+  "ok": true,
+  "checkpoint": "043",
+  "module": "k_os_context_retrieval_api_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T20:43:58+00:00",
+  "context_api_state_path": "local_secrets/k_os_context_api/context_retrieval_api_state.json",
+  "context_api_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "local_only": true,
+  "bind_address": "127.0.0.1",
+  "default_port": 8583,
+  "raw_payload_return_allowed": false,
+  "payload_hashes_only": true,
+  "memory_source": "local_secrets/k_os_memory_bus/memory_event_bus_index.json",
+  "memory_source_available": true,
+  "event_count": 999,
+  "context_item_count": 20,
+  "domain_count": 15,
+  "domains": {
+    "memory_bus": {
+      "event_count": 11,
+      "context_count": 0
+    },
+    "agent_ledger": {
+      "event_count": 11,
+      "context_count": 1
+    },
+    "command_center": {
+      "event_count": 892,
+      "context_count": 1
+    },
+    "agent_runtime": {
+      "event_count": 21,
+      "context_count": 1
+    },
+    "agent_queue": {
+      "event_count": 10,
+      "context_count": 1
+    },
+    "cockpit": {
+      "event_count": 6,
+      "context_count": 1
+    },
+    "analytics": {
+      "event_count": 12,
+      "context_count": 1
+    },
+    "roadmap": {
+      "event_count": 6,
+      "context_count": 1
+    },
+    "product": {
+      "event_count": 5,
+      "context_count": 1
+    },
+    "support": {
+      "event_count": 5,
+      "context_count": 2
+    },
+    "customer_ops": {
+      "event_count": 4,
+      "context_count": 2
+    },
+    "commercial": {
+      "event_count": 16,
+      "context_count": 4
+    },
+    "security": {
+      "event_count": 0,
+      "context_count": 2
+    },
+    "governance": {
+      "event_count": 0,
+      "context_count": 1
+    },
+    "audit": {
+      "event_count": 0,
+      "context_count": 1
+    }
+  },
+  "endpoint_count": 6,
+  "recent_retrievals": [
+    {
+      "retrieval_id": "ret_b7f9219562b7",
+      "created_at": "2026-05-31T20:43:58+00:00",
+      "query": "agent",
+      "domain": "",
+      "module_filter": "",
+      "event_match_count": 10,
+      "context_match_count": 5,
+      "raw_payload_included": false
+    }
+  ],
+  "required_gates_before_external_context_export": [
+    "local_retrieval_completed",
+    "raw_payload_removed",
+    "payload_hashes_only",
+    "security_review",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "bind_public_network_interface",
+    "return_raw_payload",
+    "export_raw_memory_index",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_retrieval_logs",
+    "commit_raw_api_cache",
+    "bypass_sanitization"
+  ],
+  "next_checkpoint": "044 - K-Agent Context Injection Layer"
+}

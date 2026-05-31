@@ -1,0 +1,76 @@
+{
+  "ok": true,
+  "checkpoint": "043",
+  "module": "k_os_context_retrieval_api_core",
+  "status": "endpoint_catalog_generated",
+  "generated_at": "2026-05-31T20:43:58+00:00",
+  "bind_address": "127.0.0.1",
+  "default_port": 8583,
+  "local_only": true,
+  "raw_payload_return_allowed": false,
+  "endpoints": [
+    {
+      "path": "/health",
+      "method": "GET",
+      "purpose": "Retornar status local da API."
+    },
+    {
+      "path": "/catalog",
+      "method": "GET",
+      "purpose": "Listar endpoints e filtros permitidos."
+    },
+    {
+      "path": "/retrieve",
+      "method": "GET",
+      "purpose": "Recuperar eventos e contexto sanitizado.",
+      "query_params": [
+        "query",
+        "domain",
+        "module",
+        "event",
+        "limit"
+      ]
+    },
+    {
+      "path": "/domains",
+      "method": "GET",
+      "purpose": "Listar domínios disponíveis no índice."
+    },
+    {
+      "path": "/events",
+      "method": "GET",
+      "purpose": "Recuperar apenas eventos sanitizados.",
+      "query_params": [
+        "query",
+        "domain",
+        "module",
+        "event",
+        "limit"
+      ]
+    },
+    {
+      "path": "/context",
+      "method": "GET",
+      "purpose": "Recuperar apenas contexto sanitizado.",
+      "query_params": [
+        "query",
+        "domain",
+        "module",
+        "limit"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "bind_public_network_interface",
+    "return_raw_payload",
+    "export_raw_memory_index",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_retrieval_logs",
+    "commit_raw_api_cache",
+    "bypass_sanitization"
+  ],
+  "external_send_enabled": false,
+  "external_publish_enabled": false
+}

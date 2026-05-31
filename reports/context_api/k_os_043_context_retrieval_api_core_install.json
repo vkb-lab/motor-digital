@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "043",
+    "module":  "k_os_context_retrieval_api_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "local_context_api",
+                         "memory_index_retrieval",
+                         "domain_filter",
+                         "module_filter",
+                         "event_filter",
+                         "agent_context_serving",
+                         "sanitized_retrieval_report",
+                         "local_rag_foundation"
+                     ],
+    "context_api_local_only":  true,
+    "raw_api_cache_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "raw_payload_return_allowed":  false,
+    "payload_hashes_only":  true,
+    "memory_bus_required":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "044 - K-Agent Context Injection Layer",
+    "installed_at":  "2026-05-31T20:43:56.8148714Z"
+}

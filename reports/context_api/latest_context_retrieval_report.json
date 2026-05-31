@@ -1,0 +1,323 @@
+{
+  "ok": true,
+  "checkpoint": "043",
+  "module": "k_os_context_retrieval_api_core",
+  "status": "retrieval_completed",
+  "generated_at": "2026-05-31T20:43:58+00:00",
+  "retrieval_id": "ret_b7f9219562b7",
+  "query": "agent",
+  "domain": "",
+  "module_filter": "",
+  "event_filter": "",
+  "limit": 10,
+  "memory_source": "local_secrets/k_os_memory_bus/memory_event_bus_index.json",
+  "memory_source_available": true,
+  "event_match_count": 10,
+  "context_match_count": 5,
+  "events": [
+    {
+      "type": "event",
+      "event_id": "evt_a49a4d291a248fc8",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:32:33+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "b61479c5d6b81ef9b6ac777b6451e8f61976834e63704eddab4b7bdb43907f0b",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_cf5893fc46517800",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.execution_recorded",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "96e64bde2c0fd3cc378a53f8496bcad1a7f10f7a9b2a12320d2661d61c62db98",
+      "payload_keys": [
+        "ledger_id",
+        "source_type"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_60831c36de868dde",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "b61479c5d6b81ef9b6ac777b6451e8f61976834e63704eddab4b7bdb43907f0b",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_ac75d7244322fde7",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.replay_completed",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "9096183f06acdef9cb63724210605899c7b80e0c683122e265a2d123e568bc87",
+      "payload_keys": [
+        "command_executed",
+        "ledger_id",
+        "ok"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_9c81a4d5d0a13606",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:32:31+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_e3fdc50b4c51bd30",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.replay_completed",
+      "created_at": "2026-05-31T20:31:18+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "83fefa095e531dac946bd848a291c0a10194a0979453b955158aec0743bb3a64",
+      "payload_keys": [
+        "command_executed",
+        "ledger_id",
+        "ok"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_548fddee18630ff8",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:18+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_05bddb881ac8d35e",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "36c9f53af3ac1e0d3b6a93c8872e0b11c6e860e1227707f60e18be5622beb324",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_525155dfeee9be9a",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.execution_recorded",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "511cf9a7026ce4c575f2b78a5d8fe31aca871b233085cbbf91ec947e6fe9666a",
+      "payload_keys": [
+        "ledger_id",
+        "source_type"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "type": "event",
+      "event_id": "evt_78b965b2f50524dd",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    }
+  ],
+  "context_items": [
+    {
+      "type": "context",
+      "context_id": "ctx_340e7df41fe20ce8",
+      "domain": "governance",
+      "module": "agent_permission_matrix",
+      "checkpoint": "017",
+      "status": "passed",
+      "ok": true,
+      "generated_at": "2026-05-31T12:03:20+00:00",
+      "source_path": "reports/governance/latest_agent_permission_matrix_report.json",
+      "report_hash": "67e9e15991f98859c1ff2527d2965980fff0ef94db30c682f8dad87a7712987a",
+      "metric_keys": [],
+      "summary": {
+        "ok": true,
+        "checkpoint": "017",
+        "module": "k_os_agent_permission_matrix",
+        "status": "passed",
+        "generated_at": "2026-05-31T12:03:20+00:00",
+        "next_checkpoint": "018 - K-Credential Vault",
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "manual_approval_required": true
+      },
+      "raw_report_included": false
+    },
+    {
+      "type": "context",
+      "context_id": "ctx_cd8fc3b804339680",
+      "domain": "command_center",
+      "module": "command_center",
+      "checkpoint": "038",
+      "status": "audit_generated",
+      "ok": true,
+      "generated_at": "2026-05-31T20:12:15+00:00",
+      "source_path": "reports/command_center/latest_command_center_action_router_report.json",
+      "report_hash": "97b9af0f2426f98d5ce91ff15f5905c83413c2117538a560732c19662ac5d4ae",
+      "metric_keys": [],
+      "summary": {
+        "ok": true,
+        "checkpoint": "038",
+        "module": "k_os_command_center_action_router",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:12:15+00:00",
+        "next_checkpoint": "039 - K-Agent Orchestration Queue Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "raw_report_included": false
+    },
+    {
+      "type": "context",
+      "context_id": "ctx_0a4008a6166eb79f",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "checkpoint": "039",
+      "status": "audit_generated",
+      "ok": true,
+      "generated_at": "2026-05-31T20:19:12+00:00",
+      "source_path": "reports/agent_queue/latest_agent_orchestration_queue_report.json",
+      "report_hash": "3d0dbd2bf015dcb4bb8a71e7cc1b0aa1f1339ac8675d0453fe309e743ce1f317",
+      "metric_keys": [
+        "agent_counts",
+        "approved_task_count",
+        "blocked_task_count",
+        "dispatch_count",
+        "priority_counts",
+        "queued_task_count",
+        "status_counts",
+        "task_count"
+      ],
+      "summary": {
+        "ok": true,
+        "checkpoint": "039",
+        "module": "k_os_agent_orchestration_queue_core",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:19:12+00:00",
+        "next_checkpoint": "040 - K-Agent Runtime Supervisor Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "raw_report_included": false
+    },
+    {
+      "type": "context",
+      "context_id": "ctx_e2282c839e8988db",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "checkpoint": "040",
+      "status": "audit_generated",
+      "ok": true,
+      "generated_at": "2026-05-31T20:25:40+00:00",
+      "source_path": "reports/agent_runtime/latest_agent_runtime_supervisor_report.json",
+      "report_hash": "33973a95a0d3cd85acfc55b34be16cadf27545a684ec66199803c65f554ee2d7",
+      "metric_keys": [
+        "agent_count",
+        "attention_agent_count",
+        "blocked_agent_count",
+        "health_counts",
+        "healthy_agent_count",
+        "queue_blocked_task_count",
+        "queue_dispatch_count",
+        "queue_task_count",
+        "stale_agent_count",
+        "status_counts"
+      ],
+      "summary": {
+        "ok": true,
+        "checkpoint": "040",
+        "module": "k_os_agent_runtime_supervisor_core",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:25:40+00:00",
+        "next_checkpoint": "041 - K-Agent Execution Ledger and Replay Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "raw_report_included": false
+    },
+    {
+      "type": "context",
+      "context_id": "ctx_494cb306717ac6ac",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "checkpoint": "041",
+      "status": "audit_generated",
+      "ok": true,
+      "generated_at": "2026-05-31T20:32:33+00:00",
+      "source_path": "reports/agent_ledger/latest_agent_execution_ledger_report.json",
+      "report_hash": "938de9b9c10a68de6f4ed1f377ca60ca86a27330ded935fd2deb39ab91e899e3",
+      "metric_keys": [
+        "action_counts",
+        "agent_counts",
+        "dry_run_entry_count",
+        "executed_entry_count",
+        "failed_entry_count",
+        "ledger_entry_count",
+        "replay_count",
+        "replay_dry_run_count",
+        "replay_executed_count",
+        "status_counts"
+      ],
+      "summary": {
+        "ok": true,
+        "checkpoint": "041",
+        "module": "k_os_agent_execution_ledger_replay_core",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:32:33+00:00",
+        "next_checkpoint": "042 - K-Memory Event Bus and Context Index Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "raw_report_included": false
+    }
+  ],
+  "raw_payload_included": false,
+  "raw_report_included": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false
+}

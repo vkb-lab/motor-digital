@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "043",
+  "module": "context_retrieval_api_core",
+  "purpose": "Criar API local de recuperacao de contexto para consultar memoria indexada, filtrar por dominio, modulo e evento, e servir contexto sanitizado para agentes.",
+  "context_api_policy": {
+    "context_api_local_only": true,
+    "raw_api_cache_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "network_bind_address": "127.0.0.1",
+    "default_port": 8583,
+    "raw_payload_return_allowed": false,
+    "payload_hashes_only": true,
+    "memory_bus_required": true,
+    "context_index_required": true,
+    "agent_access_sanitized_only": true,
+    "retrieval_logging_enabled": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "api_endpoints": [
+    "/health",
+    "/catalog",
+    "/retrieve",
+    "/domains",
+    "/events",
+    "/context"
+  ],
+  "allowed_filters": [
+    "query",
+    "domain",
+    "module",
+    "event",
+    "limit"
+  ],
+  "blocked_actions": [
+    "bind_public_network_interface",
+    "return_raw_payload",
+    "export_raw_memory_index",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "delete_retrieval_logs",
+    "commit_raw_api_cache",
+    "bypass_sanitization"
+  ],
+  "required_gates_before_external_context_export": [
+    "local_retrieval_completed",
+    "raw_payload_removed",
+    "payload_hashes_only",
+    "security_review",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "044 - K-Agent Context Injection Layer"
+}

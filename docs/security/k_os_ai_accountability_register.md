@@ -87,3 +87,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Execution Ledger and Replay Core | Registra ledger auditavel de execucoes, hashes, evidencias e replay controlado via Command Center | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Command Center Gate + Evidence Hash | reports/agent_ledger |
 
 | K-OS Memory Event Bus and Context Index Core | Indexa eventos operacionais, contexto sanitizado, buscas locais e trilha de memoria evolutiva | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Security Review + Payload Hashing | reports/memory_bus |
+
+| K-OS Context Retrieval API Core | API local para recuperar contexto sanitizado da memoria indexada e servir agentes/cockpit | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Local API + Payload Hashing | reports/context_api |
