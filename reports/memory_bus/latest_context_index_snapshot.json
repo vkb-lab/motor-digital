@@ -3,12 +3,12 @@
   "checkpoint": "042",
   "module": "k_os_memory_event_bus_context_index_core",
   "status": "context_index_snapshot",
-  "generated_at": "2026-05-31T20:37:57+00:00",
-  "event_count": 994,
+  "generated_at": "2026-05-31T20:38:30+00:00",
+  "event_count": 999,
   "context_item_count": 20,
   "domain_summary": {
     "memory_bus": {
-      "event_count": 6,
+      "event_count": 11,
       "context_item_count": 0,
       "context_ok_count": 0,
       "missing_context_count": 0
@@ -99,6 +99,77 @@
     }
   },
   "latest_events": [
+    {
+      "event_id": "evt_de0202fa7f57570f",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.audit_generated",
+      "created_at": "2026-05-31T20:38:30+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_15bed6375215efe0",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.index_built",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_c6bb8ea9811618b8",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.audit_generated",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_60b86af0926a8af8",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.search_completed",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "9fbcd43d0129a2b72889f3c894523d344f664d2b44bf848ff12c96588bb256aa",
+      "payload_keys": [
+        "context_match_count",
+        "event_match_count",
+        "query"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_c6bb8ea9811618b8",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.audit_generated",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
     {
       "event_id": "evt_c28ce5612f2cd69f",
       "source_path": "memory/memory_bus/events.jsonl",
@@ -437,76 +508,11 @@
         "agent_count"
       ],
       "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_f3dd4c53ebb000f9",
-      "source_path": "memory/agent_runtime/events.jsonl",
-      "domain": "agent_runtime",
-      "module": "agent_runtime",
-      "event": "agent_runtime.agent_registered",
-      "created_at": "2026-05-31T20:25:39+00:00",
-      "payload_hash": "99c2c30cafb6a35dc4d8e6100148165e3e57c371a341e4a0a4f2ba9868289b7d",
-      "payload_keys": [
-        "agent_id"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_279d564f2da7c15d",
-      "source_path": "memory/agent_runtime/events.jsonl",
-      "domain": "agent_runtime",
-      "module": "agent_runtime",
-      "event": "agent_runtime.watchdog_completed",
-      "created_at": "2026-05-31T20:25:39+00:00",
-      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
-      "payload_keys": [
-        "health_level"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_1903ddf9d0f243b3",
-      "source_path": "memory/agent_runtime/events.jsonl",
-      "domain": "agent_runtime",
-      "module": "agent_runtime",
-      "event": "agent_runtime.audit_generated",
-      "created_at": "2026-05-31T20:25:39+00:00",
-      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
-      "payload_keys": [
-        "agent_count"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_6185779b90c9a74a",
-      "source_path": "memory/agent_runtime/events.jsonl",
-      "domain": "agent_runtime",
-      "module": "agent_runtime",
-      "event": "agent_runtime.watchdog_completed",
-      "created_at": "2026-05-31T20:23:42+00:00",
-      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
-      "payload_keys": [
-        "health_level"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_14844d8d2f644f14",
-      "source_path": "memory/agent_runtime/events.jsonl",
-      "domain": "agent_runtime",
-      "module": "agent_runtime",
-      "event": "agent_runtime.audit_generated",
-      "created_at": "2026-05-31T20:23:42+00:00",
-      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
-      "payload_keys": [
-        "agent_count"
-      ],
-      "raw_payload_included": false
     }
   ],
   "latest_context_items": [
     {
-      "context_id": "ctx_a6c8ff5c7d9c1b15",
+      "context_id": "ctx_103b47ed59202ced",
       "source_path": "reports/security/latest_security_firewall_report.json",
       "domain": "security",
       "module": "security_firewall",
@@ -514,12 +520,12 @@
       "ok": true,
       "status": "passed",
       "checkpoint": "",
-      "generated_at": "2026-05-31T20:36:46.399741+00:00",
-      "report_hash": "44c38618e9a8b6ed0ad4b098a6d4913191b96bfe1657b2c251880dbb40f7e1fd",
+      "generated_at": "2026-05-31T20:37:59.118744+00:00",
+      "report_hash": "3b004890ec9cc01f5d1c5bb1100b0f0c10b1596249c3a9d7db6bd9bd35b24a82",
       "summary": {
         "ok": true,
         "status": "passed",
-        "generated_at": "2026-05-31T20:36:46.399741+00:00"
+        "generated_at": "2026-05-31T20:37:59.118744+00:00"
       },
       "metric_keys": [],
       "raw_report_included": false

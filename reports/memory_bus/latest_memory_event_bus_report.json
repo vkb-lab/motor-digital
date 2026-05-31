@@ -3,7 +3,7 @@
   "checkpoint": "042",
   "module": "k_os_memory_event_bus_context_index_core",
   "status": "audit_generated",
-  "generated_at": "2026-05-31T20:37:57+00:00",
+  "generated_at": "2026-05-31T20:38:30+00:00",
   "memory_bus_state_path": "local_secrets/k_os_memory_bus/memory_event_bus_index.json",
   "memory_bus_state_committed": false,
   "sanitized_reports_only": true,
@@ -230,17 +230,17 @@
     }
   ],
   "metrics": {
-    "event_count": 994,
+    "event_count": 999,
     "context_item_count": 20,
     "context_ok_count": 18,
     "missing_context_count": 1,
-    "query_count": 2,
+    "query_count": 3,
     "domain_count": 15,
     "raw_payload_included": false
   },
   "domain_summary": {
     "memory_bus": {
-      "event_count": 6,
+      "event_count": 11,
       "context_item_count": 0,
       "context_ok_count": 0,
       "missing_context_count": 0
@@ -331,6 +331,77 @@
     }
   },
   "latest_events": [
+    {
+      "event_id": "evt_de0202fa7f57570f",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.audit_generated",
+      "created_at": "2026-05-31T20:38:30+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_15bed6375215efe0",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.index_built",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_c6bb8ea9811618b8",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.audit_generated",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_60b86af0926a8af8",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.search_completed",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "9fbcd43d0129a2b72889f3c894523d344f664d2b44bf848ff12c96588bb256aa",
+      "payload_keys": [
+        "context_match_count",
+        "event_match_count",
+        "query"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_c6bb8ea9811618b8",
+      "source_path": "memory/memory_bus/events.jsonl",
+      "domain": "memory_bus",
+      "module": "memory_bus",
+      "event": "memory_bus.audit_generated",
+      "created_at": "2026-05-31T20:37:57+00:00",
+      "payload_hash": "e427f410082641b90bbf4dd9ad052a579857daa3176294e72894a4d7ad1fe61c",
+      "payload_keys": [
+        "context_item_count",
+        "event_count"
+      ],
+      "raw_payload_included": false
+    },
     {
       "event_id": "evt_c28ce5612f2cd69f",
       "source_path": "memory/memory_bus/events.jsonl",
@@ -933,79 +1004,11 @@
         "task_count"
       ],
       "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_55fa9fb0b1600d1f",
-      "source_path": "memory/agent_queue/events.jsonl",
-      "domain": "agent_queue",
-      "module": "agent_queue",
-      "event": "agent_queue.audit_generated",
-      "created_at": "2026-05-31T20:19:11+00:00",
-      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
-      "payload_keys": [
-        "task_count"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_55fa9fb0b1600d1f",
-      "source_path": "memory/agent_queue/events.jsonl",
-      "domain": "agent_queue",
-      "module": "agent_queue",
-      "event": "agent_queue.audit_generated",
-      "created_at": "2026-05-31T20:19:11+00:00",
-      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
-      "payload_keys": [
-        "task_count"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_a44809ceeec63965",
-      "source_path": "memory/agent_queue/events.jsonl",
-      "domain": "agent_queue",
-      "module": "agent_queue",
-      "event": "agent_queue.audit_generated",
-      "created_at": "2026-05-31T20:17:38+00:00",
-      "payload_hash": "d49a3101ba5e6d31ded1b056a402f81bc5b6ef829575820857341cecae6319c2",
-      "payload_keys": [
-        "task_count"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_0ef61770205a8d12",
-      "source_path": "memory/agent_queue/events.jsonl",
-      "domain": "agent_queue",
-      "module": "agent_queue",
-      "event": "agent_queue.task_created",
-      "created_at": "2026-05-31T20:17:38+00:00",
-      "payload_hash": "ff2f5595e4a7e8c274297bd8a70d30bedcd914f865191159730f7175355d6b3b",
-      "payload_keys": [
-        "action_id",
-        "agent_id",
-        "blockers",
-        "task_id"
-      ],
-      "raw_payload_included": false
-    },
-    {
-      "event_id": "evt_eb6cb2a933bbdde5",
-      "source_path": "memory/agent_queue/events.jsonl",
-      "domain": "agent_queue",
-      "module": "agent_queue",
-      "event": "agent_queue.audit_generated",
-      "created_at": "2026-05-31T20:17:38+00:00",
-      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
-      "payload_keys": [
-        "task_count"
-      ],
-      "raw_payload_included": false
     }
   ],
   "context_items": [
     {
-      "context_id": "ctx_a6c8ff5c7d9c1b15",
+      "context_id": "ctx_103b47ed59202ced",
       "source_path": "reports/security/latest_security_firewall_report.json",
       "domain": "security",
       "module": "security_firewall",
@@ -1013,12 +1016,12 @@
       "ok": true,
       "status": "passed",
       "checkpoint": "",
-      "generated_at": "2026-05-31T20:36:46.399741+00:00",
-      "report_hash": "44c38618e9a8b6ed0ad4b098a6d4913191b96bfe1657b2c251880dbb40f7e1fd",
+      "generated_at": "2026-05-31T20:37:59.118744+00:00",
+      "report_hash": "3b004890ec9cc01f5d1c5bb1100b0f0c10b1596249c3a9d7db6bd9bd35b24a82",
       "summary": {
         "ok": true,
         "status": "passed",
-        "generated_at": "2026-05-31T20:36:46.399741+00:00"
+        "generated_at": "2026-05-31T20:37:59.118744+00:00"
       },
       "metric_keys": [],
       "raw_report_included": false
@@ -1599,6 +1602,13 @@
       "query_id": "qry_05d9b6fbdad1",
       "query": "agent",
       "created_at": "2026-05-31T20:37:57+00:00",
+      "event_match_count": 42,
+      "context_match_count": 5
+    },
+    {
+      "query_id": "qry_701fdc056ed0",
+      "query": "agent",
+      "created_at": "2026-05-31T20:38:30+00:00",
       "event_match_count": 42,
       "context_match_count": 5
     }

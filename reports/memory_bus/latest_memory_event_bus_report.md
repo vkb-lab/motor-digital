@@ -2,7 +2,7 @@
 
 - Status: audit_generated
 - OK: True
-- Generated at: 2026-05-31T20:37:57+00:00
+- Generated at: 2026-05-31T20:38:30+00:00
 - State committed: False
 - Sanitized reports only: True
 - Raw payload storage in reports: False
@@ -10,17 +10,17 @@
 
 ## Metrics
 
-- event_count: 994
+- event_count: 999
 - context_item_count: 20
 - context_ok_count: 18
 - missing_context_count: 1
-- query_count: 2
+- query_count: 3
 - domain_count: 15
 - raw_payload_included: False
 
 ## Domain summary
 
-- memory_bus: events=6 | context=0 | ok=0 | missing=0
+- memory_bus: events=11 | context=0 | ok=0 | missing=0
 - agent_ledger: events=11 | context=1 | ok=1 | missing=0
 - command_center: events=892 | context=1 | ok=1 | missing=0
 - agent_runtime: events=21 | context=1 | ok=1 | missing=0
@@ -38,6 +38,11 @@
 
 ## Latest events
 
+- 2026-05-31T20:38:30+00:00 | memory_bus | memory_bus | memory_bus.audit_generated
+- 2026-05-31T20:37:57+00:00 | memory_bus | memory_bus | memory_bus.index_built
+- 2026-05-31T20:37:57+00:00 | memory_bus | memory_bus | memory_bus.audit_generated
+- 2026-05-31T20:37:57+00:00 | memory_bus | memory_bus | memory_bus.search_completed
+- 2026-05-31T20:37:57+00:00 | memory_bus | memory_bus | memory_bus.audit_generated
 - 2026-05-31T20:37:56+00:00 | memory_bus | memory_bus | memory_bus.audit_generated
 - 2026-05-31T20:36:44+00:00 | memory_bus | memory_bus | memory_bus.index_built
 - 2026-05-31T20:36:44+00:00 | memory_bus | memory_bus | memory_bus.audit_generated
@@ -58,11 +63,6 @@
 - 2026-05-31T20:31:17+00:00 | agent_ledger | agent_ledger | agent_ledger.audit_generated
 - 2026-05-31T20:31:17+00:00 | agent_ledger | agent_ledger | agent_ledger.audit_generated
 - 2026-05-31T20:25:40+00:00 | agent_runtime | agent_runtime | agent_runtime.heartbeat
-- 2026-05-31T20:25:40+00:00 | agent_runtime | agent_runtime | agent_runtime.watchdog_completed
-- 2026-05-31T20:25:40+00:00 | agent_runtime | agent_runtime | agent_runtime.watchdog_completed
-- 2026-05-31T20:25:40+00:00 | agent_runtime | agent_runtime | agent_runtime.audit_generated
-- 2026-05-31T20:25:39+00:00 | agent_runtime | agent_runtime | agent_runtime.watchdog_completed
-- 2026-05-31T20:25:39+00:00 | agent_runtime | agent_runtime | agent_runtime.audit_generated
 
 ## Required gates before external memory export
 
