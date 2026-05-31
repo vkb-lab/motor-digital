@@ -340,3 +340,6 @@ local_secrets/k_os_command_center/
 memory/agent_queue/
 reports/agent_queue/runtime/
 local_secrets/k_os_agent_queue/
+memory/agent_runtime/
+reports/agent_runtime/runtime/
+local_secrets/k_os_agent_runtime/

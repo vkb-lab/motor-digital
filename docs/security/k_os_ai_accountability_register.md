@@ -81,3 +81,5 @@ Toda IA ou agente precisa ter:
 | K-OS Command Center Action Router | Roteia ações controladas por allowlist, dry-run, approval gate e auditoria | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Action Allowlist + Security Gate | reports/command_center |
 
 | K-OS Agent Orchestration Queue Core | Cria fila governada de tarefas para agentes com permissão, dry-run, dispatch via Command Center e auditoria | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Agent Permission Matrix + Command Center Gate | reports/agent_queue |
+
+| K-OS Agent Runtime Supervisor Core | Supervisiona runtime de agentes, heartbeat, watchdog, stale agents, bloqueios preventivos e auditoria | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Agent Queue + Permission Matrix + Watchdog | reports/agent_runtime |

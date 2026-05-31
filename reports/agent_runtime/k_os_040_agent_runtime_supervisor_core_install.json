@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "040",
+    "module":  "k_os_agent_runtime_supervisor_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "agent_runtime_registry",
+                         "heartbeat_tracking",
+                         "runtime_status_tracking",
+                         "watchdog_monitoring",
+                         "stale_agent_detection",
+                         "blocked_agent_detection",
+                         "agent_queue_observation",
+                         "sanitized_runtime_report"
+                     ],
+    "agent_runtime_local_only":  true,
+    "raw_runtime_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "arbitrary_agent_execution_allowed":  false,
+    "heartbeat_required":  true,
+    "watchdog_enabled":  true,
+    "stale_agent_blocking_enabled":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "041 - K-Agent Execution Ledger and Replay Core",
+    "installed_at":  "2026-05-31T20:23:40.3123572Z"
+}

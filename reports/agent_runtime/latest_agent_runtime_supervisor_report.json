@@ -1,0 +1,141 @@
+{
+  "ok": true,
+  "checkpoint": "040",
+  "module": "k_os_agent_runtime_supervisor_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T20:23:42+00:00",
+  "runtime_state_path": "local_secrets/k_os_agent_runtime/agent_runtime_supervisor_state.json",
+  "runtime_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "arbitrary_agent_execution_allowed": false,
+  "heartbeat_required": true,
+  "watchdog_enabled": true,
+  "stale_agent_blocking_enabled": true,
+  "permission_matrix_available": true,
+  "command_center_available": true,
+  "agent_queue_report_available": true,
+  "agents": [
+    {
+      "agent_id": "k_atlas_engineer",
+      "status": "idle",
+      "health": "healthy",
+      "current_task_id": "install_runtime_validation",
+      "last_action_id": "cockpit_audit",
+      "last_heartbeat_at": "2026-05-31T20:23:41+00:00",
+      "heartbeat_age_minutes": 0.02,
+      "failure_count": 0,
+      "blocked_reason": "",
+      "registered_at": "2026-05-31T20:23:41+00:00",
+      "updated_at": "2026-05-31T20:23:42+00:00"
+    }
+  ],
+  "queue_summary": {
+    "queue_report_available": true,
+    "queue_state_available": true,
+    "task_count": 1,
+    "blocked_task_count": 0,
+    "queued_task_count": 0,
+    "approved_task_count": 0,
+    "dispatch_count": 1,
+    "pending_tasks": [
+      {
+        "task_id": "agtq_57ac77ce7032",
+        "agent_id": "k_atlas_engineer",
+        "action_id": "cockpit_audit",
+        "title": "Auditar cockpit executivo via fila de agentes",
+        "domain": "cockpit",
+        "priority": "medium",
+        "risk": "low",
+        "status": "dispatched_dry_run",
+        "requires_approval": false,
+        "approved": true,
+        "blocked_reason": "",
+        "next_action": "pronto para dispatch controlado",
+        "created_at": "2026-05-31T20:17:38+00:00",
+        "updated_at": "2026-05-31T20:19:12+00:00"
+      }
+    ],
+    "blocked_tasks": []
+  },
+  "watchdog": {
+    "health_level": "healthy",
+    "stale_agent_count": 0,
+    "blocked_agent_count": 0,
+    "blockers": [],
+    "warnings": []
+  },
+  "metrics": {
+    "agent_count": 1,
+    "healthy_agent_count": 1,
+    "attention_agent_count": 0,
+    "blocked_agent_count": 0,
+    "stale_agent_count": 0,
+    "queue_task_count": 1,
+    "queue_blocked_task_count": 0,
+    "queue_dispatch_count": 1,
+    "status_counts": {
+      "idle": 1
+    },
+    "health_counts": {
+      "healthy": 1
+    }
+  },
+  "recent_runtime_events": [
+    {
+      "event_id": "rte_cb620ae40ec9",
+      "event_type": "agent_registered",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "",
+      "action_id": "",
+      "status": "",
+      "summary": "demo_runtime_registration",
+      "created_at": "2026-05-31T20:23:41+00:00"
+    },
+    {
+      "event_id": "rte_e8256cb4b4ed",
+      "event_type": "heartbeat",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "demo_runtime_task",
+      "action_id": "cockpit_audit",
+      "status": "idle",
+      "summary": "demo_runtime_heartbeat",
+      "created_at": "2026-05-31T20:23:41+00:00"
+    },
+    {
+      "event_id": "rte_3c0a56a51ff1",
+      "event_type": "heartbeat",
+      "agent_id": "k_atlas_engineer",
+      "task_id": "install_runtime_validation",
+      "action_id": "cockpit_audit",
+      "status": "idle",
+      "summary": "install_heartbeat_validation",
+      "created_at": "2026-05-31T20:23:41+00:00"
+    }
+  ],
+  "required_gates_before_runtime_execution": [
+    "agent_registered",
+    "agent_allowed",
+    "heartbeat_recent",
+    "queue_task_valid",
+    "permission_matrix_available",
+    "command_center_available",
+    "operator_approval_if_required",
+    "audit_event_recorded"
+  ],
+  "blocked_actions": [
+    "execute_agent_without_runtime_registration",
+    "execute_agent_without_heartbeat",
+    "continue_stale_agent",
+    "bypass_agent_queue",
+    "bypass_command_center",
+    "delete_runtime_audit_logs",
+    "commit_raw_runtime_state",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider"
+  ],
+  "next_checkpoint": "041 - K-Agent Execution Ledger and Replay Core"
+}
