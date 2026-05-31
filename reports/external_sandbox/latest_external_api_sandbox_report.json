@@ -1,0 +1,671 @@
+{
+  "ok": true,
+  "checkpoint": "022",
+  "module": "k_os_external_api_sandbox",
+  "status": "smoke_passed",
+  "generated_at": "2026-05-31T12:54:43+00:00",
+  "results_count": 6,
+  "results": [
+    {
+      "ok": true,
+      "checkpoint": "022",
+      "module": "k_os_external_api_sandbox",
+      "status": "simulated",
+      "generated_at": "2026-05-31T12:54:43+00:00",
+      "payload": {
+        "payload_id": "sandbox_1c437a3175de",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "openai",
+        "use_case": "text_brief",
+        "agent_id": "marketplace_ia_agent",
+        "customer_use": false,
+        "dry_run": true,
+        "real_provider_call_enabled": false,
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "prompt_hash": "5d1d45155f9bacbb86099cdb579dc609362d581f482fa7d6c9042c751fe5189f",
+        "prompt_length": 51,
+        "prompt_preview_redacted": "Gerar briefing seguro para campanha Marketplace IA.",
+        "provider_status": "sandbox_only",
+        "provider_category": "text_image_audio",
+        "future_use": [
+          "text",
+          "image",
+          "audio",
+          "reasoning"
+        ],
+        "risk": {
+          "ok": true,
+          "action": "Sandbox external provider payload for openai text_brief",
+          "agent_id": "marketplace_ia_agent",
+          "target": "openai",
+          "risk_score": 0,
+          "risk_level": "low",
+          "decision": "allowed_local",
+          "blocked_by_default": false,
+          "license_required": false,
+          "emergency_mode": false,
+          "required_gates": [
+            "local_log"
+          ],
+          "reasons": [],
+          "safe_emergency_policy": {
+            "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+            "silent_data_wipe_allowed": false,
+            "audit_logs_must_be_preserved": true
+          },
+          "external_send_enabled": false,
+          "external_publish_enabled": false,
+          "manual_approval_required": false,
+          "available": true
+        },
+        "vault": {
+          "available": true,
+          "vault_report_exists": true,
+          "item_count": 0,
+          "raw_values_exposed": false,
+          "external_api_enabled": false,
+          "storage": "windows_dpapi_current_user"
+        },
+        "license_gate": {
+          "required": false,
+          "ok": true,
+          "reason": "internal_or_demo_sandbox"
+        },
+        "required_gates_before_real_call": [
+          "human_operator_approval",
+          "security_council_approval",
+          "ai_risk_classifier",
+          "license_gate_if_customer_use",
+          "vault_guard",
+          "schema_guard",
+          "external_api_sandbox_report",
+          "rollback_plan"
+        ],
+        "blocked_by_default": [
+          "real_provider_call",
+          "external_send",
+          "external_publish",
+          "automatic_social_post",
+          "automatic_whatsapp_message",
+          "raw_value_exposure",
+          "customer_data_upload_without_review"
+        ],
+        "sandbox_decision": "sandbox_payload_ready",
+        "real_call_decision": "blocked",
+        "blockers_before_real_call": [],
+        "ok": true
+      },
+      "simulation": {
+        "simulation_id": "sim_a6dabec505ba",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "openai",
+        "use_case": "text_brief",
+        "status": "simulated_only",
+        "real_call_performed": false,
+        "estimated_cost_usd": 0.1,
+        "mock_result": {
+          "title": "Sandbox result for openai/text_brief",
+          "summary": "Payload validado em modo sandbox. Nenhuma chamada externa foi feita.",
+          "next_gate": "human_operator_approval"
+        }
+      },
+      "next_checkpoint": "023 - K-Enterprise Readiness Report"
+    },
+    {
+      "ok": true,
+      "checkpoint": "022",
+      "module": "k_os_external_api_sandbox",
+      "status": "simulated",
+      "generated_at": "2026-05-31T12:54:43+00:00",
+      "payload": {
+        "payload_id": "sandbox_d5501671a5da",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "runway",
+        "use_case": "video_storyboard",
+        "agent_id": "future_multimodal_connector",
+        "customer_use": false,
+        "dry_run": true,
+        "real_provider_call_enabled": false,
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "prompt_hash": "804a71ff3f74f63ddd8765b9badcead29b6d7b9b6490536c35dbbf587ef1dd63",
+        "prompt_length": 41,
+        "prompt_preview_redacted": "Simular vídeo curto para landing pública.",
+        "provider_status": "sandbox_only",
+        "provider_category": "video",
+        "future_use": [
+          "video_generation",
+          "image_to_video"
+        ],
+        "risk": {
+          "ok": true,
+          "action": "Sandbox external provider payload for runway video_storyboard",
+          "agent_id": "future_multimodal_connector",
+          "target": "runway",
+          "risk_score": 0,
+          "risk_level": "low",
+          "decision": "allowed_local",
+          "blocked_by_default": false,
+          "license_required": false,
+          "emergency_mode": false,
+          "required_gates": [
+            "local_log"
+          ],
+          "reasons": [],
+          "safe_emergency_policy": {
+            "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+            "silent_data_wipe_allowed": false,
+            "audit_logs_must_be_preserved": true
+          },
+          "external_send_enabled": false,
+          "external_publish_enabled": false,
+          "manual_approval_required": false,
+          "available": true
+        },
+        "vault": {
+          "available": true,
+          "vault_report_exists": true,
+          "item_count": 0,
+          "raw_values_exposed": false,
+          "external_api_enabled": false,
+          "storage": "windows_dpapi_current_user"
+        },
+        "license_gate": {
+          "required": false,
+          "ok": true,
+          "reason": "internal_or_demo_sandbox"
+        },
+        "required_gates_before_real_call": [
+          "human_operator_approval",
+          "security_council_approval",
+          "ai_risk_classifier",
+          "license_gate_if_customer_use",
+          "vault_guard",
+          "schema_guard",
+          "external_api_sandbox_report",
+          "rollback_plan"
+        ],
+        "blocked_by_default": [
+          "real_provider_call",
+          "external_send",
+          "external_publish",
+          "automatic_social_post",
+          "automatic_whatsapp_message",
+          "raw_value_exposure",
+          "customer_data_upload_without_review"
+        ],
+        "sandbox_decision": "sandbox_payload_ready",
+        "real_call_decision": "blocked",
+        "blockers_before_real_call": [],
+        "ok": true
+      },
+      "simulation": {
+        "simulation_id": "sim_d1ebfdf01751",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "runway",
+        "use_case": "video_storyboard",
+        "status": "simulated_only",
+        "real_call_performed": false,
+        "estimated_cost_usd": 1.5,
+        "mock_result": {
+          "title": "Sandbox result for runway/video_storyboard",
+          "summary": "Payload validado em modo sandbox. Nenhuma chamada externa foi feita.",
+          "next_gate": "human_operator_approval"
+        }
+      },
+      "next_checkpoint": "023 - K-Enterprise Readiness Report"
+    },
+    {
+      "ok": true,
+      "checkpoint": "022",
+      "module": "k_os_external_api_sandbox",
+      "status": "simulated",
+      "generated_at": "2026-05-31T12:54:43+00:00",
+      "payload": {
+        "payload_id": "sandbox_799e2029ecea",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "elevenlabs",
+        "use_case": "voice_narration",
+        "agent_id": "future_multimodal_connector",
+        "customer_use": false,
+        "dry_run": true,
+        "real_provider_call_enabled": false,
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "prompt_hash": "d2aea0fac570dcf4ec0bad1b8dcc8f70aa75d7b2ee4d174aea4c6b13d77ead8f",
+        "prompt_length": 36,
+        "prompt_preview_redacted": "Simular narração curta para anúncio.",
+        "provider_status": "sandbox_only",
+        "provider_category": "voice",
+        "future_use": [
+          "voice",
+          "narration"
+        ],
+        "risk": {
+          "ok": true,
+          "action": "Sandbox external provider payload for elevenlabs voice_narration",
+          "agent_id": "future_multimodal_connector",
+          "target": "elevenlabs",
+          "risk_score": 0,
+          "risk_level": "low",
+          "decision": "allowed_local",
+          "blocked_by_default": false,
+          "license_required": false,
+          "emergency_mode": false,
+          "required_gates": [
+            "local_log"
+          ],
+          "reasons": [],
+          "safe_emergency_policy": {
+            "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+            "silent_data_wipe_allowed": false,
+            "audit_logs_must_be_preserved": true
+          },
+          "external_send_enabled": false,
+          "external_publish_enabled": false,
+          "manual_approval_required": false,
+          "available": true
+        },
+        "vault": {
+          "available": true,
+          "vault_report_exists": true,
+          "item_count": 0,
+          "raw_values_exposed": false,
+          "external_api_enabled": false,
+          "storage": "windows_dpapi_current_user"
+        },
+        "license_gate": {
+          "required": false,
+          "ok": true,
+          "reason": "internal_or_demo_sandbox"
+        },
+        "required_gates_before_real_call": [
+          "human_operator_approval",
+          "security_council_approval",
+          "ai_risk_classifier",
+          "license_gate_if_customer_use",
+          "vault_guard",
+          "schema_guard",
+          "external_api_sandbox_report",
+          "rollback_plan"
+        ],
+        "blocked_by_default": [
+          "real_provider_call",
+          "external_send",
+          "external_publish",
+          "automatic_social_post",
+          "automatic_whatsapp_message",
+          "raw_value_exposure",
+          "customer_data_upload_without_review"
+        ],
+        "sandbox_decision": "sandbox_payload_ready",
+        "real_call_decision": "blocked",
+        "blockers_before_real_call": [],
+        "ok": true
+      },
+      "simulation": {
+        "simulation_id": "sim_2b78eca0001f",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "elevenlabs",
+        "use_case": "voice_narration",
+        "status": "simulated_only",
+        "real_call_performed": false,
+        "estimated_cost_usd": 0.25,
+        "mock_result": {
+          "title": "Sandbox result for elevenlabs/voice_narration",
+          "summary": "Payload validado em modo sandbox. Nenhuma chamada externa foi feita.",
+          "next_gate": "human_operator_approval"
+        }
+      },
+      "next_checkpoint": "023 - K-Enterprise Readiness Report"
+    },
+    {
+      "ok": true,
+      "checkpoint": "022",
+      "module": "k_os_external_api_sandbox",
+      "status": "simulated",
+      "generated_at": "2026-05-31T12:54:43+00:00",
+      "payload": {
+        "payload_id": "sandbox_0d9136b4055e",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "instagram",
+        "use_case": "post_draft",
+        "agent_id": "marketplace_ia_agent",
+        "customer_use": false,
+        "dry_run": true,
+        "real_provider_call_enabled": false,
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "prompt_hash": "30ac370ad6d5041f8d2cd18854d128d5bb50aa3afbfeddf185de74d0db1343eb",
+        "prompt_length": 36,
+        "prompt_preview_redacted": "Simular pacote de post sem publicar.",
+        "provider_status": "sandbox_only",
+        "provider_category": "social_publish",
+        "future_use": [
+          "post_draft",
+          "caption",
+          "manual_publish_pack"
+        ],
+        "risk": {
+          "ok": true,
+          "action": "Sandbox external provider payload for instagram post_draft",
+          "agent_id": "marketplace_ia_agent",
+          "target": "instagram",
+          "risk_score": 50,
+          "risk_level": "high",
+          "decision": "requires_approval",
+          "blocked_by_default": false,
+          "license_required": false,
+          "emergency_mode": false,
+          "required_gates": [
+            "human_operator_approval",
+            "security_firewall",
+            "schema_guard",
+            "audit_event"
+          ],
+          "reasons": [
+            {
+              "level": "critical",
+              "matches": [
+                "instagram"
+              ]
+            }
+          ],
+          "safe_emergency_policy": {
+            "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+            "silent_data_wipe_allowed": false,
+            "audit_logs_must_be_preserved": true
+          },
+          "external_send_enabled": false,
+          "external_publish_enabled": false,
+          "manual_approval_required": true,
+          "available": true
+        },
+        "vault": {
+          "available": true,
+          "vault_report_exists": true,
+          "item_count": 0,
+          "raw_values_exposed": false,
+          "external_api_enabled": false,
+          "storage": "windows_dpapi_current_user"
+        },
+        "license_gate": {
+          "required": false,
+          "ok": true,
+          "reason": "internal_or_demo_sandbox"
+        },
+        "required_gates_before_real_call": [
+          "human_operator_approval",
+          "security_council_approval",
+          "ai_risk_classifier",
+          "license_gate_if_customer_use",
+          "vault_guard",
+          "schema_guard",
+          "external_api_sandbox_report",
+          "rollback_plan"
+        ],
+        "blocked_by_default": [
+          "real_provider_call",
+          "external_send",
+          "external_publish",
+          "automatic_social_post",
+          "automatic_whatsapp_message",
+          "raw_value_exposure",
+          "customer_data_upload_without_review"
+        ],
+        "sandbox_decision": "sandbox_payload_ready",
+        "real_call_decision": "blocked",
+        "blockers_before_real_call": [
+          "risk_gate_required"
+        ],
+        "ok": true
+      },
+      "simulation": {
+        "simulation_id": "sim_f0435b5f2c8c",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "instagram",
+        "use_case": "post_draft",
+        "status": "simulated_only",
+        "real_call_performed": false,
+        "estimated_cost_usd": 0.02,
+        "mock_result": {
+          "title": "Sandbox result for instagram/post_draft",
+          "summary": "Payload validado em modo sandbox. Nenhuma chamada externa foi feita.",
+          "next_gate": "human_operator_approval"
+        }
+      },
+      "next_checkpoint": "023 - K-Enterprise Readiness Report"
+    },
+    {
+      "ok": true,
+      "checkpoint": "022",
+      "module": "k_os_external_api_sandbox",
+      "status": "simulated",
+      "generated_at": "2026-05-31T12:54:43+00:00",
+      "payload": {
+        "payload_id": "sandbox_c06d382dd4a8",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "whatsapp",
+        "use_case": "manual_send_pack",
+        "agent_id": "marketplace_ia_agent",
+        "customer_use": true,
+        "dry_run": true,
+        "real_provider_call_enabled": false,
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "prompt_hash": "8e17aff2551aeb2cb32e5b273f5c31daea44a1440d77849a9caefd7ed63bdc37",
+        "prompt_length": 34,
+        "prompt_preview_redacted": "Simular mensagem manual sem envio.",
+        "provider_status": "sandbox_only",
+        "provider_category": "messaging",
+        "future_use": [
+          "manual_send_pack",
+          "controlled_message"
+        ],
+        "risk": {
+          "ok": true,
+          "action": "Sandbox external provider payload for whatsapp manual_send_pack",
+          "agent_id": "marketplace_ia_agent",
+          "target": "whatsapp",
+          "risk_score": 50,
+          "risk_level": "high",
+          "decision": "requires_approval",
+          "blocked_by_default": false,
+          "license_required": false,
+          "emergency_mode": false,
+          "required_gates": [
+            "human_operator_approval",
+            "security_firewall",
+            "schema_guard",
+            "audit_event"
+          ],
+          "reasons": [
+            {
+              "level": "critical",
+              "matches": [
+                "whatsapp"
+              ]
+            }
+          ],
+          "safe_emergency_policy": {
+            "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+            "silent_data_wipe_allowed": false,
+            "audit_logs_must_be_preserved": true
+          },
+          "external_send_enabled": false,
+          "external_publish_enabled": false,
+          "manual_approval_required": true,
+          "available": true
+        },
+        "vault": {
+          "available": true,
+          "vault_report_exists": true,
+          "item_count": 0,
+          "raw_values_exposed": false,
+          "external_api_enabled": false,
+          "storage": "windows_dpapi_current_user"
+        },
+        "license_gate": {
+          "required": true,
+          "ok": false,
+          "active_count": 0,
+          "emergency_lockdown": false
+        },
+        "required_gates_before_real_call": [
+          "human_operator_approval",
+          "security_council_approval",
+          "ai_risk_classifier",
+          "license_gate_if_customer_use",
+          "vault_guard",
+          "schema_guard",
+          "external_api_sandbox_report",
+          "rollback_plan"
+        ],
+        "blocked_by_default": [
+          "real_provider_call",
+          "external_send",
+          "external_publish",
+          "automatic_social_post",
+          "automatic_whatsapp_message",
+          "raw_value_exposure",
+          "customer_data_upload_without_review"
+        ],
+        "sandbox_decision": "sandbox_payload_ready",
+        "real_call_decision": "blocked",
+        "blockers_before_real_call": [
+          "risk_gate_required",
+          "license_gate_not_satisfied"
+        ],
+        "ok": true
+      },
+      "simulation": {
+        "simulation_id": "sim_dbd1ec2bd683",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "whatsapp",
+        "use_case": "manual_send_pack",
+        "status": "simulated_only",
+        "real_call_performed": false,
+        "estimated_cost_usd": 0.02,
+        "mock_result": {
+          "title": "Sandbox result for whatsapp/manual_send_pack",
+          "summary": "Payload validado em modo sandbox. Nenhuma chamada externa foi feita.",
+          "next_gate": "human_operator_approval"
+        }
+      },
+      "next_checkpoint": "023 - K-Enterprise Readiness Report"
+    },
+    {
+      "ok": true,
+      "checkpoint": "022",
+      "module": "k_os_external_api_sandbox",
+      "status": "simulated",
+      "generated_at": "2026-05-31T12:54:43+00:00",
+      "payload": {
+        "payload_id": "sandbox_301ffa4df3b1",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "google",
+        "use_case": "analytics_review",
+        "agent_id": "k_uni_cockpit",
+        "customer_use": false,
+        "dry_run": true,
+        "real_provider_call_enabled": false,
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "prompt_hash": "9ce5adb87ce3adef94609c74168a4e965230a61da9404053b0122c77e96f8392",
+        "prompt_length": 46,
+        "prompt_preview_redacted": "Simular leitura de analytics sem conexão real.",
+        "provider_status": "sandbox_only",
+        "provider_category": "cloud_search_docs",
+        "future_use": [
+          "workspace",
+          "drive",
+          "analytics"
+        ],
+        "risk": {
+          "ok": true,
+          "action": "Sandbox external provider payload for google analytics_review",
+          "agent_id": "k_uni_cockpit",
+          "target": "google",
+          "risk_score": 0,
+          "risk_level": "low",
+          "decision": "allowed_local",
+          "blocked_by_default": false,
+          "license_required": false,
+          "emergency_mode": false,
+          "required_gates": [
+            "local_log"
+          ],
+          "reasons": [],
+          "safe_emergency_policy": {
+            "safe_autodestruct_means": "deactivate, revoke, disable connectors, freeze tasks and preserve audit logs",
+            "silent_data_wipe_allowed": false,
+            "audit_logs_must_be_preserved": true
+          },
+          "external_send_enabled": false,
+          "external_publish_enabled": false,
+          "manual_approval_required": false,
+          "available": true
+        },
+        "vault": {
+          "available": true,
+          "vault_report_exists": true,
+          "item_count": 0,
+          "raw_values_exposed": false,
+          "external_api_enabled": false,
+          "storage": "windows_dpapi_current_user"
+        },
+        "license_gate": {
+          "required": false,
+          "ok": true,
+          "reason": "internal_or_demo_sandbox"
+        },
+        "required_gates_before_real_call": [
+          "human_operator_approval",
+          "security_council_approval",
+          "ai_risk_classifier",
+          "license_gate_if_customer_use",
+          "vault_guard",
+          "schema_guard",
+          "external_api_sandbox_report",
+          "rollback_plan"
+        ],
+        "blocked_by_default": [
+          "real_provider_call",
+          "external_send",
+          "external_publish",
+          "automatic_social_post",
+          "automatic_whatsapp_message",
+          "raw_value_exposure",
+          "customer_data_upload_without_review"
+        ],
+        "sandbox_decision": "sandbox_payload_ready",
+        "real_call_decision": "blocked",
+        "blockers_before_real_call": [],
+        "ok": true
+      },
+      "simulation": {
+        "simulation_id": "sim_079ca1c9d278",
+        "created_at": "2026-05-31T12:54:43+00:00",
+        "provider": "google",
+        "use_case": "analytics_review",
+        "status": "simulated_only",
+        "real_call_performed": false,
+        "estimated_cost_usd": 0.02,
+        "mock_result": {
+          "title": "Sandbox result for google/analytics_review",
+          "summary": "Payload validado em modo sandbox. Nenhuma chamada externa foi feita.",
+          "next_gate": "human_operator_approval"
+        }
+      },
+      "next_checkpoint": "023 - K-Enterprise Readiness Report"
+    }
+  ],
+  "real_provider_call_performed": false,
+  "real_provider_call_enabled": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "blockers_before_real_call_count": 3,
+  "manual_approval_required": true,
+  "next_checkpoint": "023 - K-Enterprise Readiness Report"
+}

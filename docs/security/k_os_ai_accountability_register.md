@@ -47,3 +47,5 @@ Toda IA ou agente precisa ter:
 
 | K-OS AI Risk Classifier | Classifica risco, exige gates e bloqueia ações perigosas | Operador K-OS | Sim, validação local | Não | Não | Human Approval + Security Council | reports/risk |
 | K-OS License Gate | Controla ativação comercial, assinatura e revogação segura de agentes | Operador K-OS | Sim, local | Não | Não | License Gate + Security Council | reports/license |
+
+| K-OS External API Sandbox | Simula conectores externos sem chamada real, com risco, licença e vault | Operador K-OS | Sim, sandbox local | Não | Não | Human Approval + Security Council + License Gate | reports/external_sandbox |

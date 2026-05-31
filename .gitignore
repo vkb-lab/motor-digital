@@ -293,3 +293,5 @@ memory/license/
 reports/risk/runtime/
 reports/license/runtime/
 local_secrets/k_os_licenses/
+memory/external_sandbox/
+reports/external_sandbox/runtime/

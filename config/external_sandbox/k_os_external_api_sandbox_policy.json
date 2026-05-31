@@ -1,0 +1,103 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "022",
+  "module": "external_api_sandbox",
+  "policy": {
+    "real_provider_call_enabled": false,
+    "dry_run_required": true,
+    "manual_approval_required": true,
+    "risk_classifier_required": true,
+    "license_gate_required_for_customer_use": true,
+    "vault_guard_required_for_real_provider": true,
+    "schema_guard_required": true,
+    "security_firewall_required": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "no_agent_decides_alone": true
+  },
+  "providers": [
+    {
+      "provider": "openai",
+      "category": "text_image_audio",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["text", "image", "audio", "reasoning"]
+    },
+    {
+      "provider": "runway",
+      "category": "video",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["video_generation", "image_to_video"]
+    },
+    {
+      "provider": "elevenlabs",
+      "category": "voice",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["voice", "narration"]
+    },
+    {
+      "provider": "instagram",
+      "category": "social_publish",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["post_draft", "caption", "manual_publish_pack"]
+    },
+    {
+      "provider": "whatsapp",
+      "category": "messaging",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["manual_send_pack", "controlled_message"]
+    },
+    {
+      "provider": "google",
+      "category": "cloud_search_docs",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["workspace", "drive", "analytics"]
+    },
+    {
+      "provider": "luma",
+      "category": "video",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["video_generation"]
+    },
+    {
+      "provider": "sora",
+      "category": "video",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["video_generation"]
+    },
+    {
+      "provider": "comfyui",
+      "category": "local_image_pipeline",
+      "status": "sandbox_only",
+      "real_call_allowed": false,
+      "future_use": ["local_image_workflow"]
+    }
+  ],
+  "required_gates_before_real_call": [
+    "human_operator_approval",
+    "security_council_approval",
+    "ai_risk_classifier",
+    "license_gate_if_customer_use",
+    "vault_guard",
+    "schema_guard",
+    "external_api_sandbox_report",
+    "rollback_plan"
+  ],
+  "blocked_by_default": [
+    "real_provider_call",
+    "external_send",
+    "external_publish",
+    "automatic_social_post",
+    "automatic_whatsapp_message",
+    "raw_value_exposure",
+    "customer_data_upload_without_review"
+  ]
+}

@@ -1,13 +1,19 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T12:48:42.628547+00:00",
+  "generated_at": "2026-05-31T12:54:44.800950+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    "reports/license/latest_license_gate_report.json",
-    "reports/risk/k_os_021_closure_report.json",
-    "reports/risk/latest_ai_risk_classifier_report.json",
-    "reports/risk/latest_ai_risk_classifier_report.md"
+    ".gitignore",
+    "config/external_sandbox/k_os_external_api_sandbox_policy.json",
+    "docs/security/k_os_ai_accountability_register.md",
+    "docs/security/k_os_external_api_sandbox.md",
+    "ops/k_os_external_api_sandbox.ps1",
+    "ops/k_os_external_api_sandbox.py",
+    "pages/922_K_OS_External_API_Sandbox.py",
+    "reports/external_sandbox/k_os_022_external_api_sandbox_install.json",
+    "reports/external_sandbox/latest_external_api_sandbox_report.json",
+    "reports/external_sandbox/latest_external_api_sandbox_report.md"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,

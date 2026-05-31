@@ -1,0 +1,32 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "022",
+    "module":  "k_os_external_api_sandbox",
+    "status":  "installed",
+    "capabilities":  [
+                         "provider_payload_simulation",
+                         "risk_gate_before_external_call",
+                         "license_gate_before_customer_use",
+                         "vault_check_before_real_provider",
+                         "cost_estimate",
+                         "dry_run_only",
+                         "real_call_blocked"
+                     ],
+    "providers":  [
+                      "openai",
+                      "runway",
+                      "elevenlabs",
+                      "instagram",
+                      "whatsapp",
+                      "google",
+                      "luma",
+                      "sora",
+                      "comfyui"
+                  ],
+    "real_provider_call_enabled":  false,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "023 - K-Enterprise Readiness Report",
+    "installed_at":  "2026-05-31T12:54:42.5548089Z"
+}
