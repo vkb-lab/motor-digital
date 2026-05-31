@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "042",
+    "module":  "k_os_memory_event_bus_context_index_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "memory_event_bus",
+                         "context_index",
+                         "cross_module_event_index",
+                         "local_search",
+                         "payload_hashing",
+                         "domain_summary",
+                         "sanitized_memory_report",
+                         "context_snapshot"
+                     ],
+    "memory_bus_local_only":  true,
+    "raw_memory_index_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "raw_payload_storage_in_reports":  false,
+    "payload_hashing_enabled":  true,
+    "context_index_enabled":  true,
+    "local_search_enabled":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "043 - K-Context Retrieval API Core",
+    "installed_at":  "2026-05-31T20:36:43.2968080Z"
+}

@@ -1,0 +1,729 @@
+{
+  "ok": true,
+  "checkpoint": "042",
+  "module": "k_os_memory_event_bus_context_index_core",
+  "status": "search_completed",
+  "generated_at": "2026-05-31T20:36:44+00:00",
+  "query": "agent",
+  "event_match_count": 42,
+  "context_match_count": 5,
+  "events": [
+    {
+      "event_id": "evt_a49a4d291a248fc8",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:32:33+00:00",
+      "payload_hash": "b61479c5d6b81ef9b6ac777b6451e8f61976834e63704eddab4b7bdb43907f0b",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_cf5893fc46517800",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.execution_recorded",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "payload_hash": "96e64bde2c0fd3cc378a53f8496bcad1a7f10f7a9b2a12320d2661d61c62db98",
+      "payload_keys": [
+        "ledger_id",
+        "source_type"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_60831c36de868dde",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "payload_hash": "b61479c5d6b81ef9b6ac777b6451e8f61976834e63704eddab4b7bdb43907f0b",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_ac75d7244322fde7",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.replay_completed",
+      "created_at": "2026-05-31T20:32:32+00:00",
+      "payload_hash": "9096183f06acdef9cb63724210605899c7b80e0c683122e265a2d123e568bc87",
+      "payload_keys": [
+        "command_executed",
+        "ledger_id",
+        "ok"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_9c81a4d5d0a13606",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:32:31+00:00",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_e3fdc50b4c51bd30",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.replay_completed",
+      "created_at": "2026-05-31T20:31:18+00:00",
+      "payload_hash": "83fefa095e531dac946bd848a291c0a10194a0979453b955158aec0743bb3a64",
+      "payload_keys": [
+        "command_executed",
+        "ledger_id",
+        "ok"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_548fddee18630ff8",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:18+00:00",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_05bddb881ac8d35e",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "payload_hash": "36c9f53af3ac1e0d3b6a93c8872e0b11c6e860e1227707f60e18be5622beb324",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_525155dfeee9be9a",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.execution_recorded",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "payload_hash": "511cf9a7026ce4c575f2b78a5d8fe31aca871b233085cbbf91ec947e6fe9666a",
+      "payload_keys": [
+        "ledger_id",
+        "source_type"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_78b965b2f50524dd",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_78b965b2f50524dd",
+      "source_path": "memory/agent_ledger/events.jsonl",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "event": "agent_ledger.audit_generated",
+      "created_at": "2026-05-31T20:31:17+00:00",
+      "payload_hash": "0a99d42816c0924e48bcf090e2e4633ff184cafcae52feba6651a3f705fd57bf",
+      "payload_keys": [
+        "entry_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_47a3a44e5eef2fa2",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.heartbeat",
+      "created_at": "2026-05-31T20:25:40+00:00",
+      "payload_hash": "46af08c218eab5895d6cb0005c5f3b4ea8d777a27b25a1f861045391e69bb4dc",
+      "payload_keys": [
+        "agent_id",
+        "task_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_75afecc3ff7ad69a",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:25:40+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_75afecc3ff7ad69a",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:25:40+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_02738d96775802aa",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:25:40+00:00",
+      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_279d564f2da7c15d",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:25:39+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_1903ddf9d0f243b3",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:25:39+00:00",
+      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_f3dd4c53ebb000f9",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.agent_registered",
+      "created_at": "2026-05-31T20:25:39+00:00",
+      "payload_hash": "99c2c30cafb6a35dc4d8e6100148165e3e57c371a341e4a0a4f2ba9868289b7d",
+      "payload_keys": [
+        "agent_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_279d564f2da7c15d",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:25:39+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_1903ddf9d0f243b3",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:25:39+00:00",
+      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_6185779b90c9a74a",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:23:42+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_14844d8d2f644f14",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:23:42+00:00",
+      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_7455814f813e7966",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_0b6fdd405360e07f",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "b78c87ef61246fca3d12e6fd57d0ee738ec7b2ae08bcc8aa9be79c67033b0409",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_c3a89a20cc41bce3",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.agent_registered",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "99c2c30cafb6a35dc4d8e6100148165e3e57c371a341e4a0a4f2ba9868289b7d",
+      "payload_keys": [
+        "agent_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_f3219be29710fd8c",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "55884cc2534bf442754926f493a0339588a539dd47e746d9ec053475348dcea4",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_00333fc45b132f7b",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_59e43ea7e655a565",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.heartbeat",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "08de942c5643969a751807d944d7bae96efee01ee86a6e57935eb50201027ef2",
+      "payload_keys": [
+        "agent_id",
+        "task_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_7455814f813e7966",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_00333fc45b132f7b",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.audit_generated",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "b6f1b93999dd27a8bae1fd2e2f6d7062beb8e1508c1e395342abe231f50cd956",
+      "payload_keys": [
+        "agent_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_934690737a625892",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.heartbeat",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "3dba327fe7a5557858f5762ec6b21db9e78cfc1c45ee306854df81c9ef525468",
+      "payload_keys": [
+        "agent_id",
+        "task_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_7455814f813e7966",
+      "source_path": "memory/agent_runtime/events.jsonl",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "event": "agent_runtime.watchdog_completed",
+      "created_at": "2026-05-31T20:23:41+00:00",
+      "payload_hash": "2d3b4d44898cf3c2bb42627868accc5b7fc56494334d959f0121fa2bb2f4ed70",
+      "payload_keys": [
+        "health_level"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_4d262942113c38c6",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.task_approved",
+      "created_at": "2026-05-31T20:19:12+00:00",
+      "payload_hash": "fac02e145e52a82db7d88ec66582a95fb8cfac778234843f4b8a7ec59c833ee7",
+      "payload_keys": [
+        "task_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_b3445aefced18a6e",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:19:12+00:00",
+      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_8cef1c4fb89e8154",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.dispatch_completed",
+      "created_at": "2026-05-31T20:19:12+00:00",
+      "payload_hash": "c2c63a0b17100a64305c3a7757476eea213ee7c5f3b8e1da21df3e6dd4e0c379",
+      "payload_keys": [
+        "command_executed",
+        "ok",
+        "task_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_b3445aefced18a6e",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:19:12+00:00",
+      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_55fa9fb0b1600d1f",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:19:11+00:00",
+      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_55fa9fb0b1600d1f",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:19:11+00:00",
+      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_a44809ceeec63965",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:17:38+00:00",
+      "payload_hash": "d49a3101ba5e6d31ded1b056a402f81bc5b6ef829575820857341cecae6319c2",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_0ef61770205a8d12",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.task_created",
+      "created_at": "2026-05-31T20:17:38+00:00",
+      "payload_hash": "ff2f5595e4a7e8c274297bd8a70d30bedcd914f865191159730f7175355d6b3b",
+      "payload_keys": [
+        "action_id",
+        "agent_id",
+        "blockers",
+        "task_id"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_eb6cb2a933bbdde5",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:17:38+00:00",
+      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    },
+    {
+      "event_id": "evt_eb6cb2a933bbdde5",
+      "source_path": "memory/agent_queue/events.jsonl",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "event": "agent_queue.audit_generated",
+      "created_at": "2026-05-31T20:17:38+00:00",
+      "payload_hash": "7dc93ca50a00057c2ba64ee7602fdd568ed70d7a02ad6c899647927f3cae8cfe",
+      "payload_keys": [
+        "task_count"
+      ],
+      "raw_payload_included": false
+    }
+  ],
+  "context_items": [
+    {
+      "context_id": "ctx_340e7df41fe20ce8",
+      "source_path": "reports/governance/latest_agent_permission_matrix_report.json",
+      "domain": "governance",
+      "module": "agent_permission_matrix",
+      "exists": true,
+      "ok": true,
+      "status": "passed",
+      "checkpoint": "017",
+      "generated_at": "2026-05-31T12:03:20+00:00",
+      "report_hash": "67e9e15991f98859c1ff2527d2965980fff0ef94db30c682f8dad87a7712987a",
+      "summary": {
+        "ok": true,
+        "checkpoint": "017",
+        "module": "k_os_agent_permission_matrix",
+        "status": "passed",
+        "generated_at": "2026-05-31T12:03:20+00:00",
+        "next_checkpoint": "018 - K-Credential Vault",
+        "external_send_enabled": false,
+        "external_publish_enabled": false,
+        "manual_approval_required": true
+      },
+      "metric_keys": [],
+      "raw_report_included": false
+    },
+    {
+      "context_id": "ctx_cd8fc3b804339680",
+      "source_path": "reports/command_center/latest_command_center_action_router_report.json",
+      "domain": "command_center",
+      "module": "command_center",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "checkpoint": "038",
+      "generated_at": "2026-05-31T20:12:15+00:00",
+      "report_hash": "97b9af0f2426f98d5ce91ff15f5905c83413c2117538a560732c19662ac5d4ae",
+      "summary": {
+        "ok": true,
+        "checkpoint": "038",
+        "module": "k_os_command_center_action_router",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:12:15+00:00",
+        "next_checkpoint": "039 - K-Agent Orchestration Queue Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "metric_keys": [],
+      "raw_report_included": false
+    },
+    {
+      "context_id": "ctx_0a4008a6166eb79f",
+      "source_path": "reports/agent_queue/latest_agent_orchestration_queue_report.json",
+      "domain": "agent_queue",
+      "module": "agent_queue",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "checkpoint": "039",
+      "generated_at": "2026-05-31T20:19:12+00:00",
+      "report_hash": "3d0dbd2bf015dcb4bb8a71e7cc1b0aa1f1339ac8675d0453fe309e743ce1f317",
+      "summary": {
+        "ok": true,
+        "checkpoint": "039",
+        "module": "k_os_agent_orchestration_queue_core",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:19:12+00:00",
+        "next_checkpoint": "040 - K-Agent Runtime Supervisor Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "metric_keys": [
+        "agent_counts",
+        "approved_task_count",
+        "blocked_task_count",
+        "dispatch_count",
+        "priority_counts",
+        "queued_task_count",
+        "status_counts",
+        "task_count"
+      ],
+      "raw_report_included": false
+    },
+    {
+      "context_id": "ctx_e2282c839e8988db",
+      "source_path": "reports/agent_runtime/latest_agent_runtime_supervisor_report.json",
+      "domain": "agent_runtime",
+      "module": "agent_runtime",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "checkpoint": "040",
+      "generated_at": "2026-05-31T20:25:40+00:00",
+      "report_hash": "33973a95a0d3cd85acfc55b34be16cadf27545a684ec66199803c65f554ee2d7",
+      "summary": {
+        "ok": true,
+        "checkpoint": "040",
+        "module": "k_os_agent_runtime_supervisor_core",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:25:40+00:00",
+        "next_checkpoint": "041 - K-Agent Execution Ledger and Replay Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "metric_keys": [
+        "agent_count",
+        "attention_agent_count",
+        "blocked_agent_count",
+        "health_counts",
+        "healthy_agent_count",
+        "queue_blocked_task_count",
+        "queue_dispatch_count",
+        "queue_task_count",
+        "stale_agent_count",
+        "status_counts"
+      ],
+      "raw_report_included": false
+    },
+    {
+      "context_id": "ctx_494cb306717ac6ac",
+      "source_path": "reports/agent_ledger/latest_agent_execution_ledger_report.json",
+      "domain": "agent_ledger",
+      "module": "agent_ledger",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "checkpoint": "041",
+      "generated_at": "2026-05-31T20:32:33+00:00",
+      "report_hash": "938de9b9c10a68de6f4ed1f377ca60ca86a27330ded935fd2deb39ab91e899e3",
+      "summary": {
+        "ok": true,
+        "checkpoint": "041",
+        "module": "k_os_agent_execution_ledger_replay_core",
+        "status": "audit_generated",
+        "generated_at": "2026-05-31T20:32:33+00:00",
+        "next_checkpoint": "042 - K-Memory Event Bus and Context Index Core",
+        "external_send_enabled": false,
+        "external_publish_enabled": false
+      },
+      "metric_keys": [
+        "action_counts",
+        "agent_counts",
+        "dry_run_entry_count",
+        "executed_entry_count",
+        "failed_entry_count",
+        "ledger_entry_count",
+        "replay_count",
+        "replay_dry_run_count",
+        "replay_executed_count",
+        "status_counts"
+      ],
+      "raw_report_included": false
+    }
+  ],
+  "raw_payload_included": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false
+}

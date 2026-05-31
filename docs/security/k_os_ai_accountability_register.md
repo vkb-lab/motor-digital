@@ -85,3 +85,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Runtime Supervisor Core | Supervisiona runtime de agentes, heartbeat, watchdog, stale agents, bloqueios preventivos e auditoria | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Agent Queue + Permission Matrix + Watchdog | reports/agent_runtime |
 
 | K-OS Agent Execution Ledger and Replay Core | Registra ledger auditavel de execucoes, hashes, evidencias e replay controlado via Command Center | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Command Center Gate + Evidence Hash | reports/agent_ledger |
+
+| K-OS Memory Event Bus and Context Index Core | Indexa eventos operacionais, contexto sanitizado, buscas locais e trilha de memoria evolutiva | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Security Review + Payload Hashing | reports/memory_bus |
