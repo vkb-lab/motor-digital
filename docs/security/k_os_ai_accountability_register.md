@@ -107,3 +107,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Incident Lockdown and Quarantine Core | Bloqueia agentes/execuções em incidente, cria quarentena local e preserva evidências sem apagar dados | Operador K-OS | Sim, local sanitizado | Não | Não | Human Review + Forensics Bundle + Quarantine Hash | reports/incident_lockdown |
 
 | K-OS Agent Rollback Preparation Core | Prepara plano de rollback seguro a partir de incidente/quarentena sem executar mudanças ou apagar dados | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Incident Lockdown + Forensics + Ledger | reports/rollback_preparation |
+
+| K-OS Agent Rollback Approval and Release Gate Core | Registra aprovação, bloqueio ou revogação para rollback futuro sem executar mudanças | Operador K-OS | Sim, local sanitizado | Não | Não | Human Operator + Release Hash + No Rollback Execution | reports/rollback_release_gate |

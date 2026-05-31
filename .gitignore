@@ -381,3 +381,6 @@ reports/rollback_preparation/runtime/
 local_secrets/k_os_rollback_preparation/
 reports/real_execution_gate/latest_real_execution_approval_decision.json
 reports/real_execution_gate/latest_real_execution_approval_decision.md
+memory/rollback_release_gate/
+reports/rollback_release_gate/runtime/
+local_secrets/k_os_rollback_release_gate/

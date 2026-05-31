@@ -1,0 +1,122 @@
+{
+  "ok": true,
+  "checkpoint": "054",
+  "module": "k_os_agent_rollback_approval_release_gate_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T22:59:28+00:00",
+  "release_state_path": "local_secrets/k_os_rollback_release_gate/agent_rollback_release_gate_state.json",
+  "release_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "release_gate_executes_rollback": false,
+  "release_gate_deletes_data": false,
+  "release_gate_modifies_files": false,
+  "human_operator_required": true,
+  "rollback_plan_available": true,
+  "rollback_validation_available": true,
+  "incident_record_available": true,
+  "forensics_bundle_available": true,
+  "ledger_record_available": true,
+  "metrics": {
+    "release_record_count": 1,
+    "validation_count": 1,
+    "approved_count": 0,
+    "blocked_count": 1,
+    "revoked_count": 0,
+    "rollback_execution_count": 0,
+    "data_delete_count": 0,
+    "file_modify_count": 0,
+    "raw_payload_record_count": 0,
+    "status_counts": {
+      "blocked": 1
+    }
+  },
+  "recent_release_records": [
+    {
+      "ok": true,
+      "checkpoint": "054",
+      "module": "k_os_agent_rollback_approval_release_gate_core",
+      "status": "blocked",
+      "release_id": "rbg_ff638f05f0bd",
+      "created_at": "2026-05-31T22:59:28+00:00",
+      "decision": "block_future_rollback",
+      "operator": "operator_k_os",
+      "reason": "closure_safe_block_until_rollback_plan_ready",
+      "rollback_plan_id": "rbp_8004b3ca46e3",
+      "rollback_plan_hash": "cf13c76567a6b3422d592f09efa252bac02019b803bd00be3fed440bf8181130",
+      "incident_id": "inc_66fb283052e6",
+      "quarantine_id": "qua_4b0cb9303592",
+      "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+      "release_record_hash": "7d12fdb3f3c15e975c3827414ce217333e53be58b90f024f5538c41db5765c91",
+      "local_release_token_hash": "",
+      "release_token_included": false,
+      "local_release_token_stored_local_only": true,
+      "release_gate_executes_rollback": false,
+      "release_gate_deletes_data": false,
+      "release_gate_modifies_files": false,
+      "external_send_enabled": false,
+      "external_publish_enabled": false,
+      "raw_payload_included": false,
+      "blockers": [
+        "operator_blocked_release"
+      ],
+      "next_action": "rollback_remains_blocked"
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": true,
+      "checkpoint": "054",
+      "module": "k_os_agent_rollback_approval_release_gate_core",
+      "status": "validated",
+      "generated_at": "2026-05-31T22:59:28+00:00",
+      "release_id": "rbg_ff638f05f0bd",
+      "release_status": "blocked",
+      "decision": "block_future_rollback",
+      "rollback_plan_id": "rbp_8004b3ca46e3",
+      "release_record_hash": "7d12fdb3f3c15e975c3827414ce217333e53be58b90f024f5538c41db5765c91",
+      "local_release_token_hash": "",
+      "release_token_included": false,
+      "release_gate_executes_rollback": false,
+      "release_gate_deletes_data": false,
+      "release_gate_modifies_files": false,
+      "raw_payload_included": false,
+      "blockers": [],
+      "warnings": [
+        "rollback_release_blocked_by_gate"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "release_quarantine_without_review",
+    "commit_raw_release_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "required_gates_before_future_rollback_release": [
+    "rollback_plan_exists",
+    "rollback_plan_hash_exists",
+    "incident_lockdown_exists",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "human_operator_present",
+    "release_decision_recorded",
+    "release_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "055 - K-Agent Rollback Dry Run Simulator Core"
+}

@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "054",
+  "module": "agent_rollback_approval_release_gate_core",
+  "purpose": "Criar gate de aprovacao ou bloqueio para liberacao futura de rollback, sem executar rollback real, sem alterar arquivos e sem apagar dados.",
+  "release_gate_policy": {
+    "release_gate_local_only": true,
+    "raw_release_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "release_gate_executes_rollback": false,
+    "release_gate_deletes_data": false,
+    "release_gate_modifies_files": false,
+    "rollback_plan_required": true,
+    "incident_lockdown_required": true,
+    "forensics_bundle_required": true,
+    "ledger_record_required": true,
+    "human_operator_required": true,
+    "local_release_token_hash_only_in_reports": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "allowed_gate_decisions": [
+    "approve_future_rollback",
+    "block_future_rollback",
+    "revoke_future_rollback"
+  ],
+  "release_statuses": [
+    "draft",
+    "approved_for_future_rollback",
+    "blocked",
+    "revoked",
+    "validated",
+    "archived"
+  ],
+  "blocked_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "release_quarantine_without_review",
+    "commit_raw_release_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "required_gates_before_future_rollback_release": [
+    "rollback_plan_exists",
+    "rollback_plan_hash_exists",
+    "incident_lockdown_exists",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "execution_evidence_hash_available",
+    "human_operator_present",
+    "release_decision_recorded",
+    "release_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "055 - K-Agent Rollback Dry Run Simulator Core"
+}

@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checkpoint": "054",
+  "module": "k_os_agent_rollback_approval_release_gate_core",
+  "status": "validated",
+  "generated_at": "2026-05-31T22:59:28+00:00",
+  "release_id": "rbg_ff638f05f0bd",
+  "release_status": "blocked",
+  "decision": "block_future_rollback",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "release_record_hash": "7d12fdb3f3c15e975c3827414ce217333e53be58b90f024f5538c41db5765c91",
+  "local_release_token_hash": "",
+  "release_token_included": false,
+  "release_gate_executes_rollback": false,
+  "release_gate_deletes_data": false,
+  "release_gate_modifies_files": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "rollback_release_blocked_by_gate"
+  ]
+}

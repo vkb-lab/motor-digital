@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "checkpoint": "054",
+  "module": "k_os_agent_rollback_approval_release_gate_core",
+  "status": "blocked",
+  "release_id": "rbg_ff638f05f0bd",
+  "created_at": "2026-05-31T22:59:28+00:00",
+  "decision": "block_future_rollback",
+  "operator": "operator_k_os",
+  "reason": "closure_safe_block_until_rollback_plan_ready",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "rollback_plan_hash": "cf13c76567a6b3422d592f09efa252bac02019b803bd00be3fed440bf8181130",
+  "incident_id": "inc_66fb283052e6",
+  "quarantine_id": "qua_4b0cb9303592",
+  "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+  "release_record_hash": "7d12fdb3f3c15e975c3827414ce217333e53be58b90f024f5538c41db5765c91",
+  "local_release_token_hash": "",
+  "release_token_included": false,
+  "local_release_token_stored_local_only": true,
+  "release_gate_executes_rollback": false,
+  "release_gate_deletes_data": false,
+  "release_gate_modifies_files": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "blockers": [
+    "operator_blocked_release"
+  ],
+  "next_action": "rollback_remains_blocked"
+}
