@@ -1,17 +1,9 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T20:10:29.080470+00:00",
+  "generated_at": "2026-05-31T20:12:16.852127+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
-  "files_scanned": [
-    ".gitignore",
-    "config/command_center/k_os_command_center_action_router_policy.json",
-    "docs/commercial/k_os_command_center_action_router.md",
-    "docs/security/k_os_ai_accountability_register.md",
-    "ops/k_os_command_center_action_router.ps1",
-    "ops/k_os_command_center_action_router.py",
-    "pages/938_K_OS_Command_Center_Action_Router.py"
-  ],
+  "files_scanned": [],
   "findings_count": 0,
   "blocking_findings_count": 0,
   "findings": [],
