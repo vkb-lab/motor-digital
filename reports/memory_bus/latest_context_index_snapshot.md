@@ -1,14 +1,14 @@
 # K-OS Context Index Snapshot
 
-- Generated at: 2026-05-31T20:36:44+00:00
-- Events: 989
+- Generated at: 2026-05-31T20:37:57+00:00
+- Events: 994
 - Context items: 20
 - Raw payload included: False
 - External publish enabled: False
 
 ## Domain summary
 
-- memory_bus: events=1 | context=0 | ok=0 | missing=0
+- memory_bus: events=6 | context=0 | ok=0 | missing=0
 - agent_ledger: events=11 | context=1 | ok=1 | missing=0
 - command_center: events=892 | context=1 | ok=1 | missing=0
 - agent_runtime: events=21 | context=1 | ok=1 | missing=0
