@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "030",
+  "module": "onboarding_activation_gate",
+  "purpose": "Validar todos os requisitos antes de ativar cliente, agente, assinatura, licenca e pacote de onboarding.",
+  "activation_policy": {
+    "real_customer_activation_enabled": false,
+    "activation_dry_run_only": true,
+    "manual_approval_required": true,
+    "commercial_approval_required": true,
+    "legal_review_required_for_paid_customer": true,
+    "license_gate_required": true,
+    "active_subscription_required": true,
+    "crm_customer_required": true,
+    "approved_deal_required": true,
+    "approved_proposal_required": true,
+    "agent_permission_required": true,
+    "risk_classifier_required": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "real_provider_call_enabled": false
+  },
+  "activation_statuses": [
+    "draft",
+    "blocked",
+    "ready_for_review",
+    "approved_for_manual_activation",
+    "activated_manually",
+    "suspended",
+    "cancelled"
+  ],
+  "required_gates_before_activation": [
+    "crm_customer_exists",
+    "billing_subscription_active_or_trial",
+    "license_gate_active",
+    "deal_commercially_approved",
+    "proposal_approved_for_manual_send_or_accepted",
+    "agent_permission_matrix_valid",
+    "ai_risk_classifier_valid",
+    "security_firewall_available",
+    "schema_guard_available",
+    "incident_runbook_available",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "activate_customer_without_all_gates",
+    "activate_agent_without_license",
+    "activate_agent_without_subscription",
+    "activate_agent_without_crm_customer",
+    "activate_agent_without_approved_proposal",
+    "activate_agent_without_approved_deal",
+    "send_external_message_during_onboarding",
+    "publish_external_content_during_onboarding",
+    "call_external_provider_during_onboarding",
+    "commit_raw_customer_data",
+    "delete_audit_logs"
+  ],
+  "onboarding_package_sections": [
+    "customer_summary",
+    "commercial_summary",
+    "subscription_summary",
+    "license_summary",
+    "proposal_summary",
+    "deal_summary",
+    "risk_summary",
+    "activation_blockers",
+    "manual_next_steps",
+    "operator_approval_checklist"
+  ],
+  "next_checkpoint": "031 - K-Customer Success and Delivery Tracker"
+}

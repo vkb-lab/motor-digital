@@ -1,14 +1,17 @@
 {
   "ok": true,
   "status": "passed",
-  "generated_at": "2026-05-31T16:40:54.889784+00:00",
+  "generated_at": "2026-05-31T17:00:19.082186+00:00",
   "repo": "C:\\Users\\oi\\Desktop\\motor-digital",
   "files_scanned": [
-    "reports/proposals/k_os_029_closure_report.json",
-    "reports/proposals/latest_proposal_approval_dry_run.json",
-    "reports/proposals/latest_proposal_approval_dry_run.md",
-    "reports/proposals/latest_proposal_factory_report.json",
-    "reports/proposals/latest_proposal_factory_report.md"
+    ".gitignore",
+    "config/onboarding/k_os_onboarding_activation_policy.json",
+    "docs/commercial/k_os_onboarding_activation_gate.md",
+    "docs/security/k_os_ai_accountability_register.md",
+    "ops/k_os_onboarding_activation_gate.ps1",
+    "ops/k_os_onboarding_activation_gate.py",
+    "pages/930_K_OS_Onboarding_Activation_Gate.py",
+    "reports/onboarding/k_os_030_onboarding_activation_gate_install.json"
   ],
   "findings_count": 0,
   "blocking_findings_count": 0,

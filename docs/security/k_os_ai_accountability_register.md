@@ -61,3 +61,5 @@ Toda IA ou agente precisa ter:
 | K-OS Sales Pipeline and Deal Desk | Organiza oportunidades, funil, valores, propostas e aprovacoes comerciais | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Legal Review | reports/sales |
 
 | K-OS Proposal Factory and Quote Builder | Gera propostas e orcamentos locais com approval gate antes de envio manual | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Legal Review | reports/proposals |
+
+| K-OS Onboarding and Activation Gate | Valida CRM, assinatura, licença, deal, proposta, risco e permissões antes de ativação manual | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Security Review | reports/onboarding |
