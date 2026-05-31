@@ -286,3 +286,5 @@ reports/vault/runtime/
 *vault_local*.json
 memory/audit/
 reports/audit/runtime/
+memory/mission_control/
+reports/mission_control/runtime/

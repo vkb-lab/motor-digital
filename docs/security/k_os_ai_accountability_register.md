@@ -42,3 +42,5 @@ Toda IA ou agente precisa ter:
 | K-OS Vault Guard | Cofre local de chaves e política de acesso controlado | Operador K-OS | Sim, auditoria local | Não | Não | Security Council + Human Approval | reports/vault |
 
 | K-OS Audit Evidence Pack | Consolida evidências, controles, gaps e readiness de auditoria | Operador K-OS | Sim, relatório local | Não | Não | Security Council + AI Accountability Council | reports/audit |
+
+| K-OS Mission Control 2.0 | Consolida status, risco, gates e próximos passos da nave | Operador K-OS | Sim, leitura local | Não | Não | Human Approval + Security Council | reports/mission_control |

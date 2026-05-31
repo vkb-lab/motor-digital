@@ -1,0 +1,132 @@
+{
+  "ok": false,
+  "checkpoint": "020",
+  "module": "k_os_mission_control_2",
+  "status": "needs_attention",
+  "generated_at": "2026-05-31T12:35:52+00:00",
+  "readiness_score": 66.67,
+  "checkpoint_ok": 4,
+  "checkpoint_total": 6,
+  "checkpoints": [
+    {
+      "id": "015",
+      "name": "Security Firewall",
+      "closure_report": "reports/security/k_os_015_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "page": "pages/915_K_OS_Security_Firewall.py",
+      "page_exists": true
+    },
+    {
+      "id": "016",
+      "name": "Schema Guard",
+      "closure_report": "reports/schema/k_os_016_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "page": "pages/916_K_OS_Schema_Guard.py",
+      "page_exists": true
+    },
+    {
+      "id": "017",
+      "name": "Agent Permission Matrix",
+      "closure_report": "reports/governance/k_os_017_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "page": "pages/917_K_OS_Agent_Permission_Matrix.py",
+      "page_exists": true
+    },
+    {
+      "id": "018",
+      "name": "Vault Guard",
+      "closure_report": "reports/vault/k_os_018_closure_report.json",
+      "closure_exists": false,
+      "closure_ok": false,
+      "closure_status": "missing",
+      "page": "pages/918_K_OS_Vault_Guard.py",
+      "page_exists": true
+    },
+    {
+      "id": "019",
+      "name": "Audit Evidence Pack",
+      "closure_report": "reports/audit/k_os_019_closure_report.json",
+      "closure_exists": true,
+      "closure_ok": true,
+      "closure_status": "closed_and_validated",
+      "page": "pages/919_K_OS_Audit_Evidence_Pack.py",
+      "page_exists": true
+    },
+    {
+      "id": "020",
+      "name": "Mission Control 2.0",
+      "closure_report": "reports/mission_control/k_os_020_closure_report.json",
+      "closure_exists": false,
+      "closure_ok": false,
+      "closure_status": "missing",
+      "page": "pages/920_K_OS_Mission_Control_2.py",
+      "page_exists": true
+    }
+  ],
+  "git": {
+    "branch": "main",
+    "last_commit": "f33d02a audit: close k-os checkpoint 019",
+    "remote": "origin\thttps://github.com/vkb-lab/motor-digital.git (fetch)\norigin\thttps://github.com/vkb-lab/motor-digital.git (push)",
+    "status_short": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md\n?? config/mission_control/\n?? docs/security/k_os_mission_control_2.md\n?? ops/k_os_mission_control_2.ps1\n?? ops/k_os_mission_control_2.py\n?? pages/920_K_OS_Mission_Control_2.py\n?? reports/mission_control/",
+    "clean": false
+  },
+  "security": {
+    "firewall_report_exists": true,
+    "firewall_status": "passed",
+    "firewall_blocking": 0
+  },
+  "schema": {
+    "schema_report_exists": true,
+    "schema_status": "blocked_by_schema",
+    "schema_blocking": 11
+  },
+  "governance": {
+    "matrix_report_exists": true,
+    "matrix_status": "passed",
+    "agent_count": 7,
+    "council_count": 3
+  },
+  "vault": {
+    "vault_report_exists": true,
+    "vault_status": "passed",
+    "raw_values_exposed": false,
+    "external_api_enabled": false
+  },
+  "audit": {
+    "audit_pack_exists": true,
+    "audit_status": "generated",
+    "audit_score": 75.0
+  },
+  "blockers": [
+    {
+      "type": "git_dirty",
+      "message": "Working tree possui alteracoes pendentes.",
+      "details": "M .gitignore\n M docs/security/k_os_ai_accountability_register.md\n M reports/security/latest_security_firewall_report.json\n M reports/security/latest_security_firewall_report.md\n?? config/mission_control/\n?? docs/security/k_os_mission_control_2.md\n?? ops/k_os_mission_control_2.ps1\n?? ops/k_os_mission_control_2.py\n?? pages/920_K_OS_Mission_Control_2.py\n?? reports/mission_control/"
+    },
+    {
+      "type": "schema_blocker",
+      "message": "Schema Guard encontrou erros bloqueantes.",
+      "details": 11
+    }
+  ],
+  "policy": {
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "manual_approval_required": true,
+    "security_firewall_required": true,
+    "schema_guard_required": true,
+    "no_agent_decides_alone": true
+  },
+  "next_program": [
+    "021 - K-AI Risk Classifier",
+    "022 - K-External API Sandbox",
+    "023 - K-Enterprise Readiness Report"
+  ],
+  "recommended_next_step": "Resolver blockers antes de continuar."
+}

@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "020",
+  "module": "mission_control_2",
+  "mission": "K-OS Mission Control 2.0",
+  "policy": {
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "manual_approval_required": true,
+    "security_firewall_required": true,
+    "schema_guard_required": true,
+    "no_agent_decides_alone": true
+  },
+  "tracked_checkpoints": [
+    {
+      "id": "015",
+      "name": "Security Firewall",
+      "closure_report": "reports/security/k_os_015_closure_report.json",
+      "page": "pages/915_K_OS_Security_Firewall.py"
+    },
+    {
+      "id": "016",
+      "name": "Schema Guard",
+      "closure_report": "reports/schema/k_os_016_closure_report.json",
+      "page": "pages/916_K_OS_Schema_Guard.py"
+    },
+    {
+      "id": "017",
+      "name": "Agent Permission Matrix",
+      "closure_report": "reports/governance/k_os_017_closure_report.json",
+      "page": "pages/917_K_OS_Agent_Permission_Matrix.py"
+    },
+    {
+      "id": "018",
+      "name": "Vault Guard",
+      "closure_report": "reports/vault/k_os_018_closure_report.json",
+      "page": "pages/918_K_OS_Vault_Guard.py"
+    },
+    {
+      "id": "019",
+      "name": "Audit Evidence Pack",
+      "closure_report": "reports/audit/k_os_019_closure_report.json",
+      "page": "pages/919_K_OS_Audit_Evidence_Pack.py"
+    },
+    {
+      "id": "020",
+      "name": "Mission Control 2.0",
+      "closure_report": "reports/mission_control/k_os_020_closure_report.json",
+      "page": "pages/920_K_OS_Mission_Control_2.py"
+    }
+  ],
+  "next_program": [
+    "021 - K-AI Risk Classifier",
+    "022 - K-External API Sandbox",
+    "023 - K-Enterprise Readiness Report"
+  ]
+}

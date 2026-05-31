@@ -1,0 +1,22 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "020",
+    "module":  "k_os_mission_control_2",
+    "status":  "installed",
+    "capabilities":  [
+                         "checkpoint_dashboard",
+                         "security_status",
+                         "schema_status",
+                         "governance_status",
+                         "vault_status",
+                         "audit_status",
+                         "git_status",
+                         "blocker_detection",
+                         "next_step_recommendation"
+                     ],
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "021 - K-AI Risk Classifier",
+    "installed_at":  "2026-05-31T12:35:52.1021240Z"
+}
