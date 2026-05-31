@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "checkpoint": "036",
+  "module": "k_os_analytics_executive_metrics_core",
+  "status": "executive_dashboard_snapshot",
+  "generated_at": "2026-05-31T19:51:32+00:00",
+  "health_level": "blocked",
+  "top_kpis": {
+    "customers": 1,
+    "subscriptions": 1,
+    "estimated_mrr_brl": 0.0,
+    "weighted_pipeline_brl": 348.95,
+    "open_tickets": 1,
+    "open_tasks": 5,
+    "high_risk_customers": 0,
+    "features": 1,
+    "roadmap_releases": 0,
+    "foundation_score": 76.19
+  },
+  "external_publish_enabled": false,
+  "customer_identifiable_data_included": false,
+  "manual_approval_required": true,
+  "next_checkpoint": "037 - K-Executive Cockpit Consolidation Layer"
+}

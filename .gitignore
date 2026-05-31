@@ -329,3 +329,6 @@ local_secrets/k_os_product_feedback/
 memory/roadmap/
 reports/roadmap/runtime/
 local_secrets/k_os_roadmap/
+memory/analytics/
+reports/analytics/runtime/
+local_secrets/k_os_analytics/

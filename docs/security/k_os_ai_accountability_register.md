@@ -73,3 +73,5 @@ Toda IA ou agente precisa ter:
 | K-OS Product Feedback and Feature Request Core | Registra feedback, pedidos de melhoria, features, impacto, esforço, backlog e candidatos de roadmap | Product Owner K-OS | Sim, local sanitizado | Não | Não | Human Approval + Product Review + Commercial/Security/Legal Review | reports/product_feedback |
 
 | K-OS Roadmap Planner and Release Notes Core | Organiza roadmap interno, releases, features por versao e notas de release com bloqueio de publicacao externa | Product Owner K-OS | Sim, local sanitizado | Não | Não | Human Approval + Product Review + QA/Security/Legal Review | reports/roadmap |
+
+| K-OS Analytics and Executive Metrics Core | Consolida métricas executivas sanitizadas, KPIs, saúde operacional e score de controles | Operador K-OS | Sim, local sanitizado | Não | Não | Human Approval + Commercial Review + Security Review | reports/analytics |

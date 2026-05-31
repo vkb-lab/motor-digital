@@ -1,0 +1,27 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "036",
+    "module":  "k_os_analytics_executive_metrics_core",
+    "status":  "installed",
+    "capabilities":  [
+                         "executive_metrics",
+                         "sanitized_dashboard",
+                         "operational_health_snapshot",
+                         "foundation_control_score",
+                         "commercial_kpis",
+                         "support_kpis",
+                         "product_kpis",
+                         "roadmap_kpis"
+                     ],
+    "analytics_local_only":  true,
+    "raw_analytics_data_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "executive_dashboard_sanitized_only":  true,
+    "customer_identifiable_data_blocked":  true,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "037 - K-Executive Cockpit Consolidation Layer",
+    "installed_at":  "2026-05-31T19:51:31.0928838Z"
+}

@@ -1,0 +1,364 @@
+{
+  "ok": true,
+  "checkpoint": "036",
+  "module": "k_os_analytics_executive_metrics_core",
+  "status": "audit_generated",
+  "generated_at": "2026-05-31T19:51:32+00:00",
+  "analytics_history_path": "local_secrets/k_os_analytics/analytics_history.json",
+  "analytics_history_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "executive_dashboard_sanitized_only": true,
+  "financial_numbers_are_operational_estimates": true,
+  "metrics": {
+    "customer_count": 1,
+    "subscription_count": 1,
+    "active_license_count": 0,
+    "estimated_mrr_brl": 0.0,
+    "deal_count": 1,
+    "weighted_pipeline_brl": 348.95,
+    "proposal_count": 1,
+    "onboarding_case_count": 0,
+    "onboarding_blocked_count": 0,
+    "open_task_count": 5,
+    "open_ticket_count": 1,
+    "support_ticket_count": 1,
+    "critical_ticket_count": 0,
+    "high_risk_customer_count": 0,
+    "red_health_count": 0,
+    "feedback_count": 1,
+    "critical_feedback_count": 0,
+    "feature_count": 1,
+    "roadmap_candidate_count": 1,
+    "roadmap_release_count": 0,
+    "knowledge_article_count": 1,
+    "knowledge_playbook_count": 1,
+    "foundation_control_ok_count": 16,
+    "foundation_control_total_count": 21,
+    "foundation_control_score": 76.19
+  },
+  "operational_health": {
+    "health_level": "blocked",
+    "blockers": [
+      "foundation_control_score_below_90"
+    ],
+    "warnings": [
+      "some_source_reports_missing",
+      "some_source_reports_not_ok"
+    ],
+    "missing_sources": [
+      "onboarding",
+      "incident"
+    ],
+    "failed_sources": [
+      "schema",
+      "enterprise"
+    ]
+  },
+  "data_sources": [
+    {
+      "name": "crm",
+      "path": "reports/crm/latest_customer_registry_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "billing",
+      "path": "reports/billing/latest_billing_subscription_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "license",
+      "path": "reports/license/latest_license_gate_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "passed",
+      "read_error": null
+    },
+    {
+      "name": "sales",
+      "path": "reports/sales/latest_sales_pipeline_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "proposals",
+      "path": "reports/proposals/latest_proposal_factory_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "onboarding",
+      "path": "reports/onboarding/latest_onboarding_activation_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing",
+      "read_error": ""
+    },
+    {
+      "name": "customer_success",
+      "path": "reports/customer_success/latest_customer_success_delivery_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "support",
+      "path": "reports/support/latest_support_desk_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "knowledge_base",
+      "path": "reports/knowledge_base/latest_knowledge_base_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "product_feedback",
+      "path": "reports/product_feedback/latest_product_feedback_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "roadmap",
+      "path": "reports/roadmap/latest_roadmap_release_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "audit_generated",
+      "read_error": null
+    },
+    {
+      "name": "security",
+      "path": "reports/security/latest_security_firewall_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "passed",
+      "read_error": null
+    },
+    {
+      "name": "schema",
+      "path": "reports/schema/latest_schema_guard_report.json",
+      "exists": true,
+      "ok": false,
+      "status": "blocked_by_schema",
+      "read_error": null
+    },
+    {
+      "name": "governance",
+      "path": "reports/governance/latest_agent_permission_matrix_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "passed",
+      "read_error": null
+    },
+    {
+      "name": "audit",
+      "path": "reports/audit/latest_audit_evidence_pack.json",
+      "exists": true,
+      "ok": true,
+      "status": "generated",
+      "read_error": null
+    },
+    {
+      "name": "enterprise",
+      "path": "reports/enterprise/latest_enterprise_readiness_report.json",
+      "exists": true,
+      "ok": false,
+      "status": "generated",
+      "read_error": null
+    },
+    {
+      "name": "incident",
+      "path": "reports/incident/latest_incident_readiness_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing",
+      "read_error": ""
+    }
+  ],
+  "foundation_controls": [
+    {
+      "checkpoint": "015_security_firewall",
+      "path": "reports/security/k_os_015_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "016_schema_guard",
+      "path": "reports/schema/k_os_016_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "017_agent_permission_matrix",
+      "path": "reports/governance/k_os_017_agent_permission_matrix_closure_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing"
+    },
+    {
+      "checkpoint": "018_vault_guard",
+      "path": "reports/vault/k_os_018_closure_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing"
+    },
+    {
+      "checkpoint": "019_audit_evidence_pack",
+      "path": "reports/audit/k_os_019_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "020_mission_control",
+      "path": "reports/mission_control/k_os_020_mission_control_closure_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing"
+    },
+    {
+      "checkpoint": "021_risk_license",
+      "path": "reports/risk/k_os_021_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "022_external_sandbox",
+      "path": "reports/external_sandbox/k_os_022_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "023_enterprise_readiness",
+      "path": "reports/enterprise/k_os_023_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "024_incident_runbook",
+      "path": "reports/incident/k_os_024_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "025_legal_templates",
+      "path": "reports/legal/k_os_025_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "026_billing",
+      "path": "reports/billing/k_os_026_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "027_crm",
+      "path": "reports/crm/k_os_027_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "028_sales",
+      "path": "reports/sales/k_os_028_closure_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing"
+    },
+    {
+      "checkpoint": "029_proposals",
+      "path": "reports/proposals/k_os_029_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "030_onboarding",
+      "path": "reports/onboarding/k_os_030_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "031_customer_success",
+      "path": "reports/customer_success/k_os_031_closure_report.json",
+      "exists": false,
+      "ok": false,
+      "status": "missing"
+    },
+    {
+      "checkpoint": "032_support",
+      "path": "reports/support/k_os_032_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "033_knowledge_base",
+      "path": "reports/knowledge_base/k_os_033_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "034_product_feedback",
+      "path": "reports/product_feedback/k_os_034_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    },
+    {
+      "checkpoint": "035_roadmap",
+      "path": "reports/roadmap/k_os_035_closure_report.json",
+      "exists": true,
+      "ok": true,
+      "status": "closed_and_validated"
+    }
+  ],
+  "required_gates_before_external_metric_export": [
+    "sanitized_report_generated",
+    "customer_identifiers_removed",
+    "financial_disclaimer_included",
+    "security_review_if_operational_security_data",
+    "commercial_review_if_revenue_data",
+    "human_operator_approval"
+  ],
+  "blocked_actions": [
+    "publish_metrics_without_approval",
+    "export_customer_identifiable_data",
+    "claim_certification_without_external_audit",
+    "represent_estimated_mrr_as_accounting_revenue",
+    "delete_analytics_audit_logs",
+    "send_dashboard_externally_without_review"
+  ],
+  "next_checkpoint": "037 - K-Executive Cockpit Consolidation Layer"
+}

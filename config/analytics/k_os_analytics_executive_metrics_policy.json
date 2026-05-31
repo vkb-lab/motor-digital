@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "036",
+  "module": "analytics_executive_metrics_core",
+  "purpose": "Consolidar metricas executivas sanitizadas de CRM, billing, vendas, propostas, onboarding, delivery, suporte, produto, roadmap e seguranca operacional.",
+  "analytics_policy": {
+    "analytics_local_only": true,
+    "raw_analytics_data_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "executive_dashboard_sanitized_only": true,
+    "customer_identifiable_data_blocked": true,
+    "financial_numbers_are_operational_estimates": true,
+    "public_metric_export_requires_approval": true,
+    "investor_or_customer_export_requires_review": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "metric_domains": [
+    "security",
+    "crm",
+    "billing",
+    "sales",
+    "proposals",
+    "onboarding",
+    "customer_success",
+    "support",
+    "knowledge_base",
+    "product_feedback",
+    "roadmap"
+  ],
+  "executive_kpis": [
+    "customer_count",
+    "subscription_count",
+    "estimated_mrr_brl",
+    "deal_count",
+    "weighted_pipeline_brl",
+    "proposal_count",
+    "onboarding_blocked_count",
+    "open_task_count",
+    "open_ticket_count",
+    "high_risk_customer_count",
+    "feature_count",
+    "roadmap_release_count",
+    "foundation_control_score"
+  ],
+  "blocked_actions": [
+    "publish_metrics_without_approval",
+    "export_customer_identifiable_data",
+    "claim_certification_without_external_audit",
+    "represent_estimated_mrr_as_accounting_revenue",
+    "delete_analytics_audit_logs",
+    "send_dashboard_externally_without_review"
+  ],
+  "required_gates_before_external_metric_export": [
+    "sanitized_report_generated",
+    "customer_identifiers_removed",
+    "financial_disclaimer_included",
+    "security_review_if_operational_security_data",
+    "commercial_review_if_revenue_data",
+    "human_operator_approval"
+  ],
+  "next_checkpoint": "037 - K-Executive Cockpit Consolidation Layer"
+}
