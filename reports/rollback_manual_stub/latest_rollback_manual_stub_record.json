@@ -1,0 +1,143 @@
+{
+  "ok": true,
+  "checkpoint": "057",
+  "module": "k_os_agent_rollback_manual_execution_stub_core",
+  "status": "intent_blocked",
+  "manual_stub_id": "rms_7921374b4857",
+  "created_at": "2026-06-01T09:46:47+00:00",
+  "mode": "block_intent",
+  "operator": "operator_k_os",
+  "reason": "closure_manual_stub_blocks_real_rollback",
+  "operator_intent_hash": "33ab5536fb8c301da75567801af170c567e54495b4ce7c7fc25641ad82dd1194",
+  "final_gate_id": "rfg_8e6fb9e9116b",
+  "final_gate_status": "blocked",
+  "final_gate_record_hash": "9a354bb880896a1252315b6d9d912224d2b7572a472a75d0089f856a060057eb",
+  "simulation_id": "rds_f88727f867b9",
+  "rollback_dry_run_hash": "a0acc0f60e22ce27811ece12e97fb581b8455b42a0bade9fa36f531dadaa4a0a",
+  "release_id": "rbg_ff638f05f0bd",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "incident_id": "inc_66fb283052e6",
+  "quarantine_id": "qua_4b0cb9303592",
+  "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+  "manual_stub_record_hash": "cbfc5cbce982cc77da2f1f42d81e5231b566a18727f3abdda71bf08ca3b79494",
+  "manual_stub_executes_rollback": false,
+  "manual_stub_deletes_data": false,
+  "manual_stub_modifies_files": false,
+  "manual_stub_runs_git_reset": false,
+  "manual_stub_runs_git_force_push": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "source_refs": {
+    "rollback_final_gate": {
+      "available": true,
+      "path": "reports/rollback_final_gate/latest_rollback_final_gate_record.json",
+      "checkpoint": "056",
+      "module": "k_os_agent_rollback_execution_final_gate_core",
+      "status": "blocked",
+      "ok": true,
+      "created_at": "2026-05-31T23:13:24+00:00",
+      "hash": "0f9211ba49e8a69821f5dab13fe1c15664420940be2dbe3b2d451044a994aeb9"
+    },
+    "rollback_final_gate_validation": {
+      "available": true,
+      "path": "reports/rollback_final_gate/latest_rollback_final_gate_validation_report.json",
+      "checkpoint": "056",
+      "module": "k_os_agent_rollback_execution_final_gate_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-05-31T23:13:24+00:00",
+      "hash": "d5fe0cea2d6b1fb112577ed2022c37e5c4a5860909f941ca863d627fdeb60ff2"
+    },
+    "rollback_final_gate_report": {
+      "available": true,
+      "path": "reports/rollback_final_gate/latest_agent_rollback_final_gate_report.json",
+      "checkpoint": "056",
+      "module": "k_os_agent_rollback_execution_final_gate_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-05-31T23:13:25+00:00",
+      "hash": "c92cb4df053f1ebbf6e0caf478e1508587535ad672383aa610f22446de84f7e4"
+    },
+    "rollback_dry_run": {
+      "available": true,
+      "path": "reports/rollback_dry_run/latest_rollback_dry_run_simulation.json",
+      "checkpoint": "055",
+      "module": "k_os_agent_rollback_dry_run_simulator_core",
+      "status": "simulated_blocked",
+      "ok": true,
+      "created_at": "2026-05-31T23:08:45+00:00",
+      "hash": "8ea13300e9ab75056a7fd87c19279e3dc00b1e83b18541dbfda6239b069e103a"
+    },
+    "release_record": {
+      "available": true,
+      "path": "reports/rollback_release_gate/latest_rollback_release_record.json",
+      "checkpoint": "054",
+      "module": "k_os_agent_rollback_approval_release_gate_core",
+      "status": "blocked",
+      "ok": true,
+      "created_at": "2026-05-31T22:59:28+00:00",
+      "hash": "8cf901850c5e2a98d8106a6c1af9bdd5a1b63506711bdb9b7fe58c9c846379e1"
+    },
+    "rollback_plan": {
+      "available": true,
+      "path": "reports/rollback_preparation/latest_rollback_plan.json",
+      "checkpoint": "053",
+      "module": "k_os_agent_rollback_preparation_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:50:48+00:00",
+      "hash": "4d0943158405325d2c5cf9c28d3929980a9f2a74e4a6a998702eb240c26b6bf8"
+    },
+    "incident_record": {
+      "available": true,
+      "path": "reports/incident_lockdown/latest_incident_lockdown_record.json",
+      "checkpoint": "052",
+      "module": "k_os_agent_incident_lockdown_quarantine_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:07:51+00:00",
+      "hash": "f58e3500340e2f2e3913248c8fa94c49d373e81e00e75e3a95343a1c790b3b4f"
+    },
+    "forensics_bundle": {
+      "available": true,
+      "path": "reports/replay_forensics/latest_replay_forensics_bundle.json",
+      "checkpoint": "051",
+      "module": "k_os_agent_replay_forensics_viewer_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:02:37+00:00",
+      "hash": "9102cc74fc35eafff61fd2549462fbb110cb8653a2e803e32d1751fcde476d08"
+    },
+    "ledger_record": {
+      "available": true,
+      "path": "reports/execution_result_ledger/latest_execution_result_ledger_record.json",
+      "checkpoint": "050",
+      "module": "k_os_agent_execution_result_ledger_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:56:51+00:00",
+      "hash": "52a76785fa818cb8c93cbafd7ace660dbfca42ebf3933cb9b7f974b041c753cc"
+    }
+  },
+  "blockers": [
+    "manual_stub_blocks_execution"
+  ],
+  "required_gates_before_manual_stub": [
+    "rollback_final_gate_exists",
+    "rollback_final_gate_hash_exists",
+    "rollback_dry_run_exists",
+    "rollback_dry_run_hash_exists",
+    "rollback_release_record_exists",
+    "rollback_plan_exists",
+    "incident_lockdown_exists",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "operator_intent_present",
+    "destructive_actions_blocked",
+    "manual_stub_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_action": "rollback_execution_remains_blocked"
+}

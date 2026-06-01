@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checkpoint": "057",
+  "module": "k_os_agent_rollback_manual_execution_stub_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T09:46:48+00:00",
+  "manual_stub_id": "rms_7921374b4857",
+  "manual_stub_status": "intent_blocked",
+  "final_gate_id": "rfg_8e6fb9e9116b",
+  "manual_stub_record_hash": "cbfc5cbce982cc77da2f1f42d81e5231b566a18727f3abdda71bf08ca3b79494",
+  "manual_stub_executes_rollback": false,
+  "manual_stub_deletes_data": false,
+  "manual_stub_modifies_files": false,
+  "manual_stub_runs_git_reset": false,
+  "manual_stub_runs_git_force_push": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "manual_stub_never_executes_rollback"
+  ]
+}

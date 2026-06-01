@@ -113,3 +113,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Rollback Dry Run Simulator Core | Simula rollback sem executar mudanças, respeitando gate de release e registrando evidência auditável | Operador K-OS | Sim, local sanitizado | Não | Não | Dry Run + Release Gate + No File Change + No Data Delete | reports/rollback_dry_run |
 
 | K-OS Agent Rollback Execution Final Gate Core | Cria último gate antes de rollback real futuro, com bloqueio destrutivo e confirmação explícita | Operador K-OS | Sim, local sanitizado | Não | Não | Dry Run + Release Gate + Operator Confirmation + No Rollback Execution | reports/rollback_final_gate |
+
+| K-OS Agent Rollback Manual Execution Stub Core | Registra intenção manual de execução futura sem executar rollback real | Operador K-OS | Sim, local sanitizado | Não | Não | Final Gate + Manual Intent + No Rollback Execution | reports/rollback_manual_stub |
