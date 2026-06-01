@@ -1,2 +1,2 @@
-# -*- coding: utf-8 -*-
-"""Agents package do K-Atlas OS."""
+"""Operational agents for K-Atlas OS."""
+

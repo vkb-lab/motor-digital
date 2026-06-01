@@ -1,0 +1,21 @@
+{
+  "system": "K-Social Autonomous Campaign Runner",
+  "created_at": "2026-05-29T12:00:58.265058+00:00",
+  "campaign": "Parada Atlantida + Chopp Ecobier - Temporada Mundial de Futebol 2026",
+  "request_file": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\memory\\autonomous_requests\\parada_atlantida_chopp_ecobier_world_football_2026.json",
+  "operation_file": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\operation_parada-atlantida-chopp-ecobier_20260529_120058.json",
+  "snapshot_total_operations": 2,
+  "approval_queue_total": 2,
+  "daily_report_operations": 2,
+  "command_center_operations": 2,
+  "human_review_required": true,
+  "publication_permission": false,
+  "external_api_used": false,
+  "approved_for_auto_publish": false,
+  "brand_safety_notes": [
+    "Nao afirmar patrocinio oficial.",
+    "Nao usar logos oficiais.",
+    "Nao prometer transmissao sem validar direitos.",
+    "Manter revisao humana antes de qualquer uso real."
+  ]
+}

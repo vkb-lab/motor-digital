@@ -1,0 +1,74 @@
+{
+  "system": "K-Social Campaign Package Exporter",
+  "package_name": "Parada Atlantida + Chopp Ecobier - Campanha Futebol 2026",
+  "product_filter": "Parada Atlantida + Chopp Ecobier",
+  "owner": "K-Atlas Operator",
+  "generated_at": "2026-05-29T12:27:01.576483+00:00",
+  "source_outputs_dir": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs",
+  "total_assets": 5,
+  "assets": [
+    {
+      "file_name": "parada-atlantida-chopp-ecobier_ai-image-prompt.md",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_ai-image-prompt.md",
+      "content": "# Preparar prompt de imagem IA\n\nGenerated at: 2026-05-29T12:27:01.169745+00:00\n\n## Context\n\n- Product: Parada Atlantida + Chopp Ecobier\n- Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026\n- Task type: ai_image_prompt\n- Channels: Instagram, Facebook, WhatsApp, Google Business Profile\n- Approval status: approved_for_content_refinement\n- Review notes: Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.\n\n## Governance\n\n- Human review required: True\n- Publication permission: False\n- External API used: False\n- Approved for auto publish: False\n\n## Instructions\n\nDescrever cena visual sem usar marcas de terceiros sem autorizacao.\n\n## AI Image Prompt Draft\n\nCreate a clean commercial visual concept for Parada Atlantida + Chopp Ecobier.\nScene: professional marketplace context, trustworthy, organized, local business atmosphere.\nStyle: premium, clear, realistic, no third-party logos, no copyrighted brand references.\nSafety: human review required before use.\n"
+    },
+    {
+      "file_name": "parada-atlantida-chopp-ecobier_ai-video-prompt.md",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_ai-video-prompt.md",
+      "content": "# Preparar prompt de video IA\n\nGenerated at: 2026-05-29T12:27:01.172104+00:00\n\n## Context\n\n- Product: Parada Atlantida + Chopp Ecobier\n- Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026\n- Task type: ai_video_prompt\n- Channels: Instagram, Facebook, WhatsApp, Google Business Profile\n- Approval status: approved_for_content_refinement\n- Review notes: Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.\n\n## Governance\n\n- Human review required: True\n- Publication permission: False\n- External API used: False\n- Approved for auto publish: False\n\n## Instructions\n\nCriar estrutura de cenas para video IA com revisao humana obrigatoria.\n\n## AI Video Prompt Draft\n\nCreate a short supervised video concept for Parada Atlantida + Chopp Ecobier.\nScene 1: audience problem.\nScene 2: organized solution workflow.\nScene 3: trust and human review.\nScene 4: soft call to action.\nSafety: do not publish automatically.\n"
+    },
+    {
+      "file_name": "parada-atlantida-chopp-ecobier_caption-refinement.md",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_caption-refinement.md",
+      "content": "# Refinar legenda principal\n\nGenerated at: 2026-05-29T12:27:01.164470+00:00\n\n## Context\n\n- Product: Parada Atlantida + Chopp Ecobier\n- Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026\n- Task type: caption_refinement\n- Channels: Instagram, Facebook, WhatsApp, Google Business Profile\n- Approval status: approved_for_content_refinement\n- Review notes: Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.\n\n## Governance\n\n- Human review required: True\n- Publication permission: False\n- External API used: False\n- Approved for auto publish: False\n\n## Instructions\n\nAjustar clareza, promessa, tom e chamada para acao sem publicar.\n\n## Caption Draft\n\nParada Atlantida + Chopp Ecobier: proposta revisada para comunicar valor com clareza.\n\nCTA sugerido: revisar com humano antes de qualquer publicacao.\n"
+    },
+    {
+      "file_name": "parada-atlantida-chopp-ecobier_hook-variations.md",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_hook-variations.md",
+      "content": "# Criar variacoes de gancho\n\nGenerated at: 2026-05-29T12:27:01.165554+00:00\n\n## Context\n\n- Product: Parada Atlantida + Chopp Ecobier\n- Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026\n- Task type: hook_variations\n- Channels: Instagram, Facebook, WhatsApp, Google Business Profile\n- Approval status: approved_for_content_refinement\n- Review notes: Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.\n\n## Governance\n\n- Human review required: True\n- Publication permission: False\n- External API used: False\n- Approved for auto publish: False\n\n## Instructions\n\nCriar alternativas de abertura para testar atencao inicial.\n\n## Hook Variations\n\n1. O que muda quando seu processo fica mais claro?\n2. Antes de publicar, revise a mensagem com seguranca.\n3. Uma ponte comercial precisa de confianca antes de escala.\n4. O primeiro passo e organizar a comunicacao.\n5. Menos improviso, mais revisao e consistencia.\n"
+    },
+    {
+      "file_name": "parada-atlantida-chopp-ecobier_reel-script.md",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\refinement_outputs\\parada-atlantida-chopp-ecobier_reel-script.md",
+      "content": "# Preparar roteiro de reel\n\nGenerated at: 2026-05-29T12:27:01.167649+00:00\n\n## Context\n\n- Product: Parada Atlantida + Chopp Ecobier\n- Objective: criar campanha publicitaria supervisionada para a temporada mundial de futebol 2026\n- Task type: reel_script\n- Channels: Instagram, Facebook, WhatsApp, Google Business Profile\n- Approval status: approved_for_content_refinement\n- Review notes: Aprovado para refinamento criativo da campanha temática de futebol. Manter linguagem local, alegre e responsável. Não usar logos oficiais, não afirmar patrocínio e não publicar automaticamente.\n\n## Governance\n\n- Human review required: True\n- Publication permission: False\n- External API used: False\n- Approved for auto publish: False\n\n## Instructions\n\nCriar roteiro curto com gancho, desenvolvimento, prova e CTA supervisionado.\n\n## Reel Script\n\nCena 1: Gancho direto sobre a dor do publico.\nCena 2: Explicacao simples do valor da solucao.\nCena 3: Exemplo supervisionado de aplicacao.\nCena 4: Chamada para revisao ou contato humano.\n\nLegenda na tela: Conteudo em rascunho. Revisao humana obrigatoria.\n"
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false,
+    "approved_for_auto_publish": false,
+    "requires_final_approval": true,
+    "manual_use_only": true
+  },
+  "brand_safety_notes": [
+    "Campanha tematica de futebol, nao oficial.",
+    "Nao usar logos oficiais.",
+    "Nao afirmar patrocinio oficial.",
+    "Nao prometer transmissao sem validar direitos.",
+    "Revisao humana obrigatoria antes de qualquer uso real."
+  ],
+  "next_steps": [
+    "Revisar todos os assets manualmente.",
+    "Escolher as melhores legendas e roteiros.",
+    "Ajustar linguagem local para Parada Atlantida e Chopp Ecobier.",
+    "Enviar para aprovacao final manual.",
+    "Manter publicacao automatica bloqueada."
+  ],
+  "package_metadata": {
+    "final_approval_status": "approved_for_manual_use",
+    "last_reviewed_at": "2026-05-29T12:31:43.267830+00:00",
+    "last_reviewer": "K-Atlas Operator",
+    "last_review_notes": "Aprovado apenas para uso manual supervisionado. Manter campanha temática de futebol sem logos oficiais, sem alegar patrocínio e sem publicação automática."
+  },
+  "final_approval_events": [
+    {
+      "created_at": "2026-05-29T12:31:43.267862+00:00",
+      "reviewer": "K-Atlas Operator",
+      "decision": "approved_for_manual_use",
+      "notes": "Aprovado apenas para uso manual supervisionado. Manter campanha temática de futebol sem logos oficiais, sem alegar patrocínio e sem publicação automática.",
+      "publication_permission": false,
+      "approved_for_auto_publish": false
+    }
+  ]
+}

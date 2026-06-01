@@ -1,0 +1,52 @@
+{
+  "system": "K-Social Supervisor Report",
+  "generated_at": "2026-05-29T12:51:53.193901+00:00",
+  "campaign": {
+    "name": "Parada Atlantida + Chopp Ecobier - Campanha Futebol 2026",
+    "status": "approved_for_manual_use",
+    "assets": 5,
+    "json_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.json",
+    "markdown_path": "C:\\Users\\oi\\Desktop\\motor-digital\\k_atlas\\social\\reports\\campaign_packages\\parada-atlantida-chopp-ecobier-campanha-futebol-2026_20260529_122701.md"
+  },
+  "command_center": {
+    "operations": 2,
+    "refinements": 10,
+    "packages": 8,
+    "manual_approvals": 2
+  },
+  "test_page_validation": {
+    "target_page": "K-Social Test Page",
+    "environment": "local_dry_run",
+    "payloads_planned": 5,
+    "payloads_validated": 5,
+    "real_publish": false,
+    "dry_run": true
+  },
+  "governance": {
+    "human_review_required": true,
+    "publication_permission": false,
+    "external_api_used": false,
+    "approved_for_auto_publish": false,
+    "manual_use_only": true
+  },
+  "supervisor_summary": [
+    "K-Social executed a complete supervised campaign pipeline.",
+    "The Parada Atlantida + Chopp Ecobier campaign was created, refined, packaged and approved for manual use.",
+    "A local test-page dry run validated the payloads without publishing to real networks.",
+    "No external APIs, browser automation or automatic publishing were used.",
+    "The system remains compliant with human-review governance."
+  ],
+  "risks_blocked": [
+    "Auto-publishing remained blocked.",
+    "External API usage remained blocked.",
+    "Official tournament sponsorship was not claimed.",
+    "Official logos and protected brand assets were not used by the automation.",
+    "Real posting was not executed."
+  ],
+  "next_recommendations": [
+    "Connect a real test-page API only after credential governance is implemented.",
+    "Add token vault and permission model before live integration.",
+    "Add final content editor before any real scheduling.",
+    "Keep manual approval as mandatory before any publication adapter is enabled."
+  ]
+}
