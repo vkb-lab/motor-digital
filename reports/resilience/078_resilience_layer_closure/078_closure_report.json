@@ -1,0 +1,15 @@
+{
+  "checkpoint": "078",
+  "name": "K-Agent Resilience Layer Closure Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:45:12Z",
+  "official_layer_closure": false,
+  "closed_layer": "Resilience",
+  "next_checkpoint": "079 - K-OS System Health Monitor Core",
+  "action_report": "reports/resilience/078_resilience_layer_closure/078_action_report.json",
+  "validate_report": "reports/resilience/078_resilience_layer_closure/078_validate_report.json",
+  "audit_report": "reports/resilience/078_resilience_layer_closure/078_audit_report.json",
+  "layer_closure_manifest": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.json",
+  "blocked_operations_confirmed": true
+}

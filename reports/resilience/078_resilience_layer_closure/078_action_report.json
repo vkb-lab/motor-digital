@@ -1,0 +1,34 @@
+{
+  "checkpoint": "078",
+  "name": "K-Agent Resilience Layer Closure Core",
+  "mode": "action",
+  "status": "completed",
+  "generated_at": "2026-06-01T12:45:12Z",
+  "layer_status": "closed",
+  "official_layer_closure": true,
+  "layer_closure_manifest_json": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.json",
+  "layer_closure_manifest_md": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.md",
+  "commercial_doc": "docs/commercial/078_k_agent_resilience_layer_closure.md",
+  "updated_accountability_registers": [],
+  "next_checkpoint": "079 - K-OS System Health Monitor Core",
+  "blocked_operations": [
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ],
+  "execution_guard": {
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "git_reset_hard_executed": false,
+    "force_push_executed": false,
+    "destructive_shell_executed": false,
+    "memory_deletion_executed": false,
+    "secret_export_executed": "[REDACTED]"
+  }
+}

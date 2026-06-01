@@ -1,0 +1,80 @@
+{
+  "checkpoint": "078",
+  "name": "K-Agent Resilience Layer Closure Core",
+  "mode": "init",
+  "status": "initialized",
+  "generated_at": "2026-06-01T12:45:08Z",
+  "config_path": "configs/resilience_layer_closure_078.json",
+  "source_checkpoints": [
+    "071",
+    "072",
+    "073",
+    "074",
+    "075",
+    "076",
+    "077"
+  ],
+  "blocked_operations": [
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ],
+  "execution_guard": {
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "destructive_shell_executed": false
+  },
+  "config": {
+    "checkpoint": "078",
+    "name": "K-Agent Resilience Layer Closure Core",
+    "layer": "Resilience",
+    "objective": "Fechar oficialmente a camada de resilience usando evidencias dos checkpoints 071-077 sem executar drill, recovery, rollback, shell destrutivo, git reset hard ou force push.",
+    "source_checkpoints": [
+      "071",
+      "072",
+      "073",
+      "074",
+      "075",
+      "076",
+      "077"
+    ],
+    "next_layer": "K-OS Core",
+    "next_checkpoint": "079 - K-OS System Health Monitor Core",
+    "allowed_operations": [
+      "read_existing_evidence",
+      "generate_layer_closure_manifest",
+      "generate_sanitized_reports",
+      "generate_streamlit_read_only_page",
+      "update_accountability_register_if_exists",
+      "validate_artifacts",
+      "audit_checkpoint",
+      "create_closure_report"
+    ],
+    "blocked_operations": [
+      "real_drill_execution",
+      "real_recovery_execution",
+      "real_rollback_execution",
+      "git_reset_hard",
+      "force_push",
+      "destructive_shell",
+      "memory_deletion",
+      "secret_export"
+    ],
+    "closure_policy": {
+      "close_layer": true,
+      "allow_real_recovery": false,
+      "allow_real_rollback": false,
+      "allow_real_drill": false,
+      "sanitize_reports": true,
+      "include_file_hashes": true,
+      "include_sensitive_content": false
+    },
+    "status": "configured"
+  }
+}

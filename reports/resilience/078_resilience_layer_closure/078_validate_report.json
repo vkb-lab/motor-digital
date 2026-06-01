@@ -1,0 +1,49 @@
+{
+  "checkpoint": "078",
+  "name": "K-Agent Resilience Layer Closure Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:45:12Z",
+  "file_checks": [
+    {
+      "path": "configs/resilience_layer_closure_078.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/resilience_layer_closure_078.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_078_resilience_layer_closure.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/078_Resilience_Layer_Closure.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/078_k_agent_resilience_layer_closure.md",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/078_resilience_layer_closure/078_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/078_resilience_layer_closure/078_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "official_layer_closure_ok": true,
+  "transition_ok": true,
+  "next_checkpoint": "079 - K-OS System Health Monitor Core"
+}
