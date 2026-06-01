@@ -429,3 +429,6 @@ local_secrets/k_os_recovery_governance_summary/
 memory/recovery_layer_closure/
 reports/recovery_layer_closure/runtime/
 local_secrets/k_os_recovery_layer_closure/
+memory/resilience_readiness/
+reports/resilience_readiness/runtime/
+local_secrets/k_os_resilience_readiness/

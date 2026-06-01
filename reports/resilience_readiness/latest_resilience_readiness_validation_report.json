@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "checkpoint": "071",
+  "module": "k_os_agent_resilience_readiness_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T11:31:22+00:00",
+  "matrix_id": "rrm_b829e2b45daf",
+  "matrix_status": "resilience_blocked",
+  "readiness_hash": "c0a79c80d7c05e89116da9034e78172fd44ef6b019aa31d1226b95b0be62e30f",
+  "readiness_percent": 65.0,
+  "readiness_executes_recovery": false,
+  "readiness_executes_rollback": false,
+  "readiness_deletes_data": false,
+  "readiness_modifies_target_files": false,
+  "readiness_runs_git_reset": false,
+  "readiness_runs_git_force_push": false,
+  "readiness_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": [
+    "resilience_requires_operator_review",
+    "readiness_contains_blockers"
+  ]
+}

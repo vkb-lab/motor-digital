@@ -1,0 +1,28 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "071",
+    "module":  "k_os_agent_resilience_readiness_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "resilience_readiness_matrix",
+                         "recovery_layer_closure_binding",
+                         "governance_summary_binding",
+                         "destructive_zero_validation",
+                         "next_layer_readiness",
+                         "sanitized_readiness_report"
+                     ],
+    "readiness_local_only":  true,
+    "raw_readiness_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "readiness_executes_recovery":  false,
+    "readiness_executes_rollback":  false,
+    "readiness_deletes_data":  false,
+    "readiness_modifies_target_files":  false,
+    "readiness_runs_git_reset":  false,
+    "readiness_runs_git_force_push":  false,
+    "next_checkpoint":  "072 - K-Agent Resilience Scenario Planner Core",
+    "installed_at":  "2026-06-01T11:31:21.1319908Z"
+}

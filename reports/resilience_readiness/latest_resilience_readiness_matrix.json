@@ -1,0 +1,171 @@
+{
+  "ok": true,
+  "checkpoint": "071",
+  "module": "k_os_agent_resilience_readiness_core",
+  "status": "resilience_blocked",
+  "matrix_id": "rrm_b829e2b45daf",
+  "created_at": "2026-06-01T11:31:22+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_resilience_readiness_after_recovery_layer_070",
+  "score": 65,
+  "max_score": 100,
+  "readiness_percent": 65.0,
+  "readiness_level": "low",
+  "dimensions": [
+    {
+      "dimension": "recovery_layer_closed",
+      "ok": false,
+      "weight": 20,
+      "score": 0,
+      "evidence": "reports/recovery_layer_closure/latest_recovery_layer_closure.json",
+      "blocker": "recovery_layer_closure_missing_or_not_closed"
+    },
+    {
+      "dimension": "evidence_chain_complete",
+      "ok": false,
+      "weight": 15,
+      "score": 0,
+      "evidence": "reports/recovery_layer_closure/latest_recovery_layer_closure.json",
+      "blocker": "evidence_core_chain_incomplete"
+    },
+    {
+      "dimension": "governance_summary_available",
+      "ok": true,
+      "weight": 15,
+      "score": 15,
+      "evidence": "reports/recovery_governance_summary/latest_recovery_governance_summary.json",
+      "blocker": ""
+    },
+    {
+      "dimension": "destructive_zero_confirmed",
+      "ok": true,
+      "weight": 20,
+      "score": 20,
+      "evidence": "reports/recovery_layer_closure/latest_recovery_layer_closure.json",
+      "blocker": ""
+    },
+    {
+      "dimension": "operator_review_available",
+      "ok": true,
+      "weight": 10,
+      "score": 10,
+      "evidence": "reports/recovery_sandbox_review/latest_recovery_sandbox_operator_review.json",
+      "blocker": ""
+    },
+    {
+      "dimension": "local_state_isolated",
+      "ok": true,
+      "weight": 5,
+      "score": 5,
+      "evidence": "local_secrets/k_os_resilience_readiness",
+      "blocker": ""
+    },
+    {
+      "dimension": "security_firewall_available",
+      "ok": true,
+      "weight": 10,
+      "score": 10,
+      "evidence": "ops/k_os_security_firewall.py",
+      "blocker": ""
+    },
+    {
+      "dimension": "next_layer_ready",
+      "ok": true,
+      "weight": 5,
+      "score": 5,
+      "evidence": "reports/recovery_layer_closure/latest_recovery_layer_closure_validation_report.json",
+      "blocker": ""
+    }
+  ],
+  "blockers": [
+    "recovery_layer_closure_missing_or_not_closed",
+    "evidence_core_chain_incomplete"
+  ],
+  "recovery_layer_closure_id": "rlc_0e9ec241e231",
+  "recovery_layer_closure_status": "layer_blocked",
+  "recovery_layer_closure_hash": "887114ae713444be76f00362854217ef75dcc14f206b7bd2d3e2496675ba3fce",
+  "recovery_governance_summary_hash": "5b2d2076354fd942c389ddbf43279e0523662139ef95c7f98ae419ce4d75562a",
+  "sandbox_operator_review_hash": "cd5e3826c8c7b60adf78d7498166386abd6b5da62fad8f18389ac262270d12bd",
+  "evidence_core_complete": false,
+  "destructive_zero_confirmed": true,
+  "readiness_hash": "c0a79c80d7c05e89116da9034e78172fd44ef6b019aa31d1226b95b0be62e30f",
+  "readiness_executes_recovery": false,
+  "readiness_executes_rollback": false,
+  "readiness_deletes_data": false,
+  "readiness_modifies_target_files": false,
+  "readiness_runs_git_reset": false,
+  "readiness_runs_git_force_push": false,
+  "readiness_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "source_refs": {
+    "recovery_layer_closure": {
+      "available": true,
+      "path": "reports/recovery_layer_closure/latest_recovery_layer_closure.json",
+      "checkpoint": "070",
+      "module": "k_os_agent_recovery_layer_closure_core",
+      "status": "layer_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:18:27+00:00",
+      "hash": "dce180ec7066aa5c4b9da836a13e9d7bd1c27f02197abefc2836185ac7f2c673"
+    },
+    "recovery_layer_closure_report": {
+      "available": true,
+      "path": "reports/recovery_layer_closure/latest_agent_recovery_layer_closure_report.json",
+      "checkpoint": "070",
+      "module": "k_os_agent_recovery_layer_closure_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-06-01T11:18:28+00:00",
+      "hash": "17e93fd23c6e9aea710dae9ba3ccd8e017e163a676f7d4809c588c9f5869c4be"
+    },
+    "recovery_layer_closure_validation": {
+      "available": true,
+      "path": "reports/recovery_layer_closure/latest_recovery_layer_closure_validation_report.json",
+      "checkpoint": "070",
+      "module": "k_os_agent_recovery_layer_closure_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-06-01T11:18:27+00:00",
+      "hash": "5e6bbfa138c88ee421932b2ba81b77d389323c49b3366e8f82f4091bab1bdd4a"
+    },
+    "recovery_governance_summary": {
+      "available": true,
+      "path": "reports/recovery_governance_summary/latest_recovery_governance_summary.json",
+      "checkpoint": "069",
+      "module": "k_os_agent_recovery_governance_summary_core",
+      "status": "closed_with_review_required",
+      "ok": true,
+      "created_at": "2026-06-01T11:10:36+00:00",
+      "hash": "3ac8016cf4d495c60d3b4e870b302b2a22d8319f832bfcfb8048382711ad591b"
+    },
+    "recovery_sandbox_review": {
+      "available": true,
+      "path": "reports/recovery_sandbox_review/latest_recovery_sandbox_operator_review.json",
+      "checkpoint": "068",
+      "module": "k_os_agent_recovery_sandbox_operator_review_core",
+      "status": "review_acknowledged_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:02:18+00:00",
+      "hash": "d6752bb00e4a0c71439d868233e7b0edc30a754bd472ccf24aa03872144c1a51"
+    }
+  },
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_readiness_state",
+    "export_raw_memory"
+  ],
+  "next_checkpoint": "072 - K-Agent Resilience Scenario Planner Core"
+}
