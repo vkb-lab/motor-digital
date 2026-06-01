@@ -1,0 +1,71 @@
+{
+  "status": "WAITING_PUBLIC_IMAGE_URL",
+  "deploy_result": {
+    "status": "VERCEL_DEPLOY_NO_URL",
+    "command": [
+      "C:\\Users\\oi\\AppData\\Roaming\\npm\\vercel.CMD",
+      "deploy",
+      "--yes"
+    ],
+    "returncode": 1,
+    "output_tail": "\nVercel CLI 41.7.4\nError: No existing credentials found. Please run `vercel login` or pass \"--token\"\nLearn More: https://err.sh/vercel/no-credentials-found\n",
+    "real_action_executed": false,
+    "external_call_executed": true,
+    "created_at": "2026-06-01T23:06:21.759739+00:00"
+  },
+  "url_check": {
+    "status": "WAITING_PUBLIC_BASE_URL",
+    "public_url_ready": false,
+    "public_url": "",
+    "public_path": "/kos/assets/parada_atlantida_campanha_lancamento_parada_atlantida.png",
+    "local_png_path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\assets\\parada_atlantida_campanha_lancamento_parada_atlantida.png",
+    "asset_status": "CREATIVE_ASSET_READY",
+    "real_action_executed": false,
+    "external_call_executed": false
+  },
+  "handoff": {
+    "status": "WAITING_PUBLIC_URL",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "caption": "Primeiro teste controlado da campanha Parada Atl?ntida.",
+    "asset": {
+      "status": "CREATIVE_ASSET_READY",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "asset_id": "parada_atlantida_campanha_lancamento_parada_atlantida",
+      "title": "PARADA ATLANTIDA",
+      "subtitle": "LAN?AMENTO DIGITAL",
+      "cta": "CONFIRA AS NOVIDADES",
+      "local_png_path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\assets\\parada_atlantida_campanha_lancamento_parada_atlantida.png",
+      "public_path": "/kos/assets/parada_atlantida_campanha_lancamento_parada_atlantida.png",
+      "png": {
+        "width": 1080,
+        "height": 1080,
+        "format": "png",
+        "path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\assets\\parada_atlantida_campanha_lancamento_parada_atlantida.png"
+      },
+      "real_action_executed": false,
+      "external_call_executed": false,
+      "created_at": "2026-06-01T23:06:22.167634+00:00"
+    },
+    "url": {
+      "status": "WAITING_PUBLIC_BASE_URL",
+      "public_url_ready": false,
+      "public_url": "",
+      "public_path": "/kos/assets/parada_atlantida_campanha_lancamento_parada_atlantida.png",
+      "local_png_path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\assets\\parada_atlantida_campanha_lancamento_parada_atlantida.png",
+      "asset_status": "CREATIVE_ASSET_READY",
+      "real_action_executed": false,
+      "external_call_executed": false
+    },
+    "image_url_for_instagram": "",
+    "real_action_executed": false,
+    "external_call_executed": false,
+    "next_step": "Se public_url estiver vazio, definir KOS_PUBLIC_BASE_URL ou fazer deploy Vercel.",
+    "created_at": "2026-06-01T23:06:22.171455+00:00"
+  },
+  "image_url_for_instagram": "",
+  "real_action_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-01T23:06:22.172517+00:00"
+}

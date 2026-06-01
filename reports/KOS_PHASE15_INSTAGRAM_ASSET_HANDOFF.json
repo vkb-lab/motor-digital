@@ -21,7 +21,7 @@
     },
     "real_action_executed": false,
     "external_call_executed": false,
-    "created_at": "2026-06-01T23:03:29.799686+00:00"
+    "created_at": "2026-06-01T23:06:22.167634+00:00"
   },
   "url": {
     "status": "WAITING_PUBLIC_BASE_URL",
@@ -37,5 +37,5 @@
   "real_action_executed": false,
   "external_call_executed": false,
   "next_step": "Se public_url estiver vazio, definir KOS_PUBLIC_BASE_URL ou fazer deploy Vercel.",
-  "created_at": "2026-06-01T23:03:29.802909+00:00"
+  "created_at": "2026-06-01T23:06:22.171455+00:00"
 }

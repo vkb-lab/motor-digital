@@ -1,0 +1,13 @@
+{
+  "status": "VERCEL_DEPLOY_NO_URL",
+  "command": [
+    "C:\\Users\\oi\\AppData\\Roaming\\npm\\vercel.CMD",
+    "deploy",
+    "--yes"
+  ],
+  "returncode": 1,
+  "output_tail": "\nVercel CLI 41.7.4\nError: No existing credentials found. Please run `vercel login` or pass \"--token\"\nLearn More: https://err.sh/vercel/no-credentials-found\n",
+  "real_action_executed": false,
+  "external_call_executed": true,
+  "created_at": "2026-06-01T23:06:21.759739+00:00"
+}
