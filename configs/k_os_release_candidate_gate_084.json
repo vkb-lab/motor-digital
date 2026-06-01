@@ -1,0 +1,64 @@
+{
+  "checkpoint": "084",
+  "name": "K-OS Release Candidate Gate Core",
+  "layer": "K-OS Core",
+  "objective": "Criar gate de Release Candidate do K-OS consolidando evidencias dos checkpoints 079-083, avaliando prontidao operacional, riscos, bloqueios e transicao para installer local, sem executar deploy, recovery, rollback, drill, reset, force push, limpeza destrutiva ou auto-fix.",
+  "previous_checkpoint": "083 - K-OS Backup and Export Pack Core",
+  "next_checkpoint": "085 - K-OS Local Installer / Launcher Core",
+  "source_checkpoints": [
+    "079",
+    "080",
+    "081",
+    "082",
+    "083"
+  ],
+  "gate_domains": [
+    "system_health",
+    "module_registry",
+    "agent_capability_registry",
+    "command_registry",
+    "backup_export_pack",
+    "security_policy",
+    "governance_guards",
+    "streamlit_surface",
+    "documentation_surface"
+  ],
+  "allowed_operations": [
+    "read_existing_evidence",
+    "generate_release_candidate_gate",
+    "generate_sanitized_reports",
+    "generate_read_only_dashboard",
+    "update_accountability_register_if_exists",
+    "validate_artifacts",
+    "audit_checkpoint",
+    "create_closure_report"
+  ],
+  "blocked_operations": [
+    "deploy_execution",
+    "installer_execution",
+    "release_publish_execution",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "gate_policy": {
+    "read_only_gate": true,
+    "execute_deploy": false,
+    "execute_installer": false,
+    "publish_release": false,
+    "auto_fix": false,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "allow_rc_with_warnings": true,
+    "require_operator_approval_for_next_checkpoint": true
+  },
+  "status": "configured"
+}

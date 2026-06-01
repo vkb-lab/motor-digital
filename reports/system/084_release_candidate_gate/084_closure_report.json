@@ -1,0 +1,18 @@
+{
+  "checkpoint": "084",
+  "name": "K-OS Release Candidate Gate Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:18:00Z",
+  "gate_status": "rc_ready_with_warnings",
+  "next_checkpoint": "085 - K-OS Local Installer / Launcher Core",
+  "action_report": "reports/system/084_release_candidate_gate/084_action_report.json",
+  "validate_report": "reports/system/084_release_candidate_gate/084_validate_report.json",
+  "audit_report": "reports/system/084_release_candidate_gate/084_audit_report.json",
+  "release_candidate_gate": "reports/system/084_release_candidate_gate/084_release_candidate_gate.json",
+  "operator_approval_required": true,
+  "deploy_executed": false,
+  "installer_executed": false,
+  "release_published": false,
+  "blocked_operations_confirmed": true
+}
