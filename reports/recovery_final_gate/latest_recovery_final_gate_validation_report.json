@@ -1,0 +1,29 @@
+{
+  "ok": false,
+  "checkpoint": "065",
+  "module": "k_os_agent_recovery_final_gate_core",
+  "status": "blocked",
+  "generated_at": "2026-06-01T10:37:03+00:00",
+  "recovery_final_gate_id": "rfg_c42bd422642f",
+  "final_gate_status": "blocked",
+  "mode": "block_execution",
+  "recovery_dry_run_id": "",
+  "recovery_plan_id": "rpb_be687cf9460f",
+  "recovery_final_gate_hash": "ad387ef8169245a22536f2f769dd4b3fc8ac24cfb2d207693cdc1a7fd0d0d942",
+  "final_gate_executes_recovery": false,
+  "final_gate_executes_rollback": false,
+  "final_gate_deletes_data": false,
+  "final_gate_modifies_target_files": false,
+  "final_gate_runs_git_reset": false,
+  "final_gate_runs_git_force_push": false,
+  "final_gate_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [
+    "recovery_dry_run_id_missing"
+  ],
+  "warnings": [
+    "recovery_blocked_by_final_gate",
+    "final_gate_contains_non_destructive_blockers"
+  ]
+}

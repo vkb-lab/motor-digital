@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "065",
+  "module": "agent_recovery_final_gate_core",
+  "purpose": "Registrar gate final antes de qualquer stub/manual futuro de recovery, validando dry-run, gate, plano, readiness e governanca sem executar recovery real.",
+  "final_gate_policy": {
+    "final_gate_local_only": true,
+    "raw_final_gate_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "final_gate_executes_recovery": false,
+    "final_gate_executes_rollback": false,
+    "final_gate_deletes_data": false,
+    "final_gate_modifies_target_files": false,
+    "final_gate_runs_git_reset": false,
+    "final_gate_runs_git_force_push": false,
+    "final_gate_executes_shell_commands": false,
+    "recovery_dry_run_required": true,
+    "recovery_gate_required": true,
+    "recovery_plan_required": true,
+    "readiness_matrix_required": true,
+    "governance_summary_required": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "allowed_final_gate_modes": [
+    "block_execution",
+    "approve_future_manual_stub",
+    "revoke_execution"
+  ],
+  "final_gate_statuses": [
+    "blocked",
+    "approved_for_future_manual_stub",
+    "revoked",
+    "validated",
+    "archived"
+  ],
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_final_gate_state",
+    "export_raw_memory"
+  ],
+  "required_gates_before_final_gate": [
+    "recovery_dry_run_exists",
+    "recovery_dry_run_hash_exists",
+    "recovery_gate_exists",
+    "recovery_plan_exists",
+    "readiness_matrix_exists",
+    "governance_summary_exists",
+    "no_recovery_executed",
+    "no_rollback_executed",
+    "no_shell_executed",
+    "final_gate_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "066 - K-Agent Recovery Manual Execution Stub Core"
+}

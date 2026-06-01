@@ -411,3 +411,6 @@ local_secrets/k_os_recovery_plan_builder/
 memory/recovery_gate/
 reports/recovery_gate/runtime/
 local_secrets/k_os_recovery_gate/
+memory/recovery_final_gate/
+reports/recovery_final_gate/runtime/
+local_secrets/k_os_recovery_final_gate/
