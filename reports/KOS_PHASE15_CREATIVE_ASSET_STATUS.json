@@ -1,0 +1,10 @@
+{
+  "status": "PRONTO FASE 15",
+  "phase": 15,
+  "module": "creative_asset_publisher",
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "creates_png_asset": true,
+  "requires_public_https_url_for_instagram": true,
+  "updated_at": "2026-06-01T23:02:10.760369+00:00"
+}
