@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "checkpoint": "060",
+  "module": "k_os_agent_rollback_governance_summary_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T10:03:21+00:00",
+  "summary_id": "rgs_8ded4eeda1f9",
+  "summary_status": "closed_safe",
+  "rollback_governance_summary_hash": "e0076fed68d8adca818620e50e7b777cec0b4d2eefbeb34827a816abc2283c25",
+  "no_real_rollback_executed": true,
+  "no_data_deleted": true,
+  "no_target_files_modified": true,
+  "no_git_reset_executed": true,
+  "no_git_force_push_executed": true,
+  "no_shell_execution": true,
+  "summary_executes_rollback": false,
+  "summary_deletes_data": false,
+  "summary_modifies_target_files": false,
+  "summary_runs_git_reset": false,
+  "summary_runs_git_force_push": false,
+  "summary_executes_shell_commands": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "governance_summary_contains_non_destructive_blockers"
+  ]
+}

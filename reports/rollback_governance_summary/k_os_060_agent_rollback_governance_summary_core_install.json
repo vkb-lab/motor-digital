@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "060",
+    "module":  "k_os_agent_rollback_governance_summary_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "rollback_governance_summary",
+                         "checkpoint_053_059_evidence_chain",
+                         "no_real_rollback_validation",
+                         "no_git_reset_validation",
+                         "no_force_push_validation",
+                         "no_shell_execution_validation",
+                         "sanitized_summary_report"
+                     ],
+    "summary_local_only":  true,
+    "raw_summary_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "summary_executes_rollback":  false,
+    "summary_deletes_data":  false,
+    "summary_modifies_target_files":  false,
+    "summary_runs_git_reset":  false,
+    "summary_runs_git_force_push":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "061 - K-Agent Recovery Readiness Matrix Core",
+    "installed_at":  "2026-06-01T10:03:20.3280266Z"
+}
