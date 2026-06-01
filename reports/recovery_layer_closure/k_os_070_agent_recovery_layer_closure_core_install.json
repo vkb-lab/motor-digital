@@ -1,0 +1,32 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "070",
+    "module":  "k_os_agent_recovery_layer_closure_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "recovery_layer_closure",
+                         "checkpoint_061_069_evidence_chain",
+                         "governance_summary_binding",
+                         "no_recovery_execution_validation",
+                         "no_rollback_execution_validation",
+                         "no_shell_execution_validation",
+                         "no_git_reset_validation",
+                         "no_force_push_validation",
+                         "sanitized_layer_closure_report"
+                     ],
+    "closure_local_only":  true,
+    "raw_closure_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "closure_executes_recovery":  false,
+    "closure_executes_rollback":  false,
+    "closure_deletes_data":  false,
+    "closure_modifies_target_files":  false,
+    "closure_runs_git_reset":  false,
+    "closure_runs_git_force_push":  false,
+    "final_operator_closure_required":  true,
+    "next_checkpoint":  "071 - K-Agent Resilience Readiness Core",
+    "installed_at":  "2026-06-01T11:18:26.5381578Z"
+}

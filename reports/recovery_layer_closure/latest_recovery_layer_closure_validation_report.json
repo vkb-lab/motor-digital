@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "checkpoint": "070",
+  "module": "k_os_agent_recovery_layer_closure_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T11:18:27+00:00",
+  "recovery_layer_closure_id": "rlc_0e9ec241e231",
+  "layer_status": "layer_blocked",
+  "recovery_layer_closure_hash": "887114ae713444be76f00362854217ef75dcc14f206b7bd2d3e2496675ba3fce",
+  "recovery_governance_summary_hash": "5b2d2076354fd942c389ddbf43279e0523662139ef95c7f98ae419ce4d75562a",
+  "no_recovery_executed": true,
+  "no_rollback_executed": true,
+  "no_data_deleted": true,
+  "no_target_files_modified": true,
+  "no_git_reset_executed": true,
+  "no_git_force_push_executed": true,
+  "no_shell_executed": true,
+  "closure_executes_recovery": false,
+  "closure_executes_rollback": false,
+  "closure_deletes_data": false,
+  "closure_modifies_target_files": false,
+  "closure_runs_git_reset": false,
+  "closure_runs_git_force_push": false,
+  "closure_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": [
+    "core_evidence_chain_incomplete",
+    "closure_reports_incomplete_but_layer_can_continue_with_review",
+    "layer_closure_contains_non_destructive_blockers"
+  ]
+}

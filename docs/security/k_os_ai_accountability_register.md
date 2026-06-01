@@ -137,3 +137,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Recovery Sandbox Operator Review Core | Revisa sandbox de recovery, consolida blockers e registra review humano sem executar recovery ou rollback | Operador K-OS | Sim, local sanitizado | Não | Não | Controlled Sandbox + Operator Review + No Recovery Execution | reports/recovery_sandbox_review |
 
 | K-OS Agent Recovery Governance Summary Core | Consolida governança de recovery dos checkpoints 061-068 sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Evidence Chain + Recovery Governance + No Recovery Execution | reports/recovery_governance_summary |
+
+| K-OS Agent Recovery Layer Closure Core | Fecha a camada de recovery 061-069 sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Recovery Governance Summary + Layer Closure + No Recovery Execution | reports/recovery_layer_closure |

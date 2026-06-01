@@ -1,0 +1,629 @@
+{
+  "ok": true,
+  "checkpoint": "070",
+  "module": "k_os_agent_recovery_layer_closure_core",
+  "status": "layer_blocked",
+  "recovery_layer_closure_id": "rlc_0e9ec241e231",
+  "created_at": "2026-06-01T11:18:27+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_recovery_layer_061_069",
+  "covered_checkpoints": [
+    "061",
+    "062",
+    "063",
+    "064",
+    "065",
+    "066",
+    "067",
+    "068",
+    "069"
+  ],
+  "recovery_governance_summary_available": true,
+  "recovery_governance_summary_id": "rgs2_ccd59093b101",
+  "recovery_governance_summary_hash": "5b2d2076354fd942c389ddbf43279e0523662139ef95c7f98ae419ce4d75562a",
+  "evidence_chain": [
+    {
+      "checkpoint": "061",
+      "name": "Recovery Readiness Matrix Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_readiness_matrix/latest_agent_recovery_readiness_matrix_report.json",
+      "artifact_path": "reports/recovery_readiness_matrix/latest_recovery_readiness_matrix.json",
+      "closure_path": "reports/recovery_readiness_matrix/k_os_061_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "matrix_generated",
+      "closure_status": "closed_and_validated",
+      "report_hash": "3a5526a73b080612e9b13a800c7d7291b36323d8c7aee179e8248946698ee862",
+      "artifact_hash": "206448174b03a410aaf1173fe76c8636ae4bdbbd9a72f7162ecb6c4ac38483f6",
+      "closure_hash": "16277b2a92cc92158b83e5e0fc242c25ecba916f5b8075ef73d79612287739c9",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_readiness_matrix/latest_agent_recovery_readiness_matrix_report.json",
+          "checkpoint": "061",
+          "module": "k_os_agent_recovery_readiness_matrix_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:07:47+00:00",
+          "hash": "3a5526a73b080612e9b13a800c7d7291b36323d8c7aee179e8248946698ee862"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_readiness_matrix/latest_recovery_readiness_matrix.json",
+          "checkpoint": "061",
+          "module": "k_os_agent_recovery_readiness_matrix_core",
+          "status": "matrix_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:07:46+00:00",
+          "hash": "206448174b03a410aaf1173fe76c8636ae4bdbbd9a72f7162ecb6c4ac38483f6"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_readiness_matrix/k_os_061_closure_report.json",
+          "checkpoint": "061",
+          "module": "k_os_agent_recovery_readiness_matrix_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "16277b2a92cc92158b83e5e0fc242c25ecba916f5b8075ef73d79612287739c9"
+        }
+      }
+    },
+    {
+      "checkpoint": "062",
+      "name": "Recovery Plan Builder Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_plan_builder/latest_agent_recovery_plan_builder_report.json",
+      "artifact_path": "reports/recovery_plan_builder/latest_recovery_plan.json",
+      "closure_path": "reports/recovery_plan_builder/k_os_062_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "plan_blocked_review_required",
+      "closure_status": "closed_and_validated",
+      "report_hash": "35ae74bd87605156bafaef696b89fb674d2e5a3ab7ee0ed4c06b2f58492e81e2",
+      "artifact_hash": "5c62fd3280af88b068476c23c1a5ce02e964450bf97a65665fb710e7a3bc18cd",
+      "closure_hash": "2014852a1714bf6127f26413d9967c30346e768d1f9abade36825aaeb5a8c1c7",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_plan_builder/latest_agent_recovery_plan_builder_report.json",
+          "checkpoint": "062",
+          "module": "k_os_agent_recovery_plan_builder_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:12:44+00:00",
+          "hash": "35ae74bd87605156bafaef696b89fb674d2e5a3ab7ee0ed4c06b2f58492e81e2"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_plan_builder/latest_recovery_plan.json",
+          "checkpoint": "062",
+          "module": "k_os_agent_recovery_plan_builder_core",
+          "status": "plan_blocked_review_required",
+          "ok": true,
+          "created_at": "2026-06-01T10:12:44+00:00",
+          "hash": "5c62fd3280af88b068476c23c1a5ce02e964450bf97a65665fb710e7a3bc18cd"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_plan_builder/k_os_062_closure_report.json",
+          "checkpoint": "062",
+          "module": "k_os_agent_recovery_plan_builder_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "2014852a1714bf6127f26413d9967c30346e768d1f9abade36825aaeb5a8c1c7"
+        }
+      }
+    },
+    {
+      "checkpoint": "063",
+      "name": "Recovery Approval Gate Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_gate/latest_agent_recovery_gate_report.json",
+      "artifact_path": "reports/recovery_gate/latest_recovery_gate_record.json",
+      "closure_path": "reports/recovery_gate/k_os_063_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "blocked",
+      "closure_status": "closed_and_validated",
+      "report_hash": "5c650984965bda96e9fd556a5cc45c560b7d066590275c37690d00926b1615a0",
+      "artifact_hash": "7bded4b03d3a0eedda8906f29f93edcc7e87e83e5dd9b561e0fa6a0467141239",
+      "closure_hash": "942f78c1a28d141eb72dda36a907c7c129bea171b8479ddf3ac3523268a95c05",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_gate/latest_agent_recovery_gate_report.json",
+          "checkpoint": "063",
+          "module": "k_os_agent_recovery_approval_gate_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:20:07+00:00",
+          "hash": "5c650984965bda96e9fd556a5cc45c560b7d066590275c37690d00926b1615a0"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_gate/latest_recovery_gate_record.json",
+          "checkpoint": "063",
+          "module": "k_os_agent_recovery_approval_gate_core",
+          "status": "blocked",
+          "ok": true,
+          "created_at": "2026-06-01T10:20:07+00:00",
+          "hash": "7bded4b03d3a0eedda8906f29f93edcc7e87e83e5dd9b561e0fa6a0467141239"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_gate/k_os_063_closure_report.json",
+          "checkpoint": "063",
+          "module": "k_os_agent_recovery_approval_gate_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "942f78c1a28d141eb72dda36a907c7c129bea171b8479ddf3ac3523268a95c05"
+        }
+      }
+    },
+    {
+      "checkpoint": "064",
+      "name": "Recovery Dry Run Simulator Core",
+      "report_available": false,
+      "artifact_available": false,
+      "closure_available": false,
+      "report_path": "reports/recovery_dry_run/latest_agent_recovery_dry_run_report.json",
+      "artifact_path": "reports/recovery_dry_run/latest_recovery_dry_run_simulation.json",
+      "closure_path": "reports/recovery_dry_run/k_os_064_closure_report.json",
+      "report_status": "missing",
+      "artifact_status": "missing",
+      "closure_status": "missing",
+      "report_hash": "",
+      "artifact_hash": "",
+      "closure_hash": "",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": false,
+          "path": "reports/recovery_dry_run/latest_agent_recovery_dry_run_report.json",
+          "status": "missing",
+          "hash": ""
+        },
+        "artifact": {
+          "available": false,
+          "path": "reports/recovery_dry_run/latest_recovery_dry_run_simulation.json",
+          "status": "missing",
+          "hash": ""
+        },
+        "closure": {
+          "available": false,
+          "path": "reports/recovery_dry_run/k_os_064_closure_report.json",
+          "status": "missing",
+          "hash": ""
+        }
+      }
+    },
+    {
+      "checkpoint": "065",
+      "name": "Recovery Final Gate Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_final_gate/latest_agent_recovery_final_gate_report.json",
+      "artifact_path": "reports/recovery_final_gate/latest_recovery_final_gate_record.json",
+      "closure_path": "reports/recovery_final_gate/k_os_065_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "blocked",
+      "closure_status": "closed_and_validated",
+      "report_hash": "f4cfe10437ede4f2e898d2924dab58085121998bc499a3361026de19bcf3b4e4",
+      "artifact_hash": "0e703b7fcf875af8e64da024f26f74d1b282dedb17e79604fe92fe5455831172",
+      "closure_hash": "2817d5e818cdca9f49a324675980bd4c8db0c29d7cbdf02482caaa2ad9d2a73c",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_final_gate/latest_agent_recovery_final_gate_report.json",
+          "checkpoint": "065",
+          "module": "k_os_agent_recovery_final_gate_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:37:03+00:00",
+          "hash": "f4cfe10437ede4f2e898d2924dab58085121998bc499a3361026de19bcf3b4e4"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_final_gate/latest_recovery_final_gate_record.json",
+          "checkpoint": "065",
+          "module": "k_os_agent_recovery_final_gate_core",
+          "status": "blocked",
+          "ok": true,
+          "created_at": "2026-06-01T10:37:03+00:00",
+          "hash": "0e703b7fcf875af8e64da024f26f74d1b282dedb17e79604fe92fe5455831172"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_final_gate/k_os_065_closure_report.json",
+          "checkpoint": "065",
+          "module": "k_os_agent_recovery_final_gate_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "2817d5e818cdca9f49a324675980bd4c8db0c29d7cbdf02482caaa2ad9d2a73c"
+        }
+      }
+    },
+    {
+      "checkpoint": "066",
+      "name": "Recovery Manual Execution Stub Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_manual_stub/latest_agent_recovery_manual_stub_report.json",
+      "artifact_path": "reports/recovery_manual_stub/latest_recovery_manual_stub_record.json",
+      "closure_path": "reports/recovery_manual_stub/k_os_066_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "intent_blocked",
+      "closure_status": "closed_and_validated",
+      "report_hash": "fe619ba3e25006f233f010f0e4aa9f34d74e2ed3c8c43aa960646a6007e29571",
+      "artifact_hash": "378d2a81a1924e2e306f47f2c47a640c619f197c6491295c9e7e353c806b26b1",
+      "closure_hash": "561bad6d0ed1dd14cfdf56bfcda9f0944049e71e396edf1be7bb88b79daccea8",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_manual_stub/latest_agent_recovery_manual_stub_report.json",
+          "checkpoint": "066",
+          "module": "k_os_agent_recovery_manual_execution_stub_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:50:52+00:00",
+          "hash": "fe619ba3e25006f233f010f0e4aa9f34d74e2ed3c8c43aa960646a6007e29571"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_manual_stub/latest_recovery_manual_stub_record.json",
+          "checkpoint": "066",
+          "module": "k_os_agent_recovery_manual_execution_stub_core",
+          "status": "intent_blocked",
+          "ok": true,
+          "created_at": "2026-06-01T10:50:51+00:00",
+          "hash": "378d2a81a1924e2e306f47f2c47a640c619f197c6491295c9e7e353c806b26b1"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_manual_stub/k_os_066_closure_report.json",
+          "checkpoint": "066",
+          "module": "k_os_agent_recovery_manual_execution_stub_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "561bad6d0ed1dd14cfdf56bfcda9f0944049e71e396edf1be7bb88b79daccea8"
+        }
+      }
+    },
+    {
+      "checkpoint": "067",
+      "name": "Recovery Controlled Execution Sandbox Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_controlled_sandbox/latest_agent_recovery_controlled_sandbox_report.json",
+      "artifact_path": "reports/recovery_controlled_sandbox/latest_recovery_controlled_sandbox_record.json",
+      "closure_path": "reports/recovery_controlled_sandbox/k_os_067_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "sandbox_blocked_by_governance",
+      "closure_status": "closed_and_validated",
+      "report_hash": "476ba89bc5783f0997e7d665ad387166f4668103292b0fcc06109b1c808f059a",
+      "artifact_hash": "0d8de9d068f3fe52b35094a1f779111c9939f490f472c63fe79fe5db6345b6ee",
+      "closure_hash": "defd045e84ec8c490291175b60fa2705876e93fcee9c5b143ecb830d2868c31f",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_controlled_sandbox/latest_agent_recovery_controlled_sandbox_report.json",
+          "checkpoint": "067",
+          "module": "k_os_agent_recovery_controlled_execution_sandbox_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T10:56:04+00:00",
+          "hash": "476ba89bc5783f0997e7d665ad387166f4668103292b0fcc06109b1c808f059a"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_controlled_sandbox/latest_recovery_controlled_sandbox_record.json",
+          "checkpoint": "067",
+          "module": "k_os_agent_recovery_controlled_execution_sandbox_core",
+          "status": "sandbox_blocked_by_governance",
+          "ok": true,
+          "created_at": "2026-06-01T10:56:04+00:00",
+          "hash": "0d8de9d068f3fe52b35094a1f779111c9939f490f472c63fe79fe5db6345b6ee"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_controlled_sandbox/k_os_067_closure_report.json",
+          "checkpoint": "067",
+          "module": "k_os_agent_recovery_controlled_execution_sandbox_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "defd045e84ec8c490291175b60fa2705876e93fcee9c5b143ecb830d2868c31f"
+        }
+      }
+    },
+    {
+      "checkpoint": "068",
+      "name": "Recovery Sandbox Operator Review Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_sandbox_review/latest_agent_recovery_sandbox_review_report.json",
+      "artifact_path": "reports/recovery_sandbox_review/latest_recovery_sandbox_operator_review.json",
+      "closure_path": "reports/recovery_sandbox_review/k_os_068_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "review_acknowledged_blocked",
+      "closure_status": "closed_and_validated",
+      "report_hash": "b31f1c98325d1efc805803a7aeef8f51214532ea4dff64083ca7f364680f9111",
+      "artifact_hash": "d6752bb00e4a0c71439d868233e7b0edc30a754bd472ccf24aa03872144c1a51",
+      "closure_hash": "de10f05f2a50689d4cedcf0a2fecda71c13ac950707cd3998ea648a13469131f",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_sandbox_review/latest_agent_recovery_sandbox_review_report.json",
+          "checkpoint": "068",
+          "module": "k_os_agent_recovery_sandbox_operator_review_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T11:02:18+00:00",
+          "hash": "b31f1c98325d1efc805803a7aeef8f51214532ea4dff64083ca7f364680f9111"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_sandbox_review/latest_recovery_sandbox_operator_review.json",
+          "checkpoint": "068",
+          "module": "k_os_agent_recovery_sandbox_operator_review_core",
+          "status": "review_acknowledged_blocked",
+          "ok": true,
+          "created_at": "2026-06-01T11:02:18+00:00",
+          "hash": "d6752bb00e4a0c71439d868233e7b0edc30a754bd472ccf24aa03872144c1a51"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_sandbox_review/k_os_068_closure_report.json",
+          "checkpoint": "068",
+          "module": "k_os_agent_recovery_sandbox_operator_review_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "de10f05f2a50689d4cedcf0a2fecda71c13ac950707cd3998ea648a13469131f"
+        }
+      }
+    },
+    {
+      "checkpoint": "069",
+      "name": "Recovery Governance Summary Core",
+      "report_available": true,
+      "artifact_available": true,
+      "closure_available": true,
+      "report_path": "reports/recovery_governance_summary/latest_agent_recovery_governance_summary_report.json",
+      "artifact_path": "reports/recovery_governance_summary/latest_recovery_governance_summary.json",
+      "closure_path": "reports/recovery_governance_summary/k_os_069_closure_report.json",
+      "report_status": "audit_generated",
+      "artifact_status": "closed_with_review_required",
+      "closure_status": "closed_and_validated",
+      "report_hash": "23d66a6383eb8373a1374a2241a28ca6e550017f80494fce1cbefccfeb3d2601",
+      "artifact_hash": "3ac8016cf4d495c60d3b4e870b302b2a22d8319f832bfcfb8048382711ad591b",
+      "closure_hash": "0c8eee5cd2811f07bf9d54b3b08680c7d5ed024ac09803871e247b7fccdb137b",
+      "destructive_flag_present": false,
+      "metrics": {
+        "recovery_execution_count": 0,
+        "rollback_execution_count": 0,
+        "data_delete_count": 0,
+        "target_file_modify_count": 0,
+        "git_reset_count": 0,
+        "git_force_push_count": 0,
+        "shell_execution_count": 0
+      },
+      "source_refs": {
+        "report": {
+          "available": true,
+          "path": "reports/recovery_governance_summary/latest_agent_recovery_governance_summary_report.json",
+          "checkpoint": "069",
+          "module": "k_os_agent_recovery_governance_summary_core",
+          "status": "audit_generated",
+          "ok": true,
+          "created_at": "2026-06-01T11:10:36+00:00",
+          "hash": "23d66a6383eb8373a1374a2241a28ca6e550017f80494fce1cbefccfeb3d2601"
+        },
+        "artifact": {
+          "available": true,
+          "path": "reports/recovery_governance_summary/latest_recovery_governance_summary.json",
+          "checkpoint": "069",
+          "module": "k_os_agent_recovery_governance_summary_core",
+          "status": "closed_with_review_required",
+          "ok": true,
+          "created_at": "2026-06-01T11:10:36+00:00",
+          "hash": "3ac8016cf4d495c60d3b4e870b302b2a22d8319f832bfcfb8048382711ad591b"
+        },
+        "closure": {
+          "available": true,
+          "path": "reports/recovery_governance_summary/k_os_069_closure_report.json",
+          "checkpoint": "069",
+          "module": "k_os_agent_recovery_governance_summary_core",
+          "status": "closed_and_validated",
+          "ok": true,
+          "created_at": "",
+          "hash": "0c8eee5cd2811f07bf9d54b3b08680c7d5ed024ac09803871e247b7fccdb137b"
+        }
+      }
+    }
+  ],
+  "totals": {
+    "checkpoint_count": 9,
+    "report_available_count": 8,
+    "artifact_available_count": 8,
+    "closure_available_count": 8,
+    "missing_report_count": 1,
+    "missing_artifact_count": 1,
+    "missing_closure_count": 1,
+    "destructive_flag_count": 0,
+    "recovery_execution_count": 0,
+    "rollback_execution_count": 0,
+    "data_delete_count": 0,
+    "target_file_modify_count": 0,
+    "git_reset_count": 0,
+    "git_force_push_count": 0,
+    "shell_execution_count": 0
+  },
+  "consolidated_blockers": [
+    {
+      "checkpoint": "064",
+      "blocker": "report_missing"
+    },
+    {
+      "checkpoint": "064",
+      "blocker": "artifact_missing"
+    },
+    {
+      "checkpoint": "064",
+      "blocker": "closure_report_missing"
+    }
+  ],
+  "recovery_layer_closure_hash": "887114ae713444be76f00362854217ef75dcc14f206b7bd2d3e2496675ba3fce",
+  "destructive_zero": true,
+  "evidence_core_complete": false,
+  "evidence_closure_complete": false,
+  "no_recovery_executed": true,
+  "no_rollback_executed": true,
+  "no_data_deleted": true,
+  "no_target_files_modified": true,
+  "no_git_reset_executed": true,
+  "no_git_force_push_executed": true,
+  "no_shell_executed": true,
+  "closure_executes_recovery": false,
+  "closure_executes_rollback": false,
+  "closure_deletes_data": false,
+  "closure_modifies_target_files": false,
+  "closure_runs_git_reset": false,
+  "closure_runs_git_force_push": false,
+  "closure_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_closure_state",
+    "export_raw_memory"
+  ],
+  "required_gates_before_recovery_layer_closure": [
+    "recovery_governance_summary_exists",
+    "recovery_governance_summary_hash_exists",
+    "checkpoint_061_evidence_exists",
+    "checkpoint_062_evidence_exists",
+    "checkpoint_063_evidence_exists",
+    "checkpoint_064_evidence_exists",
+    "checkpoint_065_evidence_exists",
+    "checkpoint_066_evidence_exists",
+    "checkpoint_067_evidence_exists",
+    "checkpoint_068_evidence_exists",
+    "checkpoint_069_evidence_exists",
+    "no_recovery_executed",
+    "no_rollback_executed",
+    "no_data_deleted",
+    "no_target_files_modified",
+    "no_git_reset_executed",
+    "no_force_push_executed",
+    "no_shell_executed",
+    "layer_closure_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "071 - K-Agent Resilience Readiness Core"
+}
