@@ -1,0 +1,26 @@
+{
+  "checkpoint": "083",
+  "name": "K-OS Export Pack Index",
+  "generated_at": "2026-06-01T13:13:38Z",
+  "manifest_only": true,
+  "content_exported": false,
+  "archive_created": false,
+  "manifest": "reports/system/083_backup_export_pack/083_backup_export_manifest.json",
+  "markdown_report": "reports/system/083_backup_export_pack/083_backup_export_pack.md",
+  "included_file_count": 4559,
+  "excluded_file_count": 2302,
+  "by_scope": {
+    "agent_modules": 11,
+    "configuration": 7,
+    "content_assets": 2,
+    "core_runtime": 2668,
+    "documentation": 361,
+    "live_runtime_surface": 55,
+    "memory_non_runtime": 212,
+    "operator_scripts": 10,
+    "root_or_misc": 3,
+    "sanitized_reports": 660,
+    "streamlit_pages": 570
+  },
+  "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+}

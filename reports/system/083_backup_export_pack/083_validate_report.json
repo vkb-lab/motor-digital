@@ -1,0 +1,53 @@
+{
+  "checkpoint": "083",
+  "name": "K-OS Backup and Export Pack Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:13:38Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_backup_export_pack_083.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/backup_export_pack_083.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_083_backup_export_pack.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/083_K_OS_Backup_Export_Pack.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/083_k_os_backup_export_pack.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/083_backup_export_pack/083_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/083_backup_export_pack/083_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/083_backup_export_pack/083_backup_export_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/083_backup_export_pack/083_export_pack_index.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/083_backup_export_pack/083_backup_export_pack.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "manifest_ok": true,
+  "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+}

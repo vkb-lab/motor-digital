@@ -1,0 +1,19 @@
+{
+  "checkpoint": "083",
+  "name": "K-OS Backup and Export Pack Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:13:38Z",
+  "pack_status": "healthy",
+  "total_included_files": 4559,
+  "next_checkpoint": "084 - K-OS Release Candidate Gate Core",
+  "action_report": "reports/system/083_backup_export_pack/083_action_report.json",
+  "validate_report": "reports/system/083_backup_export_pack/083_validate_report.json",
+  "audit_report": "reports/system/083_backup_export_pack/083_audit_report.json",
+  "backup_export_manifest": "reports/system/083_backup_export_pack/083_backup_export_manifest.json",
+  "export_pack_index": "reports/system/083_backup_export_pack/083_export_pack_index.json",
+  "manifest_only": true,
+  "content_exported": false,
+  "archive_created": false,
+  "blocked_operations_confirmed": true
+}

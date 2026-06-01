@@ -1,0 +1,43 @@
+{
+  "checkpoint": "083",
+  "name": "K-OS Backup and Export Pack Core",
+  "mode": "audit",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:13:38Z",
+  "checks": {
+    "validate_passed": false,
+    "backup_export_manifest_exists": true,
+    "manifest_only": true,
+    "content_not_exported": true,
+    "archive_not_created": true,
+    "secret_export_not_performed": "[REDACTED]",
+    "local_secrets_export_not_performed": "[REDACTED]",
+    "memory_runtime_export_not_performed": true,
+    "backup_restore_not_executed": true,
+    "automatic_remediation_not_executed": true,
+    "real_drill_not_executed": true,
+    "real_recovery_not_executed": true,
+    "real_rollback_not_executed": true,
+    "git_reset_hard_not_executed": true,
+    "force_push_not_executed": true,
+    "destructive_shell_not_executed": true,
+    "memory_deletion_not_executed": true,
+    "reports_are_sanitized": true,
+    "transition_to_084_declared": true
+  },
+  "blocked_operations": [
+    "secret_export",
+    "local_secrets_export",
+    "memory_runtime_export",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "automatic_remediation"
+  ],
+  "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+}
