@@ -1,0 +1,28 @@
+{
+  "status": "PENDING_APPROVAL",
+  "mode": "DRY_RUN",
+  "provider": "google_business",
+  "kind": "profile_update",
+  "client_id": "parada_atlantida",
+  "external_call_executed": false,
+  "created_at": "2026-06-01T17:10:10.719611+00:00",
+  "payload": {
+    "action": "google_business_profile_update",
+    "client_id": "parada_atlantida",
+    "status": "PENDING_APPROVAL",
+    "manual_approval_required": true,
+    "suggestion": {
+      "client_id": "parada_atlantida",
+      "business_name": "Parada Atlantida",
+      "description": "Experiencias locais, turismo regional, gastronomia, cupons e roteiros em Atlantida.",
+      "services": [
+        "turismo",
+        "experiencias locais",
+        "gastronomia",
+        "cupons",
+        "roteiros"
+      ],
+      "status": "PENDING_APPROVAL"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PENDING_APPROVAL",
+  "mode": "DRY_RUN",
+  "provider": "google_business",
+  "kind": "post",
+  "client_id": "parada_atlantida",
+  "external_call_executed": false,
+  "created_at": "2026-06-01T17:10:09.113414+00:00",
+  "payload": {
+    "action": "google_business_post",
+    "client_id": "parada_atlantida",
+    "title": "Experiencia Parada Atlantida",
+    "summary": "Conheca experiencias locais, cupons e roteiros selecionados pela Parada Atlantida.",
+    "cta": "Saiba mais",
+    "status": "PENDING_APPROVAL",
+    "manual_approval_required": true
+  }
+}

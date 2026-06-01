@@ -1,0 +1,13 @@
+{
+  "client_id": "parada_atlantida",
+  "integration": "google_business",
+  "action": "profile_description",
+  "status": "PENDING_APPROVAL",
+  "mode": "DRY_RUN",
+  "credentials_present": true,
+  "api_call_performed": false,
+  "created_at": "2026-06-01T17:08:32+00:00",
+  "payload": {
+    "description": "Parada Atlantida conecta visitantes a experiencias locais, gastronomia e cupons regionais."
+  }
+}

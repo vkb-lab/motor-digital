@@ -1,0 +1,18 @@
+{
+  "status": "PENDING_APPROVAL",
+  "mode": "DRY_RUN",
+  "provider": "google_business",
+  "kind": "offer",
+  "client_id": "parada_atlantida",
+  "external_call_executed": false,
+  "created_at": "2026-06-01T17:10:10.714597+00:00",
+  "payload": {
+    "action": "google_business_offer",
+    "client_id": "parada_atlantida",
+    "title": "Oferta Parada Atlantida",
+    "description": "Oferta promocional em modo rascunho para aprovacao manual.",
+    "coupon_code": "PARADA10",
+    "status": "PENDING_APPROVAL",
+    "manual_approval_required": true
+  }
+}
