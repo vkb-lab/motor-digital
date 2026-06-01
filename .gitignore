@@ -432,3 +432,6 @@ local_secrets/k_os_recovery_layer_closure/
 memory/resilience_readiness/
 reports/resilience_readiness/runtime/
 local_secrets/k_os_resilience_readiness/
+memory/resilience_scenario_planner/
+reports/resilience_scenario_planner/runtime/
+local_secrets/k_os_resilience_scenario_planner/

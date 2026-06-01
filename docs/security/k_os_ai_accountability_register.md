@@ -141,3 +141,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Recovery Layer Closure Core | Fecha a camada de recovery 061-069 sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Recovery Governance Summary + Layer Closure + No Recovery Execution | reports/recovery_layer_closure |
 
 | K-OS Agent Resilience Readiness Core | Avalia prontidao de resiliencia apos fechamento da camada de recovery sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Recovery Layer Closure + Resilience Readiness + No Recovery Execution | reports/resilience_readiness |
+
+| K-OS Agent Resilience Scenario Planner Core | Planeja cenarios de resiliencia sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Resilience Readiness + Scenario Planning + No Recovery Execution | reports/resilience_scenario_planner |

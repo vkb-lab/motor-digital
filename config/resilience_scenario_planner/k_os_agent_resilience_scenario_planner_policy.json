@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "072",
+  "module": "agent_resilience_scenario_planner_core",
+  "purpose": "Planejar cenarios de resiliencia operacional a partir da matriz 071, sem executar recovery, rollback, shell ou comandos destrutivos.",
+  "planner_policy": {
+    "planner_local_only": true,
+    "raw_planner_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "planner_executes_recovery": false,
+    "planner_executes_rollback": false,
+    "planner_deletes_data": false,
+    "planner_modifies_target_files": false,
+    "planner_runs_git_reset": false,
+    "planner_runs_git_force_push": false,
+    "planner_executes_shell_commands": false,
+    "resilience_readiness_required": true,
+    "recovery_layer_closure_required": true,
+    "governance_summary_required": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "scenario_categories": [
+    "agent_runtime_failure",
+    "memory_integrity_risk",
+    "security_firewall_block",
+    "dashboard_unavailable",
+    "external_api_unavailable",
+    "git_sync_conflict",
+    "operator_misconfiguration",
+    "report_generation_failure"
+  ],
+  "scenario_statuses": [
+    "scenarios_planned",
+    "scenarios_review_required",
+    "planner_blocked",
+    "validated",
+    "archived"
+  ],
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_planner_state",
+    "export_raw_memory"
+  ],
+  "next_checkpoint": "073 - K-Agent Resilience Drill Designer Core"
+}

@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "checkpoint": "072",
+  "module": "k_os_agent_resilience_scenario_planner_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T11:36:20+00:00",
+  "plan_id": "rspf_66dfa8e2b486",
+  "plan_status": "scenarios_review_required",
+  "scenario_plan_hash": "caa21d49f68a06bd6c8196d348024b0ca0aad0cd9e57c8990f83e82fbed77867",
+  "scenario_count": 8,
+  "planner_executes_recovery": false,
+  "planner_executes_rollback": false,
+  "planner_deletes_data": false,
+  "planner_modifies_target_files": false,
+  "planner_runs_git_reset": false,
+  "planner_runs_git_force_push": false,
+  "planner_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": [
+    "scenario_plan_requires_operator_review",
+    "scenario_plan_contains_blockers"
+  ]
+}

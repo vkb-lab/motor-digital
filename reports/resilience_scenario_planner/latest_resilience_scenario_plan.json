@@ -1,0 +1,393 @@
+{
+  "ok": true,
+  "checkpoint": "072",
+  "module": "k_os_agent_resilience_scenario_planner_core",
+  "status": "scenarios_review_required",
+  "plan_id": "rspf_66dfa8e2b486",
+  "created_at": "2026-06-01T11:36:19+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_resilience_scenario_planner_072",
+  "readiness_matrix_id": "rrm_b829e2b45daf",
+  "readiness_status": "resilience_blocked",
+  "readiness_hash": "c0a79c80d7c05e89116da9034e78172fd44ef6b019aa31d1226b95b0be62e30f",
+  "readiness_percent": 65.0,
+  "recovery_layer_closure_id": "rlc_0e9ec241e231",
+  "recovery_layer_closure_status": "layer_blocked",
+  "recovery_layer_closure_hash": "887114ae713444be76f00362854217ef75dcc14f206b7bd2d3e2496675ba3fce",
+  "recovery_governance_summary_hash": "5b2d2076354fd942c389ddbf43279e0523662139ef95c7f98ae419ce4d75562a",
+  "destructive_zero_confirmed": true,
+  "scenario_count": 8,
+  "scenarios": [
+    {
+      "scenario_id": "rsp_b912110841",
+      "category": "agent_runtime_failure",
+      "title": "Falha de runtime de agente",
+      "priority": 1,
+      "severity": "high",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_c63fd4c304",
+      "category": "memory_integrity_risk",
+      "title": "Risco de integridade de memoria",
+      "priority": 2,
+      "severity": "high",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_1011463085",
+      "category": "security_firewall_block",
+      "title": "Bloqueio do security firewall",
+      "priority": 3,
+      "severity": "high",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_78f173219f",
+      "category": "dashboard_unavailable",
+      "title": "Cockpit Streamlit indisponivel",
+      "priority": 4,
+      "severity": "medium",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_31139750d7",
+      "category": "external_api_unavailable",
+      "title": "API externa indisponivel",
+      "priority": 5,
+      "severity": "medium",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_082b788f59",
+      "category": "git_sync_conflict",
+      "title": "Conflito de sincronizacao Git",
+      "priority": 6,
+      "severity": "medium",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_eba5d0dddc",
+      "category": "operator_misconfiguration",
+      "title": "Configuracao incorreta do operador",
+      "priority": 7,
+      "severity": "low",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "scenario_id": "rsp_b15acbf2b0",
+      "category": "report_generation_failure",
+      "title": "Falha de geracao de relatorio",
+      "priority": 8,
+      "severity": "low",
+      "trigger_signals": [
+        "missing_expected_report",
+        "validation_warning",
+        "operator_reported_issue",
+        "audit_metric_anomaly"
+      ],
+      "safe_response_steps": [
+        "pause_automation_queue",
+        "collect_sanitized_evidence",
+        "run_local_validation",
+        "open_operator_review",
+        "prepare_non_destructive_action_plan"
+      ],
+      "blocked_response_steps": [
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    }
+  ],
+  "blockers": [
+    "resilience_readiness_not_ready"
+  ],
+  "scenario_plan_hash": "caa21d49f68a06bd6c8196d348024b0ca0aad0cd9e57c8990f83e82fbed77867",
+  "planner_executes_recovery": false,
+  "planner_executes_rollback": false,
+  "planner_deletes_data": false,
+  "planner_modifies_target_files": false,
+  "planner_runs_git_reset": false,
+  "planner_runs_git_force_push": false,
+  "planner_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "source_refs": {
+    "resilience_readiness": {
+      "available": true,
+      "path": "reports/resilience_readiness/latest_resilience_readiness_matrix.json",
+      "checkpoint": "071",
+      "module": "k_os_agent_resilience_readiness_core",
+      "status": "resilience_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:31:22+00:00",
+      "hash": "37100797978c8ffba7ae62ed8100fad6a0caa1dc3c33a4fa5d1674fc4a316f5e"
+    },
+    "resilience_readiness_report": {
+      "available": true,
+      "path": "reports/resilience_readiness/latest_agent_resilience_readiness_report.json",
+      "checkpoint": "071",
+      "module": "k_os_agent_resilience_readiness_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-06-01T11:31:22+00:00",
+      "hash": "85ad18a86cb126214b670b84a6f9f0e949fa3b87483bc534c8dc50366f48a7ab"
+    },
+    "resilience_readiness_validation": {
+      "available": true,
+      "path": "reports/resilience_readiness/latest_resilience_readiness_validation_report.json",
+      "checkpoint": "071",
+      "module": "k_os_agent_resilience_readiness_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-06-01T11:31:22+00:00",
+      "hash": "742dcad9954c71db89c29e03d07ec038415b5ef3f36f77b6f17f04e87ad82735"
+    },
+    "recovery_layer_closure": {
+      "available": true,
+      "path": "reports/recovery_layer_closure/latest_recovery_layer_closure.json",
+      "checkpoint": "070",
+      "module": "k_os_agent_recovery_layer_closure_core",
+      "status": "layer_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:18:27+00:00",
+      "hash": "dce180ec7066aa5c4b9da836a13e9d7bd1c27f02197abefc2836185ac7f2c673"
+    },
+    "recovery_governance_summary": {
+      "available": true,
+      "path": "reports/recovery_governance_summary/latest_recovery_governance_summary.json",
+      "checkpoint": "069",
+      "module": "k_os_agent_recovery_governance_summary_core",
+      "status": "closed_with_review_required",
+      "ok": true,
+      "created_at": "2026-06-01T11:10:36+00:00",
+      "hash": "3ac8016cf4d495c60d3b4e870b302b2a22d8319f832bfcfb8048382711ad591b"
+    }
+  },
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_planner_state",
+    "export_raw_memory"
+  ],
+  "next_checkpoint": "073 - K-Agent Resilience Drill Designer Core"
+}
