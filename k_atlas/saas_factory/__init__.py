@@ -1,0 +1,1 @@
+from k_atlas.saas_factory.saas_command_pipeline import run_saas_factory

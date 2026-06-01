@@ -104,4 +104,3 @@ with tabs[6]:
         st.dataframe(events, use_container_width=True)
     else:
         st.info("Sem eventos registrados.")
-

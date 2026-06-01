@@ -1,9 +1,9 @@
 {
   "status": "PENDING_FINAL_APPROVAL",
   "client_id": "parada_atlantida",
-  "job_id": "job_20260601183524514401",
+  "job_id": "job_20260601183654447805",
   "job": {
-    "job_id": "job_20260601183524514401",
+    "job_id": "job_20260601183654447805",
     "client_id": "parada_atlantida",
     "command": "Crie uma campanha para Parada Atlantida com landing page, QR Code, post Instagram, criativo visual e fila de publicacao.",
     "tasks": [
@@ -145,7 +145,7 @@
       }
     ],
     "status": "PENDING_FINAL_APPROVAL",
-    "created_at": "2026-06-01T18:35:23.636770+00:00",
+    "created_at": "2026-06-01T18:36:53.840666+00:00",
     "plan": {
       "status": "PENDING_APPROVAL",
       "client_id": "parada_atlantida",
@@ -296,13 +296,13 @@
       "missing": [],
       "path_exists": true
     },
-    "state_path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\phase6\\job_20260601183524514401_state.json"
+    "state_path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\phase6\\job_20260601183654447805_state.json"
   },
   "artifacts": {
     "status": "PENDING_APPROVAL",
     "client_id": "parada_atlantida",
-    "job_id": "job_20260601183524514401",
-    "created_at": "2026-06-01T18:35:24.515550+00:00",
+    "job_id": "job_20260601183654447805",
+    "created_at": "2026-06-01T18:36:54.448776+00:00",
     "external_call_executed": false,
     "items": {
       "campaign": {
@@ -324,80 +324,80 @@
         "status": "PENDING_APPROVAL"
       }
     },
-    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\artifacts\\job_20260601183524514401_artifacts.json"
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\artifacts\\job_20260601183654447805_artifacts.json"
   },
   "receipts": [
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "campaign",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.520376+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_campaign.json"
+      "created_at": "2026-06-01T18:36:54.450513+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_campaign.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "landing_page",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.521330+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_landing_page.json"
+      "created_at": "2026-06-01T18:36:54.451536+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_landing_page.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "qr_code",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.522135+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_qr_code.json"
+      "created_at": "2026-06-01T18:36:54.452200+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_qr_code.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "instagram_post",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.523303+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_instagram_post.json"
+      "created_at": "2026-06-01T18:36:54.453036+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_instagram_post.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "creative",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.524294+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_creative.json"
+      "created_at": "2026-06-01T18:36:54.454354+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_creative.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "publication_queue",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.525956+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_publication_queue.json"
+      "created_at": "2026-06-01T18:36:54.455860+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_publication_queue.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "audit",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.527420+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_audit.json"
+      "created_at": "2026-06-01T18:36:54.457651+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_audit.json"
     },
     {
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "client_id": "parada_atlantida",
       "task_id": "final_review",
       "status": "PENDING_APPROVAL",
       "external_call_executed": false,
-      "created_at": "2026-06-01T18:35:24.528785+00:00",
-      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183524514401_final_review.json"
+      "created_at": "2026-06-01T18:36:54.458806+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601183654447805_final_review.json"
     }
   ],
   "final_review": {
@@ -406,16 +406,16 @@
     "summary": "Execucao preparada para revisao final humana.",
     "real_actions_blocked": true,
     "manual_approval_required": true,
-    "created_at": "2026-06-01T18:35:24.531620+00:00",
+    "created_at": "2026-06-01T18:36:54.461645+00:00",
     "execution": {
       "client_id": "parada_atlantida",
       "status": "PENDING_FINAL_APPROVAL",
-      "job_id": "job_20260601183524514401",
+      "job_id": "job_20260601183654447805",
       "artifacts": {
         "status": "PENDING_APPROVAL",
         "client_id": "parada_atlantida",
-        "job_id": "job_20260601183524514401",
-        "created_at": "2026-06-01T18:35:24.515550+00:00",
+        "job_id": "job_20260601183654447805",
+        "created_at": "2026-06-01T18:36:54.448776+00:00",
         "external_call_executed": false,
         "items": {
           "campaign": {
@@ -437,7 +437,7 @@
             "status": "PENDING_APPROVAL"
           }
         },
-        "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\artifacts\\job_20260601183524514401_artifacts.json"
+        "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\artifacts\\job_20260601183654447805_artifacts.json"
       },
       "artifact_validation": {
         "status": "VALID",
