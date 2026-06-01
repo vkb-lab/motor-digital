@@ -1,0 +1,17 @@
+{
+  "checkpoint": "081",
+  "name": "K-OS Agent Capability Registry Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:07:03Z",
+  "registry_status": "healthy",
+  "total_agent_surfaces": 1577,
+  "next_checkpoint": "082 - K-OS Command Registry Core",
+  "action_report": "reports/system/081_agent_capability_registry/081_action_report.json",
+  "validate_report": "reports/system/081_agent_capability_registry/081_validate_report.json",
+  "audit_report": "reports/system/081_agent_capability_registry/081_audit_report.json",
+  "agent_capability_registry": "reports/system/081_agent_capability_registry/081_agent_capability_registry.json",
+  "read_only_inventory": true,
+  "agents_executed": false,
+  "blocked_operations_confirmed": true
+}

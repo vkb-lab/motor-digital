@@ -1,0 +1,49 @@
+{
+  "checkpoint": "081",
+  "name": "K-OS Agent Capability Registry Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:07:03Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_agent_capability_registry_081.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/agent_capability_registry_081.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_081_agent_capability_registry.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/081_K_OS_Agent_Capability_Registry.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/081_k_os_agent_capability_registry.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/081_agent_capability_registry/081_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/081_agent_capability_registry/081_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/081_agent_capability_registry/081_agent_capability_registry.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/081_agent_capability_registry/081_agent_capability_registry.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "registry_has_agent_surfaces": true,
+  "next_checkpoint": "082 - K-OS Command Registry Core"
+}

@@ -1,0 +1,71 @@
+{
+  "checkpoint": "081",
+  "name": "K-OS Agent Capability Registry Core",
+  "layer": "K-OS Core",
+  "objective": "Criar registro central de capacidades dos agentes do K-OS com inventario local, classificacao funcional, matriz agente-capacidade, evidencias sanitizadas e dashboard somente leitura, sem executar agentes, modulos, auto-fix, recovery, rollback, drill, reset ou force push.",
+  "previous_checkpoint": "080 - K-OS Module Registry Core",
+  "next_checkpoint": "082 - K-OS Command Registry Core",
+  "agent_roots": [
+    "agents",
+    "k_atlas",
+    "scripts",
+    "pages",
+    "configs",
+    "docs",
+    "reports"
+  ],
+  "capability_taxonomy": [
+    "agent_orchestration",
+    "memory_management",
+    "campaign_generation",
+    "content_generation",
+    "reporting",
+    "resilience_governance",
+    "system_health",
+    "module_registry",
+    "security_guard",
+    "streamlit_interface",
+    "github_workflow",
+    "automation",
+    "commercial_ops",
+    "configuration",
+    "documentation",
+    "unknown"
+  ],
+  "allowed_operations": [
+    "read_local_project_state",
+    "generate_sanitized_agent_capability_registry",
+    "generate_read_only_dashboard",
+    "update_accountability_register_if_exists",
+    "validate_artifacts",
+    "audit_checkpoint",
+    "create_closure_report"
+  ],
+  "blocked_operations": [
+    "agent_execution",
+    "module_execution",
+    "command_execution",
+    "automatic_remediation",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ],
+  "registry_policy": {
+    "read_only_inventory": true,
+    "execute_agents": false,
+    "execute_modules": false,
+    "execute_commands": false,
+    "auto_fix": false,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "ignore_local_secrets": true,
+    "ignore_memory_runtime": true
+  },
+  "status": "configured"
+}

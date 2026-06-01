@@ -1,0 +1,41 @@
+{
+  "checkpoint": "081",
+  "name": "K-OS Agent Capability Registry Core",
+  "mode": "audit",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:07:03Z",
+  "checks": {
+    "validate_passed": false,
+    "agent_capability_registry_exists": true,
+    "read_only_inventory": true,
+    "agent_execution_not_performed": true,
+    "module_execution_not_performed": true,
+    "command_execution_not_performed": true,
+    "automatic_remediation_not_executed": true,
+    "real_drill_not_executed": true,
+    "real_recovery_not_executed": true,
+    "real_rollback_not_executed": true,
+    "git_reset_hard_not_executed": true,
+    "force_push_not_executed": true,
+    "destructive_shell_not_executed": true,
+    "memory_deletion_not_executed": true,
+    "sensitive_content_not_exported": true,
+    "reports_are_sanitized": true,
+    "transition_to_082_declared": true
+  },
+  "blocked_operations": [
+    "agent_execution",
+    "module_execution",
+    "command_execution",
+    "automatic_remediation",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ],
+  "next_checkpoint": "082 - K-OS Command Registry Core"
+}
