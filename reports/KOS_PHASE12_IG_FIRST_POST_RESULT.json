@@ -1,0 +1,15 @@
+{
+  "status": "BLOCKED_BY_PHASE12_ARMING",
+  "reason": "Fase 12 nao armada para execucao real.",
+  "arming": {
+    "status": "PHASE12_LOCKED",
+    "armed": false,
+    "required_env": "KOS_PHASE12_REAL_RUN",
+    "required_value": "YES_I_CONFIRM",
+    "real_action_allowed_by_phase12": false
+  },
+  "package_status": "READY_FOR_FINAL_ARMING",
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "created_at": "2026-06-01T20:50:26.572288+00:00"
+}

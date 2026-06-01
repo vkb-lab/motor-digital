@@ -1,0 +1,79 @@
+{
+  "status": "READY_FOR_FINAL_ARMING",
+  "client_id": "parada_atlantida",
+  "campaign_name": "campanha_lancamento_parada_atlantida",
+  "spec": {
+    "status": "FIRST_POST_SPEC_READY",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "image_url": "https://placehold.co/1080x1080/png",
+    "caption": "Primeiro teste controlado preparado pelo K-OS.",
+    "format": "IMAGE",
+    "manual_review_required": true,
+    "created_at": "2026-06-01T20:50:26.569163+00:00"
+  },
+  "asset": {
+    "status": "ASSET_URL_READY",
+    "image_url": "https://placehold.co/1080x1080/png",
+    "is_https": true,
+    "network_call_executed": false
+  },
+  "readiness": {
+    "status": "IG_REAL_LOCKED",
+    "can_prepare": false,
+    "can_run_real": false,
+    "missing_env": [
+      "IG_BUSINESS_ACCOUNT_ID",
+      "META_ACCESS_KEY"
+    ],
+    "real_flag_enabled": false,
+    "human_ok": false,
+    "external_call_allowed": false,
+    "real_action_executed": false
+  },
+  "arming": {
+    "status": "PHASE12_LOCKED",
+    "armed": false,
+    "required_env": "KOS_PHASE12_REAL_RUN",
+    "required_value": "YES_I_CONFIRM",
+    "real_action_allowed_by_phase12": false
+  },
+  "ig_package": {
+    "status": "WAITING_ENV_SETUP",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "readiness": {
+      "status": "IG_REAL_LOCKED",
+      "can_prepare": false,
+      "can_run_real": false,
+      "missing_env": [
+        "IG_BUSINESS_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "real_flag_enabled": false,
+      "human_ok": false,
+      "external_call_allowed": false,
+      "real_action_executed": false
+    },
+    "media_request": {
+      "status": "MEDIA_REQUEST_READY",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "image_url": "https://placehold.co/1080x1080/png",
+      "caption": "Primeiro teste controlado preparado pelo K-OS.",
+      "media_type": "IMAGE",
+      "created_at": "2026-06-01T20:50:26.569230+00:00"
+    },
+    "real_action_executed": false,
+    "external_call_executed": false,
+    "manual_review_required": true,
+    "next_step": "Somente executar publicacao real quando KOS_REAL_IG_PUBLISH_ENABLED=true e KOS_HUMAN_OK_FOR_IG_REAL=OK.",
+    "created_at": "2026-06-01T20:50:26.569237+00:00",
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\ig_real_gate\\ig_publish_package.json"
+  },
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "manual_final_ok_required": true,
+  "next_step": "Para executar real, configurar ambiente e armar KOS_PHASE12_REAL_RUN=YES_I_CONFIRM.",
+  "created_at": "2026-06-01T20:50:26.570920+00:00"
+}

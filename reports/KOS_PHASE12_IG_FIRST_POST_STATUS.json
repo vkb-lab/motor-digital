@@ -1,0 +1,10 @@
+{
+  "status": "PRONTO FASE 12",
+  "phase": 12,
+  "module": "instagram_first_post_test",
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "manual_final_ok_required": true,
+  "phase12_extra_arming_required": true,
+  "updated_at": "2026-06-01T20:50:24.707944+00:00"
+}
