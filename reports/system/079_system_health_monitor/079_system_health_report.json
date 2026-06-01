@@ -1,0 +1,396 @@
+{
+  "checkpoint": "079",
+  "name": "K-OS System Health Monitor Core",
+  "layer": "K-OS Core",
+  "generated_at": "2026-06-01T12:48:33Z",
+  "status": "attention",
+  "objective": "Criar monitor de saude operacional do K-OS com diagnostico local, evidencias sanitizadas, sem executar recovery, rollback, drill, reset, limpeza destrutiva ou force push.",
+  "previous_checkpoint": "078 - K-Agent Resilience Layer Closure Core",
+  "next_checkpoint": "080 - K-OS Module Registry Core",
+  "attention_domains": [
+    "critical_directories",
+    "memory_safety",
+    "resilience_closure_evidence"
+  ],
+  "domain_checks": {
+    "repository": {
+      "status": "healthy",
+      "root": "C:\\Users\\oi\\Desktop\\motor-digital",
+      "git_directory_exists": true
+    },
+    "python_runtime": {
+      "status": "healthy",
+      "python_version": "3.13.3",
+      "python_executable": "C:\\Python313\\python.exe",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "critical_directories": {
+      "status": "attention",
+      "missing": [
+        "campaigns"
+      ],
+      "items": [
+        {
+          "path": "k_atlas",
+          "exists": true,
+          "type": "directory",
+          "file_count": 4388
+        },
+        {
+          "path": "agents",
+          "exists": true,
+          "type": "directory",
+          "file_count": 22
+        },
+        {
+          "path": "live",
+          "exists": true,
+          "type": "directory",
+          "file_count": 59
+        },
+        {
+          "path": "memory",
+          "exists": true,
+          "type": "directory",
+          "file_count": 215
+        },
+        {
+          "path": "reports",
+          "exists": true,
+          "type": "directory",
+          "file_count": 910
+        },
+        {
+          "path": "campaigns",
+          "exists": false,
+          "type": "missing"
+        },
+        {
+          "path": "content_packs",
+          "exists": true,
+          "type": "directory",
+          "file_count": 7
+        },
+        {
+          "path": "configs",
+          "exists": true,
+          "type": "directory",
+          "file_count": 3
+        },
+        {
+          "path": "scripts",
+          "exists": true,
+          "type": "directory",
+          "file_count": 6
+        },
+        {
+          "path": "pages",
+          "exists": true,
+          "type": "directory",
+          "file_count": 1122
+        },
+        {
+          "path": "docs",
+          "exists": true,
+          "type": "directory",
+          "file_count": 64
+        },
+        {
+          "path": "docs/commercial",
+          "exists": true,
+          "type": "directory",
+          "file_count": 51
+        }
+      ]
+    },
+    "critical_files": {
+      "status": "healthy",
+      "existing": [
+        "README.md",
+        "requirements.txt",
+        ".gitignore",
+        "app.py"
+      ],
+      "items": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 4245,
+          "modified_utc": "2026-05-26T16:46:50Z",
+          "sha256": "17a5f6848b04350d8bf89f502d6673a73b420599b0169629379fb36c23897f5e"
+        },
+        {
+          "path": "requirements.txt",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 639,
+          "modified_utc": "2026-05-26T16:46:50Z",
+          "sha256": "1ace6f394fcaf9febbbbe13ba7b1447e2ad5dff3eeebb38fad14ea306e957a04"
+        },
+        {
+          "path": ".gitignore",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 14617,
+          "modified_utc": "2026-06-01T12:33:39Z",
+          "sha256": "76de066817e4860e346918162113595d47b94b0e3571bf11afe5338857d63d02"
+        },
+        {
+          "path": "app.py",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 20441,
+          "modified_utc": "2026-05-28T23:57:10Z",
+          "sha256": "8e245790016a880d091b79c2f4f1293600483a00f180a24bad0a0f9bcd511186"
+        },
+        {
+          "path": "streamlit_app.py",
+          "exists": false,
+          "type": "missing"
+        },
+        {
+          "path": "Home.py",
+          "exists": false,
+          "type": "missing"
+        }
+      ]
+    },
+    "streamlit_entrypoint": {
+      "candidates": [
+        "app.py",
+        "streamlit_app.py",
+        "Home.py"
+      ],
+      "found_count": 1,
+      "status": "healthy",
+      "selected": "app.py",
+      "found": [
+        {
+          "path": "app.py",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 20441,
+          "modified_utc": "2026-05-28T23:57:10Z",
+          "sha256": "8e245790016a880d091b79c2f4f1293600483a00f180a24bad0a0f9bcd511186"
+        }
+      ]
+    },
+    "reports_structure": {
+      "status": "healthy",
+      "roots": [
+        {
+          "path": "reports",
+          "exists": true,
+          "type": "directory",
+          "file_count": 910
+        },
+        {
+          "path": "reports/resilience",
+          "exists": true,
+          "type": "directory",
+          "file_count": 16
+        },
+        {
+          "path": "reports/system",
+          "exists": true,
+          "type": "directory",
+          "file_count": 4
+        },
+        {
+          "path": "reports/security",
+          "exists": true,
+          "type": "directory",
+          "file_count": 4
+        }
+      ]
+    },
+    "memory_safety": {
+      "status": "attention",
+      "memory_directory": {
+        "path": "memory",
+        "exists": true,
+        "type": "directory",
+        "file_count": 215
+      },
+      "local_secrets_directory_exists": "[REDACTED]",
+      "local_secrets_policy": "[REDACTED]",
+      "gitignore": {
+        "path": ".gitignore",
+        "exists": true,
+        "required_patterns": [
+          {
+            "pattern": "local_secrets",
+            "present": true
+          },
+          {
+            "pattern": ".env",
+            "present": true
+          },
+          {
+            "pattern": "memory/runtime",
+            "present": false
+          },
+          {
+            "pattern": "reports/security/latest_security_firewall_report",
+            "present": false
+          }
+        ],
+        "status": "attention"
+      },
+      "sensitive_content_exported": false
+    },
+    "resilience_closure_evidence": {
+      "expected_count": 8,
+      "found_count": 2,
+      "status": "attention",
+      "items": [
+        {
+          "checkpoint": "071",
+          "path": "reports/resilience/071_resilience_readiness",
+          "exists": false,
+          "evidence_file_count": 0,
+          "key_reports": [],
+          "status": "missing"
+        },
+        {
+          "checkpoint": "072",
+          "path": "reports/resilience/072_resilience_scenario_planner",
+          "exists": false,
+          "evidence_file_count": 0,
+          "key_reports": [],
+          "status": "missing"
+        },
+        {
+          "checkpoint": "073",
+          "path": "reports/resilience/073_resilience_drill_designer",
+          "exists": false,
+          "evidence_file_count": 0,
+          "key_reports": [],
+          "status": "missing"
+        },
+        {
+          "checkpoint": "074",
+          "path": "reports/resilience/074_resilience_drill_dry_run",
+          "exists": false,
+          "evidence_file_count": 0,
+          "key_reports": [],
+          "status": "missing"
+        },
+        {
+          "checkpoint": "075",
+          "path": "reports/resilience/075_resilience_drill_operator_review",
+          "exists": false,
+          "evidence_file_count": 0,
+          "key_reports": [],
+          "status": "missing"
+        },
+        {
+          "checkpoint": "076",
+          "path": "reports/resilience/076_resilience_drill_evidence_pack",
+          "exists": false,
+          "evidence_file_count": 0,
+          "key_reports": [],
+          "status": "missing"
+        },
+        {
+          "checkpoint": "077",
+          "path": "reports/resilience/077_resilience_governance_summary",
+          "exists": true,
+          "evidence_file_count": 8,
+          "key_reports": [
+            {
+              "path": "reports/resilience/077_resilience_governance_summary/077_closure_report.json",
+              "exists": true,
+              "type": "file",
+              "size_bytes": 679,
+              "modified_utc": "2026-06-01T12:41:22Z",
+              "sha256": "e39cadbf8fb9438d03ccfbafe7256efcb926c8a4ffcca665b29382c99c5871ee"
+            },
+            {
+              "path": "reports/resilience/077_resilience_governance_summary/077_governance_summary.json",
+              "exists": true,
+              "type": "file",
+              "size_bytes": 28689,
+              "modified_utc": "2026-06-01T12:41:21Z",
+              "sha256": "d3554138ed9b4e81bbba347122485d1874281f6d08e753f3e2882304991c93b7"
+            }
+          ],
+          "status": "found"
+        },
+        {
+          "checkpoint": "078",
+          "path": "reports/resilience/078_resilience_layer_closure",
+          "exists": true,
+          "evidence_file_count": 8,
+          "key_reports": [
+            {
+              "path": "reports/resilience/078_resilience_layer_closure/078_closure_report.json",
+              "exists": true,
+              "type": "file",
+              "size_bytes": 723,
+              "modified_utc": "2026-06-01T12:45:12Z",
+              "sha256": "38d75dab6c38550caeb7422fd181a9bdacdd53be48334c58af0e9570d67cfb68"
+            },
+            {
+              "path": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.json",
+              "exists": true,
+              "type": "file",
+              "size_bytes": 40241,
+              "modified_utc": "2026-06-01T12:45:12Z",
+              "sha256": "5d3ce25952c5677f23bd9c3819fa8a4cc410a85924b4df03b4cbd8b49e6ca3f2"
+            },
+            {
+              "path": "reports/resilience/078_resilience_layer_closure/078_layer_closure_manifest.json",
+              "exists": true,
+              "type": "file",
+              "size_bytes": 40241,
+              "modified_utc": "2026-06-01T12:45:12Z",
+              "sha256": "5d3ce25952c5677f23bd9c3819fa8a4cc410a85924b4df03b4cbd8b49e6ca3f2"
+            }
+          ],
+          "status": "found"
+        }
+      ]
+    },
+    "governance_guards": {
+      "status": "healthy",
+      "diagnostic_only": true,
+      "auto_fix_executed": false,
+      "real_recovery_executed": false,
+      "real_rollback_executed": false,
+      "real_drill_executed": false,
+      "destructive_shell_executed": false,
+      "force_push_executed": false,
+      "git_reset_hard_executed": false
+    }
+  },
+  "blocked_operations": [
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "execution_guard": {
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "git_reset_hard_executed": false,
+    "force_push_executed": false,
+    "destructive_shell_executed": false,
+    "memory_deletion_executed": false,
+    "secret_export_executed": "[REDACTED]",
+    "automatic_remediation_executed": false
+  },
+  "operational_decision": {
+    "health_monitor_created": true,
+    "diagnostic_only": true,
+    "can_continue_to_next_checkpoint": true,
+    "next_checkpoint": "080 - K-OS Module Registry Core"
+  }
+}

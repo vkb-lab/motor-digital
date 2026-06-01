@@ -1,0 +1,78 @@
+{
+  "checkpoint": "079",
+  "name": "K-OS System Health Monitor Core",
+  "mode": "init",
+  "status": "initialized",
+  "generated_at": "2026-06-01T12:48:31Z",
+  "config_path": "configs/k_os_system_health_monitor_079.json",
+  "previous_checkpoint": "078 - K-Agent Resilience Layer Closure Core",
+  "next_checkpoint": "080 - K-OS Module Registry Core",
+  "blocked_operations": [
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "execution_guard": {
+    "diagnostic_only": true,
+    "auto_fix_executed": false,
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "destructive_shell_executed": false
+  },
+  "config": {
+    "checkpoint": "079",
+    "name": "K-OS System Health Monitor Core",
+    "layer": "K-OS Core",
+    "objective": "Criar monitor de saude operacional do K-OS com diagnostico local, evidencias sanitizadas, sem executar recovery, rollback, drill, reset, limpeza destrutiva ou force push.",
+    "previous_layer": "Resilience",
+    "previous_checkpoint": "078 - K-Agent Resilience Layer Closure Core",
+    "next_checkpoint": "080 - K-OS Module Registry Core",
+    "health_domains": [
+      "repository",
+      "python_runtime",
+      "critical_directories",
+      "critical_files",
+      "streamlit_entrypoint",
+      "reports_structure",
+      "memory_safety",
+      "resilience_closure_evidence",
+      "governance_guards"
+    ],
+    "allowed_operations": [
+      "read_local_project_state",
+      "generate_sanitized_health_reports",
+      "generate_read_only_dashboard",
+      "update_accountability_register_if_exists",
+      "validate_artifacts",
+      "audit_checkpoint",
+      "create_closure_report"
+    ],
+    "blocked_operations": [
+      "real_drill_execution",
+      "real_recovery_execution",
+      "real_rollback_execution",
+      "git_reset_hard",
+      "force_push",
+      "destructive_shell",
+      "memory_deletion",
+      "secret_export",
+      "automatic_remediation"
+    ],
+    "health_policy": {
+      "diagnostic_only": true,
+      "auto_fix": false,
+      "sanitize_reports": true,
+      "include_sensitive_content": false,
+      "include_file_hashes": true,
+      "local_runtime_only": true
+    },
+    "status": "configured"
+  }
+}

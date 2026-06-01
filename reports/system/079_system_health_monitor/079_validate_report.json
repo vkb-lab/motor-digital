@@ -1,0 +1,48 @@
+{
+  "checkpoint": "079",
+  "name": "K-OS System Health Monitor Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:48:33Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_system_health_monitor_079.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/system_health_monitor_079.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_079_system_health_monitor.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/079_K_OS_System_Health_Monitor.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/079_k_os_system_health_monitor.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/079_system_health_monitor/079_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/079_system_health_monitor/079_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/079_system_health_monitor/079_system_health_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/079_system_health_monitor/079_system_health_report.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "next_checkpoint": "080 - K-OS Module Registry Core"
+}
