@@ -1,0 +1,120 @@
+{
+  "ok": true,
+  "checkpoint": "063",
+  "module": "k_os_agent_recovery_approval_gate_core",
+  "status": "audit_generated",
+  "generated_at": "2026-06-01T10:20:07+00:00",
+  "gate_state_path": "local_secrets/k_os_recovery_gate/agent_recovery_gate_state.json",
+  "gate_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "gate_executes_recovery": false,
+  "gate_executes_rollback": false,
+  "gate_deletes_data": false,
+  "gate_modifies_target_files": false,
+  "gate_runs_git_reset": false,
+  "gate_runs_git_force_push": false,
+  "gate_executes_shell_commands": false,
+  "recovery_plan_available": true,
+  "readiness_matrix_available": true,
+  "governance_summary_available": true,
+  "metrics": {
+    "gate_record_count": 1,
+    "validation_count": 1,
+    "approved_count": 0,
+    "blocked_count": 1,
+    "revoked_count": 0,
+    "recovery_execution_count": 0,
+    "rollback_execution_count": 0,
+    "data_delete_count": 0,
+    "target_file_modify_count": 0,
+    "git_reset_count": 0,
+    "git_force_push_count": 0,
+    "shell_execution_count": 0,
+    "status_counts": {
+      "blocked": 1
+    }
+  },
+  "recent_gate_records": [
+    {
+      "recovery_gate_id": "rag_6b7618acfa6d",
+      "created_at": "2026-06-01T10:20:07+00:00",
+      "status": "blocked",
+      "mode": "block_recovery",
+      "recovery_plan_id": "rpb_be687cf9460f",
+      "readiness_level": "review_required",
+      "risk_level": "medium",
+      "recovery_gate_record_hash": "2569d8f967ab56afca24b8cbe87a36e9bcc4dc906275af23a2075e41f370bb5b",
+      "local_recovery_token_hash": "",
+      "local_recovery_token_included": false,
+      "gate_executes_recovery": false,
+      "gate_executes_rollback": false,
+      "gate_deletes_data": false,
+      "gate_modifies_target_files": false,
+      "gate_runs_git_reset": false,
+      "gate_runs_git_force_push": false,
+      "gate_executes_shell_commands": false,
+      "raw_payload_included": false,
+      "blockers": [
+        "operator_blocked_recovery"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": true,
+      "checkpoint": "063",
+      "module": "k_os_agent_recovery_approval_gate_core",
+      "status": "validated",
+      "generated_at": "2026-06-01T10:20:07+00:00",
+      "recovery_gate_id": "rag_6b7618acfa6d",
+      "gate_status": "blocked",
+      "mode": "block_recovery",
+      "recovery_plan_id": "rpb_be687cf9460f",
+      "recovery_gate_record_hash": "2569d8f967ab56afca24b8cbe87a36e9bcc4dc906275af23a2075e41f370bb5b",
+      "local_recovery_token_included": false,
+      "gate_executes_recovery": false,
+      "gate_executes_rollback": false,
+      "gate_deletes_data": false,
+      "gate_modifies_target_files": false,
+      "gate_runs_git_reset": false,
+      "gate_runs_git_force_push": false,
+      "gate_executes_shell_commands": false,
+      "raw_payload_included": false,
+      "blockers": [],
+      "warnings": [
+        "recovery_blocked_by_gate"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_gate_state",
+    "export_raw_memory"
+  ],
+  "required_gates_before_recovery_gate": [
+    "recovery_plan_exists",
+    "recovery_plan_hash_exists",
+    "readiness_matrix_exists",
+    "operator_confirmation_present",
+    "gate_record_hash_created",
+    "local_token_not_exported",
+    "no_recovery_executed",
+    "no_rollback_executed",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "064 - K-Agent Recovery Dry Run Simulator Core"
+}

@@ -408,3 +408,6 @@ local_secrets/k_os_recovery_readiness_matrix/
 memory/recovery_plan_builder/
 reports/recovery_plan_builder/runtime/
 local_secrets/k_os_recovery_plan_builder/
+memory/recovery_gate/
+reports/recovery_gate/runtime/
+local_secrets/k_os_recovery_gate/

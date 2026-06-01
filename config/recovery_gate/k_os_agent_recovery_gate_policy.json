@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "063",
+  "module": "agent_recovery_approval_gate_core",
+  "purpose": "Registrar aprovacao, bloqueio ou revogacao governada para recovery futuro, sem executar recovery, rollback ou comandos destrutivos.",
+  "gate_policy": {
+    "gate_local_only": true,
+    "raw_gate_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "gate_executes_recovery": false,
+    "gate_executes_rollback": false,
+    "gate_deletes_data": false,
+    "gate_modifies_target_files": false,
+    "gate_runs_git_reset": false,
+    "gate_runs_git_force_push": false,
+    "gate_executes_shell_commands": false,
+    "recovery_plan_required": true,
+    "recovery_plan_hash_required": true,
+    "readiness_matrix_required": true,
+    "operator_required": true,
+    "operator_confirmation_required": true,
+    "local_token_hash_only": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "allowed_gate_modes": [
+    "block_recovery",
+    "approve_future_recovery",
+    "revoke_recovery"
+  ],
+  "gate_statuses": [
+    "blocked",
+    "approved_for_future_recovery",
+    "revoked",
+    "validated",
+    "archived"
+  ],
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_gate_state",
+    "export_raw_memory"
+  ],
+  "required_gates_before_recovery_gate": [
+    "recovery_plan_exists",
+    "recovery_plan_hash_exists",
+    "readiness_matrix_exists",
+    "operator_confirmation_present",
+    "gate_record_hash_created",
+    "local_token_not_exported",
+    "no_recovery_executed",
+    "no_rollback_executed",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "064 - K-Agent Recovery Dry Run Simulator Core"
+}

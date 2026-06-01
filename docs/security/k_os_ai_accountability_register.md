@@ -125,3 +125,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Recovery Readiness Matrix Core | Avalia prontidão de recovery controlado sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Governance Summary + Readiness Score + No Recovery Execution | reports/recovery_readiness_matrix |
 
 | K-OS Agent Recovery Plan Builder Core | Cria plano de recovery governado sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Readiness Matrix + Governance Summary + No Recovery Execution | reports/recovery_plan_builder |
+
+| K-OS Agent Recovery Approval Gate Core | Registra gate governado para recovery futuro sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Recovery Plan + Human Gate + No Recovery Execution | reports/recovery_gate |
