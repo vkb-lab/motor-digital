@@ -420,3 +420,6 @@ local_secrets/k_os_recovery_manual_stub/
 memory/recovery_controlled_sandbox/
 reports/recovery_controlled_sandbox/runtime/
 local_secrets/k_os_recovery_controlled_sandbox/
+memory/recovery_sandbox_review/
+reports/recovery_sandbox_review/runtime/
+local_secrets/k_os_recovery_sandbox_review/

@@ -133,3 +133,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Recovery Manual Execution Stub Core | Registra stub manual de intencao futura sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Final Gate + Manual Stub + No Recovery Execution | reports/recovery_manual_stub |
 
 | K-OS Agent Recovery Controlled Execution Sandbox Core | Cria sandbox controlada/local para recovery sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Manual Stub + Controlled Sandbox + No Recovery Execution | reports/recovery_controlled_sandbox |
+
+| K-OS Agent Recovery Sandbox Operator Review Core | Revisa sandbox de recovery, consolida blockers e registra review humano sem executar recovery ou rollback | Operador K-OS | Sim, local sanitizado | Não | Não | Controlled Sandbox + Operator Review + No Recovery Execution | reports/recovery_sandbox_review |

@@ -1,0 +1,31 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "068",
+    "module":  "k_os_agent_recovery_sandbox_operator_review_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "recovery_sandbox_operator_review",
+                         "sandbox_executive_summary",
+                         "blocker_consolidation",
+                         "operator_review_record",
+                         "no_recovery_execution",
+                         "no_rollback_execution",
+                         "no_shell_execution",
+                         "sanitized_review_report"
+                     ],
+    "review_local_only":  true,
+    "raw_review_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "review_executes_recovery":  false,
+    "review_executes_rollback":  false,
+    "review_deletes_data":  false,
+    "review_modifies_target_files":  false,
+    "review_runs_git_reset":  false,
+    "review_runs_git_force_push":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "069 - K-Agent Recovery Governance Summary Core",
+    "installed_at":  "2026-06-01T11:02:17.4924099Z"
+}

@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "checkpoint": "068",
+  "module": "k_os_agent_recovery_sandbox_operator_review_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T11:02:18+00:00",
+  "recovery_sandbox_review_id": "rsor_2a949d66345a",
+  "review_status": "review_acknowledged_blocked",
+  "review_mode": "acknowledge_blocked",
+  "recovery_controlled_sandbox_id": "rcs_ad461bff2e64",
+  "workspace_manifest_hash": "4b71f3130180061dc08c83acc58e2ce5ff60e609c8973bb94b126dcf5f5e09d2",
+  "recovery_sandbox_review_hash": "cd5e3826c8c7b60adf78d7498166386abd6b5da62fad8f18389ac262270d12bd",
+  "review_executes_recovery": false,
+  "review_executes_rollback": false,
+  "review_deletes_data": false,
+  "review_modifies_target_files": false,
+  "review_runs_git_reset": false,
+  "review_runs_git_force_push": false,
+  "review_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": [
+    "operator_review_confirms_governance_block",
+    "review_contains_non_destructive_blockers"
+  ]
+}
