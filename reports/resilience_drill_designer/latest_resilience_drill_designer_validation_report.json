@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "checkpoint": "073",
+  "module": "k_os_agent_resilience_drill_designer_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T11:49:08+00:00",
+  "design_id": "rddp_2908fe56d7d5",
+  "design_status": "drills_designed",
+  "drill_design_hash": "71f7332d7887157792c55c07ef87cc986d4b15a9d9ebe3eb648989aaa6db6bfe",
+  "drill_count": 8,
+  "designer_executes_drill": false,
+  "designer_executes_recovery": false,
+  "designer_executes_rollback": false,
+  "designer_deletes_data": false,
+  "designer_modifies_target_files": false,
+  "designer_runs_git_reset": false,
+  "designer_runs_git_force_push": false,
+  "designer_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": []
+}

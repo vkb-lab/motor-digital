@@ -1,0 +1,849 @@
+{
+  "ok": true,
+  "checkpoint": "073",
+  "module": "k_os_agent_resilience_drill_designer_core",
+  "status": "drills_designed",
+  "design_id": "rddp_2908fe56d7d5",
+  "created_at": "2026-06-01T11:49:08+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_resilience_drill_designer_073",
+  "scenario_plan_id": "rspf_66dfa8e2b486",
+  "scenario_plan_status": "scenarios_review_required",
+  "scenario_plan_hash": "caa21d49f68a06bd6c8196d348024b0ca0aad0cd9e57c8990f83e82fbed77867",
+  "readiness_matrix_id": "rrm_b829e2b45daf",
+  "readiness_status": "resilience_blocked",
+  "readiness_hash": "c0a79c80d7c05e89116da9034e78172fd44ef6b019aa31d1226b95b0be62e30f",
+  "recovery_layer_closure_id": "rlc_0e9ec241e231",
+  "recovery_layer_closure_status": "layer_blocked",
+  "recovery_layer_closure_hash": "887114ae713444be76f00362854217ef75dcc14f206b7bd2d3e2496675ba3fce",
+  "drill_count": 8,
+  "drills": [
+    {
+      "drill_id": "rdd_909e608bfe",
+      "source_scenario_id": "rsp_b912110841",
+      "category": "agent_runtime_failure",
+      "title": "Drill - Falha de runtime de agente",
+      "priority": 1,
+      "severity": "high",
+      "drill_type": "tabletop",
+      "duration_minutes": 30,
+      "objective": "Validate safe operational response for agent_runtime_failure without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_bb00185594",
+      "source_scenario_id": "rsp_c63fd4c304",
+      "category": "memory_integrity_risk",
+      "title": "Drill - Risco de integridade de memoria",
+      "priority": 2,
+      "severity": "high",
+      "drill_type": "tabletop",
+      "duration_minutes": 30,
+      "objective": "Validate safe operational response for memory_integrity_risk without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_ff68502dbf",
+      "source_scenario_id": "rsp_1011463085",
+      "category": "security_firewall_block",
+      "title": "Drill - Bloqueio do security firewall",
+      "priority": 3,
+      "severity": "high",
+      "drill_type": "tabletop",
+      "duration_minutes": 30,
+      "objective": "Validate safe operational response for security_firewall_block without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_0f2cb49918",
+      "source_scenario_id": "rsp_78f173219f",
+      "category": "dashboard_unavailable",
+      "title": "Drill - Cockpit Streamlit indisponivel",
+      "priority": 4,
+      "severity": "medium",
+      "drill_type": "audit_walkthrough",
+      "duration_minutes": 20,
+      "objective": "Validate safe operational response for dashboard_unavailable without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_5fd9b2ffb1",
+      "source_scenario_id": "rsp_31139750d7",
+      "category": "external_api_unavailable",
+      "title": "Drill - API externa indisponivel",
+      "priority": 5,
+      "severity": "medium",
+      "drill_type": "audit_walkthrough",
+      "duration_minutes": 20,
+      "objective": "Validate safe operational response for external_api_unavailable without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_47ef53cea9",
+      "source_scenario_id": "rsp_082b788f59",
+      "category": "git_sync_conflict",
+      "title": "Drill - Conflito de sincronizacao Git",
+      "priority": 6,
+      "severity": "medium",
+      "drill_type": "audit_walkthrough",
+      "duration_minutes": 20,
+      "objective": "Validate safe operational response for git_sync_conflict without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_4e8f1420af",
+      "source_scenario_id": "rsp_eba5d0dddc",
+      "category": "operator_misconfiguration",
+      "title": "Drill - Configuracao incorreta do operador",
+      "priority": 7,
+      "severity": "low",
+      "drill_type": "audit_walkthrough",
+      "duration_minutes": 20,
+      "objective": "Validate safe operational response for operator_misconfiguration without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    },
+    {
+      "drill_id": "rdd_d5a7ef9958",
+      "source_scenario_id": "rsp_b15acbf2b0",
+      "category": "report_generation_failure",
+      "title": "Drill - Falha de geracao de relatorio",
+      "priority": 8,
+      "severity": "low",
+      "drill_type": "audit_walkthrough",
+      "duration_minutes": 20,
+      "objective": "Validate safe operational response for report_generation_failure without executing destructive actions.",
+      "participants": [
+        "operator_k_os",
+        "audit_reviewer",
+        "technical_owner"
+      ],
+      "prerequisites": [
+        "latest_sanitized_reports_available",
+        "operator_present",
+        "security_firewall_available",
+        "no_live_recovery_execution"
+      ],
+      "drill_steps": [
+        {
+          "step": 1,
+          "name": "open_scenario_context",
+          "description": "Review the source scenario, trigger signals, and safe response expectations.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 2,
+          "name": "validate_evidence_chain",
+          "description": "Confirm that required reports and hashes are available.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 3,
+          "name": "walk_safe_response_steps",
+          "description": "Review the non-destructive response flow.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 4,
+          "name": "record_operator_findings",
+          "description": "Capture operator notes for future dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        },
+        {
+          "step": 5,
+          "name": "prepare_dry_run_074",
+          "description": "Route the design to checkpoint 074 for safe dry run.",
+          "executes_drill": false,
+          "executes_recovery": false,
+          "executes_rollback": false,
+          "destructive": false
+        }
+      ],
+      "expected_evidence": [
+        "drill_design_record",
+        "operator_review_notes_hash",
+        "blocked_actions_confirmed",
+        "dry_run_ready_signal"
+      ],
+      "blocked_steps": [
+        "execute_drill_now",
+        "execute_recovery_now",
+        "execute_rollback_now",
+        "delete_files",
+        "git_reset_hard",
+        "git_force_push",
+        "execute_shell_command"
+      ],
+      "requires_operator_review": true,
+      "executes_drill": false,
+      "executes_recovery": false,
+      "executes_rollback": false,
+      "deletes_data": false,
+      "modifies_target_files": false,
+      "runs_git_reset": false,
+      "runs_git_force_push": false,
+      "executes_shell_commands": false
+    }
+  ],
+  "blockers": [],
+  "drill_design_hash": "71f7332d7887157792c55c07ef87cc986d4b15a9d9ebe3eb648989aaa6db6bfe",
+  "designer_executes_drill": false,
+  "designer_executes_recovery": false,
+  "designer_executes_rollback": false,
+  "designer_deletes_data": false,
+  "designer_modifies_target_files": false,
+  "designer_runs_git_reset": false,
+  "designer_runs_git_force_push": false,
+  "designer_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "source_refs": {
+    "scenario_plan": {
+      "available": true,
+      "path": "reports/resilience_scenario_planner/latest_resilience_scenario_plan.json",
+      "checkpoint": "072",
+      "module": "k_os_agent_resilience_scenario_planner_core",
+      "status": "scenarios_review_required",
+      "ok": true,
+      "created_at": "2026-06-01T11:36:19+00:00",
+      "hash": "7ae774c6e30e5e74cd5f209c1efac55de856d9c50eac07782ce8deaba0730e3a"
+    },
+    "scenario_report": {
+      "available": true,
+      "path": "reports/resilience_scenario_planner/latest_agent_resilience_scenario_planner_report.json",
+      "checkpoint": "072",
+      "module": "k_os_agent_resilience_scenario_planner_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-06-01T11:36:20+00:00",
+      "hash": "cfe726c7e0c71931c10261db93eb53eb0135c8ff0e612288d499315c43b9b320"
+    },
+    "scenario_validation": {
+      "available": true,
+      "path": "reports/resilience_scenario_planner/latest_resilience_scenario_planner_validation_report.json",
+      "checkpoint": "072",
+      "module": "k_os_agent_resilience_scenario_planner_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-06-01T11:36:20+00:00",
+      "hash": "3d96c1d0a14a5afb902344805decd9b00b4b021b5f28a1bbfdf6e9f5c9ec3f25"
+    },
+    "readiness_matrix": {
+      "available": true,
+      "path": "reports/resilience_readiness/latest_resilience_readiness_matrix.json",
+      "checkpoint": "071",
+      "module": "k_os_agent_resilience_readiness_core",
+      "status": "resilience_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:31:22+00:00",
+      "hash": "37100797978c8ffba7ae62ed8100fad6a0caa1dc3c33a4fa5d1674fc4a316f5e"
+    },
+    "recovery_layer_closure": {
+      "available": true,
+      "path": "reports/recovery_layer_closure/latest_recovery_layer_closure.json",
+      "checkpoint": "070",
+      "module": "k_os_agent_recovery_layer_closure_core",
+      "status": "layer_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:18:27+00:00",
+      "hash": "dce180ec7066aa5c4b9da836a13e9d7bd1c27f02197abefc2836185ac7f2c673"
+    }
+  },
+  "blocked_actions": [
+    "execute_drill_now",
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_designer_state",
+    "export_raw_memory"
+  ],
+  "next_checkpoint": "074 - K-Agent Resilience Drill Dry Run Core"
+}
