@@ -1,0 +1,186 @@
+{
+  "ok": true,
+  "checkpoint": "058",
+  "module": "k_os_agent_rollback_controlled_execution_sandbox_core",
+  "status": "sandbox_blocked_by_governance",
+  "sandbox_id": "rxb_4111d5c730f1",
+  "created_at": "2026-06-01T09:52:18+00:00",
+  "mode": "safe_block",
+  "operator": "operator_k_os",
+  "reason": "closure_controlled_sandbox_blocks_real_rollback",
+  "manual_stub_id": "rms_7921374b4857",
+  "manual_stub_status": "intent_blocked",
+  "manual_stub_record_hash": "cbfc5cbce982cc77da2f1f42d81e5231b566a18727f3abdda71bf08ca3b79494",
+  "final_gate_id": "rfg_8e6fb9e9116b",
+  "simulation_id": "rds_f88727f867b9",
+  "rollback_dry_run_hash": "a0acc0f60e22ce27811ece12e97fb581b8455b42a0bade9fa36f531dadaa4a0a",
+  "release_id": "rbg_ff638f05f0bd",
+  "rollback_plan_id": "rbp_8004b3ca46e3",
+  "incident_id": "inc_66fb283052e6",
+  "quarantine_id": "qua_4b0cb9303592",
+  "execution_evidence_hash": "bb837d4c9017d9ec6ed3474b2d30c003ab3b82d725b61dd6600e4a2c7cfc2f28",
+  "sandbox_record_hash": "5d5baef3ff846d2c48049ed5bda77bb635c8aa7d951308a9c3dc1072a549445a",
+  "governance_blocks_execution": true,
+  "sandbox_check_count": 5,
+  "sandbox_checks": [
+    {
+      "check": "git_status_read_only",
+      "description": "Somente leitura do status Git. Nenhum comando destrutivo executado.",
+      "simulated": true,
+      "executes_command": false,
+      "destructive": false
+    },
+    {
+      "check": "git_log_read_only",
+      "description": "Somente leitura do historico Git. Nenhum reset executado.",
+      "simulated": true,
+      "executes_command": false,
+      "destructive": false
+    },
+    {
+      "check": "policy_read_only",
+      "description": "Leitura das policies de rollback e governanca.",
+      "simulated": true,
+      "executes_command": false,
+      "destructive": false
+    },
+    {
+      "check": "evidence_hash_read_only",
+      "description": "Referencia aos hashes de evidencia sem expor payload bruto.",
+      "simulated": true,
+      "executes_command": false,
+      "destructive": false
+    },
+    {
+      "check": "destructive_command_filter",
+      "description": "Filtro bloqueia git reset, force push, delecao e modificacao de arquivos.",
+      "simulated": true,
+      "executes_command": false,
+      "destructive": false
+    }
+  ],
+  "sandbox_executes_rollback": false,
+  "sandbox_deletes_data": false,
+  "sandbox_modifies_target_files": false,
+  "sandbox_runs_git_reset": false,
+  "sandbox_runs_git_force_push": false,
+  "sandbox_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "blocked_commands": [
+    "git reset --hard",
+    "git push --force",
+    "git clean -fd",
+    "Remove-Item -Recurse",
+    "del /s",
+    "rmdir /s",
+    "rm -rf",
+    "erase",
+    "format",
+    "Set-Content target",
+    "Move-Item target",
+    "Copy-Item target overwrite",
+    "external_api_call",
+    "publish_external_content"
+  ],
+  "source_refs": {
+    "manual_stub": {
+      "available": true,
+      "path": "reports/rollback_manual_stub/latest_rollback_manual_stub_record.json",
+      "checkpoint": "057",
+      "module": "k_os_agent_rollback_manual_execution_stub_core",
+      "status": "intent_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T09:46:47+00:00",
+      "hash": "cd0e301e3effe3ea10c8c72a21b9ec663eea08d5a4c0648129b52174665e24db"
+    },
+    "final_gate": {
+      "available": true,
+      "path": "reports/rollback_final_gate/latest_rollback_final_gate_record.json",
+      "checkpoint": "056",
+      "module": "k_os_agent_rollback_execution_final_gate_core",
+      "status": "blocked",
+      "ok": true,
+      "created_at": "2026-05-31T23:13:24+00:00",
+      "hash": "0f9211ba49e8a69821f5dab13fe1c15664420940be2dbe3b2d451044a994aeb9"
+    },
+    "rollback_dry_run": {
+      "available": true,
+      "path": "reports/rollback_dry_run/latest_rollback_dry_run_simulation.json",
+      "checkpoint": "055",
+      "module": "k_os_agent_rollback_dry_run_simulator_core",
+      "status": "simulated_blocked",
+      "ok": true,
+      "created_at": "2026-05-31T23:08:45+00:00",
+      "hash": "8ea13300e9ab75056a7fd87c19279e3dc00b1e83b18541dbfda6239b069e103a"
+    },
+    "release_record": {
+      "available": true,
+      "path": "reports/rollback_release_gate/latest_rollback_release_record.json",
+      "checkpoint": "054",
+      "module": "k_os_agent_rollback_approval_release_gate_core",
+      "status": "blocked",
+      "ok": true,
+      "created_at": "2026-05-31T22:59:28+00:00",
+      "hash": "8cf901850c5e2a98d8106a6c1af9bdd5a1b63506711bdb9b7fe58c9c846379e1"
+    },
+    "rollback_plan": {
+      "available": true,
+      "path": "reports/rollback_preparation/latest_rollback_plan.json",
+      "checkpoint": "053",
+      "module": "k_os_agent_rollback_preparation_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:50:48+00:00",
+      "hash": "4d0943158405325d2c5cf9c28d3929980a9f2a74e4a6a998702eb240c26b6bf8"
+    },
+    "incident_record": {
+      "available": true,
+      "path": "reports/incident_lockdown/latest_incident_lockdown_record.json",
+      "checkpoint": "052",
+      "module": "k_os_agent_incident_lockdown_quarantine_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:07:51+00:00",
+      "hash": "f58e3500340e2f2e3913248c8fa94c49d373e81e00e75e3a95343a1c790b3b4f"
+    },
+    "forensics_bundle": {
+      "available": true,
+      "path": "reports/replay_forensics/latest_replay_forensics_bundle.json",
+      "checkpoint": "051",
+      "module": "k_os_agent_replay_forensics_viewer_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:02:37+00:00",
+      "hash": "9102cc74fc35eafff61fd2549462fbb110cb8653a2e803e32d1751fcde476d08"
+    },
+    "ledger_record": {
+      "available": true,
+      "path": "reports/execution_result_ledger/latest_execution_result_ledger_record.json",
+      "checkpoint": "050",
+      "module": "k_os_agent_execution_result_ledger_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T21:56:51+00:00",
+      "hash": "52a76785fa818cb8c93cbafd7ace660dbfca42ebf3933cb9b7f974b041c753cc"
+    }
+  },
+  "blockers": [],
+  "required_gates_before_sandbox": [
+    "manual_stub_exists",
+    "manual_stub_hash_exists",
+    "final_gate_exists",
+    "dry_run_exists",
+    "release_record_exists",
+    "rollback_plan_exists",
+    "incident_lockdown_exists",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "destructive_commands_blocked",
+    "sandbox_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_action": "operator_review_sandbox_report"
+}

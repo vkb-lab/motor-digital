@@ -115,3 +115,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Rollback Execution Final Gate Core | Cria último gate antes de rollback real futuro, com bloqueio destrutivo e confirmação explícita | Operador K-OS | Sim, local sanitizado | Não | Não | Dry Run + Release Gate + Operator Confirmation + No Rollback Execution | reports/rollback_final_gate |
 
 | K-OS Agent Rollback Manual Execution Stub Core | Registra intenção manual de execução futura sem executar rollback real | Operador K-OS | Sim, local sanitizado | Não | Não | Final Gate + Manual Intent + No Rollback Execution | reports/rollback_manual_stub |
+
+| K-OS Agent Rollback Controlled Execution Sandbox Core | Cria sandbox controlada de rollback sem executar comandos destrutivos ou alterar arquivos alvo | Operador K-OS | Sim, local sanitizado | Não | Não | Manual Stub + Final Gate + No Shell Execution + No Rollback Execution | reports/rollback_sandbox |

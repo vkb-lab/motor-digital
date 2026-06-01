@@ -393,3 +393,6 @@ local_secrets/k_os_rollback_final_gate/
 memory/rollback_manual_stub/
 reports/rollback_manual_stub/runtime/
 local_secrets/k_os_rollback_manual_stub/
+memory/rollback_sandbox/
+reports/rollback_sandbox/runtime/
+local_secrets/k_os_rollback_sandbox/

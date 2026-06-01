@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "058",
+  "module": "agent_rollback_controlled_execution_sandbox_core",
+  "purpose": "Criar sandbox controlada para simular ambiente de execucao de rollback, bloquear comandos destrutivos e registrar evidencia auditavel sem executar rollback real.",
+  "sandbox_policy": {
+    "sandbox_local_only": true,
+    "raw_sandbox_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "sandbox_executes_rollback": false,
+    "sandbox_deletes_data": false,
+    "sandbox_modifies_target_files": false,
+    "sandbox_runs_git_reset": false,
+    "sandbox_runs_git_force_push": false,
+    "manual_stub_required": true,
+    "final_gate_required": true,
+    "dry_run_required": true,
+    "release_gate_required": true,
+    "rollback_plan_required": true,
+    "incident_lockdown_required": true,
+    "forensics_bundle_required": true,
+    "ledger_record_required": true,
+    "destructive_commands_blocked": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "allowed_sandbox_modes": [
+    "safe_block",
+    "simulate_environment",
+    "audit_only"
+  ],
+  "sandbox_statuses": [
+    "draft",
+    "sandbox_created",
+    "sandbox_blocked_by_governance",
+    "sandbox_validated",
+    "blocked",
+    "archived"
+  ],
+  "allowed_read_only_checks": [
+    "git_status_read_only",
+    "git_log_read_only",
+    "policy_read_only",
+    "evidence_hash_read_only",
+    "report_presence_read_only"
+  ],
+  "blocked_commands": [
+    "git reset --hard",
+    "git push --force",
+    "git clean -fd",
+    "Remove-Item -Recurse",
+    "del /s",
+    "rmdir /s",
+    "rm -rf",
+    "erase",
+    "format",
+    "Set-Content target",
+    "Move-Item target",
+    "Copy-Item target overwrite",
+    "external_api_call",
+    "publish_external_content"
+  ],
+  "required_gates_before_sandbox": [
+    "manual_stub_exists",
+    "manual_stub_hash_exists",
+    "final_gate_exists",
+    "dry_run_exists",
+    "release_record_exists",
+    "rollback_plan_exists",
+    "incident_lockdown_exists",
+    "forensics_bundle_available",
+    "ledger_record_available",
+    "destructive_commands_blocked",
+    "sandbox_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "059 - K-Agent Rollback Sandbox Report and Operator Review Core"
+}
