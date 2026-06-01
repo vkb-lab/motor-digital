@@ -414,3 +414,6 @@ local_secrets/k_os_recovery_gate/
 memory/recovery_final_gate/
 reports/recovery_final_gate/runtime/
 local_secrets/k_os_recovery_final_gate/
+memory/recovery_manual_stub/
+reports/recovery_manual_stub/runtime/
+local_secrets/k_os_recovery_manual_stub/

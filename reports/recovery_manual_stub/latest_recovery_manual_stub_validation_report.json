@@ -1,0 +1,30 @@
+{
+  "ok": false,
+  "checkpoint": "066",
+  "module": "k_os_agent_recovery_manual_execution_stub_core",
+  "status": "blocked",
+  "generated_at": "2026-06-01T10:50:51+00:00",
+  "recovery_manual_stub_id": "rms_e5c9c9c0fc5a",
+  "manual_stub_status": "intent_blocked",
+  "mode": "record_blocked_intent",
+  "recovery_final_gate_id": "rfg_c42bd422642f",
+  "recovery_dry_run_id": "",
+  "recovery_plan_id": "rpb_be687cf9460f",
+  "recovery_manual_stub_hash": "dfab2632158392649e8f44199bfb5fdc45f734c32ea3ab79aae45de5b583c392",
+  "stub_executes_recovery": false,
+  "stub_executes_rollback": false,
+  "stub_deletes_data": false,
+  "stub_modifies_target_files": false,
+  "stub_runs_git_reset": false,
+  "stub_runs_git_force_push": false,
+  "stub_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [
+    "recovery_dry_run_id_missing"
+  ],
+  "warnings": [
+    "recovery_intent_blocked_by_manual_stub",
+    "manual_stub_contains_non_destructive_blockers"
+  ]
+}
