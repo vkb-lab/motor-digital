@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "checkpoint": "061",
+  "module": "k_os_agent_recovery_readiness_matrix_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T10:07:46+00:00",
+  "matrix_id": "rrm_46e71134fb25",
+  "readiness_score": 100,
+  "readiness_level": "review_required",
+  "risk_level": "medium",
+  "readiness_matrix_hash": "876056a06a01258d7c46fb619ce5f839795a39d4b5bd00126423d2c70105330a",
+  "readiness_executes_recovery": false,
+  "readiness_executes_rollback": false,
+  "readiness_deletes_data": false,
+  "readiness_modifies_target_files": false,
+  "readiness_runs_git_reset": false,
+  "readiness_runs_git_force_push": false,
+  "readiness_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "recovery_readiness_requires_operator_review",
+    "non_destructive_governance_blockers_present"
+  ]
+}

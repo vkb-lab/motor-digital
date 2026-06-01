@@ -1,0 +1,31 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "061",
+    "module":  "k_os_agent_recovery_readiness_matrix_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "recovery_readiness_matrix",
+                         "readiness_scoring",
+                         "risk_classification",
+                         "critical_dependency_mapping",
+                         "governance_summary_binding",
+                         "no_recovery_execution",
+                         "no_rollback_execution",
+                         "sanitized_readiness_report"
+                     ],
+    "readiness_local_only":  true,
+    "raw_readiness_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "readiness_executes_recovery":  false,
+    "readiness_executes_rollback":  false,
+    "readiness_deletes_data":  false,
+    "readiness_modifies_target_files":  false,
+    "readiness_runs_git_reset":  false,
+    "readiness_runs_git_force_push":  false,
+    "manual_approval_required":  true,
+    "next_checkpoint":  "062 - K-Agent Recovery Plan Builder Core",
+    "installed_at":  "2026-06-01T10:07:45.4744506Z"
+}

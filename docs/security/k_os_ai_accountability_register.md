@@ -121,3 +121,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Rollback Sandbox Report and Operator Review Core | Gera relatório executivo da sandbox, consolida blockers e registra revisão humana sem executar rollback | Operador K-OS | Sim, local sanitizado | Não | Não | Sandbox Evidence + Operator Review + No Rollback Execution | reports/rollback_sandbox_review |
 
 | K-OS Agent Rollback Governance Summary Core | Consolida governança de rollback dos checkpoints 053-059 sem executar rollback real | Operador K-OS | Sim, local sanitizado | Não | Não | Evidence Chain + Governance Summary + No Rollback Execution | reports/rollback_governance_summary |
+
+| K-OS Agent Recovery Readiness Matrix Core | Avalia prontidão de recovery controlado sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Governance Summary + Readiness Score + No Recovery Execution | reports/recovery_readiness_matrix |

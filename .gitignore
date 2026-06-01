@@ -402,3 +402,6 @@ local_secrets/k_os_rollback_sandbox_review/
 memory/rollback_governance_summary/
 reports/rollback_governance_summary/runtime/
 local_secrets/k_os_rollback_governance_summary/
+memory/recovery_readiness_matrix/
+reports/recovery_readiness_matrix/runtime/
+local_secrets/k_os_recovery_readiness_matrix/

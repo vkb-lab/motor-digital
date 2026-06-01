@@ -1,0 +1,253 @@
+{
+  "ok": true,
+  "checkpoint": "061",
+  "module": "k_os_agent_recovery_readiness_matrix_core",
+  "status": "matrix_generated",
+  "matrix_id": "rrm_46e71134fb25",
+  "created_at": "2026-06-01T10:07:46+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_recovery_readiness_matrix",
+  "readiness_score": 100,
+  "max_score": 100,
+  "readiness_percent": 100.0,
+  "readiness_level": "review_required",
+  "risk_level": "medium",
+  "dimensions": [
+    {
+      "dimension": "governance_chain",
+      "ok": true,
+      "weight": 20,
+      "score": 20,
+      "blockers": []
+    },
+    {
+      "dimension": "evidence_integrity",
+      "ok": true,
+      "weight": 15,
+      "score": 15,
+      "blockers": []
+    },
+    {
+      "dimension": "operator_review",
+      "ok": true,
+      "weight": 15,
+      "score": 15,
+      "blockers": []
+    },
+    {
+      "dimension": "rollback_safety",
+      "ok": true,
+      "weight": 20,
+      "score": 20,
+      "blockers": []
+    },
+    {
+      "dimension": "sandbox_safety",
+      "ok": true,
+      "weight": 10,
+      "score": 10,
+      "blockers": []
+    },
+    {
+      "dimension": "auditability",
+      "ok": true,
+      "weight": 10,
+      "score": 10,
+      "blockers": []
+    },
+    {
+      "dimension": "data_protection",
+      "ok": true,
+      "weight": 5,
+      "score": 5,
+      "blockers": []
+    },
+    {
+      "dimension": "execution_blocking",
+      "ok": true,
+      "weight": 5,
+      "score": 5,
+      "blockers": []
+    }
+  ],
+  "governance_summary_id": "rgs_8ded4eeda1f9",
+  "governance_summary_hash": "e0076fed68d8adca818620e50e7b777cec0b4d2eefbeb34827a816abc2283c25",
+  "evidence_chain_complete": true,
+  "operator_review_available": true,
+  "sandbox_summary_available": true,
+  "no_real_rollback_executed": true,
+  "no_data_deleted": true,
+  "no_target_files_modified": true,
+  "no_git_reset_executed": true,
+  "no_git_force_push_executed": true,
+  "no_shell_execution": true,
+  "readiness_matrix_hash": "876056a06a01258d7c46fb619ce5f839795a39d4b5bd00126423d2c70105330a",
+  "readiness_executes_recovery": false,
+  "readiness_executes_rollback": false,
+  "readiness_deletes_data": false,
+  "readiness_modifies_target_files": false,
+  "readiness_runs_git_reset": false,
+  "readiness_runs_git_force_push": false,
+  "readiness_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "consolidated_blockers": [
+    {
+      "checkpoint": "053",
+      "blocker": "blocked_status_present"
+    },
+    {
+      "checkpoint": "054",
+      "blocker": "blocked_status_present"
+    },
+    {
+      "checkpoint": "056",
+      "blocker": "blocked_status_present"
+    }
+  ],
+  "source_refs": {
+    "governance_summary": {
+      "available": true,
+      "path": "reports/rollback_governance_summary/latest_rollback_governance_summary.json",
+      "checkpoint": "060",
+      "module": "k_os_agent_rollback_governance_summary_core",
+      "status": "closed_safe",
+      "ok": true,
+      "created_at": "2026-06-01T10:03:21+00:00",
+      "hash": "5443a940ad72452d745388bb05c28330a5450917bbd7f11750e193c6a11dcf92"
+    },
+    "governance_validation": {
+      "available": true,
+      "path": "reports/rollback_governance_summary/latest_rollback_governance_summary_validation_report.json",
+      "checkpoint": "060",
+      "module": "k_os_agent_rollback_governance_summary_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-06-01T10:03:21+00:00",
+      "hash": "68d92ca3226accadb0dbbb2bd89be98ec087d3dac252d1e8787811f85a642067"
+    },
+    "governance_report": {
+      "available": true,
+      "path": "reports/rollback_governance_summary/latest_agent_rollback_governance_summary_report.json",
+      "checkpoint": "060",
+      "module": "k_os_agent_rollback_governance_summary_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-06-01T10:03:21+00:00",
+      "hash": "727a58b4a9089070cdcc70e71ad9c9333c056da92f46791a428d60eab7012283"
+    },
+    "sandbox_review": {
+      "available": true,
+      "path": "reports/rollback_sandbox_review/latest_rollback_sandbox_operator_review.json",
+      "checkpoint": "059",
+      "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+      "status": "review_recorded",
+      "ok": true,
+      "created_at": "2026-06-01T09:57:41+00:00",
+      "hash": "d122c1d9cff1b9305014748bc29651fd7389112117f83503747f61402be8568e"
+    },
+    "sandbox_summary": {
+      "available": true,
+      "path": "reports/rollback_sandbox_review/latest_rollback_sandbox_executive_summary.json",
+      "checkpoint": "059",
+      "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+      "status": "executive_summary_generated",
+      "ok": true,
+      "created_at": "2026-06-01T09:57:41+00:00",
+      "hash": "16fcd744e162180861974ff1b92106857509e1cb971235e1616de0a2d2a58cad"
+    },
+    "sandbox_record": {
+      "available": true,
+      "path": "reports/rollback_sandbox/latest_rollback_sandbox_record.json",
+      "checkpoint": "058",
+      "module": "k_os_agent_rollback_controlled_execution_sandbox_core",
+      "status": "sandbox_blocked_by_governance",
+      "ok": true,
+      "created_at": "2026-06-01T09:52:18+00:00",
+      "hash": "3bbf6012ae426232fb7759b3097323f2d5e9e1eff2d07b5000b84e79b2ef3b7d"
+    },
+    "manual_stub": {
+      "available": true,
+      "path": "reports/rollback_manual_stub/latest_rollback_manual_stub_record.json",
+      "checkpoint": "057",
+      "module": "k_os_agent_rollback_manual_execution_stub_core",
+      "status": "intent_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T09:46:47+00:00",
+      "hash": "cd0e301e3effe3ea10c8c72a21b9ec663eea08d5a4c0648129b52174665e24db"
+    },
+    "final_gate": {
+      "available": true,
+      "path": "reports/rollback_final_gate/latest_rollback_final_gate_record.json",
+      "checkpoint": "056",
+      "module": "k_os_agent_rollback_execution_final_gate_core",
+      "status": "blocked",
+      "ok": true,
+      "created_at": "2026-05-31T23:13:24+00:00",
+      "hash": "0f9211ba49e8a69821f5dab13fe1c15664420940be2dbe3b2d451044a994aeb9"
+    },
+    "dry_run": {
+      "available": true,
+      "path": "reports/rollback_dry_run/latest_rollback_dry_run_simulation.json",
+      "checkpoint": "055",
+      "module": "k_os_agent_rollback_dry_run_simulator_core",
+      "status": "simulated_blocked",
+      "ok": true,
+      "created_at": "2026-05-31T23:08:45+00:00",
+      "hash": "8ea13300e9ab75056a7fd87c19279e3dc00b1e83b18541dbfda6239b069e103a"
+    },
+    "release_record": {
+      "available": true,
+      "path": "reports/rollback_release_gate/latest_rollback_release_record.json",
+      "checkpoint": "054",
+      "module": "k_os_agent_rollback_approval_release_gate_core",
+      "status": "blocked",
+      "ok": true,
+      "created_at": "2026-05-31T22:59:28+00:00",
+      "hash": "8cf901850c5e2a98d8106a6c1af9bdd5a1b63506711bdb9b7fe58c9c846379e1"
+    },
+    "rollback_plan": {
+      "available": true,
+      "path": "reports/rollback_preparation/latest_rollback_plan.json",
+      "checkpoint": "053",
+      "module": "k_os_agent_rollback_preparation_core",
+      "status": "blocked",
+      "ok": false,
+      "created_at": "2026-05-31T22:50:48+00:00",
+      "hash": "4d0943158405325d2c5cf9c28d3929980a9f2a74e4a6a998702eb240c26b6bf8"
+    }
+  },
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_readiness_state",
+    "export_raw_memory"
+  ],
+  "required_gates_before_recovery_readiness": [
+    "rollback_governance_summary_exists",
+    "rollback_governance_summary_hash_exists",
+    "checkpoints_053_060_available",
+    "operator_review_exists",
+    "sandbox_review_exists",
+    "evidence_chain_available",
+    "no_real_rollback_executed",
+    "no_data_deleted",
+    "no_target_files_modified",
+    "no_git_reset_executed",
+    "no_force_push_executed",
+    "readiness_score_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "062 - K-Agent Recovery Plan Builder Core"
+}
