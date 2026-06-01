@@ -1,0 +1,75 @@
+{
+  "checkpoint": "082",
+  "name": "K-OS Command Registry Core",
+  "layer": "K-OS Core",
+  "objective": "Criar registro central de comandos do K-OS com catalogo local, classificacao de risco, politica de execucao, evidencias sanitizadas e dashboard somente leitura, sem executar comandos, agentes, modulos, auto-fix, recovery, rollback, drill, reset ou force push.",
+  "previous_checkpoint": "081 - K-OS Agent Capability Registry Core",
+  "next_checkpoint": "083 - K-OS Backup and Export Pack Core",
+  "command_roots": [
+    "scripts",
+    "k_atlas",
+    "pages",
+    "configs",
+    "docs",
+    "reports"
+  ],
+  "command_families": [
+    "python_runtime",
+    "streamlit_runtime",
+    "git_workflow",
+    "powershell_wrapper",
+    "security_guard",
+    "report_generation",
+    "registry_generation",
+    "validation",
+    "audit",
+    "closure",
+    "configuration",
+    "documentation",
+    "unknown"
+  ],
+  "risk_levels": [
+    "read_only",
+    "write_artifact",
+    "git_publish",
+    "operator_review_required",
+    "blocked_reference"
+  ],
+  "allowed_operations": [
+    "read_local_project_state",
+    "generate_sanitized_command_registry",
+    "generate_read_only_dashboard",
+    "update_accountability_register_if_exists",
+    "validate_artifacts",
+    "audit_checkpoint",
+    "create_closure_report"
+  ],
+  "blocked_operations": [
+    "command_execution",
+    "agent_execution",
+    "module_execution",
+    "automatic_remediation",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ],
+  "registry_policy": {
+    "read_only_inventory": true,
+    "execute_commands": false,
+    "execute_agents": false,
+    "execute_modules": false,
+    "auto_fix": false,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "ignore_local_secrets": true,
+    "ignore_memory_runtime": true,
+    "require_operator_approval_for_publish": true
+  },
+  "status": "configured"
+}

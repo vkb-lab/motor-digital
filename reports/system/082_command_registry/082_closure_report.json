@@ -1,0 +1,17 @@
+{
+  "checkpoint": "082",
+  "name": "K-OS Command Registry Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:10:21Z",
+  "registry_status": "healthy",
+  "total_command_surfaces": 1579,
+  "next_checkpoint": "083 - K-OS Backup and Export Pack Core",
+  "action_report": "reports/system/082_command_registry/082_action_report.json",
+  "validate_report": "reports/system/082_command_registry/082_validate_report.json",
+  "audit_report": "reports/system/082_command_registry/082_audit_report.json",
+  "command_registry": "reports/system/082_command_registry/082_command_registry.json",
+  "read_only_inventory": true,
+  "commands_executed": false,
+  "blocked_operations_confirmed": true
+}

@@ -1,0 +1,49 @@
+{
+  "checkpoint": "082",
+  "name": "K-OS Command Registry Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:10:21Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_command_registry_082.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/command_registry_082.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_082_command_registry.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/082_K_OS_Command_Registry.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/082_k_os_command_registry.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/082_command_registry/082_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/082_command_registry/082_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/082_command_registry/082_command_registry.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/082_command_registry/082_command_registry.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "registry_has_command_surfaces": true,
+  "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+}
