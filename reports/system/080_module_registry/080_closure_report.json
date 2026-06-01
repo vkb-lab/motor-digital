@@ -1,0 +1,16 @@
+{
+  "checkpoint": "080",
+  "name": "K-OS Module Registry Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:59:53Z",
+  "registry_status": "healthy",
+  "total_modules": 4522,
+  "next_checkpoint": "081 - K-OS Agent Capability Registry Core",
+  "action_report": "reports/system/080_module_registry/080_action_report.json",
+  "validate_report": "reports/system/080_module_registry/080_validate_report.json",
+  "audit_report": "reports/system/080_module_registry/080_audit_report.json",
+  "module_registry": "reports/system/080_module_registry/080_module_registry.json",
+  "read_only_inventory": true,
+  "blocked_operations_confirmed": true
+}

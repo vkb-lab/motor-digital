@@ -1,0 +1,98 @@
+{
+  "checkpoint": "080",
+  "name": "K-OS Module Registry Core",
+  "mode": "init",
+  "status": "initialized",
+  "generated_at": "2026-06-01T12:58:42Z",
+  "config_path": "configs/k_os_module_registry_080.json",
+  "previous_checkpoint": "079 - K-OS System Health Monitor Core",
+  "next_checkpoint": "081 - K-OS Agent Capability Registry Core",
+  "blocked_operations": [
+    "module_execution",
+    "automatic_remediation",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ],
+  "execution_guard": {
+    "read_only_inventory": true,
+    "module_execution_performed": false,
+    "automatic_remediation_executed": false,
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "destructive_shell_executed": false
+  },
+  "config": {
+    "checkpoint": "080",
+    "name": "K-OS Module Registry Core",
+    "layer": "K-OS Core",
+    "objective": "Criar registro central de modulos do K-OS com inventario local, classificacao operacional, evidencias sanitizadas e dashboard somente leitura, sem executar modulos, auto-fix, recovery, rollback, drill, reset ou force push.",
+    "previous_checkpoint": "079 - K-OS System Health Monitor Core",
+    "next_checkpoint": "081 - K-OS Agent Capability Registry Core",
+    "module_roots": [
+      "k_atlas",
+      "agents",
+      "live",
+      "memory",
+      "reports",
+      "campaigns",
+      "content_packs",
+      "configs",
+      "scripts",
+      "pages",
+      "docs"
+    ],
+    "module_types": [
+      "core_python",
+      "operation_python",
+      "agent_module",
+      "streamlit_page",
+      "script_wrapper",
+      "configuration",
+      "memory_surface",
+      "campaign_surface",
+      "content_pack",
+      "report_surface",
+      "documentation",
+      "unknown"
+    ],
+    "allowed_operations": [
+      "read_local_project_state",
+      "generate_sanitized_module_registry",
+      "generate_read_only_dashboard",
+      "update_accountability_register_if_exists",
+      "validate_artifacts",
+      "audit_checkpoint",
+      "create_closure_report"
+    ],
+    "blocked_operations": [
+      "module_execution",
+      "automatic_remediation",
+      "real_drill_execution",
+      "real_recovery_execution",
+      "real_rollback_execution",
+      "git_reset_hard",
+      "force_push",
+      "destructive_shell",
+      "memory_deletion",
+      "secret_export"
+    ],
+    "registry_policy": {
+      "read_only_inventory": true,
+      "execute_modules": false,
+      "auto_fix": false,
+      "sanitize_reports": true,
+      "include_sensitive_content": false,
+      "include_file_hashes": true,
+      "ignore_local_secrets": "[REDACTED]",
+      "ignore_memory_runtime": true
+    },
+    "status": "configured"
+  }
+}

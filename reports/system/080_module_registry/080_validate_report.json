@@ -1,0 +1,49 @@
+{
+  "checkpoint": "080",
+  "name": "K-OS Module Registry Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:59:52Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_module_registry_080.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/module_registry_080.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_080_module_registry.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/080_K_OS_Module_Registry.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/080_k_os_module_registry.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/080_module_registry/080_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/080_module_registry/080_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/080_module_registry/080_module_registry.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/080_module_registry/080_module_registry.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "registry_has_modules": true,
+  "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+}
