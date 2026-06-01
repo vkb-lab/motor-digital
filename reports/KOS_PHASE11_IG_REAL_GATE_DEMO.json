@@ -1,0 +1,92 @@
+{
+  "status": "BLOCKED_BY_REAL_GATE",
+  "package": {
+    "status": "WAITING_ENV_SETUP",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "readiness": {
+      "status": "IG_REAL_LOCKED",
+      "can_prepare": false,
+      "can_run_real": false,
+      "missing_env": [
+        "IG_BUSINESS_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "real_flag_enabled": false,
+      "human_ok": false,
+      "external_call_allowed": false,
+      "real_action_executed": false
+    },
+    "media_request": {
+      "status": "MEDIA_REQUEST_READY",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "image_url": "https://placehold.co/1080x1080/png",
+      "caption": "Preview de campanha preparado pelo K-OS.",
+      "media_type": "IMAGE",
+      "created_at": "2026-06-01T20:37:46.277100+00:00"
+    },
+    "real_action_executed": false,
+    "external_call_executed": false,
+    "manual_review_required": true,
+    "next_step": "Somente executar publicacao real quando KOS_REAL_IG_PUBLISH_ENABLED=true e KOS_HUMAN_OK_FOR_IG_REAL=OK.",
+    "created_at": "2026-06-01T20:37:46.277150+00:00",
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\ig_real_gate\\ig_publish_package.json"
+  },
+  "result": {
+    "status": "BLOCKED_BY_REAL_GATE",
+    "reason": "Ambiente real ou OK humano ausente.",
+    "readiness": {
+      "status": "IG_REAL_LOCKED",
+      "can_prepare": false,
+      "can_run_real": false,
+      "missing_env": [
+        "IG_BUSINESS_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "real_flag_enabled": false,
+      "human_ok": false,
+      "external_call_allowed": false,
+      "real_action_executed": false
+    },
+    "package": {
+      "status": "WAITING_ENV_SETUP",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "readiness": {
+        "status": "IG_REAL_LOCKED",
+        "can_prepare": false,
+        "can_run_real": false,
+        "missing_env": [
+          "IG_BUSINESS_ACCOUNT_ID",
+          "META_ACCESS_KEY"
+        ],
+        "real_flag_enabled": false,
+        "human_ok": false,
+        "external_call_allowed": false,
+        "real_action_executed": false
+      },
+      "media_request": {
+        "status": "MEDIA_REQUEST_READY",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "image_url": "https://placehold.co/1080x1080/png",
+        "caption": "Preview de campanha preparado pelo K-OS.",
+        "media_type": "IMAGE",
+        "created_at": "2026-06-01T20:37:46.277100+00:00"
+      },
+      "real_action_executed": false,
+      "external_call_executed": false,
+      "manual_review_required": true,
+      "next_step": "Somente executar publicacao real quando KOS_REAL_IG_PUBLISH_ENABLED=true e KOS_HUMAN_OK_FOR_IG_REAL=OK.",
+      "created_at": "2026-06-01T20:37:46.277150+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\ig_real_gate\\ig_publish_package.json"
+    },
+    "external_call_executed": false,
+    "real_action_executed": false,
+    "created_at": "2026-06-01T20:37:46.279178+00:00",
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\ig_real_gate\\ig_publish_blocked.json"
+  },
+  "real_action_executed": false,
+  "external_call_executed": false
+}
