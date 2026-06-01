@@ -1,0 +1,27 @@
+{
+  "ok": false,
+  "checkpoint": "067",
+  "module": "k_os_agent_recovery_controlled_execution_sandbox_core",
+  "status": "blocked",
+  "generated_at": "2026-06-01T10:56:04+00:00",
+  "recovery_controlled_sandbox_id": "rcs_ad461bff2e64",
+  "sandbox_status": "sandbox_blocked_by_governance",
+  "workspace_manifest_hash": "4b71f3130180061dc08c83acc58e2ce5ff60e609c8973bb94b126dcf5f5e09d2",
+  "recovery_controlled_sandbox_hash": "93ce9d2de8a42992f19be7f2fa8714c0ed65bf42d3a0144b81c2c1ca67cc61bd",
+  "sandbox_executes_recovery": false,
+  "sandbox_executes_rollback": false,
+  "sandbox_deletes_data": false,
+  "sandbox_modifies_target_files": false,
+  "sandbox_runs_git_reset": false,
+  "sandbox_runs_git_force_push": false,
+  "sandbox_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [
+    "recovery_dry_run_id_missing"
+  ],
+  "warnings": [
+    "sandbox_created_with_governance_execution_block",
+    "sandbox_contains_non_destructive_blockers"
+  ]
+}

@@ -417,3 +417,6 @@ local_secrets/k_os_recovery_final_gate/
 memory/recovery_manual_stub/
 reports/recovery_manual_stub/runtime/
 local_secrets/k_os_recovery_manual_stub/
+memory/recovery_controlled_sandbox/
+reports/recovery_controlled_sandbox/runtime/
+local_secrets/k_os_recovery_controlled_sandbox/

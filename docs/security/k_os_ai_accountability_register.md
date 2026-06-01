@@ -131,3 +131,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Recovery Final Gate Core | Registra gate final antes de stub/manual futuro sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Dry Run + Recovery Gate + Final Gate + No Recovery Execution | reports/recovery_final_gate |
 
 | K-OS Agent Recovery Manual Execution Stub Core | Registra stub manual de intencao futura sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Final Gate + Manual Stub + No Recovery Execution | reports/recovery_manual_stub |
+
+| K-OS Agent Recovery Controlled Execution Sandbox Core | Cria sandbox controlada/local para recovery sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Manual Stub + Controlled Sandbox + No Recovery Execution | reports/recovery_controlled_sandbox |
