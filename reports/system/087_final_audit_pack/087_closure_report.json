@@ -1,0 +1,19 @@
+{
+  "checkpoint": "087",
+  "name": "K-OS Final Audit Pack Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:30:45Z",
+  "audit_status": "audit_passed_with_warnings",
+  "warnings_count": 8,
+  "next_checkpoint": "088 - K-OS v1 Core Closure",
+  "action_report": "reports/system/087_final_audit_pack/087_action_report.json",
+  "validate_report": "reports/system/087_final_audit_pack/087_validate_report.json",
+  "audit_report": "reports/system/087_final_audit_pack/087_audit_report.json",
+  "final_audit_pack": "reports/system/087_final_audit_pack/087_final_audit_pack.json",
+  "operator_approval_required_for_088": true,
+  "deploy_executed": false,
+  "installer_executed": false,
+  "release_published": false,
+  "blocked_operations_confirmed": true
+}

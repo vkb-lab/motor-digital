@@ -1,0 +1,49 @@
+{
+  "checkpoint": "087",
+  "name": "K-OS Final Audit Pack Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:30:44Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_final_audit_pack_087.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/final_audit_pack_087.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_087_final_audit_pack.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/087_K_OS_Final_Audit_Pack.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/087_k_os_final_audit_pack.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/087_final_audit_pack/087_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/087_final_audit_pack/087_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/087_final_audit_pack/087_final_audit_pack.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/087_final_audit_pack/087_final_audit_pack.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "audit_decision_ok": true,
+  "audit_pack_status_ok": true,
+  "next_checkpoint": "088 - K-OS v1 Core Closure"
+}
