@@ -1,0 +1,18 @@
+{
+  "status": "PRODUCTION_BRIDGE_READY",
+  "phase": 10,
+  "target": "vercel_preview",
+  "app": "k-atlas-os",
+  "public_bridge": true,
+  "real_publish_enabled": false,
+  "real_money_enabled": false,
+  "external_call_executed": false,
+  "manual_review_required": true,
+  "modules": [
+    "launch_sandbox",
+    "safe_execution",
+    "live_onboarding",
+    "deploy_bridge"
+  ],
+  "created_at": "2026-06-01T20:33:46.835665+00:00"
+}

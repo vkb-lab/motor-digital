@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>K-OS Production Bridge</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 48px; color: #111827; }
+    .card { border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; max-width: 860px; }
+    .status { font-size: 32px; font-weight: 700; }
+    code, pre { background: #f3f4f6; padding: 12px; border-radius: 12px; display: block; overflow:auto; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>K-Atlas OS</h1>
+    <p>Production Deploy Bridge</p>
+    <div class="status">PRODUCTION_BRIDGE_READY</div>
+    <h2>Estado</h2>
+    <pre>{
+  &quot;status&quot;: &quot;PRODUCTION_BRIDGE_READY&quot;,
+  &quot;phase&quot;: 10,
+  &quot;target&quot;: &quot;vercel_preview&quot;,
+  &quot;app&quot;: &quot;k-atlas-os&quot;,
+  &quot;public_bridge&quot;: true,
+  &quot;real_publish_enabled&quot;: false,
+  &quot;real_money_enabled&quot;: false,
+  &quot;external_call_executed&quot;: false,
+  &quot;manual_review_required&quot;: true,
+  &quot;modules&quot;: [
+    &quot;launch_sandbox&quot;,
+    &quot;safe_execution&quot;,
+    &quot;live_onboarding&quot;,
+    &quot;deploy_bridge&quot;
+  ],
+  &quot;created_at&quot;: &quot;2026-06-01T20:33:46.835665+00:00&quot;
+}</pre>
+    <p>Nenhuma publicacao real foi executada. A proxima etapa conecta o canal real com revisao humana.</p>
+  </div>
+</body>
+</html>

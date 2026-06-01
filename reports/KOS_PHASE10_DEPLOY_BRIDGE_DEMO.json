@@ -1,0 +1,36 @@
+{
+  "status": "DEPLOY_BRIDGE_DEMO_READY",
+  "exported": {
+    "status": "PUBLIC_EXPORT_READY",
+    "manifest": {
+      "status": "PRODUCTION_BRIDGE_READY",
+      "phase": 10,
+      "target": "vercel_preview",
+      "app": "k-atlas-os",
+      "public_bridge": true,
+      "real_publish_enabled": false,
+      "real_money_enabled": false,
+      "external_call_executed": false,
+      "manual_review_required": true,
+      "modules": [
+        "launch_sandbox",
+        "safe_execution",
+        "live_onboarding",
+        "deploy_bridge"
+      ],
+      "created_at": "2026-06-01T20:33:43.069608+00:00"
+    },
+    "status_path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\status.json",
+    "index_path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\index.html",
+    "confirmation_path": "C:\\Users\\oi\\Desktop\\motor-digital\\public\\kos\\phase10_confirmation.html"
+  },
+  "vercel": {
+    "status": "VERCEL_LOGIN_REQUIRED",
+    "can_attempt_deploy": false,
+    "cli_path": "C:\\Users\\oi\\AppData\\Roaming\\npm\\vercel.CMD",
+    "whoami": "",
+    "message": "Execute vercel login antes do deploy real."
+  },
+  "real_publish_enabled": false,
+  "external_call_executed": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "VERCEL_LOGIN_REQUIRED",
+  "vercel": {
+    "status": "VERCEL_LOGIN_REQUIRED",
+    "can_attempt_deploy": false,
+    "cli_path": "C:\\Users\\oi\\AppData\\Roaming\\npm\\vercel.CMD",
+    "whoami": "",
+    "message": "Execute vercel login antes do deploy real."
+  },
+  "deploy_url": "",
+  "real_publish_enabled": false,
+  "external_call_executed": false
+}

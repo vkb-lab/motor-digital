@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/kos/index.html" },
+    { "src": "/status", "dest": "/kos/status.json" },
+    { "src": "/confirm", "dest": "/kos/phase10_confirmation.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
