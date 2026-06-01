@@ -1,0 +1,15 @@
+{
+  "status": "PRONTO FASE 18",
+  "phase": 18,
+  "module": "render_public_asset_bridge",
+  "platform": "render",
+  "web_service": "k-atlas-os",
+  "static_asset_service": "k-atlas-assets",
+  "render_yaml_created": true,
+  "public_asset_path": "/kos/assets/parada_atlantida_campanha_lancamento_parada_atlantida.png",
+  "expected_asset_url_pattern": "https://k-atlas-assets.onrender.com/kos/assets/parada_atlantida_campanha_lancamento_parada_atlantida.png",
+  "instagram_publish_executed": false,
+  "external_real_action_executed": false,
+  "next_manual_step": "Criar/atualizar Blueprint no Render usando render.yaml do repositorio.",
+  "created_at": "2026-06-01T23:49:24.893488+00:00"
+}

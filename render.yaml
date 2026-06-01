@@ -4,13 +4,18 @@
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false
+    autoDeploy: true
     envVars:
-      - key: PYTHONIOENCODING
-        value: utf-8
-      - key: K_ATLAS_ENV
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: KOS_RUNTIME
         value: render
-      - key: K_SOCIAL_AUTO_PUBLISH
-        value: "false"
-      - key: K_SOCIAL_EXTERNAL_API_ENABLED
-        value: "false"
+      - key: KOS_EXTERNAL_PUBLISH_ENABLED
+        value: false
+
+  - type: static
+    name: k-atlas-assets
+    buildCommand: echo "K-Atlas static assets ready"
+    staticPublishPath: public
+    autoDeploy: true
