@@ -1,0 +1,56 @@
+{
+  "checkpoint": "085",
+  "name": "K-OS Local Installer / Launcher Core",
+  "layer": "K-OS Core",
+  "objective": "Criar instalador/launcher local seguro do K-OS com manifesto, scripts PowerShell de checagem e inicializacao do cockpit, evidencias sanitizadas e dashboard somente leitura, sem instalar dependencias automaticamente, sem executar installer real, sem deploy, recovery, rollback, drill, reset, force push, limpeza destrutiva ou auto-fix.",
+  "previous_checkpoint": "084 - K-OS Release Candidate Gate Core",
+  "next_checkpoint": "086 - K-OS Final Documentation Pack Core",
+  "launcher_scripts": [
+    "scripts/k_os_local_install_check.ps1",
+    "scripts/k_os_local_launcher.ps1"
+  ],
+  "entrypoint_candidates": [
+    "app.py",
+    "streamlit_app.py",
+    "Home.py"
+  ],
+  "allowed_operations": [
+    "read_local_project_state",
+    "generate_local_launcher_scripts",
+    "generate_sanitized_launcher_manifest",
+    "generate_read_only_dashboard",
+    "update_accountability_register_if_exists",
+    "validate_artifacts",
+    "audit_checkpoint",
+    "create_closure_report"
+  ],
+  "blocked_operations": [
+    "dependency_install_execution",
+    "installer_execution",
+    "deploy_execution",
+    "release_publish_execution",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "launcher_policy": {
+    "generate_launcher_only": true,
+    "execute_installer": false,
+    "install_dependencies": false,
+    "modify_system_path": false,
+    "create_services": false,
+    "create_scheduled_tasks": false,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "operator_runs_launcher_manually": true
+  },
+  "status": "configured"
+}

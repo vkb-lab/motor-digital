@@ -1,0 +1,18 @@
+{
+  "checkpoint": "085",
+  "name": "K-OS Local Installer / Launcher Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:23:02Z",
+  "launcher_status": "ready_with_warnings",
+  "next_checkpoint": "086 - K-OS Final Documentation Pack Core",
+  "action_report": "reports/system/085_local_installer_launcher/085_action_report.json",
+  "validate_report": "reports/system/085_local_installer_launcher/085_validate_report.json",
+  "audit_report": "reports/system/085_local_installer_launcher/085_audit_report.json",
+  "launcher_manifest": "reports/system/085_local_installer_launcher/085_local_installer_launcher_manifest.json",
+  "install_check_script": "scripts/k_os_local_install_check.ps1",
+  "launcher_script": "scripts/k_os_local_launcher.ps1",
+  "installer_executed": false,
+  "dependencies_installed": false,
+  "blocked_operations_confirmed": true
+}

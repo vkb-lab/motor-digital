@@ -1,0 +1,166 @@
+{
+  "checkpoint": "085",
+  "name": "K-OS Local Installer / Launcher Core",
+  "layer": "K-OS Core",
+  "generated_at": "2026-06-01T13:23:02Z",
+  "status": "ready_with_warnings",
+  "objective": "Criar instalador/launcher local seguro do K-OS com manifesto, scripts PowerShell de checagem e inicializacao do cockpit, evidencias sanitizadas e dashboard somente leitura, sem instalar dependencias automaticamente, sem executar installer real, sem deploy, recovery, rollback, drill, reset, force push, limpeza destrutiva ou auto-fix.",
+  "previous_checkpoint": "084 - K-OS Release Candidate Gate Core",
+  "next_checkpoint": "086 - K-OS Final Documentation Pack Core",
+  "launcher_policy": {
+    "generate_launcher_only": true,
+    "execute_installer": false,
+    "install_dependencies": false,
+    "modify_system_path": false,
+    "create_services": false,
+    "create_scheduled_tasks": false,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "operator_runs_launcher_manually": true
+  },
+  "entrypoint": {
+    "candidates": [
+      "app.py",
+      "streamlit_app.py",
+      "Home.py"
+    ],
+    "found_count": 1,
+    "selected": "app.py",
+    "status": "ready",
+    "found": [
+      {
+        "path": "app.py",
+        "exists": true,
+        "type": "file",
+        "size_bytes": 20441,
+        "modified_utc": "2026-05-28T23:57:10Z",
+        "sha256": "8e245790016a880d091b79c2f4f1293600483a00f180a24bad0a0f9bcd511186"
+      }
+    ]
+  },
+  "runtime": {
+    "python_version": "3.13.3",
+    "python_executable": "C:\\Python313\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "streamlit_available": false,
+    "requirements_txt": {
+      "path": "requirements.txt",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 639,
+      "modified_utc": "2026-05-26T16:46:50Z",
+      "sha256": "1ace6f394fcaf9febbbbe13ba7b1447e2ad5dff3eeebb38fad14ea306e957a04"
+    },
+    "requirements_has_streamlit": true,
+    "status": "ready"
+  },
+  "previous_release_candidate_gate": {
+    "gate_report": {
+      "path": "reports/system/084_release_candidate_gate/084_release_candidate_gate.json",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 38173,
+      "modified_utc": "2026-06-01T13:18:00Z",
+      "sha256": "028d1ce8f6e7084609b147f23feec1e6b229f71a46b1912ea9bef9de26a4f187"
+    },
+    "closure_report": {
+      "path": "reports/system/084_release_candidate_gate/084_closure_report.json",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 802,
+      "modified_utc": "2026-06-01T13:18:00Z",
+      "sha256": "02fc88415dd66378e05ed1c9a9c067149e8d168a4d8f6fab6cc2449e8013f1d9"
+    },
+    "validate_report": {
+      "path": "reports/system/084_release_candidate_gate/084_validate_report.json",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 1295,
+      "modified_utc": "2026-06-01T13:18:00Z",
+      "sha256": "376a1433bf9db8d7dac96e26ebd0c6579cfe95e984182f708e841ae462244085"
+    },
+    "audit_report": {
+      "path": "reports/system/084_release_candidate_gate/084_audit_report.json",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 1312,
+      "modified_utc": "2026-06-01T13:18:00Z",
+      "sha256": "08ed65f1832acbd98f870398eba09683562c3e01a6a109add165af201fd01e64"
+    },
+    "gate_status": "rc_ready_with_warnings",
+    "closure_status": "failed",
+    "validate_status": "failed",
+    "audit_status": "failed",
+    "status": "warning"
+  },
+  "launcher_scripts": [
+    {
+      "path": "scripts/k_os_local_install_check.ps1",
+      "exists": true,
+      "line_count": 43,
+      "risk_findings": [],
+      "policy_status": "ready",
+      "sha256": "19e0cbaa53675eca67530cca69677e280957dae636e5c21d12f3f107a09b561b"
+    },
+    {
+      "path": "scripts/k_os_local_launcher.ps1",
+      "exists": true,
+      "line_count": 60,
+      "risk_findings": [],
+      "policy_status": "ready",
+      "sha256": "89abcede1e859b667d67772f365f81da7a284ce8c6c300a57e83968e47fc63cc"
+    }
+  ],
+  "warnings": [
+    "previous_rc_gate_warning"
+  ],
+  "blocked_operations": [
+    "dependency_install_execution",
+    "installer_execution",
+    "deploy_execution",
+    "release_publish_execution",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "execution_guard": {
+    "dependency_install_executed": false,
+    "installer_executed": false,
+    "deploy_executed": false,
+    "release_publish_executed": false,
+    "backup_restore_executed": false,
+    "automatic_remediation_executed": false,
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "git_reset_hard_executed": false,
+    "force_push_executed": false,
+    "destructive_shell_executed": false,
+    "memory_deletion_executed": false,
+    "secret_export_executed": "[REDACTED]",
+    "scheduled_task_created": false,
+    "windows_service_created": false,
+    "system_path_modified": false
+  },
+  "operator_commands": {
+    "check_only": "powershell -ExecutionPolicy Bypass -File scripts\\k_os_local_install_check.ps1",
+    "launch_cockpit": "powershell -ExecutionPolicy Bypass -File scripts\\k_os_local_launcher.ps1"
+  },
+  "operational_decision": {
+    "local_launcher_created": true,
+    "local_install_check_created": true,
+    "installer_executed": false,
+    "dependencies_installed": false,
+    "operator_runs_launcher_manually": true,
+    "can_continue_to_next_checkpoint": true,
+    "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+  }
+}

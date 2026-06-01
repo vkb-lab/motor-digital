@@ -1,0 +1,58 @@
+{
+  "checkpoint": "085",
+  "name": "K-OS Local Installer / Launcher Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:23:02Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_local_installer_launcher_085.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/local_installer_launcher_085.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_085_local_installer_launcher.ps1",
+      "exists": true
+    },
+    {
+      "path": "scripts/k_os_local_install_check.ps1",
+      "exists": true
+    },
+    {
+      "path": "scripts/k_os_local_launcher.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/085_K_OS_Local_Installer_Launcher.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/085_k_os_local_installer_launcher.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/085_local_installer_launcher/085_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/085_local_installer_launcher/085_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/085_local_installer_launcher/085_local_installer_launcher_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/085_local_installer_launcher/085_local_installer_launcher_manifest.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "manifest_ok": true,
+  "script_policy_ok": true,
+  "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+}
