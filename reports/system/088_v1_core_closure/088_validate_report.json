@@ -1,0 +1,61 @@
+{
+  "checkpoint": "088",
+  "name": "K-OS v1 Core Closure",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:37:59Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_v1_core_closure_088.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/v1_core_closure_088.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_088_v1_core_closure.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/088_K_OS_v1_Core_Closure.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/088_k_os_v1_core_closure.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/K_OS_V1_CORE_CLOSURE.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/K_OS_V1_STATUS.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/088_v1_core_closure/088_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/088_v1_core_closure/088_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/088_v1_core_closure/088_v1_core_closure_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/088_v1_core_closure/088_v1_core_closure_manifest.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/088_v1_core_closure/088_k_os_v1_final_status.json",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "closure_decision_ok": true,
+  "manifest_status_ok": true,
+  "next_checkpoint": "K-OS v1 Core closed"
+}

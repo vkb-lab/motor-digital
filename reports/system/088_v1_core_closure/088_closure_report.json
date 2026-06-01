@@ -1,0 +1,22 @@
+{
+  "checkpoint": "088",
+  "name": "K-OS v1 Core Closure",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:38:00Z",
+  "closure_status": "v1_closed_with_warnings",
+  "warnings_count": 9,
+  "next_checkpoint": "K-OS v1 Core closed",
+  "action_report": "reports/system/088_v1_core_closure/088_action_report.json",
+  "validate_report": "reports/system/088_v1_core_closure/088_validate_report.json",
+  "audit_report": "reports/system/088_v1_core_closure/088_audit_report.json",
+  "v1_core_closure_manifest": "reports/system/088_v1_core_closure/088_v1_core_closure_manifest.json",
+  "final_status_json": "reports/system/088_v1_core_closure/088_k_os_v1_final_status.json",
+  "kos_closure_doc": "docs/k_os/K_OS_V1_CORE_CLOSURE.md",
+  "k_os_v1_core_closed": true,
+  "deploy_executed": false,
+  "installer_executed": false,
+  "release_published": false,
+  "git_tag_created": false,
+  "blocked_operations_confirmed": true
+}

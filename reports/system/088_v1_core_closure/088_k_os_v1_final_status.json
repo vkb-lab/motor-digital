@@ -1,0 +1,35 @@
+{
+  "checkpoint": "088",
+  "name": "K-OS v1 Core Final Status",
+  "generated_at": "2026-06-01T13:37:59Z",
+  "status": "v1_closed_with_warnings",
+  "k_os_v1_core_closed": true,
+  "source_checkpoints": [
+    "079",
+    "080",
+    "081",
+    "082",
+    "083",
+    "084",
+    "085",
+    "086",
+    "087"
+  ],
+  "warnings": [
+    "checkpoint_079_closure_warning",
+    "checkpoint_080_closure_warning",
+    "checkpoint_081_closure_warning",
+    "checkpoint_082_closure_warning",
+    "checkpoint_083_closure_warning",
+    "checkpoint_084_closure_warning",
+    "checkpoint_085_closure_warning",
+    "checkpoint_086_closure_warning",
+    "checkpoint_087_closure_warning"
+  ],
+  "launcher_command": "powershell -ExecutionPolicy Bypass -File scripts\\k_os_local_launcher.ps1",
+  "check_command": "powershell -ExecutionPolicy Bypass -File scripts\\k_os_local_install_check.ps1",
+  "deploy_executed": false,
+  "installer_executed": false,
+  "release_published": false,
+  "git_tag_created": false
+}
