@@ -423,3 +423,6 @@ local_secrets/k_os_recovery_controlled_sandbox/
 memory/recovery_sandbox_review/
 reports/recovery_sandbox_review/runtime/
 local_secrets/k_os_recovery_sandbox_review/
+memory/recovery_governance_summary/
+reports/recovery_governance_summary/runtime/
+local_secrets/k_os_recovery_governance_summary/
