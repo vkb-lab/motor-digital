@@ -1,0 +1,631 @@
+{
+  "status": "PENDING_FINAL_APPROVAL",
+  "client_id": "parada_atlantida",
+  "job_id": "job_20260601194117173782",
+  "job": {
+    "job_id": "job_20260601194117173782",
+    "client_id": "parada_atlantida",
+    "command": "Crie uma campanha para Parada Atlantida com landing page, QR Code, post Instagram, criativo visual e fila de publicacao.",
+    "tasks": [
+      {
+        "task_id": "campaign",
+        "title": "Criar campanha",
+        "agent": "CampaignStrategistAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "campaign",
+          "agent": "CampaignStrategistAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "campaign",
+          "channel": "LOCAL_DRY_RUN",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "landing_page",
+        "title": "Criar landing page",
+        "agent": "LandingPageAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "landing_page",
+          "agent": "LandingPageAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "landing_page",
+          "channel": "LOCAL_ARTIFACT",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "qr_code",
+        "title": "Criar QR Code",
+        "agent": "QRLeadAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "qr_code",
+          "agent": "QRLeadAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "qr_code",
+          "channel": "LOCAL_ARTIFACT",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "instagram_post",
+        "title": "Preparar post Instagram",
+        "agent": "ContentCreatorAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "instagram_post",
+          "agent": "ContentCreatorAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "instagram_post",
+          "channel": "API_DRY_RUN",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "creative",
+        "title": "Criar criativo visual",
+        "agent": "MediaEditorAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "creative",
+          "agent": "MediaEditorAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "creative",
+          "channel": "LOCAL_ARTIFACT",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "publication_queue",
+        "title": "Preparar fila de publicacao",
+        "agent": "PublicationQueueAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "publication_queue",
+          "agent": "PublicationQueueAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "publication_queue",
+          "channel": "API_DRY_RUN",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "audit",
+        "title": "Auditar resultado",
+        "agent": "QualityAuditorAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "audit",
+          "agent": "QualityAuditorAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "audit",
+          "channel": "LOCAL_DRY_RUN",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      },
+      {
+        "task_id": "final_review",
+        "title": "Gerar aprovacao final",
+        "agent": "FinalApprovalAgent",
+        "status": "PENDING_APPROVAL",
+        "assignment": {
+          "task_id": "final_review",
+          "agent": "FinalApprovalAgent",
+          "status": "ASSIGNED"
+        },
+        "route": {
+          "task_id": "final_review",
+          "channel": "LOCAL_DRY_RUN",
+          "external_call_executed": false,
+          "status": "ROUTED"
+        }
+      }
+    ],
+    "status": "PENDING_FINAL_APPROVAL",
+    "created_at": "2026-06-01T19:41:17.124816+00:00",
+    "plan": {
+      "status": "PENDING_APPROVAL",
+      "client_id": "parada_atlantida",
+      "command": "Crie uma campanha para Parada Atlantida com landing page, QR Code, post Instagram, criativo visual e fila de publicacao.",
+      "tasks": [
+        {
+          "task_id": "campaign",
+          "title": "Criar campanha",
+          "agent": "CampaignStrategistAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "campaign",
+            "agent": "CampaignStrategistAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "campaign",
+            "channel": "LOCAL_DRY_RUN",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "landing_page",
+          "title": "Criar landing page",
+          "agent": "LandingPageAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "landing_page",
+            "agent": "LandingPageAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "landing_page",
+            "channel": "LOCAL_ARTIFACT",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "qr_code",
+          "title": "Criar QR Code",
+          "agent": "QRLeadAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "qr_code",
+            "agent": "QRLeadAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "qr_code",
+            "channel": "LOCAL_ARTIFACT",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "instagram_post",
+          "title": "Preparar post Instagram",
+          "agent": "ContentCreatorAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "instagram_post",
+            "agent": "ContentCreatorAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "instagram_post",
+            "channel": "API_DRY_RUN",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "creative",
+          "title": "Criar criativo visual",
+          "agent": "MediaEditorAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "creative",
+            "agent": "MediaEditorAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "creative",
+            "channel": "LOCAL_ARTIFACT",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "publication_queue",
+          "title": "Preparar fila de publicacao",
+          "agent": "PublicationQueueAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "publication_queue",
+            "agent": "PublicationQueueAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "publication_queue",
+            "channel": "API_DRY_RUN",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "audit",
+          "title": "Auditar resultado",
+          "agent": "QualityAuditorAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "audit",
+            "agent": "QualityAuditorAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "audit",
+            "channel": "LOCAL_DRY_RUN",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        },
+        {
+          "task_id": "final_review",
+          "title": "Gerar aprovacao final",
+          "agent": "FinalApprovalAgent",
+          "status": "PENDING_APPROVAL",
+          "assignment": {
+            "task_id": "final_review",
+            "agent": "FinalApprovalAgent",
+            "status": "ASSIGNED"
+          },
+          "route": {
+            "task_id": "final_review",
+            "channel": "LOCAL_DRY_RUN",
+            "external_call_executed": false,
+            "status": "ROUTED"
+          }
+        }
+      ],
+      "external_call_executed": false,
+      "manual_approval_required": true
+    },
+    "artifact_validation": {
+      "status": "VALID",
+      "missing": [],
+      "path_exists": true
+    },
+    "state_path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\phase6\\job_20260601194117173782_state.json"
+  },
+  "artifacts": {
+    "status": "PENDING_APPROVAL",
+    "client_id": "parada_atlantida",
+    "job_id": "job_20260601194117173782",
+    "created_at": "2026-06-01T19:41:17.174602+00:00",
+    "external_call_executed": false,
+    "items": {
+      "campaign": {
+        "status": "PENDING_APPROVAL"
+      },
+      "landing_page": {
+        "status": "PENDING_APPROVAL"
+      },
+      "qr_code": {
+        "status": "PENDING_APPROVAL"
+      },
+      "instagram_post": {
+        "status": "PENDING_APPROVAL"
+      },
+      "creative": {
+        "status": "PENDING_APPROVAL"
+      },
+      "publication_queue": {
+        "status": "PENDING_APPROVAL"
+      }
+    },
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\artifacts\\job_20260601194117173782_artifacts.json"
+  },
+  "receipts": [
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "campaign",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.176392+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_campaign.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "landing_page",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.177405+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_landing_page.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "qr_code",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.178447+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_qr_code.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "instagram_post",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.179724+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_instagram_post.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "creative",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.180743+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_creative.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "publication_queue",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.181725+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_publication_queue.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "audit",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.182441+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_audit.json"
+    },
+    {
+      "job_id": "job_20260601194117173782",
+      "client_id": "parada_atlantida",
+      "task_id": "final_review",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.184035+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\execution_receipts\\job_20260601194117173782_final_review.json"
+    }
+  ],
+  "final_review": {
+    "status": "PENDING_APPROVAL",
+    "client_id": "parada_atlantida",
+    "summary": "Execucao preparada para revisao final humana.",
+    "real_actions_blocked": true,
+    "manual_approval_required": true,
+    "created_at": "2026-06-01T19:41:17.188807+00:00",
+    "execution": {
+      "client_id": "parada_atlantida",
+      "status": "PENDING_FINAL_APPROVAL",
+      "job_id": "job_20260601194117173782",
+      "artifacts": {
+        "status": "PENDING_APPROVAL",
+        "client_id": "parada_atlantida",
+        "job_id": "job_20260601194117173782",
+        "created_at": "2026-06-01T19:41:17.174602+00:00",
+        "external_call_executed": false,
+        "items": {
+          "campaign": {
+            "status": "PENDING_APPROVAL"
+          },
+          "landing_page": {
+            "status": "PENDING_APPROVAL"
+          },
+          "qr_code": {
+            "status": "PENDING_APPROVAL"
+          },
+          "instagram_post": {
+            "status": "PENDING_APPROVAL"
+          },
+          "creative": {
+            "status": "PENDING_APPROVAL"
+          },
+          "publication_queue": {
+            "status": "PENDING_APPROVAL"
+          }
+        },
+        "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\artifacts\\job_20260601194117173782_artifacts.json"
+      },
+      "artifact_validation": {
+        "status": "VALID",
+        "missing": [],
+        "path_exists": true
+      }
+    }
+  },
+  "external_call_executed": false,
+  "live_connector_readiness": {
+    "client_id": "parada_atlantida",
+    "status": "READY_DRY_RUN",
+    "platforms": {
+      "instagram": {
+        "platform": "instagram",
+        "status": "MISSING_ENV",
+        "missing": [
+          "INSTAGRAM_ACCOUNT_ID",
+          "META_ACCESS_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "meta_ads": {
+        "platform": "meta_ads",
+        "status": "MISSING_ENV",
+        "missing": [
+          "META_AD_ACCOUNT_ID",
+          "META_ACCESS_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "facebook_page": {
+        "platform": "facebook_page",
+        "status": "MISSING_ENV",
+        "missing": [
+          "FACEBOOK_PAGE_ID",
+          "META_ACCESS_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "google_business": {
+        "platform": "google_business",
+        "status": "MISSING_ENV",
+        "missing": [
+          "GOOGLE_BUSINESS_ACCOUNT_ID",
+          "GOOGLE_BUSINESS_LOCATION_ID"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "whatsapp_business": {
+        "platform": "whatsapp_business",
+        "status": "MISSING_ENV",
+        "missing": [
+          "WHATSAPP_BUSINESS_ACCOUNT_ID",
+          "WHATSAPP_ACCESS_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "gmail": {
+        "platform": "gmail",
+        "status": "MISSING_ENV",
+        "missing": [
+          "GMAIL_CLIENT_ID",
+          "GMAIL_CLIENT_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "google_calendar": {
+        "platform": "google_calendar",
+        "status": "MISSING_ENV",
+        "missing": [
+          "GOOGLE_CALENDAR_ID"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "github": {
+        "platform": "github",
+        "status": "MISSING_ENV",
+        "missing": [
+          "GITHUB_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "vercel": {
+        "platform": "vercel",
+        "status": "MISSING_ENV",
+        "missing": [
+          "VERCEL_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "streamlit_cloud": {
+        "platform": "streamlit_cloud",
+        "status": "READY_DRY_RUN",
+        "missing": [],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      },
+      "stripe": {
+        "platform": "stripe",
+        "status": "MISSING_ENV",
+        "missing": [
+          "STRIPE_KEY",
+          "STRIPE_WEBHOOK_KEY"
+        ],
+        "values_exposed": false,
+        "values_saved": false,
+        "real_actions_enabled": false,
+        "client_id": "parada_atlantida",
+        "manual_approval_required": true
+      }
+    },
+    "real_actions_enabled": false,
+    "manual_approval_required": true
+  },
+  "live_gate": {
+    "client_id": "parada_atlantida",
+    "platform": "instagram",
+    "action": "publish_instagram",
+    "status": "PENDING_APPROVAL",
+    "guard": {
+      "client_id": "parada_atlantida",
+      "action": "publish_instagram",
+      "allowed": false,
+      "status": "PENDING_APPROVAL",
+      "manual_approval_required": true,
+      "external_call_executed": false
+    },
+    "approval_package": {
+      "client_id": "parada_atlantida",
+      "action": "publish_instagram",
+      "payload": {
+        "source": "phase7_preview"
+      },
+      "status": "PENDING_APPROVAL",
+      "real_actions_blocked": true,
+      "manual_approval_required": true,
+      "created_at": "2026-06-01T19:41:17.190070+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\live_onboarding\\parada_atlantida_publish_instagram_approval_package.json"
+    },
+    "receipt": {
+      "client_id": "parada_atlantida",
+      "platform": "instagram",
+      "action": "publish_instagram",
+      "status": "PENDING_APPROVAL",
+      "external_call_executed": false,
+      "created_at": "2026-06-01T19:41:17.190888+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\live_action_receipts\\parada_atlantida_instagram_publish_instagram.json"
+    },
+    "external_call_executed": false
+  }
+}

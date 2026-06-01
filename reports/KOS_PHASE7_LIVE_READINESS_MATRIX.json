@@ -1,0 +1,145 @@
+{
+  "client_id": "parada_atlantida",
+  "status": "READY_DRY_RUN",
+  "platforms": {
+    "instagram": {
+      "platform": "instagram",
+      "status": "MISSING_ENV",
+      "missing": [
+        "INSTAGRAM_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "meta_ads": {
+      "platform": "meta_ads",
+      "status": "MISSING_ENV",
+      "missing": [
+        "META_AD_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "facebook_page": {
+      "platform": "facebook_page",
+      "status": "MISSING_ENV",
+      "missing": [
+        "FACEBOOK_PAGE_ID",
+        "META_ACCESS_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "google_business": {
+      "platform": "google_business",
+      "status": "MISSING_ENV",
+      "missing": [
+        "GOOGLE_BUSINESS_ACCOUNT_ID",
+        "GOOGLE_BUSINESS_LOCATION_ID"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "whatsapp_business": {
+      "platform": "whatsapp_business",
+      "status": "MISSING_ENV",
+      "missing": [
+        "WHATSAPP_BUSINESS_ACCOUNT_ID",
+        "WHATSAPP_ACCESS_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "gmail": {
+      "platform": "gmail",
+      "status": "MISSING_ENV",
+      "missing": [
+        "GMAIL_CLIENT_ID",
+        "GMAIL_CLIENT_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "google_calendar": {
+      "platform": "google_calendar",
+      "status": "MISSING_ENV",
+      "missing": [
+        "GOOGLE_CALENDAR_ID"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "github": {
+      "platform": "github",
+      "status": "MISSING_ENV",
+      "missing": [
+        "GITHUB_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "vercel": {
+      "platform": "vercel",
+      "status": "MISSING_ENV",
+      "missing": [
+        "VERCEL_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "streamlit_cloud": {
+      "platform": "streamlit_cloud",
+      "status": "READY_DRY_RUN",
+      "missing": [],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    },
+    "stripe": {
+      "platform": "stripe",
+      "status": "MISSING_ENV",
+      "missing": [
+        "STRIPE_KEY",
+        "STRIPE_WEBHOOK_KEY"
+      ],
+      "values_exposed": false,
+      "values_saved": false,
+      "real_actions_enabled": false,
+      "client_id": "parada_atlantida",
+      "manual_approval_required": true
+    }
+  },
+  "real_actions_enabled": false,
+  "manual_approval_required": true
+}
