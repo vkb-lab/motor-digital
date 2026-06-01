@@ -149,3 +149,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Resilience Drill Dry Run Core | Simula drills de resiliencia sem executar drill, recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Drill Design + Dry Run + No Execution | reports/resilience_drill_dry_run |
 
 | K-OS Agent Resilience Drill Operator Review Core | Registra revisao humana dos dry runs sem executar drill, recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Drill Dry Run + Operator Review + No Execution | reports/resilience_drill_operator_review |
+
+| K-OS Agent Resilience Drill Evidence Pack Core | Consolida evidencias de drills sem executar drill, recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Operator Review + Dry Run + Evidence Pack + No Execution | reports/resilience_drill_evidence_pack |

@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "checkpoint": "076",
+  "module": "k_os_agent_resilience_drill_evidence_pack_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T12:33:43+00:00",
+  "pack_id": "rdep_fb05dd6f9160",
+  "pack_status": "evidence_pack_ready_with_followup",
+  "evidence_pack_hash": "a2c3248a616ff9e274d59c2d7b76ff13a0f1fe7bd03a71677850176433659355",
+  "evidence_chain_hash": "064829cc53c488d0491300284e96e3359eec48b67c27134f705fdeca8bf00b5f",
+  "evidence_complete": true,
+  "evidence_pack_executes_drill": false,
+  "evidence_pack_executes_recovery": false,
+  "evidence_pack_executes_rollback": false,
+  "evidence_pack_deletes_data": false,
+  "evidence_pack_modifies_target_files": false,
+  "evidence_pack_runs_git_reset": false,
+  "evidence_pack_runs_git_force_push": false,
+  "evidence_pack_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": [
+    "evidence_pack_carries_followup_to_077",
+    "evidence_pack_contains_followups",
+    "evidence_pack_contains_warnings"
+  ]
+}
