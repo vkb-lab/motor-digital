@@ -1,0 +1,357 @@
+{
+  "status": "PENDING_FINAL_APPROVAL",
+  "client_id": "parada_atlantida",
+  "campaign_name": "campanha_lancamento_parada_atlantida",
+  "plan": {
+    "status": "PENDING_APPROVAL",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "objective": "lancamento",
+    "channels": [
+      "instagram",
+      "facebook_page",
+      "meta_ads",
+      "google_business",
+      "whatsapp_business",
+      "landing_page",
+      "qr_code"
+    ],
+    "real_actions_enabled": false,
+    "manual_approval_required": true,
+    "steps": [
+      "preparar campanha",
+      "montar previews por canal",
+      "gerar pacote de aprovacao",
+      "aguardar confirmacao humana"
+    ]
+  },
+  "previews": {
+    "instagram": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview instagram",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    },
+    "facebook_page": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview facebook_page",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    },
+    "meta_ads": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview meta_ads",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    },
+    "google_business": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview google_business",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    },
+    "whatsapp_business": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview whatsapp_business",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    },
+    "landing_page": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview landing_page",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    },
+    "qr_code": {
+      "status": "PENDING_APPROVAL",
+      "mode": "SANDBOX_PREVIEW",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "headline": "campanha_lancamento_parada_atlantida - preview qr_code",
+      "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+      "cta": "Aguardando aprovacao final",
+      "real_action_executed": false,
+      "manual_approval_required": true
+    }
+  },
+  "asset_pack": {
+    "status": "PENDING_APPROVAL",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "objective": "lancamento",
+    "previews": {
+      "instagram": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview instagram",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      "facebook_page": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview facebook_page",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      "meta_ads": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview meta_ads",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      "google_business": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview google_business",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      "whatsapp_business": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview whatsapp_business",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      "landing_page": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview landing_page",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      "qr_code": {
+        "status": "PENDING_APPROVAL",
+        "mode": "SANDBOX_PREVIEW",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "headline": "campanha_lancamento_parada_atlantida - preview qr_code",
+        "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+        "cta": "Aguardando aprovacao final",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      }
+    },
+    "real_actions_enabled": false,
+    "manual_approval_required": true,
+    "created_at": "2026-06-01T20:01:20.763767+00:00",
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\launch_sandbox\\parada_atlantida_campanha_lancamento_parada_atlantida_asset_pack.json"
+  },
+  "confirmation": {
+    "status": "PENDING_FINAL_APPROVAL",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "summary": "Pacote de lancamento preparado para revisao humana.",
+    "asset_pack": {
+      "status": "PENDING_APPROVAL",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "objective": "lancamento",
+      "previews": {
+        "instagram": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview instagram",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        },
+        "facebook_page": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview facebook_page",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        },
+        "meta_ads": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview meta_ads",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        },
+        "google_business": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview google_business",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        },
+        "whatsapp_business": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview whatsapp_business",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        },
+        "landing_page": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview landing_page",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        },
+        "qr_code": {
+          "status": "PENDING_APPROVAL",
+          "mode": "SANDBOX_PREVIEW",
+          "client_id": "parada_atlantida",
+          "campaign_name": "campanha_lancamento_parada_atlantida",
+          "headline": "campanha_lancamento_parada_atlantida - preview qr_code",
+          "caption": "Preview controlado para parada_atlantida. Nenhuma acao real executada.",
+          "cta": "Aguardando aprovacao final",
+          "real_action_executed": false,
+          "manual_approval_required": true
+        }
+      },
+      "real_actions_enabled": false,
+      "manual_approval_required": true,
+      "created_at": "2026-06-01T20:01:20.763767+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\launch_sandbox\\parada_atlantida_campanha_lancamento_parada_atlantida_asset_pack.json"
+    },
+    "real_actions_enabled": false,
+    "real_action_executed": false,
+    "manual_approval_required": true,
+    "next_human_decision": "OK para seguir para execucao controlada ou ajustar campanha.",
+    "created_at": "2026-06-01T20:01:20.766017+00:00",
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\KOS_PHASE8_CONFIRMATION_DEMO.json"
+  },
+  "board": {
+    "status": "LAUNCH_BOARD_READY",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "cards": [
+      {
+        "id": "instagram",
+        "title": "Preview instagram",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      {
+        "id": "facebook_page",
+        "title": "Preview facebook_page",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      {
+        "id": "meta_ads",
+        "title": "Preview meta_ads",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      {
+        "id": "google_business",
+        "title": "Preview google_business",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      {
+        "id": "whatsapp_business",
+        "title": "Preview whatsapp_business",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      {
+        "id": "landing_page",
+        "title": "Preview landing_page",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      },
+      {
+        "id": "qr_code",
+        "title": "Preview qr_code",
+        "status": "PENDING_APPROVAL",
+        "real_action_executed": false,
+        "manual_approval_required": true
+      }
+    ],
+    "real_actions_enabled": false
+  },
+  "real_actions_enabled": false,
+  "real_action_executed": false,
+  "manual_approval_required": true
+}

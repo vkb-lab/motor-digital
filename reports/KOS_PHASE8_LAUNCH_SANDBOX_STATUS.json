@@ -1,0 +1,9 @@
+{
+  "status": "PRONTO FASE 8",
+  "phase": 8,
+  "module": "launch_sandbox",
+  "real_actions_enabled": false,
+  "real_action_executed": false,
+  "manual_approval_required": true,
+  "updated_at": "2026-06-01T20:01:20.048388+00:00"
+}
