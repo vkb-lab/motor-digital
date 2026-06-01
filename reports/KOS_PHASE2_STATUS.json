@@ -1,14 +1,10 @@
 {
   "status": "PRONTO FASE 2",
   "phase": 2,
-  "fase": "FASE 2",
-  "updated_at": "2026-06-01T16:42:54.444128",
   "healthcheck": "OK",
-  "agents": "OPERACIONAIS",
+  "tests": "OK",
+  "permissions": "OK",
   "approval_flow": "LOCAL_MANUAL",
   "external_actions": "BLOCKED_BY_DEFAULT",
-  "pending_real_integrations": [
-    "Instagram live connector",
-    "Meta API real tokens"
-  ]
+  "updated_at": "2026-06-01T16:48:58.737117"
 }

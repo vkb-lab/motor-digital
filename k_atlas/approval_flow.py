@@ -1,13 +1,6 @@
 from dataclasses import dataclass, asdict
-from enum import Enum
 from typing import Any, Dict
 from datetime import datetime
-
-
-class ApprovalStatus(str, Enum):
-    PENDING_APPROVAL = "PENDING_APPROVAL"
-    APPROVED = "APPROVED"
-    REJECTED = "REJECTED"
 
 
 @dataclass
@@ -15,21 +8,23 @@ class ApprovalRequest:
     id: str
     action: str
     payload: Dict[str, Any]
-    status: str = ApprovalStatus.PENDING_APPROVAL.value
+    status: str = "PENDING_APPROVAL"
     created_at: str = datetime.utcnow().isoformat()
 
-    def to_dict(self):
+    def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
 
 
-def create_approval(action: str, payload: Dict[str, Any], requested_by: str = "system") -> Dict[str, Any]:
+def create_approval(action: str, payload: Dict[str, Any] | None = None, requested_by: str = "system") -> Dict[str, Any]:
+    payload = payload or {}
+    payload["requested_by"] = requested_by
     return ApprovalRequest(
-        id=f"approval_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}",
+        id=f"approval_{datetime.utcnow().strftime('%Y%m%d%H%M%S%f')}",
         action=action,
-        payload={**payload, "requested_by": requested_by},
+        payload=payload,
     ).to_dict()
 
 
 class ApprovalFlow:
-    def create(self, action: str, payload: Dict[str, Any], requested_by: str = "system") -> Dict[str, Any]:
+    def create(self, action: str, payload: Dict[str, Any] | None = None, requested_by: str = "system") -> Dict[str, Any]:
         return create_approval(action, payload, requested_by)
