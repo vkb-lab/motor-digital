@@ -1,0 +1,146 @@
+{
+  "status": "WAITING_LIVE_ENV",
+  "template_path": "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\ig_runtime.env",
+  "env_plan": {
+    "status": "ENV_PLAN_READY",
+    "required_names": [
+      "IG_BUSINESS_ACCOUNT_ID",
+      "META_ACCESS_KEY"
+    ],
+    "final_flags": {
+      "KOS_REAL_IG_PUBLISH_ENABLED": "true",
+      "KOS_HUMAN_OK_FOR_IG_REAL": "OK",
+      "KOS_PHASE12_REAL_RUN": "YES_I_CONFIRM",
+      "KOS_PHASE13_REAL_RUN": "YES_I_CONFIRM"
+    },
+    "local_runtime_file": "local_runtime/ig_runtime.env",
+    "do_not_commit_local_runtime": true
+  },
+  "final_check": {
+    "status": "LIVE_CHECK_LOCKED",
+    "runtime": {
+      "status": "LOCAL_RUNTIME_FILE_LOADED",
+      "loaded": [
+        "KOS_REAL_IG_PUBLISH_ENABLED"
+      ],
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\ig_runtime.env"
+    },
+    "missing": [
+      "IG_BUSINESS_ACCOUNT_ID",
+      "META_ACCESS_KEY"
+    ],
+    "flags": {
+      "KOS_REAL_IG_PUBLISH_ENABLED": false,
+      "KOS_HUMAN_OK_FOR_IG_REAL": false,
+      "KOS_PHASE12_REAL_RUN": false,
+      "KOS_PHASE13_REAL_RUN": false
+    },
+    "instagram_readiness": {
+      "status": "IG_REAL_LOCKED",
+      "can_prepare": false,
+      "can_run_real": false,
+      "missing_env": [
+        "IG_BUSINESS_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "real_flag_enabled": false,
+      "human_ok": false,
+      "external_call_allowed": false,
+      "real_action_executed": false
+    },
+    "phase12": {
+      "status": "PHASE12_LOCKED",
+      "armed": false,
+      "required_env": "KOS_PHASE12_REAL_RUN",
+      "required_value": "YES_I_CONFIRM",
+      "real_action_allowed_by_phase12": false
+    },
+    "ready_for_real_first_post": false,
+    "real_action_executed": false,
+    "external_call_executed": false
+  },
+  "first_post_package": {
+    "status": "READY_FOR_FINAL_ARMING",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "spec": {
+      "status": "FIRST_POST_SPEC_READY",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "image_url": "https://placehold.co/1080x1080/png",
+      "caption": "Primeiro teste controlado preparado pelo K-OS.",
+      "format": "IMAGE",
+      "manual_review_required": true,
+      "created_at": "2026-06-01T20:54:23.961853+00:00"
+    },
+    "asset": {
+      "status": "ASSET_URL_READY",
+      "image_url": "https://placehold.co/1080x1080/png",
+      "is_https": true,
+      "network_call_executed": false
+    },
+    "readiness": {
+      "status": "IG_REAL_LOCKED",
+      "can_prepare": false,
+      "can_run_real": false,
+      "missing_env": [
+        "IG_BUSINESS_ACCOUNT_ID",
+        "META_ACCESS_KEY"
+      ],
+      "real_flag_enabled": false,
+      "human_ok": false,
+      "external_call_allowed": false,
+      "real_action_executed": false
+    },
+    "arming": {
+      "status": "PHASE12_LOCKED",
+      "armed": false,
+      "required_env": "KOS_PHASE12_REAL_RUN",
+      "required_value": "YES_I_CONFIRM",
+      "real_action_allowed_by_phase12": false
+    },
+    "ig_package": {
+      "status": "WAITING_ENV_SETUP",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "readiness": {
+        "status": "IG_REAL_LOCKED",
+        "can_prepare": false,
+        "can_run_real": false,
+        "missing_env": [
+          "IG_BUSINESS_ACCOUNT_ID",
+          "META_ACCESS_KEY"
+        ],
+        "real_flag_enabled": false,
+        "human_ok": false,
+        "external_call_allowed": false,
+        "real_action_executed": false
+      },
+      "media_request": {
+        "status": "MEDIA_REQUEST_READY",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "image_url": "https://placehold.co/1080x1080/png",
+        "caption": "Primeiro teste controlado preparado pelo K-OS.",
+        "media_type": "IMAGE",
+        "created_at": "2026-06-01T20:54:23.961887+00:00"
+      },
+      "real_action_executed": false,
+      "external_call_executed": false,
+      "manual_review_required": true,
+      "next_step": "Somente executar publicacao real quando KOS_REAL_IG_PUBLISH_ENABLED=true e KOS_HUMAN_OK_FOR_IG_REAL=OK.",
+      "created_at": "2026-06-01T20:54:23.961891+00:00",
+      "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\ig_real_gate\\ig_publish_package.json"
+    },
+    "real_action_executed": false,
+    "external_call_executed": false,
+    "manual_final_ok_required": true,
+    "next_step": "Para executar real, configurar ambiente e armar KOS_PHASE12_REAL_RUN=YES_I_CONFIRM.",
+    "created_at": "2026-06-01T20:54:23.962664+00:00",
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\KOS_PHASE12_IG_FIRST_POST_PACKAGE.json"
+  },
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "next_step": "Preencher local_runtime/ig_runtime.env e confirmar execucao real na Fase 14.",
+  "created_at": "2026-06-01T20:54:23.963672+00:00"
+}
