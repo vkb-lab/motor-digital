@@ -1,0 +1,42 @@
+{
+  "instagram": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "meta_ads": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "google_business": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "whatsapp": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "gmail": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "google_calendar": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "github": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "streamlit_cloud": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "vercel": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  },
+  "stripe": {
+    "status": "MISSING_CREDENTIALS",
+    "real_actions_enabled": false
+  }
+}
