@@ -1,0 +1,125 @@
+{
+  "ok": true,
+  "checkpoint": "059",
+  "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+  "status": "audit_generated",
+  "generated_at": "2026-06-01T09:57:42+00:00",
+  "review_state_path": "local_secrets/k_os_rollback_sandbox_review/agent_rollback_sandbox_review_state.json",
+  "review_state_committed": false,
+  "sanitized_reports_only": true,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "automatic_message_enabled": false,
+  "review_executes_rollback": false,
+  "review_deletes_data": false,
+  "review_modifies_target_files": false,
+  "review_runs_git_reset": false,
+  "review_runs_git_force_push": false,
+  "review_executes_shell_commands": false,
+  "sandbox_record_available": true,
+  "manual_stub_available": true,
+  "final_gate_available": true,
+  "dry_run_available": true,
+  "release_record_available": true,
+  "rollback_plan_available": true,
+  "metrics": {
+    "review_count": 1,
+    "validation_count": 1,
+    "review_recorded_count": 1,
+    "changes_requested_count": 0,
+    "archived_count": 0,
+    "rollback_execution_count": 0,
+    "data_delete_count": 0,
+    "target_file_modify_count": 0,
+    "git_reset_count": 0,
+    "git_force_push_count": 0,
+    "shell_execution_count": 0,
+    "raw_payload_count": 0,
+    "status_counts": {
+      "review_recorded": 1
+    },
+    "decision_counts": {
+      "acknowledge_blocked": 1
+    }
+  },
+  "recent_reviews": [
+    {
+      "review_id": "rsr_d73f9b355302",
+      "created_at": "2026-06-01T09:57:41+00:00",
+      "status": "review_recorded",
+      "decision": "acknowledge_blocked",
+      "sandbox_id": "rxb_4111d5c730f1",
+      "sandbox_status": "sandbox_blocked_by_governance",
+      "review_record_hash": "38f076f3422082a1b049055f41493b9b6f2f63640c9816448442642e7579c502",
+      "executive_summary_hash": "3f31521c352074066574e715301415c3259ef6320e723d1fdee45b908a9e988f",
+      "governance_blocks_execution": true,
+      "review_executes_rollback": false,
+      "review_deletes_data": false,
+      "review_modifies_target_files": false,
+      "review_runs_git_reset": false,
+      "review_runs_git_force_push": false,
+      "review_executes_shell_commands": false,
+      "release_token_included": false,
+      "raw_payload_included": false,
+      "consolidated_blockers": [
+        "governance_blocks_execution"
+      ]
+    }
+  ],
+  "recent_validations": [
+    {
+      "ok": true,
+      "checkpoint": "059",
+      "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+      "status": "validated",
+      "generated_at": "2026-06-01T09:57:41+00:00",
+      "review_id": "rsr_d73f9b355302",
+      "review_status": "review_recorded",
+      "decision": "acknowledge_blocked",
+      "sandbox_id": "rxb_4111d5c730f1",
+      "review_record_hash": "38f076f3422082a1b049055f41493b9b6f2f63640c9816448442642e7579c502",
+      "review_executes_rollback": false,
+      "review_deletes_data": false,
+      "review_modifies_target_files": false,
+      "review_runs_git_reset": false,
+      "review_runs_git_force_push": false,
+      "review_executes_shell_commands": false,
+      "release_token_included": false,
+      "raw_payload_included": false,
+      "blockers": [],
+      "warnings": [
+        "operator_review_confirms_rollback_execution_blocked"
+      ]
+    }
+  ],
+  "blocked_actions": [
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_review_state",
+    "export_secret",
+    "export_raw_memory"
+  ],
+  "required_gates_before_operator_review": [
+    "sandbox_record_exists",
+    "sandbox_record_hash_exists",
+    "manual_stub_exists",
+    "final_gate_exists",
+    "dry_run_exists",
+    "release_record_exists",
+    "rollback_plan_exists",
+    "blockers_consolidated",
+    "operator_review_recorded",
+    "review_record_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "060 - K-Agent Rollback Governance Summary Core"
+}

@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "checkpoint": "059",
+  "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T09:57:41+00:00",
+  "review_id": "rsr_d73f9b355302",
+  "review_status": "review_recorded",
+  "decision": "acknowledge_blocked",
+  "sandbox_id": "rxb_4111d5c730f1",
+  "review_record_hash": "38f076f3422082a1b049055f41493b9b6f2f63640c9816448442642e7579c502",
+  "review_executes_rollback": false,
+  "review_deletes_data": false,
+  "review_modifies_target_files": false,
+  "review_runs_git_reset": false,
+  "review_runs_git_force_push": false,
+  "review_executes_shell_commands": false,
+  "release_token_included": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "operator_review_confirms_rollback_execution_blocked"
+  ]
+}

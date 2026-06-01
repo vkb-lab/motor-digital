@@ -117,3 +117,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Rollback Manual Execution Stub Core | Registra intenção manual de execução futura sem executar rollback real | Operador K-OS | Sim, local sanitizado | Não | Não | Final Gate + Manual Intent + No Rollback Execution | reports/rollback_manual_stub |
 
 | K-OS Agent Rollback Controlled Execution Sandbox Core | Cria sandbox controlada de rollback sem executar comandos destrutivos ou alterar arquivos alvo | Operador K-OS | Sim, local sanitizado | Não | Não | Manual Stub + Final Gate + No Shell Execution + No Rollback Execution | reports/rollback_sandbox |
+
+| K-OS Agent Rollback Sandbox Report and Operator Review Core | Gera relatório executivo da sandbox, consolida blockers e registra revisão humana sem executar rollback | Operador K-OS | Sim, local sanitizado | Não | Não | Sandbox Evidence + Operator Review + No Rollback Execution | reports/rollback_sandbox_review |

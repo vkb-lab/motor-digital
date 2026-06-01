@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checkpoint": "059",
+  "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+  "status": "executive_summary_generated",
+  "generated_at": "2026-06-01T09:57:41+00:00",
+  "review_id": "rsr_d73f9b355302",
+  "review_record_hash": "38f076f3422082a1b049055f41493b9b6f2f63640c9816448442642e7579c502",
+  "sandbox_id": "rxb_4111d5c730f1",
+  "sandbox_status": "sandbox_blocked_by_governance",
+  "governance_blocks_execution": true,
+  "rollback_execution_count": 0,
+  "data_delete_count": 0,
+  "target_file_modify_count": 0,
+  "git_reset_count": 0,
+  "git_force_push_count": 0,
+  "shell_execution_count": 0,
+  "blockers": [
+    "governance_blocks_execution"
+  ],
+  "operator_decision": "acknowledge_blocked"
+}
