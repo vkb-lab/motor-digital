@@ -1,0 +1,215 @@
+{
+  "status": "SAFE_EXECUTION_COMPLETED",
+  "client_id": "parada_atlantida",
+  "campaign_name": "campanha_lancamento_parada_atlantida",
+  "decision": {
+    "status": "HUMAN_OK",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "decision": "OK",
+    "safe_execution_allowed": true,
+    "real_actions_enabled": false,
+    "created_at": "2026-06-01T20:21:00.243840+00:00"
+  },
+  "queue": {
+    "status": "QUEUE_READY",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "items": [
+      {
+        "id": "safe_task_01_instagram",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "instagram",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      },
+      {
+        "id": "safe_task_02_facebook_page",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "facebook_page",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      },
+      {
+        "id": "safe_task_03_meta_ads",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "meta_ads",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      },
+      {
+        "id": "safe_task_04_google_business",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "google_business",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      },
+      {
+        "id": "safe_task_05_whatsapp_business",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "whatsapp_business",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      },
+      {
+        "id": "safe_task_06_landing_page",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "landing_page",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      },
+      {
+        "id": "safe_task_07_qr_code",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "qr_code",
+        "status": "READY_FOR_SAFE_EXECUTION",
+        "mode": "SANDBOX_EXECUTION",
+        "real_action_executed": false,
+        "manual_review_required": true
+      }
+    ],
+    "real_actions_enabled": false
+  },
+  "receipts": {
+    "status": "SAFE_RECEIPTS_READY",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "receipts": [
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_01_instagram",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "instagram",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for instagram",
+        "created_at": "2026-06-01T20:21:00.243867+00:00"
+      },
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_02_facebook_page",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "facebook_page",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for facebook_page",
+        "created_at": "2026-06-01T20:21:00.243872+00:00"
+      },
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_03_meta_ads",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "meta_ads",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for meta_ads",
+        "created_at": "2026-06-01T20:21:00.243875+00:00"
+      },
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_04_google_business",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "google_business",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for google_business",
+        "created_at": "2026-06-01T20:21:00.243878+00:00"
+      },
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_05_whatsapp_business",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "whatsapp_business",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for whatsapp_business",
+        "created_at": "2026-06-01T20:21:00.243880+00:00"
+      },
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_06_landing_page",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "landing_page",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for landing_page",
+        "created_at": "2026-06-01T20:21:00.243882+00:00"
+      },
+      {
+        "status": "SAFE_EXECUTED",
+        "task_id": "safe_task_07_qr_code",
+        "client_id": "parada_atlantida",
+        "campaign_name": "campanha_lancamento_parada_atlantida",
+        "channel": "qr_code",
+        "mode": "SANDBOX_EXECUTION",
+        "external_call_executed": false,
+        "real_action_executed": false,
+        "manual_review_required": true,
+        "result": "Sandbox execution prepared for qr_code",
+        "created_at": "2026-06-01T20:21:00.243884+00:00"
+      }
+    ],
+    "real_action_executed": false,
+    "path": "C:\\Users\\oi\\Desktop\\motor-digital\\reports\\safe_execution\\parada_atlantida_campanha_lancamento_parada_atlantida_receipts.json"
+  },
+  "review": {
+    "status": "SAFE_EXECUTION_REVIEW_READY",
+    "client_id": "parada_atlantida",
+    "campaign_name": "campanha_lancamento_parada_atlantida",
+    "decision": {
+      "status": "HUMAN_OK",
+      "client_id": "parada_atlantida",
+      "campaign_name": "campanha_lancamento_parada_atlantida",
+      "decision": "OK",
+      "safe_execution_allowed": true,
+      "real_actions_enabled": false,
+      "created_at": "2026-06-01T20:21:00.243840+00:00"
+    },
+    "queue_status": "QUEUE_READY",
+    "receipts_status": "SAFE_RECEIPTS_READY",
+    "total_tasks": 7,
+    "real_action_executed": false,
+    "external_call_executed": false,
+    "next_step": "Fase 10 pode conectar credenciais reais e executar publicacao controlada por canal.",
+    "created_at": "2026-06-01T20:21:00.245383+00:00"
+  },
+  "real_action_executed": false,
+  "external_call_executed": false
+}
