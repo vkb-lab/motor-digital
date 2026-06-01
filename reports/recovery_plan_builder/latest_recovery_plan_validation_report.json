@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "checkpoint": "062",
+  "module": "k_os_agent_recovery_plan_builder_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T10:12:44+00:00",
+  "recovery_plan_id": "rpb_be687cf9460f",
+  "plan_status": "plan_blocked_review_required",
+  "readiness_level": "review_required",
+  "risk_level": "medium",
+  "recovery_plan_hash": "57c5ff16f97ab3450279ded3966e63997e646f95581a592c719412eb60355d71",
+  "plan_executes_recovery": false,
+  "plan_executes_rollback": false,
+  "plan_deletes_data": false,
+  "plan_modifies_target_files": false,
+  "plan_runs_git_reset": false,
+  "plan_runs_git_force_push": false,
+  "plan_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "blockers": [],
+  "warnings": [
+    "recovery_plan_created_but_requires_review",
+    "readiness_not_controlled_ready"
+  ]
+}

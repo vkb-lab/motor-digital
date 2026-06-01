@@ -405,3 +405,6 @@ local_secrets/k_os_rollback_governance_summary/
 memory/recovery_readiness_matrix/
 reports/recovery_readiness_matrix/runtime/
 local_secrets/k_os_recovery_readiness_matrix/
+memory/recovery_plan_builder/
+reports/recovery_plan_builder/runtime/
+local_secrets/k_os_recovery_plan_builder/

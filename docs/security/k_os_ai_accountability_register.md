@@ -123,3 +123,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Rollback Governance Summary Core | Consolida governança de rollback dos checkpoints 053-059 sem executar rollback real | Operador K-OS | Sim, local sanitizado | Não | Não | Evidence Chain + Governance Summary + No Rollback Execution | reports/rollback_governance_summary |
 
 | K-OS Agent Recovery Readiness Matrix Core | Avalia prontidão de recovery controlado sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Governance Summary + Readiness Score + No Recovery Execution | reports/recovery_readiness_matrix |
+
+| K-OS Agent Recovery Plan Builder Core | Cria plano de recovery governado sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Não | Não | Readiness Matrix + Governance Summary + No Recovery Execution | reports/recovery_plan_builder |

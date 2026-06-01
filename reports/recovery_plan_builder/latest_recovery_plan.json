@@ -1,0 +1,174 @@
+{
+  "ok": true,
+  "checkpoint": "062",
+  "module": "k_os_agent_recovery_plan_builder_core",
+  "status": "plan_blocked_review_required",
+  "recovery_plan_id": "rpb_be687cf9460f",
+  "created_at": "2026-06-01T10:12:44+00:00",
+  "operator": "operator_k_os",
+  "reason": "closure_recovery_plan_builder",
+  "scope": "controlled_recovery_scope",
+  "readiness_matrix_id": "rrm_46e71134fb25",
+  "readiness_matrix_hash": "876056a06a01258d7c46fb619ce5f839795a39d4b5bd00126423d2c70105330a",
+  "readiness_score": 100,
+  "readiness_level": "review_required",
+  "risk_level": "medium",
+  "governance_summary_id": "rgs_8ded4eeda1f9",
+  "operator_review_id": "rsr_d73f9b355302",
+  "recovery_plan_hash": "57c5ff16f97ab3450279ded3966e63997e646f95581a592c719412eb60355d71",
+  "plan_steps": [
+    {
+      "step": 1,
+      "name": "preservar_evidencias",
+      "description": "Confirmar que evidencias, reports e hashes permanecem intactos.",
+      "executes_recovery": false,
+      "destructive": false
+    },
+    {
+      "step": 2,
+      "name": "confirmar_escopo",
+      "description": "Revisar manualmente o escopo do recovery antes de qualquer execucao futura.",
+      "executes_recovery": false,
+      "destructive": false
+    },
+    {
+      "step": 3,
+      "name": "validar_readiness",
+      "description": "Validar readiness score, risco e blockers.",
+      "executes_recovery": false,
+      "destructive": false
+    },
+    {
+      "step": 4,
+      "name": "gate_aprovacao",
+      "description": "Enviar plano para approval gate do checkpoint 063.",
+      "executes_recovery": false,
+      "destructive": false
+    },
+    {
+      "step": 5,
+      "name": "execucao_futura_manual",
+      "description": "Execucao real futura permanece bloqueada ate autorizacao explicita.",
+      "executes_recovery": false,
+      "destructive": false
+    }
+  ],
+  "manual_review_checklist": [
+    "Confirmar escopo do recovery.",
+    "Confirmar readiness matrix.",
+    "Confirmar governance summary.",
+    "Confirmar blockers.",
+    "Confirmar que nenhuma acao destrutiva sera executada neste checkpoint.",
+    "Enviar para approval gate 063."
+  ],
+  "preconditions": [
+    "readiness_matrix_validada",
+    "governance_summary_disponivel",
+    "operator_review_disponivel",
+    "approval_gate_063_obrigatorio",
+    "execucao_real_bloqueada"
+  ],
+  "post_recovery_validation_plan": [
+    "validar status do repositorio",
+    "validar reports de auditoria",
+    "validar integridade de evidencias",
+    "registrar fechamento humano"
+  ],
+  "plan_executes_recovery": false,
+  "plan_executes_rollback": false,
+  "plan_deletes_data": false,
+  "plan_modifies_target_files": false,
+  "plan_runs_git_reset": false,
+  "plan_runs_git_force_push": false,
+  "plan_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "blocked_actions": [
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_ledger_record",
+    "delete_forensics_bundle",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "commit_raw_plan_state",
+    "export_raw_memory"
+  ],
+  "blockers": [
+    "readiness_not_controlled_ready",
+    "{'checkpoint': '053', 'blocker': 'blocked_status_present'}",
+    "{'checkpoint': '054', 'blocker': 'blocked_status_present'}",
+    "{'checkpoint': '056', 'blocker': 'blocked_status_present'}"
+  ],
+  "source_refs": {
+    "readiness_matrix": {
+      "available": true,
+      "path": "reports/recovery_readiness_matrix/latest_recovery_readiness_matrix.json",
+      "checkpoint": "061",
+      "module": "k_os_agent_recovery_readiness_matrix_core",
+      "status": "matrix_generated",
+      "ok": true,
+      "created_at": "2026-06-01T10:07:46+00:00",
+      "hash": "206448174b03a410aaf1173fe76c8636ae4bdbbd9a72f7162ecb6c4ac38483f6"
+    },
+    "readiness_validation": {
+      "available": true,
+      "path": "reports/recovery_readiness_matrix/latest_recovery_readiness_matrix_validation_report.json",
+      "checkpoint": "061",
+      "module": "k_os_agent_recovery_readiness_matrix_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-06-01T10:07:46+00:00",
+      "hash": "fcb81677475ba8758088968d8d2deb17c0669d48724668d2e9082ddfe954aab9"
+    },
+    "readiness_report": {
+      "available": true,
+      "path": "reports/recovery_readiness_matrix/latest_agent_recovery_readiness_matrix_report.json",
+      "checkpoint": "061",
+      "module": "k_os_agent_recovery_readiness_matrix_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-06-01T10:07:47+00:00",
+      "hash": "3a5526a73b080612e9b13a800c7d7291b36323d8c7aee179e8248946698ee862"
+    },
+    "governance_summary": {
+      "available": true,
+      "path": "reports/rollback_governance_summary/latest_rollback_governance_summary.json",
+      "checkpoint": "060",
+      "module": "k_os_agent_rollback_governance_summary_core",
+      "status": "closed_safe",
+      "ok": true,
+      "created_at": "2026-06-01T10:03:21+00:00",
+      "hash": "5443a940ad72452d745388bb05c28330a5450917bbd7f11750e193c6a11dcf92"
+    },
+    "sandbox_operator_review": {
+      "available": true,
+      "path": "reports/rollback_sandbox_review/latest_rollback_sandbox_operator_review.json",
+      "checkpoint": "059",
+      "module": "k_os_agent_rollback_sandbox_report_operator_review_core",
+      "status": "review_recorded",
+      "ok": true,
+      "created_at": "2026-06-01T09:57:41+00:00",
+      "hash": "d122c1d9cff1b9305014748bc29651fd7389112117f83503747f61402be8568e"
+    }
+  },
+  "required_gates_before_recovery_plan": [
+    "recovery_readiness_matrix_exists",
+    "readiness_matrix_hash_exists",
+    "rollback_governance_summary_exists",
+    "operator_review_exists",
+    "evidence_chain_available",
+    "risk_level_available",
+    "recovery_scope_defined",
+    "future_execution_marked_manual_only",
+    "plan_hash_created",
+    "audit_event_recorded"
+  ],
+  "next_checkpoint": "063 - K-Agent Recovery Approval Gate Core"
+}
