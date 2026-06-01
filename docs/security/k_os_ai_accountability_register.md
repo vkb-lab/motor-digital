@@ -145,3 +145,5 @@ Toda IA ou agente precisa ter:
 | K-OS Agent Resilience Scenario Planner Core | Planeja cenarios de resiliencia sem executar recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Resilience Readiness + Scenario Planning + No Recovery Execution | reports/resilience_scenario_planner |
 
 | K-OS Agent Resilience Drill Designer Core | Desenha drills de resiliencia sem executar drill, recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Scenario Plan + Drill Design + No Execution | reports/resilience_drill_designer |
+
+| K-OS Agent Resilience Drill Dry Run Core | Simula drills de resiliencia sem executar drill, recovery, rollback ou comandos destrutivos | Operador K-OS | Sim, local sanitizado | Nao | Nao | Drill Design + Dry Run + No Execution | reports/resilience_drill_dry_run |

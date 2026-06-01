@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "074",
+    "module":  "k_os_agent_resilience_drill_dry_run_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "resilience_drill_dry_run",
+                         "drill_design_binding",
+                         "safe_drill_simulation",
+                         "blocked_destructive_execution",
+                         "dry_run_validation",
+                         "sanitized_dry_run_report"
+                     ],
+    "dry_run_local_only":  true,
+    "raw_dry_run_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "dry_run_executes_drill":  false,
+    "dry_run_executes_recovery":  false,
+    "dry_run_executes_rollback":  false,
+    "dry_run_deletes_data":  false,
+    "dry_run_modifies_target_files":  false,
+    "dry_run_runs_git_reset":  false,
+    "dry_run_runs_git_force_push":  false,
+    "next_checkpoint":  "075 - K-Agent Resilience Drill Operator Review Core",
+    "installed_at":  "2026-06-01T11:54:51.9870543Z"
+}

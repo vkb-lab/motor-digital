@@ -438,3 +438,6 @@ local_secrets/k_os_resilience_scenario_planner/
 memory/resilience_drill_designer/
 reports/resilience_drill_designer/runtime/
 local_secrets/k_os_resilience_drill_designer/
+memory/resilience_drill_dry_run/
+reports/resilience_drill_dry_run/runtime/
+local_secrets/k_os_resilience_drill_dry_run/

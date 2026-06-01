@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "checkpoint": "074",
+  "module": "k_os_agent_resilience_drill_dry_run_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T11:54:53+00:00",
+  "dry_run_id": "rdrill_9debfbd174ed",
+  "dry_run_status": "dry_run_completed_safe",
+  "drill_dry_run_hash": "c8f72e93ac0c1299ddf9d5f3bd26aa40664d3f6fe191673d78e0001a7e076c7e",
+  "drill_count": 8,
+  "dry_run_executes_drill": false,
+  "dry_run_executes_recovery": false,
+  "dry_run_executes_rollback": false,
+  "dry_run_deletes_data": false,
+  "dry_run_modifies_target_files": false,
+  "dry_run_runs_git_reset": false,
+  "dry_run_runs_git_force_push": false,
+  "dry_run_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": []
+}

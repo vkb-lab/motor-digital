@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "system": "K-OS",
+  "checkpoint": "074",
+  "module": "agent_resilience_drill_dry_run_core",
+  "purpose": "Simular drills de resiliencia a partir do design 073, sem executar drill real, recovery, rollback, shell ou comandos destrutivos.",
+  "dry_run_policy": {
+    "dry_run_local_only": true,
+    "raw_dry_run_state_committed": false,
+    "sanitized_reports_only": true,
+    "external_send_enabled": false,
+    "external_publish_enabled": false,
+    "automatic_message_enabled": false,
+    "dry_run_executes_drill": false,
+    "dry_run_executes_recovery": false,
+    "dry_run_executes_rollback": false,
+    "dry_run_deletes_data": false,
+    "dry_run_modifies_target_files": false,
+    "dry_run_runs_git_reset": false,
+    "dry_run_runs_git_force_push": false,
+    "dry_run_executes_shell_commands": false,
+    "resilience_drill_design_required": true,
+    "resilience_scenario_plan_required": true,
+    "resilience_readiness_required": true,
+    "operator_review_required": true,
+    "manual_approval_required": true,
+    "audit_log_deletion_allowed": false
+  },
+  "dry_run_statuses": [
+    "dry_run_completed_safe",
+    "dry_run_review_required",
+    "dry_run_blocked",
+    "validated",
+    "archived"
+  ],
+  "blocked_actions": [
+    "execute_drill_now",
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_dry_run_state",
+    "export_raw_memory"
+  ],
+  "next_checkpoint": "075 - K-Agent Resilience Drill Operator Review Core"
+}
