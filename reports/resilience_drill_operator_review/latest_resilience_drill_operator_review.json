@@ -1,0 +1,171 @@
+{
+  "ok": true,
+  "checkpoint": "075",
+  "module": "k_os_agent_resilience_drill_operator_review_core",
+  "status": "operator_review_requires_followup",
+  "review_id": "rdor_d0bca28c2a70",
+  "created_at": "2026-06-01T12:13:36+00:00",
+  "operator": "operator_k_os",
+  "decision": "reviewed_with_followup",
+  "reason": "closure_resilience_drill_operator_review_075",
+  "notes_hash": "21ce0a9d237c185b6f78a4feca7174a8263326de1cb72642abc0ab13611fa575",
+  "notes_included": false,
+  "drill_dry_run_id": "rdrill_1da7fae00500",
+  "drill_dry_run_status": "dry_run_completed_safe",
+  "drill_dry_run_hash": "d241832f62320c1fac9b9144095f71f9c9cf2fdeed76f98004cf22653aa47605",
+  "drill_design_id": "rddp_2908fe56d7d5",
+  "drill_design_status": "drills_designed",
+  "drill_design_hash": "71f7332d7887157792c55c07ef87cc986d4b15a9d9ebe3eb648989aaa6db6bfe",
+  "scenario_plan_id": "rspf_66dfa8e2b486",
+  "scenario_plan_status": "scenarios_review_required",
+  "scenario_plan_hash": "caa21d49f68a06bd6c8196d348024b0ca0aad0cd9e57c8990f83e82fbed77867",
+  "readiness_matrix_id": "rrm_b829e2b45daf",
+  "readiness_status": "resilience_blocked",
+  "readiness_hash": "c0a79c80d7c05e89116da9034e78172fd44ef6b019aa31d1226b95b0be62e30f",
+  "review_dimensions": [
+    {
+      "dimension": "dry_run_available",
+      "ok": true,
+      "evidence": "reports/resilience_drill_dry_run/latest_resilience_drill_dry_run.json",
+      "blocker": "",
+      "followup": ""
+    },
+    {
+      "dimension": "dry_run_non_destructive",
+      "ok": true,
+      "evidence": "reports/resilience_drill_dry_run/latest_resilience_drill_dry_run.json",
+      "blocker": "",
+      "followup": ""
+    },
+    {
+      "dimension": "drill_design_available",
+      "ok": true,
+      "evidence": "reports/resilience_drill_designer/latest_resilience_drill_design.json",
+      "blocker": "",
+      "followup": ""
+    },
+    {
+      "dimension": "scenario_plan_available",
+      "ok": true,
+      "evidence": "reports/resilience_scenario_planner/latest_resilience_scenario_plan.json",
+      "blocker": "",
+      "followup": ""
+    },
+    {
+      "dimension": "evidence_chain_available",
+      "ok": true,
+      "evidence": "dry_run + design + scenario_plan",
+      "blocker": "",
+      "followup": ""
+    },
+    {
+      "dimension": "operator_followup_captured",
+      "ok": true,
+      "evidence": "operator_review_record",
+      "blocker": "",
+      "followup": "followups_recorded"
+    },
+    {
+      "dimension": "next_checkpoint_ready",
+      "ok": true,
+      "evidence": "075_to_076_route",
+      "blocker": "",
+      "followup": ""
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "followups": [],
+  "operator_review_hash": "b4d611104d0b6a413cae41bba3835528bb39b1af43e0de2b8709455152f7db43",
+  "operator_review_executes_drill": false,
+  "operator_review_executes_recovery": false,
+  "operator_review_executes_rollback": false,
+  "operator_review_deletes_data": false,
+  "operator_review_modifies_target_files": false,
+  "operator_review_runs_git_reset": false,
+  "operator_review_runs_git_force_push": false,
+  "operator_review_executes_shell_commands": false,
+  "external_send_enabled": false,
+  "external_publish_enabled": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "source_refs": {
+    "drill_dry_run": {
+      "available": true,
+      "path": "reports/resilience_drill_dry_run/latest_resilience_drill_dry_run.json",
+      "checkpoint": "074",
+      "module": "k_os_agent_resilience_drill_dry_run_core",
+      "status": "dry_run_completed_safe",
+      "ok": true,
+      "created_at": "2026-06-01T12:00:02+00:00",
+      "hash": "3c6d76ff19fb4a77aeba96179d89f08ac7de7f2b1c5f83c8db7c0817f289ba78"
+    },
+    "drill_dry_run_report": {
+      "available": true,
+      "path": "reports/resilience_drill_dry_run/latest_agent_resilience_drill_dry_run_report.json",
+      "checkpoint": "074",
+      "module": "k_os_agent_resilience_drill_dry_run_core",
+      "status": "audit_generated",
+      "ok": true,
+      "created_at": "2026-06-01T12:00:02+00:00",
+      "hash": "94e3d1ea863e08384d4d3ccfbf0df43bbeeb8e71a1759ca5b5a879aafa3577a8"
+    },
+    "drill_dry_run_validation": {
+      "available": true,
+      "path": "reports/resilience_drill_dry_run/latest_resilience_drill_dry_run_validation_report.json",
+      "checkpoint": "074",
+      "module": "k_os_agent_resilience_drill_dry_run_core",
+      "status": "validated",
+      "ok": true,
+      "created_at": "2026-06-01T12:00:02+00:00",
+      "hash": "94478ef7536ff30140e2988250657aa331f5e43663873802fd882364bb0cd449"
+    },
+    "drill_design": {
+      "available": true,
+      "path": "reports/resilience_drill_designer/latest_resilience_drill_design.json",
+      "checkpoint": "073",
+      "module": "k_os_agent_resilience_drill_designer_core",
+      "status": "drills_designed",
+      "ok": true,
+      "created_at": "2026-06-01T11:49:08+00:00",
+      "hash": "e1d2df3cd2c0c466f007fd7796f7b282c1a59797d0879dca775dfae9140d20c3"
+    },
+    "scenario_plan": {
+      "available": true,
+      "path": "reports/resilience_scenario_planner/latest_resilience_scenario_plan.json",
+      "checkpoint": "072",
+      "module": "k_os_agent_resilience_scenario_planner_core",
+      "status": "scenarios_review_required",
+      "ok": true,
+      "created_at": "2026-06-01T11:36:19+00:00",
+      "hash": "7ae774c6e30e5e74cd5f209c1efac55de856d9c50eac07782ce8deaba0730e3a"
+    },
+    "readiness_matrix": {
+      "available": true,
+      "path": "reports/resilience_readiness/latest_resilience_readiness_matrix.json",
+      "checkpoint": "071",
+      "module": "k_os_agent_resilience_readiness_core",
+      "status": "resilience_blocked",
+      "ok": true,
+      "created_at": "2026-06-01T11:31:22+00:00",
+      "hash": "37100797978c8ffba7ae62ed8100fad6a0caa1dc3c33a4fa5d1674fc4a316f5e"
+    }
+  },
+  "blocked_actions": [
+    "execute_drill_now",
+    "execute_recovery_now",
+    "execute_rollback_now",
+    "delete_evidence",
+    "delete_memory",
+    "modify_files",
+    "git_reset_hard",
+    "git_force_push",
+    "send_external_message",
+    "publish_external_content",
+    "call_external_provider",
+    "execute_shell_command",
+    "commit_raw_operator_review_state",
+    "export_raw_memory"
+  ],
+  "next_checkpoint": "076 - K-Agent Resilience Drill Evidence Pack Core"
+}

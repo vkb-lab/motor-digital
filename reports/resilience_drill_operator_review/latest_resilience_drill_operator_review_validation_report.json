@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "checkpoint": "075",
+  "module": "k_os_agent_resilience_drill_operator_review_core",
+  "status": "validated",
+  "generated_at": "2026-06-01T12:13:37+00:00",
+  "review_id": "rdor_d0bca28c2a70",
+  "review_status": "operator_review_requires_followup",
+  "decision": "reviewed_with_followup",
+  "operator_review_hash": "b4d611104d0b6a413cae41bba3835528bb39b1af43e0de2b8709455152f7db43",
+  "drill_dry_run_hash": "d241832f62320c1fac9b9144095f71f9c9cf2fdeed76f98004cf22653aa47605",
+  "operator_review_executes_drill": false,
+  "operator_review_executes_recovery": false,
+  "operator_review_executes_rollback": false,
+  "operator_review_deletes_data": false,
+  "operator_review_modifies_target_files": false,
+  "operator_review_runs_git_reset": false,
+  "operator_review_runs_git_force_push": false,
+  "operator_review_executes_shell_commands": false,
+  "raw_payload_included": false,
+  "local_recovery_token_included": false,
+  "blockers": [],
+  "warnings": [
+    "operator_review_requires_followup"
+  ]
+}

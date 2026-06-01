@@ -1,0 +1,29 @@
+﻿{
+    "ok":  true,
+    "checkpoint":  "075",
+    "module":  "k_os_agent_resilience_drill_operator_review_core",
+    "status":  "installed_and_auto_closing",
+    "capabilities":  [
+                         "resilience_drill_operator_review",
+                         "dry_run_binding",
+                         "operator_decision_record",
+                         "followup_capture",
+                         "blocked_destructive_execution",
+                         "sanitized_operator_review_report"
+                     ],
+    "operator_review_local_only":  true,
+    "raw_operator_review_state_committed":  false,
+    "sanitized_reports_only":  true,
+    "external_send_enabled":  false,
+    "external_publish_enabled":  false,
+    "automatic_message_enabled":  false,
+    "operator_review_executes_drill":  false,
+    "operator_review_executes_recovery":  false,
+    "operator_review_executes_rollback":  false,
+    "operator_review_deletes_data":  false,
+    "operator_review_modifies_target_files":  false,
+    "operator_review_runs_git_reset":  false,
+    "operator_review_runs_git_force_push":  false,
+    "next_checkpoint":  "076 - K-Agent Resilience Drill Evidence Pack Core",
+    "installed_at":  "2026-06-01T12:13:35.9146072Z"
+}

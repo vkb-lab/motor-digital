@@ -441,3 +441,6 @@ local_secrets/k_os_resilience_drill_designer/
 memory/resilience_drill_dry_run/
 reports/resilience_drill_dry_run/runtime/
 local_secrets/k_os_resilience_drill_dry_run/
+memory/resilience_drill_operator_review/
+reports/resilience_drill_operator_review/runtime/
+local_secrets/k_os_resilience_drill_operator_review/
