@@ -1,0 +1,56 @@
+{
+  "status": "BLOCKED_BY_EXECUTE_SWITCH",
+  "reason": "Parametro execute_real_confirmed ausente.",
+  "gate": {
+    "status": "PHASE14_LOCKED",
+    "ready_for_real_send": false,
+    "phase14_armed": false,
+    "required_env": "KOS_PHASE14_REAL_RUN",
+    "required_value": "YES_I_CONFIRM",
+    "live_check": {
+      "status": "LIVE_CHECK_LOCKED",
+      "runtime": {
+        "status": "LOCAL_RUNTIME_FILE_LOADED",
+        "loaded": [
+          "FACEBOOK_PAGE_ID",
+          "IG_BUSINESS_ACCOUNT_ID",
+          "META_ACCESS_KEY",
+          "KOS_REAL_IG_PUBLISH_ENABLED"
+        ],
+        "path": "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\ig_runtime.env"
+      },
+      "missing": [],
+      "flags": {
+        "KOS_REAL_IG_PUBLISH_ENABLED": false,
+        "KOS_HUMAN_OK_FOR_IG_REAL": false,
+        "KOS_PHASE12_REAL_RUN": false,
+        "KOS_PHASE13_REAL_RUN": false
+      },
+      "instagram_readiness": {
+        "status": "IG_REAL_LOCKED",
+        "can_prepare": true,
+        "can_run_real": false,
+        "missing_env": [],
+        "real_flag_enabled": false,
+        "human_ok": false,
+        "external_call_allowed": false,
+        "real_action_executed": false
+      },
+      "phase12": {
+        "status": "PHASE12_LOCKED",
+        "armed": false,
+        "required_env": "KOS_PHASE12_REAL_RUN",
+        "required_value": "YES_I_CONFIRM",
+        "real_action_allowed_by_phase12": false
+      },
+      "ready_for_real_first_post": false,
+      "real_action_executed": false,
+      "external_call_executed": false
+    },
+    "real_action_executed": false,
+    "external_call_executed": false
+  },
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "created_at": "2026-06-01T22:48:56.229171+00:00"
+}

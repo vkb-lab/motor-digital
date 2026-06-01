@@ -1,0 +1,10 @@
+{
+  "status": "PRONTO FASE 14",
+  "phase": 14,
+  "module": "instagram_final_real_run_gate",
+  "real_action_executed": false,
+  "external_call_executed": false,
+  "manual_final_ok_required": true,
+  "phase14_extra_arming_required": true,
+  "updated_at": "2026-06-01T22:48:54.146156+00:00"
+}
