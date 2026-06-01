@@ -3,7 +3,7 @@
   "checkpoint": "074",
   "module": "k_os_agent_resilience_drill_dry_run_core",
   "status": "audit_generated",
-  "generated_at": "2026-06-01T11:54:53+00:00",
+  "generated_at": "2026-06-01T12:00:02+00:00",
   "state_path": "local_secrets/k_os_resilience_drill_dry_run/agent_resilience_drill_dry_run_state.json",
   "state_committed": false,
   "sanitized_reports_only": true,
@@ -19,9 +19,9 @@
   "dry_run_runs_git_force_push": false,
   "dry_run_executes_shell_commands": false,
   "metrics": {
-    "dry_run_count": 1,
-    "validation_count": 1,
-    "dry_run_completed_safe_count": 1,
+    "dry_run_count": 2,
+    "validation_count": 2,
+    "dry_run_completed_safe_count": 2,
     "dry_run_review_required_count": 0,
     "dry_run_blocked_count": 0,
     "drill_execution_count": 0,
@@ -34,6 +34,24 @@
     "shell_execution_count": 0
   },
   "recent_dry_runs": [
+    {
+      "dry_run_id": "rdrill_1da7fae00500",
+      "created_at": "2026-06-01T12:00:02+00:00",
+      "status": "dry_run_completed_safe",
+      "drill_design_status": "drills_designed",
+      "scenario_plan_status": "scenarios_review_required",
+      "drill_count": 8,
+      "drill_dry_run_hash": "d241832f62320c1fac9b9144095f71f9c9cf2fdeed76f98004cf22653aa47605",
+      "dry_run_executes_drill": false,
+      "dry_run_executes_recovery": false,
+      "dry_run_executes_rollback": false,
+      "dry_run_deletes_data": false,
+      "dry_run_modifies_target_files": false,
+      "dry_run_runs_git_reset": false,
+      "dry_run_runs_git_force_push": false,
+      "dry_run_executes_shell_commands": false,
+      "blocker_count": 0
+    },
     {
       "dry_run_id": "rdrill_9debfbd174ed",
       "created_at": "2026-06-01T11:54:52+00:00",
@@ -54,6 +72,29 @@
     }
   ],
   "recent_validations": [
+    {
+      "ok": true,
+      "checkpoint": "074",
+      "module": "k_os_agent_resilience_drill_dry_run_core",
+      "status": "validated",
+      "generated_at": "2026-06-01T12:00:02+00:00",
+      "dry_run_id": "rdrill_1da7fae00500",
+      "dry_run_status": "dry_run_completed_safe",
+      "drill_dry_run_hash": "d241832f62320c1fac9b9144095f71f9c9cf2fdeed76f98004cf22653aa47605",
+      "drill_count": 8,
+      "dry_run_executes_drill": false,
+      "dry_run_executes_recovery": false,
+      "dry_run_executes_rollback": false,
+      "dry_run_deletes_data": false,
+      "dry_run_modifies_target_files": false,
+      "dry_run_runs_git_reset": false,
+      "dry_run_runs_git_force_push": false,
+      "dry_run_executes_shell_commands": false,
+      "raw_payload_included": false,
+      "local_recovery_token_included": false,
+      "blockers": [],
+      "warnings": []
+    },
     {
       "ok": true,
       "checkpoint": "074",

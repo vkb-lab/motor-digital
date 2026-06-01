@@ -12,8 +12,8 @@
     "sanitized_dry_run_report_enabled":  true,
     "closure_dry_run_created":  true,
     "closure_dry_run_validated":  true,
-    "validated_dry_run_id":  "rdrill_9debfbd174ed",
-    "validated_dry_run_hash":  "c8f72e93ac0c1299ddf9d5f3bd26aa40664d3f6fe191673d78e0001a7e076c7e",
+    "validated_dry_run_id":  "rdrill_1da7fae00500",
+    "validated_dry_run_hash":  "d241832f62320c1fac9b9144095f71f9c9cf2fdeed76f98004cf22653aa47605",
     "validated_dry_run_status":  "dry_run_completed_safe",
     "dry_run_local_only":  true,
     "raw_dry_run_state_committed":  false,
@@ -34,5 +34,5 @@
     "resilience_readiness_required":  true,
     "audit_log_deletion_allowed":  false,
     "next_checkpoint":  "075 - K-Agent Resilience Drill Operator Review Core",
-    "closed_at":  "2026-06-01T11:54:53.6867351Z"
+    "closed_at":  "2026-06-01T12:00:02.6542426Z"
 }
