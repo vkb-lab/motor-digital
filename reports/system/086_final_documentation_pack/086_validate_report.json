@@ -1,0 +1,77 @@
+{
+  "checkpoint": "086",
+  "name": "K-OS Final Documentation Pack Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:26:49Z",
+  "file_checks": [
+    {
+      "path": "configs/k_os_final_documentation_pack_086.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/final_documentation_pack_086.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_086_final_documentation_pack.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/086_K_OS_Final_Documentation_Pack.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/086_k_os_final_documentation_pack.md",
+      "exists": true
+    },
+    {
+      "path": "reports/system/086_final_documentation_pack/086_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/086_final_documentation_pack/086_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/086_final_documentation_pack/086_final_documentation_pack.json",
+      "exists": true
+    },
+    {
+      "path": "reports/system/086_final_documentation_pack/086_final_documentation_pack.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/README_K_OS.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/OPERATOR_GUIDE.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/GOVERNANCE.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/LAUNCHER_GUIDE.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/RELEASE_NOTES.md",
+      "exists": true
+    },
+    {
+      "path": "docs/k_os/FINAL_DOCUMENTATION_INDEX.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "operational_decision_ok": true,
+  "documentation_outputs_ok": true,
+  "next_checkpoint": "087 - K-OS Final Audit Pack Core"
+}

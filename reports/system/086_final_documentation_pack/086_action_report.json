@@ -1,0 +1,60 @@
+{
+  "checkpoint": "086",
+  "name": "K-OS Final Documentation Pack Core",
+  "mode": "action",
+  "status": "completed",
+  "generated_at": "2026-06-01T13:26:49Z",
+  "pack_status": "ready_with_warnings",
+  "warnings": [
+    "source_checkpoint_evidence_warning"
+  ],
+  "docs_count": 7,
+  "final_documentation_pack_json": "reports/system/086_final_documentation_pack/086_final_documentation_pack.json",
+  "final_documentation_pack_md": "reports/system/086_final_documentation_pack/086_final_documentation_pack.md",
+  "commercial_doc": "docs/commercial/086_k_os_final_documentation_pack.md",
+  "documentation_outputs": [
+    "docs/k_os/README_K_OS.md",
+    "docs/k_os/OPERATOR_GUIDE.md",
+    "docs/k_os/ARCHITECTURE.md",
+    "docs/k_os/GOVERNANCE.md",
+    "docs/k_os/LAUNCHER_GUIDE.md",
+    "docs/k_os/RELEASE_NOTES.md",
+    "docs/k_os/FINAL_DOCUMENTATION_INDEX.md"
+  ],
+  "updated_accountability_registers": [],
+  "next_checkpoint": "087 - K-OS Final Audit Pack Core",
+  "deploy_executed": false,
+  "installer_executed": false,
+  "blocked_operations": [
+    "deploy_execution",
+    "installer_execution",
+    "dependency_install_execution",
+    "release_publish_execution",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "execution_guard": {
+    "deploy_executed": false,
+    "installer_executed": false,
+    "dependency_install_executed": false,
+    "release_publish_executed": false,
+    "backup_restore_executed": false,
+    "automatic_remediation_executed": false,
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "git_reset_hard_executed": false,
+    "force_push_executed": false,
+    "destructive_shell_executed": false,
+    "memory_deletion_executed": false,
+    "secret_export_executed": "[REDACTED]"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "checkpoint": "086",
+  "name": "K-OS Final Documentation Pack Core",
+  "layer": "K-OS Core",
+  "objective": "Criar pacote final de documentacao do K-OS consolidando arquitetura, operacao, governanca, launcher local, evidencias dos checkpoints 079-085 e indice de continuidade, sem executar deploy, installer, recovery, rollback, drill, reset, force push, limpeza destrutiva ou auto-fix.",
+  "previous_checkpoint": "085 - K-OS Local Installer / Launcher Core",
+  "next_checkpoint": "087 - K-OS Final Audit Pack Core",
+  "source_checkpoints": [
+    "079",
+    "080",
+    "081",
+    "082",
+    "083",
+    "084",
+    "085"
+  ],
+  "documentation_outputs": [
+    "docs/k_os/README_K_OS.md",
+    "docs/k_os/OPERATOR_GUIDE.md",
+    "docs/k_os/ARCHITECTURE.md",
+    "docs/k_os/GOVERNANCE.md",
+    "docs/k_os/LAUNCHER_GUIDE.md",
+    "docs/k_os/RELEASE_NOTES.md",
+    "docs/k_os/FINAL_DOCUMENTATION_INDEX.md"
+  ],
+  "allowed_operations": [
+    "read_existing_evidence",
+    "generate_final_documentation_pack",
+    "generate_sanitized_reports",
+    "generate_read_only_dashboard",
+    "update_accountability_register_if_exists",
+    "validate_artifacts",
+    "audit_checkpoint",
+    "create_closure_report"
+  ],
+  "blocked_operations": [
+    "deploy_execution",
+    "installer_execution",
+    "dependency_install_execution",
+    "release_publish_execution",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "documentation_policy": {
+    "generate_docs_only": true,
+    "read_only_evidence": true,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "execute_launcher": false,
+    "execute_installer": false,
+    "publish_release": false
+  },
+  "status": "configured"
+}

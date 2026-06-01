@@ -1,0 +1,1201 @@
+{
+  "checkpoint": "086",
+  "name": "K-OS Final Documentation Pack Core",
+  "layer": "K-OS Core",
+  "generated_at": "2026-06-01T13:26:49Z",
+  "status": "ready_with_warnings",
+  "objective": "Criar pacote final de documentacao do K-OS consolidando arquitetura, operacao, governanca, launcher local, evidencias dos checkpoints 079-085 e indice de continuidade, sem executar deploy, installer, recovery, rollback, drill, reset, force push, limpeza destrutiva ou auto-fix.",
+  "previous_checkpoint": "085 - K-OS Local Installer / Launcher Core",
+  "next_checkpoint": "087 - K-OS Final Audit Pack Core",
+  "documentation_policy": {
+    "generate_docs_only": true,
+    "read_only_evidence": true,
+    "sanitize_reports": true,
+    "include_sensitive_content": false,
+    "include_file_hashes": true,
+    "execute_launcher": false,
+    "execute_installer": false,
+    "publish_release": false
+  },
+  "source_checkpoints": [
+    "079",
+    "080",
+    "081",
+    "082",
+    "083",
+    "084",
+    "085"
+  ],
+  "evidence": {
+    "generated_at": "2026-06-01T13:26:48Z",
+    "source_checkpoints": [
+      "079",
+      "080",
+      "081",
+      "082",
+      "083",
+      "084",
+      "085"
+    ],
+    "ready_count": 0,
+    "warning_count": 7,
+    "checkpoints": {
+      "079": {
+        "checkpoint": "079",
+        "name": "K-OS System Health Monitor Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/079_system_health_monitor",
+          "exists": true,
+          "type": "directory",
+          "file_count": 8
+        },
+        "main_report": {
+          "path": "reports/system/079_system_health_monitor/079_system_health_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 11410,
+          "modified_utc": "2026-06-01T12:48:33Z",
+          "sha256": "e5af6927d70e1b65453b242f257ab386134249451fa8bf8e56102391cc3213eb",
+          "status": "attention",
+          "checkpoint": "079",
+          "mode": null,
+          "next_checkpoint": "080 - K-OS Module Registry Core"
+        },
+        "closure_report": {
+          "path": "reports/system/079_system_health_monitor/079_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 678,
+          "modified_utc": "2026-06-01T12:48:34Z",
+          "sha256": "8ca2f90e5d0af0fc348324ab2270163353241cfad9610f53e8807aff89655b48",
+          "status": "failed",
+          "checkpoint": "079",
+          "mode": "closure",
+          "next_checkpoint": "080 - K-OS Module Registry Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/079_k_os_system_health_monitor.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2896,
+          "modified_utc": "2026-06-01T12:48:33Z",
+          "sha256": "b6429812612feb5073bebe8e594a0259eb3e49e2ecb78339942740862a94eb4c"
+        },
+        "main_status": "attention",
+        "closure_status": "failed",
+        "evidence_file_count": 8,
+        "files": [
+          {
+            "path": "reports/system/079_system_health_monitor/079_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1348,
+            "modified_utc": "2026-06-01T12:48:33Z",
+            "sha256": "4d853fafa69fa98934fead6d2578ca7bd8a7ce7e373adde602237ed550872122",
+            "status": "completed",
+            "checkpoint": "079",
+            "mode": "action",
+            "next_checkpoint": "080 - K-OS Module Registry Core"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1027,
+            "modified_utc": "2026-06-01T12:48:34Z",
+            "sha256": "15b8c567a23a944a1d1bb2b1948bfba32f6db9755d838d6833bcc13d33f1c4c1",
+            "status": "failed",
+            "checkpoint": "079",
+            "mode": "audit",
+            "next_checkpoint": "080 - K-OS Module Registry Core"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 678,
+            "modified_utc": "2026-06-01T12:48:34Z",
+            "sha256": "8ca2f90e5d0af0fc348324ab2270163353241cfad9610f53e8807aff89655b48",
+            "status": "failed",
+            "checkpoint": "079",
+            "mode": "closure",
+            "next_checkpoint": "080 - K-OS Module Registry Core"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 492,
+            "modified_utc": "2026-06-01T12:48:34Z",
+            "sha256": "985ff3bb504cf931fd8e89a455f99fc7d829290f3a0324ceff9940c9b1a48efb"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2412,
+            "modified_utc": "2026-06-01T12:48:31Z",
+            "sha256": "8295cbebc6ba8cc48a593b1b3237896e1e787ea5301810b0fe29fcce7f40897b",
+            "status": "initialized",
+            "checkpoint": "079",
+            "mode": "init",
+            "next_checkpoint": "080 - K-OS Module Registry Core"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_system_health_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 11410,
+            "modified_utc": "2026-06-01T12:48:33Z",
+            "sha256": "e5af6927d70e1b65453b242f257ab386134249451fa8bf8e56102391cc3213eb",
+            "status": "attention",
+            "checkpoint": "079",
+            "mode": null,
+            "next_checkpoint": "080 - K-OS Module Registry Core"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_system_health_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2896,
+            "modified_utc": "2026-06-01T12:48:33Z",
+            "sha256": "b6429812612feb5073bebe8e594a0259eb3e49e2ecb78339942740862a94eb4c"
+          },
+          {
+            "path": "reports/system/079_system_health_monitor/079_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1251,
+            "modified_utc": "2026-06-01T12:48:33Z",
+            "sha256": "41e83f3eb1ba34e08e9cd06cd32a85620813788520bab207d18e72f8257d18f6",
+            "status": "failed",
+            "checkpoint": "079",
+            "mode": "validate",
+            "next_checkpoint": "080 - K-OS Module Registry Core"
+          }
+        ]
+      },
+      "080": {
+        "checkpoint": "080",
+        "name": "K-OS Module Registry Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/080_module_registry",
+          "exists": true,
+          "type": "directory",
+          "file_count": 8
+        },
+        "main_report": {
+          "path": "reports/system/080_module_registry/080_module_registry.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2930562,
+          "modified_utc": "2026-06-01T12:59:52Z",
+          "sha256": "a5d4b910945e8acfae29a42305bb9bdb03c7dc9d6922f02bb5c6432b9ac19a5c",
+          "status": "healthy",
+          "checkpoint": "080",
+          "mode": null,
+          "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+        },
+        "closure_report": {
+          "path": "reports/system/080_module_registry/080_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 670,
+          "modified_utc": "2026-06-01T12:59:53Z",
+          "sha256": "1cccc9f923197bed18f2ba5014593b247b057b90766c197415586d4024864de4",
+          "status": "failed",
+          "checkpoint": "080",
+          "mode": "closure",
+          "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/080_k_os_module_registry.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 15370,
+          "modified_utc": "2026-06-01T12:59:52Z",
+          "sha256": "14654fdab36da16ee1a9df1e3a7dcb15c17ff253b4c844d53f2478e6d467f308"
+        },
+        "main_status": "healthy",
+        "closure_status": "failed",
+        "evidence_file_count": 8,
+        "files": [
+          {
+            "path": "reports/system/080_module_registry/080_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1327,
+            "modified_utc": "2026-06-01T12:59:52Z",
+            "sha256": "f63b72f767d0d50bf3da2d35601dbc84efd47a5bb9ecf3c1936b99f660917c26",
+            "status": "completed",
+            "checkpoint": "080",
+            "mode": "action",
+            "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1105,
+            "modified_utc": "2026-06-01T12:59:52Z",
+            "sha256": "a29147609c3563c06d60a2fc6d8380dce03dc0b545bfdd67a47ffca719ed057b",
+            "status": "failed",
+            "checkpoint": "080",
+            "mode": "audit",
+            "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 670,
+            "modified_utc": "2026-06-01T12:59:53Z",
+            "sha256": "1cccc9f923197bed18f2ba5014593b247b057b90766c197415586d4024864de4",
+            "status": "failed",
+            "checkpoint": "080",
+            "mode": "closure",
+            "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 522,
+            "modified_utc": "2026-06-01T12:59:53Z",
+            "sha256": "9e525822c273ac2a7c475690eeacb47e25a11f89ba7391b8063a1592092ca613"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2857,
+            "modified_utc": "2026-06-01T12:58:42Z",
+            "sha256": "d377461554c9b11b10dca760cb6326c6d101a134228783ca96538ecf7bd9084a",
+            "status": "initialized",
+            "checkpoint": "080",
+            "mode": "init",
+            "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_module_registry.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2930562,
+            "modified_utc": "2026-06-01T12:59:52Z",
+            "sha256": "a5d4b910945e8acfae29a42305bb9bdb03c7dc9d6922f02bb5c6432b9ac19a5c",
+            "status": "healthy",
+            "checkpoint": "080",
+            "mode": null,
+            "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_module_registry.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 15370,
+            "modified_utc": "2026-06-01T12:59:52Z",
+            "sha256": "14654fdab36da16ee1a9df1e3a7dcb15c17ff253b4c844d53f2478e6d467f308"
+          },
+          {
+            "path": "reports/system/080_module_registry/080_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1223,
+            "modified_utc": "2026-06-01T12:59:52Z",
+            "sha256": "ecb9c1cd56297063b7ffea8b729d11a8674bd29b5295b32a43a3404c7924ea2a",
+            "status": "failed",
+            "checkpoint": "080",
+            "mode": "validate",
+            "next_checkpoint": "081 - K-OS Agent Capability Registry Core"
+          }
+        ]
+      },
+      "081": {
+        "checkpoint": "081",
+        "name": "K-OS Agent Capability Registry Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/081_agent_capability_registry",
+          "exists": true,
+          "type": "directory",
+          "file_count": 8
+        },
+        "main_report": {
+          "path": "reports/system/081_agent_capability_registry/081_agent_capability_registry.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2903756,
+          "modified_utc": "2026-06-01T13:07:03Z",
+          "sha256": "3f316e390b7e0538bb67229f1bdfc02172f0c692c38b44cc5674e2774cf3f4ec",
+          "status": "healthy",
+          "checkpoint": "081",
+          "mode": null,
+          "next_checkpoint": "082 - K-OS Command Registry Core"
+        },
+        "closure_report": {
+          "path": "reports/system/081_agent_capability_registry/081_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 766,
+          "modified_utc": "2026-06-01T13:07:03Z",
+          "sha256": "688845486a3ff24b0801bcf0b5ae289434a7eaf67a15e4093327e32c83723a49",
+          "status": "failed",
+          "checkpoint": "081",
+          "mode": "closure",
+          "next_checkpoint": "082 - K-OS Command Registry Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/081_k_os_agent_capability_registry.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 27225,
+          "modified_utc": "2026-06-01T13:07:03Z",
+          "sha256": "c5d0fa9e25cfc3b4246eaba74d9cf89b3af731d452e3b7d72fe446089a8b0308"
+        },
+        "main_status": "healthy",
+        "closure_status": "failed",
+        "evidence_file_count": 8,
+        "files": [
+          {
+            "path": "reports/system/081_agent_capability_registry/081_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1563,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "3fdb1f99b75e56c893eb045218a8efb1cf7b96c0c8f3a68213c35d4bc9c3c91a",
+            "status": "completed",
+            "checkpoint": "081",
+            "mode": "action",
+            "next_checkpoint": "082 - K-OS Command Registry Core"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_agent_capability_registry.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2903756,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "3f316e390b7e0538bb67229f1bdfc02172f0c692c38b44cc5674e2774cf3f4ec",
+            "status": "healthy",
+            "checkpoint": "081",
+            "mode": null,
+            "next_checkpoint": "082 - K-OS Command Registry Core"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_agent_capability_registry.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 27225,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "c5d0fa9e25cfc3b4246eaba74d9cf89b3af731d452e3b7d72fe446089a8b0308"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1252,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "aceb4978e01d3403a72bef301b628540aa15fc7ceb85e3f438d71271a464e3ca",
+            "status": "failed",
+            "checkpoint": "081",
+            "mode": "audit",
+            "next_checkpoint": "082 - K-OS Command Registry Core"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 766,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "688845486a3ff24b0801bcf0b5ae289434a7eaf67a15e4093327e32c83723a49",
+            "status": "failed",
+            "checkpoint": "081",
+            "mode": "closure",
+            "next_checkpoint": "082 - K-OS Command Registry Core"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 569,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "fae32169b36b421e476a0f99c4ae95657afbe28f7e06df9802373311386393a5"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 3183,
+            "modified_utc": "2026-06-01T13:06:50Z",
+            "sha256": "1bc11fd598ece56a7d983d88bf02f8fd83f87ceed77a2a75ef7845d0fbd7fd80",
+            "status": "initialized",
+            "checkpoint": "081",
+            "mode": "init",
+            "next_checkpoint": "082 - K-OS Command Registry Core"
+          },
+          {
+            "path": "reports/system/081_agent_capability_registry/081_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1341,
+            "modified_utc": "2026-06-01T13:07:03Z",
+            "sha256": "49a55be87b221b02ea72df18876e9e7554e08c5b07a08ea709b89983028bb786",
+            "status": "failed",
+            "checkpoint": "081",
+            "mode": "validate",
+            "next_checkpoint": "082 - K-OS Command Registry Core"
+          }
+        ]
+      },
+      "082": {
+        "checkpoint": "082",
+        "name": "K-OS Command Registry Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/082_command_registry",
+          "exists": true,
+          "type": "directory",
+          "file_count": 8
+        },
+        "main_report": {
+          "path": "reports/system/082_command_registry/082_command_registry.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2103279,
+          "modified_utc": "2026-06-01T13:10:21Z",
+          "sha256": "0aa223d1ad825b8116dcca872fe1d1cfa17ecee1b5dc3ff562d685a933785fc4",
+          "status": "healthy",
+          "checkpoint": "082",
+          "mode": null,
+          "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+        },
+        "closure_report": {
+          "path": "reports/system/082_command_registry/082_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 713,
+          "modified_utc": "2026-06-01T13:10:21Z",
+          "sha256": "8bdfc13a9158f6cc372a6c7622071107569196cfaa31f1e256a8007be0f5505f",
+          "status": "failed",
+          "checkpoint": "082",
+          "mode": "closure",
+          "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/082_k_os_command_registry.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 27033,
+          "modified_utc": "2026-06-01T13:10:21Z",
+          "sha256": "ade84d060f7845d814e63a9eb5687dc23415fad0dd71c5be462b4f40308a52b7"
+        },
+        "main_status": "healthy",
+        "closure_status": "failed",
+        "evidence_file_count": 8,
+        "files": [
+          {
+            "path": "reports/system/082_command_registry/082_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1538,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "025f3fe4912d44aa3dcd4cd3cabb2edc0bc2f4b7d9ac525731ce943e68ed9d09",
+            "status": "completed",
+            "checkpoint": "082",
+            "mode": "action",
+            "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1240,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "0bb120adbc9b517250ba2c73b9c3e963cb25dd3cfe2142da436547abe013ce28",
+            "status": "failed",
+            "checkpoint": "082",
+            "mode": "audit",
+            "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 713,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "8bdfc13a9158f6cc372a6c7622071107569196cfaa31f1e256a8007be0f5505f",
+            "status": "failed",
+            "checkpoint": "082",
+            "mode": "closure",
+            "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 551,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "326ec2c426a9cd636be0215adb80b4e2ebcbff5a7e22b8bd5b7a446bc6a2c98f"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_command_registry.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2103279,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "0aa223d1ad825b8116dcca872fe1d1cfa17ecee1b5dc3ff562d685a933785fc4",
+            "status": "healthy",
+            "checkpoint": "082",
+            "mode": null,
+            "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_command_registry.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 27033,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "ade84d060f7845d814e63a9eb5687dc23415fad0dd71c5be462b4f40308a52b7"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 3255,
+            "modified_utc": "2026-06-01T13:10:08Z",
+            "sha256": "63150281d273d073f0dcec871b9a74e4b594823cd919b653d3705b479e19f1fd",
+            "status": "initialized",
+            "checkpoint": "082",
+            "mode": "init",
+            "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+          },
+          {
+            "path": "reports/system/082_command_registry/082_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1241,
+            "modified_utc": "2026-06-01T13:10:21Z",
+            "sha256": "cae7dc8b0083283293cafa2553d9711029600650ae58b00927ca39c93522563e",
+            "status": "failed",
+            "checkpoint": "082",
+            "mode": "validate",
+            "next_checkpoint": "083 - K-OS Backup and Export Pack Core"
+          }
+        ]
+      },
+      "083": {
+        "checkpoint": "083",
+        "name": "K-OS Backup and Export Pack Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/083_backup_export_pack",
+          "exists": true,
+          "type": "directory",
+          "file_count": 9
+        },
+        "main_report": {
+          "path": "reports/system/083_backup_export_pack/083_backup_export_manifest.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 3145329,
+          "modified_utc": "2026-06-01T13:13:38Z",
+          "sha256": "3c951c75e6d38e866fc1d5571fc4a3992babf9082a624cc5036fab57547cc114",
+          "status": "healthy",
+          "checkpoint": "083",
+          "mode": null,
+          "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+        },
+        "closure_report": {
+          "path": "reports/system/083_backup_export_pack/083_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 845,
+          "modified_utc": "2026-06-01T13:13:38Z",
+          "sha256": "2e7dde3160438ea4696da618ac743e904ccb45e409790c0d4654ee61ddcc64fb",
+          "status": "failed",
+          "checkpoint": "083",
+          "mode": "closure",
+          "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/083_k_os_backup_export_pack.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 28924,
+          "modified_utc": "2026-06-01T13:13:38Z",
+          "sha256": "e21a0d16dcefa1cd23edfb8fc1f7c3c2d3968b4e174a32b0097cacb2aeb6a8c4"
+        },
+        "main_status": "healthy",
+        "closure_status": "failed",
+        "evidence_file_count": 9,
+        "files": [
+          {
+            "path": "reports/system/083_backup_export_pack/083_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1721,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "9dd90ea95ad2212e7f6e9900b71c8fc88ca134ec594d60ceada260048ca43336",
+            "status": "completed",
+            "checkpoint": "083",
+            "mode": "action",
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1349,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "ab0bd47a9c4857cabb14935b81774c02efb74e7400633cdeb7bb51afbbc04096",
+            "status": "failed",
+            "checkpoint": "083",
+            "mode": "audit",
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_backup_export_manifest.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 3145329,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "3c951c75e6d38e866fc1d5571fc4a3992babf9082a624cc5036fab57547cc114",
+            "status": "healthy",
+            "checkpoint": "083",
+            "mode": null,
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_backup_export_pack.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 28924,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "e21a0d16dcefa1cd23edfb8fc1f7c3c2d3968b4e174a32b0097cacb2aeb6a8c4"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 845,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "2e7dde3160438ea4696da618ac743e904ccb45e409790c0d4654ee61ddcc64fb",
+            "status": "failed",
+            "checkpoint": "083",
+            "mode": "closure",
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 618,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "03d4f3288de78b2dbda902e6f0bb1f8bee028973516ae58b0e68cb0b2098c538"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_export_pack_index.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 804,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "8eff433f178f8025ae53bab3a8d2431dbbd910172de3849c28d421febbae2a50",
+            "status": null,
+            "checkpoint": "083",
+            "mode": null,
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 3269,
+            "modified_utc": "2026-06-01T13:13:15Z",
+            "sha256": "756cc4f7ce174cc98d1760f2ef2831c2fb26aad38bd64cf8c36c6ce7fcfd40a5",
+            "status": "initialized",
+            "checkpoint": "083",
+            "mode": "init",
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          },
+          {
+            "path": "reports/system/083_backup_export_pack/083_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1371,
+            "modified_utc": "2026-06-01T13:13:38Z",
+            "sha256": "17d5af2ca79f267c2e034d0c554efd1ec3cc32b7c99f5f39e74c9f097afdad97",
+            "status": "failed",
+            "checkpoint": "083",
+            "mode": "validate",
+            "next_checkpoint": "084 - K-OS Release Candidate Gate Core"
+          }
+        ]
+      },
+      "084": {
+        "checkpoint": "084",
+        "name": "K-OS Release Candidate Gate Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/084_release_candidate_gate",
+          "exists": true,
+          "type": "directory",
+          "file_count": 8
+        },
+        "main_report": {
+          "path": "reports/system/084_release_candidate_gate/084_release_candidate_gate.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 38173,
+          "modified_utc": "2026-06-01T13:18:00Z",
+          "sha256": "028d1ce8f6e7084609b147f23feec1e6b229f71a46b1912ea9bef9de26a4f187",
+          "status": "rc_ready_with_warnings",
+          "checkpoint": "084",
+          "mode": null,
+          "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+        },
+        "closure_report": {
+          "path": "reports/system/084_release_candidate_gate/084_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 802,
+          "modified_utc": "2026-06-01T13:18:00Z",
+          "sha256": "02fc88415dd66378e05ed1c9a9c067149e8d168a4d8f6fab6cc2449e8013f1d9",
+          "status": "failed",
+          "checkpoint": "084",
+          "mode": "closure",
+          "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/084_k_os_release_candidate_gate.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2944,
+          "modified_utc": "2026-06-01T13:18:00Z",
+          "sha256": "c82b790fb755467014dd784d4edd07d305a263ce532436fb6ef8415ad905b7a4"
+        },
+        "main_status": "rc_ready_with_warnings",
+        "closure_status": "failed",
+        "evidence_file_count": 8,
+        "files": [
+          {
+            "path": "reports/system/084_release_candidate_gate/084_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1833,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "9d9683aaf473693dc6563453a5e80584f14e0d9530760157f3be45f458335606",
+            "status": "completed",
+            "checkpoint": "084",
+            "mode": "action",
+            "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1312,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "08ed65f1832acbd98f870398eba09683562c3e01a6a109add165af201fd01e64",
+            "status": "failed",
+            "checkpoint": "084",
+            "mode": "audit",
+            "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 802,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "02fc88415dd66378e05ed1c9a9c067149e8d168a4d8f6fab6cc2449e8013f1d9",
+            "status": "failed",
+            "checkpoint": "084",
+            "mode": "closure",
+            "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 597,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "08061b2fd3b80001f0e42172cf5f011ed759351095d8c1d3abf17add375acd46"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 3075,
+            "modified_utc": "2026-06-01T13:17:59Z",
+            "sha256": "b7b5f42b9fd0a5a16d0e2083eb4e6f1da7e393de980a09644157e3aae26ca1e1",
+            "status": "initialized",
+            "checkpoint": "084",
+            "mode": "init",
+            "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_release_candidate_gate.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 38173,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "028d1ce8f6e7084609b147f23feec1e6b229f71a46b1912ea9bef9de26a4f187",
+            "status": "rc_ready_with_warnings",
+            "checkpoint": "084",
+            "mode": null,
+            "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_release_candidate_gate.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2944,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "c82b790fb755467014dd784d4edd07d305a263ce532436fb6ef8415ad905b7a4"
+          },
+          {
+            "path": "reports/system/084_release_candidate_gate/084_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1295,
+            "modified_utc": "2026-06-01T13:18:00Z",
+            "sha256": "376a1433bf9db8d7dac96e26ebd0c6579cfe95e984182f708e841ae462244085",
+            "status": "failed",
+            "checkpoint": "084",
+            "mode": "validate",
+            "next_checkpoint": "085 - K-OS Local Installer / Launcher Core"
+          }
+        ]
+      },
+      "085": {
+        "checkpoint": "085",
+        "name": "K-OS Local Installer / Launcher Core",
+        "status": "warning",
+        "directory": {
+          "path": "reports/system/085_local_installer_launcher",
+          "exists": true,
+          "type": "directory",
+          "file_count": 8
+        },
+        "main_report": {
+          "path": "reports/system/085_local_installer_launcher/085_local_installer_launcher_manifest.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 5694,
+          "modified_utc": "2026-06-01T13:23:02Z",
+          "sha256": "acaa56b62cdb71dbaf29d01a009b8615632f64e09f784b52574f64a381d7f66a",
+          "status": "ready_with_warnings",
+          "checkpoint": "085",
+          "mode": null,
+          "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+        },
+        "closure_report": {
+          "path": "reports/system/085_local_installer_launcher/085_closure_report.json",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 880,
+          "modified_utc": "2026-06-01T13:23:02Z",
+          "sha256": "67ae547c377ff27dbe357972b45e6e53cbc8d3d0d68a48d16e5a457878136542",
+          "status": "failed",
+          "checkpoint": "085",
+          "mode": "closure",
+          "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+        },
+        "commercial_doc": {
+          "path": "docs/commercial/085_k_os_local_installer_launcher.md",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 2519,
+          "modified_utc": "2026-06-01T13:23:02Z",
+          "sha256": "efb1724323aa409e200aad0dff936470d287a364a1c43fbe42d4f262aade713e"
+        },
+        "main_status": "ready_with_warnings",
+        "closure_status": "failed",
+        "evidence_file_count": 8,
+        "files": [
+          {
+            "path": "reports/system/085_local_installer_launcher/085_action_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1940,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "acb18489b1a838c4ab8f98b76b2019b9b13d01702c617e85fba724a32eceb23d",
+            "status": "completed",
+            "checkpoint": "085",
+            "mode": "action",
+            "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_audit_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1519,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "4699d1333791382d7b861f93f9db15f86f24b24378c27624f1a1492a07ba9a96",
+            "status": "failed",
+            "checkpoint": "085",
+            "mode": "audit",
+            "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_closure_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 880,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "67ae547c377ff27dbe357972b45e6e53cbc8d3d0d68a48d16e5a457878136542",
+            "status": "failed",
+            "checkpoint": "085",
+            "mode": "closure",
+            "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_closure_report.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 903,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "87ea2a0edc43593af88e0c1339ac74fd0c7825b12da250baa18c3e1fa9812cc5"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_init_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 3044,
+            "modified_utc": "2026-06-01T13:23:01Z",
+            "sha256": "b50b0252380e92ae2a033eb2f1c79bff1e6add3614e5fb675530e73091824aec",
+            "status": "initialized",
+            "checkpoint": "085",
+            "mode": "init",
+            "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_local_installer_launcher_manifest.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 5694,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "acaa56b62cdb71dbaf29d01a009b8615632f64e09f784b52574f64a381d7f66a",
+            "status": "ready_with_warnings",
+            "checkpoint": "085",
+            "mode": null,
+            "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_local_installer_launcher_manifest.md",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 2519,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "efb1724323aa409e200aad0dff936470d287a364a1c43fbe42d4f262aade713e"
+          },
+          {
+            "path": "reports/system/085_local_installer_launcher/085_validate_report.json",
+            "exists": true,
+            "type": "file",
+            "size_bytes": 1540,
+            "modified_utc": "2026-06-01T13:23:02Z",
+            "sha256": "fbe070db1fede3822027a623f5a0a13c906066771d4164df0f00a3ab79b916da",
+            "status": "failed",
+            "checkpoint": "085",
+            "mode": "validate",
+            "next_checkpoint": "086 - K-OS Final Documentation Pack Core"
+          }
+        ]
+      }
+    }
+  },
+  "project_surface": {
+    "entrypoint": {
+      "candidates": [
+        "app.py",
+        "streamlit_app.py",
+        "Home.py"
+      ],
+      "found": [
+        {
+          "path": "app.py",
+          "exists": true,
+          "type": "file",
+          "size_bytes": 20441,
+          "modified_utc": "2026-05-28T23:57:10Z",
+          "sha256": "8e245790016a880d091b79c2f4f1293600483a00f180a24bad0a0f9bcd511186"
+        }
+      ],
+      "selected": "app.py",
+      "status": "ready"
+    },
+    "launcher_scripts": [
+      {
+        "path": "scripts/k_os_local_install_check.ps1",
+        "exists": true,
+        "type": "file",
+        "size_bytes": 1332,
+        "modified_utc": "2026-06-01T13:22:58Z",
+        "sha256": "19e0cbaa53675eca67530cca69677e280957dae636e5c21d12f3f107a09b561b"
+      },
+      {
+        "path": "scripts/k_os_local_launcher.ps1",
+        "exists": true,
+        "type": "file",
+        "size_bytes": 1672,
+        "modified_utc": "2026-06-01T13:22:58Z",
+        "sha256": "89abcede1e859b667d67772f365f81da7a284ce8c6c300a57e83968e47fc63cc"
+      }
+    ],
+    "project_roots": [
+      {
+        "path": "k_atlas",
+        "exists": true,
+        "type": "directory",
+        "file_count": 4402
+      },
+      {
+        "path": "agents",
+        "exists": true,
+        "type": "directory",
+        "file_count": 22
+      },
+      {
+        "path": "memory",
+        "exists": true,
+        "type": "directory",
+        "file_count": 215
+      },
+      {
+        "path": "reports",
+        "exists": true,
+        "type": "directory",
+        "file_count": 969
+      },
+      {
+        "path": "configs",
+        "exists": true,
+        "type": "directory",
+        "file_count": 10
+      },
+      {
+        "path": "scripts",
+        "exists": true,
+        "type": "directory",
+        "file_count": 15
+      },
+      {
+        "path": "pages",
+        "exists": true,
+        "type": "directory",
+        "file_count": 1136
+      },
+      {
+        "path": "docs",
+        "exists": true,
+        "type": "directory",
+        "file_count": 71
+      }
+    ]
+  },
+  "documentation_outputs": [
+    {
+      "path": "docs/k_os/README_K_OS.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 934,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "7ce1db08fe8b9a39fa498c7b3f630cfd516497fad9a070bff69d7acd27f2e0c1"
+    },
+    {
+      "path": "docs/k_os/OPERATOR_GUIDE.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 888,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "6ac409fff62d59c62fba8396ced6b2ad4f7b6fd8fa72fcddd4935dddc94b990b"
+    },
+    {
+      "path": "docs/k_os/ARCHITECTURE.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 1232,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "97908e2995026b32ae6564934dbbb905214d202c45ceff54199755b5ca1c8efa"
+    },
+    {
+      "path": "docs/k_os/GOVERNANCE.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 1178,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "508a42c0d284f7c15f5c667018cad36a9d64e39b4c291f90f653b90171a8c71e"
+    },
+    {
+      "path": "docs/k_os/LAUNCHER_GUIDE.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 830,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "afa966cf48d755b6a3c3f96c1f90334a208c0692b2da10b4103c1c22c352e3d7"
+    },
+    {
+      "path": "docs/k_os/RELEASE_NOTES.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 754,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "609b7155f2dd25b37056279ee1feecb0d602db886cca1745eca49089117f4264"
+    },
+    {
+      "path": "docs/k_os/FINAL_DOCUMENTATION_INDEX.md",
+      "exists": true,
+      "type": "file",
+      "size_bytes": 1763,
+      "modified_utc": "2026-06-01T13:26:49Z",
+      "sha256": "4407c6ec3d06ff1338e49f4ab4b43fad65f434848350402f8d543eae02a6a6e7"
+    }
+  ],
+  "warnings": [
+    "source_checkpoint_evidence_warning"
+  ],
+  "blocked_operations": [
+    "deploy_execution",
+    "installer_execution",
+    "dependency_install_execution",
+    "release_publish_execution",
+    "backup_restore_execution",
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export",
+    "automatic_remediation"
+  ],
+  "execution_guard": {
+    "deploy_executed": false,
+    "installer_executed": false,
+    "dependency_install_executed": false,
+    "release_publish_executed": false,
+    "backup_restore_executed": false,
+    "automatic_remediation_executed": false,
+    "real_drill_executed": false,
+    "real_recovery_executed": false,
+    "real_rollback_executed": false,
+    "git_reset_hard_executed": false,
+    "force_push_executed": false,
+    "destructive_shell_executed": false,
+    "memory_deletion_executed": false,
+    "secret_export_executed": "[REDACTED]"
+  },
+  "operational_decision": {
+    "final_documentation_pack_created": true,
+    "docs_generated": true,
+    "docs_count": 7,
+    "installer_executed": false,
+    "deploy_executed": false,
+    "release_published": false,
+    "can_continue_to_next_checkpoint": true,
+    "next_checkpoint": "087 - K-OS Final Audit Pack Core"
+  }
+}

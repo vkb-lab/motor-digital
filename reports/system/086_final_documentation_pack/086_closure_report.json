@@ -1,0 +1,18 @@
+{
+  "checkpoint": "086",
+  "name": "K-OS Final Documentation Pack Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T13:26:50Z",
+  "pack_status": "ready_with_warnings",
+  "docs_count": 7,
+  "next_checkpoint": "087 - K-OS Final Audit Pack Core",
+  "action_report": "reports/system/086_final_documentation_pack/086_action_report.json",
+  "validate_report": "reports/system/086_final_documentation_pack/086_validate_report.json",
+  "audit_report": "reports/system/086_final_documentation_pack/086_audit_report.json",
+  "final_documentation_pack": "reports/system/086_final_documentation_pack/086_final_documentation_pack.json",
+  "deploy_executed": false,
+  "installer_executed": false,
+  "release_published": false,
+  "blocked_operations_confirmed": true
+}
