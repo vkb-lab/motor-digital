@@ -1,0 +1,50 @@
+{
+  "checkpoint": "077",
+  "name": "K-Agent Resilience Governance Summary Core",
+  "mode": "validate",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:41:21Z",
+  "file_checks": [
+    {
+      "path": "configs/resilience_governance_summary_077.json",
+      "exists": true
+    },
+    {
+      "path": "k_atlas/ops/resilience_governance_summary_077.py",
+      "exists": true
+    },
+    {
+      "path": "scripts/checkpoint_077_resilience_governance_summary.ps1",
+      "exists": true
+    },
+    {
+      "path": "pages/077_Resilience_Governance_Summary.py",
+      "exists": true
+    },
+    {
+      "path": "docs/commercial/077_k_agent_resilience_governance_summary.md",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/077_resilience_governance_summary/077_init_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/077_resilience_governance_summary/077_action_report.json",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/077_resilience_governance_summary/077_governance_summary.json",
+      "exists": true
+    },
+    {
+      "path": "reports/resilience/077_resilience_governance_summary/077_governance_summary.md",
+      "exists": true
+    }
+  ],
+  "execution_guard_ok": false,
+  "notes": [
+    "Validacao confirma artefatos principais.",
+    "Validacao confirma que o checkpoint nao executou drill, recovery ou rollback real."
+  ]
+}

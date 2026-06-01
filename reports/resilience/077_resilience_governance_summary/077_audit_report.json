@@ -1,0 +1,28 @@
+{
+  "checkpoint": "077",
+  "name": "K-Agent Resilience Governance Summary Core",
+  "mode": "audit",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:41:21Z",
+  "checks": {
+    "validate_passed": false,
+    "summary_exists": true,
+    "real_drill_not_executed": true,
+    "real_recovery_not_executed": true,
+    "real_rollback_not_executed": true,
+    "git_reset_hard_not_executed": true,
+    "force_push_not_executed": true,
+    "sensitive_content_not_exported": true,
+    "reports_are_sanitized": true
+  },
+  "blocked_operations": [
+    "real_drill_execution",
+    "real_recovery_execution",
+    "real_rollback_execution",
+    "git_reset_hard",
+    "force_push",
+    "destructive_shell",
+    "memory_deletion",
+    "secret_export"
+  ]
+}

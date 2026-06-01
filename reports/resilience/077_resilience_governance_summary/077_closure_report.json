@@ -1,0 +1,13 @@
+{
+  "checkpoint": "077",
+  "name": "K-Agent Resilience Governance Summary Core",
+  "mode": "closure",
+  "status": "failed",
+  "generated_at": "2026-06-01T12:41:22Z",
+  "next_checkpoint": "078 - K-Agent Resilience Layer Closure Core",
+  "action_report": "reports/resilience/077_resilience_governance_summary/077_action_report.json",
+  "validate_report": "reports/resilience/077_resilience_governance_summary/077_validate_report.json",
+  "audit_report": "reports/resilience/077_resilience_governance_summary/077_audit_report.json",
+  "governance_summary": "reports/resilience/077_resilience_governance_summary/077_governance_summary.json",
+  "blocked_operations_confirmed": true
+}
