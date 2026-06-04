@@ -18,3 +18,5 @@ local_secrets/
 memory/_uni_runtime/
 reports/_uni_hygiene/
 reports/_uni_master/
+# K-OS local quarantine
+_local_quarantine/
