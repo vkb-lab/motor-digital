@@ -1,0 +1,96 @@
+{
+  "status": "ACTIVE",
+  "default_order": [
+    "local_stub",
+    "ollama_local",
+    "gemini_free_guarded",
+    "cloudflare_workers_ai_guarded",
+    "openai_paid_guarded"
+  ],
+  "tools": {
+    "local_stub": {
+      "type": "internal",
+      "cost": "zero",
+      "enabled_by_default": true,
+      "use_for": [
+        "testes de fluxo",
+        "orquestracao",
+        "mock de agentes",
+        "validacao de prompts sem custo"
+      ],
+      "risk": "low"
+    },
+    "ollama_local": {
+      "type": "local_model_runtime",
+      "cost": "sem custo de API; usa hardware local",
+      "enabled_by_default": false,
+      "detected": {
+        "installed": false,
+        "path": ""
+      },
+      "use_for": [
+        "rascunhos",
+        "classificacao simples",
+        "sumarios internos",
+        "agentes locais",
+        "memoria operacional"
+      ],
+      "risk": "medium_quality_variation"
+    },
+    "gemini_free_guarded": {
+      "type": "external_api",
+      "cost": "free tier possivel, mas pago se exceder regras/tier",
+      "enabled_by_default": false,
+      "requires": [
+        "GEMINI_API_KEY",
+        "KOS_AI_GEMINI_ENABLED=true",
+        "budget policy ativa"
+      ],
+      "use_for": [
+        "tarefas com free tier controlado",
+        "testes pequenos"
+      ],
+      "risk": "unexpected_cost_if_uncontrolled"
+    },
+    "cloudflare_workers_ai_guarded": {
+      "type": "external_serverless_ai",
+      "cost": "free allocation e depois pago por uso",
+      "enabled_by_default": false,
+      "requires": [
+        "CLOUDFLARE_ACCOUNT_ID",
+        "CLOUDFLARE_API_TOKEN",
+        "budget policy ativa"
+      ],
+      "use_for": [
+        "futuro SaaS",
+        "modelos abertos serverless",
+        "ambiente comercial com custo rastreavel"
+      ],
+      "risk": "usage_based_cost"
+    },
+    "openai_paid_guarded": {
+      "type": "external_api",
+      "cost": "pago por token",
+      "enabled_by_default": false,
+      "requires": [
+        "OPENAI_API_KEY",
+        "KOS_AI_OPENAI_ENABLED=true",
+        "budget policy ativa"
+      ],
+      "use_for": [
+        "tarefas premium",
+        "alta qualidade",
+        "clientes pagantes"
+      ],
+      "risk": "paid_api_cost"
+    },
+    "browser_logged_accounts": {
+      "type": "browser_session",
+      "cost": "nao permitido como backend",
+      "enabled_by_default": false,
+      "allowed_as_backend": false,
+      "reason": "fragil, nao escalavel, risco operacional e de compliance"
+    }
+  },
+  "created_at": "2026-06-04T15:21:39.893507+00:00"
+}

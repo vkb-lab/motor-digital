@@ -1,0 +1,31 @@
+{
+  "status": "ACTIVE",
+  "mode": "DEV_SAFE",
+  "currency": "USD",
+  "default_provider": "local_stub",
+  "daily_budget_usd": 1.0,
+  "monthly_budget_usd": 5.0,
+  "per_request_max_usd": 0.05,
+  "hard_blocks": {
+    "gemini": true,
+    "openai": true,
+    "anthropic": true,
+    "browser_logged_accounts": true
+  },
+  "allow": {
+    "local_stub": true,
+    "ollama_local": false,
+    "gemini_free_guarded": false,
+    "cloudflare_workers_ai_guarded": false,
+    "openai_paid_guarded": false
+  },
+  "rules": {
+    "require_client_id": true,
+    "require_task_id": true,
+    "require_cost_estimate": true,
+    "require_ledger_log": true,
+    "require_human_approval_for_paid_provider": true,
+    "disable_ai_calls_when_budget_unknown": true
+  },
+  "created_at": "2026-06-04T15:21:39.893543+00:00"
+}
