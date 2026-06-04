@@ -1,0 +1,17 @@
+﻿[
+    {
+        "type":  "tracked_security_report",
+        "original":  "reports/security/latest_security_firewall_report.json",
+        "backup":  "_local_quarantine\\security_runtime_20260604_124638\\reports\\security\\latest_security_firewall_report.json"
+    },
+    {
+        "type":  "tracked_security_report",
+        "original":  "reports/security/latest_security_firewall_report.md",
+        "backup":  "_local_quarantine\\security_runtime_20260604_124638\\reports\\security\\latest_security_firewall_report.md"
+    },
+    {
+        "type":  "untracked_security_memory",
+        "original":  "memory/security",
+        "backup":  "_local_quarantine\\security_runtime_20260604_124638\\memory\\security"
+    }
+]
