@@ -1,0 +1,52 @@
+﻿[
+    {
+        "type":  "tracked_modified",
+        "original":  "public/kos/assets/parada_atlantida_campanha_lancamento_parada_atlantida.png",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\public\\kos\\assets\\parada_atlantida_campanha_lancamento_parada_atlantida.png"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "public/kos/index.html",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\public\\kos\\index.html"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/KOS_PHASE12_IG_FIRST_POST_PACKAGE.json",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\KOS_PHASE12_IG_FIRST_POST_PACKAGE.json"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/KOS_PHASE13_IG_LIVE_CHECK_DEMO.json",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\KOS_PHASE13_IG_LIVE_CHECK_DEMO.json"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/KOS_PHASE13_IG_LIVE_CHECK_PACKAGE.json",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\KOS_PHASE13_IG_LIVE_CHECK_PACKAGE.json"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/KOS_PHASE14_IG_FINAL_PACKAGE.json",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\KOS_PHASE14_IG_FINAL_PACKAGE.json"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/KOS_PHASE15_CREATIVE_ASSET_PACKAGE.json",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\KOS_PHASE15_CREATIVE_ASSET_PACKAGE.json"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/security/latest_security_firewall_report.json",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\security\\latest_security_firewall_report.json"
+    },
+    {
+        "type":  "tracked_modified",
+        "original":  "reports/security/latest_security_firewall_report.md",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\reports\\security\\latest_security_firewall_report.md"
+    },
+    {
+        "type":  "untracked",
+        "original":  "memory/security/security_firewall_events.jsonl",
+        "backup":  "_local_quarantine\\tracked_dirty_20260604_124521\\memory\\security\\security_firewall_events.jsonl"
+    }
+]
