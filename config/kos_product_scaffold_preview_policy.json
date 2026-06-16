@@ -1,0 +1,29 @@
+{
+  "status": "ACTIVE",
+  "phase": "54",
+  "module": "K-OS Product Factory Scaffold Preview",
+  "mode": "SCAFFOLD_PREVIEW_DRY_RUN_ONLY",
+  "goal": "transformar build plans em previews de scaffold sem criar produto real",
+  "blocked_actions": {
+    "write_product_code_automatically": true,
+    "create_product_files_without_approval": true,
+    "build_product_automatically": true,
+    "deploy_automatically": true,
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_exposure": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "auto_commit": true,
+    "auto_push": true
+  },
+  "hard_rules": {
+    "dry_run_only": true,
+    "preview_only": true,
+    "human_approval_required_before_file_creation": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true
+  },
+  "created_at": "2026-06-16T19:18:05.588473+00:00"
+}

@@ -1,3 +1,4 @@
 from .mission_layer import build_product_mission, create_product_mission, summarize_product_missions
 from .blueprint_generator import build_blueprint_from_mission, generate_blueprint_from_latest_mission, summarize_blueprints
 from .build_plan import build_plan_from_blueprint, generate_build_plan_from_latest_blueprint, summarize_build_plans
+from .scaffold_preview import build_scaffold_preview_from_build_plan, generate_scaffold_preview_from_latest_build_plan, summarize_scaffold_previews
