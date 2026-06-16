@@ -3,3 +3,5 @@ from .blueprint_generator import build_blueprint_from_mission, generate_blueprin
 from .build_plan import build_plan_from_blueprint, generate_build_plan_from_latest_blueprint, summarize_build_plans
 from .scaffold_preview import build_scaffold_preview_from_build_plan, generate_scaffold_preview_from_latest_build_plan, summarize_scaffold_previews
 from .scaffold_writer_gate import build_scaffold_writer_gate, generate_gate_from_latest_scaffold_preview, summarize_writer_gate
+
+from .product_registry import refresh_product_registry, get_latest_registry, scan_products
