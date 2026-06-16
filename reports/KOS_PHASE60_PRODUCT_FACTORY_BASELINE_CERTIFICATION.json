@@ -1,0 +1,57 @@
+{
+  "status": "PHASE60_PRODUCT_FACTORY_BASELINE_CERTIFIED",
+  "version": "v0.60.0",
+  "tag": "v0.60.0-kos-product-factory-baseline",
+  "branch": "kos/fase-18-render-public-asset-bridge",
+  "commit": "744ed31",
+  "commit_full": "744ed31a5a763d91a81707fcb745333152268a54",
+  "created_at": "2026-06-16T22:23:50.663037+00:00",
+  "certified_phases": [
+    "51_product_factory_mission_layer",
+    "52_product_blueprint_generator",
+    "53_product_build_plan",
+    "54_product_scaffold_preview",
+    "55_product_scaffold_writer_gate",
+    "56_product_scaffold_writer",
+    "57_product_runtime_registry",
+    "58_product_cockpit_launcher",
+    "59_product_qa_gate",
+    "60_product_factory_baseline_certification"
+  ],
+  "flow": [
+    "idea",
+    "product_mission",
+    "blueprint",
+    "build_plan",
+    "scaffold_preview",
+    "writer_gate",
+    "local_scaffold_writer",
+    "product_registry",
+    "cockpit_launcher",
+    "qa_gate",
+    "baseline_certification"
+  ],
+  "created_files": [
+    "docs/KOS_PRODUCT_FACTORY_BASELINE_V060.md",
+    "reports/KOS_PHASE60_PRODUCT_FACTORY_BASELINE_CERTIFICATION.json"
+  ],
+  "tests": {
+    "command": "python -m pytest tests\\test_phase59_product_qa_gate.py tests\\test_phase58_product_cockpit_launcher.py tests\\test_phase57_product_registry.py tests\\test_phase56_product_scaffold_writer.py -q",
+    "status": "PASS"
+  },
+  "safety": {
+    "production_publish_locked": true,
+    "paid_ai_locked": true,
+    "instagram_publish_locked": true,
+    "deploy_locked": true,
+    "codex_auto_execute_locked": true,
+    "secrets_exposed": false,
+    "local_runtime_committed": false,
+    "logs_committed": false
+  },
+  "runtime_raw": "{\n  \"status\": \"PHASE49_RUNTIME_CONTROL_STATUS_COMPLETED\",\n  \"runtime_status\": \"KOS_RUNTIME_CONTROL_STATUS_READY\",\n  \"startup_installed\": true,\n  \"background_running\": true,\n  \"process_count\": 1,\n  \"health_status\": \"HEALTHY\",\n  \"git_dirty\": false,\n  \"production_publish_locked\": true,\n  \"paid_ai_locked\": true,\n  \"real_action_executed\": false,\n  \"paid_ai_call_executed\": false,\n  \"instagram_publish_executed\": false\n}",
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "deploy_executed": false
+}
