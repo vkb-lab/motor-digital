@@ -1,0 +1,35 @@
+{
+  "status": "ACTIVE",
+  "phase": "35A",
+  "purpose": "separar codigo versionavel de runtime local para permitir ciclos Kaizen repetidos sem sujar o Git",
+  "versioned": [
+    "k_atlas/",
+    "agents/",
+    "pages/",
+    "scripts/",
+    "config/",
+    "tests/",
+    "docs/",
+    "memory/kaizen/task_queue.json",
+    "memory/kaizen/state.example.json"
+  ],
+  "local_runtime_ignored": [
+    "local_runtime/",
+    "logs/",
+    "memory/security/",
+    "memory/sandbox_api_adapter/",
+    "memory/kaizen/state.json",
+    "reports/security/latest_security_firewall_report.json",
+    "reports/security/latest_security_firewall_report.md",
+    "reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json",
+    "ops/codex/"
+  ],
+  "hard_rules": {
+    "no_paid_ai_without_budget": true,
+    "no_instagram_publish_without_human_confirmation": true,
+    "no_secret_commit": true,
+    "firewall_before_commit": true,
+    "runtime_files_are_local": true
+  },
+  "created_at": "2026-06-16T11:42:32.199490+00:00"
+}

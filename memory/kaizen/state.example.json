@@ -1,0 +1,13 @@
+{
+  "status": "BOOTSTRAPPED",
+  "mode": "TIER_0_OBSERVE",
+  "last_cycle_at": null,
+  "cycles": 0,
+  "production_locked": true,
+  "production_clients_locked": [
+    "parada_atlantida"
+  ],
+  "test_client": "hupmix",
+  "note": "Este arquivo e template versionavel. O state.json real e runtime local ignorado.",
+  "created_at": "2026-06-16T11:42:32.216499+00:00"
+}

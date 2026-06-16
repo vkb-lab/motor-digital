@@ -20,3 +20,14 @@ reports/_uni_hygiene/
 reports/_uni_master/
 # K-OS local quarantine
 _local_quarantine/
+
+# K-OS runtime local
+local_runtime/
+logs/
+memory/security/
+memory/sandbox_api_adapter/
+memory/kaizen/state.json
+reports/security/latest_security_firewall_report.json
+reports/security/latest_security_firewall_report.md
+reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json
+ops/codex/

@@ -1,0 +1,75 @@
+{
+  "status": "RUNTIME_BOUNDARY_PREPARED",
+  "phase": "35A",
+  "backup_dir": "_local_quarantine/phase35a_runtime_boundary_20260616_084232",
+  "backups": [
+    {
+      "original": "memory/kaizen/state.json",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/memory/kaizen/state.json"
+    },
+    {
+      "original": "reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json"
+    },
+    {
+      "original": "reports/security/latest_security_firewall_report.json",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/reports/security/latest_security_firewall_report.json"
+    },
+    {
+      "original": "reports/security/latest_security_firewall_report.md",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/reports/security/latest_security_firewall_report.md"
+    },
+    {
+      "original": "local_runtime",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/local_runtime"
+    },
+    {
+      "original": "logs",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/logs"
+    },
+    {
+      "original": "memory/security",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/memory/security"
+    },
+    {
+      "original": "memory/sandbox_api_adapter",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/memory/sandbox_api_adapter"
+    },
+    {
+      "original": "ops/codex",
+      "backup": "_local_quarantine/phase35a_runtime_boundary_20260616_084232/ops/codex"
+    }
+  ],
+  "runtime_boundary_file": "config/kos_runtime_boundary.json",
+  "state_example_file": "memory/kaizen/state.example.json",
+  "untrack_results": [
+    {
+      "cmd": "git rm --cached \"memory/kaizen/state.json\"",
+      "returncode": 0,
+      "stdout": "rm 'memory/kaizen/state.json'\n",
+      "stderr": ""
+    },
+    {
+      "cmd": "git rm --cached \"reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json\"",
+      "returncode": 0,
+      "stdout": "rm 'reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json'\n",
+      "stderr": ""
+    },
+    {
+      "cmd": "git rm --cached \"reports/security/latest_security_firewall_report.json\"",
+      "returncode": 0,
+      "stdout": "rm 'reports/security/latest_security_firewall_report.json'\n",
+      "stderr": ""
+    },
+    {
+      "cmd": "git rm --cached \"reports/security/latest_security_firewall_report.md\"",
+      "returncode": 0,
+      "stdout": "rm 'reports/security/latest_security_firewall_report.md'\n",
+      "stderr": ""
+    }
+  ],
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-16T11:42:33.261418+00:00"
+}
