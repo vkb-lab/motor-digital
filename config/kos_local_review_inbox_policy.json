@@ -1,0 +1,38 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "61E",
+    "module":  "K-OS Local Review Inbox",
+    "mode":  "LOCAL_REVIEW_CENTER",
+    "goal":  "centralizar comandos, tasks, work orders, command drafts e status do loop local",
+    "autonomy_tier":  "TIER_4_REVIEW_AND_HANDOFF",
+    "allowed_actions":  {
+                            "read_command_bridge":  true,
+                            "read_coworker_tasks":  true,
+                            "read_work_orders":  true,
+                            "read_command_drafts":  true,
+                            "read_loop_status":  true,
+                            "create_review_bundle":  true
+                        },
+    "blocked_actions":  {
+                            "execute_generated_commands":  true,
+                            "write_repo_files":  true,
+                            "apply_patch_automatically":  true,
+                            "arbitrary_shell_execution":  true,
+                            "auto_commit":  true,
+                            "auto_push":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "production_publish":  true
+                        },
+    "hard_rules":  {
+                       "read_only":  true,
+                       "local_runtime_only":  true,
+                       "no_command_execution":  true,
+                       "no_repo_mutation":  true,
+                       "no_paid_ai":  true,
+                       "no_external_publish":  true,
+                       "human_review_required":  true
+                   },
+    "created_at":  "2026-06-16T20:07:12.8177363-03:00"
+}
