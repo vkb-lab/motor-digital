@@ -1,0 +1,46 @@
+{
+  "status": "ACTIVE",
+  "phase": "51",
+  "module": "K-OS Product Factory Mission Layer",
+  "mode": "MISSION_DESIGN_ONLY",
+  "goal": "transformar ideias de produto em missoes estruturadas, auditaveis e seguras",
+  "allowed_product_types": [
+    "saas",
+    "app",
+    "landing_page",
+    "campaign",
+    "automation",
+    "api",
+    "agent",
+    "dashboard",
+    "integration"
+  ],
+  "allowed_actions": {
+    "create_product_mission": true,
+    "classify_product_type": true,
+    "generate_safe_task_plan": true,
+    "write_local_runtime_mission": true,
+    "summarize_product_missions": true
+  },
+  "blocked_actions": {
+    "build_product_automatically": true,
+    "deploy_automatically": true,
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_exposure": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "auto_commit": true,
+    "auto_push": true
+  },
+  "hard_rules": {
+    "draft_only": true,
+    "human_approval_required_before_execution": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T18:28:49.136903+00:00"
+}
