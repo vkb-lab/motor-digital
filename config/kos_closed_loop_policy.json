@@ -1,0 +1,38 @@
+{
+  "status": "ACTIVE",
+  "phase": "40",
+  "module": "K-OS Closed Loop Autonomy",
+  "mode": "SANDBOX_CLOSED_LOOP_ONLY",
+  "goal": "executar o ciclo Missao -> Plano -> Aprovacao -> Executor Sandbox -> Relatorio sem acao externa real",
+  "allowed_actions": {
+    "create_mission": true,
+    "plan_mission": true,
+    "create_approval_request": true,
+    "approve_dry_run": true,
+    "run_safe_executor_bundle": true,
+    "write_audit_report": true
+  },
+  "blocked_actions": {
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_access": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "external_side_effects": true
+  },
+  "safe_executor_actions": [
+    "git_branch",
+    "git_status"
+  ],
+  "required_confirmation": "YES_APPROVE_SAFE_DRY_RUN",
+  "hard_rules": {
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "approval_required_before_safe_bundle": true,
+    "safe_executor_allowlist_only": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T15:41:42.838843+00:00"
+}
