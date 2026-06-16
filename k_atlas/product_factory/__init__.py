@@ -7,3 +7,5 @@ from .scaffold_writer_gate import build_scaffold_writer_gate, generate_gate_from
 from .product_registry import refresh_product_registry, get_latest_registry, scan_products
 
 from .product_cockpit_launcher import refresh_product_cockpit_launcher, get_latest_launcher_snapshot
+
+from .product_qa_gate import refresh_product_qa_gate, get_latest_product_qa_report, evaluate_product_record
