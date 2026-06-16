@@ -1,0 +1,39 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "62",
+    "module":  "K-OS Product Local Runner Gate",
+    "mode":  "READ_ONLY_LOCAL_RUNNER_GATE",
+    "goal":  "preparar comandos manuais seguros para produtos locais sem executar produtos automaticamente",
+    "autonomy_tier":  "PRODUCT_FACTORY_RUNNER_GATE",
+    "allowed_actions":  {
+                            "read_product_registry":  true,
+                            "detect_app_py":  true,
+                            "detect_tests_folder":  true,
+                            "generate_manual_commands":  true,
+                            "write_local_audit_report":  true
+                        },
+    "blocked_actions":  {
+                            "execute_product_automatically":  true,
+                            "execute_shell_automatically":  true,
+                            "run_streamlit_automatically":  true,
+                            "run_pytest_automatically":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "external_publish":  true,
+                            "secret_exposure":  true,
+                            "auto_commit":  true,
+                            "auto_push":  true
+                        },
+    "hard_rules":  {
+                       "read_only":  true,
+                       "manual_execution_only":  true,
+                       "no_shell_execution":  true,
+                       "no_product_execution":  true,
+                       "no_paid_ai":  true,
+                       "no_external_publish":  true,
+                       "no_secret_exposure":  true,
+                       "human_review_required":  true
+                   },
+    "created_at":  "2026-06-16T20:21:07.1359890-03:00"
+}

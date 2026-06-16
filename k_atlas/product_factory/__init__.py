@@ -9,3 +9,5 @@ from .product_registry import refresh_product_registry, get_latest_registry, sca
 from .product_cockpit_launcher import refresh_product_cockpit_launcher, get_latest_launcher_snapshot
 
 from .product_qa_gate import refresh_product_qa_gate, get_latest_product_qa_report, evaluate_product_record
+
+from .product_local_runner_gate import refresh_product_local_runner_gate, get_latest_product_local_runner_gate_report
