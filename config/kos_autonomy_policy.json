@@ -1,0 +1,65 @@
+{
+  "status": "ACTIVE",
+  "system": "K-OS",
+  "module": "Kaizen Executor Orchestrator",
+  "mode": "TIER_0_OBSERVE",
+  "goal": "evoluir o K-OS continuamente com seguranca, memoria, logs e aprovacao humana para acoes reais",
+  "autonomy_tiers": {
+    "TIER_0_OBSERVE": {
+      "description": "observa, audita, registra e recomenda",
+      "can_modify_files": false,
+      "can_commit": false,
+      "can_publish": false,
+      "can_call_paid_ai": false
+    },
+    "TIER_1_PLAN": {
+      "description": "gera planos, patches e checklists sem aplicar automaticamente",
+      "can_modify_files": false,
+      "can_commit": false,
+      "can_publish": false,
+      "can_call_paid_ai": false
+    },
+    "TIER_2_SAFE_EXECUTE": {
+      "description": "executa mudancas seguras com firewall e logs",
+      "can_modify_files": true,
+      "can_commit": true,
+      "can_publish": false,
+      "can_call_paid_ai": false
+    },
+    "TIER_3_APPROVED_REAL_ACTIONS": {
+      "description": "executa acoes reais somente com confirmacao humana",
+      "can_modify_files": true,
+      "can_commit": true,
+      "can_publish": true,
+      "can_call_paid_ai": true
+    }
+  },
+  "hard_rules": {
+    "never_publish_without_human_confirmation": true,
+    "never_expose_secrets": true,
+    "never_use_browser_logged_accounts_as_backend": true,
+    "always_log_events": true,
+    "always_check_git_status": true,
+    "always_run_firewall_before_commit": true,
+    "always_keep_production_client_locked_for_tests": true,
+    "production_clients_locked": [
+      "parada_atlantida"
+    ],
+    "test_clients_allowed": [
+      "hupmix"
+    ]
+  },
+  "providers": {
+    "default": "local_stub",
+    "free_first": [
+      "local_stub",
+      "ollama_local"
+    ],
+    "paid_guarded": [
+      "openai",
+      "gemini"
+    ],
+    "paid_enabled": false
+  },
+  "created_at": "2026-06-16T11:27:06.822075+00:00"
+}

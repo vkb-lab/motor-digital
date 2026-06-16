@@ -1,0 +1,30 @@
+{
+  "status": "READY",
+  "created_at": "2026-06-16T11:27:06.822098+00:00",
+  "tasks": [
+    {
+      "id": "KOS-KAIZEN-001",
+      "priority": "high",
+      "type": "audit",
+      "title": "Auditar estado operacional do K-OS",
+      "status": "pending",
+      "safe_mode": true
+    },
+    {
+      "id": "KOS-KAIZEN-002",
+      "priority": "high",
+      "type": "architecture",
+      "title": "Consolidar mapa de agentes, conectores e modulos ativos",
+      "status": "pending",
+      "safe_mode": true
+    },
+    {
+      "id": "KOS-KAIZEN-003",
+      "priority": "medium",
+      "type": "cost_control",
+      "title": "Monitorar uso de IA e evitar chamadas pagas sem budget",
+      "status": "pending",
+      "safe_mode": true
+    }
+  ]
+}
