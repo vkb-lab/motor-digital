@@ -1,0 +1,33 @@
+{
+  "status": "ACTIVE",
+  "phase": "44",
+  "module": "K-OS Runtime Health Monitor",
+  "mode": "READ_ONLY_HEALTH_CHECK",
+  "goal": "monitorar se o K-OS 24/7 local esta vivo, seguro e sem efeitos externos",
+  "allowed_actions": {
+    "check_startup_folder": true,
+    "check_background_process": true,
+    "check_scheduler_last_tick": true,
+    "check_git_status": true,
+    "check_runtime_locks": true,
+    "read_logs_tail": true,
+    "write_health_report": true
+  },
+  "blocked_actions": {
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_exposure": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "mutation_from_health_monitor": true
+  },
+  "hard_rules": {
+    "read_only": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T16:48:19.044612+00:00"
+}
