@@ -1,0 +1,33 @@
+{
+  "status": "ACTIVE",
+  "phase": "39",
+  "module": "K-OS Human Approval Console",
+  "mode": "APPROVAL_LEDGER_ONLY",
+  "goal": "registrar aprovacoes humanas auditaveis sem liberar execucao real automatica",
+  "allowed_actions": {
+    "create_approval_request": true,
+    "approve_dry_run": true,
+    "reject_request": true,
+    "list_requests": true
+  },
+  "blocked_actions": {
+    "approve_real_publish": true,
+    "approve_paid_ai": true,
+    "approve_secret_access": true,
+    "execute_codex_automatically": true,
+    "publish_instagram": true
+  },
+  "required_confirmation": {
+    "dry_run_only": "YES_APPROVE_SAFE_DRY_RUN"
+  },
+  "hard_rules": {
+    "approval_does_not_execute": true,
+    "execution_allowed_remains_false": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T15:39:37.556975+00:00"
+}
