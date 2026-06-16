@@ -1,3 +1,10 @@
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from k_atlas.kaizen.closed_loop import run_closed_loop, summarize_last_reports
 from k_atlas.kaizen.human_approval import DRY_RUN_CONFIRMATION
 import json

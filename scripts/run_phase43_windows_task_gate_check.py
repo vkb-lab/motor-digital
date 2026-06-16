@@ -1,3 +1,10 @@
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from k_atlas.kaizen.windows_task_gate import build_registration_plan, check_windows_task_status
 import json
 

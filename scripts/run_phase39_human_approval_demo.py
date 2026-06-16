@@ -1,3 +1,10 @@
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from k_atlas.kaizen.human_approval import create_approval_request, approve_dry_run, summarize_approvals, DRY_RUN_CONFIRMATION
 import json
 
