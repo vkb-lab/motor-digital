@@ -58,6 +58,26 @@ def run_briefing_scheduler_tick(cycle_id: str = "briefing_scheduler_tick") -> di
         "created_at": now(),
     }
 
+    try:
+        from k_atlas.kaizen.evidence_ledger import append_evidence
+        evidence = append_evidence(
+            source="briefing_scheduler_tick",
+            note=cycle_id,
+            extra={
+                "cycle_id": cycle_id,
+                "tick_status": report.get("status")
+            }
+        )
+        report["evidence_ledger"] = {
+            "recorded": True,
+            "evidence_id": evidence.get("evidence_id")
+        }
+    except Exception as exc:
+        report["evidence_ledger"] = {
+            "recorded": False,
+            "error": str(exc)
+        }
+
     _save_json(LAST_TICK, report)
     return report
 
