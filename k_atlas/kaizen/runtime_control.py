@@ -33,12 +33,22 @@ def _run(cmd: list[str], timeout: int = 30) -> dict:
             "stderr": str(exc),
         }
 
+
 def check_runtime_processes() -> dict:
-    ps = (
-        "Get-CimInstance Win32_Process | "
-        "Where-Object { $_.CommandLine -match 'start_kos_autonomy_scheduler_manual_loop' } | "
-        "Select-Object ProcessId,CommandLine | ConvertTo-Json -Depth 4 -Compress"
-    )
+    ps = r"""
+$script = (Resolve-Path "scripts\start_kos_autonomy_scheduler_manual_loop.ps1").Path
+$escaped = [regex]::Escape($script)
+
+Get-CimInstance Win32_Process |
+  Where-Object {
+    $_.ProcessId -ne $PID -and
+    $_.CommandLine -and
+    $_.CommandLine -match $escaped -and
+    $_.CommandLine -notmatch '\s-Command\s'
+  } |
+  Select-Object ProcessId,ParentProcessId,CommandLine |
+  ConvertTo-Json -Depth 4 -Compress
+"""
 
     result = _run([
         "powershell.exe",
@@ -60,12 +70,13 @@ def check_runtime_processes() -> dict:
             elif isinstance(parsed, dict):
                 count = 1
         except Exception:
-            count = 1
+            count = 0
 
     return {
         "status": "RUNTIME_PROCESS_CHECKED",
         "running": count > 0,
         "process_count": count,
+        "counting_rule": "counts_only_real_loop_process_excluding_checker_and_command_wrapper",
         "raw": result,
         "real_action_executed": False,
         "paid_ai_call_executed": False,
