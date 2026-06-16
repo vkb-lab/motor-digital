@@ -1,0 +1,10 @@
+{
+  "status": "PHASE61F_WORK_ORDER_ROUTER_HARDENED",
+  "phase": "61F",
+  "fix": "Fase 63 Export Packager agora tem prioridade sobre mentions genericas de Runner Gate.",
+  "reason": "O bundle da Fase 63 estava propondo arquivos da Fase 62 porque o texto mencionava Product Local Runner Gate.",
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-16T23:34:48.326863+00:00"
+}

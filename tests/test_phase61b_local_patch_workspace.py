@@ -59,3 +59,30 @@ def test_operator_command_preview_is_non_destructive():
     assert "git push" not in command
     assert "remove-item" not in command
     assert "del " not in command
+
+
+def test_phase63_export_packager_route_wins_over_runner_gate_mentions():
+    task = {
+        "task_id": "KOS-COWORKER-PHASE63",
+        "source_command_id": "KOS-CMD-PHASE63",
+        "title": "Fase 63 - Product Export Packager",
+        "area": "product_factory",
+        "priority": "alta",
+        "body": "Criar Fase 63 Product Export Packager. Ler Product Registry, QA Gate e Product Local Runner Gate. Gerar manifesto exportavel sem zip automatico.",
+        "classification": {
+            "task_type": "general_operation",
+            "risk": "high",
+            "risk_reasons": [],
+            "ask_k_atlas_engineer": True,
+        },
+    }
+
+    files = proposed_files_for_task(task)
+    paths = [item["path"] for item in files]
+
+    assert "k_atlas/product_factory/product_export_packager.py" in paths
+    assert "scripts/run_phase63_product_export_packager.py" in paths
+    assert "tests/test_phase63_product_export_packager.py" in paths
+    assert "k_atlas/product_factory/product_local_runner_gate.py" not in paths
+    assert "scripts/run_phase62_product_local_runner_gate.py" not in paths
+

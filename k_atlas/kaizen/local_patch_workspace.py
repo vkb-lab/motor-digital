@@ -54,18 +54,37 @@ def proposed_files_for_task(task: dict) -> list[dict]:
     task_type = classification.get("task_type", "general_operation")
     body = str(task.get("body", "")).lower()
     title = str(task.get("title", "")).lower()
+    scope_text = f"{title}\n{body}"
 
-    if "fase 62" in body or "phase 62" in body or "runner gate" in body:
+    # Ordem importa:
+    # Fases mais especificas precisam vir antes de termos genericos como "runner gate".
+    if (
+        "fase 63" in scope_text
+        or "phase 63" in scope_text
+        or "product export packager" in scope_text
+        or "export packager" in scope_text
+        or task_type == "export_packager_operation"
+    ):
+        return [
+            {"path": "config/kos_product_export_packager_policy.json", "purpose": "Policy do export packager local."},
+            {"path": "k_atlas/product_factory/product_export_packager.py", "purpose": "Empacotador seguro read-only sem criar zip automaticamente."},
+            {"path": "scripts/run_phase63_product_export_packager.py", "purpose": "Runner seguro da Fase 63."},
+            {"path": "pages/KOS_Product_Export_Packager.py", "purpose": "Cockpit Streamlit da Fase 63."},
+            {"path": "tests/test_phase63_product_export_packager.py", "purpose": "Testes de seguranca da Fase 63."},
+            {"path": "reports/KOS_PHASE63_PRODUCT_EXPORT_PACKAGER_BOOTSTRAP.json", "purpose": "Relatorio auditavel da Fase 63."}
+        ]
+
+    if "fase 62" in scope_text or "phase 62" in scope_text or "runner gate" in scope_text:
         return [
             {"path": "config/kos_product_local_runner_gate_policy.json", "purpose": "Policy do runner gate local."},
             {"path": "k_atlas/product_factory/product_local_runner_gate.py", "purpose": "Gate read-only para preparar execucao local manual."},
-            {"path": "scripts/run_phase62_product_local_runner_gate.py", "purpose": "Runner seguro da fase."},
-            {"path": "pages/KOS_Product_Local_Runner_Gate.py", "purpose": "Cockpit Streamlit da fase."},
-            {"path": "tests/test_phase62_product_local_runner_gate.py", "purpose": "Testes de seguranca."},
-            {"path": "reports/KOS_PHASE62_PRODUCT_LOCAL_RUNNER_GATE_BOOTSTRAP.json", "purpose": "Relatorio da fase."}
+            {"path": "scripts/run_phase62_product_local_runner_gate.py", "purpose": "Runner seguro da Fase 62."},
+            {"path": "pages/KOS_Product_Local_Runner_Gate.py", "purpose": "Cockpit Streamlit da Fase 62."},
+            {"path": "tests/test_phase62_product_local_runner_gate.py", "purpose": "Testes de seguranca da Fase 62."},
+            {"path": "reports/KOS_PHASE62_PRODUCT_LOCAL_RUNNER_GATE_BOOTSTRAP.json", "purpose": "Relatorio da Fase 62."}
         ]
 
-    if "fase 61" in body or "phase 61" in body or task_type == "local_autonomy_operation":
+    if "fase 61" in scope_text or "phase 61" in scope_text or task_type == "local_autonomy_operation":
         return [
             {"path": "config/kos_local_patch_workspace_policy.json", "purpose": "Policy do workspace local de patches."},
             {"path": "k_atlas/kaizen/local_patch_workspace.py", "purpose": "Modulo de work orders locais."},
@@ -73,16 +92,6 @@ def proposed_files_for_task(task: dict) -> list[dict]:
             {"path": "pages/KOS_Local_Patch_Workspace.py", "purpose": "Cockpit Streamlit da fase."},
             {"path": "tests/test_phase61b_local_patch_workspace.py", "purpose": "Testes de seguranca."},
             {"path": "reports/KOS_PHASE61B_LOCAL_PATCH_WORKSPACE_BOOTSTRAP.json", "purpose": "Relatorio da fase."}
-        ]
-
-    if task_type == "export_packager_operation":
-        return [
-            {"path": "config/kos_product_export_packager_policy.json", "purpose": "Policy do export packager."},
-            {"path": "k_atlas/product_factory/product_export_packager.py", "purpose": "Empacotador seguro read-only."},
-            {"path": "scripts/run_phase61_product_export_packager.py", "purpose": "Runner seguro."},
-            {"path": "pages/KOS_Product_Export_Packager.py", "purpose": "Cockpit Streamlit."},
-            {"path": "tests/test_phase61_product_export_packager.py", "purpose": "Testes de seguranca."},
-            {"path": "reports/KOS_PHASE61_PRODUCT_EXPORT_PACKAGER_BOOTSTRAP.json", "purpose": "Relatorio."}
         ]
 
     if task_type == "qa_operation":

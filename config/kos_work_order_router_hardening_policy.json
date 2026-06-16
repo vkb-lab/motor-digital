@@ -1,0 +1,28 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "61F",
+    "module":  "K-OS Work Order Router Hardening",
+    "mode":  "LOCAL_ROUTING_FIX",
+    "goal":  "priorizar roteamento explicito por fase e evitar falso match entre Fase 63 Export Packager e Fase 62 Runner Gate",
+    "allowed_actions":  {
+                            "update_local_patch_workspace_router":  true,
+                            "add_router_regression_tests":  true,
+                            "archive_invalid_runtime_work_orders":  true,
+                            "regenerate_review_bundle":  true
+                        },
+    "blocked_actions":  {
+                            "execute_generated_commands":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "external_publish":  true
+                        },
+    "safety":  {
+                   "repo_write_requires_commit":  true,
+                   "runtime_archive_only":  true,
+                   "no_paid_ai":  true,
+                   "no_instagram":  true,
+                   "no_deploy":  true
+               },
+    "created_at":  "2026-06-16T20:34:47.6271348-03:00"
+}
