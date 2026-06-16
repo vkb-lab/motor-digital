@@ -1,0 +1,27 @@
+{
+  "status": "ACTIVE",
+  "phase": "37",
+  "module": "K-OS Mission Queue",
+  "mode": "HUMAN_APPROVAL_REQUIRED",
+  "goal": "registrar, planejar e preparar missoes para execucao segura sem executar automaticamente",
+  "allowed_actions": {
+    "create_mission": true,
+    "plan_mission": true,
+    "create_codex_draft": true,
+    "approve_mission": true,
+    "execute_mission": false,
+    "publish_instagram": false,
+    "call_paid_ai": false,
+    "commit_without_firewall": false
+  },
+  "hard_rules": {
+    "human_approval_required": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true,
+    "codex_execution_manual_only": true
+  },
+  "created_at": "2026-06-16T15:30:27.467973+00:00"
+}
