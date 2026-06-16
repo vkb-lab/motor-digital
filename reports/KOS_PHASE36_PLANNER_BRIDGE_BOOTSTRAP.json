@@ -1,0 +1,23 @@
+{
+  "status": "PHASE36_PLANNER_BRIDGE_INSTALLED",
+  "phase": "36",
+  "codex_detected": {
+    "installed": true,
+    "path": "C:\\Users\\oi\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.EXE",
+    "version": "codex-cli 0.139.0"
+  },
+  "ollama_detected": {
+    "installed": true,
+    "path": "C:\\Users\\oi\\AppData\\Local\\Programs\\Ollama\\ollama.EXE",
+    "version": "ollama version is 0.30.8"
+  },
+  "created_files": [
+    "config/kos_planner_bridge_policy.json",
+    "k_atlas/kaizen/planner_bridge.py",
+    "scripts/run_phase36_planner_bridge.py"
+  ],
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-16T15:11:18.442227+00:00"
+}
