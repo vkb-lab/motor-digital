@@ -8,6 +8,7 @@ import streamlit as st
 from k_atlas.agent_registry import register_default_agents
 from k_atlas.campaign_engine import generate_campaign, list_campaigns
 from k_atlas.events import read_events
+from k_atlas.kos_base.workspace import render_kos_base_workspace_panel
 from k_atlas.memory_store import MemoryStore
 from k_atlas.paths import EVENTS_FILE, REQUIRED_DIRS, ensure_dirs, relative_to_root
 from k_atlas.reporting import generate_report
@@ -26,6 +27,7 @@ st.caption("Cockpit operacional local do K-OS / Motor Digital")
 
 tabs = st.tabs(
     [
+        "BASE K-OS",
         "Painel Geral",
         "Status do sistema",
         "Memoria operacional",
@@ -37,6 +39,9 @@ tabs = st.tabs(
 )
 
 with tabs[0]:
+    render_kos_base_workspace_panel()
+
+with tabs[1]:
     st.subheader("Painel Geral")
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Agentes", len(registry.names()))
@@ -45,13 +50,13 @@ with tabs[0]:
     col4.metric("Eventos", len(read_events(limit=1000)))
     st.write("Camada operacional modular pronta para operar com fallback local.")
 
-with tabs[1]:
+with tabs[2]:
     st.subheader("Status do sistema")
     status_rows = [{"pasta": relative_to_root(path), "existe": path.exists()} for path in REQUIRED_DIRS]
     st.dataframe(status_rows, use_container_width=True)
     st.write({"app.py": Path("app.py").exists(), "events.jsonl": EVENTS_FILE.exists()})
 
-with tabs[2]:
+with tabs[3]:
     st.subheader("Memoria operacional")
     with st.form("memory_form"):
         key = st.text_input("Chave", value="nota")
@@ -62,7 +67,7 @@ with tabs[2]:
         st.success("Memoria gravada")
     st.dataframe(memory.all(), use_container_width=True)
 
-with tabs[3]:
+with tabs[4]:
     st.subheader("Executor de agentes")
     agent_name = st.selectbox("Agente", registry.names())
     task = st.text_input("Tarefa", value="verificar sistema")
@@ -75,7 +80,7 @@ with tabs[3]:
         except Exception as exc:
             st.error(str(exc))
 
-with tabs[4]:
+with tabs[5]:
     st.subheader("Campanhas")
     with st.form("campaign_form"):
         name = st.text_input("Nome", value="Campanha K-OS MVP")
@@ -88,7 +93,7 @@ with tabs[4]:
         with st.expander(relative_to_root(path)):
             st.code(path.read_text(encoding="utf-8"), language="json")
 
-with tabs[5]:
+with tabs[6]:
     st.subheader("Relatorios")
     if st.button("Gerar relatorio operacional"):
         report_path = generate_report("K-OS Cockpit Report", {"source": "streamlit"})
@@ -97,7 +102,7 @@ with tabs[5]:
         with st.expander(relative_to_root(path)):
             st.markdown(path.read_text(encoding="utf-8"))
 
-with tabs[6]:
+with tabs[7]:
     st.subheader("Logs recentes")
     events = read_events(limit=100)
     if events:
