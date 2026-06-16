@@ -1,0 +1,40 @@
+{
+  "status": "ACTIVE",
+  "phase": "49",
+  "module": "K-OS Runtime Control CLI",
+  "mode": "LOCAL_OPERATOR_CONTROL",
+  "goal": "centralizar comandos seguros de controle do runtime local do K-OS",
+  "allowed_actions": {
+    "status": true,
+    "health": true,
+    "briefing": true,
+    "evidence": true,
+    "start_with_confirmation": true,
+    "stop_with_confirmation": true,
+    "restart_with_confirmation": true
+  },
+  "blocked_actions": {
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_exposure": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "auto_commit": true,
+    "auto_push": true
+  },
+  "required_confirmations": {
+    "start": "YES_START_KOS_RUNTIME_LOCAL",
+    "stop": "YES_STOP_KOS_RUNTIME_LOCAL",
+    "restart": "YES_RESTART_KOS_RUNTIME_LOCAL"
+  },
+  "hard_rules": {
+    "local_only": true,
+    "human_confirmation_for_process_control": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T17:21:58.618400+00:00"
+}
