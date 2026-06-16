@@ -1,0 +1,28 @@
+﻿{
+    "status":  "PHASE50_AUTONOMY_BASELINE_CERTIFIED",
+    "phase":  "50",
+    "branch":  "kos/fase-18-render-public-asset-bridge",
+    "commit_base":  "53e85ae",
+    "created_at":  "2026-06-16T14:56:07.3837402-03:00",
+    "runtime_local_active":  true,
+    "startup_folder_enabled":  true,
+    "paid_ai_locked":  true,
+    "instagram_publish_locked":  true,
+    "codex_auto_execute_locked":  true,
+    "external_publish_locked":  true,
+    "git_status":  {
+
+                   },
+    "docs":  [
+                 "docs/KOS_AUTONOMY_BASELINE_V050.md"
+             ],
+    "runtime_evidence":  [
+                             "logs/kaizen/baseline/phase50_runtime_control_status.json",
+                             "logs/kaizen/baseline/phase50_runtime_health.json",
+                             "logs/kaizen/baseline/phase50_operator_briefing.json",
+                             "logs/kaizen/baseline/phase50_evidence_ledger.json"
+                         ],
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false
+}
