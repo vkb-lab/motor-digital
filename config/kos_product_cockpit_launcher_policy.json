@@ -1,0 +1,28 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "58",
+    "module":  "K-OS Product Cockpit Launcher",
+    "mode":  "READ_ONLY_LAUNCH_INSTRUCTIONS",
+    "goal":  "listar produtos registrados e gerar instrucoes locais sem executar comandos",
+    "blocked_actions":  {
+                            "execute_product_automatically":  true,
+                            "run_shell_automatically":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "secret_exposure":  true,
+                            "codex_auto_execute":  true,
+                            "production_publish":  true,
+                            "auto_push":  true
+                        },
+    "hard_rules":  {
+                       "read_only":  true,
+                       "instructions_only":  true,
+                       "no_shell_execution":  true,
+                       "no_product_execution":  true,
+                       "no_paid_ai":  true,
+                       "no_external_publish":  true,
+                       "no_secret_exposure":  true
+                   },
+    "created_at":  "2026-06-16T16:46:05.7454865-03:00"
+}

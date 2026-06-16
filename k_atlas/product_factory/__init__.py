@@ -5,3 +5,5 @@ from .scaffold_preview import build_scaffold_preview_from_build_plan, generate_s
 from .scaffold_writer_gate import build_scaffold_writer_gate, generate_gate_from_latest_scaffold_preview, summarize_writer_gate
 
 from .product_registry import refresh_product_registry, get_latest_registry, scan_products
+
+from .product_cockpit_launcher import refresh_product_cockpit_launcher, get_latest_launcher_snapshot
