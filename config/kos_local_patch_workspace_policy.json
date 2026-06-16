@@ -1,0 +1,37 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "61B",
+    "module":  "K-OS Local Patch Workspace",
+    "mode":  "LOCAL_PATCH_PLANNING_ONLY",
+    "goal":  "transformar tarefas do coworker local em work orders e planos de patch sem alterar o repositorio",
+    "autonomy_tier":  "TIER_2_PATCH_PREPARATION",
+    "allowed_actions":  {
+                            "read_local_coworker_tasks":  true,
+                            "create_patch_work_orders":  true,
+                            "create_operator_commands":  true,
+                            "prepare_file_change_plan":  true,
+                            "prepare_test_plan":  true
+                        },
+    "blocked_actions":  {
+                            "write_repo_files":  true,
+                            "apply_patch_automatically":  true,
+                            "arbitrary_shell_execution":  true,
+                            "auto_commit":  true,
+                            "auto_push":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "secret_exposure":  true,
+                            "production_publish":  true
+                        },
+    "hard_rules":  {
+                       "local_runtime_only":  true,
+                       "no_repo_mutation":  true,
+                       "no_paid_ai":  true,
+                       "no_external_publish":  true,
+                       "no_secret_exposure":  true,
+                       "human_review_required_for_apply":  true,
+                       "ask_k_atlas_engineer_on_uncertainty":  true
+                   },
+    "created_at":  "2026-06-16T19:46:31.3971189-03:00"
+}
