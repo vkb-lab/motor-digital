@@ -1,0 +1,19 @@
+{
+  "status": "PHASE43_WINDOWS_TASK_GATE_BOOTSTRAPPED",
+  "phase": "43",
+  "created_files": [
+    "config/kos_windows_task_gate_policy.json",
+    "k_atlas/kaizen/windows_task_gate.py",
+    "scripts/register_kos_autonomy_windows_task.ps1",
+    "scripts/unregister_kos_autonomy_windows_task.ps1",
+    "scripts/run_phase43_windows_task_gate_check.py",
+    "pages/KOS_Windows_Task_Gate.py",
+    "tests/test_phase43_windows_task_gate.py"
+  ],
+  "task_registered_by_bootstrap": false,
+  "confirmation_required": "YES_REGISTER_KOS_247_LOCAL_ONLY",
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-16T15:49:42.799062+00:00"
+}

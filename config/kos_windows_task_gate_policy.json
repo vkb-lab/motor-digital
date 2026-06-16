@@ -1,0 +1,39 @@
+{
+  "status": "ACTIVE",
+  "phase": "43",
+  "module": "K-OS Windows Task Registration Gate",
+  "mode": "EXPLICIT_CONFIRMATION_REQUIRED",
+  "goal": "permitir registro local do scheduler K-OS no Windows somente com confirmacao humana explicita",
+  "task": {
+    "name": "KOS-Autonomy-Scheduler-Local",
+    "trigger": "AtLogOn",
+    "interval_seconds": 900,
+    "max_cycles": 0,
+    "script": "scripts/start_kos_autonomy_scheduler_manual_loop.ps1",
+    "confirmation_required": "YES_REGISTER_KOS_247_LOCAL_ONLY"
+  },
+  "allowed_actions": {
+    "generate_registration_script": true,
+    "generate_unregistration_script": true,
+    "check_task_status": true,
+    "register_task_after_exact_confirmation": true,
+    "unregister_task": true
+  },
+  "blocked_actions": {
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_access": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "register_without_exact_confirmation": true
+  },
+  "hard_rules": {
+    "exact_confirmation_required": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T15:49:42.783981+00:00"
+}
