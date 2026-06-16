@@ -1,0 +1,32 @@
+{
+  "status": "ACTIVE",
+  "phase": "47",
+  "module": "K-OS Briefing Scheduler Integration",
+  "mode": "LOCAL_RECURRING_READ_ONLY",
+  "goal": "integrar briefing operacional ao ciclo recorrente local do K-OS",
+  "allowed_actions": {
+    "run_scheduler_tick": true,
+    "run_operator_briefing": true,
+    "write_local_runtime_logs": true,
+    "read_git_status": true,
+    "read_runtime_health": true
+  },
+  "blocked_actions": {
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_exposure": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "auto_commit": true,
+    "auto_push": true
+  },
+  "hard_rules": {
+    "read_only_runtime": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T17:03:47.908940+00:00"
+}

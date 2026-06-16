@@ -21,15 +21,16 @@ Write-Host "[KOS] Project root:" $ProjectRoot
 Write-Host "[KOS] PYTHONPATH:" $env:PYTHONPATH
 Write-Host "[KOS] Intervalo segundos:" $interval
 Write-Host "[KOS] Max cycles:" $max
+Write-Host "[KOS] Modo: scheduler + briefing operacional."
 Write-Host "[KOS] Sem Instagram, sem IA paga, sem Codex automatico."
 
 while($true){
   $count += 1
-  Write-Host "[KOS] Scheduler tick:" $count
-  python scripts\run_phase42_scheduler_once.py
+  Write-Host "[KOS] Scheduler briefing tick:" $count
+  python scripts\run_phase47_briefing_scheduler_tick.py
 
   if($LASTEXITCODE -ne 0){
-    throw "Scheduler tick falhou."
+    throw "Scheduler briefing tick falhou."
   }
 
   if($max -gt 0 -and $count -ge $max){
