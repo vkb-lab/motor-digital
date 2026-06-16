@@ -1,0 +1,20 @@
+{
+  "status": "PHASE43D_STARTUP_FOLDER_GATE_BOOTSTRAPPED",
+  "phase": "43D",
+  "created_files": [
+    "config/kos_startup_folder_gate_policy.json",
+    "k_atlas/kaizen/startup_folder_gate.py",
+    "scripts/register_kos_autonomy_startup_folder.ps1",
+    "scripts/unregister_kos_autonomy_startup_folder.ps1",
+    "scripts/run_phase43d_startup_folder_gate_check.py",
+    "pages/KOS_Startup_Folder_Gate.py",
+    "tests/test_phase43d_startup_folder_gate.py"
+  ],
+  "startup_registered_by_bootstrap": false,
+  "confirmation_required": "YES_REGISTER_KOS_STARTUP_LOCAL_ONLY",
+  "requires_admin": false,
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-16T16:39:43.164527+00:00"
+}

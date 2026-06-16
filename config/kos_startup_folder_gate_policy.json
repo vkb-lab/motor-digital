@@ -1,0 +1,32 @@
+{
+  "status": "ACTIVE",
+  "phase": "43D",
+  "module": "K-OS Startup Folder Gate",
+  "mode": "USER_STARTUP_FALLBACK_EXPLICIT_CONFIRMATION",
+  "goal": "ativar loop local do K-OS no login do usuario sem exigir admin, usando Startup Folder",
+  "confirmation_required": "YES_REGISTER_KOS_STARTUP_LOCAL_ONLY",
+  "startup_entry": "KOS-Autonomy-Scheduler-Local.cmd",
+  "allowed_actions": {
+    "check_startup_entry": true,
+    "register_after_exact_confirmation": true,
+    "unregister_startup_entry": true
+  },
+  "blocked_actions": {
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_access": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "register_without_exact_confirmation": true
+  },
+  "hard_rules": {
+    "no_admin_required": true,
+    "exact_confirmation_required": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T16:39:43.147035+00:00"
+}
