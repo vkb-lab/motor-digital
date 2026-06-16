@@ -1,0 +1,33 @@
+{
+  "status": "ACTIVE",
+  "phase": "45",
+  "module": "K-OS Self-Healing Local Supervisor",
+  "mode": "DIAGNOSE_AND_RECOMMEND_ONLY",
+  "goal": "detectar falhas locais do K-OS 24/7 e gerar plano de recuperacao manual seguro",
+  "allowed_actions": {
+    "read_runtime_health": true,
+    "detect_failures": true,
+    "generate_recovery_plan": true,
+    "write_local_report": true,
+    "show_manual_commands": true
+  },
+  "blocked_actions": {
+    "auto_repair": true,
+    "instagram_publish": true,
+    "paid_ai_call": true,
+    "secret_exposure": true,
+    "codex_auto_execute": true,
+    "production_publish": true,
+    "git_reset_auto": true
+  },
+  "hard_rules": {
+    "diagnose_only": true,
+    "manual_confirmation_required_for_repair": true,
+    "no_paid_ai": true,
+    "no_external_publish": true,
+    "no_secret_exposure": true,
+    "parada_atlantida_locked": true,
+    "hupmix_test_only": true
+  },
+  "created_at": "2026-06-16T16:56:23.163755+00:00"
+}
