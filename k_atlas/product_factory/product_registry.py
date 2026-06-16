@@ -25,7 +25,10 @@ def now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 def _safe_rel(path: Path) -> str:
-    return str(path.relative_to(ROOT)).replace("\\", "/")
+    try:
+        return str(path.relative_to(ROOT)).replace("\\", "/")
+    except ValueError:
+        return path.as_posix()
 
 def _read_json(path: Path) -> dict:
     if not path.exists():
