@@ -108,6 +108,7 @@ Start-StreamlitIfMissing 8515 "pages\KOS_Engineer_Handoff_Queue.py" "Engineer Ha
 
 Start-LoopIfMissing "*start_kos_local_autonomy_loop.ps1*" "scripts\start_kos_local_autonomy_loop.ps1" "local_autonomy_loop";
 Start-LoopIfMissing "*start_kos_engineer_handoff_queue_loop.ps1*" "scripts\start_kos_engineer_handoff_queue_loop.ps1" "engineer_handoff_queue_loop";
+Start-LoopIfMissing "*start_kos_queue_approval_executor_loop.ps1*" "scripts\start_kos_queue_approval_executor_loop.ps1" "queue_approval_executor_loop";
 
 Ensure-SchedulerSupervisor;
 

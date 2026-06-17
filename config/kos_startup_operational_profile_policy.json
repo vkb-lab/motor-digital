@@ -18,7 +18,8 @@
     "engineer_handoff_queue_8515",
     "local_autonomy_loop",
     "engineer_handoff_queue_loop",
-    "scheduler_supervisor"
+    "scheduler_supervisor",
+    "queue_approval_executor_loop"
   ],
   "forbidden_actions": [
     "instagram_publish",

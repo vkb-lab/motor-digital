@@ -1,0 +1,21 @@
+{
+  "policy_id": "KOS_QUEUE_APPROVAL_EXECUTOR_POLICY",
+  "phase": "66C",
+  "status": "ACTIVE",
+  "purpose": "Execute staged K-Atlas Engineer commands only after explicit local approval files.",
+  "approval_dir": "local_runtime/kos_engineer_handoff/approvals",
+  "executed_dir": "local_runtime/kos_engineer_handoff/executed",
+  "failed_dir": "local_runtime/kos_engineer_handoff/failed",
+  "required_confirmation": "YES_EXECUTE_K_ATLAS_ENGINEER_COMMAND_LOCAL_ONLY",
+  "allowed_executor": "scripts/run_phase66_engineer_command_confirmed.ps1",
+  "forbidden_actions": [
+    "instagram_publish",
+    "paid_ai_call",
+    "external_deploy",
+    "browser_logged_account_automation",
+    "secret_exfiltration"
+  ],
+  "audit_required": true,
+  "duplicate_execution_guard": true,
+  "created_at": "2026-06-17T19:24:50.677962+00:00"
+}
