@@ -1,0 +1,30 @@
+{
+  "policy_id": "KOS_STARTUP_OPERATIONAL_PROFILE_POLICY",
+  "phase": "66B2",
+  "status": "ACTIVE",
+  "purpose": "Start K-OS core dashboards and operational loops after Windows login.",
+  "ports": [
+    8501,
+    8507,
+    8512,
+    8514,
+    8515
+  ],
+  "components": [
+    "k_atlas_os_8501",
+    "command_bridge_8507",
+    "review_inbox_8512",
+    "engineer_handoff_bridge_8514",
+    "engineer_handoff_queue_8515",
+    "local_autonomy_loop",
+    "engineer_handoff_queue_loop",
+    "scheduler_supervisor"
+  ],
+  "forbidden_actions": [
+    "instagram_publish",
+    "paid_ai_call",
+    "external_deploy",
+    "browser_logged_account_automation"
+  ],
+  "created_at": "2026-06-17T18:45:34.223587+00:00"
+}

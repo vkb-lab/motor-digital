@@ -1,0 +1,12 @@
+{
+  "status": "KOS_PHASE66B2_STARTUP_OPERATIONAL_PROFILE_STATUS_COMPLETED",
+  "runtime_status_raw": "{\n  \"status\": \"PHASE49_RUNTIME_CONTROL_STATUS_COMPLETED\",\n  \"runtime_status\": \"KOS_RUNTIME_CONTROL_STATUS_READY\",\n  \"startup_installed\": true,\n  \"background_running\": true,\n  \"process_count\": 4,\n  \"health_status\": \"ATTENTION_REQUIRED\",\n  \"git_dirty\": true,\n  \"runtime_processes\": [\n    {\n      \"pid\": 15216,\n      \"name\": \"powershell.exe\",\n      \"role\": \"scheduler_tick\"\n    },\n    {\n      \"pid\": 5452,\n      \"name\": \"powershell.exe\",\n      \"role\": \"local_autonomy_loop\"\n    },\n    {\n      \"pid\": 12316,\n      \"name\": \"powershell.exe\",\n      \"role\": \"engineer_handoff_queue_loop\"\n    },\n    {\n      \"pid\": 3716,\n      \"name\": \"powershell.exe\",\n      \"role\": \"scheduler_supervisor\"\n    }\n  ],\n  \"runtime_health_bridge\": {\n    \"enabled\": true,\n    \"recognized_roles\": [\n      \"scheduler_supervisor\",\n      \"scheduler_tick\",\n      \"local_autonomy_loop\",\n      \"engineer_handoff_queue_loop\"\n    ],\n    \"note\": \"Status now recognizes persistent K-OS scheduler supervisor and local autonomy loops.\"\n  },\n  \"production_publish_locked\": true,\n  \"paid_ai_locked\": true,\n  \"real_action_executed\": false,\n  \"paid_ai_call_executed\": false,\n  \"instagram_publish_executed\": false,\n  \"external_side_effects_executed\": false,\n  \"created_at\": \"2026-06-17T18:45:55.977109+00:00\"\n}\n",
+  "git_status": "?? config/kos_startup_operational_profile_policy.json\n?? reports/KOS_PHASE66B2_STARTUP_OPERATIONAL_PROFILE_BOOTSTRAP.json\n?? scripts/install_kos_startup_operational_profile.ps1\n?? scripts/run_phase66b2_startup_operational_profile_status.py\n?? scripts/start_kos_startup_operational_profile.ps1\n?? tests/test_phase66b2_startup_operational_profile.py\n",
+  "policy_exists": true,
+  "startup_script_exists": true,
+  "installer_exists": true,
+  "production_publish_locked": true,
+  "paid_ai_locked": true,
+  "instagram_publish_locked": true,
+  "created_at": "2026-06-17T18:45:56.150315+00:00"
+}

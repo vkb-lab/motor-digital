@@ -1,0 +1,12 @@
+﻿{
+    "status":  "KOS_STARTUP_OPERATIONAL_PROFILE_INSTALLED",
+    "phase":  "66B2",
+    "startup_cmd":  "C:\\Users\\oi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\KOS_Startup_Operational_Profile.cmd",
+    "desktop_cmd":  "C:\\Users\\oi\\Desktop\\KOS_Startup_Operational_Profile.cmd",
+    "script":  "scripts\\start_kos_startup_operational_profile.ps1",
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "instagram_publish_locked":  true,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-17T18:45:34.7409550Z"
+}
