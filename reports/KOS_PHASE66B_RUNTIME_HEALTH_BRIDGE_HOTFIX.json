@@ -1,0 +1,16 @@
+{
+  "status": "KOS_PHASE66B_RUNTIME_HEALTH_BRIDGE_HOTFIX_INSTALLED",
+  "target": "C:\\Users\\oi\\Desktop\\motor-digital\\scripts\\run_phase49_runtime_control_status.py",
+  "backup": "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\kos_runtime_control\\backups\\run_phase49_runtime_control_status.py.20260617_152606.bak",
+  "recognized_runtime_roles": [
+    "scheduler_supervisor",
+    "scheduler_tick",
+    "local_autonomy_loop",
+    "engineer_handoff_queue_loop"
+  ],
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "external_side_effects_executed": false,
+  "created_at": "2026-06-17T15:26:06.139520+00:00"
+}
