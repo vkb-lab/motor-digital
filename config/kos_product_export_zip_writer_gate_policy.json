@@ -1,0 +1,43 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "64",
+    "module":  "K-OS Product Export ZIP Writer Gate",
+    "mode":  "HUMAN_CONFIRMED_LOCAL_ZIP_WRITER",
+    "goal":  "criar zip exportavel local somente com confirmacao humana explicita usando manifestos seguros da Fase 63",
+    "confirmation_required":  "YES_CREATE_PRODUCT_EXPORT_ZIP_LOCAL_ONLY",
+    "allowed_actions":  {
+                            "read_export_packager_report":  true,
+                            "validate_allowed_files":  true,
+                            "block_sensitive_files":  true,
+                            "create_zip_with_explicit_confirmation":  true,
+                            "write_local_audit_report":  true
+                        },
+    "blocked_actions":  {
+                            "create_zip_without_confirmation":  true,
+                            "include_blocked_files":  true,
+                            "include_env_files":  true,
+                            "include_tokens":  true,
+                            "include_credentials":  true,
+                            "include_secrets":  true,
+                            "include_local_runtime":  true,
+                            "include_logs":  true,
+                            "include_memory_security":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "external_publish":  true,
+                            "auto_commit":  true,
+                            "auto_push":  true
+                        },
+    "hard_rules":  {
+                       "zip_creation_allowed_by_default":  false,
+                       "zip_creation_allowed_only_with_confirmation":  true,
+                       "output_dir":  "local_runtime/product_export_zip_writer/exports",
+                       "no_deploy":  true,
+                       "no_paid_ai":  true,
+                       "no_instagram":  true,
+                       "no_external_publish":  true,
+                       "human_review_required":  true
+                   },
+    "created_at":  "2026-06-17T07:46:35.7586697-03:00"
+}
