@@ -15,6 +15,51 @@
   },
   "routes": [
     {
+      "route_id": "phase66b_engineer_handoff_queue",
+      "priority": 6610,
+      "match_any": [
+        "fase 66b",
+        "phase 66b",
+        "engineer handoff queue",
+        "duplicate guard",
+        "orchestrator file queue",
+        "orquestrador nao clica"
+      ],
+      "task_types": [
+        "engineer_handoff_queue_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "config/kos_engineer_handoff_queue_policy.json",
+          "purpose": "Policy da fila do handoff."
+        },
+        {
+          "path": "k_atlas/kaizen/engineer_handoff_queue.py",
+          "purpose": "Fila do orquestrador sem clique UI."
+        },
+        {
+          "path": "scripts/run_phase66b_engineer_handoff_queue.py",
+          "purpose": "Runner seguro da fila."
+        },
+        {
+          "path": "scripts/start_kos_engineer_handoff_queue_loop.ps1",
+          "purpose": "Loop local da fila."
+        },
+        {
+          "path": "pages/KOS_Engineer_Handoff_Queue.py",
+          "purpose": "Cockpit da fila."
+        },
+        {
+          "path": "tests/test_phase66b_engineer_handoff_queue.py",
+          "purpose": "Testes do duplicate guard."
+        },
+        {
+          "path": "reports/KOS_PHASE66B_ENGINEER_HANDOFF_QUEUE_BOOTSTRAP.json",
+          "purpose": "Relatorio auditavel."
+        }
+      ]
+    },
+    {
       "route_id": "phase66_engineer_handoff_bridge",
       "priority": 6600,
       "match_any": [
@@ -261,5 +306,5 @@
     "no_deploy": true
   },
   "created_at": "2026-06-17T10:54:44.332760+00:00",
-  "updated_at": "2026-06-17T11:15:14.138796+00:00"
+  "updated_at": "2026-06-17T11:26:40.882688+00:00"
 }

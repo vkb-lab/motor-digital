@@ -5,6 +5,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import json
 import uuid
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[2]
 RUNTIME = ROOT / "local_runtime" / "kos_engineer_handoff"
@@ -60,6 +61,20 @@ def rel(path: Path) -> str:
         return str(path.resolve().relative_to(ROOT.resolve())).replace("\\", "/")
     except Exception:
         return path.as_posix().replace("\\", "/")
+
+
+def compute_engineer_command_hash(command_text: str) -> str:
+    normalized = "\n".join([line.rstrip() for line in (command_text or "").strip().splitlines()])
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+def find_existing_staged_command_by_hash(command_hash: str) -> dict | None:
+    if not STAGED.exists():
+        return None
+    for path in sorted(STAGED.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
+        data = read_json(path)
+        if data.get("command_hash") == command_hash:
+            return data
+    return None
 
 def extract_powershell_command(response_text: str) -> str:
     text = response_text or ""
@@ -127,6 +142,16 @@ def build_engineer_prompt_from_review() -> dict:
 def stage_engineer_response(response_text: str, title: str = "K-Atlas Engineer Command") -> dict:
     command = extract_powershell_command(response_text)
     scan = scan_engineer_command(command)
+    command_hash = compute_engineer_command_hash(command)
+    existing = find_existing_staged_command_by_hash(command_hash)
+    if existing:
+        existing["status"] = "KOS_ENGINEER_COMMAND_DUPLICATE_SKIPPED"
+        existing["duplicate_skipped"] = True
+        existing["execution_allowed_now"] = False
+        existing["created_at"] = now()
+        write_json(LATEST, existing)
+        append_event(existing)
+        return existing
 
     draft_id = "KOS-ENGINEER-CMD-" + uuid.uuid4().hex[:12].upper()
     ps1_path = STAGED / f"{draft_id}.ps1"
@@ -144,6 +169,7 @@ def stage_engineer_response(response_text: str, title: str = "K-Atlas Engineer C
         "status": "KOS_ENGINEER_COMMAND_STAGED",
         "draft_id": draft_id,
         "title": title,
+        "command_hash": command_hash,
         "ps1_path": rel(ps1_path),
         "scan": scan,
         "safe_for_confirmed_execution": scan.get("safe") is True,

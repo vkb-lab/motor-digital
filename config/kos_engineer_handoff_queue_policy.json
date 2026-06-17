@@ -1,0 +1,21 @@
+{
+  "status": "ACTIVE",
+  "phase": "66B",
+  "module": "K-OS Engineer Handoff Queue",
+  "mode": "ORCHESTRATOR_FILE_QUEUE",
+  "goal": "permitir que o orquestrador envie comandos para o handoff sem clicar na UI",
+  "inbox": "local_runtime/kos_engineer_handoff/inbox",
+  "processed": "local_runtime/kos_engineer_handoff/processed",
+  "duplicates": "local_runtime/kos_engineer_handoff/duplicates",
+  "blocked": "local_runtime/kos_engineer_handoff/blocked",
+  "safety": {
+    "no_browser_click_required": true,
+    "duplicate_guard": true,
+    "execute_without_confirmation": false,
+    "human_confirmation_required": true,
+    "paid_ai_allowed": false,
+    "instagram_publish_allowed": false,
+    "external_publish_allowed": false
+  },
+  "created_at": "2026-06-17T11:26:40.862266+00:00"
+}
