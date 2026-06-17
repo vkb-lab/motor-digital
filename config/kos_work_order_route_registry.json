@@ -15,6 +15,54 @@
   },
   "routes": [
     {
+      "route_id": "phase66_engineer_handoff_bridge",
+      "priority": 6600,
+      "match_any": [
+        "fase 66",
+        "phase 66",
+        "engineer handoff bridge",
+        "k-atlas engineer handoff",
+        "coworker executor local"
+      ],
+      "task_types": [
+        "engineer_handoff_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "config/kos_engineer_handoff_bridge_policy.json",
+          "purpose": "Policy da ponte local."
+        },
+        {
+          "path": "k_atlas/kaizen/engineer_handoff_bridge.py",
+          "purpose": "Modulo de staging e validacao."
+        },
+        {
+          "path": "scripts/run_phase66_engineer_handoff_bridge.py",
+          "purpose": "Runner seguro."
+        },
+        {
+          "path": "scripts/validate_phase66_engineer_command.py",
+          "purpose": "Validador local."
+        },
+        {
+          "path": "scripts/run_phase66_engineer_command_confirmed.ps1",
+          "purpose": "Executor confirmado."
+        },
+        {
+          "path": "pages/KOS_Engineer_Handoff_Bridge.py",
+          "purpose": "Cockpit Streamlit."
+        },
+        {
+          "path": "tests/test_phase66_engineer_handoff_bridge.py",
+          "purpose": "Testes de seguranca."
+        },
+        {
+          "path": "reports/KOS_PHASE66_ENGINEER_HANDOFF_BRIDGE_BOOTSTRAP.json",
+          "purpose": "Relatorio auditavel."
+        }
+      ]
+    },
+    {
       "route_id": "phase64_product_export_zip_writer_gate",
       "priority": 6400,
       "match_any": [
@@ -212,5 +260,6 @@
     "no_instagram": true,
     "no_deploy": true
   },
-  "created_at": "2026-06-17T10:54:44.332760+00:00"
+  "created_at": "2026-06-17T10:54:44.332760+00:00",
+  "updated_at": "2026-06-17T11:15:14.138796+00:00"
 }

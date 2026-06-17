@@ -1,0 +1,16 @@
+{
+  "status": "ACTIVE",
+  "phase": "66",
+  "module": "K-Atlas Engineer Handoff Bridge",
+  "mode": "HUMAN_GATED_LOCAL_COMMAND_EXECUTION",
+  "confirmation_required": "YES_EXECUTE_K_ATLAS_ENGINEER_COMMAND_LOCAL_ONLY",
+  "safety": {
+    "execute_without_confirmation": false,
+    "human_confirmation_required": true,
+    "paid_ai_allowed": false,
+    "instagram_publish_allowed": false,
+    "external_publish_allowed": false,
+    "browser_logged_account_automation": false
+  },
+  "created_at": "2026-06-17T11:15:14.119131+00:00"
+}
