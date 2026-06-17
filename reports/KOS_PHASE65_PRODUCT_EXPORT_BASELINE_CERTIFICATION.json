@@ -1,0 +1,30 @@
+﻿{
+    "status":  "PHASE65_PRODUCT_EXPORT_BASELINE_CERTIFIED",
+    "phase":  "65",
+    "baseline":  "v0.65.0-kos-product-export-baseline",
+    "branch":  "kos/fase-18-render-public-asset-bridge",
+    "commit":  "baa85dc",
+    "certified_modules":  [
+                              "local_coworker",
+                              "local_patch_workspace",
+                              "local_command_composer",
+                              "local_autonomy_loop",
+                              "local_review_inbox",
+                              "product_local_runner_gate",
+                              "product_export_packager",
+                              "product_export_zip_writer_gate"
+                          ],
+    "safety":  {
+                   "deploy_allowed":  false,
+                   "paid_ai_allowed":  false,
+                   "instagram_publish_allowed":  false,
+                   "external_publish_allowed":  false,
+                   "zip_creation_allowed_by_default":  false,
+                   "zip_confirmation_required":  "YES_CREATE_PRODUCT_EXPORT_ZIP_LOCAL_ONLY"
+               },
+    "runtime_status_raw":  "{\r\n  \"status\": \"PHASE49_RUNTIME_CONTROL_STATUS_COMPLETED\",\r\n  \"runtime_status\": \"KOS_RUNTIME_CONTROL_STATUS_READY\",\r\n  \"startup_installed\": true,\r\n  \"background_running\": true,\r\n  \"process_count\": 1,\r\n  \"health_status\": \"HEALTHY\",\r\n  \"git_dirty\": false,\r\n  \"production_publish_locked\": true,\r\n  \"paid_ai_locked\": true,\r\n  \"real_action_executed\": false,\r\n  \"paid_ai_call_executed\": false,\r\n  \"instagram_publish_executed\": false\r\n}\r\n",
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "created_at":  "2026-06-17T10:48:34.2615331Z"
+}
