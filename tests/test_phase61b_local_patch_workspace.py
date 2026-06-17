@@ -86,3 +86,29 @@ def test_phase63_export_packager_route_wins_over_runner_gate_mentions():
     assert "k_atlas/product_factory/product_local_runner_gate.py" not in paths
     assert "scripts/run_phase62_product_local_runner_gate.py" not in paths
 
+
+def test_phase64_zip_writer_route_wins_over_export_packager_mentions():
+    task = {
+        "task_id": "KOS-COWORKER-PHASE64",
+        "source_command_id": "KOS-CMD-PHASE64",
+        "title": "Fase 64 - Product Export ZIP Writer Gate",
+        "area": "product_factory",
+        "priority": "alta",
+        "body": "Criar Fase 64 Product Export ZIP Writer Gate usando Product Export Packager da Fase 63. Exigir YES_CREATE_PRODUCT_EXPORT_ZIP_LOCAL_ONLY.",
+        "classification": {
+            "task_type": "general_operation",
+            "risk": "high",
+            "risk_reasons": [],
+            "ask_k_atlas_engineer": True,
+        },
+    }
+
+    files = proposed_files_for_task(task)
+    paths = [item["path"] for item in files]
+
+    assert "k_atlas/product_factory/product_export_zip_writer_gate.py" in paths
+    assert "scripts/run_phase64_product_export_zip_writer_gate.py" in paths
+    assert "tests/test_phase64_product_export_zip_writer_gate.py" in paths
+    assert "k_atlas/product_factory/product_export_packager.py" not in paths
+    assert "scripts/run_phase63_product_export_packager.py" not in paths
+

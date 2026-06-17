@@ -57,7 +57,26 @@ def proposed_files_for_task(task: dict) -> list[dict]:
     scope_text = f"{title}\n{body}"
 
     # Ordem importa:
-    # Fases mais especificas precisam vir antes de termos genericos como "runner gate".
+    # Fases mais especificas precisam vir antes de termos genericos.
+    # Fase 64 menciona Export Packager, entao precisa vir antes da Fase 63.
+    if (
+        "fase 64" in scope_text
+        or "phase 64" in scope_text
+        or "product export zip writer gate" in scope_text
+        or "export zip writer" in scope_text
+        or "zip writer gate" in scope_text
+        or "yes_create_product_export_zip_local_only" in scope_text
+    ):
+        return [
+            {"path": "config/kos_product_export_zip_writer_gate_policy.json", "purpose": "Policy do gate humano para criacao de zip exportavel."},
+            {"path": "k_atlas/product_factory/product_export_zip_writer_gate.py", "purpose": "Writer gate seguro para zip local somente com confirmacao humana."},
+            {"path": "scripts/run_phase64_product_export_zip_writer_gate.py", "purpose": "Runner seguro da Fase 64 em modo dry-run por padrao."},
+            {"path": "scripts/run_phase64_product_export_zip_writer_confirmed.ps1", "purpose": "Script confirmado com gate humano explicito."},
+            {"path": "pages/KOS_Product_Export_ZIP_Writer_Gate.py", "purpose": "Cockpit Streamlit da Fase 64."},
+            {"path": "tests/test_phase64_product_export_zip_writer_gate.py", "purpose": "Testes de seguranca da Fase 64."},
+            {"path": "reports/KOS_PHASE64_PRODUCT_EXPORT_ZIP_WRITER_GATE_BOOTSTRAP.json", "purpose": "Relatorio auditavel da Fase 64."}
+        ]
+
     if (
         "fase 63" in scope_text
         or "phase 63" in scope_text

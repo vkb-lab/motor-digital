@@ -1,0 +1,10 @@
+{
+  "status": "PHASE61G_WORK_ORDER_ROUTER_PHASE64_HARDENED",
+  "phase": "61G",
+  "fix": "Fase 64 ZIP Writer Gate agora tem prioridade sobre Fase 63 Export Packager.",
+  "reason": "O bundle da Fase 64 estava propondo arquivos da Fase 63 porque o texto mencionava Product Export Packager.",
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "created_at": "2026-06-17T10:43:27.691001+00:00"
+}

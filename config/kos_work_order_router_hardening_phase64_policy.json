@@ -1,0 +1,28 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "61G",
+    "module":  "K-OS Work Order Router Hardening Phase 64",
+    "mode":  "LOCAL_ROUTING_FIX",
+    "goal":  "priorizar Fase 64 ZIP Writer Gate antes de Fase 63 Export Packager",
+    "allowed_actions":  {
+                            "update_local_patch_workspace_router":  true,
+                            "add_router_regression_tests":  true,
+                            "archive_invalid_runtime_work_orders":  true,
+                            "regenerate_review_bundle":  true
+                        },
+    "blocked_actions":  {
+                            "execute_generated_commands":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "external_publish":  true
+                        },
+    "safety":  {
+                   "repo_write_requires_commit":  true,
+                   "runtime_archive_only":  true,
+                   "no_paid_ai":  true,
+                   "no_instagram":  true,
+                   "no_deploy":  true
+               },
+    "created_at":  "2026-06-17T07:43:26.8694343-03:00"
+}
