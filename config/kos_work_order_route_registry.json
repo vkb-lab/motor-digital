@@ -1,0 +1,216 @@
+{
+  "status": "ACTIVE",
+  "phase": "61H",
+  "module": "K-OS Work Order Route Registry",
+  "mode": "CONFIG_DRIVEN_ROUTING",
+  "goal": "rotear work orders por registro JSON versionado, reduzindo hardcode e falso match entre fases",
+  "unknown_route": {
+    "route_id": "unknown_review_required",
+    "proposed_files": [
+      {
+        "path": "reports/KOS_LOCAL_WORK_ORDER_REVIEW_REQUIRED.json",
+        "purpose": "Relatorio de revisao quando o escopo nao estiver claro."
+      }
+    ]
+  },
+  "routes": [
+    {
+      "route_id": "phase64_product_export_zip_writer_gate",
+      "priority": 6400,
+      "match_any": [
+        "fase 64",
+        "phase 64",
+        "product export zip writer gate",
+        "export zip writer",
+        "zip writer gate",
+        "yes_create_product_export_zip_local_only"
+      ],
+      "task_types": [
+        "product_export_zip_writer_gate_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "config/kos_product_export_zip_writer_gate_policy.json",
+          "purpose": "Policy do gate humano para criacao de zip exportavel."
+        },
+        {
+          "path": "k_atlas/product_factory/product_export_zip_writer_gate.py",
+          "purpose": "Writer gate seguro para zip local somente com confirmacao humana."
+        },
+        {
+          "path": "scripts/run_phase64_product_export_zip_writer_gate.py",
+          "purpose": "Runner seguro da Fase 64 em modo dry-run por padrao."
+        },
+        {
+          "path": "scripts/run_phase64_product_export_zip_writer_confirmed.ps1",
+          "purpose": "Script confirmado com gate humano explicito."
+        },
+        {
+          "path": "pages/KOS_Product_Export_ZIP_Writer_Gate.py",
+          "purpose": "Cockpit Streamlit da Fase 64."
+        },
+        {
+          "path": "tests/test_phase64_product_export_zip_writer_gate.py",
+          "purpose": "Testes de seguranca da Fase 64."
+        },
+        {
+          "path": "reports/KOS_PHASE64_PRODUCT_EXPORT_ZIP_WRITER_GATE_BOOTSTRAP.json",
+          "purpose": "Relatorio auditavel da Fase 64."
+        }
+      ]
+    },
+    {
+      "route_id": "phase63_product_export_packager",
+      "priority": 6300,
+      "match_any": [
+        "fase 63",
+        "phase 63",
+        "product export packager",
+        "export packager"
+      ],
+      "task_types": [
+        "export_packager_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "config/kos_product_export_packager_policy.json",
+          "purpose": "Policy do export packager local."
+        },
+        {
+          "path": "k_atlas/product_factory/product_export_packager.py",
+          "purpose": "Empacotador seguro read-only sem criar zip automaticamente."
+        },
+        {
+          "path": "scripts/run_phase63_product_export_packager.py",
+          "purpose": "Runner seguro da Fase 63."
+        },
+        {
+          "path": "pages/KOS_Product_Export_Packager.py",
+          "purpose": "Cockpit Streamlit da Fase 63."
+        },
+        {
+          "path": "tests/test_phase63_product_export_packager.py",
+          "purpose": "Testes de seguranca da Fase 63."
+        },
+        {
+          "path": "reports/KOS_PHASE63_PRODUCT_EXPORT_PACKAGER_BOOTSTRAP.json",
+          "purpose": "Relatorio auditavel da Fase 63."
+        }
+      ]
+    },
+    {
+      "route_id": "phase62_product_local_runner_gate",
+      "priority": 6200,
+      "match_any": [
+        "fase 62",
+        "phase 62",
+        "product local runner gate",
+        "runner gate"
+      ],
+      "task_types": [
+        "product_local_runner_gate_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "config/kos_product_local_runner_gate_policy.json",
+          "purpose": "Policy do runner gate local."
+        },
+        {
+          "path": "k_atlas/product_factory/product_local_runner_gate.py",
+          "purpose": "Gate read-only para preparar execucao local manual."
+        },
+        {
+          "path": "scripts/run_phase62_product_local_runner_gate.py",
+          "purpose": "Runner seguro da Fase 62."
+        },
+        {
+          "path": "pages/KOS_Product_Local_Runner_Gate.py",
+          "purpose": "Cockpit Streamlit da Fase 62."
+        },
+        {
+          "path": "tests/test_phase62_product_local_runner_gate.py",
+          "purpose": "Testes de seguranca da Fase 62."
+        },
+        {
+          "path": "reports/KOS_PHASE62_PRODUCT_LOCAL_RUNNER_GATE_BOOTSTRAP.json",
+          "purpose": "Relatorio da Fase 62."
+        }
+      ]
+    },
+    {
+      "route_id": "phase61_local_autonomy",
+      "priority": 6100,
+      "match_any": [
+        "fase 61",
+        "phase 61",
+        "local autonomy",
+        "local coworker",
+        "patch workspace",
+        "command composer",
+        "review inbox",
+        "route registry"
+      ],
+      "task_types": [
+        "local_autonomy_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "config/kos_local_patch_workspace_policy.json",
+          "purpose": "Policy do workspace local de patches."
+        },
+        {
+          "path": "k_atlas/kaizen/local_patch_workspace.py",
+          "purpose": "Modulo de work orders locais."
+        },
+        {
+          "path": "scripts/run_phase61b_local_patch_workspace.py",
+          "purpose": "Runner seguro da fase."
+        },
+        {
+          "path": "pages/KOS_Local_Patch_Workspace.py",
+          "purpose": "Cockpit Streamlit da fase."
+        },
+        {
+          "path": "tests/test_phase61b_local_patch_workspace.py",
+          "purpose": "Testes de seguranca."
+        },
+        {
+          "path": "reports/KOS_PHASE61B_LOCAL_PATCH_WORKSPACE_BOOTSTRAP.json",
+          "purpose": "Relatorio da fase."
+        }
+      ]
+    },
+    {
+      "route_id": "product_qa_operation",
+      "priority": 5900,
+      "match_any": [
+        "qa gate",
+        "product qa",
+        "fase 59",
+        "phase 59"
+      ],
+      "task_types": [
+        "qa_operation"
+      ],
+      "proposed_files": [
+        {
+          "path": "k_atlas/product_factory/product_qa_gate.py",
+          "purpose": "Ajuste futuro do QA gate se aprovado."
+        },
+        {
+          "path": "tests/test_phase59_product_qa_gate.py",
+          "purpose": "Testes relacionados ao QA gate."
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "config_driven": true,
+    "unknown_route_requires_review": true,
+    "no_command_execution": true,
+    "no_paid_ai": true,
+    "no_instagram": true,
+    "no_deploy": true
+  },
+  "created_at": "2026-06-17T10:54:44.332760+00:00"
+}
