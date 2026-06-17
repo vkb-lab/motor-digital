@@ -1,0 +1,48 @@
+﻿{
+    "status":  "ACTIVE",
+    "phase":  "63",
+    "module":  "K-OS Product Export Packager",
+    "mode":  "READ_ONLY_EXPORT_PACKAGE_PLANNER",
+    "goal":  "preparar manifestos exportaveis de produtos locais sem criar zip automaticamente e sem deploy",
+    "autonomy_tier":  "PRODUCT_FACTORY_EXPORT_GATE",
+    "allowed_actions":  {
+                            "read_product_registry":  true,
+                            "read_product_qa_gate":  true,
+                            "read_product_runner_gate":  true,
+                            "scan_product_files":  true,
+                            "create_export_manifest":  true,
+                            "create_future_zip_plan":  true,
+                            "write_local_audit_report":  true
+                        },
+    "blocked_actions":  {
+                            "create_zip_automatically":  true,
+                            "copy_product_files_automatically":  true,
+                            "execute_shell_automatically":  true,
+                            "execute_product_automatically":  true,
+                            "deploy_automatically":  true,
+                            "instagram_publish":  true,
+                            "paid_ai_call":  true,
+                            "external_publish":  true,
+                            "include_env_files":  true,
+                            "include_tokens":  true,
+                            "include_credentials":  true,
+                            "include_secrets":  true,
+                            "include_local_runtime":  true,
+                            "include_logs":  true,
+                            "include_memory_security":  true,
+                            "auto_commit":  true,
+                            "auto_push":  true
+                        },
+    "hard_rules":  {
+                       "read_only":  true,
+                       "package_creation_allowed":  false,
+                       "zip_creation_allowed":  false,
+                       "no_shell_execution":  true,
+                       "no_product_execution":  true,
+                       "no_paid_ai":  true,
+                       "no_external_publish":  true,
+                       "no_secret_exposure":  true,
+                       "human_review_required":  true
+                   },
+    "created_at":  "2026-06-17T07:36:32.4047451-03:00"
+}
