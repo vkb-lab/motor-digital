@@ -1,0 +1,19 @@
+﻿{
+    "status":  "KOS_PHASE68C_AUTONOMY_MISSION_RUNNER_CERTIFIED",
+    "phase":  "68C",
+    "mission_id":  "KOS-68C-MISSION-SMOKE-20260618_122737",
+    "mission_status":  null,
+    "batch_status":  null,
+    "objective_count":  null,
+    "succeeded_count":  null,
+    "failed_count":  null,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  5,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  true,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-18T15:28:02.3366679Z"
+}

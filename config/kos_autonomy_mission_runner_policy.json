@@ -1,0 +1,13 @@
+﻿{
+    "status":  "KOS_AUTONOMY_MISSION_RUNNER_POLICY_ACTIVE",
+    "phase":  "68C",
+    "mission_script":  "scripts/run_kos_autonomy_mission.ps1",
+    "downstream_batch_runner":  "scripts/submit_kos_operator_command_batch.ps1",
+    "allowed_routed_action":  "write_json_report",
+    "run_now_supported":  true,
+    "respects_kill_switch":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "created_at":  "2026-06-18T15:27:36.0376366Z"
+}
