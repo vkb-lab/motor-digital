@@ -1,0 +1,18 @@
+{
+  "status": "KOS_AUTONOMOUS_JOB_RUNNER_POLICY_ACTIVE",
+  "phase": "67B",
+  "mode": "local_safe_smoke_only",
+  "allowed_actions": [
+    "write_json_report"
+  ],
+  "blocked_actions": [
+    "shell_exec",
+    "deploy",
+    "paid_ai_call",
+    "instagram_publish",
+    "browser_logged_account_automation"
+  ],
+  "requires_kill_switch_check": true,
+  "job_inbox": "local_runtime/kos_autonomous_jobs/inbox",
+  "created_at": "2026-06-18T11:55:42.331458+00:00"
+}
