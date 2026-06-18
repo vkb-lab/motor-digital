@@ -1,0 +1,12 @@
+﻿{
+    "status":  "KOS_AUTONOMY_COMMAND_BRIDGE_POLICY_ACTIVE",
+    "phase":  "67E",
+    "command_script":  "scripts/create_kos_autonomy_command.ps1",
+    "downstream_intake":  "scripts/create_kos_autonomous_job.ps1",
+    "allowed_routed_action":  "write_json_report",
+    "respects_kill_switch":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "created_at":  "2026-06-18T14:01:01.9493772Z"
+}
