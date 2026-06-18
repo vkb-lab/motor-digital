@@ -13,6 +13,7 @@ RUNTIME_PATTERNS = {
     "local_autonomy_loop": "start_kos_local_autonomy_loop.ps1",
     "engineer_handoff_queue_loop": "start_kos_engineer_handoff_queue_loop.ps1",
     "queue_approval_executor_loop": "start_kos_queue_approval_executor_loop.ps1",
+    "autonomous_job_runner_loop": "start_kos_autonomous_job_runner_loop.ps1",
 }
 
 

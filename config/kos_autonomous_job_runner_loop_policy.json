@@ -1,0 +1,19 @@
+{
+  "status": "KOS_AUTONOMOUS_JOB_RUNNER_LOOP_POLICY_ACTIVE",
+  "phase": "67C",
+  "mode": "local_safe_loop",
+  "loop_script": "scripts/start_kos_autonomous_job_runner_loop.ps1",
+  "runner_script": "scripts/run_phase67b_autonomous_job_runner.py",
+  "respects_kill_switch": true,
+  "allowed_actions": [
+    "write_json_report"
+  ],
+  "blocked_actions": [
+    "shell_exec",
+    "deploy",
+    "paid_ai_call",
+    "instagram_publish",
+    "browser_logged_account_automation"
+  ],
+  "created_at": "2026-06-18T11:59:58.835882+00:00"
+}

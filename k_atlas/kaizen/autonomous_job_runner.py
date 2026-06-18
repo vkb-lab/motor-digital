@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import shutil
@@ -41,7 +41,7 @@ def ensure_dirs(root: Path | None = None) -> None:
         path.mkdir(parents=True, exist_ok=True)
 
 def read_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -50,13 +50,27 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 def kill_switch_engaged(root: Path | None = None) -> bool:
     root = root or ROOT
     path = root / "local_runtime" / "kos_control" / "AUTONOMY_KILL_SWITCH.json"
+
     if not path.exists():
         return False
+
     try:
         payload = read_json(path)
     except Exception:
         return True
-    return payload.get("status") == "KOS_AUTONOMY_KILL_SWITCH_ENGAGED"
+
+    status = str(payload.get("status") or "").strip()
+
+    if status == "KOS_AUTONOMY_KILL_SWITCH_ENGAGED":
+        return True
+
+    if status == "KOS_AUTONOMY_KILL_SWITCH_DISENGAGED":
+        return False
+
+    if payload.get("engaged") is True:
+        return True
+
+    return False
 
 def safe_output_path(relpath: str, root: Path | None = None) -> Path:
     root = root or ROOT
@@ -169,3 +183,4 @@ def process_inbox(limit: int = 5, root: Path | None = None) -> dict[str, Any]:
     }
     write_json(base_dir(root) / "latest_autonomous_job_runner_status.json", status)
     return status
+

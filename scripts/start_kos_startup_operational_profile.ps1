@@ -160,3 +160,15 @@ Write-Host $RuntimeRaw;
 Write-Host "[KOS] Git:";
 Write-Host $GitStatus;
 
+
+# KOS_PHASE67C_AUTONOMOUS_JOB_RUNNER_LOOP_START
+$KosRootForAutonomousJobLoop = Split-Path -Parent $PSScriptRoot;
+$KosAutonomousJobLoop = Get-CimInstance Win32_Process | Where-Object {
+  $_.CommandLine -like "*start_kos_autonomous_job_runner_loop.ps1*"
+};
+if(-not $KosAutonomousJobLoop){
+  Write-Host "[KOS] Starting autonomous job runner loop...";
+  Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$KosRootForAutonomousJobLoop\scripts\start_kos_autonomous_job_runner_loop.ps1`"";
+}
+# KOS_PHASE67C_AUTONOMOUS_JOB_RUNNER_LOOP_END
+
