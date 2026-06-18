@@ -184,3 +184,4 @@ def process_inbox(limit: int = 5, root: Path | None = None) -> dict[str, Any]:
     write_json(base_dir(root) / "latest_autonomous_job_runner_status.json", status)
     return status
 
+
