@@ -1,0 +1,11 @@
+﻿{
+    "status":  "KOS_PHASE66C1_QUEUE_APPROVAL_EXECUTOR_HOTFIX_INSTALLED",
+    "phase":  "66C1",
+    "fixes":  [
+                  "runner sys.path root injection",
+                  "safe approval JSON read retry",
+                  "ignore tmp approval files",
+                  "runtime health recognizes queue_approval_executor_loop"
+              ],
+    "created_at":  "2026-06-18T10:59:43.0848050Z"
+}

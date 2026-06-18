@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import time
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -41,6 +42,17 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def safe_read_approval_json(path: Path, attempts: int = 8, delay_seconds: float = 0.5) -> tuple[dict[str, Any] | None, str]:
+    last_error = ""
+    for _ in range(attempts):
+        try:
+            return read_json(path), ""
+        except Exception as exc:
+            last_error = str(exc)
+            time.sleep(delay_seconds)
+    return None, last_error
 
 
 def write_event(stage: str, message: str, data: dict[str, Any] | None = None) -> None:
@@ -185,13 +197,13 @@ def move_approval(path: Path, target_dir: Path, suffix: str) -> Path:
 def execute_one_approval(approval_path: Path) -> dict[str, Any]:
     write_event("APPROVAL_FOUND", "Approval encontrado", {"approval": str(approval_path)})
 
-    try:
-        approval = read_json(approval_path)
-    except Exception as exc:
+    approval, approval_error = safe_read_approval_json(approval_path)
+    if approval is None:
         failed = {
             "status": "KOS_QUEUE_APPROVAL_EXECUTOR_APPROVAL_INVALID_JSON",
             "approval_path": str(approval_path),
-            "error": str(exc),
+            "error": approval_error,
+            "guard": "safe_read_approval_json_retry_exhausted",
             "created_at": now_iso(),
         }
         write_json(FAILED_DIR / f"{approval_path.stem}_invalid_approval.json", failed)
@@ -332,7 +344,10 @@ def execute_one_approval(approval_path: Path) -> dict[str, Any]:
 def process_approvals(limit: int = 5) -> dict[str, Any]:
     ensure_dirs()
 
-    approval_files = sorted(APPROVALS_DIR.glob("*.json"), key=lambda item: item.stat().st_mtime)
+    approval_files = sorted(
+        [item for item in APPROVALS_DIR.glob("*.json") if not item.name.endswith(".tmp.json")],
+        key=lambda item: item.stat().st_mtime,
+    )
 
     processed: list[dict[str, Any]] = []
     for approval in approval_files[:limit]:
