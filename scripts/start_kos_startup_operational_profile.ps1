@@ -172,3 +172,13 @@ if(-not $KosAutonomousJobLoop){
 }
 # KOS_PHASE67C_AUTONOMOUS_JOB_RUNNER_LOOP_END
 
+# KOS_PHASE68E_MISSION_QUEUE_LOOP_START
+$KosRootForMissionQueueLoop = Split-Path -Parent $PSScriptRoot;
+$KosMissionQueueLoop = Get-CimInstance Win32_Process | Where-Object {
+  $_.CommandLine -like "*start_kos_autonomy_mission_queue_loop.ps1*"
+};
+if(-not $KosMissionQueueLoop){
+  Write-Host "[KOS] Starting mission queue loop...";
+  Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$KosRootForMissionQueueLoop\scripts\start_kos_autonomy_mission_queue_loop.ps1`"";
+}
+# KOS_PHASE68E_MISSION_QUEUE_LOOP_END

@@ -1,0 +1,13 @@
+﻿{
+    "status":  "KOS_AUTONOMY_MISSION_QUEUE_LOOP_POLICY_ACTIVE",
+    "phase":  "68E",
+    "loop_script":  "scripts/start_kos_autonomy_mission_queue_loop.ps1",
+    "downstream_processor":  "scripts/process_kos_autonomy_mission_queue.ps1",
+    "startup_profile_patched":  true,
+    "runtime_health_bridge_patched":  true,
+    "respects_kill_switch":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "created_at":  "2026-06-18T16:46:56.5548725Z"
+}
