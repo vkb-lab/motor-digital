@@ -1,0 +1,21 @@
+﻿{
+    "status":  "KOS_PHASE68D_AUTONOMY_MISSION_QUEUE_CERTIFIED",
+    "phase":  "68D",
+    "mission_id":  "KOS-68D-QUEUE-SMOKE-20260618_123143",
+    "submit_status":  "KOS_AUTONOMY_MISSION_QUEUE_CREATED",
+    "processor_status":  "KOS_AUTONOMY_MISSION_QUEUE_PROCESSOR_STATUS",
+    "succeeded_count":  0,
+    "failed_count":  1,
+    "processed_status":  null,
+    "mission_status":  null,
+    "batch_status":  null,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  5,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  true,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-18T15:32:09.1025828Z"
+}

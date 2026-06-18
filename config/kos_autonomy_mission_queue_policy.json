@@ -1,0 +1,13 @@
+﻿{
+    "status":  "KOS_AUTONOMY_MISSION_QUEUE_PROCESSOR_POLICY_ACTIVE",
+    "phase":  "68D",
+    "submit_script":  "scripts/submit_kos_autonomy_mission_queue.ps1",
+    "processor_script":  "scripts/process_kos_autonomy_mission_queue.ps1",
+    "downstream_mission_runner":  "scripts/run_kos_autonomy_mission.ps1",
+    "allowed_routed_action":  "write_json_report",
+    "respects_kill_switch":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "created_at":  "2026-06-18T15:31:41.6714899Z"
+}
