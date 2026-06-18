@@ -3,7 +3,7 @@
     "phase":  "67F",
     "baseline":  "v0.67.0",
     "tag":  "v0.67.0-kos-safe-autonomy-baseline",
-    "commit":  "24ea1b6af88811d0ab463d83dc39c19ff80bf8d3",
+    "commit":  "a707eb23080f7c6fec0ee6d0c63b4bb14d2c4cfd",
     "branch":  "kos/fase-18-render-public-asset-bridge",
     "phase67a_status":  "KOS_PHASE67A_KILL_SWITCH_DRILL_CERTIFIED",
     "phase67b_status":  "KOS_PHASE67B_AUTONOMOUS_JOB_RUNNER_SMOKE_FAILED",
@@ -12,7 +12,7 @@
     "phase67e_status":  "KOS_PHASE67E_AUTONOMY_COMMAND_BRIDGE_CERTIFIED",
     "kill_switch_engaged":  false,
     "runtime_health_status":  "HEALTHY",
-    "runtime_process_count":  5,
+    "runtime_process_count":  6,
     "production_publish_locked":  true,
     "paid_ai_locked":  true,
     "browser_logged_account_automation_blocked":  true,
@@ -21,5 +21,5 @@
     "instagram_publish_executed":  false,
     "browser_logged_account_automation_used":  false,
     "restore_command":  "git fetch --all --tags; git checkout v0.67.0-kos-safe-autonomy-baseline",
-    "created_at":  "2026-06-18T14:12:43.4969476Z"
+    "created_at":  "2026-06-18T14:17:06.8391566Z"
 }

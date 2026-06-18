@@ -6,7 +6,7 @@ Baseline de autonomia segura certificada.
 
 ## Commit
 
-24ea1b6af88811d0ab463d83dc39c19ff80bf8d3
+a707eb23080f7c6fec0ee6d0c63b4bb14d2c4cfd
 
 ## Branch
 
