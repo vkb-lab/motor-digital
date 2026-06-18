@@ -1,0 +1,18 @@
+﻿{
+    "status":  "KOS_PHASE67A_AUTONOMY_KILL_SWITCH_CORE_INSTALLED",
+    "phase":  "67A",
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  5,
+    "startup_guard_installed":  true,
+    "kill_switch_default_engaged":  false,
+    "engage_command":  "powershell -ExecutionPolicy Bypass -File scripts\\kos_autonomy_kill_switch.ps1 -Action engage -Reason \"operator emergency stop\"",
+    "disengage_command":  "powershell -ExecutionPolicy Bypass -File scripts\\kos_autonomy_kill_switch.ps1 -Action disengage -Reason \"operator restore\" -RestartRuntime",
+    "status_stdout":  "{\n    \"status\":  \"KOS_AUTONOMY_KILL_SWITCH_STATUS\",\n    \"engaged\":  false,\n    \"state\":  {\n                  \"status\":  \"KOS_AUTONOMY_KILL_SWITCH_DISENGAGED\",\n                  \"engaged\":  false,\n                  \"phase\":  \"67A\",\n                  \"switch_path\":  \"C:\\\\Users\\\\oi\\\\Desktop\\\\motor-digital\\\\local_runtime\\\\kos_control\\\\AUTONOMY_KILL_SWITCH.json\",\n                  \"exists\":  false,\n                  \"created_at\":  \"2026-06-18T11:29:52.4615943Z\"\n              },\n    \"production_publish_locked\":  true,\n    \"paid_ai_locked\":  true,\n    \"instagram_publish_executed\":  false,\n    \"browser_logged_account_automation_used\":  false,\n    \"created_at\":  \"2026-06-18T11:29:52.4795420Z\"\n}",
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-18T11:29:53.6363656Z"
+}

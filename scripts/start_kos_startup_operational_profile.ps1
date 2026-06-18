@@ -1,3 +1,19 @@
+﻿# KOS_PHASE67A_AUTONOMY_KILL_SWITCH_GUARD_START
+$KosRootForKillSwitch = Split-Path -Parent $PSScriptRoot;
+$KosKillSwitchPath = Join-Path $KosRootForKillSwitch "local_runtime\kos_control\AUTONOMY_KILL_SWITCH.json";
+if(Test-Path $KosKillSwitchPath){
+  try {
+    $KosKillSwitchState = Get-Content $KosKillSwitchPath -Encoding UTF8 | ConvertFrom-Json;
+    if($KosKillSwitchState.status -eq "KOS_AUTONOMY_KILL_SWITCH_ENGAGED"){
+      Write-Host "[KOS] Autonomy Kill Switch engaged. Startup operational profile blocked.";
+      exit 0;
+    }
+  } catch {
+    Write-Host "[KOS] Autonomy Kill Switch state invalid. Startup blocked fail-closed.";
+    exit 1;
+  }
+}
+# KOS_PHASE67A_AUTONOMY_KILL_SWITCH_GUARD_END
 $ErrorActionPreference = "Continue";
 Set-Location "C:\Users\oi\Desktop\motor-digital";
 $env:PYTHONPATH = "C:\Users\oi\Desktop\motor-digital";
@@ -143,3 +159,4 @@ Write-Host $RuntimeRaw;
 
 Write-Host "[KOS] Git:";
 Write-Host $GitStatus;
+
