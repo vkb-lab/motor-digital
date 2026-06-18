@@ -1,0 +1,14 @@
+﻿{
+    "status":  "KOS_OPERATOR_COMMAND_INBOX_POLICY_ACTIVE",
+    "phase":  "68A",
+    "inbox_script":  "scripts/submit_kos_operator_command.ps1",
+    "downstream_command_bridge":  "scripts/create_kos_autonomy_command.ps1",
+    "downstream_job_runner":  "scripts/run_phase67b_autonomous_job_runner.py",
+    "allowed_routed_action":  "write_json_report",
+    "run_now_supported":  true,
+    "respects_kill_switch":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "created_at":  "2026-06-18T14:24:18.0577431Z"
+}

@@ -1,0 +1,20 @@
+﻿{
+    "status":  "KOS_PHASE68A_OPERATOR_COMMAND_INBOX_CERTIFIED",
+    "phase":  "68A",
+    "command_id":  "KOS-68A-OPERATOR-SMOKE-20260618_112419",
+    "submit_status":  "KOS_OPERATOR_COMMAND_EXECUTED",
+    "bridge_status":  "KOS_AUTONOMY_COMMAND_ROUTED_TO_JOB",
+    "routed_action":  "write_json_report",
+    "output_status":  "KOS_AUTONOMOUS_JOB_OUTPUT_CREATED",
+    "processed_status":  "PENDING",
+    "processed_returncode":  null,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  5,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  true,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-18T14:24:22.2871231Z"
+}
