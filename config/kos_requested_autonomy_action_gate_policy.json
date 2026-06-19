@@ -1,0 +1,24 @@
+﻿{
+    "status":  "KOS_REQUESTED_AUTONOMY_ACTION_GATE_POLICY_ACTIVE",
+    "phase":  "69C",
+    "validator_script":  "scripts/run_phase69c_requested_autonomy_action_gate.py",
+    "registry":  [
+                     "email_watch",
+                     "email_reply_draft",
+                     "campaign_continue",
+                     "campaign_publish_prepare",
+                     "instagram_publish",
+                     "product_launch_prepare",
+                     "product_launch_execute",
+                     "deploy_prepare",
+                     "deploy_execute",
+                     "github_commit_push"
+                 ],
+    "principle":  "autonomia solicitada e auditavel, nao autonomia perigosa",
+    "external_actions_require_human_confirmation":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_blocked_without_human_confirmation":  true,
+    "created_at":  "2026-06-19T12:35:02.3612825Z"
+}

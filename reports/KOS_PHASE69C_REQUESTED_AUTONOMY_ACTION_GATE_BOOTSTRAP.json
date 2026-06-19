@@ -1,0 +1,22 @@
+﻿{
+    "status":  "KOS_PHASE69C_REQUESTED_AUTONOMY_ACTION_GATE_CERTIFIED",
+    "phase":  "69C",
+    "principle":  "autonomia solicitada e auditavel, nao autonomia perigosa",
+    "allowed_smoke_status":  "KOS_REQUESTED_AUTONOMY_ACTION_ALLOWED",
+    "blocked_smoke_status":  "KOS_REQUESTED_AUTONOMY_ACTION_BLOCKED",
+    "confirmed_gate_smoke_status":  "KOS_REQUESTED_AUTONOMY_ACTION_ALLOWED",
+    "email_watch_ready_as_draft_only":  true,
+    "campaign_continue_ready_as_prepare_only":  true,
+    "publish_requires_human_confirmation":  true,
+    "launch_requires_human_confirmation":  true,
+    "deploy_requires_human_confirmation":  true,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  6,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-19T12:35:05.1424752Z"
+}
