@@ -1,0 +1,20 @@
+﻿{
+    "status":  "KOS_REAL_PUBLISH_APPROVAL_LEDGER_POLICY_ACTIVE",
+    "phase":  "69G",
+    "script":  "scripts/run_phase69g_real_publish_approval_ledger.py",
+    "target":  "hupmix",
+    "approval_phrase":  "YES_CREATE_HUPMIX_REAL_PUBLISH_APPROVAL_LEDGER_ONLY",
+    "mode":  "approval_ledger_only",
+    "real_publish_enabled":  false,
+    "publish_endpoint_called":  false,
+    "http_post_used":  false,
+    "publish_execution_command_generated":  false,
+    "future_real_publish_executor_required":  true,
+    "parada_atlantida_locked":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_blocked_without_future_executor":  true,
+    "token_must_not_be_logged":  true,
+    "created_at":  "2026-06-19T15:11:44.1620886Z"
+}
