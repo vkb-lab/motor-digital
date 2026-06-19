@@ -1,0 +1,30 @@
+﻿{
+    "status":  "KOS_PHASE69Z_REQUESTED_EXTERNAL_ACTION_GOVERNANCE_BASELINE_CERTIFIED",
+    "phase":  "69Z",
+    "version":  "v0.69.0",
+    "certified_scope":  [
+                            "69A1 market radar recertification",
+                            "69B user friendly launcher",
+                            "69C requested autonomy action gate",
+                            "69D Hupmix Instagram read-only audit",
+                            "69E publish audit gate",
+                            "69F human confirmed publish dry-run gate",
+                            "69G real publish approval ledger"
+                        ],
+    "target_test_account":  "hupmix",
+    "hupmix_ig_id":  "17841471706662294",
+    "parada_atlantida_locked":  true,
+    "real_publish_executor_installed":  false,
+    "real_publish_executed":  false,
+    "publish_endpoint_called":  false,
+    "http_post_used":  false,
+    "paid_ai_locked":  true,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "runtime_health_status":  "HEALTHY",
+    "runtime_process_count":  6,
+    "restore_archive_path":  "local_runtime\\kos_emergency_restore\\archives\\KOS_REQUESTED_EXTERNAL_ACTION_BASELINE_V0690_20260619_121443.zip",
+    "restore_command":  "git fetch --all --tags; git checkout v0.69.0-kos-requested-external-action-baseline",
+    "created_at":  "2026-06-19T15:14:46.7994229Z"
+}
