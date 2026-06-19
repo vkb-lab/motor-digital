@@ -48,3 +48,17 @@ for key in [
 st.subheader("Emergency controls")
 st.code(snapshot.get("kill_switch_engage_command", ""), language="powershell")
 st.code(snapshot.get("kill_switch_disengage_command", ""), language="powershell")
+
+
+# KOS_PHASE69A_AGENT_OS_MARKET_RADAR_START
+MARKET_RADAR_PATH = ROOT / "local_runtime" / "kos_agent_os_market" / "latest_market_radar_snapshot.json"
+st.subheader("Agent OS Market Radar")
+market_radar = read_json(MARKET_RADAR_PATH)
+c1, c2, c3 = st.columns(3)
+c1.metric("Market radar", str(market_radar.get("status", "UNKNOWN")))
+c2.metric("Overall score", str(market_radar.get("overall_score", "UNKNOWN")))
+c3.metric("Gap count", str(len(market_radar.get("gap_dimensions", []))))
+st.write(market_radar.get("market_position", ""))
+st.json(market_radar.get("priority_next_moves", []))
+st.json(market_radar.get("dimensions", []))
+# KOS_PHASE69A_AGENT_OS_MARKET_RADAR_END

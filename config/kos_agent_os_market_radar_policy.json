@@ -1,0 +1,19 @@
+{
+  "status": "KOS_AGENT_OS_MARKET_RADAR_POLICY_ACTIVE",
+  "phase": "69A",
+  "snapshot_script": "scripts/run_phase69a_agent_os_market_radar.py",
+  "snapshot_output": "local_runtime/kos_agent_os_market/latest_market_radar_snapshot.json",
+  "dashboard_target": "pages/KOS_Autonomy_Operations_Dashboard.py",
+  "market_references": [
+    "OpenAI ChatGPT Agent",
+    "OpenAI Agents SDK / Codex",
+    "Anthropic Claude Code",
+    "Cursor Agents / CLI",
+    "Replit Agent"
+  ],
+  "production_publish_locked": true,
+  "paid_ai_locked": true,
+  "browser_logged_account_automation_blocked": true,
+  "instagram_publish_blocked": true,
+  "created_at": "2026-06-19T12:11:23.219336+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "KOS_PHASE69A_AGENT_OS_MARKET_RADAR_CERTIFIED",
+  "phase": "69A",
+  "snapshot_status": "KOS_AGENT_OS_MARKET_RADAR_READY",
+  "overall_score": 0.578,
+  "strong_dimensions": [
+    "intent_to_action",
+    "multi_step_missions",
+    "safety_governance",
+    "observability_dashboard"
+  ],
+  "gap_dimensions": [
+    "codebase_editing_agent",
+    "idea_to_app_factory",
+    "skills_registry",
+    "cloud_team_agents"
+  ],
+  "priority_next_moves": [
+    {
+      "phase": "69B",
+      "name": "User-Friendly Local Launcher",
+      "why": "usar K-OS em 5 minutos sem PowerShell"
+    },
+    {
+      "phase": "70A",
+      "name": "Safe Patch Proposer",
+      "why": "aproximar K-OS de Claude Code, Codex e Cursor sem editar sem aprova��o"
+    },
+    {
+      "phase": "71A",
+      "name": "Idea-to-App Builder",
+      "why": "aproximar K-OS do fluxo Replit Agent"
+    },
+    {
+      "phase": "72A",
+      "name": "K-OS Skills Registry",
+      "why": "criar playbooks reutiliz�veis por agentes"
+    }
+  ],
+  "market_references_count": 5,
+  "runtime_health_status": "ATTENTION_REQUIRED",
+  "runtime_process_count": 6,
+  "dashboard_patched": true,
+  "production_publish_locked": true,
+  "paid_ai_locked": true,
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "browser_logged_account_automation_used": false,
+  "created_at": "2026-06-19T12:11:26.502667+00:00"
+}
