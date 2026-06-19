@@ -1,0 +1,24 @@
+﻿{
+    "status":  "KOS_PUBLISH_AUDIT_GATE_POLICY_ACTIVE",
+    "phase":  "69E",
+    "script":  "scripts/run_phase69e_publish_audit_gate.py",
+    "depends_on":  [
+                       "69C requested autonomy action gate",
+                       "69D Hupmix Instagram audit connector"
+                   ],
+    "allowed_target":  "hupmix",
+    "blocked_target":  "paradaatlantida",
+    "allowed_mode":  "audit_prepare_only",
+    "real_publish_requires_human_confirmation":  true,
+    "publish_execution_command_generated":  false,
+    "publish_endpoint_called":  false,
+    "allowed_http_methods":  [
+
+                             ],
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_blocked_without_human_confirmation":  true,
+    "token_must_not_be_logged":  true,
+    "created_at":  "2026-06-19T14:13:22.0606397Z"
+}
