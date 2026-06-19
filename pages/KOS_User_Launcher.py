@@ -49,3 +49,10 @@ st.code('powershell -ExecutionPolicy Bypass -File scripts\\kos_autonomy_kill_swi
 st.subheader("Agent OS Market Radar")
 
 st.json(read_json(ROOT / "local_runtime" / "kos_agent_os_market" / "latest_market_radar_snapshot.json"))
+
+
+# KOS_PHASE69E2_PUBLISH_AUDIT_PANEL_START
+st.subheader("Publish Audit Panel")
+st.code("powershell -ExecutionPolicy Bypass -File scripts\\open_kos_publish_audit_panel.ps1", language="powershell")
+st.caption("Painel visual de auditoria Hupmix. Nao publica e nao usa POST.")
+# KOS_PHASE69E2_PUBLISH_AUDIT_PANEL_END

@@ -1,0 +1,19 @@
+﻿{
+    "status":  "KOS_PUBLISH_AUDIT_VISUAL_PANEL_POLICY_ACTIVE",
+    "phase":  "69E2",
+    "page":  "pages/KOS_Publish_Audit_Panel.py",
+    "opener":  "scripts/open_kos_publish_audit_panel.ps1",
+    "cmd":  "KOS_Publish_Audit_Panel.cmd",
+    "desktop_cmd":  "C:\\Users\\oi\\Desktop\\KOS_Publish_Audit_Panel.cmd",
+    "port":  8518,
+    "target":  "hupmix",
+    "visual_only":  true,
+    "real_publish_enabled":  false,
+    "publish_endpoint_called":  false,
+    "http_post_used":  false,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_executed":  false,
+    "parada_atlantida_locked":  true,
+    "paid_ai_locked":  true,
+    "created_at":  "2026-06-19T15:20:37.0259412Z"
+}
