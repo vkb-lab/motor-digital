@@ -154,8 +154,15 @@ def process_job(job_path: Path, root: Path | None = None) -> dict[str, Any]:
             "browser_logged_account_automation_used": False,
             "created_at": now_iso(),
         }
-        write_json(processed_dir(root) / (job_id + ".json"), result)
-        shutil.move(str(job_path), str(processed_dir(root) / job_path.name))
+        result_path = processed_dir(root) / (job_id + ".json")
+        write_json(result_path, result)
+
+        archived_job_path = processed_dir(root) / (job_id + "_source.json")
+        if job_path.exists():
+            if archived_job_path.exists():
+                archived_job_path.unlink()
+            shutil.move(str(job_path), str(archived_job_path))
+
         return result
 
     return fail_job(job_path, "unhandled_action", root)

@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -26,8 +26,10 @@ def test_phase68a1_processed_marker_is_not_overwritten_by_original_job(tmp_path)
     source_path = tmp_path / "local_runtime" / "kos_autonomous_jobs" / "processed" / "TEST_68A1_MARKER_source.json"
 
     marker = json.loads(marker_path.read_text(encoding="utf-8"))
+    source = json.loads(source_path.read_text(encoding="utf-8"))
 
     assert result["processed_count"] == 1
     assert marker["status"] == "KOS_AUTONOMOUS_JOB_EXECUTED"
     assert marker["returncode"] == 0
+    assert source["status"] == "PENDING"
     assert source_path.exists()
