@@ -1,0 +1,43 @@
+{
+  "status": "KOS_PHASE68G_SAFE_AUTONOMY_MISSION_BASELINE_CERTIFIED",
+  "phase": "68G",
+  "version": "0.68.0",
+  "tag": "v0.68.0-kos-safe-autonomy-mission-baseline",
+  "commit_before_baseline": "105d9e8b068e0c5f37e22e692b764b5454f0c114",
+  "required_reports": {
+    "67F": "reports/KOS_PHASE67F_SAFE_AUTONOMY_BASELINE_CERTIFICATION.json",
+    "68A": "reports/KOS_PHASE68A_OPERATOR_COMMAND_INBOX_BOOTSTRAP.json",
+    "68A1": "reports/KOS_PHASE68A1_PROCESSED_MARKER_HOTFIX_CERTIFICATION.json",
+    "68A2": "reports/KOS_PHASE68A2_PROCESSED_MARKER_HARDENING_CERTIFICATION.json",
+    "68B": "reports/KOS_PHASE68B_OPERATOR_COMMAND_BATCH_BOOTSTRAP.json",
+    "68C": "reports/KOS_PHASE68C_AUTONOMY_MISSION_RUNNER_BOOTSTRAP.json",
+    "68D": "reports/KOS_PHASE68D_AUTONOMY_MISSION_QUEUE_BOOTSTRAP.json",
+    "68E": "reports/KOS_PHASE68E_AUTONOMY_MISSION_QUEUE_LOOP_BOOTSTRAP.json",
+    "68F": "reports/KOS_PHASE68F_AUTONOMY_OPERATIONS_DASHBOARD_BOOTSTRAP.json"
+  },
+  "report_statuses": {
+    "67F": "KOS_PHASE67F_SAFE_AUTONOMY_BASELINE_CERTIFIED",
+    "68A": "KOS_PHASE68A_OPERATOR_COMMAND_INBOX_CERTIFIED",
+    "68A1": "KOS_PHASE68A1_PROCESSED_MARKER_HOTFIX_CERTIFIED",
+    "68A2": "KOS_PHASE68A2_PROCESSED_MARKER_HARDENING_CERTIFIED",
+    "68B": "KOS_PHASE68B_OPERATOR_COMMAND_BATCH_CERTIFIED",
+    "68C": "KOS_PHASE68C_AUTONOMY_MISSION_RUNNER_CERTIFIED",
+    "68D": "KOS_PHASE68D_AUTONOMY_MISSION_QUEUE_CERTIFIED",
+    "68E": "KOS_PHASE68E_AUTONOMY_MISSION_QUEUE_LOOP_CERTIFIED",
+    "68F": "KOS_PHASE68F_AUTONOMY_OPERATIONS_DASHBOARD_CERTIFIED"
+  },
+  "snapshot_status": "KOS_AUTONOMY_OPERATIONS_SNAPSHOT_READY",
+  "kill_switch_engaged": false,
+  "runtime_health_status": "HEALTHY",
+  "runtime_process_count": 6,
+  "archive_path": "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\kos_emergency_restore\\archives\\KOS_SAFE_AUTONOMY_MISSION_BASELINE_V0680_20260619_082312.zip",
+  "restore_command": "git fetch --all --tags; git checkout v0.68.0-kos-safe-autonomy-mission-baseline",
+  "latest_commits_before_baseline": "105d9e8 K-OS Fase 68A2 processed marker hardening\n565eb63 K-OS Fase 68F autonomy operations dashboard bridge\n0515240 K-OS Fase 68E autonomy mission queue loop\n44577bb K-OS Fase 68D autonomy mission queue processor\nd34af9a K-OS Fase 68D autonomy mission queue processor\nd529062 K-OS Fase 68C autonomy mission runner\n9ad5d8d K-OS Fase 68B operator command batch runner\n55418e1 K-OS Fase 68A1 processed marker hotfix\na3ca7bd K-OS Fase 68A operator command inbox\na7c28bf K-OS Fase 67F safe autonomy baseline certification\na707eb2 K-OS Fase 67F safe autonomy baseline certification\n24ea1b6 K-OS Fase 67E autonomy command bridge",
+  "production_publish_locked": true,
+  "paid_ai_locked": true,
+  "real_action_executed": true,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "browser_logged_account_automation_used": false,
+  "created_at": "2026-06-19T11:23:12.270967+00:00"
+}
