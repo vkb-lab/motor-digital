@@ -1,0 +1,18 @@
+{
+  "status": "KOS_PHASE68F_AUTONOMY_OPERATIONS_DASHBOARD_CERTIFIED",
+  "phase": "68F",
+  "snapshot_status": "KOS_AUTONOMY_OPERATIONS_SNAPSHOT_READY",
+  "kill_switch_engaged": false,
+  "runtime_health_status": "ATTENTION_REQUIRED",
+  "runtime_process_count": 6,
+  "runtime_health_bridge_patched": true,
+  "dashboard_page": "pages/KOS_Autonomy_Operations_Dashboard.py",
+  "snapshot_output": "local_runtime/kos_autonomy_operations/latest_operations_snapshot.json",
+  "production_publish_locked": true,
+  "paid_ai_locked": true,
+  "real_action_executed": false,
+  "paid_ai_call_executed": false,
+  "instagram_publish_executed": false,
+  "browser_logged_account_automation_used": false,
+  "created_at": "2026-06-19T10:57:00.621161+00:00"
+}
