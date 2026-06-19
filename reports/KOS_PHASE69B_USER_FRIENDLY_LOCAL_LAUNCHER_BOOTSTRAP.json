@@ -1,0 +1,20 @@
+﻿{
+    "status":  "KOS_PHASE69B_USER_FRIENDLY_LOCAL_LAUNCHER_CERTIFIED",
+    "phase":  "69B",
+    "launcher_script":  "scripts/start_kos_user_launcher.ps1",
+    "launcher_cmd":  "KOS_User_Launcher.cmd",
+    "desktop_launcher_cmd":  "C:\\Users\\oi\\Desktop\\KOS_User_Launcher.cmd",
+    "streamlit_page":  "pages/KOS_User_Launcher.py",
+    "runtime_health_status_before_change":  "HEALTHY",
+    "runtime_process_count_before_change":  6,
+    "market_radar_smoke_status":  "KOS_AGENT_OS_MARKET_RADAR_READY",
+    "status_smoke_executed":  true,
+    "market_radar_smoke_executed":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-19T12:27:07.1182630Z"
+}

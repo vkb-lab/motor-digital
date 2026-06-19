@@ -1,0 +1,22 @@
+﻿{
+    "status":  "KOS_USER_FRIENDLY_LOCAL_LAUNCHER_POLICY_ACTIVE",
+    "phase":  "69B",
+    "launcher_script":  "scripts/start_kos_user_launcher.ps1",
+    "launcher_cmd":  "KOS_User_Launcher.cmd",
+    "desktop_launcher_cmd":  "C:\\Users\\oi\\Desktop\\KOS_User_Launcher.cmd",
+    "streamlit_page":  "pages/KOS_User_Launcher.py",
+    "allowed_actions":  [
+                            "runtime_status",
+                            "open_dashboard",
+                            "market_radar_snapshot",
+                            "operator_command_safe",
+                            "mission_safe",
+                            "queue_mission_safe",
+                            "kill_switch_manual_only"
+                        ],
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_blocked":  true,
+    "created_at":  "2026-06-19T12:27:03.1923655Z"
+}
