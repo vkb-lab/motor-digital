@@ -1,0 +1,21 @@
+﻿{
+    "status":  "KOS_HUPMIX_INSTAGRAM_AUDIT_POLICY_ACTIVE",
+    "phase":  "69D",
+    "audit_script":  "scripts/run_phase69d_hupmix_instagram_audit.py",
+    "target":  "hupmix",
+    "ig_id":  "17841471706662294",
+    "expected_username":  "hupmix",
+    "graph_api_version":  "v25.0",
+    "read_only":  true,
+    "allowed_http_methods":  [
+                                 "GET"
+                             ],
+    "publish_endpoint_called":  false,
+    "parada_atlantida_locked":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_blocked":  true,
+    "token_must_not_be_logged":  true,
+    "created_at":  "2026-06-19T12:54:52.1213660Z"
+}
