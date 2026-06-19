@@ -1,0 +1,25 @@
+﻿{
+    "status":  "KOS_HUMAN_CONFIRMED_PUBLISH_DRY_RUN_GATE_POLICY_ACTIVE",
+    "phase":  "69F",
+    "script":  "scripts/run_phase69f_human_confirmed_publish_dry_run_gate.py",
+    "depends_on":  [
+                       "69E publish audit gate",
+                       "69D Hupmix Instagram audit connector",
+                       "69C requested autonomy action gate"
+                   ],
+    "target":  "hupmix",
+    "confirmation_phrase":  "YES_DRY_RUN_HUPMIX_PUBLISH_AUDIT_ONLY",
+    "mode":  "dry_run_only",
+    "real_publish_enabled":  false,
+    "publish_endpoint_called":  false,
+    "http_post_used":  false,
+    "publish_execution_command_generated":  false,
+    "future_real_publish_gate_required":  true,
+    "parada_atlantida_locked":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_blocked_without_future_gate":  true,
+    "token_must_not_be_logged":  true,
+    "created_at":  "2026-06-19T14:21:15.8538818Z"
+}
