@@ -1,0 +1,16 @@
+﻿{
+    "status":  "KOS_ENGINEER_PACKET_PROMOTION_BRIDGE_POLICY_ACTIVE",
+    "phase":  "69J",
+    "script":  "scripts/run_phase69j_engineer_packet_promotion_bridge.py",
+    "source":  "local_runtime/kos_engineer_command_intake/staged",
+    "target":  "local_runtime/kos_engineer_handoff/inbox",
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "execution_requires_existing_approval_pipeline":  true,
+    "blocked_real_publish_patterns":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_executed":  false,
+    "created_at":  "2026-06-20T10:52:04.3834623Z"
+}

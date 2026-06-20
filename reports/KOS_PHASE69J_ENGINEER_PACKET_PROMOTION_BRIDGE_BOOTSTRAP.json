@@ -1,0 +1,18 @@
+﻿{
+    "status":  "KOS_PHASE69J_ENGINEER_PACKET_PROMOTION_BRIDGE_CERTIFIED",
+    "phase":  "69J",
+    "smoke_status":  "KOS_ENGINEER_PACKET_PROMOTION_BLOCKED",
+    "handoff_inbox_file":  null,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "execution_requires_existing_approval_pipeline":  true,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  6,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-20T10:52:08.6774621Z"
+}
