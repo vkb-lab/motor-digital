@@ -1,0 +1,18 @@
+﻿{
+    "status":  "KOS_CHATGPT_BRIDGE_RUNTIME_CONTROLLER_POLICY_ACTIVE",
+    "phase":  "70E",
+    "anti_duplicate_guard":  true,
+    "script":  "scripts/kos_chatgpt_bridge_runtime_control.ps1",
+    "actions":  [
+                    "start",
+                    "stop",
+                    "status",
+                    "restart",
+                    "logs"
+                ],
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "browser_scraping_enabled":  false,
+    "reads_chatgpt_ui_automatically":  false,
+    "created_at":  "2026-06-20T12:38:49.4832789Z"
+}
