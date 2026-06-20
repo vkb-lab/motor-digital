@@ -155,6 +155,20 @@ def show_safe_action_history() -> None:
                 if markdown_path:
                     st.info("Arquivo local: " + markdown_path)
 
+                    open_key = "open_safe_action_" + str(action.get("action_id", markdown_path))
+                    if st.button("Abrir rascunho", key=open_key, use_container_width=True):
+                        md_file = Path(markdown_path)
+                        if md_file.exists():
+                            try:
+                                content = md_file.read_text(encoding="utf-8-sig")
+                                st.markdown("##### Rascunho aberto")
+                                st.markdown(content)
+                            except Exception as exc:
+                                st.error("Nao foi possivel abrir o rascunho.")
+                                st.caption(str(exc))
+                        else:
+                            st.warning("Arquivo local nao encontrado.")
+
                 with st.expander("Ver resumo deste rascunho"):
                     for section in action.get("sections", []):
                         st.markdown("##### " + str(section.get("title", "Secao")))
