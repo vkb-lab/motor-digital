@@ -279,9 +279,25 @@ if send:
             data = run_action_router(clean_request)
         show_operator_response(data)
 else:
-    latest = read_json(LATEST_PACKET)
-    if latest.get("status") == "KOS_ACTION_PACKET_READY":
-        with st.expander("Ultimo pedido processado"):
-            show_operator_response(latest)
+    st.markdown("### Comece por aqui")
+    st.write("Digite um pedido ao K-OS na caixa acima. O K-OS escolhe a rota e mostra a proxima acao segura.")
 
-show_safe_action_history()
+    col_home_1, col_home_2 = st.columns(2)
+
+    with col_home_1:
+        show_last = st.button("Ver ultimo pedido", use_container_width=True)
+
+    with col_home_2:
+        show_history = st.button("Ver historico seguro", use_container_width=True)
+
+    if show_last:
+        latest = read_json(LATEST_PACKET)
+        if latest.get("status") == "KOS_ACTION_PACKET_READY":
+            show_operator_response(latest)
+        else:
+            st.info("Nenhum pedido anterior encontrado.")
+
+    if show_history:
+        show_safe_action_history()
+    else:
+        st.caption("Ultimo pedido e historico ficam ocultos por padrao para manter a tela limpa.")
