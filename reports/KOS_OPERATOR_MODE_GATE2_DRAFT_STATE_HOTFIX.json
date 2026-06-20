@@ -1,0 +1,15 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "ux_hotfix",
+  "name": "gate2_safe_action_draft_state",
+  "status": "applied",
+  "created_at": "2026-06-20T16:06:27.950899",
+  "goal": "Persistir rascunho de acao segura dentro do Operator Chat apos clique no botao.",
+  "no_new_phase": true,
+  "safety": {
+    "auto_publish": false,
+    "auto_deploy": false,
+    "auto_patch_runtime": false,
+    "human_gate_required": true
+  }
+}

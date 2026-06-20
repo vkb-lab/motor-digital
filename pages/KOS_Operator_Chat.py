@@ -206,9 +206,15 @@ def show_operator_response(data: dict) -> None:
     if packet_path:
         button_key = "safe_action_" + str(data.get("packet_id", "latest"))
         if st.button("Gerar acao segura agora", type="primary", use_container_width=True, key=button_key):
-            with st.spinner("Gerando acao segura local..."):
+            with st.spinner("Gerando rascunho seguro..."):
                 safe_result = run_safe_action(packet_path)
-            show_safe_action_result(safe_result)
+            st.session_state["kos_last_safe_action_result"] = safe_result
+            st.session_state["kos_last_safe_action_packet_path"] = str(packet_path)
+        
+        last_safe_result = st.session_state.get("kos_last_safe_action_result")
+        if last_safe_result:
+            st.markdown("### Rascunho gerado")
+            show_safe_action_result(last_safe_result)
 
     st.caption(
         "Guardrails ativos: sem publicacao automatica, sem patch automatico, sem IA paga, sem scraping, Parada Atlantida bloqueada."
@@ -271,6 +277,8 @@ if advanced:
     st.write("Peca ao K-OS a acao desejada em linguagem normal.")
 
 if send:
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
     clean_request = request.strip()
     if not clean_request:
         st.error("Escreva um pedido simples para o K-OS.")
