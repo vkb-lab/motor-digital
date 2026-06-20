@@ -9,6 +9,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 LATEST_PACKET = ROOT / "local_runtime" / "kos_action_router" / "latest_action_packet.json"
+SAFE_ACTIONS_DIR = ROOT / "local_runtime" / "kos_safe_actions"
 
 st.set_page_config(
     page_title="K-OS Operator Chat",
@@ -90,6 +91,21 @@ def run_safe_action(packet_path: str) -> dict:
     return data
 
 
+def list_safe_actions(limit: int = 5) -> list[dict]:
+    if not SAFE_ACTIONS_DIR.exists():
+        return []
+
+    items = []
+    for path in sorted(SAFE_ACTIONS_DIR.glob("kos_safe_action_*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
+        data = read_json(path)
+        if data.get("status") == "KOS_SAFE_ACTION_READY":
+            data["_json_path"] = str(path)
+            items.append(data)
+        if len(items) >= limit:
+            break
+    return items
+
+
 def show_safe_action_result(result: dict) -> None:
     if result.get("status") != "KOS_SAFE_ACTION_READY":
         st.error("A acao segura nao foi gerada.")
@@ -108,6 +124,42 @@ def show_safe_action_result(result: dict) -> None:
     files = result.get("files", {})
     st.info("Arquivo local gerado: " + str(files.get("markdown", "nao registrado")))
     st.caption("Nada foi publicado, implantado ou aplicado automaticamente.")
+
+
+def show_safe_action_history() -> None:
+    actions = list_safe_actions(limit=5)
+
+    with st.expander("Historico de acoes seguras", expanded=False):
+        if not actions:
+            st.write("Nenhuma acao segura gerada ainda.")
+            return
+
+        st.caption("Ultimos rascunhos gerados localmente. Sem comandos e sem JSON bruto.")
+
+        for action in actions:
+            title = action.get("title", "Acao segura")
+            created_at = action.get("created_at", "")
+            route_label = action.get("route_label", action.get("route", ""))
+            summary = action.get("summary", "")
+            files = action.get("files", {})
+
+            with st.container(border=True):
+                st.markdown("#### " + str(title))
+                if summary:
+                    st.write(summary)
+                if route_label:
+                    st.caption("Rota: " + str(route_label))
+                if created_at:
+                    st.caption("Criado em: " + str(created_at))
+                markdown_path = str(files.get("markdown", ""))
+                if markdown_path:
+                    st.info("Arquivo local: " + markdown_path)
+
+                with st.expander("Ver resumo deste rascunho"):
+                    for section in action.get("sections", []):
+                        st.markdown("##### " + str(section.get("title", "Secao")))
+                        for item in section.get("items", []):
+                            st.write("- " + str(item))
 
 
 def show_operator_response(data: dict) -> None:
@@ -217,3 +269,5 @@ else:
     if latest.get("status") == "KOS_ACTION_PACKET_READY":
         with st.expander("Ultimo pedido processado"):
             show_operator_response(latest)
+
+show_safe_action_history()
