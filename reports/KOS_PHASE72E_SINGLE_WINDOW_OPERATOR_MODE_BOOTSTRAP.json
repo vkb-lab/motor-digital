@@ -1,0 +1,29 @@
+﻿{
+    "phase":  "72E",
+    "name":  "Single Window Operator Mode",
+    "status":  "installed",
+    "created_at":  "2026-06-20T14:12:38",
+    "branch":  "kos/fase-18-render-public-asset-bridge",
+    "base_commit":  "1ff965c",
+    "entrypoint_repo":  "KOS_START_HERE.cmd",
+    "entrypoint_desktop":  "C:\\Users\\oi\\Desktop\\KOS_START_HERE.cmd",
+    "main_screen":  "pages\\KOS_Operator_Chat.py",
+    "port":  8523,
+    "behavior":  [
+                     "opens only Operator Chat",
+                     "stops old K-OS Streamlit processes",
+                     "does not auto-open technical cockpits",
+                     "does not auto-open weekly workspace",
+                     "does not auto-open social ops",
+                     "does not publish",
+                     "does not apply patches"
+                 ],
+    "old_shortcuts_moved_to":  "C:\\Users\\oi\\Desktop\\KOS_OLD_SHORTCUTS_72E",
+    "gates":  {
+                  "paid_ai":  "blocked",
+                  "browser_logged_automation":  "blocked",
+                  "human_gate_required":  true,
+                  "parada_atlantida":  "blocked",
+                  "auto_publish":  "blocked"
+              }
+}
