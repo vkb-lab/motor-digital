@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import subprocess
@@ -7,7 +7,15 @@ from pathlib import Path
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
-LATEST = ROOT / "local_runtime" / "kos_orchestrator_request_box" / "latest_orchestrator_response.json"
+LATEST_PACKET = ROOT / "local_runtime" / "kos_action_router" / "latest_action_packet.json"
+
+
+st.set_page_config(
+    page_title="K-OS Operator Chat",
+    page_icon="K",
+    layout="centered",
+    initial_sidebar_state="collapsed",
+)
 
 
 def read_json(path: Path) -> dict:
@@ -19,26 +27,26 @@ def read_json(path: Path) -> dict:
         return {"status": "READ_ERROR", "error": str(exc), "path": str(path)}
 
 
-def run_orchestrator(request: str) -> dict:
+def run_action_router(request: str) -> dict:
     result = subprocess.run(
-        ["python", "scripts\\run_phase72c_orchestrator_request_box.py", "--request", request],
+        ["python", "scripts\\run_phase72f_orchestrator_action_router.py", "--request", request],
         cwd=ROOT,
         capture_output=True,
         text=True,
         encoding="utf-8",
         errors="replace",
-        timeout=60,
+        timeout=90,
         check=False,
     )
 
-    text = result.stdout.strip()
+    text = (result.stdout or "").strip()
     try:
         data = json.loads(text)
     except Exception:
         data = {
-            "status": "ORCHESTRATOR_OUTPUT_ERROR",
+            "status": "ACTION_ROUTER_OUTPUT_ERROR",
             "stdout": text[-4000:],
-            "stderr": result.stderr[-4000:],
+            "stderr": (result.stderr or "")[-4000:],
             "returncode": result.returncode,
         }
 
@@ -46,95 +54,83 @@ def run_orchestrator(request: str) -> dict:
     return data
 
 
-def route_label(route: str) -> str:
-    labels = {
-        "social_publish": "Redes sociais / Hupmix / campanhas",
-        "products_saas": "Produto SaaS / MVP / landing",
-        "agents_orchestration": "Agentes / orquestrador / missões",
-        "patches": "Código / correções / melhorias",
-        "runtime_bridge": "Runtime / ponte ChatGPT / logs",
-        "admin": "Administração / rotina / organização",
-        "general": "Geral",
-    }
-    return labels.get(route, route or "Geral")
+def show_operator_response(data: dict) -> None:
+    response = data.get("operator_response", {})
+    locks = data.get("locks", {})
+    action_packet = data.get("action_packet", {})
 
+    st.subheader("Resposta do K-OS")
 
-def simple_answer(data: dict) -> dict:
-    plan = data.get("plan", {})
-    decision = data.get("decision", {})
+    st.markdown("### Entendi")
+    st.write(response.get("entendi", "Pedido recebido pelo K-OS."))
 
-    return {
-        "status": data.get("status"),
-        "rota": route_label(data.get("route", "")),
-        "entendimento": plan.get("summary", "Pedido recebido pelo K-OS."),
-        "proximo_passo": decision.get("next_step", "Revisar o plano antes de executar."),
-        "modulos_que_o_kos_vai_usar": plan.get("recommended_modules", []),
-        "bloqueios_ativos": {
-            "publicacao_automatica": data.get("auto_publish_enabled") is False,
-            "execucao_automatica_perigosa": data.get("auto_execution_enabled") is False,
-            "parada_atlantida": "bloqueada" if data.get("parada_atlantida_locked") else "verificar",
-            "ia_paga": "bloqueada" if data.get("paid_ai_locked") else "verificar",
-        },
-    }
+    st.markdown("### Vou usar estes módulos")
+    modules = response.get("vou_usar_estes_modulos", [])
+    if modules:
+        for module in modules:
+            st.write("- " + str(module))
+    else:
+        st.write("K-OS Orchestrator")
 
+    st.markdown("### Próximo passo")
+    st.success(response.get("proximo_passo", "Revisar o plano antes de executar."))
 
-st.set_page_config(page_title="K-OS Operator Chat", layout="centered")
+    st.markdown("### Risco / bloqueio")
+    st.warning(response.get("risco_bloqueio", "Ações reais exigem gate humano."))
+
+    st.markdown("### Ação segura disponível")
+    st.info(response.get("acao_segura_disponivel", "Gerar plano em rascunho."))
+
+    st.caption(
+        "Guardrails ativos: sem publicação automática, sem patch automático, sem IA paga, sem scraping, Parada Atlântida bloqueada."
+    )
+
+    with st.expander("Detalhes técnicos"):
+        st.write("Rota interna:", data.get("route_label", data.get("route", "geral")))
+        st.write("Action Packet:", data.get("packet_id", "sem id"))
+        st.write("Arquivo:", data.get("packet_path", "nao registrado"))
+        st.write("Bloqueios:", locks)
+        st.write("Comandos internos ocultos:")
+        commands = action_packet.get("internal_commands_hidden_by_default", [])
+        if commands:
+            for command in commands:
+                st.code(command, language="powershell")
+        else:
+            st.write("Nenhum comando interno sugerido.")
+        st.json(data)
+
 
 st.title("K-OS Operator Chat")
-st.caption("Escreva o que você quer fazer. O K-OS decide a rota e usa os módulos certos.")
-
-st.info("Use linguagem normal. Você não precisa procurar funcionalidades.")
-
-examples = [
-    "Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
-    "Criar um projeto SaaS simples para testar esta semana",
-    "Verificar status dos agentes e do runtime",
-    "Preparar readiness de publicação Hupmix com imagem HTTPS e legenda",
-    "Propor uma melhoria no código sem aplicar automaticamente",
-]
-
-with st.expander("Exemplos de pedidos"):
-    for item in examples:
-        st.write("- " + item)
+st.caption("Uma caixa. Um pedido. O K-OS escolhe a rota e mantém ações reais gateadas.")
 
 request = st.text_area(
     "Pedido ao K-OS",
-    placeholder="Exemplo: criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
-    height=160,
+    placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
+    height=140,
 )
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([2, 1])
 
-if col1.button("Pedir ao Orquestrador", type="primary"):
-    if not request.strip():
-        st.warning("Escreva um pedido primeiro.")
+with col1:
+    send = st.button("Enviar pedido ao K-OS", type="primary", use_container_width=True)
+
+with col2:
+    advanced = st.button("Modo avançado", use_container_width=True)
+
+if advanced:
+    st.info("Modo avançado permanece manual. O K-OS não abre cockpits técnicos automaticamente.")
+    st.write("Use o modo avançado só quando precisar revisar módulos específicos.")
+
+if send:
+    clean_request = request.strip()
+    if not clean_request:
+        st.error("Escreva um pedido simples para o K-OS.")
     else:
-        with st.spinner("K-OS analisando o pedido..."):
-            data = run_orchestrator(request.strip())
-        answer = simple_answer(data)
-
-        st.success("Pedido analisado.")
-        st.subheader("Resposta do K-OS")
-        st.json(answer)
-
-        commands = data.get("plan", {}).get("safe_commands", [])
-        if commands:
-            with st.expander("Comandos seguros sugeridos"):
-                for cmd in commands:
-                    st.code(cmd, language="powershell")
-
-        with st.expander("Detalhes técnicos"):
-            st.json(data)
-
-if col2.button("Ver última resposta"):
-    data = read_json(LATEST)
-    if data.get("status") == "MISSING":
-        st.warning("Ainda não existe resposta do orquestrador.")
-    else:
-        st.subheader("Última resposta")
-        st.json(simple_answer(data))
-        with st.expander("Detalhes técnicos"):
-            st.json(data)
-
-st.divider()
-st.caption("Guardrails ativos: sem publicação automática, sem patch automático, sem IA paga, sem scraping, Parada Atlântida bloqueada.")
+        with st.spinner("K-OS entendendo o pedido e montando Action Packet seguro..."):
+            data = run_action_router(clean_request)
+        show_operator_response(data)
+else:
+    latest = read_json(LATEST_PACKET)
+    if latest.get("status") == "KOS_ACTION_PACKET_READY":
+        with st.expander("Último pedido processado"):
+            show_operator_response(latest)
