@@ -325,6 +325,28 @@ def build_general(packet: dict) -> dict:
     }
 
 
+
+def build_patches(packet: dict) -> dict:
+    request = packet.get("request", "")
+    return {
+        "title": "Plano seguro de patch",
+        "summary": "Plano de patch criado em rascunho. Nenhum arquivo foi alterado automaticamente.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Resumo simples", "items": [
+                "O K-OS preparou apenas um rascunho seguro.",
+                "Nenhum deploy, patch, publicacao ou acao externa foi executado."
+            ]},
+            {"title": "Atencao necessaria", "items": [
+                "Patch automatico bloqueado. Revisar diff e aprovar manualmente antes de aplicar.",
+                "Gate humano obrigatorio preservado."
+            ]},
+            {"title": "Proxima acao segura", "items": [
+                "Gerar proposta de patch revisavel, sem aplicar automaticamente."
+            ]},
+        ],
+    }
+
 BUILDERS = {
     "social_publish": build_social,
     "products_saas": build_saas,
