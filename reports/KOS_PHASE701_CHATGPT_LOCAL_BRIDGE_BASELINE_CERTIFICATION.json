@@ -1,0 +1,30 @@
+﻿{
+    "status":  "KOS_PHASE701_CHATGPT_LOCAL_BRIDGE_BASELINE_CERTIFIED",
+    "phase":  "70.1",
+    "version":  "v0.70.1",
+    "certified_scope":  [
+                            "70A safe patch proposer",
+                            "70B safe patch review panel",
+                            "70C ChatGPT conversation bridge",
+                            "70D ChatGPT bridge drop watcher",
+                            "70E ChatGPT bridge runtime controller"
+                        ],
+    "operational_result":  "K-OS has a safe local bridge from ChatGPT conversation to audited local packet intake via drop folder and runtime control.",
+    "bridge_mode":  "drop_folder_packet_bridge",
+    "can_open_conversation":  true,
+    "can_process_drop_packets":  true,
+    "can_control_watcher":  true,
+    "applies_patch_automatically":  false,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "browser_scraping_enabled":  false,
+    "browser_logged_account_automation_used":  false,
+    "reads_chatgpt_ui_automatically":  false,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "instagram_publish_executed":  false,
+    "real_action_executed":  false,
+    "restore_archive_path":  "local_runtime\\kos_emergency_restore\\archives\\KOS_CHATGPT_LOCAL_BRIDGE_BASELINE_V0701_20260620_102050.zip",
+    "restore_command":  "git fetch --all --tags; git checkout v0.70.1-kos-chatgpt-local-bridge-baseline",
+    "created_at":  "2026-06-20T13:20:53.2507341Z"
+}
