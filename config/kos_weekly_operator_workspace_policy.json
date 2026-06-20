@@ -1,0 +1,26 @@
+﻿{
+    "status":  "KOS_WEEKLY_OPERATOR_WORKSPACE_POLICY_ACTIVE",
+    "phase":  "72A",
+    "dashboard":  "pages/KOS_Weekly_Operator_Workspace.py",
+    "opener":  "scripts/open_kos_weekly_operator_workspace.ps1",
+    "cmd":  "KOS_Weekly_Operator_Workspace.cmd",
+    "port":  8521,
+    "scope":  [
+                  "admin",
+                  "saas",
+                  "social",
+                  "readiness",
+                  "auditoria",
+                  "rotina semanal"
+              ],
+    "auto_publish_enabled":  false,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "parada_atlantida_locked":  true,
+    "target_test_account":  "hupmix",
+    "paid_ai_locked":  true,
+    "browser_scraping_enabled":  false,
+    "instagram_publish_executed":  false,
+    "real_action_executed":  false,
+    "created_at":  "2026-06-20T14:34:34.0949407Z"
+}
