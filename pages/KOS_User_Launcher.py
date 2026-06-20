@@ -63,3 +63,10 @@ st.subheader("Safe Patch Review Panel")
 st.code("powershell -ExecutionPolicy Bypass -File scripts\\open_kos_safe_patch_review_panel.ps1", language="powershell")
 st.caption("Painel visual para revisar propostas de patch. Nao aplica alteracoes.")
 # KOS_PHASE70B_SAFE_PATCH_REVIEW_PANEL_END
+
+
+# KOS_PHASE70D_CHATGPT_BRIDGE_DROP_WATCHER_START
+st.subheader("ChatGPT Bridge Drop Watcher")
+st.code("powershell -ExecutionPolicy Bypass -File scripts\\start_kos_chatgpt_bridge_drop_watcher.ps1", language="powershell")
+st.caption("Observa a pasta drop e processa pacotes Engineer pela pipeline segura. Nao faz scraping do navegador.")
+# KOS_PHASE70D_CHATGPT_BRIDGE_DROP_WATCHER_END
