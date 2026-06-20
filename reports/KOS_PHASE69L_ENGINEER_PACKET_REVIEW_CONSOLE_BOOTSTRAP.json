@@ -1,0 +1,23 @@
+﻿{
+    "status":  "KOS_PHASE69L_ENGINEER_PACKET_REVIEW_CONSOLE_CERTIFIED",
+    "phase":  "69L",
+    "smoke_status":  "KOS_ENGINEER_PACKET_REVIEW_READY",
+    "packet_id":  "test-real-flow-69k-001",
+    "oneclick_status":  "KOS_ENGINEER_PACKET_ONECLICK_COMPLETED",
+    "promotion_status":  "KOS_ENGINEER_PACKET_PROMOTED_TO_HANDOFF_INBOX",
+    "queue_tick_status":  "KOS_ENGINEER_PACKET_REVIEW_QUEUE_TICK_EXECUTED",
+    "script":  "scripts/run_phase69l_engineer_packet_review_console.py",
+    "output":  "local_runtime/kos_engineer_packet_review/latest_engineer_packet_review.json",
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "execution_requires_existing_approval_pipeline":  true,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  6,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-20T11:08:04.5337299Z"
+}

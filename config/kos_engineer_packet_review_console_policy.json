@@ -1,0 +1,17 @@
+﻿{
+    "status":  "KOS_ENGINEER_PACKET_REVIEW_CONSOLE_POLICY_ACTIVE",
+    "phase":  "69L",
+    "script":  "scripts/run_phase69l_engineer_packet_review_console.py",
+    "opener":  "scripts/open_kos_engineer_packet_review.ps1",
+    "input":  "local_runtime/kos_engineer_command_intake/latest_oneclick_result.json",
+    "output":  "local_runtime/kos_engineer_packet_review/latest_engineer_packet_review.json",
+    "optional_queue_tick":  true,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "execution_requires_existing_approval_pipeline":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_executed":  false,
+    "created_at":  "2026-06-20T11:08:01.2668510Z"
+}
