@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 from pathlib import Path
 
@@ -28,6 +29,10 @@ def read_json(path: Path) -> dict:
 
 
 def run_action_router(request: str) -> dict:
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"
+    env["PYTHONUTF8"] = "1"
+
     result = subprocess.run(
         ["python", "scripts\\run_phase72f_orchestrator_action_router.py", "--request", request],
         cwd=ROOT,
@@ -37,6 +42,7 @@ def run_action_router(request: str) -> dict:
         errors="replace",
         timeout=90,
         check=False,
+        env=env,
     )
 
     text = (result.stdout or "").strip()
