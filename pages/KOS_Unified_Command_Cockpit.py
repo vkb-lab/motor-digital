@@ -80,6 +80,43 @@ c4.metric("Parada Atlantida", "bloqueada")
 
 st.success("Sistema centralizado. Este cockpit nao publica, nao aplica patch e nao executa acao perigosa automaticamente.")
 
+# KOS_PHASE72C_ORCHESTRATOR_REQUEST_BOX_START
+with st.container(border=True):
+    st.subheader("Pedido ao Orquestrador")
+    st.caption("Digite o que você quer fazer. O K-OS classifica, consulta o contexto e gera a rota segura.")
+    orchestrator_request = st.text_area(
+        "O que você quer pedir ao K-OS?",
+        placeholder="Exemplo: criar uma campanha para Hupmix esta semana sem publicar automaticamente",
+        height=120,
+        key="kos_orchestrator_request_box",
+    )
+    req_col1, req_col2 = st.columns(2)
+    if req_col1.button("Enviar para o Orquestrador", key="kos_orchestrator_send"):
+        if not orchestrator_request.strip():
+            st.warning("Escreva um pedido antes de enviar.")
+        else:
+            response = run_status([
+                "python",
+                "scripts\\run_phase72c_orchestrator_request_box.py",
+                "--request",
+                orchestrator_request.strip(),
+            ])
+            st.json(response)
+
+    if req_col2.button("Atualizar última resposta", key="kos_orchestrator_refresh"):
+        st.json(read_json(ROOT / "local_runtime" / "kos_orchestrator_request_box" / "latest_orchestrator_response.json"))
+
+    latest_orchestrator_response = read_json(ROOT / "local_runtime" / "kos_orchestrator_request_box" / "latest_orchestrator_response.json")
+    if latest_orchestrator_response.get("status") not in ["MISSING", None]:
+        st.caption("Última resposta do orquestrador")
+        st.json({
+            "status": latest_orchestrator_response.get("status"),
+            "route": latest_orchestrator_response.get("route"),
+            "summary": latest_orchestrator_response.get("plan", {}).get("summary"),
+            "next_step": latest_orchestrator_response.get("decision", {}).get("next_step"),
+        })
+# KOS_PHASE72C_ORCHESTRATOR_REQUEST_BOX_END
+
 tabs = st.tabs([
     "Home",
     "Runtime e Agentes",
@@ -179,3 +216,4 @@ with tabs[8]:
     st.json(inventory)
     st.subheader("Guardrails")
     st.json(safe)
+
