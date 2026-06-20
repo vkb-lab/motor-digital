@@ -1,0 +1,24 @@
+﻿{
+    "mode":  "K-OS Operator Mode",
+    "status":  "baseline_frozen",
+    "purpose":  "use_real_operation_before_new_construction",
+    "branch":  "kos/fase-18-render-public-asset-bridge",
+    "commit":  "b9acdc8",
+    "created_at":  "2026-06-20T15:44:23.9481598-03:00",
+    "entrypoint":  "C:\\Users\\oi\\Desktop\\KOS_START_HERE.cmd",
+    "operator_chat":  "pages\\KOS_Operator_Chat.py",
+    "port":  8523,
+    "rules":  [
+                  "no_new_phase_by_default",
+                  "single_entrypoint",
+                  "operator_chat_only",
+                  "hide_technical_details_by_default",
+                  "safe_actions_require_human_gate",
+                  "no_auto_publish",
+                  "no_auto_deploy",
+                  "no_auto_patch_without_operator",
+                  "no_logged_browser_automation",
+                  "parada_atlantida_blocked",
+                  "hupmix_safe_test_target"
+              ]
+}
