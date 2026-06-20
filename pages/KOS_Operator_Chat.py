@@ -256,10 +256,14 @@ st.title("K-OS Operator Chat")
 st.caption("Uma caixa. Um pedido. O K-OS escolhe a rota e mantem acoes reais gateadas.")
 st.info("Use esta tela como entrada principal. Nao cole a resposta do K-OS no PowerShell.")
 
+if "kos_operator_request_text" not in st.session_state:
+    st.session_state["kos_operator_request_text"] = ""
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
     height=140,
+    key="kos_operator_request_text",
 )
 
 col1, col2 = st.columns([2, 1])
@@ -279,13 +283,19 @@ if advanced:
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)
     st.session_state.pop("kos_last_safe_action_packet_path", None)
-    clean_request = request.strip()
+    clean_request = st.session_state.get("kos_operator_request_text", "").strip()
     if not clean_request:
         st.error("Escreva um pedido simples para o K-OS.")
     else:
         with st.spinner("K-OS entendendo o pedido e montando Action Packet seguro..."):
             data = run_action_router(clean_request)
-        show_operator_response(data)
+        st.session_state["kos_last_operator_data"] = data
+        st.session_state["kos_last_operator_request"] = clean_request
+
+last_operator_data = st.session_state.get("kos_last_operator_data")
+
+if last_operator_data and last_operator_data.get("status") == "KOS_ACTION_PACKET_READY":
+    show_operator_response(last_operator_data)
 else:
     st.markdown("### Comece por aqui")
     st.write("Digite um pedido ao K-OS na caixa acima. O K-OS escolhe a rota e mostra a proxima acao segura.")
@@ -301,6 +311,7 @@ else:
     if show_last:
         latest = read_json(LATEST_PACKET)
         if latest.get("status") == "KOS_ACTION_PACKET_READY":
+            st.session_state["kos_last_operator_data"] = latest
             show_operator_response(latest)
         else:
             st.info("Nenhum pedido anterior encontrado.")

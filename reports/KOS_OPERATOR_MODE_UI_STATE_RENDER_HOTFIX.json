@@ -1,0 +1,15 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "ux_hotfix",
+  "name": "operator_chat_state_render",
+  "status": "applied",
+  "created_at": "2026-06-20T16:11:52.866916",
+  "goal": "Manter a ultima resposta do Operator Chat renderizada apos cliques de botoes Streamlit.",
+  "no_new_phase": true,
+  "safety": {
+    "auto_publish": false,
+    "auto_deploy": false,
+    "auto_patch_runtime": false,
+    "human_gate_required": true
+  }
+}
