@@ -1,0 +1,25 @@
+﻿{
+    "status":  "KOS_PHASE69I_ENGINEER_COMMAND_INTAKE_BRIDGE_CERTIFIED",
+    "phase":  "69I",
+    "smoke_status":  "KOS_ENGINEER_COMMAND_INTAKE_STAGED",
+    "processor":  "scripts/run_phase69i_engineer_command_intake.py",
+    "submitter":  "scripts/submit_kos_engineer_command_intake.ps1",
+    "cmd":  "KOS_Engineer_Command_Intake.cmd",
+    "desktop_cmd":  "C:\\Users\\oi\\Desktop\\KOS_Engineer_Command_Intake.cmd",
+    "packet_markers":  [
+                           "KOS_ENGINEER_PACKET_START",
+                           "KOS_ENGINEER_PACKET_END"
+                       ],
+    "default_mode":  "stage_only",
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "runtime_health_status":  "ATTENTION_REQUIRED",
+    "runtime_process_count":  6,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "real_action_executed":  false,
+    "paid_ai_call_executed":  false,
+    "instagram_publish_executed":  false,
+    "browser_logged_account_automation_used":  false,
+    "created_at":  "2026-06-20T10:49:39.1862031Z"
+}

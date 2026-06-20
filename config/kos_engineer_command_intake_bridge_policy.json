@@ -1,0 +1,23 @@
+﻿{
+    "status":  "KOS_ENGINEER_COMMAND_INTAKE_BRIDGE_POLICY_ACTIVE",
+    "phase":  "69I",
+    "processor":  "scripts/run_phase69i_engineer_command_intake.py",
+    "submitter":  "scripts/submit_kos_engineer_command_intake.ps1",
+    "cmd":  "KOS_Engineer_Command_Intake.cmd",
+    "desktop_cmd":  "C:\\Users\\oi\\Desktop\\KOS_Engineer_Command_Intake.cmd",
+    "default_mode":  "stage_only",
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "allowed_modes":  [
+                          "stage_only",
+                          "audit_only",
+                          "prepare_only"
+                      ],
+    "blocked_external_publish_by_default":  true,
+    "blocked_secret_patterns":  true,
+    "production_publish_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "instagram_publish_executed":  false,
+    "created_at":  "2026-06-20T10:49:35.0606763Z"
+}
