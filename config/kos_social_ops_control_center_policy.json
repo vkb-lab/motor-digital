@@ -1,0 +1,22 @@
+﻿{
+    "status":  "KOS_SOCIAL_OPS_CONTROL_CENTER_POLICY_ACTIVE",
+    "phase":  "71A",
+    "page":  "pages/KOS_Social_Ops_Control_Center.py",
+    "opener":  "scripts/open_kos_social_ops_control_center.ps1",
+    "cmd":  "KOS_Social_Ops_Control_Center.cmd",
+    "port":  8520,
+    "target_test_account":  "hupmix",
+    "parada_atlantida_locked":  true,
+    "audit_mode":  true,
+    "strategy_mode":  true,
+    "publish_review_mode":  true,
+    "auto_publish_enabled":  false,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "browser_scraping_enabled":  false,
+    "browser_logged_account_automation_used":  false,
+    "paid_ai_locked":  true,
+    "instagram_publish_executed":  false,
+    "real_action_executed":  false,
+    "created_at":  "2026-06-20T13:27:43.3173417Z"
+}
