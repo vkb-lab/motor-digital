@@ -42,7 +42,68 @@ def as_lines(items: list[str]) -> str:
     return "\n".join("- " + item for item in items)
 
 
+
+def kos_is_social_read_request(value: str) -> bool:
+    table = str.maketrans({
+        "á": "a", "à": "a", "â": "a", "ã": "a",
+        "é": "e", "ê": "e",
+        "í": "i",
+        "ó": "o", "ô": "o", "õ": "o",
+        "ú": "u",
+        "ç": "c",
+        "Á": "a", "À": "a", "Â": "a", "Ã": "a",
+        "É": "e", "Ê": "e",
+        "Í": "i",
+        "Ó": "o", "Ô": "o", "Õ": "o",
+        "Ú": "u",
+        "Ç": "c",
+    })
+    text = str(value or "").lower().translate(table)
+    social_markers = ["hupmix", "instagram", "post", "publicacao", "publicacoes", "reels", "story", "stories", "perfil"]
+    read_markers = ["veja", "ver", "olhar", "olhe", "ultima", "ultimo", "analisar", "analise", "avaliar", "auditar", "revisar", "ler", "leia"]
+    return any(word in text for word in social_markers) and any(word in text for word in read_markers)
+
+
+def build_social_read(packet: dict) -> dict:
+    request = packet.get("request", "")
+
+    return {
+        "title": "Analise segura de publicacao Hupmix",
+        "summary": "Modo leitura ativado. O K-OS nao acessou Instagram, nao fez scraping e nao automatizou navegador.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Limite seguro", "items": [
+                "Nao posso ver a ultima publicacao sozinho sem uma fonte fornecida por voce.",
+                "Nao acesso Instagram logado.",
+                "Nao automatizo navegador.",
+                "Nao mexo em cookies.",
+                "Nao faco scraping."
+            ]},
+            {"title": "O que enviar", "items": [
+                "Link publico da publicacao, se existir.",
+                "Print da publicacao.",
+                "Texto da legenda.",
+                "Arquivo ou rascunho do post."
+            ]},
+            {"title": "O que o K-OS consegue analisar depois", "items": [
+                "Gancho inicial.",
+                "Clareza da promessa.",
+                "CTA.",
+                "Adequacao ao publico.",
+                "Risco de publicacao.",
+                "Sugestao de melhoria sem publicar automaticamente."
+            ]},
+            {"title": "Proxima acao segura", "items": [
+                "Cole o link, print ou legenda da publicacao no Operator Chat.",
+                "Depois peca: analisar esta publicacao da Hupmix sem publicar nada."
+            ]},
+        ],
+    }
+
+
 def build_social(packet: dict) -> dict:
+    if kos_is_social_read_request(packet.get("request", "")):
+        return build_social_read(packet)
     request = packet.get("request", "")
     days = [
         "Dia 1: promessa principal da Hupmix e chamada para conhecer a marca.",
@@ -349,6 +410,7 @@ def build_patches(packet: dict) -> dict:
 
 BUILDERS = {
     "social_publish": build_social,
+    "social_read": build_social_read,
     "products_saas": build_saas,
     "agents_orchestration": build_agents,
     "patches": build_patches,

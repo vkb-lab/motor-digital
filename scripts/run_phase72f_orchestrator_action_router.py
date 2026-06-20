@@ -190,8 +190,76 @@ def call_72c(request: str) -> dict:
     }
 
 
+
+ROUTES["social_read"] = {
+    "label": "Redes sociais / Hupmix / leitura segura",
+    "modules": [
+        "Social Ops Read-Only",
+        "Social Publish Readiness Auditor",
+        "Human Decision Gate",
+    ],
+    "next_step": "Receber link, print, legenda ou texto da publicacao para analise segura.",
+    "risk": "Nao acessar Instagram logado, nao automatizar navegador, nao mexer em cookies e nao fazer scraping.",
+    "safe_action": "Analisar publicacao fornecida pelo operador.",
+    "internal_commands": [],
+    "commands": [],
+}
+
+
+def normalize_social_intent_text(value: str) -> str:
+    table = str.maketrans({
+        "á": "a", "à": "a", "â": "a", "ã": "a",
+        "é": "e", "ê": "e",
+        "í": "i",
+        "ó": "o", "ô": "o", "õ": "o",
+        "ú": "u",
+        "ç": "c",
+        "Á": "a", "À": "a", "Â": "a", "Ã": "a",
+        "É": "e", "Ê": "e",
+        "Í": "i",
+        "Ó": "o", "Ô": "o", "Õ": "o",
+        "Ú": "u",
+        "Ç": "c",
+    })
+    return str(value or "").lower().translate(table)
+
+
+def is_social_read_request(request: str) -> bool:
+    text = normalize_social_intent_text(request)
+
+    social_markers = [
+        "hupmix", "instagram", "post", "publicacao", "publicacoes",
+        "reels", "story", "stories", "perfil"
+    ]
+
+    read_markers = [
+        "veja", "ver", "olhar", "olhe", "ultima", "ultimo",
+        "analisar", "analise", "avaliar", "auditar", "revisar",
+        "ler", "leia"
+    ]
+
+    strong_create_markers = [
+        "criar campanha", "gerar campanha", "campanha para",
+        "campanha de 7", "7 dias", "calendario", "conteudo para semana"
+    ]
+
+    has_social = any(word in text for word in social_markers)
+    has_read = any(word in text for word in read_markers)
+    has_strong_create = any(word in text for word in strong_create_markers)
+
+    if not has_social or not has_read:
+        return False
+
+    if has_strong_create and "ultima" not in text and "ultimo" not in text and "ver" not in text and "veja" not in text:
+        return False
+
+    return True
+
+
 def detect_route(request: str, base: dict) -> str:
     text = normalize(request)
+    if is_social_read_request(request):
+        return "social_read"
     base_route = base.get("route")
     if base_route in ROUTES:
         return base_route
@@ -223,6 +291,8 @@ def summarize_request(request: str, route: str) -> str:
     if clean:
         return clean[:240]
 
+    if route == "social_read":
+        return request
     if route == "social_publish":
         return "Pedido de campanha ou redes sociais recebido."
     if route == "products_saas":

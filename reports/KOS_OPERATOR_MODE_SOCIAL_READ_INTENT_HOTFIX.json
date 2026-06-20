@@ -1,0 +1,22 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "routing_hotfix",
+  "name": "social_read_intent_hupmix",
+  "status": "applied",
+  "created_at": "2026-06-20T16:39:01.997383",
+  "goal": "Diferenciar pedidos de ver/analisar publicacao Hupmix de pedidos para criar campanha.",
+  "no_new_phase": true,
+  "safety": {
+    "read_only": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "logged_browser_automation": false,
+    "cookie_access": false,
+    "scraping": false,
+    "human_gate_required": true
+  },
+  "expected_behavior": {
+    "veja ultima publicacao do hupmix": "solicitar link/print/texto; nao gerar campanha",
+    "criar campanha hupmix para 7 dias": "gerar plano de campanha em rascunho"
+  }
+}
