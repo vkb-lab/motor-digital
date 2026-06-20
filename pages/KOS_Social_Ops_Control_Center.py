@@ -147,3 +147,10 @@ with tab_risk:
     })
 
     st.success("Sistema em modo seguro para testes, auditoria e estratégia.")
+
+# KOS_PHASE71C_PUBLISH_READINESS_START
+st.divider()
+st.subheader('Publish Readiness 71C')
+st.caption('Readiness auditor. Nao publica. Reutiliza caminho 69D-69H.')
+st.json(read_json(ROOT / 'local_runtime' / 'kos_social_ops' / 'readiness' / 'latest_publish_readiness.json'))
+# KOS_PHASE71C_PUBLISH_READINESS_END

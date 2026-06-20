@@ -1,0 +1,23 @@
+﻿{
+    "status":  "KOS_PHASE71C_SOCIAL_PUBLISH_READINESS_AUDITOR_CERTIFIED",
+    "phase":  "71C",
+    "readiness_id":  "hupmix-readiness-smoke-71c",
+    "readiness_status":  "KOS_SOCIAL_PUBLISH_READINESS_READY_FOR_HUMAN_REVIEW",
+    "output_path":  "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\kos_social_ops\\readiness\\hupmix-readiness-smoke-71c.json",
+    "dashboard_reuse":  "71A Social Ops Control Center",
+    "existing_publish_path_reused":  "69D-69E-69F-69G-69H",
+    "creates_new_publish_executor":  false,
+    "auto_publish_enabled":  false,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "human_confirmation_required":  true,
+    "browser_scraping_enabled":  false,
+    "browser_logged_account_automation_used":  false,
+    "paid_ai_locked":  true,
+    "parada_atlantida_locked":  true,
+    "instagram_publish_executed":  false,
+    "publish_endpoint_called":  false,
+    "http_post_used":  false,
+    "real_action_executed":  false,
+    "created_at":  "2026-06-20T13:57:09.0189601Z"
+}
