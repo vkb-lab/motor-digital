@@ -1,0 +1,25 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "executor_hotfix",
+  "name": "agent_status_real_runtime_read",
+  "status": "applied",
+  "created_at": "2026-06-20T16:20:38.736222",
+  "goal": "Fazer o diagnostico de agentes ler arquivos reais de runtime/live em vez de gerar checklist generico.",
+  "no_new_phase": true,
+  "safety": {
+    "read_only": true,
+    "auto_publish": false,
+    "auto_deploy": false,
+    "auto_patch_runtime": false,
+    "human_gate_required": true
+  },
+  "files_read_by_executor": [
+    "local_runtime/kos_autonomy_missions/latest_queue_processor_status.json",
+    "local_runtime/kos_autonomy_missions/latest_mission_queue_loop_tick.json",
+    "local_runtime/kos_autonomous_jobs/latest_autonomous_job_runner_status.json",
+    "local_runtime/kos_autonomous_jobs/latest_autonomous_job_runner_loop_tick.json",
+    "local_runtime/kos_action_router/latest_action_packet.json",
+    "local_runtime/kos_safe_actions/latest_safe_action.json",
+    "live/human_decision_center/decision_queue.json"
+  ]
+}

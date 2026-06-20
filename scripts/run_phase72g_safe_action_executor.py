@@ -83,39 +83,196 @@ def build_saas(packet: dict) -> dict:
 
 def build_agents(packet: dict) -> dict:
     request = packet.get("request", "")
+
+    def mtime_label(path: Path) -> str:
+        try:
+            return datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+        except Exception:
+            return "sem data"
+
+    def compact_value(value):
+        if isinstance(value, (str, int, float, bool)):
+            return str(value)
+        if isinstance(value, list):
+            return str(len(value)) + " item(ns)"
+        if isinstance(value, dict):
+            return str(len(value)) + " chave(s)"
+        if value is None:
+            return "vazio"
+        return type(value).__name__
+
+    def extract_signals(data) -> str:
+        if not isinstance(data, dict):
+            return "conteudo lido"
+
+        preferred = [
+            "status", "state", "ok", "health", "mode", "last_status",
+            "queue_status", "runner_status", "processor_status",
+            "pending_count", "processed_count", "error_count",
+            "last_error", "updated_at", "created_at", "generated_at",
+            "last_tick_at", "timestamp"
+        ]
+
+        signals = []
+        for key in preferred:
+            if key in data and data.get(key) not in [None, "", [], {}]:
+                signals.append(str(key) + "=" + compact_value(data.get(key)))
+
+        if len(signals) < 4:
+            for key, value in data.items():
+                low = str(key).lower()
+                if any(token in low for token in ["queue", "mission", "job", "task", "action", "decision", "pending", "error"]):
+                    if value not in [None, "", [], {}]:
+                        item = str(key) + "=" + compact_value(value)
+                        if item not in signals:
+                            signals.append(item)
+                if len(signals) >= 6:
+                    break
+
+        if not signals:
+            signals.append("arquivo lido, sem sinal operacional explicito")
+
+        return "; ".join(signals[:6])
+
+    def summarize_json_file(label: str, path: Path) -> str:
+        if not path.exists():
+            return label + ": nao encontrado"
+
+        data = read_json(path)
+        if isinstance(data, dict) and data.get("status") == "READ_ERROR":
+            return label + ": erro de leitura - " + str(data.get("error", "sem detalhe"))
+
+        status = "lido"
+        if isinstance(data, dict) and data.get("status"):
+            status = str(data.get("status"))
+
+        return label + ": " + status + "; atualizado em " + mtime_label(path) + "; " + extract_signals(data)
+
+    def summarize_decision_queue(path: Path) -> str:
+        if not path.exists():
+            return "Fila de decisao humana: nao encontrada"
+
+        data = read_json(path)
+        if isinstance(data, dict) and data.get("status") == "READ_ERROR":
+            return "Fila de decisao humana: erro de leitura - " + str(data.get("error", "sem detalhe"))
+
+        count = None
+        if isinstance(data, list):
+            count = len(data)
+        elif isinstance(data, dict):
+            for key in ["queue", "items", "decisions", "pending", "requests", "tasks"]:
+                if isinstance(data.get(key), list):
+                    count = len(data.get(key))
+                    break
+            if count is None:
+                count = len(data.keys())
+
+        if count is None:
+            return "Fila de decisao humana: arquivo lido; atualizado em " + mtime_label(path)
+
+        return "Fila de decisao humana: " + str(count) + " registro(s); atualizado em " + mtime_label(path)
+
+    def summarize_jsonl_events(label: str, path: Path, limit: int = 5) -> list:
+        if not path.exists():
+            return [label + ": nao encontrado"]
+
+        try:
+            rows = [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        except Exception as exc:
+            return [label + ": erro de leitura - " + str(exc)]
+
+        if not rows:
+            return [label + ": sem eventos registrados"]
+
+        out = []
+        for raw in rows[-limit:]:
+            try:
+                event = json.loads(raw)
+                if isinstance(event, dict):
+                    bits = []
+                    for key in ["event", "status", "route", "action_id", "packet_id", "created_at", "timestamp"]:
+                        if event.get(key) not in [None, "", [], {}]:
+                            bits.append(str(key) + "=" + str(event.get(key)))
+                    out.append("; ".join(bits[:6]) if bits else "evento lido")
+                else:
+                    out.append("evento lido")
+            except Exception:
+                out.append(raw[:160])
+
+        return out
+
+    runtime_items = [
+        summarize_json_file(
+            "Fila de missoes",
+            ROOT / "local_runtime" / "kos_autonomy_missions" / "latest_queue_processor_status.json"
+        ),
+        summarize_json_file(
+            "Tick da fila de missoes",
+            ROOT / "local_runtime" / "kos_autonomy_missions" / "latest_mission_queue_loop_tick.json"
+        ),
+        summarize_json_file(
+            "Runner de jobs autonomos",
+            ROOT / "local_runtime" / "kos_autonomous_jobs" / "latest_autonomous_job_runner_status.json"
+        ),
+        summarize_json_file(
+            "Tick do runner autonomo",
+            ROOT / "local_runtime" / "kos_autonomous_jobs" / "latest_autonomous_job_runner_loop_tick.json"
+        ),
+        summarize_json_file(
+            "Ultimo Action Packet",
+            ROOT / "local_runtime" / "kos_action_router" / "latest_action_packet.json"
+        ),
+        summarize_json_file(
+            "Ultima acao segura",
+            ROOT / "local_runtime" / "kos_safe_actions" / "latest_safe_action.json"
+        ),
+        summarize_decision_queue(
+            ROOT / "live" / "human_decision_center" / "decision_queue.json"
+        ),
+    ]
+
+    event_items = []
+    event_items.extend(summarize_jsonl_events(
+        "Eventos do roteador",
+        ROOT / "local_runtime" / "kos_action_router" / "events.jsonl",
+        limit=3
+    ))
+    event_items.extend(summarize_jsonl_events(
+        "Eventos de acoes seguras",
+        ROOT / "local_runtime" / "kos_safe_actions" / "events.jsonl",
+        limit=3
+    ))
+
+    attention = []
+    joined = "\n".join(runtime_items + event_items).lower()
+
+    if "erro" in joined or "read_error" in joined or "failed" in joined or "failure" in joined:
+        attention.append("Existe sinal de erro ou falha nos registros. Revisar antes de executar qualquer acao real.")
+    else:
+        attention.append("Nenhum erro critico foi identificado na leitura resumida dos arquivos monitorados.")
+
+    if "nao encontrado" in joined:
+        attention.append("Alguns arquivos de runtime nao foram encontrados. Isso pode ser normal se o modulo ainda nao rodou.")
+    else:
+        attention.append("Arquivos principais de runtime foram encontrados.")
+
+    attention.append("Manter publicacao, patch e deploy bloqueados ate aprovacao humana.")
+
     return {
-        "title": "Diagnostico seguro de agentes",
-        "summary": "Checklist operacional criado. Nenhum agente executou acao externa.",
+        "title": "Diagnostico operacional real de agentes",
+        "summary": "Estado real lido de local_runtime e live. Nenhum agente executou acao externa.",
         "sections": [
             {"title": "Pedido original", "items": [request]},
-            {"title": "Verificacoes sugeridas", "items": [
-                "Fila de missoes pendentes.",
-                "Eventos recentes de runtime.",
-                "Pacotes aguardando gate humano.",
-                "Modulos com erro ou sem ultimo status.",
-                "Acoes externas bloqueadas."
+            {"title": "Resumo simples", "items": [
+                "Leitura feita em arquivos locais de runtime, fila, jobs, Action Packets, acoes seguras e decisao humana.",
+                "Este diagnostico apenas le dados. Nao executa agente, nao publica, nao aplica patch e nao faz deploy."
             ]},
-            {"title": "Atencao principal", "items": [
-                "Priorizar apenas missoes com baixo risco.",
-                "Nao executar publicacao, patch ou deploy sem confirmacao humana."
-            ]},
-        ],
-    }
-
-
-def build_patches(packet: dict) -> dict:
-    request = packet.get("request", "")
-    return {
-        "title": "Proposta segura de patch",
-        "summary": "Plano de correcao criado para revisao. Nenhum patch foi aplicado automaticamente.",
-        "sections": [
-            {"title": "Pedido original", "items": [request]},
-            {"title": "Fluxo seguro", "items": [
-                "Verificar Git limpo.",
-                "Gerar proposta de patch.",
-                "Mostrar diff.",
-                "Aguardar aprovacao humana.",
-                "Commit somente apos validacao."
+            {"title": "Estado real encontrado", "items": runtime_items},
+            {"title": "Ultimos eventos", "items": event_items},
+            {"title": "Atencao necessaria", "items": attention},
+            {"title": "Proxima acao segura", "items": [
+                "Revisar somente itens com erro, pendencia ou arquivo ausente.",
+                "Executar acoes reais apenas com gate humano explicito."
             ]},
         ],
     }
