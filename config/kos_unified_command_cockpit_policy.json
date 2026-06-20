@@ -1,0 +1,33 @@
+﻿{
+    "status":  "KOS_UNIFIED_COMMAND_COCKPIT_POLICY_ACTIVE",
+    "phase":  "72B",
+    "dashboard":  "pages/KOS_Unified_Command_Cockpit.py",
+    "inventory_script":  "scripts/run_phase72b_unified_command_cockpit_inventory.py",
+    "opener":  "scripts/open_kos_unified_command_cockpit.ps1",
+    "cmd":  "KOS_Unified_Command_Cockpit.cmd",
+    "port":  8522,
+    "scope":  [
+                  "runtime",
+                  "agents",
+                  "orchestrator",
+                  "saas_products",
+                  "social_publish",
+                  "chatgpt_bridge",
+                  "patches",
+                  "audit",
+                  "commands"
+              ],
+    "creates_new_publisher":  false,
+    "creates_new_orchestrator":  false,
+    "reuses_existing_modules":  true,
+    "auto_publish_enabled":  false,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "parada_atlantida_locked":  true,
+    "target_test_account":  "hupmix",
+    "paid_ai_locked":  true,
+    "browser_scraping_enabled":  false,
+    "instagram_publish_executed":  false,
+    "real_action_executed":  false,
+    "created_at":  "2026-06-20T14:50:27.4043995Z"
+}
