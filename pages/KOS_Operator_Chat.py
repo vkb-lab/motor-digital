@@ -27,11 +27,14 @@ def read_json(path: Path) -> dict:
         return {"status": "READ_ERROR", "error": str(exc), "path": str(path)}
 
 
-def run_action_router(request: str) -> dict:
+def subprocess_env() -> dict:
     env = os.environ.copy()
     env["PYTHONIOENCODING"] = "utf-8"
     env["PYTHONUTF8"] = "1"
+    return env
 
+
+def run_action_router(request: str) -> dict:
     result = subprocess.run(
         ["python", "scripts\\run_phase72f_orchestrator_action_router.py", "--request", request],
         cwd=ROOT,
@@ -41,7 +44,7 @@ def run_action_router(request: str) -> dict:
         errors="replace",
         timeout=90,
         check=False,
-        env=env,
+        env=subprocess_env(),
     )
 
     text = (result.stdout or "").strip()
@@ -59,9 +62,58 @@ def run_action_router(request: str) -> dict:
     return data
 
 
+def run_safe_action(packet_path: str) -> dict:
+    result = subprocess.run(
+        ["python", "scripts\\run_phase72g_safe_action_executor.py", "--packet-path", packet_path],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=90,
+        check=False,
+        env=subprocess_env(),
+    )
+
+    text = (result.stdout or "").strip()
+    try:
+        data = json.loads(text)
+    except Exception:
+        data = {
+            "status": "SAFE_ACTION_OUTPUT_ERROR",
+            "stdout": text[-1000:],
+            "stderr": (result.stderr or "")[-1000:],
+            "returncode": result.returncode,
+        }
+
+    data["returncode"] = result.returncode
+    return data
+
+
+def show_safe_action_result(result: dict) -> None:
+    if result.get("status") != "KOS_SAFE_ACTION_READY":
+        st.error("A acao segura nao foi gerada.")
+        st.write(result.get("status", "erro desconhecido"))
+        return
+
+    st.subheader("Resultado seguro gerado")
+    st.success(result.get("summary", "Acao segura criada."))
+
+    sections = result.get("sections", [])
+    for section in sections:
+        st.markdown("#### " + str(section.get("title", "Secao")))
+        for item in section.get("items", []):
+            st.write("- " + str(item))
+
+    files = result.get("files", {})
+    st.info("Arquivo local gerado: " + str(files.get("markdown", "nao registrado")))
+    st.caption("Nada foi publicado, implantado ou aplicado automaticamente.")
+
+
 def show_operator_response(data: dict) -> None:
     response = data.get("operator_response", {})
     locks = data.get("locks", {})
+    packet_path = data.get("packet_path", "")
 
     st.subheader("Resposta do K-OS")
 
@@ -84,6 +136,13 @@ def show_operator_response(data: dict) -> None:
 
     st.markdown("### Acao segura disponivel")
     st.info(response.get("acao_segura_disponivel", "Gerar plano em rascunho."))
+
+    if packet_path:
+        button_key = "safe_action_" + str(data.get("packet_id", "latest"))
+        if st.button("Gerar acao segura agora", type="primary", use_container_width=True, key=button_key):
+            with st.spinner("Gerando acao segura local..."):
+                safe_result = run_safe_action(packet_path)
+            show_safe_action_result(safe_result)
 
     st.caption(
         "Guardrails ativos: sem publicacao automatica, sem patch automatico, sem IA paga, sem scraping, Parada Atlantida bloqueada."
