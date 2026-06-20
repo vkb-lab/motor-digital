@@ -1,0 +1,25 @@
+﻿{
+    "status":  "KOS_HUPMIX_REAL_PUBLISH_EXECUTOR_POLICY_ACTIVE",
+    "phase":  "69H",
+    "script":  "scripts/run_phase69h_hupmix_real_publish_executor.py",
+    "target":  "hupmix",
+    "ig_id":  "17841471706662294",
+    "final_confirmation_phrase":  "YES_EXECUTE_REAL_HUPMIX_INSTAGRAM_PUBLISH_NOW",
+    "real_flag_env":  "KOS_REAL_HUPMIX_PUBLISH_ENABLED",
+    "required_image_url":  "public_https_url",
+    "real_publish_enabled_by_default":  false,
+    "installer_executes_real_publish":  false,
+    "allowed_http_methods_when_final_gated":  [
+                                                  "GET",
+                                                  "POST"
+                                              ],
+    "publish_flow":  [
+                         "POST /{ig-user-id}/media",
+                         "POST /{ig-user-id}/media_publish"
+                     ],
+    "parada_atlantida_locked":  true,
+    "paid_ai_locked":  true,
+    "browser_logged_account_automation_blocked":  true,
+    "token_must_not_be_logged":  true,
+    "created_at":  "2026-06-19T15:29:35.8053138Z"
+}

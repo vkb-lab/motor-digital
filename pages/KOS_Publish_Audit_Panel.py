@@ -113,3 +113,11 @@ with tab4:
     st.json(ledger)
 with tab5:
     st.json(baseline)
+
+
+# KOS_PHASE69H_REAL_EXECUTOR_PANEL_START
+st.subheader("69H Real Publish Executor")
+st.error("Executor real Hupmix-only instalado. Nao rode sem imagem publica, token valido e confirmacao final.")
+st.code('python scripts\\run_phase69h_hupmix_real_publish_executor.py --target hupmix --campaign-id "teste" --caption "caption" --image-url "https://example.com/image.jpg"', language="powershell")
+st.code('$env:KOS_REAL_HUPMIX_PUBLISH_ENABLED="true"; python scripts\\run_phase69h_hupmix_real_publish_executor.py --target hupmix --campaign-id "teste-real" --caption "caption" --image-url "https://URL_PUBLICA/imagem.jpg" --operator "operator" --confirmation "YES_EXECUTE_REAL_HUPMIX_INSTAGRAM_PUBLISH_NOW" --execute-real-publish', language="powershell")
+# KOS_PHASE69H_REAL_EXECUTOR_PANEL_END
