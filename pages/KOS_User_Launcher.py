@@ -56,3 +56,10 @@ st.subheader("Publish Audit Panel")
 st.code("powershell -ExecutionPolicy Bypass -File scripts\\open_kos_publish_audit_panel.ps1", language="powershell")
 st.caption("Painel visual de auditoria Hupmix. Nao publica e nao usa POST.")
 # KOS_PHASE69E2_PUBLISH_AUDIT_PANEL_END
+
+
+# KOS_PHASE70B_SAFE_PATCH_REVIEW_PANEL_START
+st.subheader("Safe Patch Review Panel")
+st.code("powershell -ExecutionPolicy Bypass -File scripts\\open_kos_safe_patch_review_panel.ps1", language="powershell")
+st.caption("Painel visual para revisar propostas de patch. Nao aplica alteracoes.")
+# KOS_PHASE70B_SAFE_PATCH_REVIEW_PANEL_END
