@@ -1,0 +1,19 @@
+﻿{
+    "status":  "KOS_PHASE71B_SOCIAL_STRATEGY_GENERATOR_CERTIFIED",
+    "phase":  "71B",
+    "strategy_id":  "hupmix-social-ops-test-71b",
+    "target":  "hupmix",
+    "output_path":  "C:\\Users\\oi\\Desktop\\motor-digital\\local_runtime\\kos_social_ops\\strategies\\hupmix-social-ops-test-71b.json",
+    "dashboard_reuse":  "71A Social Ops Control Center",
+    "creates_new_dashboard":  false,
+    "auto_publish_enabled":  false,
+    "auto_execution_enabled":  false,
+    "operator_review_required":  true,
+    "browser_scraping_enabled":  false,
+    "browser_logged_account_automation_used":  false,
+    "paid_ai_locked":  true,
+    "instagram_publish_executed":  false,
+    "real_action_executed":  false,
+    "parada_atlantida_locked":  true,
+    "created_at":  "2026-06-20T13:36:02.7381773Z"
+}

@@ -1,0 +1,19 @@
+﻿{
+  "status": "KOS_SOCIAL_STRATEGY_GENERATOR_POLICY_ACTIVE",
+  "phase": "71B",
+  "script": "scripts/run_phase71b_social_strategy_generator.py",
+  "output_dir": "local_runtime/kos_social_ops/strategies",
+  "target_test_account": "hupmix",
+  "allowed_targets": ["hupmix"],
+  "blocked_targets": ["paradaatlantida", "parada_atlantida", "17841480166187766", "869334472930140"],
+  "dashboard_reuse": "71A Social Ops Control Center reads generated strategies",
+  "creates_new_dashboard": false,
+  "auto_publish_enabled": false,
+  "auto_execution_enabled": false,
+  "operator_review_required": true,
+  "browser_scraping_enabled": false,
+  "browser_logged_account_automation_used": false,
+  "paid_ai_locked": true,
+  "instagram_publish_executed": false,
+  "real_action_executed": false
+}
