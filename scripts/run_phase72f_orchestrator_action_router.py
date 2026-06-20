@@ -10,9 +10,7 @@ from uuid import uuid4
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME_DIR = ROOT / "local_runtime" / "kos_action_router"
-MEMORY_DIR = ROOT / "memory" / "kos_action_router"
-LATEST_PACKET = RUNTIME_DIR / "latest_action_packet.json"
-EVENTS = MEMORY_DIR / "events.jsonl"
+MEMORY_DIR = ROOT / "memory" / "kos_action_router"`nLATEST_PACKET = RUNTIME_DIR / "latest_action_packet.json"`nEVENTS = RUNTIME_DIR / "events.jsonl"
 
 LOCKS = {
     "auto_publish_enabled": False,
@@ -280,9 +278,7 @@ def build_packet(request: str) -> dict:
 
 def save_packet(packet: dict) -> None:
     RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
-    MEMORY_DIR.mkdir(parents=True, exist_ok=True)
-
-    packet_path = RUNTIME_DIR / f"{packet['packet_id']}.json"
+    MEMORY_DIR.mkdir(parents=True, exist_ok=True)`n    packet_path = RUNTIME_DIR / f"{packet['packet_id']}.json"
     packet["packet_path"] = str(packet_path)
 
     payload = json.dumps(packet, ensure_ascii=False, indent=2)

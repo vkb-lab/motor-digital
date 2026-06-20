@@ -1,0 +1,22 @@
+﻿{
+    "phase":  "72F.1",
+    "name":  "Runtime Git Clean Hotfix",
+    "status":  "installed",
+    "created_at":  "2026-06-20T14:28:56",
+    "branch":  "kos/fase-18-render-public-asset-bridge",
+    "base_commit":  "96b4895",
+    "fix":  "Action Router request events now write to local_runtime instead of tracked memory events",
+    "protected_files":  [
+                            "memory/kos_action_router/events.jsonl"
+                        ],
+    "runtime_files":  [
+                          "local_runtime/kos_action_router/events.jsonl",
+                          "local_runtime/kos_action_router/latest_action_packet.json"
+                      ],
+    "gates":  {
+                  "paid_ai":  "blocked",
+                  "human_gate_required":  true,
+                  "parada_atlantida":  "blocked",
+                  "auto_publish":  "blocked"
+              }
+}
