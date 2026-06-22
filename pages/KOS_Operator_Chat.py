@@ -390,6 +390,39 @@ def is_kos_read_only_diagnostic_request(text: str) -> bool:
 # KOS_READ_ONLY_DIAGNOSTIC_COMMANDS_END
 
 
+
+# KOS_READ_ONLY_LOUSA_COMMANDS_BEGIN
+def is_kos_read_only_lousa_request(text: str) -> bool:
+    """Detecta comandos locais de lousa visual que nao devem acionar Router nem Safe Action."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    action_terms = [
+        "mostrar lousa",
+        "abrir lousa",
+        "ver lousa",
+        "visualizar video",
+        "mostrar video",
+        "ver video",
+        "preview mp4",
+        "mostrar preview",
+    ]
+
+    target_terms = [
+        "gp_video_01",
+        "gp video 01",
+        "gp_video",
+        "garoto oxy",
+        "hupmix",
+    ]
+
+    return any(a in value for a in action_terms) and any(t in value for t in target_terms)
+# KOS_READ_ONLY_LOUSA_COMMANDS_END
+
+
 if "kos_operator_request_text" not in st.session_state:
     st.session_state["kos_operator_request_text"] = ""
 
@@ -424,6 +457,17 @@ if send and is_kos_read_only_diagnostic_request(st.session_state.get("kos_operat
     st.session_state.pop("kos_last_safe_action_packet_path", None)
     send = False
 # KOS_READ_ONLY_DIAGNOSTIC_GATE_END
+
+# KOS_READ_ONLY_LOUSA_GATE_BEGIN
+if send and is_kos_read_only_lousa_request(st.session_state.get("kos_operator_request_text", "")):
+    st.session_state["kos_show_gp_video_01_lousa"] = True
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_lousa_read_only_message"] = "Lousa visual aberta em modo read-only. Nenhum Router, Safe Action, publicacao, deploy ou IA paga foi acionado."
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+# KOS_READ_ONLY_LOUSA_GATE_END
 
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)
@@ -599,3 +643,82 @@ except Exception as exc:
     except Exception:
         pass
 # KOS_OPERATOR_FLOW_DIAGNOSTIC_PANEL_END
+
+
+
+# KOS_GP_VIDEO_01_LOUSA_READ_ONLY_RENDER_BEGIN
+def render_kos_gp_video_01_lousa_read_only():
+    """Renderiza a lousa visual do GP_VIDEO_01 usando MP4 local."""
+    import json
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_gp_video_01_lousa", False):
+        return
+
+    root = Path.cwd()
+    mp4_path = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4"
+    storyboard_path = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png"
+    job_path = root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_VIDEO_FACTORY_FREE_MODE_JOB.json"
+    report_path = root / "reports" / "KOS_HUPMIX_GP_VIDEO_FACTORY_FREE_MODE_V1.json"
+
+    st.markdown("## Lousa visual — GP_VIDEO_01 Hupmix")
+
+    msg = st.session_state.get("kos_lousa_read_only_message")
+    if msg:
+        st.success(msg)
+
+    st.caption("Preview local. Sem IA paga. Sem publicacao. Sem deploy. Gate humano obrigatorio.")
+
+    st.markdown("### Preview MP4")
+    if mp4_path.exists():
+        st.video(str(mp4_path))
+        st.caption("Fonte: local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4")
+    else:
+        st.error("MP4 local nao encontrado. Rode o Video Factory Free Mode novamente.")
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Modo", "Free/local")
+    c2.metric("Publicacao", "Bloqueada")
+    c3.metric("IA paga", "Nao usada")
+
+    if storyboard_path.exists():
+        with st.expander("Storyboard", expanded=False):
+            st.image(str(storyboard_path), use_container_width=True)
+
+    if report_path.exists():
+        try:
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            outputs = report.get("outputs", {})
+            with st.expander("Registro tecnico do video", expanded=False):
+                st.json({
+                    "status": report.get("status"),
+                    "mp4": outputs.get("mp4"),
+                    "mp4_size": outputs.get("mp4_size"),
+                    "storyboard": outputs.get("storyboard"),
+                    "storyboard_size": outputs.get("storyboard_size"),
+                    "policy": report.get("policy"),
+                })
+        except Exception as exc:
+            st.warning(f"Nao foi possivel ler o relatorio do video: {exc}")
+
+    if job_path.exists():
+        try:
+            job = json.loads(job_path.read_text(encoding="utf-8"))
+            scenes = job.get("scenes", [])
+            with st.expander("Cenas do GP_VIDEO_01", expanded=False):
+                for idx, scene in enumerate(scenes, start=1):
+                    st.markdown(f"**Cena {idx}: {scene.get('title', '')}**")
+                    st.write(scene.get("line", ""))
+        except Exception as exc:
+            st.warning(f"Nao foi possivel ler o job do video: {exc}")
+
+try:
+    render_kos_gp_video_01_lousa_read_only()
+except Exception as exc:
+    try:
+        import streamlit as st
+        st.warning(f"Lousa visual GP_VIDEO_01 indisponivel: {exc}")
+    except Exception:
+        pass
+# KOS_GP_VIDEO_01_LOUSA_READ_ONLY_RENDER_END
