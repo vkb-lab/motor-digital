@@ -1,0 +1,101 @@
+{
+  "status": "KOS_CODEBASE_MEMORY_MCP_INSTALLER_RISK_AUDIT_READY",
+  "created_at": "2026-06-22T11:44:56.658113",
+  "kos_root": "C:\\Users\\oi\\Desktop\\motor-digital",
+  "tool_root": "C:\\Users\\oi\\Desktop\\ai-tools\\codebase-memory-mcp",
+  "policy": {
+    "no_install_executed": true,
+    "no_script_executed": true,
+    "no_docker_build_executed": true,
+    "no_mcp_connected": true,
+    "no_ai_connected": true,
+    "no_api_key_used": true,
+    "no_paid_ai_executed": true,
+    "no_publish": true
+  },
+  "decision": "Ainda nao instalar. Revisar riscos antes de qualquer execucao.",
+  "items": [
+    {
+      "file": "install.ps1",
+      "exists": true,
+      "size": 5111,
+      "risks": [
+        "network_download",
+        "path_or_environment_change",
+        "system_or_user_config",
+        "delete_operation"
+      ],
+      "preview": "# install.ps1 — One-line installer for codebase-memory-mcp (Windows).\n#\n# Usage: see README.md for install instructions.\n#\n# Environment:\n#   CBM_DOWNLOAD_URL  Override base URL for downloads (for testing)\n\n$ErrorActionPreference = \"Stop\"\n\n# Enforce TLS 1.2+ (older PowerShell defaults to TLS 1.0 which GitHub rejects)\n[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13\n\n$Repo = \"DeusData/codebase-memory-mcp\"\n$InstallDir = \"$env:LOCALAPPDATA\\Programs\\codebase-memory-mcp\"\n$BinName = \"codebase-memory-mcp.exe\"\n$BaseUrl = if ($env:CBM_DOWNLOAD_URL) { $env:CBM_DOWNLOAD_URL } else { \"https://github.com/$Repo/releases/latest/download\" }\n\n# Security: reject non-HTTPS download URLs (defense-in-depth)\nif (-not $BaseUrl.StartsWith(\"https://\") -and -not $BaseUrl.StartsWith(\"http://localhost\") -and -not $BaseUrl.StartsWith(\"http://127.0.0.1\")) {\n    Write-Host \"error: refusing non-HTTPS download URL: $BaseUrl\" -ForegroundColor Red\n    exit 1\n}\n\n# Detect variant from args (--ui or --standard)\n$Variant = \"standard\"\n$SkipConfig = $false\nforeach ($arg in $args) {\n    if ($arg -eq \"--ui\") { $Variant = \"ui\" }\n    if ($arg -eq \"--standard\") { $Variant = \"standard\" }\n    if ($arg -eq \"--skip-config\") { $SkipConfig = $true }\n    if ($arg -like \"--dir=*\") { $InstallDir = $arg.Substring(6) }\n}\n\nWrite-Host \"codebase-memory-mcp installer (Windows)\"\nWrite-Host \"  variant: $Variant\"\nWrite-Host \"  target:  $InstallDir\\$BinName\"\nWrite-Host \"\"\n\n# Build download URL\nif ($Variant -eq \"ui\") {\n    $Archive = \"codebase-memory-mcp-ui-windows-amd64.zip\"\n} else {\n    $Archive = \"codebase-memory-mcp-windows-amd64.zip\"\n}\n$Url = \"$BaseUrl/$Archive\"\n\n# Download\n$TmpDir = Join-Path ([System.IO.Path]::GetTempPath()) \"cbm-install-$(Get-Random)\"\nNew-Item -ItemType Directory -Path $TmpDir -Force | Out-Null\n\nWrite-Host \"Downloading $Archive...\"\ntry {\n    Invoke-WebRequest -Uri $Url -OutFile \"$TmpDir\\$Archive\" -UseBasicParsing\n} catch {\n    Write-Host \"error: download failed: $_\" -ForegroundColor Red\n    Remove-Item -Recurse -Force $TmpDir -ErrorAction SilentlyContinue\n    exit 1\n}\n\n\n# Checksum verification\n$ChecksumUrl = \"$BaseUrl/checksums.txt\"\ntry {\n    Invoke-WebRequest -Uri $ChecksumUrl -OutFile \"$TmpDir\\checksums.txt\" -UseBasicParsing\n    $checksumLine = Get-Content \"$TmpDir\\checksums.txt\" | Where-Object { $_ -like \"*$Archive*\" }\n    if ($checksumLine) {\n        $expected = ($checksumLine -split '\\s+')[0]\n        $actual = (Get-FileHas"
+    },
+    {
+      "file": "scripts/setup-windows.ps1",
+      "exists": true,
+      "size": 10754,
+      "risks": [
+        "network_download",
+        "path_or_environment_change",
+        "system_or_user_config",
+        "mcp_client_config",
+        "delete_operation"
+      ],
+      "preview": "# codebase-memory-mcp setup script (Windows)\n# Default: download pre-built native Windows binary\n# -FromSource: build from source inside WSL (requires Go + gcc in WSL)\n\nparam(\n    [switch]$FromSource,\n    [switch]$Help\n)\n\n$ErrorActionPreference = \"Stop\"\n\n$Repo = \"DeusData/codebase-memory-mcp\"\n$BinaryName = \"codebase-memory-mcp\"\n$InstallDir = Join-Path $env:LOCALAPPDATA \"codebase-memory-mcp\"\n\n# --- Helpers ---\n\nfunction Write-Ok($msg)   { Write-Host \"  $msg\" -ForegroundColor Green }\nfunction Write-Fail($msg)  { Write-Host \"  $msg\" -ForegroundColor Red }\nfunction Write-Warn($msg)  { Write-Host \"  $msg\" -ForegroundColor Yellow }\n\nfunction Read-SettingsJson($Path) {\n    # PS5.1-compatible: ConvertFrom-Json returns PSCustomObject, not Hashtable.\n    # We convert to ordered hashtable manually.\n    if (-not (Test-Path $Path)) {\n        return @{}\n    }\n    $raw = Get-Content $Path -Raw\n    if (-not $raw -or $raw.Trim() -eq \"\") {\n        return @{}\n    }\n    $obj = $raw | ConvertFrom-Json\n    $ht = [ordered]@{}\n    foreach ($prop in $obj.PSObject.Properties) {\n        if ($prop.Value -is [System.Management.Automation.PSCustomObject]) {\n            $inner = [ordered]@{}\n            foreach ($p in $prop.Value.PSObject.Properties) {\n                $inner[$p.Name] = $p.Value\n            }\n            $ht[$prop.Name] = $inner\n        } else {\n            $ht[$prop.Name] = $prop.Value\n        }\n    }\n    return $ht\n}\n\nfunction Write-SettingsJson($Path, $Settings) {\n    # Back up existing file before writing\n    if (Test-Path $Path) {\n        Copy-Item $Path \"$Path.bak\" -Force\n    }\n    $Settings | ConvertTo-Json -Depth 10 | Set-Content $Path -Encoding UTF8\n}\n\nfunction Configure-ClaudeCode($McpConfig) {\n    Write-Host \"\"\n    $answer = Read-Host \"Configure Claude Code to use codebase-memory-mcp? [y/N]\"\n\n    if ($answer -match '^[Yy]$') {\n        $settingsPath = Join-Path $env:USERPROFILE \".claude\\settings.json\"\n        $settingsDir = Split-Path $settingsPath -Parent\n\n        if (-not (Test-Path $settingsDir)) {\n            New-Item -ItemType Directory -Path $settingsDir -Force | Out-Null\n        }\n\n        $settings = Read-SettingsJson $settingsPath\n\n        if (-not $settings.Contains(\"mcpServers\")) {\n            $settings[\"mcpServers\"] = [ordered]@{}\n        }\n\n        $settings[\"mcpServers\"][\"codebase-memory-mcp\"] = $McpConfig\n        Write-SettingsJson $settingsPath $settings\n        Write-Ok \"Updated $settingsPath\"\n    } else {\n        Write-Host \"\"\n        Write-Ho"
+    },
+    {
+      "file": "server.json",
+      "exists": true,
+      "size": 895,
+      "risks": [
+        "network_download",
+        "system_or_user_config"
+      ],
+      "preview": "{\n  \"$schema\": \"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json\",\n  \"name\": \"io.github.DeusData/codebase-memory-mcp\",\n  \"title\": \"Codebase Memory\",\n  \"description\": \"Codebase knowledge graph for AI agents \\u2014 159 languages, sub-ms queries, 99% fewer tokens.\",\n  \"repository\": {\n    \"url\": \"https://github.com/DeusData/codebase-memory-mcp\",\n    \"source\": \"github\"\n  },\n  \"websiteUrl\": \"https://deusdata.github.io/codebase-memory-mcp/\",\n  \"version\": \"0.8.1\",\n  \"packages\": [\n    {\n      \"registryType\": \"npm\",\n      \"identifier\": \"codebase-memory-mcp\",\n      \"version\": \"0.8.1\",\n      \"runtimeHint\": \"npx\",\n      \"transport\": {\n        \"type\": \"stdio\"\n      }\n    },\n    {\n      \"registryType\": \"pypi\",\n      \"identifier\": \"codebase-memory-mcp\",\n      \"version\": \"0.8.1\",\n      \"runtimeHint\": \"uvx\",\n      \"transport\": {\n        \"type\": \"stdio\"\n      }\n    }\n  ]\n}\n"
+    },
+    {
+      "file": "pkg/npm/package.json",
+      "exists": true,
+      "size": 920,
+      "risks": [
+        "network_download",
+        "mcp_client_config"
+      ],
+      "preview": "{\n  \"name\": \"codebase-memory-mcp\",\n  \"version\": \"0.8.1\",\n  \"description\": \"Fast code intelligence engine for AI coding agents — single static binary MCP server\",\n  \"mcpName\": \"io.github.DeusData/codebase-memory-mcp\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/DeusData/codebase-memory-mcp.git\"\n  },\n  \"homepage\": \"https://github.com/DeusData/codebase-memory-mcp\",\n  \"bugs\": {\n    \"url\": \"https://github.com/DeusData/codebase-memory-mcp/issues\"\n  },\n  \"keywords\": [\n    \"mcp\",\n    \"claude\",\n    \"code-intelligence\",\n    \"codebase\",\n    \"memory\",\n    \"ai\",\n    \"llm\",\n    \"tree-sitter\"\n  ],\n  \"bin\": {\n    \"codebase-memory-mcp\": \"./bin.js\"\n  },\n  \"scripts\": {\n    \"postinstall\": \"node install.js\"\n  },\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"os\": [\"linux\", \"darwin\", \"win32\"],\n  \"cpu\": [\"x64\", \"arm64\"],\n  \"files\": [\n    \"bin.js\",\n    \"install.js\",\n    \"README.md\"\n  ]\n}\n"
+    },
+    {
+      "file": "pkg/go/go.mod",
+      "exists": true,
+      "size": 65,
+      "risks": [],
+      "preview": "module github.com/DeusData/codebase-memory-mcp/pkg/go\n\ngo 1.26.1\n"
+    },
+    {
+      "file": "Dockerfile",
+      "exists": false,
+      "size": 0,
+      "risks": [
+        "missing"
+      ],
+      "preview": ""
+    },
+    {
+      "file": "pkg/glama/Dockerfile",
+      "exists": true,
+      "size": 1394,
+      "risks": [
+        "network_download",
+        "delete_operation"
+      ],
+      "preview": "# Glama MCP directory (glama.ai) check image — NOT required to run the tool.\n#\n# codebase-memory-mcp needs NO Docker to run. This image exists only so Glama\n# can build a sandbox, launch the stdio MCP server, and run its introspection\n# checks, which power the directory's score badge. The same image is exercised\n# locally and in CI by pkg/glama/verify.sh to guard against drift.\n#\n# We pull the \"-portable\" release asset, which is fully statically linked\n# (gcc -static) — unlike the standard asset, which dynamically links glibc/\n# libstdc++ and would fail on an older base. Because it's static, the runtime\n# base image is arbitrary. TARGETARCH is amd64 / arm64, matching the asset names.\n\nFROM debian:bookworm-slim AS fetch\nARG TARGETARCH\nRUN apt-get update \\\n && apt-get install -y --no-install-recommends curl ca-certificates \\\n && curl -fsSL \"https://github.com/DeusData/codebase-memory-mcp/releases/latest/download/codebase-memory-mcp-linux-${TARGETARCH}-portable.tar.gz\" \\\n      | tar -xz -C /tmp codebase-memory-mcp LICENSE THIRD_PARTY_NOTICES.md \\\n && chmod +x /tmp/codebase-memory-mcp \\\n && rm -rf /var/lib/apt/lists/*\n\nFROM debian:bookworm-slim\nCOPY --from=fetch /tmp/codebase-memory-mcp /usr/local/bin/codebase-memory-mcp\nCOPY --from=fetch /tmp/LICENSE /tmp/THIRD_PARTY_NOTICES.md /usr/share/doc/codebase-memory-mcp/\nENV CBM_CACHE_DIR=/tmp/cbm\nENTRYPOINT [\"codebase-memory-mcp\"]\n"
+    },
+    {
+      "file": "test-infrastructure/Dockerfile",
+      "exists": true,
+      "size": 786,
+      "risks": [
+        "path_or_environment_change",
+        "dependency_or_build",
+        "delete_operation"
+      ],
+      "preview": "# Mirrors the Ubuntu CI environment exactly:\n#   - Ubuntu 24.04 (same as GitHub Actions ubuntu-latest / ubuntu-24.04-arm)\n#   - GCC (system default) with ASan + UBSan + LeakSanitizer\n#   - libsqlite3-dev + zlib1g-dev (same as CI \"Install deps\" step)\n#\n# Build:  docker build -t cbm-test test-infrastructure/\n# Run:    docker run --rm -v $(pwd):/src cbm-test\n\nFROM ubuntu:noble\n\n# Minimal: gcc + zlib only. sqlite3 is vendored (compiled from source with ASan).\nRUN apt-get update && apt-get install -y --no-install-recommends \\\n    gcc g++ make \\\n    zlib1g-dev \\\n    pkg-config \\\n    python3 \\\n    git \\\n    ca-certificates \\\n    && rm -rf /var/lib/apt/lists/*\n\nWORKDIR /src\n\n# Default: run test.sh with GCC (mirrors CI exactly)\nENTRYPOINT [\"scripts/test.sh\"]\nCMD [\"CC=gcc\", \"CXX=g++\"]\n"
+    }
+  ]
+}
