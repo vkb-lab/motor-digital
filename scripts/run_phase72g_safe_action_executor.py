@@ -210,7 +210,105 @@ def build_social_read(packet: dict) -> dict:
 
 
 
+def build_hupmix_gp_continuity(packet: dict) -> dict:
+    request = packet.get("request", "")
+
+    package_path = ROOT / "campaigns" / "hupmix_gp_recovery" / "KOS_HUPMIX_GP_CONTINUITY_PACKAGE.json"
+    markdown_path = ROOT / "campaigns" / "hupmix_gp_recovery" / "KOS_HUPMIX_GP_CONTINUITY_PACKAGE.md"
+
+    def clip(value, limit=700):
+        value = str(value or "")
+        if len(value) <= limit:
+            return value
+        return value[:limit].rstrip() + "..."
+
+    if not package_path.exists():
+        return {
+            "title": "Continuidade GP Hupmix",
+            "summary": "Pacote GP ainda nao encontrado. Nenhuma acao real foi executada.",
+            "sections": [
+                {"title": "Pedido original", "items": [request]},
+                {"title": "Proxima acao segura", "items": [
+                    "Gerar novamente o pacote de continuidade GP Hupmix.",
+                    "Nao publicar nada ate o pacote ser recuperado."
+                ]},
+            ],
+        }
+
+    package = json.loads(package_path.read_text(encoding="utf-8"))
+
+    videos = package.get("videos", []) or []
+    stories = package.get("stories", []) or []
+    calendar = package.get("calendar_7_days", []) or []
+    approval = package.get("approval_gate", []) or []
+    source = package.get("source", {}) or {}
+    safety = package.get("safety", {}) or {}
+
+    video_items = []
+    for video in videos:
+        video_items.append(
+            str(video.get("id", "VIDEO")) + " - " +
+            str(video.get("title", "Sem titulo")) +
+            " | Formato: " + str(video.get("format", "nao informado")) +
+            " | Gancho: " + clip(video.get("hook", ""), 180) +
+            " | CTA: " + clip(video.get("cta", ""), 160)
+        )
+
+    first_video = videos[0] if videos else {}
+    first_script = first_video.get("script", []) or []
+
+    return {
+        "title": "Continuidade oficial da campanha GP Hupmix",
+        "summary": "Pacote de continuidade recuperado do repositorio. Nenhuma publicacao foi executada.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Campanha recuperada", "items": [
+                "Marca: " + str(package.get("brand", "Hupmix")),
+                "Campanha: " + str(package.get("campaign", "GP / Garoto Oxy Power / Oxy Power")),
+                "Status: " + str(package.get("status", "pacote recuperado")),
+                "Base Instagram: " + str(source.get("latest_permalink", "nao informado")),
+                "Arquivos locais relacionados na auditoria: " + str(source.get("local_matches_count", "nao informado")),
+            ]},
+            {"title": "Proximos videos planejados", "items": video_items or ["Nenhum video planejado encontrado no pacote."]},
+            {"title": "Proximo video recomendado", "items": [
+                "ID: " + str(first_video.get("id", "nao informado")),
+                "Titulo: " + str(first_video.get("title", "nao informado")),
+                "Formato: " + str(first_video.get("format", "nao informado")),
+                "Gancho: " + str(first_video.get("hook", "nao informado")),
+                "Legenda base: " + clip(first_video.get("caption", "nao informado"), 500),
+                "CTA: " + str(first_video.get("cta", "nao informado")),
+            ]},
+            {"title": "Roteiro do proximo video", "items": first_script or ["Roteiro nao encontrado."]},
+            {"title": "Stories de apoio", "items": stories or ["Nenhum story planejado encontrado."]},
+            {"title": "Calendario de 7 dias", "items": calendar or ["Calendario nao encontrado."]},
+            {"title": "Gate humano obrigatorio", "items": approval or [
+                "Revisar preco.",
+                "Confirmar estoque.",
+                "Aprovar manualmente antes de qualquer publicacao real."
+            ]},
+            {"title": "Seguranca operacional", "items": [
+                "Publicacao executada: " + str(bool(safety.get("instagram_publish_executed", False))).lower(),
+                "Navegador logado usado: " + str(bool(safety.get("browser_logged_account_automation_used", False))).lower(),
+                "Scraping usado: " + str(bool(safety.get("scraping_used", False))).lower(),
+                "Gate humano requerido: " + str(bool(safety.get("human_gate_required", True))).lower(),
+                "Arquivo base: " + str(markdown_path),
+            ]},
+            {"title": "Proxima acao segura", "items": [
+                "Gerar versao final do roteiro GP_VIDEO_01 para gravacao.",
+                "Gerar lista de cenas e falas do Garoto Oxy.",
+                "Gerar legenda final em rascunho.",
+                "Nao publicar sem aprovacao humana explicita."
+            ]},
+        ],
+    }
+
+
+
 def build_social(packet: dict) -> dict:
+    request_text = str(packet.get("request", "")).lower()
+    if "hupmix" in request_text and ("gp" in request_text or "garoto" in request_text or "oxy" in request_text):
+        return build_hupmix_gp_continuity(packet)
+
     if kos_is_social_read_request(packet.get("request", "")):
         return build_social_read(packet)
     request = packet.get("request", "")

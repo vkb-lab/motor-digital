@@ -1,0 +1,15 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "campaign_connector_hotfix",
+  "name": "hupmix_gp_continuity_operator_chat_connector",
+  "status": "applied",
+  "created_at": "2026-06-22T08:00:19.900780",
+  "goal": "Conectar pedido 'continuar campanha GP Hupmix' ao pacote recuperado em campaigns/hupmix_gp_recovery.",
+  "no_new_phase": true,
+  "safety": {
+    "instagram_publish_executed": false,
+    "browser_automation": false,
+    "scraping": false,
+    "human_gate_required": true
+  }
+}
