@@ -1,0 +1,74 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_CONTINUITY_FACTORY_JOB_READY",
+  "created_at": "2026-06-22T16:14:03.291237",
+  "video_id": "GP_VIDEO_02",
+  "based_on": {
+    "campaign": "Garoto Oxy Power / Oxy Power",
+    "instagram_reference": "local_runtime/kos_instagram_audit/hupmix/20260622_144446/18087817444971023.mp4",
+    "audit_report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json",
+    "caption_score": {
+      "score": 9,
+      "hits": [
+        "oxy",
+        "oxy power",
+        "limpeza",
+        "oxigênio ativo",
+        "sem cloro",
+        "5l",
+        "49,90",
+        "hupmix",
+        "whatsapp"
+      ],
+      "seems_gp_oxy_related": true
+    }
+  },
+  "mode": "free_local_continuity_render",
+  "objective": "Produzir proximo video coerente com a campanha ja publicada, usando a publicacao real como referencia.",
+  "scenes": [
+    {
+      "title": "Continuacao do Garoto Oxy",
+      "duration": 4,
+      "line": "Depois do primeiro video, vamos mostrar o Oxy Power em uso real.",
+      "screen": "Referencia: publicacao real Hupmix"
+    },
+    {
+      "title": "Prova visual",
+      "duration": 5,
+      "line": "Mostre o antes: sujeira, gordura, piso ou box pedindo limpeza.",
+      "screen": "Antes real, sem exagero"
+    },
+    {
+      "title": "Modo de uso",
+      "duration": 6,
+      "line": "Aplicar, deixar agir e limpar. Pratico, sem cloro e sem toxicidade.",
+      "screen": "Oxigenio Ativo em acao"
+    },
+    {
+      "title": "Resultado",
+      "duration": 5,
+      "line": "Mostre o depois com comparativo claro e honesto.",
+      "screen": "Antes e depois"
+    },
+    {
+      "title": "Oferta e CTA",
+      "duration": 5,
+      "line": "Oxy Power 5L por R$ 49,90. Passe na HupMix ou chame no WhatsApp.",
+      "screen": "R$ 49,90 | WhatsApp"
+    }
+  ],
+  "outputs": {
+    "mp4": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_PREVIEW.mp4",
+    "storyboard": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_STORYBOARD.png",
+    "reference_frames": [
+      "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_REFERENCE_FRAME_1.jpg",
+      "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_REFERENCE_FRAME_2.jpg"
+    ]
+  },
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "no_logged_browser_automation": true,
+    "human_gate_required": true
+  }
+}

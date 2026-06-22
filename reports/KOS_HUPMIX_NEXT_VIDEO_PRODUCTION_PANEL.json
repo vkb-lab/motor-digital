@@ -1,0 +1,26 @@
+{
+  "status": "KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PANEL_READY",
+  "created_at": "2026-06-22T16:14:01.128226",
+  "changed": true,
+  "created": {
+    "factory_script": "scripts/run_kos_hupmix_gp_video_02_continuity_factory.py",
+    "panel": "pages/KOS_Operator_Chat.py"
+  },
+  "behavior": {
+    "uses_instagram_reference_video": true,
+    "generates_gp_video_02_preview": true,
+    "panel_uses_tabs": true,
+    "can_register_creative_ok": true,
+    "skips_router": true,
+    "skips_safe_action": true,
+    "high_priority_gate_before_history_review": true
+  },
+  "policy": {
+    "no_publish": true,
+    "no_deploy": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "no_logged_browser_automation": true,
+    "human_gate_required": true
+  }
+}

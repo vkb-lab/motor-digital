@@ -1277,6 +1277,245 @@ def render_kos_hupmix_garoto_oxy_history_review():
 # KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_END
 
 
+
+# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PANEL_BEGIN
+def is_kos_hupmix_next_video_production_request(text: str) -> bool:
+    """Detecta pedido de produzir o proximo video da campanha Garoto Oxy / Hupmix."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    action_terms = [
+        "proximo video", "próximo video", "novo video", "nova publicacao",
+        "ligar producao", "producao de video", "produção de video",
+        "continuar producao", "continuar produção", "video condizente",
+        "campanha proximo video", "campanha próximo video",
+    ]
+
+    target_terms = ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]
+
+    return any(a in value for a in action_terms) and any(t in value for t in target_terms)
+
+
+def render_kos_hupmix_next_video_production_panel():
+    """Painel visual para conectar historico real Hupmix com producao do proximo video."""
+    import json
+    import subprocess
+    import sys
+    from datetime import datetime
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
+        return
+
+    root = Path.cwd()
+    audit_path = root / "reports" / "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json"
+    factory_report_path = root / "reports" / "KOS_HUPMIX_GP_VIDEO_02_CONTINUITY_FACTORY.json"
+
+    gp01_video = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4"
+    gp02_video = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_02_CONTINUITY_PREVIEW.mp4"
+    gp02_storyboard = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_02_CONTINUITY_STORYBOARD.png"
+
+    approval_dir = root / "live" / "human_decision_center"
+    approval_dir.mkdir(parents=True, exist_ok=True)
+
+    st.markdown("## Producao Hupmix — proximo video Garoto Oxy")
+    st.caption("Painel de continuidade. Usa historico real do Instagram e preview local. Sem publicacao, sem scraping, sem IA paga.")
+
+    msg = st.session_state.get("kos_hupmix_next_video_message")
+    if msg:
+        st.success(msg)
+
+    audit = {}
+    if audit_path.exists():
+        try:
+            audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        except Exception:
+            audit = {}
+
+    instagram = audit.get("instagram", {})
+    latest = instagram.get("latest_item") or {}
+    download = instagram.get("download") or {}
+    downloaded_path = root / download.get("stored_path", "") if download.get("stored_path") else None
+    gp_score = instagram.get("gp_relevance_from_caption") or {}
+
+    tabs = st.tabs(["Referencia real", "Novo video", "Briefing", "OK humano"])
+
+    with tabs[0]:
+        st.markdown("### Publicacao real Hupmix")
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Tipo", latest.get("media_type", "n/a"))
+        c2.metric("Score Oxy", str(gp_score.get("score", 0)))
+        c3.metric("Download", download.get("status", "n/a"))
+
+        st.write("Data:", latest.get("timestamp"))
+        if latest.get("permalink"):
+            st.markdown(f"[Abrir publicacao no Instagram]({latest.get('permalink')})")
+
+        if downloaded_path and downloaded_path.exists():
+            st.video(str(downloaded_path))
+            st.caption(download.get("stored_path"))
+        else:
+            st.warning("Video real baixado nao encontrado. Rode a auditoria de continuidade Hupmix.")
+
+        caption = latest.get("caption")
+        if caption:
+            with st.expander("Legenda real", expanded=False):
+                st.write(caption)
+
+    with tabs[1]:
+        st.markdown("### Novo preview GP_VIDEO_02")
+
+        if st.button("Gerar / atualizar GP_VIDEO_02 local", type="primary", use_container_width=True, key="kos_generate_gp_video_02_continuity"):
+            try:
+                result = subprocess.run(
+                    [sys.executable, "scripts\\run_kos_hupmix_gp_video_02_continuity_factory.py"],
+                    cwd=str(root),
+                    capture_output=True,
+                    text=True,
+                    timeout=180
+                )
+                st.session_state["kos_gp_video_02_generation_result"] = {
+                    "returncode": result.returncode,
+                    "stdout": result.stdout[-4000:],
+                    "stderr": result.stderr[-4000:]
+                }
+                if hasattr(st, "rerun"):
+                    st.rerun()
+            except Exception as exc:
+                st.error(f"Falha ao gerar GP_VIDEO_02: {exc}")
+
+        gen = st.session_state.get("kos_gp_video_02_generation_result")
+        if gen:
+            if gen.get("returncode") == 0:
+                st.success("GP_VIDEO_02 gerado localmente.")
+            else:
+                st.error("Falha na geracao local.")
+            with st.expander("Log da geracao", expanded=False):
+                st.code(gen.get("stdout") or "")
+                if gen.get("stderr"):
+                    st.code(gen.get("stderr"))
+
+        c_old, c_new = st.columns(2)
+
+        with c_old:
+            st.markdown("#### GP_VIDEO_01 local")
+            if gp01_video.exists():
+                st.video(str(gp01_video))
+            else:
+                st.warning("GP_VIDEO_01 local nao encontrado.")
+
+        with c_new:
+            st.markdown("#### GP_VIDEO_02 continuidade")
+            if gp02_video.exists():
+                st.video(str(gp02_video))
+                st.caption("local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_PREVIEW.mp4")
+            else:
+                st.info("Clique em Gerar / atualizar GP_VIDEO_02 local.")
+
+        if gp02_storyboard.exists():
+            with st.expander("Storyboard GP_VIDEO_02", expanded=False):
+                st.image(str(gp02_storyboard), use_container_width=True)
+
+    with tabs[2]:
+        st.markdown("### Briefing operacional")
+        if factory_report_path.exists():
+            try:
+                factory = json.loads(factory_report_path.read_text(encoding="utf-8"))
+                st.json({
+                    "status": factory.get("status"),
+                    "outputs": factory.get("outputs"),
+                    "next_step": factory.get("next_step"),
+                    "policy": factory.get("policy")
+                })
+            except Exception as exc:
+                st.warning(f"Nao foi possivel ler relatorio GP_VIDEO_02: {exc}")
+        else:
+            st.info("GP_VIDEO_02 ainda nao foi gerado.")
+
+        job_path = root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_02_CONTINUITY_FACTORY_JOB.json"
+        if job_path.exists():
+            try:
+                job = json.loads(job_path.read_text(encoding="utf-8"))
+                st.markdown("#### Cenas propostas")
+                for i, scene in enumerate(job.get("scenes", []), start=1):
+                    st.markdown(f"**Cena {i}: {scene.get('title')}**")
+                    st.write(scene.get("line"))
+                    st.caption(scene.get("screen"))
+            except Exception as exc:
+                st.warning(f"Nao foi possivel ler job GP_VIDEO_02: {exc}")
+
+    with tabs[3]:
+        st.markdown("### Decisao humana")
+        note = st.text_input(
+            "Nota da decisao criativa",
+            placeholder="Exemplo: OK, seguir com este conceito para o proximo video.",
+            key="kos_gp_video_02_direction_note",
+        )
+
+        c_ok, c_adjust = st.columns(2)
+
+        if c_ok.button("OK criativo GP_VIDEO_02", type="primary", use_container_width=True, key="kos_approve_gp_video_02_direction"):
+            record = {
+                "status": "HUPMIX_GP_VIDEO_02_DIRECTION_APPROVED_BY_OPERATOR",
+                "created_at": datetime.now().isoformat(),
+                "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_02",
+                "decision": {
+                    "approved": True,
+                    "approved_by": "human_operator",
+                    "note": note,
+                    "next_step": "producao com assets reais ou publicacao manual apos novo gate"
+                },
+                "assets": {
+                    "reference_instagram_video": download.get("stored_path"),
+                    "gp_video_02_preview": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_PREVIEW.mp4",
+                    "factory_report": "reports/KOS_HUPMIX_GP_VIDEO_02_CONTINUITY_FACTORY.json"
+                },
+                "policy": {
+                    "publication_executed": False,
+                    "deploy_executed": False,
+                    "paid_ai_used": False,
+                    "scraping_used": False,
+                    "human_gate_required": True
+                }
+            }
+            path = approval_dir / "hupmix_gp_video_02_direction_approval.json"
+            path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+            st.success("OK criativo registrado. Nenhuma publicacao foi executada.")
+            st.json({
+                "status": record["status"],
+                "file": str(path.relative_to(root)).replace("\\", "/")
+            })
+
+        if c_adjust.button("Pedir ajuste GP_VIDEO_02", use_container_width=True, key="kos_adjust_gp_video_02_direction"):
+            record = {
+                "status": "HUPMIX_GP_VIDEO_02_DIRECTION_ADJUSTMENT_REQUESTED",
+                "created_at": datetime.now().isoformat(),
+                "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_02",
+                "decision": {
+                    "approved": False,
+                    "adjustment_required": True,
+                    "note": note
+                },
+                "policy": {
+                    "publication_executed": False,
+                    "paid_ai_used": False,
+                    "human_gate_required": True
+                }
+            }
+            path = approval_dir / "hupmix_gp_video_02_direction_adjustment.json"
+            path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+            st.warning("Ajuste registrado. Nenhuma publicacao foi executada.")
+            st.json({
+                "status": record["status"],
+                "file": str(path.relative_to(root)).replace("\\", "/")
+            })
+# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PANEL_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -1449,6 +1688,22 @@ if send and is_kos_hupmix_review_request(st.session_state.get("kos_operator_requ
 
 if st.session_state.get("kos_show_hupmix_review_gate", False):
     render_kos_hupmix_review_gate()
+
+# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_GATE_BEGIN
+if send and is_kos_hupmix_next_video_production_request(st.session_state.get("kos_operator_request_text", "")):
+    st.session_state["kos_show_hupmix_next_video_production_panel"] = True
+    st.session_state["kos_hupmix_next_video_message"] = "Producao do proximo video Hupmix aberta em modo seguro. Nenhum Router, Safe Action, publicacao, deploy, scraping ou IA paga foi acionado."
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_GATE_END
+
+if st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
+    render_kos_hupmix_next_video_production_panel()
 
 # KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_GATE_BEGIN
 if send and is_kos_hupmix_garoto_oxy_history_review_request(st.session_state.get("kos_operator_request_text", "")):
