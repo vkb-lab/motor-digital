@@ -1,0 +1,57 @@
+{
+  "status": "KOS_CAPABILITY_EXECUTOR_RUN_READY",
+  "run_id": "20260622_172722_71767ca1",
+  "created_at": "2026-06-22T17:27:22.372513",
+  "request": "status do motor",
+  "blocked": false,
+  "blocked_hits": [],
+  "route": {
+    "route": "status_only",
+    "objective": "Mostrar estado do executor sem acionar tarefas.",
+    "tasks": []
+  },
+  "policy": {
+    "max_autonomy_level": 3,
+    "external_publish_enabled": false,
+    "external_send_enabled": false,
+    "paid_ai_enabled": false,
+    "scraping_enabled": false,
+    "logged_browser_automation_enabled": false,
+    "safe_execution_modes": [
+      "local_readonly_report",
+      "local_asset_render",
+      "meta_graph_readonly"
+    ]
+  },
+  "executors_available": {
+    "operational_master_audit": {
+      "name": "Operational Master Audit",
+      "script": "scripts/run_kos_operational_master_audit.py",
+      "report": "reports/KOS_OPERATIONAL_MASTER_AUDIT_V1.json",
+      "autonomy_level": 1,
+      "permission": "local_readonly_report",
+      "human_gate_required": false,
+      "external_write": false
+    },
+    "hupmix_instagram_audit": {
+      "name": "Hupmix Instagram Continuity Audit",
+      "script": "scripts/run_kos_hupmix_instagram_continuity_audit.py",
+      "report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json",
+      "autonomy_level": 3,
+      "permission": "meta_graph_readonly",
+      "human_gate_required": false,
+      "external_write": false
+    },
+    "gp_video_02_real_asset_audit": {
+      "name": "GP_VIDEO_02 Real Asset Audit",
+      "script": "scripts/run_kos_hupmix_gp_video_02_real_asset_audit.py",
+      "report": "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json",
+      "autonomy_level": 2,
+      "permission": "local_asset_render",
+      "human_gate_required": true,
+      "external_write": false
+    }
+  },
+  "executions": [],
+  "next_step": "Executor pronto. Use pedido Hupmix, autonomia ou assets reais."
+}

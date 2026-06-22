@@ -2069,6 +2069,153 @@ def render_kos_capability_registry_panel():
 # KOS_CAPABILITY_REGISTRY_OPERATOR_BRIDGE_END
 
 
+
+# KOS_CAPABILITY_EXECUTOR_PANEL_BEGIN
+def is_kos_capability_executor_request(text: str) -> bool:
+    """Detecta pedido para motor real / executor de capacidades."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    action_terms = [
+        "motor real",
+        "capability executor",
+        "executor de capacidades",
+        "acionar capacidade",
+        "executar capacidade",
+        "resolver hupmix",
+        "hupmix ate resolver",
+        "hupmix até resolver",
+        "voltar para hupmix",
+        "resolver garoto oxy",
+        "resolver gp_video_02",
+        "resolver gp video 02",
+    ]
+
+    return any(term in value for term in action_terms)
+
+
+def render_kos_capability_executor_panel():
+    """Painel do motor real governado do K-OS."""
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_capability_executor_panel", False):
+        return
+
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+
+    root = Path.cwd()
+    last_run_path = root / "reports" / "KOS_CAPABILITY_EXECUTOR_LAST_RUN.json"
+    status_path = root / "reports" / "KOS_CAPABILITY_EXECUTOR_V1.json"
+
+    st.markdown("## K-OS Capability Executor V1")
+    st.caption("Motor real governado. Executa apenas capacidades locais/read-only permitidas. Acoes externas seguem bloqueadas.")
+
+    msg = st.session_state.get("kos_capability_executor_message")
+    if msg:
+        st.success(msg)
+
+    tabs = st.tabs(["Motor", "Hupmix", "Ultima execucao", "Politica"])
+
+    def run_executor_request(request_text: str):
+        result = subprocess.run(
+            [sys.executable, "scripts\\run_kos_capability_executor.py", "--request", request_text],
+            cwd=str(root),
+            capture_output=True,
+            text=True,
+            timeout=420
+        )
+        st.session_state["kos_capability_executor_last_result"] = {
+            "request": request_text,
+            "returncode": result.returncode,
+            "stdout": result.stdout[-8000:],
+            "stderr": result.stderr[-8000:]
+        }
+
+    with tabs[0]:
+        st.markdown("### Executar capacidade governada")
+        request_text = st.text_input(
+            "Pedido para o motor",
+            value=st.session_state.get("kos_last_operator_request", "status do motor"),
+            key="kos_capability_executor_request_text"
+        )
+
+        if st.button("Executar pedido pelo motor", type="primary", use_container_width=True, key="kos_capability_executor_run_custom"):
+            run_executor_request(request_text)
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+        st.info("O motor consulta rota, permissao e politica antes de executar. Publicacao, deploy, IA paga e scraping continuam bloqueados.")
+
+    with tabs[1]:
+        st.markdown("### Resolver Hupmix GP_VIDEO_02")
+        st.write("Rota segura: Meta Graph read-only + auditoria local de assets reais.")
+
+        if st.button("Rodar pipeline Hupmix agora", type="primary", use_container_width=True, key="kos_capability_executor_run_hupmix"):
+            run_executor_request("resolver Hupmix GP_VIDEO_02 com assets reais")
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+        if st.button("Abrir painel de producao real Hupmix", use_container_width=True, key="kos_capability_executor_open_hupmix_panel"):
+            st.session_state["kos_show_capability_executor_panel"] = False
+            st.session_state["kos_show_hupmix_next_video_production_panel"] = True
+            st.session_state["kos_hupmix_next_video_message"] = "Painel Hupmix aberto pelo Capability Executor. GP_VIDEO_02 exige assets reais."
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+        st.code("content_packs/hupmix_gp_video_02/assets_inbox")
+
+    with tabs[2]:
+        st.markdown("### Ultima execucao")
+
+        result = st.session_state.get("kos_capability_executor_last_result")
+        if result:
+            if result.get("returncode") == 0:
+                st.success("Executor finalizado.")
+            else:
+                st.error("Executor retornou erro.")
+            st.code(result.get("stdout") or "")
+            if result.get("stderr"):
+                st.code(result.get("stderr"))
+
+        if last_run_path.exists():
+            try:
+                last = json.loads(last_run_path.read_text(encoding="utf-8"))
+                st.json(last)
+            except Exception as exc:
+                st.warning(f"Nao foi possivel ler last run: {exc}")
+        else:
+            st.info("Nenhuma execucao registrada ainda.")
+
+    with tabs[3]:
+        st.markdown("### Politica do executor")
+        if status_path.exists():
+            try:
+                status = json.loads(status_path.read_text(encoding="utf-8"))
+                st.json(status.get("policy", status))
+            except Exception:
+                st.warning("Status do executor ainda nao carregado.")
+        else:
+            st.warning("KOS_CAPABILITY_EXECUTOR_V1.json ainda nao existe em reports.")
+
+        st.warning("Nivel 4 e 5 seguem bloqueados. Nada sera publicado sem gate humano separado.")
+
+    if st.button("Fechar motor", use_container_width=True, key="kos_close_capability_executor_panel"):
+        st.session_state["kos_show_capability_executor_panel"] = False
+        if hasattr(st, "rerun"):
+            st.rerun()
+# KOS_CAPABILITY_EXECUTOR_PANEL_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -2185,6 +2332,25 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
         st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
         st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
 # KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
+# KOS_CAPABILITY_EXECUTOR_PRIORITY_GATE_BEGIN
+if send and is_kos_capability_executor_request(st.session_state.get("kos_operator_request_text", "")):
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+    st.session_state["kos_show_capability_executor_panel"] = True
+    st.session_state["kos_show_capability_registry_panel"] = False
+    st.session_state["kos_show_research_continuity_center"] = False
+    st.session_state["kos_capability_executor_message"] = "Motor real governado aberto. Use a aba Hupmix para rodar a rota segura ate resolver GP_VIDEO_02."
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_CAPABILITY_EXECUTOR_PRIORITY_GATE_END
+
+if st.session_state.get("kos_show_capability_executor_panel", False):
+    render_kos_capability_executor_panel()
 
 # KOS_CAPABILITY_REGISTRY_PRIORITY_GATE_BEGIN
 if send and is_kos_capability_registry_request(st.session_state.get("kos_operator_request_text", "")):

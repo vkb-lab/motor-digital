@@ -1,0 +1,30 @@
+{
+  "status": "KOS_CAPABILITY_EXECUTOR_POLICY_V1_READY",
+  "created_at": "2026-06-22T17:27:22.040654",
+  "purpose": "Motor real governado para executar capacidades locais/read-only do K-OS.",
+  "max_autonomy_level": 3,
+  "allowed_execution_modes": [
+    "local_readonly_report",
+    "local_asset_render",
+    "meta_graph_readonly"
+  ],
+  "blocked": [
+    "publish",
+    "deploy",
+    "paid_ai",
+    "scraping",
+    "logged_browser_automation",
+    "dm",
+    "comment",
+    "delete"
+  ],
+  "human_gate_required_for": [
+    "publication",
+    "external_write",
+    "deploy",
+    "paid_ai",
+    "client_send",
+    "campaign_launch"
+  ],
+  "first_operational_focus": "Hupmix GP_VIDEO_02 real asset resolution"
+}
