@@ -1,8 +1,7 @@
 {
   "status": "KOS_CAPABILITY_EXECUTOR_V1_READY",
-  "created_at": "2026-06-22T17:27:22.375412",
-  "last_run": "reports/KOS_CAPABILITY_EXECUTOR_LAST_RUN.json",
-  "last_event": "local_runtime/kos_capability_executor/events/20260622_172722_71767ca1.json",
+  "runtime_last_run": "local_runtime/kos_capability_executor/last_run.json",
+  "runtime_events_dir": "local_runtime/kos_capability_executor/events",
   "executors": {
     "operational_master_audit": {
       "name": "Operational Master Audit",
@@ -44,5 +43,6 @@
       "local_asset_render",
       "meta_graph_readonly"
     ]
-  }
+  },
+  "note": "Runtime runs ficam em local_runtime para nao sujar Git."
 }

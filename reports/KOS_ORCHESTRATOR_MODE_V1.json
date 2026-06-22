@@ -1,0 +1,19 @@
+{
+  "status": "KOS_ORCHESTRATOR_MODE_V1_READY",
+  "created_at": "2026-06-22T18:17:03.167200",
+  "behavior": {
+    "one_box_orchestration": true,
+    "auto_runs_safe_executor": true,
+    "hides_buttons": true,
+    "shows_state_action_next_step": true,
+    "hupmix_assets_upload_inline": true,
+    "runtime_runs_do_not_dirty_git": true
+  },
+  "policy": {
+    "no_publish": true,
+    "no_deploy": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "human_gate_required_for_real_actions": true
+  }
+}

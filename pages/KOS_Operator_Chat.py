@@ -2216,6 +2216,194 @@ def render_kos_capability_executor_panel():
 # KOS_CAPABILITY_EXECUTOR_PANEL_END
 
 
+
+# KOS_ORCHESTRATOR_MODE_V1_BEGIN
+def is_kos_orchestrator_mode_request(text: str) -> bool:
+    """Uma caixa: o K-OS orquestra sem jogar o operador para painel cheio de botoes."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    terms = [
+        "motor real",
+        "resolver hupmix",
+        "hupmix gp_video_02",
+        "hupmix gp video 02",
+        "garoto oxy",
+        "oxy power",
+        "orquestrador",
+        "sem botao",
+        "sem monte de botao",
+        "usar capacidades",
+        "resolver ate o fim",
+    ]
+
+    return any(term in value for term in terms)
+
+
+def kos_orchestrator_run_safe_request(request_text: str):
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    root = Path.cwd()
+    result = subprocess.run(
+        [sys.executable, "scripts\\run_kos_capability_executor.py", "--request", request_text],
+        cwd=str(root),
+        capture_output=True,
+        text=True,
+        timeout=420
+    )
+
+    last_run_path = root / "local_runtime" / "kos_capability_executor" / "last_run.json"
+    last_run = {}
+
+    if last_run_path.exists():
+        try:
+            last_run = json.loads(last_run_path.read_text(encoding="utf-8"))
+        except Exception:
+            last_run = {}
+
+    return {
+        "returncode": result.returncode,
+        "stdout": result.stdout[-6000:],
+        "stderr": result.stderr[-3000:],
+        "last_run": last_run,
+    }
+
+
+def render_kos_orchestrator_mode_panel():
+    import json
+    import re
+    import subprocess
+    import sys
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_orchestrator_mode_panel", False):
+        return
+
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+
+    root = Path.cwd()
+    request_text = st.session_state.get("kos_orchestrator_request_text", "") or st.session_state.get("kos_last_operator_request", "")
+    request_key = "kos_orchestrator_last_run_for_request"
+
+    if st.session_state.get(request_key) != request_text:
+        st.session_state["kos_orchestrator_result"] = kos_orchestrator_run_safe_request(request_text)
+        st.session_state[request_key] = request_text
+
+    result = st.session_state.get("kos_orchestrator_result") or {}
+    last_run = result.get("last_run") or {}
+    route = last_run.get("route") or {}
+    executions = last_run.get("executions") or []
+    next_step = last_run.get("next_step")
+    blocked = last_run.get("blocked")
+
+    st.markdown("## K-OS Orquestrador")
+    st.caption("Uma caixa. Uma rota. Execucao segura automatica. Sem painel cheio de botoes.")
+
+    if blocked:
+        st.error("Pedido bloqueado por politica.")
+    elif result.get("returncode") == 0:
+        st.success("Rota segura executada.")
+    else:
+        st.warning("Orquestrador executou com alerta. Detalhes no modo avancado.")
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Rota", route.get("route", "n/a"))
+    c2.metric("Tarefas", str(len(route.get("tasks", []))))
+    c3.metric("Bloqueado", "sim" if blocked else "nao")
+
+    st.markdown("### Estado")
+    st.write(route.get("objective", "Pedido analisado pelo orquestrador."))
+
+    st.markdown("### Acao feita")
+    if executions:
+        for item in executions:
+            name = item.get("name") or item.get("executor_id")
+            if item.get("allowed") and item.get("returncode") == 0:
+                st.write(f"- OK: {name} | {item.get('report_status')}")
+            elif not item.get("allowed"):
+                st.write(f"- Bloqueado: {name} | {item.get('reason')}")
+            else:
+                st.write(f"- Erro: {name} | returncode {item.get('returncode')}")
+    else:
+        st.write("- Nenhuma tarefa operacional foi necessaria.")
+
+    st.markdown("### Proximo passo")
+    st.info(next_step or "Aguardando novo pedido.")
+
+    gp_report_path = root / "reports" / "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json"
+    gp_report = {}
+    if gp_report_path.exists():
+        try:
+            gp_report = json.loads(gp_report_path.read_text(encoding="utf-8"))
+        except Exception:
+            gp_report = {}
+
+    if gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
+        st.markdown("### Hupmix GP_VIDEO_02 precisa de material real")
+        st.write("Anexe videos ou fotos reais do produto, aplicacao, antes/depois.")
+
+        assets_dir = root / "content_packs" / "hupmix_gp_video_02" / "assets_inbox"
+        assets_dir.mkdir(parents=True, exist_ok=True)
+
+        uploads = st.file_uploader(
+            "Anexar assets reais",
+            type=["mp4", "mov", "m4v", "avi", "webm", "jpg", "jpeg", "png", "webp"],
+            accept_multiple_files=True,
+            key="kos_orchestrator_hupmix_assets_upload"
+        )
+
+        if uploads:
+            saved = []
+            for file in uploads:
+                safe = re.sub(r"[^a-zA-Z0-9_.-]+", "_", file.name).strip("_") or "asset_real"
+                target = assets_dir / safe
+                target.write_bytes(file.getbuffer())
+                saved.append(str(target.relative_to(root)).replace("\\", "/"))
+
+            st.success("Assets recebidos. Reprocessando automaticamente.")
+            st.json(saved)
+
+            subprocess.run(
+                [sys.executable, "scripts\\run_kos_capability_executor.py", "--request", "resolver Hupmix GP_VIDEO_02 com assets reais"],
+                cwd=str(root),
+                capture_output=True,
+                text=True,
+                timeout=420
+            )
+
+            st.session_state.pop(request_key, None)
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+    elif gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_PREVIEW_READY":
+        preview = root / "local_runtime" / "kos_video_previews" / "hupmix" / "gp_video_02_real" / "GP_VIDEO_02_REAL_ASSET_PREVIEW.mp4"
+        if preview.exists():
+            st.markdown("### Preview real GP_VIDEO_02")
+            left, center, right = st.columns([1, 1.15, 1])
+            with center:
+                st.video(str(preview))
+                st.caption("Preview criado somente com assets reais.")
+            st.warning("Publicacao continua bloqueada. Proximo passo exige OK humano separado.")
+
+    with st.expander("Modo avancado", expanded=False):
+        st.json(last_run)
+        st.code(result.get("stdout") or "")
+        if result.get("stderr"):
+            st.code(result.get("stderr"))
+
+# KOS_ORCHESTRATOR_MODE_V1_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -2332,6 +2520,27 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
         st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
         st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
 # KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
+# KOS_ORCHESTRATOR_MODE_PRIORITY_GATE_BEGIN
+if send and is_kos_orchestrator_mode_request(st.session_state.get("kos_operator_request_text", "")):
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+    st.session_state["kos_show_orchestrator_mode_panel"] = True
+    st.session_state["kos_show_capability_executor_panel"] = False
+    st.session_state["kos_show_capability_registry_panel"] = False
+    st.session_state["kos_show_research_continuity_center"] = False
+    st.session_state["kos_show_hupmix_next_video_production_panel"] = False
+    st.session_state["kos_orchestrator_request_text"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_ORCHESTRATOR_MODE_PRIORITY_GATE_END
+
+if st.session_state.get("kos_show_orchestrator_mode_panel", False):
+    render_kos_orchestrator_mode_panel()
 
 # KOS_CAPABILITY_EXECUTOR_PRIORITY_GATE_BEGIN
 if send and is_kos_capability_executor_request(st.session_state.get("kos_operator_request_text", "")):
