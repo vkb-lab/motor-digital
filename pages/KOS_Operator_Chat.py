@@ -423,6 +423,57 @@ def is_kos_read_only_lousa_request(text: str) -> bool:
 # KOS_READ_ONLY_LOUSA_COMMANDS_END
 
 
+
+# KOS_OPERATOR_LOCAL_COMMAND_GUARD_BEGIN
+def is_kos_local_command_or_path_request(text: str) -> bool:
+    """Bloqueia comandos locais, paths Windows, .cmd e .ps1 colados no Operator Chat."""
+    import re
+    import unicodedata
+
+    value = str(text or "").strip()
+    if not value:
+        return False
+
+    normalized = unicodedata.normalize("NFKD", value).lower()
+    normalized = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+
+    if re.search(r"^[a-zA-Z]:\\", value):
+        return True
+
+    patterns = [
+        ".cmd", ".ps1", ".bat", "powershell", "set-location", "cd /d",
+        "git ", "python ", "streamlit ", "kos_start_here", "@echo off",
+        "exit /b", "´╗┐",
+    ]
+
+    return any(pattern in normalized for pattern in patterns)
+
+
+def render_kos_local_command_guard_message():
+    """Mostra instrucao segura quando comando local foi colado no Operator Chat."""
+    import streamlit as st
+
+    msg = st.session_state.get("kos_local_command_guard_message")
+    command = st.session_state.get("kos_local_command_guard_command")
+
+    if not msg:
+        return
+
+    st.warning(msg)
+    if command:
+        st.caption("Comando detectado:")
+        st.code(command, language="powershell")
+    st.info("Use o PowerShell para comandos locais. Use o Operator Chat apenas para pedidos em linguagem normal.")
+
+    if st.button("Limpar aviso de comando local", use_container_width=True, key="kos_clear_local_command_guard"):
+        st.session_state.pop("kos_local_command_guard_message", None)
+        st.session_state.pop("kos_local_command_guard_command", None)
+        st.session_state["kos_operator_request_text"] = ""
+        if hasattr(st, "rerun"):
+            st.rerun()
+# KOS_OPERATOR_LOCAL_COMMAND_GUARD_END
+
+
 if "kos_operator_request_text" not in st.session_state:
     st.session_state["kos_operator_request_text"] = ""
 
@@ -916,6 +967,21 @@ if send and is_kos_research_continuity_request(st.session_state.get("kos_operato
 
 if st.session_state.get("kos_show_research_continuity_center", False):
     render_kos_research_continuity_center()
+
+# KOS_OPERATOR_LOCAL_COMMAND_GATE_BEGIN
+if send and is_kos_local_command_or_path_request(st.session_state.get("kos_operator_request_text", "")):
+    _kos_cmd = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_local_command_guard_message"] = "Comando local detectado. O K-OS nao vai transformar isso em pedido, Action Packet ou Safe Action."
+    st.session_state["kos_local_command_guard_command"] = _kos_cmd
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_OPERATOR_LOCAL_COMMAND_GATE_END
+
+render_kos_local_command_guard_message()
 
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)
