@@ -176,6 +176,289 @@ def show_safe_action_history() -> None:
                             st.write("- " + str(item))
 
 
+
+def render_hupmix_gp_lousa_preview(data=None):
+    import json
+    import html as _kos_html
+    from pathlib import Path
+    from datetime import datetime, timezone
+    import streamlit as st
+    import streamlit.components.v1 as components
+
+    root = Path(__file__).resolve().parents[1]
+    kit_path = root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_PRODUCTION_KIT.json"
+    package_path = root / "campaigns" / "hupmix_gp_recovery" / "KOS_HUPMIX_GP_CONTINUITY_PACKAGE.json"
+    decision_dir = root / "live" / "human_decision_center"
+    decision_dir.mkdir(parents=True, exist_ok=True)
+
+    request_text = ""
+    try:
+        request_text += " " + str(st.session_state.get("kos_operator_request_text", ""))
+        request_text += " " + str(st.session_state.get("kos_last_operator_request", ""))
+    except Exception:
+        pass
+
+    try:
+        request_text += " " + json.dumps(data or {}, ensure_ascii=False)
+    except Exception:
+        request_text += " " + str(data or "")
+
+    request_text = request_text.lower()
+
+    should_show = (
+        kit_path.exists()
+        and (
+            "gp_video_01" in request_text
+            or "garoto oxy" in request_text
+            or "roteiro cena" in request_text
+            or "production kit" in request_text
+            or "gravação" in request_text
+            or "gravacao" in request_text
+        )
+    )
+
+    if not should_show:
+        return
+
+    try:
+        kit = json.loads(kit_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        st.warning(f"Lousa visual GP_VIDEO_01 indisponivel: {exc}")
+        return
+
+    try:
+        package = json.loads(package_path.read_text(encoding="utf-8")) if package_path.exists() else {}
+    except Exception:
+        package = {}
+
+    scenes = kit.get("scenes", []) or []
+    checklist = kit.get("recording_checklist", []) or []
+    caption = kit.get("final_caption", "")
+    calendar = package.get("calendar_7_days", []) or []
+
+    def esc(value):
+        return _kos_html.escape(str(value or ""))
+
+    scene_cards = ""
+    for scene in scenes:
+        scene_cards += f"""
+        <div class="scene-card">
+          <div class="scene-title">{esc(scene.get("scene"))}</div>
+          <div class="scene-time">{esc(scene.get("duration"))}</div>
+          <div class="scene-speech">"{esc(scene.get("speech"))}"</div>
+          <div class="scene-take">{esc(scene.get("take"))}</div>
+        </div>
+        """
+
+    html = f"""
+    <style>
+      .kos-wrap {{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0 25px 0;
+        font-family: Arial, sans-serif;
+      }}
+      .phone {{
+        width: 360px;
+        height: 720px;
+        border-radius: 38px;
+        background: #111;
+        padding: 14px;
+        box-shadow: 0 20px 55px rgba(0,0,0,0.25);
+        border: 6px solid #222;
+      }}
+      .screen {{
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #f8fafc;
+      }}
+      .ig-top {{
+        height: 48px;
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+        font-weight: 700;
+        font-size: 14px;
+      }}
+      .avatar {{
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #16a34a;
+        margin-right: 10px;
+      }}
+      .video-area {{
+        height: 430px;
+        background: linear-gradient(160deg, #0f172a 0%, #1e293b 45%, #14532d 100%);
+        color: white;
+        padding: 18px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }}
+      .badge {{
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.28);
+        padding: 6px 9px;
+        border-radius: 999px;
+        font-size: 12px;
+        width: fit-content;
+      }}
+      .big-title {{
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1.05;
+        margin-top: 20px;
+      }}
+      .product {{
+        background: rgba(255,255,255,0.16);
+        border-radius: 18px;
+        padding: 14px;
+        margin-top: 18px;
+      }}
+      .price {{
+        font-size: 24px;
+        font-weight: 900;
+        margin-top: 8px;
+      }}
+      .cta {{
+        font-size: 13px;
+        opacity: 0.95;
+        margin-top: 10px;
+      }}
+      .bottom {{
+        background: #fff;
+        padding: 12px 14px;
+        height: 242px;
+        overflow: auto;
+      }}
+      .actions {{
+        font-size: 20px;
+        letter-spacing: 9px;
+        margin-bottom: 8px;
+      }}
+      .caption {{
+        font-size: 12px;
+        line-height: 1.35;
+        color: #111827;
+      }}
+      .scenes {{
+        margin-top: 8px;
+        font-size: 11px;
+      }}
+      .scene-card {{
+        background: #f3f4f6;
+        border-radius: 10px;
+        padding: 8px;
+        margin-top: 7px;
+      }}
+      .scene-title {{
+        font-weight: 800;
+      }}
+      .scene-time {{
+        color: #64748b;
+        font-size: 10px;
+      }}
+      .scene-speech {{
+        margin-top: 4px;
+      }}
+      .scene-take {{
+        margin-top: 4px;
+        color: #475569;
+      }}
+    </style>
+
+    <div class="kos-wrap">
+      <div class="phone">
+        <div class="screen">
+          <div class="ig-top">
+            <div class="avatar"></div>
+            @hupmix
+          </div>
+          <div class="video-area">
+            <div>
+              <div class="badge">PREVIEW REEL - GP_VIDEO_01</div>
+              <div class="big-title">A solução que faltava!</div>
+              <div class="product">
+                <div>Oxy Power 5L</div>
+                <div>Oxigênio Ativo · sem cloro · não tóxico</div>
+                <div class="price">R$ 49,90</div>
+                <div class="cta">Passe na HupMix ou chame no WhatsApp</div>
+              </div>
+            </div>
+            <div class="badge">Publicação bloqueada até aprovação humana</div>
+          </div>
+          <div class="bottom">
+            <div class="actions">♡ 💬 ↗</div>
+            <div class="caption"><b>hupmix</b> {esc(caption)}</div>
+            <div class="scenes">
+              {scene_cards}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    """
+
+    st.markdown("## Lousa de aprovação visual")
+    st.caption("Preview visual do GP_VIDEO_01. Isto é uma simulação para aprovação. Nada foi publicado.")
+
+    components.html(html, height=790, scrolling=False)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### Programação semanal")
+        if calendar:
+            for item in calendar:
+                st.write("- " + str(item))
+        else:
+            st.write("Calendário semanal ainda não encontrado.")
+
+    with col2:
+        st.markdown("### Checklist antes de gravar")
+        for item in checklist:
+            st.write("- " + str(item))
+
+    c1, c2 = st.columns(2)
+
+    if c1.button("Aprovar roteiro para gravação", key="kos_approve_gp_video_01_recording"):
+        decision = {
+            "status": "APPROVED_FOR_RECORDING",
+            "scope": "GP_VIDEO_01",
+            "brand": "Hupmix",
+            "campaign": "GP / Garoto Oxy Power / Oxy Power",
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "instagram_publish_executed": False,
+            "approval_type": "recording_only",
+            "note": "Aprovado apenas para gravacao. Publicacao real continua bloqueada."
+        }
+        out = decision_dir / "hupmix_gp_video_01_recording_approval.json"
+        out.write_text(json.dumps(decision, ensure_ascii=False, indent=2), encoding="utf-8")
+        st.success("Roteiro aprovado para gravação. Publicação real continua bloqueada.")
+
+    if c2.button("Pedir ajuste antes de gravar", key="kos_request_gp_video_01_adjustment"):
+        decision = {
+            "status": "ADJUSTMENT_REQUESTED",
+            "scope": "GP_VIDEO_01",
+            "brand": "Hupmix",
+            "campaign": "GP / Garoto Oxy Power / Oxy Power",
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "instagram_publish_executed": False,
+            "approval_type": "adjustment_before_recording",
+            "note": "Operador pediu ajuste antes da gravacao."
+        }
+        out = decision_dir / "hupmix_gp_video_01_adjustment_requested.json"
+        out.write_text(json.dumps(decision, ensure_ascii=False, indent=2), encoding="utf-8")
+        st.warning("Pedido de ajuste registrado. Nada foi publicado.")
+
+
 def show_operator_response(data: dict) -> None:
     response = data.get("operator_response", {})
     locks = data.get("locks", {})
