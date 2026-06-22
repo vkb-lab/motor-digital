@@ -1,0 +1,4466 @@
+{
+  "status": "KOS_CODEBASE_STATIC_MAP_DIGEST_READY",
+  "created_at": "2026-06-22T12:06:10.744795",
+  "source_report": "reports/KOS_CODEBASE_STATIC_MAP.json",
+  "policy": {
+    "no_ai_used": true,
+    "no_external_tool_used": true,
+    "no_api_key_used": true,
+    "no_install_executed": true,
+    "no_publish": true,
+    "no_deploy": true
+  },
+  "totals": {
+    "python_files": 3334,
+    "files_with_risk_hits": 779,
+    "files_with_streamlit_hits": 218,
+    "functions_total": 8468,
+    "classes_total": 1139
+  },
+  "top_risk_keywords": [
+    [
+      "publish",
+      557
+    ],
+    [
+      "subprocess",
+      175
+    ],
+    [
+      "requests.",
+      67
+    ],
+    [
+      "delete",
+      44
+    ],
+    [
+      "urllib",
+      43
+    ],
+    [
+      "openai",
+      35
+    ],
+    [
+      "ACCESS_TOKEN",
+      20
+    ],
+    [
+      "upload",
+      17
+    ],
+    [
+      "META_ACCESS_TOKEN",
+      11
+    ],
+    [
+      "Remove-Item",
+      7
+    ],
+    [
+      "playwright",
+      5
+    ],
+    [
+      "google.generativeai",
+      5
+    ],
+    [
+      "os.system",
+      5
+    ],
+    [
+      "webbrowser",
+      3
+    ],
+    [
+      "anthropic",
+      3
+    ],
+    [
+      "selenium",
+      2
+    ]
+  ],
+  "top_imports": [
+    [
+      "__future__",
+      2048
+    ],
+    [
+      "pathlib",
+      1263
+    ],
+    [
+      "typing",
+      829
+    ],
+    [
+      "json",
+      775
+    ],
+    [
+      "sys",
+      730
+    ],
+    [
+      "datetime",
+      729
+    ],
+    [
+      "streamlit",
+      635
+    ],
+    [
+      "unittest",
+      489
+    ],
+    [
+      "py_compile",
+      489
+    ],
+    [
+      "core",
+      395
+    ],
+    [
+      "argparse",
+      160
+    ],
+    [
+      "uuid",
+      151
+    ],
+    [
+      "subprocess",
+      145
+    ],
+    [
+      "shutil",
+      117
+    ],
+    [
+      "os",
+      104
+    ],
+    [
+      "tempfile",
+      90
+    ],
+    [
+      "policy",
+      87
+    ],
+    [
+      "re",
+      75
+    ],
+    [
+      "requests",
+      59
+    ],
+    [
+      "hashlib",
+      58
+    ],
+    [
+      "dataclasses",
+      54
+    ],
+    [
+      "script_utils",
+      40
+    ],
+    [
+      "urllib.request",
+      28
+    ],
+    [
+      "urllib.parse",
+      25
+    ],
+    [
+      "phase3_utils",
+      25
+    ],
+    [
+      "time",
+      24
+    ],
+    [
+      "urllib.error",
+      21
+    ],
+    [
+      "importlib",
+      19
+    ],
+    [
+      "pxr",
+      19
+    ],
+    [
+      "k_atlas.real_execution_gate",
+      16
+    ]
+  ],
+  "categories": {
+    "operator_ui": [
+      {
+        "path": "pages/KOS_Operator_Chat.py",
+        "lines": 479,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "list_safe_actions",
+          "read_json",
+          "render_hupmix_gp_lousa_preview",
+          "run_action_router",
+          "run_safe_action",
+          "show_operator_response",
+          "show_safe_action_history",
+          "show_safe_action_result",
+          "subprocess_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area",
+          "st.video"
+        ]
+      },
+      {
+        "path": "ops/k_os_agent_resilience_drill_operator_review_core.py",
+        "lines": 721,
+        "functions_count": 22,
+        "classes_count": 0,
+        "functions_sample": [
+          "audit_report",
+          "create_review",
+          "detect_destructive_flags",
+          "ensure_state",
+          "event",
+          "latest_review_raw",
+          "load_policy",
+          "main",
+          "now",
+          "read_json",
+          "rel",
+          "review_dimension",
+          "safe_review",
+          "save_state",
+          "show_latest",
+          "source_ref",
+          "stable_hash",
+          "validate_latest",
+          "write_json",
+          "write_report"
+        ],
+        "risk_hits": [
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase46_install_operator_briefing.py",
+        "lines": 387,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/daily_operator/cockpit.py",
+        "lines": 233,
+        "functions_count": 8,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "check_url",
+          "collect",
+          "read_json",
+          "run_git",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/kaizen/operator_briefing.py",
+        "lines": 226,
+        "functions_count": 7,
+        "classes_count": 0,
+        "functions_sample": [
+          "_call_summary",
+          "_run",
+          "_save_json",
+          "build_operator_briefing",
+          "get_git_summary",
+          "now",
+          "render_markdown"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/975_K_OS_Agent_Resilience_Drill_Operator_Review_Core.py",
+        "lines": 128,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "read_json",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/40_K_Atlas_Operator_Mission_Queue.py",
+        "lines": 104,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/80_K_Atlas_Operator_Approval_Console.py",
+        "lines": 45,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/121_K_Atlas_Operator_Clipboard_Return.py",
+        "lines": 23,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/core/operator_mission_queue/queue.py",
+        "lines": 440,
+        "functions_count": 14,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "approve",
+          "build_tasks",
+          "default_payload",
+          "enqueue",
+          "event",
+          "export_command_center_tasks",
+          "list_by_status",
+          "load_queue",
+          "save_queue",
+          "save_report",
+          "summary",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_phase72a_weekly_operator_workspace.py",
+        "lines": 142,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/operator_mission_queue/policy.py",
+        "lines": 90,
+        "functions_count": 1,
+        "classes_count": 0,
+        "functions_sample": [
+          "validate_operator_mission_payload"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/29_K_Atlas_Daily_Operator_Cockpit.py",
+        "lines": 84,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "k_atlas/core/operator_mission_queue/smoke_test_operator_mission_queue.py",
+        "lines": 75,
+        "functions_count": 6,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "tearDown",
+          "test_enqueue_approve_export",
+          "test_export_requires_approval",
+          "test_page_compiles",
+          "test_policy_blocks_auto_publish"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/services/browser_operator.py",
+        "lines": 66,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "log",
+          "open_google_and_search"
+        ],
+        "risk_hits": [
+          "playwright"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/operator_approval_console/policy.py",
+        "lines": 48,
+        "functions_count": 1,
+        "classes_count": 0,
+        "functions_sample": [
+          "validate_approval_request"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "tests/test_phase72a_weekly_operator_workspace.py",
+        "lines": 45,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "tests/test_phase72d_operator_chat_frontdoor.py",
+        "lines": 30,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "tests/test_phase46_operator_briefing.py",
+        "lines": 26,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "test_operator_briefing_has_priorities_and_commands",
+          "test_operator_briefing_is_safe",
+          "test_operator_briefing_markdown_renders"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_phase46_operator_briefing.py",
+        "lines": 25,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "tests/test_phase68a_operator_command_inbox.py",
+        "lines": 17,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "tests/test_phase68b_operator_command_batch.py",
+        "lines": 17,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/operator_approval_console/console.py",
+        "lines": 140,
+        "functions_count": 10,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "create_request",
+          "decide",
+          "event",
+          "load_queue",
+          "save_queue",
+          "save_report",
+          "summary",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/KOS_Weekly_Operator_Workspace.py",
+        "lines": 85,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/operator_home/home.py",
+        "lines": 58,
+        "functions_count": 4,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "build_home",
+          "save",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/operator_clipboard_return/clipboard_return.py",
+        "lines": 54,
+        "functions_count": 4,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "build_return",
+          "save_report",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/462_K_Atlas_KUniOperatorDecisionGate.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/467_K_Atlas_KUniOperatorLaunchpad.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/472_K_Atlas_KUniOperatorFocusMode.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/502_K_Atlas_KUniOperatorHandoffGuide.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      }
+    ],
+    "safe_action_executor": [
+      {
+        "path": "scripts/kos_phase38_install_safe_executor.py",
+        "lines": 356,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "scripts/run_phase69h_hupmix_real_publish_executor.py",
+        "lines": 389,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/kaizen/safe_executor.py",
+        "lines": 206,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "_command_has_blocked_keyword",
+          "_read_json",
+          "_save_json",
+          "is_allowed_action",
+          "list_safe_actions",
+          "now",
+          "run_action",
+          "run_phase38_smoke",
+          "run_safe_bundle"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/26_K_Atlas_Mission_Executor_Bridge.py",
+        "lines": 91,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/69_K_Atlas_Manual_Apply_Executor.py",
+        "lines": 52,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "scripts/run_phase72g_safe_action_executor.py",
+        "lines": 972,
+        "functions_count": 27,
+        "classes_count": 0,
+        "functions_sample": [
+          "as_lines",
+          "build_admin",
+          "build_agents",
+          "build_general",
+          "build_hupmix_gp_continuity",
+          "build_hupmix_gp_video_01_production_kit",
+          "build_patches",
+          "build_runtime",
+          "build_saas",
+          "build_social",
+          "build_social_read",
+          "clip",
+          "compact_value",
+          "execute_safe_action",
+          "extract_signals",
+          "fallback",
+          "kos_is_social_read_request",
+          "main",
+          "mtime_label",
+          "now_iso"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_agent_allowlisted_action_executor_core.py",
+        "lines": 762,
+        "functions_count": 26,
+        "classes_count": 0,
+        "functions_sample": [
+          "action_evidence",
+          "allowed_action_catalog",
+          "audit_report",
+          "compute_metrics",
+          "ensure_state",
+          "event",
+          "execute_action",
+          "gate_check",
+          "is_action_allowed",
+          "latest_execution_raw",
+          "load_policy",
+          "load_safe_route",
+          "load_safe_route_validation",
+          "main",
+          "now",
+          "read_json",
+          "report_summary",
+          "safe_execution_for_report",
+          "save_state",
+          "show_latest"
+        ],
+        "risk_hits": [
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/kaizen/queue_approval_executor.py",
+        "lines": 387,
+        "functions_count": 19,
+        "classes_count": 0,
+        "functions_sample": [
+          "command_key_for",
+          "ensure_dirs",
+          "execute_one_approval",
+          "execution_marker_paths",
+          "file_hash",
+          "find_staged_json",
+          "list_staged_jsons",
+          "main",
+          "move_approval",
+          "normalize_bool",
+          "now_iso",
+          "process_approvals",
+          "read_json",
+          "resolve_under_root",
+          "safe_read_approval_json",
+          "validate_approval",
+          "validate_staged",
+          "write_event",
+          "write_json"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/manual_apply_rollback_executor/rollback.py",
+        "lines": 307,
+        "functions_count": 14,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "dry_run",
+          "event",
+          "find_apply_run",
+          "load_apply_manifest",
+          "load_list",
+          "load_rollback_manifest",
+          "resolve_backup_path",
+          "rollback_manual",
+          "save_list",
+          "save_report",
+          "sha256_file",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/949_K_OS_Agent_Allowlisted_Action_Executor_Core.py",
+        "lines": 142,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "read_json",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/946_K_OS_Agent_Dry_Run_Executor_Core.py",
+        "lines": 128,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "read_json",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "k_atlas/core/manual_apply_rollback_executor/smoke_test_manual_apply_rollback_executor.py",
+        "lines": 102,
+        "functions_count": 6,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "tearDown",
+          "test_dry_run",
+          "test_manual_rollback",
+          "test_page_compiles",
+          "test_policy_requires_human_approval"
+        ],
+        "risk_hits": [
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/pages/K Atlas Executor Autonomo.py",
+        "lines": 52,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/70_K_Atlas_Manual_Apply_Rollback_Executor.py",
+        "lines": 52,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/KOS_Executor_Autonomo.py",
+        "lines": 45,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "agents/executor_package_builder.py",
+        "lines": 835,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_agent_dry_run_executor_core.py",
+        "lines": 643,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/manual_apply_executor/executor.py",
+        "lines": 381,
+        "functions_count": 15,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "apply_manual",
+          "dry_run",
+          "event",
+          "find_gate_item",
+          "load_list",
+          "load_manifest",
+          "make_backup",
+          "save_list",
+          "save_manifest",
+          "save_report",
+          "sha256_text",
+          "to_markdown",
+          "utc_now",
+          "validate_gate_item_for_apply"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/control_plane/executor.py",
+        "lines": 336,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "_execute_safe_action",
+          "_write_execution_record",
+          "execute_all_approved",
+          "execute_approved",
+          "safe_filename",
+          "utc_now_iso"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/mission_executor_bridge/bridge.py",
+        "lines": 281,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "event",
+          "execute_plan",
+          "load_latest_plan",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/social/creative_engine/social_content_refinement_executor.py",
+        "lines": 247,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/manual_apply_executor/smoke_test_manual_apply_executor.py",
+        "lines": 113,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "sha",
+          "tearDown",
+          "test_dry_run",
+          "test_manual_apply_with_backup_manifest",
+          "test_page_compiles",
+          "test_policy_requires_human_approval"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/control_plane/smoke_test_control_plane_executor.py",
+        "lines": 110,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "create_approved_task",
+          "setUp",
+          "tearDown",
+          "test_blocks_unapproved_task",
+          "test_execute_all_approved",
+          "test_execute_approved_content_package",
+          "test_run_smoke_test_safe_action"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/social/tests/smoke_test_social_content_refinement_executor.py",
+        "lines": 99,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/manual_apply_executor/policy.py",
+        "lines": 91,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "normalize_path",
+          "validate_manual_apply_request",
+          "validate_target_path"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "tests/test_phase69h_hupmix_real_publish_executor.py",
+        "lines": 86,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/mission_executor_bridge/smoke_test_mission_executor_bridge.py",
+        "lines": 78,
+        "functions_count": 6,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "tearDown",
+          "test_blocks_bad_plan",
+          "test_execute_plan_dry_run",
+          "test_page_compiles",
+          "test_policy_blocks_auto_publish"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/live/auto_executor.py",
+        "lines": 71,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/64_Executor_Package_Builder.py",
+        "lines": 71,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "k_atlas/core/manual_apply_executor/run_demo.py",
+        "lines": 46,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      }
+    ],
+    "router": [
+      {
+        "path": "ops/k_os_command_center_action_router.py",
+        "lines": 610,
+        "functions_count": 18,
+        "classes_count": 0,
+        "functions_sample": [
+          "action_requires_approval",
+          "audit_report",
+          "ensure_state",
+          "event",
+          "load_policy",
+          "main",
+          "now",
+          "read_json",
+          "record_execution",
+          "resolve_command",
+          "route_action",
+          "safe_catalog",
+          "save_state",
+          "show_latest",
+          "write_catalog",
+          "write_execution",
+          "write_json",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_phase72f_orchestrator_action_router.py",
+        "lines": 392,
+        "functions_count": 10,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_packet",
+          "call_72c",
+          "detect_route",
+          "is_social_read_request",
+          "main",
+          "normalize",
+          "normalize_social_intent_text",
+          "now_iso",
+          "save_packet",
+          "summarize_request"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/ai_provider_router/router.py",
+        "lines": 341,
+        "functions_count": 12,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "build_matrix",
+          "default_payload",
+          "env_status",
+          "event",
+          "load_external_readiness",
+          "provider_ready",
+          "route",
+          "route_table",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/938_K_OS_Command_Center_Action_Router.py",
+        "lines": 156,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "read_json",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/948_K_OS_Agent_Safe_Execution_Router_Core.py",
+        "lines": 143,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "read_json",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "k_atlas/ai/provider_router_v2.py",
+        "lines": 126,
+        "functions_count": 2,
+        "classes_count": 2,
+        "functions_sample": [
+          "_run_ollama",
+          "run_ai"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/31_K_Atlas_AI_Provider_Router.py",
+        "lines": 88,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/core/ai_provider_router/policy.py",
+        "lines": 72,
+        "functions_count": 1,
+        "classes_count": 0,
+        "functions_sample": [
+          "validate_router_payload"
+        ],
+        "risk_hits": [
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/85_K_Atlas_Local_Action_Router.py",
+        "lines": 39,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "agents/decision_flow_router.py",
+        "lines": 848,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_agent_safe_execution_router_core.py",
+        "lines": 679,
+        "functions_count": 26,
+        "classes_count": 0,
+        "functions_sample": [
+          "audit_report",
+          "compute_metrics",
+          "create_route",
+          "ensure_state",
+          "event",
+          "latest_approval_from_local_state",
+          "latest_route_raw",
+          "load_approval_decision",
+          "load_approval_validation",
+          "load_dry_run_result",
+          "load_policy",
+          "main",
+          "now",
+          "permission_summary",
+          "pick_route_target",
+          "read_json",
+          "route_gate_check",
+          "safe_route_for_report",
+          "save_state",
+          "show_latest"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/nvidia/skills/dynamo-router-starter/scripts/check_router_health.py",
+        "lines": 143,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "choose_model",
+          "main",
+          "request_json"
+        ],
+        "risk_hits": [
+          "urllib"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/k_atlas/ai/provider_router.py",
+        "lines": 133,
+        "functions_count": 4,
+        "classes_count": 2,
+        "functions_sample": [
+          "_load_policy",
+          "_log",
+          "_now",
+          "run_ai"
+        ],
+        "risk_hits": [
+          "openai"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/live/action_router.py",
+        "lines": 101,
+        "functions_count": 5,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "create_report",
+          "detect_routes",
+          "execute",
+          "log"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/ai_provider_router/smoke_test_ai_provider_router.py",
+        "lines": 81,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "tearDown",
+          "test_matrix",
+          "test_page_compiles",
+          "test_policy_blocks_live_call",
+          "test_policy_blocks_plaintext_token",
+          "test_route_video_generation"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/64_Decision_Flow_Router.py",
+        "lines": 70,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "core/router.py",
+        "lines": 231,
+        "functions_count": 10,
+        "classes_count": 2,
+        "functions_sample": [
+          "__init__",
+          "_emit",
+          "_ensure_enabled",
+          "_extract_action",
+          "add_route",
+          "dispatch",
+          "list_routes",
+          "matches",
+          "remove_route",
+          "resolve"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/intent_router.py",
+        "lines": 138,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/local_action_router/router.py",
+        "lines": 116,
+        "functions_count": 9,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "event",
+          "load_list",
+          "route",
+          "save_list",
+          "save_report",
+          "summary",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/control_plane/task_router.py",
+        "lines": 107,
+        "functions_count": 3,
+        "classes_count": 2,
+        "functions_sample": [
+          "__init__",
+          "route",
+          "to_dict"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/141_K_Atlas_AgentEscalationRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/161_K_Atlas_KnowledgeRetrievalRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/195_K_Atlas_MultiagentTaskRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/236_K_Atlas_MultiagentCreativeBriefRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/451_K_Atlas_KUniVenturePortfolioRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/455_K_Atlas_KUniBrainDecisionRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/515_K_Atlas_KUniMasterStreamlitRouter.py",
+        "lines": 47,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/agent_escalation_router/core.py",
+        "lines": 39,
+        "functions_count": 2,
+        "classes_count": 1,
+        "functions_sample": [
+          "summary",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/k_uni_brain_decision_router/core.py",
+        "lines": 39,
+        "functions_count": 2,
+        "classes_count": 1,
+        "functions_sample": [
+          "summary",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/k_uni_master_streamlit_router/core.py",
+        "lines": 39,
+        "functions_count": 2,
+        "classes_count": 1,
+        "functions_sample": [
+          "summary",
+          "utc_now"
+        ],
+        "risk_hits": [],
+        "streamlit_hits": []
+      }
+    ],
+    "subprocess_shell": [
+      {
+        "path": "scripts/run_kos_codebase_static_map.py",
+        "lines": 192,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "os.system",
+          "webbrowser",
+          "requests.",
+          "urllib",
+          "selenium",
+          "playwright",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish",
+          "upload",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area",
+          "st.chat_input",
+          "st.video",
+          "st.components",
+          "components.html"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase29_ai_trace_free_tools.py",
+        "lines": 651,
+        "functions_count": 6,
+        "classes_count": 0,
+        "functions_sample": [
+          "cmd_version",
+          "mask_line",
+          "now",
+          "rel",
+          "safe_read",
+          "should_scan"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "ACCESS_TOKEN"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/kos_base/workspace.py",
+        "lines": 573,
+        "functions_count": 17,
+        "classes_count": 0,
+        "functions_sample": [
+          "add_board_card",
+          "build_client_rows",
+          "build_connector_rows",
+          "build_report_rows",
+          "build_workspace_snapshot",
+          "ensure_base_board",
+          "inject_base_css",
+          "load_audit_events",
+          "load_publish_queue",
+          "move_card",
+          "read_json",
+          "read_runtime_presence",
+          "render_board",
+          "render_kos_base_workspace_panel",
+          "render_status_pill",
+          "run_git",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/KOS_Operator_Chat.py",
+        "lines": 479,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "list_safe_actions",
+          "read_json",
+          "render_hupmix_gp_lousa_preview",
+          "run_action_router",
+          "run_safe_action",
+          "show_operator_response",
+          "show_safe_action_history",
+          "show_safe_action_result",
+          "subprocess_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area",
+          "st.video"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase38_install_safe_executor.py",
+        "lines": 356,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/922_K_OS_External_API_Sandbox.py",
+        "lines": 118,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase36_install_planner_bridge.py",
+        "lines": 344,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "cmd_version",
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "agent_core.py",
+        "lines": 204,
+        "functions_count": 13,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "access_ai_studio",
+          "autonomous_loop",
+          "call_gemini",
+          "create_project_structure",
+          "execute_system_command",
+          "get_available_models",
+          "get_page_content",
+          "list_open_windows",
+          "log",
+          "open_browser",
+          "start_automated_browser",
+          "sync_with_genesis"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "webbrowser",
+          "selenium",
+          "google.generativeai"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "local_dashboard.py",
+        "lines": 197,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/self_evolution/risk_analyzer.py",
+        "lines": 86,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "analyze_risk",
+          "normalize_path"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/life-science-research/skills/locus-to-gene-mapper-skill/scripts/map_locus_to_gene.py",
+        "lines": 2210,
+        "functions_count": 52,
+        "classes_count": 0,
+        "functions_sample": [
+          "as_string_list",
+          "assembly_key_from_traits",
+          "build_anchors",
+          "build_inline_image_markdown",
+          "build_summary_markdown",
+          "chromosome_from_refseq",
+          "clamp01",
+          "coding_component",
+          "coerce_dict",
+          "coerce_list_of_dicts",
+          "confidence_label",
+          "coordinate_from_placement",
+          "dedupe_keep_order",
+          "ensure_parent",
+          "extract_eqtl_gene_symbol",
+          "extract_eqtl_tissue",
+          "extract_mapped_genes",
+          "extract_trait_name",
+          "fetch_genebass_support",
+          "fetch_gnomad_gene_constraints"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/nvidia/skills/omniverse-cad-to-simready/references/content-agents/scripts/content_agent_client.py",
+        "lines": 1830,
+        "functions_count": 49,
+        "classes_count": 0,
+        "functions_sample": [
+          "_apply_material_auto_optimizer",
+          "_apply_physics_auto_optimizer",
+          "_attempt_summary",
+          "_base_report",
+          "_command",
+          "_convert_physics_output_to_usd",
+          "_download_artifact",
+          "_emit_report",
+          "_env_first",
+          "_env_or_file_first",
+          "_filename_from_content_disposition",
+          "_headers",
+          "_http_request",
+          "_inspect_usd_topology",
+          "_inspect_usd_topology_external",
+          "_is_crate_usd",
+          "_is_material_zero_image_failure",
+          "_is_physics_optimizer_failure",
+          "_is_scene_optimizer_permission_failure",
+          "_is_transient_artifact_error"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/ops/command_registry_082.py",
+        "lines": 1058,
+        "functions_count": 30,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_registry",
+          "classify_family",
+          "default_config",
+          "detect_blocked_references",
+          "discover_commands",
+          "ensure_dirs",
+          "extract_command_signals",
+          "file_record",
+          "final_closure_markdown",
+          "infer_risk_level",
+          "is_command_surface",
+          "load_config",
+          "main",
+          "mode_action",
+          "mode_audit",
+          "mode_closure",
+          "mode_init",
+          "mode_validate",
+          "now_utc",
+          "read_json"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish",
+          "Remove-Item"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/service_readiness_matrix/matrix.py",
+        "lines": 503,
+        "functions_count": 15,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "build_layer_summary",
+          "build_recommendation",
+          "check_url",
+          "classify_service",
+          "default_payload",
+          "event",
+          "generate",
+          "read_json",
+          "run_git",
+          "save_report",
+          "scope_match",
+          "service_catalog",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_security_firewall.py",
+        "lines": 447,
+        "functions_count": 14,
+        "classes_count": 0,
+        "functions_sample": [
+          "get_staged_files",
+          "get_working_files",
+          "install_hook",
+          "main",
+          "normalize",
+          "path_is_blocked",
+          "run_git",
+          "scan_content",
+          "scan_files",
+          "sha256_text",
+          "should_scan_content",
+          "smoke_test",
+          "utc_now",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/hugging-face/skills/llm-trainer/scripts/convert_to_gguf.py",
+        "lines": 425,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "check_system_dependencies",
+          "run_command"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase25_creative_recovery_approval.py",
+        "lines": 401,
+        "functions_count": 17,
+        "classes_count": 0,
+        "functions_sample": [
+          "api_request",
+          "create_approved_creative",
+          "draw_center",
+          "get_font",
+          "now",
+          "poll_url",
+          "read_env",
+          "resolve_render",
+          "run",
+          "save_json",
+          "service_branch",
+          "service_id",
+          "service_name",
+          "service_obj",
+          "service_url",
+          "validate_png",
+          "write_preview"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase34_install_kaizen_247.py",
+        "lines": 397,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase27_hupmix_test_publish.py",
+        "lines": 391,
+        "functions_count": 13,
+        "classes_count": 0,
+        "functions_sample": [
+          "api",
+          "center",
+          "create_test_asset",
+          "font",
+          "graph_get",
+          "graph_post",
+          "mask",
+          "now",
+          "read_env",
+          "resolve_render",
+          "run",
+          "validate_image_url",
+          "write_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_external_api_sandbox.py",
+        "lines": 384,
+        "functions_count": 14,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_payload",
+          "estimate_cost",
+          "license_status",
+          "load_json",
+          "main",
+          "now",
+          "policy",
+          "provider_config",
+          "run_risk_classifier",
+          "sha256_text",
+          "simulate",
+          "smoke_test",
+          "vault_status",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase48_install_evidence_ledger.py",
+        "lines": 377,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "k_atlas/kaizen/local_coworker.py",
+        "lines": 334,
+        "functions_count": 14,
+        "classes_count": 0,
+        "functions_sample": [
+          "_append_jsonl",
+          "_read_json",
+          "_write_json",
+          "build_task_from_command",
+          "classify_command",
+          "detect_ollama",
+          "get_latest_status",
+          "load_bridge_commands",
+          "load_state",
+          "now",
+          "process_bridge_inbox",
+          "run_safe_diagnostics",
+          "save_state",
+          "save_task"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase25b_fix_render_preview_notfound.py",
+        "lines": 292,
+        "functions_count": 11,
+        "classes_count": 0,
+        "functions_sample": [
+          "api",
+          "center",
+          "check_url",
+          "create_clean_asset",
+          "discover_render",
+          "font",
+          "now",
+          "read_env",
+          "run",
+          "service_obj",
+          "write_preview"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/fix_render_asset_404_phase20.py",
+        "lines": 266,
+        "functions_count": 11,
+        "classes_count": 0,
+        "functions_sample": [
+          "api_request",
+          "now",
+          "read_env",
+          "run",
+          "save_env",
+          "service_branch",
+          "service_id",
+          "service_name",
+          "service_obj",
+          "service_url",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/assisted_autonomy/orchestrator.py",
+        "lines": 258,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "_save_report",
+          "_to_markdown",
+          "path_exists",
+          "run",
+          "run_command",
+          "utc_now_iso"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/KOS_Unified_Command_Cockpit.py",
+        "lines": 220,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/kaizen/planner_bridge.py",
+        "lines": 217,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_codex_task",
+          "detect_tool",
+          "local_stub_plan",
+          "now",
+          "read_json",
+          "run_cmd",
+          "run_planner_bridge",
+          "save_json",
+          "try_ollama"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/command_center/center.py",
+        "lines": 211,
+        "functions_count": 10,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "create_cycle",
+          "default_plan",
+          "event",
+          "execute_task",
+          "load_queue",
+          "run_cmd",
+          "run_pending_once",
+          "save_queue",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/local_mission_installer/policy.py",
+        "lines": 208,
+        "functions_count": 6,
+        "classes_count": 0,
+        "functions_sample": [
+          "normalize_path",
+          "sha256_text",
+          "validate_manual_install_request",
+          "validate_mission_package",
+          "validate_mission_step",
+          "validate_safe_path"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "os.system",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/kaizen/safe_executor.py",
+        "lines": 206,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "_command_has_blocked_keyword",
+          "_read_json",
+          "_save_json",
+          "is_allowed_action",
+          "list_safe_actions",
+          "now",
+          "run_action",
+          "run_phase38_smoke",
+          "run_safe_bundle"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      }
+    ],
+    "browser_or_automation": [
+      {
+        "path": "scripts/run_kos_codebase_static_map.py",
+        "lines": 192,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "os.system",
+          "webbrowser",
+          "requests.",
+          "urllib",
+          "selenium",
+          "playwright",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish",
+          "upload",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area",
+          "st.chat_input",
+          "st.video",
+          "st.components",
+          "components.html"
+        ]
+      },
+      {
+        "path": "agent_core.py",
+        "lines": 204,
+        "functions_count": 13,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "access_ai_studio",
+          "autonomous_loop",
+          "call_gemini",
+          "create_project_structure",
+          "execute_system_command",
+          "get_available_models",
+          "get_page_content",
+          "list_open_windows",
+          "log",
+          "open_browser",
+          "start_automated_browser",
+          "sync_with_genesis"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "webbrowser",
+          "selenium",
+          "google.generativeai"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/morningstar/skills/fund-summarizer/scripts/export_report.py",
+        "lines": 96,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "default_node",
+          "default_node_path",
+          "main",
+          "parse_args"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "playwright"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/social/social_audit/profile_audit.py",
+        "lines": 217,
+        "functions_count": 6,
+        "classes_count": 0,
+        "functions_sample": [
+          "main",
+          "now_stamp",
+          "run_profile_audit",
+          "safe_excerpt",
+          "take_step_screenshot",
+          "try_click_by_text"
+        ],
+        "risk_hits": [
+          "playwright"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/desktop_actions.py",
+        "lines": 67,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "webbrowser"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/services/browser_operator.py",
+        "lines": 66,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "log",
+          "open_google_and_search"
+        ],
+        "risk_hits": [
+          "playwright"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/agents/publisher_instagram.py",
+        "lines": 65,
+        "functions_count": 1,
+        "classes_count": 0,
+        "functions_sample": [
+          "open_instagram_creator"
+        ],
+        "risk_hits": [
+          "playwright"
+        ],
+        "streamlit_hits": []
+      }
+    ],
+    "external_api_or_llm": [
+      {
+        "path": "scripts/run_kos_codebase_static_map.py",
+        "lines": 192,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "os.system",
+          "webbrowser",
+          "requests.",
+          "urllib",
+          "selenium",
+          "playwright",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish",
+          "upload",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area",
+          "st.chat_input",
+          "st.video",
+          "st.components",
+          "components.html"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase29_ai_trace_free_tools.py",
+        "lines": 651,
+        "functions_count": 6,
+        "classes_count": 0,
+        "functions_sample": [
+          "cmd_version",
+          "mask_line",
+          "now",
+          "rel",
+          "safe_read",
+          "should_scan"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "ACCESS_TOKEN"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase38_install_safe_executor.py",
+        "lines": 356,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/922_K_OS_External_API_Sandbox.py",
+        "lines": 118,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "scripts/run_phase69h_hupmix_real_publish_executor.py",
+        "lines": 389,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase28_ai_cost_audit.py",
+        "lines": 369,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "mask_line",
+          "now",
+          "safe_read",
+          "should_scan"
+        ],
+        "risk_hits": [
+          "openai",
+          "google.generativeai",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase36_install_planner_bridge.py",
+        "lines": 344,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "cmd_version",
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/live_adapter_contract_registry/registry.py",
+        "lines": 280,
+        "functions_count": 10,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "default_contracts",
+          "env_status",
+          "event",
+          "load_latest",
+          "register_contracts",
+          "save_registry",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "openai",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/external_api_adapter/readiness.py",
+        "lines": 260,
+        "functions_count": 9,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "check_env_var",
+          "check_provider",
+          "event",
+          "generate",
+          "provider_registry",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "openai",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "agent_core.py",
+        "lines": 204,
+        "functions_count": 13,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "access_ai_studio",
+          "autonomous_loop",
+          "call_gemini",
+          "create_project_structure",
+          "execute_system_command",
+          "get_available_models",
+          "get_page_content",
+          "list_open_windows",
+          "log",
+          "open_browser",
+          "start_automated_browser",
+          "sync_with_genesis"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "webbrowser",
+          "selenium",
+          "google.generativeai"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_phase69d_hupmix_instagram_audit.py",
+        "lines": 202,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_kos_meta_app_diagnostic.py",
+        "lines": 184,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/17_K_Atlas_Sandbox_API_Adapter.py",
+        "lines": 102,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "requests.",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/self_evolution/risk_analyzer.py",
+        "lines": 86,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "analyze_risk",
+          "normalize_path"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/live_adapter_contract_registry/smoke_test_live_adapter_contract_registry.py",
+        "lines": 67,
+        "functions_count": 6,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "tearDown",
+          "test_page_compiles",
+          "test_policy_blocks_enabled_adapter",
+          "test_policy_blocks_token_value",
+          "test_register_contracts"
+        ],
+        "risk_hits": [
+          "openai",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/life-science-research/skills/locus-to-gene-mapper-skill/scripts/map_locus_to_gene.py",
+        "lines": 2210,
+        "functions_count": 52,
+        "classes_count": 0,
+        "functions_sample": [
+          "as_string_list",
+          "assembly_key_from_traits",
+          "build_anchors",
+          "build_inline_image_markdown",
+          "build_summary_markdown",
+          "chromosome_from_refseq",
+          "clamp01",
+          "coding_component",
+          "coerce_dict",
+          "coerce_list_of_dicts",
+          "confidence_label",
+          "coordinate_from_placement",
+          "dedupe_keep_order",
+          "ensure_parent",
+          "extract_eqtl_gene_symbol",
+          "extract_eqtl_tissue",
+          "extract_mapped_genes",
+          "extract_trait_name",
+          "fetch_genebass_support",
+          "fetch_gnomad_gene_constraints"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/nvidia/skills/omniverse-cad-to-simready/references/content-agents/scripts/content_agent_client.py",
+        "lines": 1830,
+        "functions_count": 49,
+        "classes_count": 0,
+        "functions_sample": [
+          "_apply_material_auto_optimizer",
+          "_apply_physics_auto_optimizer",
+          "_attempt_summary",
+          "_base_report",
+          "_command",
+          "_convert_physics_output_to_usd",
+          "_download_artifact",
+          "_emit_report",
+          "_env_first",
+          "_env_or_file_first",
+          "_filename_from_content_disposition",
+          "_headers",
+          "_http_request",
+          "_inspect_usd_topology",
+          "_inspect_usd_topology_external",
+          "_is_crate_usd",
+          "_is_material_zero_image_failure",
+          "_is_physics_optimizer_failure",
+          "_is_scene_optimizer_permission_failure",
+          "_is_transient_artifact_error"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/hugging-face/skills/paper-publisher/scripts/paper_manager.py",
+        "lines": 607,
+        "functions_count": 12,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "_add_paper_to_readme",
+          "_clean_arxiv_id",
+          "_escape_yaml_value",
+          "_sanitize_text",
+          "check_paper",
+          "create_research_article",
+          "generate_citation",
+          "get_arxiv_info",
+          "index_paper",
+          "link_paper_to_repo",
+          "main"
+        ],
+        "risk_hits": [
+          "requests.",
+          "publish",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/service_readiness_matrix/matrix.py",
+        "lines": 503,
+        "functions_count": 15,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "build_layer_summary",
+          "build_recommendation",
+          "check_url",
+          "classify_service",
+          "default_payload",
+          "event",
+          "generate",
+          "read_json",
+          "run_git",
+          "save_report",
+          "scope_match",
+          "service_catalog",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_security_firewall.py",
+        "lines": 447,
+        "functions_count": 14,
+        "classes_count": 0,
+        "functions_sample": [
+          "get_staged_files",
+          "get_working_files",
+          "install_hook",
+          "main",
+          "normalize",
+          "path_is_blocked",
+          "run_git",
+          "scan_content",
+          "scan_files",
+          "sha256_text",
+          "should_scan_content",
+          "smoke_test",
+          "utc_now",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase25_creative_recovery_approval.py",
+        "lines": 401,
+        "functions_count": 17,
+        "classes_count": 0,
+        "functions_sample": [
+          "api_request",
+          "create_approved_creative",
+          "draw_center",
+          "get_font",
+          "now",
+          "poll_url",
+          "read_env",
+          "resolve_render",
+          "run",
+          "save_json",
+          "service_branch",
+          "service_id",
+          "service_name",
+          "service_obj",
+          "service_url",
+          "validate_png",
+          "write_preview"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase34_install_kaizen_247.py",
+        "lines": 397,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase27_hupmix_test_publish.py",
+        "lines": 391,
+        "functions_count": 13,
+        "classes_count": 0,
+        "functions_sample": [
+          "api",
+          "center",
+          "create_test_asset",
+          "font",
+          "graph_get",
+          "graph_post",
+          "mask",
+          "now",
+          "read_env",
+          "resolve_render",
+          "run",
+          "validate_image_url",
+          "write_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "ops/k_os_external_api_sandbox.py",
+        "lines": 384,
+        "functions_count": 14,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_payload",
+          "estimate_cost",
+          "license_status",
+          "load_json",
+          "main",
+          "now",
+          "policy",
+          "provider_config",
+          "run_risk_classifier",
+          "sha256_text",
+          "simulate",
+          "smoke_test",
+          "vault_status",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/box/skills/box/scripts/box_rest.py",
+        "lines": 370,
+        "functions_count": 18,
+        "classes_count": 0,
+        "functions_sample": [
+          "_sanitize_filename",
+          "add_common_auth_args",
+          "api_request",
+          "build_headers",
+          "dump_json",
+          "encode_query",
+          "get_token",
+          "handle_create_folder",
+          "handle_create_shared_link",
+          "handle_get_folder_items",
+          "handle_get_item",
+          "handle_move_item",
+          "handle_search",
+          "handle_upload_file",
+          "json_body",
+          "main",
+          "multipart_upload",
+          "parse_bool"
+        ],
+        "risk_hits": [
+          "urllib",
+          "ACCESS_TOKEN",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase25b_fix_render_preview_notfound.py",
+        "lines": 292,
+        "functions_count": 11,
+        "classes_count": 0,
+        "functions_sample": [
+          "api",
+          "center",
+          "check_url",
+          "create_clean_asset",
+          "discover_render",
+          "font",
+          "now",
+          "read_env",
+          "run",
+          "service_obj",
+          "write_preview"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/fix_render_asset_404_phase20.py",
+        "lines": 266,
+        "functions_count": 11,
+        "classes_count": 0,
+        "functions_sample": [
+          "api_request",
+          "now",
+          "read_env",
+          "run",
+          "save_env",
+          "service_branch",
+          "service_id",
+          "service_name",
+          "service_obj",
+          "service_url",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/assisted_autonomy/orchestrator.py",
+        "lines": 258,
+        "functions_count": 7,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "_save_report",
+          "_to_markdown",
+          "path_exists",
+          "run",
+          "run_command",
+          "utc_now_iso"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/kaizen/planner_bridge.py",
+        "lines": 217,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_codex_task",
+          "detect_tool",
+          "local_stub_plan",
+          "now",
+          "read_json",
+          "run_cmd",
+          "run_planner_bridge",
+          "save_json",
+          "try_ollama"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/command_center/center.py",
+        "lines": 211,
+        "functions_count": 10,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "create_cycle",
+          "default_plan",
+          "event",
+          "execute_task",
+          "load_queue",
+          "run_cmd",
+          "run_pending_once",
+          "save_queue",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      }
+    ],
+    "publish_upload_delete": [
+      {
+        "path": "scripts/run_kos_codebase_static_map.py",
+        "lines": 192,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "os.system",
+          "webbrowser",
+          "requests.",
+          "urllib",
+          "selenium",
+          "playwright",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish",
+          "upload",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area",
+          "st.chat_input",
+          "st.video",
+          "st.components",
+          "components.html"
+        ]
+      },
+      {
+        "path": "k_atlas/kos_base/workspace.py",
+        "lines": 573,
+        "functions_count": 17,
+        "classes_count": 0,
+        "functions_sample": [
+          "add_board_card",
+          "build_client_rows",
+          "build_connector_rows",
+          "build_report_rows",
+          "build_workspace_snapshot",
+          "ensure_base_board",
+          "inject_base_css",
+          "load_audit_events",
+          "load_publish_queue",
+          "move_card",
+          "read_json",
+          "read_runtime_presence",
+          "render_board",
+          "render_kos_base_workspace_panel",
+          "render_status_pill",
+          "run_git",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/KOS_Operator_Chat.py",
+        "lines": 479,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "list_safe_actions",
+          "read_json",
+          "render_hupmix_gp_lousa_preview",
+          "run_action_router",
+          "run_safe_action",
+          "show_operator_response",
+          "show_safe_action_history",
+          "show_safe_action_result",
+          "subprocess_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area",
+          "st.video"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase38_install_safe_executor.py",
+        "lines": 356,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/922_K_OS_External_API_Sandbox.py",
+        "lines": 118,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/KOS_PHASE7_REPAIR.py",
+        "lines": 591,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "touch",
+          "write",
+          "write_json"
+        ],
+        "risk_hits": [
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "scripts/run_phase69h_hupmix_real_publish_executor.py",
+        "lines": 389,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase28_ai_cost_audit.py",
+        "lines": 369,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "mask_line",
+          "now",
+          "safe_read",
+          "should_scan"
+        ],
+        "risk_hits": [
+          "openai",
+          "google.generativeai",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase36_install_planner_bridge.py",
+        "lines": 344,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "cmd_version",
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/saas_factory/products/brics-paraguay-autos/app.py",
+        "lines": 334,
+        "functions_count": 8,
+        "classes_count": 0,
+        "functions_sample": [
+          "ai_mock",
+          "card",
+          "ensure",
+          "load",
+          "num",
+          "save",
+          "save_photo",
+          "stats"
+        ],
+        "risk_hits": [
+          "upload"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/core/live_adapter_contract_registry/registry.py",
+        "lines": 280,
+        "functions_count": 10,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "default_contracts",
+          "env_status",
+          "event",
+          "load_latest",
+          "register_contracts",
+          "save_registry",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "openai",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/external_api_adapter/readiness.py",
+        "lines": 260,
+        "functions_count": 9,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "check_env_var",
+          "check_provider",
+          "event",
+          "generate",
+          "provider_registry",
+          "save_report",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "openai",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_phase69d_hupmix_instagram_audit.py",
+        "lines": 202,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/run_kos_meta_app_diagnostic.py",
+        "lines": 184,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "urllib",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "pages/17_K_Atlas_Sandbox_API_Adapter.py",
+        "lines": 102,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "requests.",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/self_evolution/risk_analyzer.py",
+        "lines": 86,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "analyze_risk",
+          "normalize_path"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/live_adapter_contract_registry/smoke_test_live_adapter_contract_registry.py",
+        "lines": 67,
+        "functions_count": 6,
+        "classes_count": 1,
+        "functions_sample": [
+          "setUp",
+          "tearDown",
+          "test_page_compiles",
+          "test_policy_blocks_enabled_adapter",
+          "test_policy_blocks_token_value",
+          "test_register_contracts"
+        ],
+        "risk_hits": [
+          "openai",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/life-science-research/skills/locus-to-gene-mapper-skill/scripts/map_locus_to_gene.py",
+        "lines": 2210,
+        "functions_count": 52,
+        "classes_count": 0,
+        "functions_sample": [
+          "as_string_list",
+          "assembly_key_from_traits",
+          "build_anchors",
+          "build_inline_image_markdown",
+          "build_summary_markdown",
+          "chromosome_from_refseq",
+          "clamp01",
+          "coding_component",
+          "coerce_dict",
+          "coerce_list_of_dicts",
+          "confidence_label",
+          "coordinate_from_placement",
+          "dedupe_keep_order",
+          "ensure_parent",
+          "extract_eqtl_gene_symbol",
+          "extract_eqtl_tissue",
+          "extract_mapped_genes",
+          "extract_trait_name",
+          "fetch_genebass_support",
+          "fetch_gnomad_gene_constraints"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "requests.",
+          "delete"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/nvidia/skills/omniverse-cad-to-simready/references/content-agents/scripts/content_agent_client.py",
+        "lines": 1830,
+        "functions_count": 49,
+        "classes_count": 0,
+        "functions_sample": [
+          "_apply_material_auto_optimizer",
+          "_apply_physics_auto_optimizer",
+          "_attempt_summary",
+          "_base_report",
+          "_command",
+          "_convert_physics_output_to_usd",
+          "_download_artifact",
+          "_emit_report",
+          "_env_first",
+          "_env_or_file_first",
+          "_filename_from_content_disposition",
+          "_headers",
+          "_http_request",
+          "_inspect_usd_topology",
+          "_inspect_usd_topology_external",
+          "_is_crate_usd",
+          "_is_material_zero_image_failure",
+          "_is_physics_optimizer_failure",
+          "_is_scene_optimizer_permission_failure",
+          "_is_transient_artifact_error"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/ops/command_registry_082.py",
+        "lines": 1058,
+        "functions_count": 30,
+        "classes_count": 0,
+        "functions_sample": [
+          "build_registry",
+          "classify_family",
+          "default_config",
+          "detect_blocked_references",
+          "discover_commands",
+          "ensure_dirs",
+          "extract_command_signals",
+          "file_record",
+          "final_closure_markdown",
+          "infer_risk_level",
+          "is_command_surface",
+          "load_config",
+          "main",
+          "mode_action",
+          "mode_audit",
+          "mode_closure",
+          "mode_init",
+          "mode_validate",
+          "now_utc",
+          "read_json"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish",
+          "Remove-Item"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/hugging-face/skills/paper-publisher/scripts/paper_manager.py",
+        "lines": 607,
+        "functions_count": 12,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "_add_paper_to_readme",
+          "_clean_arxiv_id",
+          "_escape_yaml_value",
+          "_sanitize_text",
+          "check_paper",
+          "create_research_article",
+          "generate_citation",
+          "get_arxiv_info",
+          "index_paper",
+          "link_paper_to_repo",
+          "main"
+        ],
+        "risk_hits": [
+          "requests.",
+          "publish",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/core/service_readiness_matrix/matrix.py",
+        "lines": 503,
+        "functions_count": 15,
+        "classes_count": 1,
+        "functions_sample": [
+          "__init__",
+          "build_layer_summary",
+          "build_recommendation",
+          "check_url",
+          "classify_service",
+          "default_payload",
+          "event",
+          "generate",
+          "read_json",
+          "run_git",
+          "save_report",
+          "scope_match",
+          "service_catalog",
+          "to_markdown",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase39_install_human_approval.py",
+        "lines": 486,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "ops/k_os_security_firewall.py",
+        "lines": 447,
+        "functions_count": 14,
+        "classes_count": 0,
+        "functions_sample": [
+          "get_staged_files",
+          "get_working_files",
+          "install_hook",
+          "main",
+          "normalize",
+          "path_is_blocked",
+          "run_git",
+          "scan_content",
+          "scan_files",
+          "sha256_text",
+          "should_scan_content",
+          "smoke_test",
+          "utc_now",
+          "write_report"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase37_install_mission_queue.py",
+        "lines": 431,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/.codex_phase5/.tmp/plugins/plugins/hugging-face/skills/llm-trainer/scripts/convert_to_gguf.py",
+        "lines": 425,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "check_system_dependencies",
+          "run_command"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish",
+          "upload"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase25_creative_recovery_approval.py",
+        "lines": 401,
+        "functions_count": 17,
+        "classes_count": 0,
+        "functions_sample": [
+          "api_request",
+          "create_approved_creative",
+          "draw_center",
+          "get_font",
+          "now",
+          "poll_url",
+          "read_env",
+          "resolve_render",
+          "run",
+          "save_json",
+          "service_branch",
+          "service_id",
+          "service_name",
+          "service_obj",
+          "service_url",
+          "validate_png",
+          "write_preview"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "scripts/kos_phase34_install_kaizen_247.py",
+        "lines": 397,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/scripts/kos_phase27_hupmix_test_publish.py",
+        "lines": 391,
+        "functions_count": 13,
+        "classes_count": 0,
+        "functions_sample": [
+          "api",
+          "center",
+          "create_test_asset",
+          "font",
+          "graph_get",
+          "graph_post",
+          "mask",
+          "now",
+          "read_env",
+          "resolve_render",
+          "run",
+          "validate_image_url",
+          "write_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "urllib",
+          "publish"
+        ],
+        "streamlit_hits": []
+      },
+      {
+        "path": "k_atlas/social/ui/social_cockpit_view.py",
+        "lines": 389,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      }
+    ],
+    "streamlit_interaction": [
+      {
+        "path": "scripts/run_kos_codebase_static_map.py",
+        "lines": 192,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "os.system",
+          "webbrowser",
+          "requests.",
+          "urllib",
+          "selenium",
+          "playwright",
+          "openai",
+          "google.generativeai",
+          "anthropic",
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish",
+          "upload",
+          "delete",
+          "Remove-Item"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area",
+          "st.chat_input",
+          "st.video",
+          "st.components",
+          "components.html"
+        ]
+      },
+      {
+        "path": "k_atlas/kos_base/workspace.py",
+        "lines": 573,
+        "functions_count": 17,
+        "classes_count": 0,
+        "functions_sample": [
+          "add_board_card",
+          "build_client_rows",
+          "build_connector_rows",
+          "build_report_rows",
+          "build_workspace_snapshot",
+          "ensure_base_board",
+          "inject_base_css",
+          "load_audit_events",
+          "load_publish_queue",
+          "move_card",
+          "read_json",
+          "read_runtime_presence",
+          "render_board",
+          "render_kos_base_workspace_panel",
+          "render_status_pill",
+          "run_git",
+          "utc_now"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/KOS_Operator_Chat.py",
+        "lines": 479,
+        "functions_count": 9,
+        "classes_count": 0,
+        "functions_sample": [
+          "list_safe_actions",
+          "read_json",
+          "render_hupmix_gp_lousa_preview",
+          "run_action_router",
+          "run_safe_action",
+          "show_operator_response",
+          "show_safe_action_history",
+          "show_safe_action_result",
+          "subprocess_env"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area",
+          "st.video"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase38_install_safe_executor.py",
+        "lines": 356,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish",
+          "delete"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/922_K_OS_External_API_Sandbox.py",
+        "lines": 118,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "_local_quarantine/untracked_20260604_122743/KOS_PHASE7_REPAIR.py",
+        "lines": 591,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "touch",
+          "write",
+          "write_json"
+        ],
+        "risk_hits": [
+          "META_ACCESS_TOKEN",
+          "ACCESS_TOKEN",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "k_atlas/saas_factory/products/brics-paraguay-autos/app.py",
+        "lines": 334,
+        "functions_count": 8,
+        "classes_count": 0,
+        "functions_sample": [
+          "ai_mock",
+          "card",
+          "ensure",
+          "load",
+          "num",
+          "save",
+          "save_photo",
+          "stats"
+        ],
+        "risk_hits": [
+          "upload"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "local_dashboard.py",
+        "lines": 197,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/17_K_Atlas_Sandbox_API_Adapter.py",
+        "lines": 102,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "requests.",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase39_install_human_approval.py",
+        "lines": 486,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase37_install_mission_queue.py",
+        "lines": 431,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/social/ui/social_cockpit_view.py",
+        "lines": 389,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase48_install_evidence_ledger.py",
+        "lines": 377,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "scripts/kos_phase40_install_closed_loop.py",
+        "lines": 372,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "now",
+          "save_json",
+          "write"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/09_K_Atlas_Control_Plane.py",
+        "lines": 316,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "load_execution_records",
+          "load_json",
+          "load_jsonl"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/KOS_Unified_Command_Cockpit.py",
+        "lines": 220,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/social/publishing_gateway/publishing_gateway_panel.py",
+        "lines": 203,
+        "functions_count": 4,
+        "classes_count": 0,
+        "functions_sample": [
+          "load_json_list",
+          "load_jsonl",
+          "render_social_publishing_gateway_panel",
+          "save_json_list"
+        ],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/934_K_OS_Product_Feedback_Feature_Request_Core.py",
+        "lines": 194,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/935_K_OS_Roadmap_Planner_Release_Notes_Core.py",
+        "lines": 175,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/933_K_OS_Knowledge_Base_Support_Playbooks.py",
+        "lines": 168,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "k_atlas/saas_factory/products/closet-pilot/app.py",
+        "lines": 167,
+        "functions_count": 6,
+        "classes_count": 0,
+        "functions_sample": [
+          "load_items",
+          "local_label",
+          "save_items",
+          "save_photo",
+          "stats",
+          "suggest_looks"
+        ],
+        "risk_hits": [
+          "upload"
+        ],
+        "streamlit_hits": [
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/932_K_OS_Support_Desk_Ticketing_Core.py",
+        "lines": 165,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/952_K_OS_Agent_Incident_Lockdown_Quarantine_Core.py",
+        "lines": 137,
+        "functions_count": 3,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "read_json",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "delete"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/918_K_OS_Vault_Guard.py",
+        "lines": 114,
+        "functions_count": 1,
+        "classes_count": 0,
+        "functions_sample": [
+          "run_action"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "openai"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "app.py",
+        "lines": 112,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [],
+        "streamlit_hits": [
+          "st.button",
+          "st.form_submit_button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/917_K_OS_Agent_Permission_Matrix.py",
+        "lines": 111,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run_validate"
+        ],
+        "risk_hits": [
+          "subprocess",
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button"
+        ]
+      },
+      {
+        "path": "pages/35_K_Atlas_Secure_Publish_Approval_Gate.py",
+        "lines": 110,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/921_K_OS_AI_Risk_Classifier.py",
+        "lines": 110,
+        "functions_count": 2,
+        "classes_count": 0,
+        "functions_sample": [
+          "python_exe",
+          "run"
+        ],
+        "risk_hits": [
+          "subprocess"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/65_K_Atlas_Assisted_Autoprogramming.py",
+        "lines": 106,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      },
+      {
+        "path": "pages/73_K_Atlas_Local_Mission_Installer.py",
+        "lines": 102,
+        "functions_count": 0,
+        "classes_count": 0,
+        "functions_sample": [],
+        "risk_hits": [
+          "publish"
+        ],
+        "streamlit_hits": [
+          "st.button",
+          "st.text_area"
+        ]
+      }
+    ]
+  },
+  "recommendation": {
+    "next_step": "auditar fluxo Operator Chat -> Router -> Safe Action Executor",
+    "why": "este e o nucleo de execucao real do K-OS",
+    "do_not_do_yet": [
+      "nao conectar Codebase Memory MCP",
+      "nao conectar IA paga",
+      "nao instalar ferramenta externa",
+      "nao mexer em publicacao"
+    ]
+  }
+}
