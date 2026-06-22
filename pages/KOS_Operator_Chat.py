@@ -1790,6 +1790,285 @@ def render_kos_hupmix_gp_video_02_real_production_panel():
 # KOS_HUPMIX_GP_VIDEO_02_REAL_PRODUCTION_PANEL_END
 
 
+
+# KOS_CAPABILITY_REGISTRY_OPERATOR_BRIDGE_BEGIN
+def kos_clear_specialized_panel_noise():
+    """Remove respostas antigas/stale quando um painel especializado assume a tela."""
+    import json
+    import streamlit as st
+
+    fixed_keys = [
+        "kos_last_operator_data",
+        "kos_last_operator_response",
+        "kos_last_operator_plan",
+        "kos_last_operator_modules",
+        "kos_last_operator_next_step",
+        "kos_last_operator_risk",
+        "kos_last_operator_safe_action",
+        "kos_last_safe_action_result",
+        "kos_last_safe_action_packet_path",
+        "kos_last_safe_action_packet",
+        "kos_last_public_research_packet",
+        "kos_last_router_result",
+        "kos_last_router_data",
+        "kos_last_orchestrator_result",
+        "kos_last_action_packet",
+        "kos_last_generated_plan",
+    ]
+
+    for key in fixed_keys:
+        st.session_state.pop(key, None)
+
+    for key, value in list(st.session_state.items()):
+        if key in {"kos_operator_request_text"}:
+            continue
+
+        try:
+            blob = json.dumps(value, ensure_ascii=False, default=str)
+        except Exception:
+            blob = str(value)
+
+        stale_markers = [
+            "KOS_START_HERE.cmd",
+            "Vou usar estes modulos",
+            "Acoes reais permanecem bloqueadas",
+            "Acao segura disponivel",
+            "Gerar plano operacional simples",
+        ]
+
+        if any(marker in blob for marker in stale_markers):
+            st.session_state.pop(key, None)
+
+    st.session_state["kos_suppress_default_response"] = True
+
+
+def is_kos_capability_registry_request(text: str) -> bool:
+    """Detecta pedido de auditoria/autonomia/capacidades do K-OS."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    action_terms = [
+        "auditar tudo",
+        "auditoria operacional",
+        "auditoria master",
+        "o que funciona",
+        "tudo que funciona",
+        "nivel da autonomia",
+        "nível da autonomia",
+        "autonomia",
+        "agentes funcionando",
+        "quais agentes",
+        "inteligencia conectada",
+        "inteligência conectada",
+        "auto evolucao",
+        "auto evolução",
+        "evolucao do copiloto",
+        "evolução do copiloto",
+        "linha do tempo",
+        "capability registry",
+        "registro de capacidades",
+        "mapa de capacidades",
+        "capacidades do k-os",
+        "capacidades do kos",
+        "carro quantico",
+        "carro quântico",
+    ]
+
+    target_terms = [
+        "k-os",
+        "kos",
+        "k atlas",
+        "k-atlas",
+        "copiloto",
+        "agentes",
+        "autonomia",
+        "capacidades",
+    ]
+
+    return any(term in value for term in action_terms) and (
+        any(term in value for term in target_terms)
+        or "o que funciona" in value
+        or "auditar tudo" in value
+    )
+
+
+def render_kos_capability_registry_panel():
+    """Painel central de capacidades, autonomia e linha do tempo do K-OS."""
+    import json
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_capability_registry_panel", False):
+        return
+
+    kos_clear_specialized_panel_noise()
+
+    root = Path.cwd()
+    registry_path = root / "memory" / "kos_governance" / "KOS_CAPABILITY_REGISTRY.json"
+    audit_path = root / "reports" / "KOS_OPERATIONAL_MASTER_AUDIT_V1.json"
+
+    st.markdown("## K-OS — Capacidades, Autonomia e Estado Real")
+    st.caption("Fonte: KOS_CAPABILITY_REGISTRY + Operational Master Audit. Sem acao externa. Sem publicacao.")
+
+    msg = st.session_state.get("kos_capability_registry_message")
+    if msg:
+        st.success(msg)
+
+    if not registry_path.exists():
+        st.error("KOS_CAPABILITY_REGISTRY.json nao encontrado. Rode a auditoria operacional master.")
+        return
+
+    try:
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        st.error(f"Falha ao ler registry: {exc}")
+        return
+
+    audit = {}
+    if audit_path.exists():
+        try:
+            audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        except Exception:
+            audit = {}
+
+    capabilities = registry.get("capabilities", [])
+    policy = registry.get("policy", {})
+    intelligence = registry.get("intelligence_connected", {})
+    levels = registry.get("autonomy_levels", {})
+    gaps = audit.get("gaps", [])
+    summary = audit.get("summary", {})
+    phase = (audit.get("line_of_time_position") or {}).get("phase", "unknown")
+    meaning = (audit.get("line_of_time_position") or {}).get("meaning", "")
+
+    working = [c for c in capabilities if c.get("works_now")]
+    blocked = [c for c in capabilities if not c.get("works_now")]
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Capacidades", str(len(capabilities)))
+    c2.metric("Funcionando", str(len(working)))
+    c3.metric("Autonomia max", str(policy.get("current_max_autonomy_level", "n/a")))
+    c4.metric("Gargalos", str(len(gaps)))
+
+    st.info(meaning or "K-OS entrou na fase de mapa central de capacidades e autonomia.")
+
+    tabs = st.tabs(["Mapa", "Capacidades", "Autonomia", "Inteligencia", "Gargalos", "Timeline"])
+
+    with tabs[0]:
+        st.markdown("### Fase atual")
+        st.write("Fase:", phase)
+
+        st.markdown("### Resumo operacional")
+        if summary:
+            st.json(summary)
+        else:
+            st.warning("Resumo da auditoria nao encontrado.")
+
+        st.markdown("### Politica ativa")
+        st.json(policy)
+
+        st.markdown("### Leitura direta")
+        st.write(
+            "O K-OS ja sabe auditar, ler memoria, consultar Hupmix por Meta Graph read-only, "
+            "receber assets, gerar previews locais e registrar gates humanos. "
+            "Ele ainda nao deve publicar, gastar IA paga, usar navegador logado ou fazer scraping."
+        )
+
+    with tabs[1]:
+        st.markdown("### Capacidades conhecidas")
+
+        rows = []
+        for c in capabilities:
+            rows.append({
+                "id": c.get("id"),
+                "nome": c.get("name"),
+                "tipo": c.get("type"),
+                "status": c.get("status"),
+                "nivel": c.get("autonomy_level"),
+                "funciona": c.get("works_now"),
+                "age_sozinho": c.get("can_act_alone"),
+                "gate_humano": c.get("requires_human_gate"),
+            })
+
+        st.dataframe(rows, use_container_width=True)
+
+        with st.expander("Detalhes por capacidade", expanded=False):
+            for c in capabilities:
+                st.markdown(f"#### {c.get('name')}")
+                st.write(c.get("what_it_does"))
+                st.caption(c.get("path"))
+                st.json({
+                    "id": c.get("id"),
+                    "status": c.get("status"),
+                    "nivel": c.get("autonomy_level"),
+                    "works_now": c.get("works_now"),
+                    "can_act_alone": c.get("can_act_alone"),
+                    "requires_human_gate": c.get("requires_human_gate"),
+                })
+
+    with tabs[2]:
+        st.markdown("### Niveis de autonomia")
+        current = str(policy.get("current_max_autonomy_level", "n/a"))
+
+        for level_id, data in levels.items():
+            title = f"Nivel {level_id} — {data.get('name')}"
+            if level_id == current:
+                st.success(title + "  | nivel maximo atual")
+            else:
+                st.markdown(f"**{title}**")
+            st.write(data.get("description"))
+
+        st.warning("Nivel 4 e 5 seguem bloqueados ate criarmos gate separado de acao externa.")
+
+    with tabs[3]:
+        st.markdown("### Inteligencia conectada")
+        st.json(intelligence)
+
+        st.markdown("### O que esta conectado de verdade")
+        st.write("- Python executor: executa scripts locais.")
+        st.write("- Streamlit cockpit: interface operacional.")
+        st.write("- GitHub memory: historico persistente.")
+        st.write("- JSON memory: estado operacional.")
+        st.write("- Meta Graph read-only: leitura Hupmix/Instagram autorizada.")
+        st.write("- Video render local: cria previews locais com assets.")
+        st.write("- File intake: recebe arquivos/assets.")
+        st.write("- Public research registry: registra pesquisa publica governada.")
+
+    with tabs[4]:
+        st.markdown("### Gargalos atuais")
+        if not gaps:
+            st.success("Nenhum gargalo registrado na auditoria master.")
+        else:
+            for gap in gaps:
+                st.markdown(f"#### {gap.get('id')}")
+                st.write("Severidade:", gap.get("severity"))
+                st.write("Impacto:", gap.get("impact"))
+                st.write("Correção:", gap.get("fix"))
+
+        st.markdown("### Próximo salto recomendado")
+        for step in audit.get("next_steps", []):
+            st.write(f"{step.get('priority')}. {step.get('action')}")
+            st.caption(f"impacto: {step.get('impact')} | risco: {step.get('risk')}")
+
+    with tabs[5]:
+        st.markdown("### Timeline Git recente")
+        timeline = ((audit.get("git") or {}).get("timeline_recent")) or []
+        if timeline:
+            for line in timeline[:30]:
+                st.code(line)
+        else:
+            st.warning("Timeline nao encontrada no audit.")
+
+    if st.button("Fechar painel de capacidades", use_container_width=True, key="kos_close_capability_registry_panel"):
+        st.session_state["kos_show_capability_registry_panel"] = False
+        st.session_state["kos_suppress_default_response"] = False
+        if hasattr(st, "rerun"):
+            st.rerun()
+# KOS_CAPABILITY_REGISTRY_OPERATOR_BRIDGE_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -1906,6 +2185,24 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
         st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
         st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
 # KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
+# KOS_CAPABILITY_REGISTRY_PRIORITY_GATE_BEGIN
+if send and is_kos_capability_registry_request(st.session_state.get("kos_operator_request_text", "")):
+    kos_clear_specialized_panel_noise()
+    st.session_state["kos_show_capability_registry_panel"] = True
+    st.session_state["kos_show_research_continuity_center"] = False
+    st.session_state["kos_show_hupmix_next_video_production_panel"] = False
+    st.session_state["kos_show_hupmix_garoto_oxy_history_review"] = False
+    st.session_state["kos_show_hupmix_review_gate"] = False
+    st.session_state["kos_capability_registry_message"] = "Mapa central de capacidades aberto. O K-OS agora consulta o registry operacional antes de depender do router generico."
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_CAPABILITY_REGISTRY_PRIORITY_GATE_END
+
+if st.session_state.get("kos_show_capability_registry_panel", False):
+    render_kos_capability_registry_panel()
 
 # KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PRIORITY_GATE_BEGIN
 if send and is_kos_hupmix_next_video_production_request(st.session_state.get("kos_operator_request_text", "")):

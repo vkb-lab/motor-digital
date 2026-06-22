@@ -1,0 +1,21 @@
+{
+  "status": "KOS_CAPABILITY_REGISTRY_OPERATOR_BRIDGE_READY",
+  "created_at": "2026-06-22T17:15:12.300006",
+  "target": "pages/KOS_Operator_Chat.py",
+  "behavior": {
+    "reads_capability_registry": true,
+    "shows_autonomy_dashboard": true,
+    "shows_working_capabilities": true,
+    "shows_connected_intelligence": true,
+    "shows_gaps_and_timeline": true,
+    "clears_stale_entendi_response": true,
+    "priority_before_generic_router": true
+  },
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "human_gate_required": true
+  },
+  "next_step": "Criar Capability Executor com permissao/input/output por capacidade."
+}
