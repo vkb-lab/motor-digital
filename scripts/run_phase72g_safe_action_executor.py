@@ -239,6 +239,13 @@ def build_hupmix_gp_video_01_production_kit(packet: dict) -> dict:
     video = next((v for v in videos if str(v.get("id", "")).upper() == "GP_VIDEO_01"), videos[0] if videos else {})
     stories_base = package.get("stories", []) or []
 
+    existing_created_at = None
+    if kit_json_path.exists():
+        try:
+            existing_created_at = json.loads(kit_json_path.read_text(encoding="utf-8")).get("created_at")
+        except Exception:
+            existing_created_at = None
+
     final_caption = (
         "A solução que faltava para a limpeza da sua casa chegou na HupMix. "
         "Oxy Power limpa com Oxigênio Ativo, sem cloro e sem toxicidade. "
@@ -330,7 +337,7 @@ def build_hupmix_gp_video_01_production_kit(packet: dict) -> dict:
 
     kit = {
         "status": "KOS_HUPMIX_GP_VIDEO_01_PRODUCTION_KIT_READY",
-        "created_at": datetime.now(timezone.utc).isoformat(),
+        "created_at": existing_created_at or datetime.now(timezone.utc).isoformat(),
         "brand": "Hupmix",
         "campaign": "GP / Garoto Oxy Power / Oxy Power",
         "video_id": "GP_VIDEO_01",
