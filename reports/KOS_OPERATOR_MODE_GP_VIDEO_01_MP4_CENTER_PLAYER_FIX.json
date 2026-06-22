@@ -1,0 +1,14 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "visual_preview_ui_fix",
+  "name": "gp_video_01_mp4_center_player",
+  "status": "applied",
+  "created_at": "2026-06-22T09:17:41.140666",
+  "goal": "Trocar preview quebrado/GIF por player MP4 vertical central na lousa.",
+  "no_new_phase": true,
+  "safety": {
+    "instagram_publish_executed": false,
+    "approval_is_recording_only": true,
+    "human_gate_required": true
+  }
+}
