@@ -826,6 +826,254 @@ def render_kos_research_continuity_center():
 
 
 
+
+# KOS_HUPMIX_REVIEW_GATE_BEGIN
+def is_kos_hupmix_review_request(text: str) -> bool:
+    """Detecta pedido de revisao Hupmix: video + publicacao + OK humano."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    action_terms = [
+        "revisar", "ver video", "ver o video", "video e publicacao",
+        "nova publicacao", "ultima publicacao", "aprovar hupmix",
+        "dar ok", "ok hupmix", "revisao hupmix", "aprovar video",
+    ]
+
+    target_terms = [
+        "hupmix", "gp_video_01", "gp video 01", "garoto oxy", "oxy power"
+    ]
+
+    return any(a in value for a in action_terms) and any(t in value for t in target_terms)
+
+
+def kos_fetch_hupmix_latest_publication_readonly():
+    """Busca a ultima publicacao Hupmix via Meta Graph em modo read-only."""
+    import json
+    import urllib.parse
+    import urllib.request
+    from datetime import datetime
+    from pathlib import Path
+
+    root = Path.cwd()
+    token_path = root / "local_runtime" / "kos_secrets" / "meta_access_token.txt"
+    report_path = root / "reports" / "KOS_HUPMIX_REVIEW_GATE_LATEST_PUBLICATION.json"
+
+    if not token_path.exists():
+        return {
+            "status": "META_TOKEN_NOT_FOUND",
+            "message": "Token Meta local nao encontrado.",
+            "policy": {"no_publish": True, "read_only": True}
+        }
+
+    token = token_path.read_text(encoding="utf-8").strip()
+    if not token:
+        return {
+            "status": "META_TOKEN_EMPTY",
+            "message": "Token Meta local vazio.",
+            "policy": {"no_publish": True, "read_only": True}
+        }
+
+    ig_id = "17841471706662294"
+    params = urllib.parse.urlencode({
+        "fields": "id,caption,media_type,media_url,permalink,timestamp,thumbnail_url",
+        "limit": "1",
+        "access_token": token
+    })
+
+    url = f"https://graph.facebook.com/v20.0/{ig_id}/media?{params}"
+
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "K-OS read-only"})
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+
+        items = payload.get("data", [])
+        latest = items[0] if items else None
+
+        result = {
+            "status": "KOS_HUPMIX_LATEST_PUBLICATION_READY" if latest else "KOS_HUPMIX_NO_PUBLICATION_FOUND",
+            "created_at": datetime.now().isoformat(),
+            "source": "Meta Graph API read-only",
+            "ig_user_id": ig_id,
+            "latest_publication": latest,
+            "policy": {
+                "read_only": True,
+                "no_publish": True,
+                "no_delete": True,
+                "no_comment": True,
+                "no_message": True,
+                "no_paid_ai": True,
+                "human_gate_required": True
+            }
+        }
+
+        report_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+        return result
+
+    except Exception as exc:
+        return {
+            "status": "KOS_HUPMIX_LATEST_PUBLICATION_FETCH_ERROR",
+            "error": str(exc),
+            "policy": {"read_only": True, "no_publish": True}
+        }
+
+
+def render_kos_hupmix_review_gate():
+    """Painel de revisao Hupmix: video + ultima publicacao + OK humano."""
+    import json
+    from datetime import datetime
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_hupmix_review_gate", False):
+        return
+
+    root = Path.cwd()
+    mp4_path = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4"
+    storyboard_path = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png"
+    approval_dir = root / "live" / "human_decision_center"
+    approval_dir.mkdir(parents=True, exist_ok=True)
+
+    st.markdown("## Revisao Hupmix — video + publicacao")
+
+    msg = st.session_state.get("kos_hupmix_review_message")
+    if msg:
+        st.success(msg)
+
+    st.caption("Modo seguro: leitura local + Meta Graph read-only. Sem publicacao, sem deploy, sem IA paga.")
+
+    st.markdown("### 1. Video GP_VIDEO_01")
+    if mp4_path.exists():
+        st.video(str(mp4_path))
+        st.caption("Fonte: local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4")
+    else:
+        st.error("MP4 local nao encontrado. Rode o Video Factory Free Mode novamente.")
+
+    if storyboard_path.exists():
+        with st.expander("Storyboard", expanded=False):
+            st.image(str(storyboard_path), use_container_width=True)
+
+    st.markdown("### 2. Ultima publicacao Hupmix")
+
+    if st.button("Atualizar ultima publicacao Hupmix", use_container_width=True, key="kos_refresh_hupmix_latest_publication"):
+        st.session_state["kos_hupmix_latest_publication_result"] = kos_fetch_hupmix_latest_publication_readonly()
+        if hasattr(st, "rerun"):
+            st.rerun()
+
+    latest_result = st.session_state.get("kos_hupmix_latest_publication_result")
+
+    if latest_result:
+        status = latest_result.get("status")
+        if status == "KOS_HUPMIX_LATEST_PUBLICATION_READY":
+            latest = latest_result.get("latest_publication") or {}
+            st.success("Ultima publicacao carregada em modo read-only.")
+
+            st.write("Tipo:", latest.get("media_type"))
+            st.write("Data:", latest.get("timestamp"))
+
+            permalink = latest.get("permalink")
+            if permalink:
+                st.markdown(f"[Abrir publicacao em nova aba]({permalink})")
+
+            caption = latest.get("caption")
+            if caption:
+                with st.expander("Legenda da publicacao", expanded=True):
+                    st.write(caption)
+
+            media_url = latest.get("media_url") or latest.get("thumbnail_url")
+            media_type = str(latest.get("media_type") or "").upper()
+
+            if media_url:
+                try:
+                    if "VIDEO" in media_type or "REELS" in media_type:
+                        st.video(media_url)
+                    else:
+                        st.image(media_url, use_container_width=True)
+                except Exception:
+                    st.caption("Midia remota nao abriu no player. Use o link da publicacao.")
+        else:
+            st.warning(status)
+            st.json(latest_result)
+
+    manual_url = st.text_input(
+        "URL manual da publicacao, se necessario",
+        placeholder="Cole aqui o link da publicacao Hupmix caso o Meta Graph nao abra a midia.",
+        key="kos_hupmix_manual_publication_url"
+    )
+
+    st.markdown("### 3. Decisao humana")
+
+    c1, c2 = st.columns(2)
+
+    if c1.button("Aprovar video + publicacao Hupmix", type="primary", use_container_width=True, key="kos_approve_hupmix_video_publication"):
+        latest_snapshot = st.session_state.get("kos_hupmix_latest_publication_result")
+        record = {
+            "status": "HUPMIX_VIDEO_AND_PUBLICATION_APPROVED_BY_OPERATOR",
+            "created_at": datetime.now().isoformat(),
+            "scope": "Hupmix GP_VIDEO_01 + latest publication review",
+            "video": {
+                "path": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4",
+                "exists": mp4_path.exists()
+            },
+            "publication": {
+                "meta_graph_snapshot": latest_snapshot,
+                "manual_url": manual_url
+            },
+            "decision": {
+                "approved": True,
+                "approved_by": "human_operator",
+                "next_step": "seguir para Parada Atlantida em modo pesquisa/readiness"
+            },
+            "policy": {
+                "publication_executed": False,
+                "deploy_executed": False,
+                "paid_ai_used": False,
+                "human_gate_required": True
+            }
+        }
+
+        path = approval_dir / "hupmix_gp_video_01_publication_review_approval.json"
+        path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+        st.session_state["kos_hupmix_review_approval_record"] = record
+        st.success("OK humano registrado. Nenhuma publicacao foi executada.")
+        st.json({
+            "status": record["status"],
+            "approval_file": str(path.relative_to(root)).replace("\\", "/"),
+            "next_step": record["decision"]["next_step"]
+        })
+
+    if c2.button("Pedir ajuste antes do OK", use_container_width=True, key="kos_request_hupmix_review_adjustment"):
+        record = {
+            "status": "HUPMIX_VIDEO_AND_PUBLICATION_ADJUSTMENT_REQUESTED",
+            "created_at": datetime.now().isoformat(),
+            "scope": "Hupmix GP_VIDEO_01 + latest publication review",
+            "decision": {
+                "approved": False,
+                "adjustment_required": True
+            },
+            "policy": {
+                "publication_executed": False,
+                "deploy_executed": False,
+                "paid_ai_used": False,
+                "human_gate_required": True
+            }
+        }
+
+        path = approval_dir / "hupmix_gp_video_01_publication_review_adjustment.json"
+        path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+        st.warning("Ajuste solicitado. Nenhuma publicacao foi executada.")
+
+    if st.button("Fechar revisao Hupmix", use_container_width=True, key="kos_close_hupmix_review_gate"):
+        st.session_state["kos_show_hupmix_review_gate"] = False
+        st.info("Revisao Hupmix fechada.")
+        if hasattr(st, "rerun"):
+            st.rerun()
+# KOS_HUPMIX_REVIEW_GATE_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -982,6 +1230,22 @@ if send and is_kos_local_command_or_path_request(st.session_state.get("kos_opera
 # KOS_OPERATOR_LOCAL_COMMAND_GATE_END
 
 render_kos_local_command_guard_message()
+
+# KOS_HUPMIX_REVIEW_GATE_ROUTER_BEGIN
+if send and is_kos_hupmix_review_request(st.session_state.get("kos_operator_request_text", "")):
+    st.session_state["kos_show_hupmix_review_gate"] = True
+    st.session_state["kos_hupmix_review_message"] = "Revisao Hupmix aberta em modo seguro. Nenhum Router, Safe Action, publicacao, deploy ou IA paga foi acionado."
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_HUPMIX_REVIEW_GATE_ROUTER_END
+
+if st.session_state.get("kos_show_hupmix_review_gate", False):
+    render_kos_hupmix_review_gate()
 
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)

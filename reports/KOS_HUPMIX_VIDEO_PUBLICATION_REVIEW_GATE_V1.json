@@ -1,0 +1,22 @@
+{
+  "status": "KOS_HUPMIX_VIDEO_PUBLICATION_REVIEW_GATE_V1_READY",
+  "created_at": "2026-06-22T14:03:55.557736",
+  "target": "pages/KOS_Operator_Chat.py",
+  "changed": true,
+  "behavior": {
+    "shows_gp_video_01_preview": true,
+    "shows_storyboard": true,
+    "can_fetch_latest_hupmix_publication_readonly": true,
+    "can_register_human_ok": true,
+    "skips_router": true,
+    "skips_safe_action": true
+  },
+  "policy": {
+    "no_publish": true,
+    "no_deploy": true,
+    "no_paid_ai": true,
+    "meta_graph_read_only": true,
+    "human_gate_required": true
+  },
+  "next_step_after_ok": "Parada Atlantida research/readiness"
+}
