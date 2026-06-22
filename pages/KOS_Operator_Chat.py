@@ -1074,6 +1074,209 @@ def render_kos_hupmix_review_gate():
 # KOS_HUPMIX_REVIEW_GATE_END
 
 
+
+# KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_BEGIN
+def is_kos_hupmix_garoto_oxy_history_review_request(text: str) -> bool:
+    """Detecta pedido de revisao do historico Garoto Oxy Power / Hupmix."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    action_terms = [
+        "revisar historico",
+        "ver historico",
+        "auditar historico",
+        "continuar historico",
+        "garoto oxy",
+        "oxy power",
+        "ver video e publicacao",
+        "dar ok",
+        "aprovar hupmix",
+        "revisar hupmix",
+    ]
+
+    target_terms = [
+        "hupmix",
+        "garoto oxy",
+        "oxy power",
+        "gp_video_01",
+        "instagram",
+        "publicacao",
+    ]
+
+    return any(a in value for a in action_terms) and any(t in value for t in target_terms)
+
+
+def render_kos_hupmix_garoto_oxy_history_review():
+    """Mostra revisao do video local e da publicacao Instagram baixada."""
+    import json
+    from datetime import datetime
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_hupmix_garoto_oxy_history_review", False):
+        return
+
+    root = Path.cwd()
+    audit_path = root / "reports" / "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json"
+    local_video = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4"
+    storyboard = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png"
+    approval_dir = root / "live" / "human_decision_center"
+    approval_dir.mkdir(parents=True, exist_ok=True)
+
+    st.markdown("## Revisao Garoto Oxy Power — Hupmix")
+    st.caption("Modo seguro: leitura local + auditoria Meta Graph read-only. Sem publicacao, sem scraping, sem IA paga.")
+
+    msg = st.session_state.get("kos_hupmix_garoto_oxy_review_message")
+    if msg:
+        st.success(msg)
+
+    if not audit_path.exists():
+        st.error("Auditoria de continuidade nao encontrada. Rode scripts/run_kos_hupmix_instagram_continuity_audit.py.")
+        return
+
+    try:
+        audit = json.loads(audit_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        st.error(f"Nao foi possivel ler auditoria: {exc}")
+        return
+
+    instagram = audit.get("instagram", {})
+    latest = instagram.get("latest_item") or {}
+    download = instagram.get("download") or {}
+    gp_score = instagram.get("gp_relevance_from_caption") or {}
+    interpretation = audit.get("interpretation") or {}
+
+    downloaded_path = None
+    stored_path = download.get("stored_path")
+    if stored_path:
+        downloaded_path = root / stored_path
+
+    st.markdown("### 1. Video local do K-OS")
+    if local_video.exists():
+        st.video(str(local_video))
+        st.caption("Fonte: local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4")
+    else:
+        st.warning("Video local GP_VIDEO_01 nao encontrado.")
+
+    if storyboard.exists():
+        with st.expander("Storyboard local", expanded=False):
+            st.image(str(storyboard), use_container_width=True)
+
+    st.markdown("### 2. Publicacao real baixada do Instagram Hupmix")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Fetch", instagram.get("fetch_status", "n/a"))
+    c2.metric("Tipo", latest.get("media_type", "n/a"))
+    c3.metric("Score legenda", str(gp_score.get("score", 0)))
+
+    st.write("Data:", latest.get("timestamp"))
+    if latest.get("permalink"):
+        st.markdown(f"[Abrir publicacao no Instagram]({latest.get('permalink')})")
+
+    if downloaded_path and downloaded_path.exists():
+        st.video(str(downloaded_path))
+        st.caption(download.get("stored_path"))
+    else:
+        st.warning("Midia baixada nao encontrada localmente.")
+
+    caption = latest.get("caption")
+    if caption:
+        with st.expander("Legenda da publicacao", expanded=True):
+            st.write(caption)
+
+    with st.expander("Interpretacao do K-OS", expanded=True):
+        st.write("Onde parou:", interpretation.get("where_project_stopped"))
+        st.write("Status Instagram:", interpretation.get("instagram_latest_status"))
+        st.write("Proxima acao recomendada:", interpretation.get("recommended_next_action"))
+        st.json({
+            "caption_hits": gp_score.get("hits"),
+            "seems_gp_oxy_related": gp_score.get("seems_gp_oxy_related"),
+            "download": download,
+            "policy": audit.get("policy"),
+        })
+
+    st.markdown("### 3. Decisao humana")
+
+    note = st.text_input(
+        "Nota da decisao",
+        placeholder="Exemplo: OK, seguir para Parada Atlantida depois de registrar Hupmix.",
+        key="kos_hupmix_garoto_oxy_decision_note",
+    )
+
+    c_ok, c_adjust = st.columns(2)
+
+    if c_ok.button("OK — Hupmix revisado e aprovado", type="primary", use_container_width=True, key="kos_hupmix_garoto_oxy_approve"):
+        record = {
+            "status": "HUPMIX_GAROTO_OXY_HISTORY_APPROVED_BY_OPERATOR",
+            "created_at": datetime.now().isoformat(),
+            "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_01 / Instagram continuity",
+            "decision": {
+                "approved": True,
+                "approved_by": "human_operator",
+                "note": note,
+                "next_step": "seguir para Parada Atlantida em modo pesquisa/readiness"
+            },
+            "reviewed_assets": {
+                "local_video": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4",
+                "instagram_download": stored_path,
+                "audit_report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json"
+            },
+            "policy": {
+                "publication_executed": False,
+                "deploy_executed": False,
+                "paid_ai_used": False,
+                "scraping_used": False,
+                "logged_browser_automation_used": False,
+                "human_gate_required": True
+            }
+        }
+
+        approval_path = approval_dir / "hupmix_garoto_oxy_history_approval.json"
+        approval_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+        st.session_state["kos_hupmix_garoto_oxy_approval_record"] = record
+        st.success("OK humano registrado. Nenhuma publicacao foi executada.")
+        st.json({
+            "status": record["status"],
+            "approval_file": str(approval_path.relative_to(root)).replace("\\", "/"),
+            "next_step": record["decision"]["next_step"]
+        })
+
+    if c_adjust.button("Pedir ajuste antes do OK", use_container_width=True, key="kos_hupmix_garoto_oxy_adjust"):
+        record = {
+            "status": "HUPMIX_GAROTO_OXY_HISTORY_ADJUSTMENT_REQUESTED",
+            "created_at": datetime.now().isoformat(),
+            "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_01 / Instagram continuity",
+            "decision": {
+                "approved": False,
+                "adjustment_required": True,
+                "note": note
+            },
+            "policy": {
+                "publication_executed": False,
+                "deploy_executed": False,
+                "paid_ai_used": False,
+                "human_gate_required": True
+            }
+        }
+
+        adjustment_path = approval_dir / "hupmix_garoto_oxy_history_adjustment.json"
+        adjustment_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+        st.warning("Ajuste registrado. Nenhuma publicacao foi executada.")
+        st.json({
+            "status": record["status"],
+            "adjustment_file": str(adjustment_path.relative_to(root)).replace("\\", "/")
+        })
+
+    if st.button("Fechar revisao Garoto Oxy", use_container_width=True, key="kos_close_hupmix_garoto_oxy_review"):
+        st.session_state["kos_show_hupmix_garoto_oxy_history_review"] = False
+        st.info("Revisao fechada.")
+        if hasattr(st, "rerun"):
+            st.rerun()
+# KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -1246,6 +1449,22 @@ if send and is_kos_hupmix_review_request(st.session_state.get("kos_operator_requ
 
 if st.session_state.get("kos_show_hupmix_review_gate", False):
     render_kos_hupmix_review_gate()
+
+# KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_GATE_BEGIN
+if send and is_kos_hupmix_garoto_oxy_history_review_request(st.session_state.get("kos_operator_request_text", "")):
+    st.session_state["kos_show_hupmix_garoto_oxy_history_review"] = True
+    st.session_state["kos_hupmix_garoto_oxy_review_message"] = "Revisao do historico Garoto Oxy aberta em modo seguro. Nenhum Router, Safe Action, publicacao, deploy, scraping ou IA paga foi acionado."
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_GATE_END
+
+if st.session_state.get("kos_show_hupmix_garoto_oxy_history_review", False):
+    render_kos_hupmix_garoto_oxy_history_review()
 
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)
