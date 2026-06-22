@@ -67,38 +67,147 @@ def kos_is_social_read_request(value: str) -> bool:
 def build_social_read(packet: dict) -> dict:
     request = packet.get("request", "")
 
+    def clip(value, limit=900):
+        value = str(value or "")
+        if len(value) <= limit:
+            return value
+        return value[:limit].rstrip() + "..."
+
+    def safe_number(value):
+        if value is None:
+            return "nao informado"
+        return str(value)
+
+    def fallback(reason, detail=""):
+        items = [
+            "O K-OS tentou usar o conector oficial Meta/Instagram em modo read-only.",
+            "Nenhum navegador logado foi usado.",
+            "Nenhum scraping foi usado.",
+            "Nenhuma publicacao foi executada.",
+            "Motivo: " + str(reason),
+        ]
+        if detail:
+            items.append("Detalhe tecnico resumido: " + clip(detail, 500))
+
+        return {
+            "title": "Analise oficial de publicacao Hupmix",
+            "summary": "Conector oficial nao completou a leitura. Nenhuma acao externa foi executada.",
+            "sections": [
+                {"title": "Pedido original", "items": [request]},
+                {"title": "Status", "items": items},
+                {"title": "Proxima acao segura", "items": [
+                    "Verificar token Meta, permissao do app ou relatorio local.",
+                    "Nao publicar nada ate nova validacao."
+                ]},
+            ],
+        }
+
+    audit_script = ROOT / "scripts" / "run_phase69d_hupmix_instagram_audit.py"
+    audit_report = ROOT / "local_runtime" / "kos_instagram_audit" / "hupmix" / "latest_hupmix_instagram_audit.json"
+
+    if not audit_script.exists():
+        return fallback("script oficial de auditoria Hupmix nao encontrado")
+
+    try:
+        subprocess = __import__("subprocess")
+        sysmod = __import__("sys")
+        completed = subprocess.run(
+            [sysmod.executable, str(audit_script)],
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=90,
+        )
+    except Exception as exc:
+        return fallback("erro ao chamar auditoria oficial", str(exc))
+
+    if not audit_report.exists():
+        return fallback("relatorio oficial de auditoria nao encontrado", completed.stderr or completed.stdout)
+
+    audit = read_json(audit_report)
+
+    if audit.get("status") != "KOS_HUPMIX_INSTAGRAM_AUDIT_CONNECTED":
+        return fallback(
+            audit.get("status", "auditoria nao conectada"),
+            json.dumps(audit.get("graph_error", audit), ensure_ascii=False)[:900],
+        )
+
+    media_items = audit.get("recent_media_summary", []) or []
+    latest = media_items[0] if media_items else {}
+
+    caption = latest.get("caption_preview", "")
+    caption_lower = caption.lower()
+    first_line = caption.splitlines()[0].strip() if caption else "Sem legenda disponivel na amostra."
+    likes = latest.get("like_count")
+    comments = latest.get("comments_count")
+
+    strengths = []
+    risks = []
+    suggestions = []
+
+    if "r$" in caption_lower or "por apenas" in caption_lower:
+        strengths.append("Oferta/preco aparece de forma clara na legenda.")
+    if "passe na" in caption_lower or "direct" in caption_lower or "chame" in caption_lower:
+        strengths.append("Existe chamada para acao ou direcao de contato.")
+    if "sem cloro" in caption_lower or "nao toxico" in caption_lower or "limpa tudo" in caption_lower:
+        strengths.append("Beneficios do produto aparecem de forma objetiva.")
+
+    if not strengths:
+        strengths.append("A publicacao possui conteudo suficiente para analise inicial.")
+
+    if likes is not None and comments is not None and int(comments or 0) == 0:
+        risks.append("Comentarios zerados indicam baixa conversa publica no post.")
+    if len(caption) > 700:
+        risks.append("Legenda longa. Pode precisar de gancho mais direto nos primeiros segundos.")
+    if not risks:
+        risks.append("Nenhum risco critico identificado na leitura resumida.")
+
+    suggestions.append("Reforcar o gancho inicial com dor + promessa em uma frase curta.")
+    suggestions.append("Adicionar CTA mais direto para WhatsApp, direct ou visita na loja.")
+    suggestions.append("Transformar esta leitura em proximo post, story ou oferta da semana somente apos revisao humana.")
+
+    latest_items = []
+    if latest:
+        latest_items = [
+            "Tipo: " + str(latest.get("media_type", "nao informado")),
+            "Data: " + str(latest.get("timestamp", "nao informado")),
+            "Link: " + str(latest.get("permalink", "nao informado")),
+            "Curtidas: " + safe_number(likes),
+            "Comentarios: " + safe_number(comments),
+            "Gancho inicial: " + clip(first_line, 280),
+            "Legenda resumida: " + clip(caption, 900),
+        ]
+    else:
+        latest_items = ["Nenhuma midia recente retornada pela auditoria oficial."]
+
     return {
-        "title": "Analise segura de publicacao Hupmix",
-        "summary": "Modo leitura ativado. O K-OS nao acessou Instagram, nao fez scraping e nao automatizou navegador.",
+        "title": "Analise oficial da ultima publicacao Hupmix",
+        "summary": "Leitura feita via Meta Graph API oficial. Nenhum navegador, scraping ou publicacao foi usado.",
         "sections": [
             {"title": "Pedido original", "items": [request]},
-            {"title": "Limite seguro", "items": [
-                "Nao posso ver a ultima publicacao sozinho sem uma fonte fornecida por voce.",
-                "Nao acesso Instagram logado.",
-                "Nao automatizo navegador.",
-                "Nao mexo em cookies.",
-                "Nao faco scraping."
+            {"title": "Fonte oficial usada", "items": [
+                "Meta Graph API oficial.",
+                "Conta: @" + str(audit.get("username", "hupmix")),
+                "IG ID: " + str(audit.get("ig_id", "")),
+                "Midias totais no perfil: " + safe_number(audit.get("media_count")),
+                "Publicacao executada: nao.",
+                "Navegador logado usado: nao.",
+                "Scraping usado: nao.",
             ]},
-            {"title": "O que enviar", "items": [
-                "Link publico da publicacao, se existir.",
-                "Print da publicacao.",
-                "Texto da legenda.",
-                "Arquivo ou rascunho do post."
-            ]},
-            {"title": "O que o K-OS consegue analisar depois", "items": [
-                "Gancho inicial.",
-                "Clareza da promessa.",
-                "CTA.",
-                "Adequacao ao publico.",
-                "Risco de publicacao.",
-                "Sugestao de melhoria sem publicar automaticamente."
-            ]},
+            {"title": "Ultima publicacao encontrada", "items": latest_items},
+            {"title": "Pontos fortes", "items": strengths},
+            {"title": "Pontos de atencao", "items": risks},
+            {"title": "Sugestoes de melhoria", "items": suggestions},
             {"title": "Proxima acao segura", "items": [
-                "Cole o link, print ou legenda da publicacao no Operator Chat.",
-                "Depois peca: analisar esta publicacao da Hupmix sem publicar nada."
+                "Gerar sugestao de legenda revisada em rascunho.",
+                "Criar plano de stories de apoio sem publicar automaticamente.",
+                "Manter publicacao real bloqueada ate gate humano explicito."
             ]},
         ],
     }
+
 
 
 def build_social(packet: dict) -> dict:

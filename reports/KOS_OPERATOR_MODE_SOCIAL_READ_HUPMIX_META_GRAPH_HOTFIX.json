@@ -1,0 +1,17 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "official_connector_hotfix",
+  "name": "social_read_hupmix_meta_graph",
+  "status": "applied",
+  "created_at": "2026-06-22T07:40:12.746981",
+  "goal": "Conectar pedido 'veja ultima publicacao do hupmix' ao auditor oficial Meta Graph API.",
+  "no_new_phase": true,
+  "safety": {
+    "read_only": true,
+    "instagram_publish_executed": false,
+    "browser_automation": false,
+    "scraping": false,
+    "token_printed": false,
+    "human_gate_required_for_real_publish": true
+  }
+}
