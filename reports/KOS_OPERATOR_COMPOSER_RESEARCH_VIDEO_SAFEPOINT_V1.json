@@ -1,0 +1,24 @@
+{
+  "status": "KOS_OPERATOR_COMPOSER_RESEARCH_VIDEO_SAFEPOINT_V1_READY",
+  "created_at": "2026-06-22T13:27:51.296849",
+  "target": "pages/KOS_Operator_Chat.py",
+  "changed": true,
+  "safe_point": {
+    "operator_chat": "active",
+    "video_factory_free_mode": "ready",
+    "gp_video_01_lousa": "ready",
+    "file_intake": "compact_plus_mode",
+    "research_continuity": "auto_registered_and_read_only",
+    "parada_atlantida": "research_readiness_only",
+    "publication": "blocked",
+    "paid_ai": "blocked",
+    "logged_browser_automation": "blocked",
+    "scraping": "blocked"
+  },
+  "ux": {
+    "intake_collapsed_under_plus": true,
+    "research_autoregister_on_prompt": true,
+    "immediate_rerun_after_read_only_gate": true,
+    "operator_does_not_need_to_search_folders": true
+  }
+}

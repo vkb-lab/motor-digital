@@ -427,11 +427,11 @@ if "kos_operator_request_text" not in st.session_state:
     st.session_state["kos_operator_request_text"] = ""
 
 
+
 # KOS_OPERATOR_FILE_INTAKE_CENTER_BEGIN
 def render_kos_operator_file_intake_center():
-    """Centro de anexos do K-OS.
-    Salva arquivos enviados pelo operador em uma inbox governada.
-    Nao publica, nao envia para API, nao faz deploy e nao usa IA paga.
+    """Centro compacto de anexos, pesquisa e lousa.
+    Mantem a tela limpa. O operador nao precisa procurar pastas.
     """
     import hashlib
     import json
@@ -442,7 +442,6 @@ def render_kos_operator_file_intake_center():
     root = Path.cwd()
     memory_dir = root / "memory" / "kos_file_intake"
     memory_dir.mkdir(parents=True, exist_ok=True)
-
     index_path = memory_dir / "KOS_FILE_INTAKE_INDEX.json"
 
     if index_path.exists():
@@ -453,134 +452,136 @@ def render_kos_operator_file_intake_center():
     else:
         index = {"status": "KOS_FILE_INTAKE_INDEX_READY", "items": []}
 
-    st.markdown("## K-OS Intake Center")
-    st.caption("Anexe aqui. O K-OS salva, classifica e usa no fluxo certo. Sem publicar, sem API, sem IA paga.")
-
     current_request = str(st.session_state.get("kos_operator_request_text", "") or "").lower()
 
     default_route = "general_operator_inbox"
-    default_dir = root / "content_packs" / "kos_operator_uploads" / "assets_inbox"
-
     if any(term in current_request for term in ["gp_video_01", "gp video 01", "garoto oxy", "oxy power", "hupmix"]):
         default_route = "hupmix_gp_video_01"
-        default_dir = root / "content_packs" / "hupmix_gp_video_01" / "assets_inbox"
+    if any(term in current_request for term in ["parada", "atlantida", "atlântida"]):
+        default_route = "campaign_assets"
 
-    route = st.selectbox(
-        "Destino do anexo",
-        [
+    with st.expander("+ Anexos, pesquisa e lousa", expanded=bool(st.session_state.get("kos_intake_center_open", False))):
+        st.caption("Use quando o K-OS pedir arquivos, pesquisa publica ou lousa. Nada e publicado. Nada vai para API.")
+
+        c1, c2, c3 = st.columns(3)
+
+        if c1.button("Pesquisa publica", use_container_width=True, key="kos_open_research_center_from_compact_intake"):
+            st.session_state["kos_show_research_continuity_center"] = True
+            st.session_state["kos_research_continuity_message"] = "Centro de pesquisa publica aberto. Sem Router, sem Safe Action, sem publicacao."
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+        if c2.button("Lousa GP_VIDEO_01", use_container_width=True, key="kos_open_gp_lousa_from_compact_intake"):
+            st.session_state["kos_show_gp_video_01_lousa"] = True
+            st.session_state["kos_lousa_read_only_message"] = "Lousa visual aberta pelo operador. Nenhum Router ou Safe Action foi acionado."
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+        if c3.button("Anexos recentes", use_container_width=True, key="kos_show_recent_assets_from_compact_intake"):
+            st.session_state["kos_show_recent_intake_assets"] = not bool(st.session_state.get("kos_show_recent_intake_assets", False))
+
+        route_options = [
             "hupmix_gp_video_01",
             "general_operator_inbox",
             "campaign_assets",
             "memory_reference",
             "brand_assets",
-        ],
-        index=0 if default_route == "hupmix_gp_video_01" else 1,
-        key="kos_file_intake_route",
-    )
+        ]
 
-    route_dirs = {
-        "hupmix_gp_video_01": root / "content_packs" / "hupmix_gp_video_01" / "assets_inbox",
-        "general_operator_inbox": root / "content_packs" / "kos_operator_uploads" / "assets_inbox",
-        "campaign_assets": root / "content_packs" / "campaign_assets" / "assets_inbox",
-        "memory_reference": root / "memory" / "kos_file_intake" / "reference_files",
-        "brand_assets": root / "content_packs" / "brand_assets" / "assets_inbox",
-    }
+        route = st.selectbox(
+            "Destino",
+            route_options,
+            index=route_options.index(default_route) if default_route in route_options else 1,
+            key="kos_file_intake_route",
+        )
 
-    target_dir = route_dirs.get(route, default_dir)
-    target_dir.mkdir(parents=True, exist_ok=True)
+        route_dirs = {
+            "hupmix_gp_video_01": root / "content_packs" / "hupmix_gp_video_01" / "assets_inbox",
+            "general_operator_inbox": root / "content_packs" / "kos_operator_uploads" / "assets_inbox",
+            "campaign_assets": root / "content_packs" / "campaign_assets" / "assets_inbox",
+            "memory_reference": root / "memory" / "kos_file_intake" / "reference_files",
+            "brand_assets": root / "content_packs" / "brand_assets" / "assets_inbox",
+        }
 
-    uploaded_files = st.file_uploader(
-        "Anexar arquivos ao K-OS",
-        accept_multiple_files=True,
-        type=[
-            "png", "jpg", "jpeg", "webp", "gif",
-            "mp4", "mov", "m4v",
-            "mp3", "wav", "m4a",
-            "pdf", "txt", "md", "json", "csv",
-            "docx", "xlsx", "pptx"
-        ],
-        key="kos_operator_file_uploader",
-    )
+        target_dir = route_dirs.get(route, route_dirs["general_operator_inbox"])
+        target_dir.mkdir(parents=True, exist_ok=True)
 
-    operator_note = st.text_input(
-        "Nota opcional para estes anexos",
-        placeholder="Exemplo: fotos reais do Oxy Power para montar o vídeo",
-        key="kos_file_intake_note",
-    )
+        uploaded_files = st.file_uploader(
+            "Anexar ao K-OS",
+            accept_multiple_files=True,
+            type=[
+                "png", "jpg", "jpeg", "webp", "gif",
+                "mp4", "mov", "m4v",
+                "mp3", "wav", "m4a",
+                "pdf", "txt", "md", "json", "csv",
+                "docx", "xlsx", "pptx"
+            ],
+            key="kos_operator_file_uploader",
+        )
 
-    if uploaded_files:
-        if st.button("Salvar anexos no K-OS", type="primary", use_container_width=True, key="kos_save_uploaded_files"):
-            saved = []
-            batch_id = datetime.now().strftime("%Y%m%d_%H%M%S")
-            batch_dir = target_dir / batch_id
-            batch_dir.mkdir(parents=True, exist_ok=True)
+        operator_note = st.text_input(
+            "Nota opcional",
+            placeholder="Exemplo: fotos reais do Oxy Power para montar o video",
+            key="kos_file_intake_note",
+        )
 
-            for file in uploaded_files:
-                original_name = Path(file.name).name
-                raw = file.getbuffer()
-                digest = hashlib.sha256(bytes(raw)).hexdigest()[:16]
+        if uploaded_files:
+            if st.button("Salvar anexos", type="primary", use_container_width=True, key="kos_save_uploaded_files"):
+                saved = []
+                batch_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+                batch_dir = target_dir / batch_id
+                batch_dir.mkdir(parents=True, exist_ok=True)
 
-                safe_name = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in original_name)
-                final_name = f"{digest}_{safe_name}"
-                final_path = batch_dir / final_name
+                for file in uploaded_files:
+                    original_name = Path(file.name).name
+                    raw = file.getbuffer()
+                    digest = hashlib.sha256(bytes(raw)).hexdigest()[:16]
+                    safe_name = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in original_name)
+                    final_path = batch_dir / f"{digest}_{safe_name}"
+                    final_path.write_bytes(raw)
 
-                final_path.write_bytes(raw)
+                    item = {
+                        "asset_id": f"kos_asset_{batch_id}_{digest}",
+                        "created_at": datetime.now().isoformat(),
+                        "route": route,
+                        "original_name": original_name,
+                        "stored_path": str(final_path.relative_to(root)).replace("\\", "/"),
+                        "size": final_path.stat().st_size,
+                        "sha256_16": digest,
+                        "operator_note": operator_note,
+                        "source": "operator_chat_upload",
+                        "policy": {
+                            "published": False,
+                            "sent_to_external_api": False,
+                            "paid_ai_used": False,
+                            "human_gate_required": True
+                        }
+                    }
 
-                item = {
-                    "asset_id": f"kos_asset_{batch_id}_{digest}",
-                    "created_at": datetime.now().isoformat(),
+                    index.setdefault("items", []).append(item)
+                    saved.append(item)
+
+                index["status"] = "KOS_FILE_INTAKE_INDEX_READY"
+                index["updated_at"] = datetime.now().isoformat()
+                index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
+
+                st.success(f"{len(saved)} arquivo(s) salvo(s) no K-OS.")
+                st.json({
                     "route": route,
-                    "original_name": original_name,
-                    "stored_path": str(final_path.relative_to(root)).replace("\\", "/"),
-                    "size": final_path.stat().st_size,
-                    "sha256_16": digest,
-                    "operator_note": operator_note,
-                    "source": "operator_chat_upload",
-                    "policy": {
-                        "published": False,
-                        "sent_to_external_api": False,
-                        "paid_ai_used": False,
-                        "human_gate_required": True
-                    }
-                }
+                    "batch_dir": str(batch_dir.relative_to(root)).replace("\\", "/"),
+                    "files": [{"name": x["original_name"], "stored_path": x["stored_path"], "size": x["size"]} for x in saved],
+                    "policy": "Arquivos salvos localmente. Nada foi publicado ou enviado para API."
+                })
 
-                index.setdefault("items", []).append(item)
-                saved.append(item)
-
-            index["status"] = "KOS_FILE_INTAKE_INDEX_READY"
-            index["updated_at"] = datetime.now().isoformat()
-            index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
-
-            st.success(f"{len(saved)} arquivo(s) salvo(s) no K-OS.")
-            st.json({
-                "route": route,
-                "batch_dir": str(batch_dir.relative_to(root)).replace("\\", "/"),
-                "files": [
-                    {
-                        "name": item["original_name"],
-                        "stored_path": item["stored_path"],
-                        "size": item["size"]
-                    }
-                    for item in saved
-                ],
-                "policy": "Arquivos salvos localmente. Nada foi publicado ou enviado para API."
-            })
-
-    recent_items = list(reversed(index.get("items", [])))[:5]
-    if recent_items:
-        with st.expander("Ultimos anexos recebidos pelo K-OS", expanded=False):
+        recent_items = list(reversed(index.get("items", [])))[:5]
+        if st.session_state.get("kos_show_recent_intake_assets", False):
+            st.markdown("### Ultimos anexos")
+            if not recent_items:
+                st.caption("Nenhum anexo salvo ainda.")
             for item in recent_items:
                 st.markdown(f"**{item.get('original_name')}**")
                 st.caption(item.get("stored_path"))
                 st.caption(f"Destino: {item.get('route')} | Tamanho: {item.get('size')} bytes")
-
-    with st.expander("Quando o K-OS deve pedir arquivo ou pesquisar?", expanded=False):
-        st.markdown(
-            "- Se faltar foto, video, logo, print, documento ou audio: o K-OS deve pedir anexo aqui.\n"
-            "- Se faltar informacao publica atual: o K-OS deve sugerir pesquisa.\n"
-            "- Se envolver publicacao, pagamento, API ou conta logada: gate humano obrigatorio.\n"
-            "- O operador nao deve procurar pastas manualmente."
-        )
 
 try:
     render_kos_operator_file_intake_center()
@@ -594,9 +595,11 @@ except Exception as exc:
 
 
 
+
+
 # KOS_RESEARCH_CONTINUITY_CENTER_BEGIN
 def is_kos_research_continuity_request(text: str) -> bool:
-    """Detecta pedidos de continuidade, pesquisa publica ou auditoria de pagina."""
+    """Detecta pedidos de continuidade, pesquisa publica, briefing, alvo ou auditoria de pagina."""
     import unicodedata
 
     value = str(text or "").strip().lower()
@@ -604,86 +607,109 @@ def is_kos_research_continuity_request(text: str) -> bool:
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
 
     action_terms = [
-        "auditoria na pagina",
-        "auditar pagina",
-        "auditar a pagina",
-        "pesquisar",
-        "pesquisa publica",
-        "abrir pagina",
-        "abrir site",
-        "abrir na lousa",
-        "continuar algo",
-        "continuar campanha",
-        "campanha ja comecada",
-        "campanha real",
-        "pagina oficial",
-        "briefing real",
-        "readiness",
+        "auditoria", "auditar", "identificar", "verificar", "pesquisar",
+        "pesquisa publica", "fontes publicas", "fontes oficiais",
+        "oficial", "oficiais", "briefing", "briefing seguro",
+        "gerar briefing", "alvo", "qual e", "quem e",
+        "abrir pagina", "abrir site", "abrir na lousa",
+        "continuar", "continuidade", "campanha real", "readiness",
     ]
 
     target_terms = [
-        "hupmix",
-        "gp_video_01",
-        "gp video 01",
-        "garoto oxy",
-        "oxy power",
-        "parada atlantida",
-        "parada atlântida",
-        "atlantida",
+        "hupmix", "gp_video_01", "gp video 01", "garoto oxy", "oxy power",
+        "parada atlantida", "parada atlantica", "parada atlântida",
+        "atlantida", "atlântida", "planeta atlantida", "rede atlantida",
+        "atlantida celebration", "paleta atlantida",
     ]
 
     return any(a in value for a in action_terms) and any(t in value for t in target_terms)
 
 
-def render_kos_research_continuity_center():
-    """Centro de continuidade, pesquisa publica e lousa web.
-    Nao publica, nao faz deploy, nao usa IA paga, nao acessa conta logada.
-    """
+def kos_register_public_research_request_packet(query: str, active_url: str | None = None, operator_request: str | None = None) -> dict:
+    """Registra pesquisa publica localmente. Nao pesquisa sozinho, nao faz scraping, nao publica."""
     import json
-    import urllib.parse
     from datetime import datetime
+    from pathlib import Path
+
+    root = Path.cwd()
+    requests_dir = root / "local_runtime" / "kos_research_requests"
+    requests_dir.mkdir(parents=True, exist_ok=True)
+
+    request_id = "kos_research_" + datetime.now().strftime("%Y%m%d_%H%M%S")
+    payload = {
+        "status": "KOS_PUBLIC_RESEARCH_REQUEST_READY",
+        "request_id": request_id,
+        "created_at": datetime.now().isoformat(),
+        "operator_request": operator_request or query,
+        "research_query": query,
+        "active_url": active_url,
+        "policy": {
+            "public_sources_only": True,
+            "no_logged_account": True,
+            "no_scraping": True,
+            "no_publish": True,
+            "no_paid_ai": True,
+            "human_gate_required": True
+        },
+        "expected_output": {
+            "sources": "URLs, datas e origem devem ser registradas",
+            "campaign_use": "briefing, readiness, lousa e plano seguro",
+            "blocked": "publicacao automatica, scraping, conta logada e IA paga"
+        }
+    }
+
+    path = requests_dir / (request_id + ".json")
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    payload["stored_path"] = str(path.relative_to(root)).replace("\\", "/")
+    return payload
+
+
+def render_kos_research_continuity_center():
+    """Centro de continuidade, pesquisa publica e lousa web."""
+    import json
     from pathlib import Path
     import streamlit as st
     import streamlit.components.v1 as components
 
     root = Path.cwd()
-    governance_dir = root / "memory" / "kos_governance"
-    requests_dir = root / "local_runtime" / "kos_research_requests"
-    governance_dir.mkdir(parents=True, exist_ok=True)
-    requests_dir.mkdir(parents=True, exist_ok=True)
-
     current_request = str(st.session_state.get("kos_operator_request_text", "") or "")
     current_request_lower = current_request.lower()
-
     expanded = bool(st.session_state.get("kos_show_research_continuity_center", False))
 
     with st.expander("K-OS Research & Continuity Center", expanded=expanded):
-        st.caption("Continuidade, pesquisa publica e lousa web. Sem publicacao, sem scraping, sem conta logada, sem IA paga.")
+        st.caption("Pesquisa publica, continuidade e lousa web. Sem publicacao, sem scraping, sem conta logada, sem IA paga.")
 
         msg = st.session_state.get("kos_research_continuity_message")
         if msg:
             st.success(msg)
 
-        if "parada" in current_request_lower or "atlantida" in current_request_lower or "atlântida" in current_request_lower:
-            st.warning("Parada Atlantida: liberado apenas para pesquisa publica, briefing, lousa e readiness. Publicacao e automacao seguem bloqueadas ate autorizacao humana explicita.")
+        last_packet = st.session_state.get("kos_last_public_research_packet")
+        if last_packet:
+            st.info("Pesquisa publica registrada automaticamente.")
+            st.json({
+                "request_id": last_packet.get("request_id"),
+                "path": last_packet.get("stored_path"),
+                "policy": last_packet.get("policy")
+            })
 
-        st.markdown("### 1. Continuidade antes de criar algo novo")
+        if any(term in current_request_lower for term in ["parada", "atlantida", "atlântida"]):
+            st.warning("Parada Atlantida: modo permitido agora = pesquisa publica, briefing, assets, lousa e readiness. Publicacao e automacao seguem bloqueadas.")
 
-        hupmix_paths = {
-            "Production Kit GP_VIDEO_01": root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_PRODUCTION_KIT.json",
-            "Job Video Factory": root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_VIDEO_FACTORY_FREE_MODE_JOB.json",
-            "Preview MP4": root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4",
-            "Storyboard": root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png",
-            "Relatorio Video Factory": root / "reports" / "KOS_HUPMIX_GP_VIDEO_FACTORY_FREE_MODE_V1.json",
-        }
+        st.markdown("### Continuidade antes de criar algo novo")
 
         if any(term in current_request_lower for term in ["hupmix", "gp_video_01", "gp video 01", "garoto oxy", "oxy power"]):
+            hupmix_paths = {
+                "Production Kit GP_VIDEO_01": root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_PRODUCTION_KIT.json",
+                "Job Video Factory": root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_VIDEO_FACTORY_FREE_MODE_JOB.json",
+                "Preview MP4": root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4",
+                "Storyboard": root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png",
+            }
             st.info("Continuidade detectada: Hupmix / GP_VIDEO_01.")
             for label, path in hupmix_paths.items():
                 st.write(("- OK " if path.exists() else "- FALTA ") + label + " -> " + str(path.relative_to(root)).replace("\\", "/"))
 
         if any(term in current_request_lower for term in ["parada", "atlantida", "atlântida"]):
-            st.info("Continuidade detectada: Parada Atlantida. Modo permitido agora: pesquisa, briefing, assets, lousa e readiness.")
+            st.info("Continuidade detectada: Parada Atlantida. Modo permitido: pesquisa, briefing, assets, lousa e readiness.")
             st.write("- Publicacao automatica: BLOQUEADA")
             st.write("- Conta logada / navegador automatizado: BLOQUEADO")
             st.write("- Scraping: BLOQUEADO")
@@ -691,11 +717,10 @@ def render_kos_research_continuity_center():
             st.write("- Lousa web com URL publica: PERMITIDA")
             st.write("- Briefing e plano: PERMITIDOS com gate humano")
 
-        st.markdown("### 2. Abrir pagina publica na lousa")
-
+        st.markdown("### Abrir pagina publica na lousa")
         url = st.text_input(
-            "URL publica para abrir na lousa",
-            placeholder="Cole aqui uma URL publica. Exemplo: site oficial, post publico, pagina publica.",
+            "URL publica",
+            placeholder="Cole uma URL publica oficial ou relevante.",
             key="kos_research_lousa_url",
         )
 
@@ -704,24 +729,25 @@ def render_kos_research_continuity_center():
             if clean_url and clean_url.startswith(("http://", "https://")):
                 st.session_state["kos_public_url_lousa_active"] = clean_url
                 st.session_state["kos_show_research_continuity_center"] = True
+                if hasattr(st, "rerun"):
+                    st.rerun()
             else:
                 st.error("Cole uma URL publica iniciando com http:// ou https://")
 
         active_url = st.session_state.get("kos_public_url_lousa_active")
         if active_url:
             st.markdown("#### Lousa web")
-            st.caption("Alguns sites bloqueiam iframe. Se nao abrir abaixo, use o link de fallback.")
+            st.caption("Se o site bloquear iframe, use o link de fallback.")
             st.markdown(f"[Abrir em nova aba]({active_url})")
             try:
                 components.iframe(active_url, height=650, scrolling=True)
             except Exception as exc:
                 st.warning(f"Nao foi possivel abrir em iframe: {exc}")
 
-        st.markdown("### 3. Criar pedido de pesquisa publica")
-
+        st.markdown("### Pesquisa publica")
         research_query = st.text_input(
-            "O que o K-OS precisa pesquisar?",
-            placeholder="Exemplo: auditar pagina publica da Hupmix e levantar oferta atual",
+            "O que pesquisar?",
+            value=current_request if current_request else "",
             key="kos_public_research_query",
         )
 
@@ -730,48 +756,23 @@ def render_kos_research_continuity_center():
             if not query:
                 st.error("Digite o que deve ser pesquisado.")
             else:
-                request_id = "kos_research_" + datetime.now().strftime("%Y%m%d_%H%M%S")
-                payload = {
-                    "status": "KOS_PUBLIC_RESEARCH_REQUEST_READY",
-                    "request_id": request_id,
-                    "created_at": datetime.now().isoformat(),
-                    "operator_request": current_request,
-                    "research_query": query,
-                    "active_url": active_url,
-                    "policy": {
-                        "public_sources_only": True,
-                        "no_logged_account": True,
-                        "no_scraping": True,
-                        "no_publish": True,
-                        "no_paid_ai": True,
-                        "human_gate_required": True
-                    },
-                    "expected_output": {
-                        "sources": "URLs e datas devem ser registradas",
-                        "campaign_use": "briefing, readiness, lousa e plano seguro",
-                        "blocked": "publicacao automatica, scraping e conta logada"
-                    }
-                }
-                path = requests_dir / (request_id + ".json")
-                path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-                st.success("Pedido de pesquisa registrado no K-OS.")
+                packet = kos_register_public_research_request_packet(query, active_url=active_url, operator_request=current_request)
+                st.session_state["kos_last_public_research_packet"] = packet
+                st.success("Pesquisa publica registrada no K-OS.")
                 st.json({
-                    "request_id": request_id,
-                    "path": str(path.relative_to(root)).replace("\\", "/"),
-                    "policy": payload["policy"]
+                    "request_id": packet.get("request_id"),
+                    "path": packet.get("stored_path"),
+                    "policy": packet.get("policy")
                 })
 
-        st.markdown("### 4. Regra operacional certificada")
-        st.write("- Se faltar arquivo: K-OS pede anexo no Intake Center.")
-        st.write("- Se faltar informacao atual: K-OS registra pesquisa publica com fonte.")
-        st.write("- Se for algo ja comecado: K-OS procura continuidade antes de criar do zero.")
-        st.write("- Se envolver Parada Atlantida: somente pesquisa/readiness ate autorizacao humana.")
-        st.write("- Se envolver publicacao, conta logada ou deploy: gate humano obrigatorio.")
-
-        if st.button("Fechar Research & Continuity Center", use_container_width=True, key="kos_close_research_continuity_center"):
-            st.session_state["kos_show_research_continuity_center"] = False
-            st.info("Centro fechado. Nenhuma acao externa foi executada.")
+        st.markdown("### Regra operacional")
+        st.write("- Se faltar arquivo: K-OS pede anexo pelo botao +.")
+        st.write("- Se faltar informacao atual: K-OS registra pesquisa publica.")
+        st.write("- Se for algo ja comecado: K-OS verifica continuidade antes de criar do zero.")
+        st.write("- Parada Atlantida: pesquisa/readiness ate autorizacao explicita.")
+        st.write("- Publicacao, conta logada, scraping, deploy e IA paga seguem bloqueados.")
 # KOS_RESEARCH_CONTINUITY_CENTER_END
+
 
 
 request = st.text_area(
@@ -804,6 +805,8 @@ if send and is_kos_read_only_diagnostic_request(st.session_state.get("kos_operat
     st.session_state.pop("kos_last_safe_action_result", None)
     st.session_state.pop("kos_last_safe_action_packet_path", None)
     send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
 # KOS_READ_ONLY_DIAGNOSTIC_GATE_END
 
 # KOS_READ_ONLY_LOUSA_GATE_BEGIN
@@ -815,6 +818,8 @@ if send and is_kos_read_only_lousa_request(st.session_state.get("kos_operator_re
     st.session_state.pop("kos_last_safe_action_result", None)
     st.session_state.pop("kos_last_safe_action_packet_path", None)
     send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
 # KOS_READ_ONLY_LOUSA_GATE_END
 
 
@@ -889,13 +894,24 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
 
 # KOS_RESEARCH_CONTINUITY_GATE_BEGIN
 if send and is_kos_research_continuity_request(st.session_state.get("kos_operator_request_text", "")):
+    _kos_query = st.session_state.get("kos_operator_request_text", "").strip()
     st.session_state["kos_show_research_continuity_center"] = True
-    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_request"] = _kos_query
     st.session_state["kos_research_continuity_message"] = "Pesquisa/continuidade aberta em modo governado. Nenhum Router, Safe Action, publicacao, deploy, scraping ou IA paga foi acionado."
     st.session_state["kos_last_operator_data"] = None
     st.session_state.pop("kos_last_safe_action_result", None)
     st.session_state.pop("kos_last_safe_action_packet_path", None)
+    try:
+        st.session_state["kos_last_public_research_packet"] = kos_register_public_research_request_packet(
+            _kos_query,
+            active_url=st.session_state.get("kos_public_url_lousa_active"),
+            operator_request=_kos_query,
+        )
+    except Exception as exc:
+        st.session_state["kos_research_continuity_message"] = f"Centro aberto, mas o registro automatico da pesquisa falhou: {exc}"
     send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
 # KOS_RESEARCH_CONTINUITY_GATE_END
 
 if st.session_state.get("kos_show_research_continuity_center", False):
