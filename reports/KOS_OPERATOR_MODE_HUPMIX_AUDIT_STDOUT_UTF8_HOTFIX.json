@@ -1,0 +1,16 @@
+﻿{
+    "reason":  "Auditoria Hupmix conectou via Meta Graph API, mas stdout quebrou no Windows cp1252 ao imprimir emoji de legenda.",
+    "safety":  {
+                   "read_only":  true,
+                   "scraping":  false,
+                   "browser_automation":  false,
+                   "instagram_publish_executed":  false,
+                   "token_printed":  false
+               },
+    "name":  "hupmix_audit_stdout_utf8",
+    "type":  "windows_utf8_hotfix",
+    "status":  "applied",
+    "mode":  "K-OS Operator Mode",
+    "created_at":  "2026-06-22T07:32:23.4955139-03:00",
+    "no_new_phase":  true
+}

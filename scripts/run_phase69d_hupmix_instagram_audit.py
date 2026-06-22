@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import json
+import sys
 import os
 import urllib.error
 import urllib.parse
@@ -8,6 +9,11 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -91,7 +97,7 @@ def build_audit() -> dict[str, Any]:
     profile = graph_get(
         HUPMIX_IG_ID,
         {
-            "fields": "id,username,account_type,media_count,followers_count,follows_count,biography,website,name",
+            "fields": "id,username,media_count,followers_count,follows_count,biography,website,name",
         },
     )
 
@@ -191,3 +197,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
