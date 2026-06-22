@@ -1,0 +1,106 @@
+{
+  "status": "KOS_HUPMIX_GP_CONTINUITY_PACKAGE_READY",
+  "created_at": "2026-06-22T10:56:30.252547+00:00",
+  "brand": "Hupmix",
+  "campaign": "GP / Garoto Oxy Power / Oxy Power",
+  "source": {
+    "instagram_status": "KOS_HUPMIX_INSTAGRAM_AUDIT_CONNECTED",
+    "latest_permalink": "https://www.instagram.com/reel/DWHGjCBjLB1/",
+    "latest_caption_preview": "A SOLUÇÃO QUE FALTAVA! 💪\n\nEle chegou. O herói que sua casa precisava.\n\nOxy Power - Limpador multiuso com Oxigênio Ativo.\n✅ Sem cloro\n✅ Não tóxico\n✅ Limpa TUDO\n\n🧴 5L por apenas R$ 49,90\n📍 Passe na HupMix - Cachoeira do Bo...",
+    "local_matches_count": 2471
+  },
+  "safety": {
+    "instagram_publish_executed": false,
+    "browser_logged_account_automation_used": false,
+    "scraping_used": false,
+    "human_gate_required": true
+  },
+  "videos": [
+    {
+      "id": "GP_VIDEO_01",
+      "title": "O heroi da limpeza chegou",
+      "format": "Reel 20-30s",
+      "hook": "A solucao que faltava para limpar tudo sem complicar.",
+      "script": [
+        "Cena 1: Garoto Oxy aparece segurando o Oxy Power.",
+        "Cena 2: Mostrar sujeira comum: piso, box, cozinha ou bancada.",
+        "Cena 3: Aplicar o produto e mostrar transformacao visual.",
+        "Cena 4: Close no produto de 5L e preco.",
+        "Cena 5: CTA para passar na HupMix ou chamar no WhatsApp."
+      ],
+      "caption": "A solução que faltava para a sua limpeza chegou. Oxy Power limpa tudo com Oxigênio Ativo, sem cloro e sem toxicidade. Passe na HupMix e garanta o seu.",
+      "cta": "Passe na HupMix ou chame no WhatsApp.",
+      "assets_needed": [
+        "produto 5L",
+        "ambiente sujo/limpo",
+        "pessoa apresentando",
+        "logo HupMix"
+      ]
+    },
+    {
+      "id": "GP_VIDEO_02",
+      "title": "Teste real: antes e depois",
+      "format": "Reel 15-25s",
+      "hook": "Duvida se funciona? Olha esse antes e depois.",
+      "script": [
+        "Cena 1: Mostrar problema real de limpeza.",
+        "Cena 2: Aplicar Oxy Power.",
+        "Cena 3: Corte rapido para resultado.",
+        "Cena 4: Garoto Oxy aponta para o resultado.",
+        "Cena 5: CTA com preco e local."
+      ],
+      "caption": "Teste real, resultado real. Oxy Power com Oxigênio Ativo para deixar sua casa brilhando sem sofrimento.",
+      "cta": "Quer testar? Passe na HupMix.",
+      "assets_needed": [
+        "local real",
+        "pano/esponja",
+        "produto",
+        "take de resultado"
+      ]
+    },
+    {
+      "id": "GP_VIDEO_03",
+      "title": "3 motivos para escolher Oxy Power",
+      "format": "Reel educativo 20s",
+      "hook": "3 motivos para ter Oxy Power em casa.",
+      "script": [
+        "Cena 1: Texto na tela: 3 motivos.",
+        "Cena 2: Motivo 1: sem cloro.",
+        "Cena 3: Motivo 2: não tóxico.",
+        "Cena 4: Motivo 3: limpa várias superfícies.",
+        "Cena 5: Oferta e CTA."
+      ],
+      "caption": "Sem cloro, não tóxico e multiuso. Oxy Power é o reforço que faltava na limpeza da sua casa.",
+      "cta": "Garanta o seu na HupMix.",
+      "assets_needed": [
+        "produto",
+        "takes curtos",
+        "texto na tela",
+        "ponto de venda"
+      ]
+    }
+  ],
+  "stories": [
+    "Enquete: Qual parte da casa dá mais trabalho para limpar?",
+    "Antes/depois rápido usando Oxy Power.",
+    "Bastidor: Garoto Oxy preparando o teste.",
+    "Caixinha: Quer ver o Oxy Power limpando o quê?",
+    "Story de oferta: Oxy Power 5L por R$ 49,90."
+  ],
+  "calendar_7_days": [
+    "Dia 1: Reel heroico de apresentação.",
+    "Dia 2: Stories com enquete sobre limpeza.",
+    "Dia 3: Reel antes e depois.",
+    "Dia 4: Stories com bastidor e prova real.",
+    "Dia 5: Reel educativo com 3 motivos.",
+    "Dia 6: Story de oferta + chamada para WhatsApp.",
+    "Dia 7: Repost dos melhores comentários/perguntas e CTA final."
+  ],
+  "approval_gate": [
+    "Revisar preço antes de publicar.",
+    "Confirmar estoque do Oxy Power.",
+    "Confirmar endereço/CTA correto.",
+    "Validar imagens/vídeos gravados.",
+    "Aprovar manualmente antes de qualquer publicação real."
+  ]
+}

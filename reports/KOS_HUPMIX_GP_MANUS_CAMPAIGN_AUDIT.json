@@ -1,0 +1,1439 @@
+{
+  "status": "KOS_HUPMIX_GP_MANUS_CAMPAIGN_AUDIT_READY",
+  "created_at": "2026-06-22T10:49:12.391024+00:00",
+  "objective": "Recuperar campanha GP/Garoto/Oxy Power iniciada para Hupmix via Manus e preparar continuidade segura.",
+  "assumption": "GP provavelmente se refere a Garoto Propaganda ou Garoto Oxy Power. Confirmar com o operador.",
+  "instagram_publish_executed": false,
+  "browser_logged_account_automation_used": false,
+  "scraping_used": false,
+  "meta_graph_read_only_available": true,
+  "instagram_audit_status": "KOS_HUPMIX_INSTAGRAM_AUDIT_CONNECTED",
+  "hupmix_username": "hupmix",
+  "hupmix_ig_id": "17841471706662294",
+  "recent_media_count": 5,
+  "latest_media": {
+    "id": "18087817444971023",
+    "media_type": "VIDEO",
+    "timestamp": "2026-03-20T15:35:22+0000",
+    "permalink": "https://www.instagram.com/reel/DWHGjCBjLB1/",
+    "like_count": 3,
+    "comments_count": 0,
+    "caption_preview": "A SOLUÇÃO QUE FALTAVA! 💪\n\nEle chegou. O herói que sua casa precisava.\n\nOxy Power - Limpador multiuso com Oxigênio Ativo.\n✅ Sem cloro\n✅ Não tóxico\n✅ Limpa TUDO\n\n🧴 5L por apenas R$ 49,90\n📍 Passe na HupMix - Cachoeira do Bo..."
+  },
+  "local_matches_count": 2471,
+  "local_matches": [
+    {
+      "path": "app.py",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 89,
+          "text": "submitted_campaign = st.form_submit_button(\"Gerar campanha\")"
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 101,
+          "text": "<p>Posts, roteiros, landing pages, campanhas e calendario editorial.</p>"
+        }
+      ]
+    },
+    {
+      "path": "K-ATLAS_CONTEXT.md",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 26,
+          "text": "- campanhas automáticas"
+        },
+        {
+          "line": 30,
+          "text": "- aprovação de campanhas"
+        },
+        {
+          "line": 34,
+          "text": "comando -> agentes -> campanhas -> cockpit -> GitHub -> memória"
+        },
+        {
+          "line": 51,
+          "text": "Transformar o K-Atlas em um sistema operacional completo de IA com múltiplos agentes coordenados, automações comerciais, geração de campanhas, memória evolutiva e cockpit central de operação."
+        }
+      ]
+    },
+    {
+      "path": "k_atlas_cli.py",
+      "keywords": [
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 10,
+          "text": "import argparse"
+        },
+        {
+          "line": 56,
+          "text": "def build_parser() -> argparse.ArgumentParser:"
+        },
+        {
+          "line": 57,
+          "text": "parser = argparse.ArgumentParser("
+        }
+      ]
+    },
+    {
+      "path": "k_atlas_cockpit.py",
+      "keywords": [
+        "GP"
+      ],
+      "snippets": [
+        {
+          "line": 511,
+          "text": "st.info(\"Modo read-only. O cockpit nao executa comandos, nao modifica codigo e nao envia prompt ao ChatGPT.\")"
+        }
+      ]
+    },
+    {
+      "path": "local_dashboard.py",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 112,
+          "text": "st.caption(\"Comando central, memoria, campanhas, aprovacao e execucao em um painel unico.\")"
+        },
+        {
+          "line": 122,
+          "text": "placeholder=\"Ex: cliente desesperado piscina verde filhos vao usar hoje criar campanha instagram\","
+        },
+        {
+          "line": 152,
+          "text": "if st.button(\"✅ Aprovar campanha\"):"
+        },
+        {
+          "line": 185,
+          "text": "st.subheader(\"✅ Ultima campanha aprovada\")"
+        },
+        {
+          "line": 191,
+          "text": "st.info(\"Nenhuma campanha aprovada ainda.\")"
+        }
+      ]
+    },
+    {
+      "path": "marketing_manager.py",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 16,
+          "text": "\"\"\"Usa a IA para criar um plano de recuperação de campanhas atrasadas\"\"\""
+        },
+        {
+          "line": 17,
+          "text": "prompt = f\"Tenho 2 campanhas atrasadas: {self.campaigns}. E 6 redes sociais para gerenciar: {self.social_channels}. Crie um cronograma de ação imediata.\""
+        }
+      ]
+    },
+    {
+      "path": "README.md",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 25,
+          "text": "Gerenciador centralizado de campanhas e conteúdo para diferentes operações. Atualmente suporta:"
+        }
+      ]
+    },
+    {
+      "path": "README_AI_PROVIDER_ROUTER.md",
+      "keywords": [
+        "video"
+      ],
+      "snippets": [
+        {
+          "line": 8,
+          "text": "- separa texto, agentes, imagem, video, audio, SaaS e deploy"
+        }
+      ]
+    },
+    {
+      "path": "README_CHATGPT_HANDOFF_GENERATOR.md",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-Atlas ChatGPT Handoff Generator"
+        },
+        {
+          "line": 3,
+          "text": "Gera um prompt de continuidade operacional para colar no ChatGPT."
+        },
+        {
+          "line": 10,
+          "text": "- salva em memory/chatgpt_handoff"
+        },
+        {
+          "line": 11,
+          "text": "- gera relatório em reports/chatgpt_handoff"
+        },
+        {
+          "line": 25,
+          "text": "powershell -ExecutionPolicy Bypass -File \"C:\\Users\\oi\\Desktop\\motor-digital\\ops\\generate_k_atlas_chatgpt_handoff.ps1\""
+        }
+      ]
+    },
+    {
+      "path": "README_COWORK_PILOT_STUDIO.md",
+      "keywords": [
+        "story"
+      ],
+      "snippets": [
+        {
+          "line": 44,
+          "text": "powershell -ExecutionPolicy Bypass -File \"C:\\Users\\oi\\Desktop\\motor-digital\\ops\\start_cowork_story_recording.ps1\" -Mode none"
+        },
+        {
+          "line": 48,
+          "text": "powershell -ExecutionPolicy Bypass -File \"C:\\Users\\oi\\Desktop\\motor-digital\\ops\\start_cowork_story_recording.ps1\" -Mode ffmpeg"
+        }
+      ]
+    },
+    {
+      "path": "README_GOOGLE_AUDIOVISUAL_ADAPTER_SANDBOX.md",
+      "keywords": [
+        "video"
+      ],
+      "snippets": [
+        {
+          "line": 7,
+          "text": "- gera video prompt"
+        }
+      ]
+    },
+    {
+      "path": "README_INSTAGRAM_OFFICIAL_K_ATLAS.md",
+      "keywords": [
+        "reel",
+        "reels"
+      ],
+      "snippets": [
+        {
+          "line": 25,
+          "text": "- primeiros 3 reels"
+        }
+      ]
+    },
+    {
+      "path": "README_PROMPT_GENERATOR.md",
+      "keywords": [
+        "GP"
+      ],
+      "snippets": [
+        {
+          "line": 32,
+          "text": "- nao acessa ChatGPT sozinho"
+        }
+      ]
+    },
+    {
+      "path": "_kos_hupmix_gp_audit.py",
+      "keywords": [
+        "GP",
+        "Garoto",
+        "Garoto Oxy",
+        "HupMix",
+        "Hupmix",
+        "Manus",
+        "Oxy Power",
+        "campanha",
+        "garoto",
+        "gp",
+        "hupmix",
+        "manus",
+        "oxypower",
+        "reel",
+        "reels",
+        "stories",
+        "story",
+        "video",
+        "vídeo"
+      ],
+      "snippets": [
+        {
+          "line": 6,
+          "text": "OUT_DIR = ROOT / \"campaigns\" / \"hupmix_gp_recovery\""
+        },
+        {
+          "line": 12,
+          "text": "\"GP\", \"gp\", \"Garoto\", \"garoto\", \"Garoto Oxy\", \"Oxy Power\", \"oxypower\","
+        },
+        {
+          "line": 13,
+          "text": "\"Hupmix\", \"HupMix\", \"hupmix\", \"Manus\", \"manus\", \"campanha\", \"video\","
+        },
+        {
+          "line": 14,
+          "text": "\"vídeo\", \"reel\", \"reels\", \"story\", \"stories\""
+        },
+        {
+          "line": 63,
+          "text": "audit_path = ROOT / \"local_runtime\" / \"kos_instagram_audit\" / \"hupmix\" / \"latest_hupmix_instagram_audit.json\""
+        },
+        {
+          "line": 75,
+          "text": "\"status\": \"KOS_HUPMIX_GP_MANUS_CAMPAIGN_AUDIT_READY\","
+        },
+        {
+          "line": 77,
+          "text": "\"objective\": \"Recuperar campanha GP/Garoto/Oxy Power iniciada para Hupmix via Manus e preparar continuidade segura.\","
+        },
+        {
+          "line": 78,
+          "text": "\"assumption\": \"GP provavelmente se refere a Garoto Propaganda ou Garoto Oxy Power. Confirmar com o operador.\","
+        }
+      ]
+    },
+    {
+      "path": "agents\\auto_reporter.py",
+      "keywords": [
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 27,
+          "text": "import argparse"
+        },
+        {
+          "line": 519,
+          "text": "def build_parser() -> argparse.ArgumentParser:"
+        },
+        {
+          "line": 520,
+          "text": "parser = argparse.ArgumentParser("
+        }
+      ]
+    },
+    {
+      "path": "agents\\campaign_agent.py",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 19,
+          "text": "objective=context.get(\"objective\", task or \"Operar campanha local\"),"
+        }
+      ]
+    },
+    {
+      "path": "agents\\decision_flow_router.py",
+      "keywords": [
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 20,
+          "text": "import argparse"
+        },
+        {
+          "line": 824,
+          "text": "parser = argparse.ArgumentParser(description=\"K-Atlas Decision Flow Router\")"
+        }
+      ]
+    },
+    {
+      "path": "agents\\executor_package_builder.py",
+      "keywords": [
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 19,
+          "text": "import argparse"
+        },
+        {
+          "line": 811,
+          "text": "parser = argparse.ArgumentParser(description=\"K-Atlas Executor Package Builder\")"
+        }
+      ]
+    },
+    {
+      "path": "agents\\human_decision_center.py",
+      "keywords": [
+        "campanha",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 18,
+          "text": "import argparse"
+        },
+        {
+          "line": 504,
+          "text": "\"summary\": \"Validar se uma campanha interna pode avancar para a proxima etapa supervisionada.\","
+        },
+        {
+          "line": 766,
+          "text": "parser = argparse.ArgumentParser(description=\"K-Atlas Human Decision Center\")"
+        }
+      ]
+    },
+    {
+      "path": "agents\\orchestrator_agent.py",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 128,
+          "text": "\"goal\": \"Criar campanha da semana\","
+        }
+      ]
+    },
+    {
+      "path": "agents\\task_agent.py",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 163,
+          "text": "\"title\": \"Criar campanha\","
+        },
+        {
+          "line": 164,
+          "text": "\"description\": \"Gerar campanha inicial\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_agent_os_market_radar_policy.json",
+      "keywords": [
+        "GP"
+      ],
+      "snippets": [
+        {
+          "line": 8,
+          "text": "\"OpenAI ChatGPT Agent\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_autonomy_dashboard_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 31,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_autonomy_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 49,
+          "text": "\"hupmix\""
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_autonomy_scheduler_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 36,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_briefing_scheduler_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 29,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_chatgpt_bridge_drop_watcher_policy.json",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 2,
+          "text": "\"status\":  \"KOS_CHATGPT_BRIDGE_DROP_WATCHER_POLICY_ACTIVE\","
+        },
+        {
+          "line": 4,
+          "text": "\"script\":  \"scripts/run_phase70d_chatgpt_bridge_drop_watcher.py\","
+        },
+        {
+          "line": 5,
+          "text": "\"starter\":  \"scripts/start_kos_chatgpt_bridge_drop_watcher.ps1\","
+        },
+        {
+          "line": 6,
+          "text": "\"cmd\":  \"KOS_ChatGPT_Bridge_Drop_Watcher.cmd\","
+        },
+        {
+          "line": 7,
+          "text": "\"desktop_cmd\":  \"C:\\\\Users\\\\oi\\\\Desktop\\\\KOS_ChatGPT_Bridge_Drop_Watcher.cmd\","
+        },
+        {
+          "line": 8,
+          "text": "\"drop_dir\":  \"local_runtime/kos_chatgpt_bridge/drop\","
+        },
+        {
+          "line": 9,
+          "text": "\"processed_dir\":  \"local_runtime/kos_chatgpt_bridge/processed\","
+        },
+        {
+          "line": 10,
+          "text": "\"blocked_dir\":  \"local_runtime/kos_chatgpt_bridge/blocked\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_chatgpt_bridge_runtime_controller_policy.json",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 2,
+          "text": "\"status\":  \"KOS_CHATGPT_BRIDGE_RUNTIME_CONTROLLER_POLICY_ACTIVE\","
+        },
+        {
+          "line": 5,
+          "text": "\"script\":  \"scripts/kos_chatgpt_bridge_runtime_control.ps1\","
+        },
+        {
+          "line": 16,
+          "text": "\"reads_chatgpt_ui_automatically\":  false,"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_chatgpt_conversation_bridge_policy.json",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 2,
+          "text": "\"status\":  \"KOS_CHATGPT_CONVERSATION_BRIDGE_POLICY_ACTIVE\","
+        },
+        {
+          "line": 4,
+          "text": "\"conversation_url\":  \"https://chatgpt.com/g/g-6a1835a4bd9c8191b314ede2fffc8923-k-atlas-engineer/c/6a1d9ced-417c-83e9-9d0c-16d3bf463616\","
+        },
+        {
+          "line": 5,
+          "text": "\"bridge_script\":  \"scripts/run_kos_chatgpt_conversation_bridge.ps1\","
+        },
+        {
+          "line": 6,
+          "text": "\"cmd\":  \"KOS_ChatGPT_Conversation_Bridge.cmd\","
+        },
+        {
+          "line": 7,
+          "text": "\"desktop_cmd\":  \"C:\\\\Users\\\\oi\\\\Desktop\\\\KOS_ChatGPT_Conversation_Bridge.cmd\","
+        },
+        {
+          "line": 8,
+          "text": "\"drop_dir\":  \"local_runtime/kos_chatgpt_bridge/drop\","
+        },
+        {
+          "line": 9,
+          "text": "\"processed_dir\":  \"local_runtime/kos_chatgpt_bridge/processed\","
+        },
+        {
+          "line": 14,
+          "text": "\"reads_chatgpt_ui_automatically\":  false,"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_closed_loop_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 35,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_evidence_ledger_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 31,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_human_approval_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 30,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_human_confirmed_publish_dry_run_gate_policy.json",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 7,
+          "text": "\"69D Hupmix Instagram audit connector\","
+        },
+        {
+          "line": 10,
+          "text": "\"target\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_hupmix_instagram_audit_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "\"audit_script\":  \"scripts/run_phase69d_hupmix_instagram_audit.py\","
+        },
+        {
+          "line": 5,
+          "text": "\"target\":  \"hupmix\","
+        },
+        {
+          "line": 7,
+          "text": "\"expected_username\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_hupmix_real_publish_executor_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "\"script\":  \"scripts/run_phase69h_hupmix_real_publish_executor.py\","
+        },
+        {
+          "line": 5,
+          "text": "\"target\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_mission_queue_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 23,
+          "text": "\"hupmix_test_only\": true,"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_operator_briefing_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 21,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_operator_chat_frontdoor_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 19,
+          "text": "\"target_test_account\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_orchestrator_request_box_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 18,
+          "text": "\"target_test_account\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_planner_bridge_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 34,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_product_factory_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 43,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_publish_audit_gate_policy.json",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 7,
+          "text": "\"69D Hupmix Instagram audit connector\""
+        },
+        {
+          "line": 9,
+          "text": "\"allowed_target\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_publish_audit_visual_panel_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 9,
+          "text": "\"target\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_real_publish_approval_ledger_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 5,
+          "text": "\"target\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_runtime_control_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 37,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_runtime_health_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 30,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_safe_executor_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 31,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_self_healing_supervisor_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 30,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_social_ops_control_center_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 8,
+          "text": "\"target_test_account\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_social_publish_readiness_auditor_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 9,
+          "text": "\"target_test_account\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_social_strategy_generator_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 6,
+          "text": "\"target_test_account\": \"hupmix\","
+        },
+        {
+          "line": 7,
+          "text": "\"allowed_targets\": [\"hupmix\"],"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_startup_folder_gate_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 29,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_unified_command_cockpit_policy.json",
+      "keywords": [
+        "gp",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 15,
+          "text": "\"chatgpt_bridge\","
+        },
+        {
+          "line": 27,
+          "text": "\"target_test_account\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_weekly_operator_workspace_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 20,
+          "text": "\"target_test_account\":  \"hupmix\","
+        }
+      ]
+    },
+    {
+      "path": "config\\kos_windows_task_gate_policy.json",
+      "keywords": [
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 36,
+          "text": "\"hupmix_test_only\": true"
+        }
+      ]
+    },
+    {
+      "path": "core\\events.py",
+      "keywords": [
+        "story"
+      ],
+      "snippets": [
+        {
+          "line": 135,
+          "text": "self._history: List[Event] = []"
+        },
+        {
+          "line": 158,
+          "text": "self._history.append(event)"
+        },
+        {
+          "line": 159,
+          "text": "if len(self._history) > self.keep_last:"
+        },
+        {
+          "line": 160,
+          "text": "self._history = self._history[-self.keep_last :]"
+        },
+        {
+          "line": 202,
+          "text": "def history("
+        },
+        {
+          "line": 210,
+          "text": "events: Iterable[Event] = list(self._history)"
+        }
+      ]
+    },
+    {
+      "path": "core\\kernel.py",
+      "keywords": [
+        "story"
+      ],
+      "snippets": [
+        {
+          "line": 278,
+          "text": "return [event.to_dict() for event in self.events.history(limit=limit)]"
+        }
+      ]
+    },
+    {
+      "path": "docs\\index.html",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 101,
+          "text": "<p>Posts, roteiros, landing pages, campanhas e calendario editorial.</p>"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_AGENT_OS_MARKET_RADAR_V069A.md",
+      "keywords": [
+        "GP"
+      ],
+      "snippets": [
+        {
+          "line": 6,
+          "text": "- OpenAI ChatGPT Agent"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_AUTONOMY_BASELINE_V050.md",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 104,
+          "text": "Objetivo: transformar ideias em missoes estruturadas para gerar apps, SaaS, campanhas e automacoes dentro da governanca atual."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_CHATGPT_BRIDGE_DROP_WATCHER_V070D.md",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-OS ChatGPT Bridge Drop Watcher v0.70D"
+        },
+        {
+          "line": 4,
+          "text": "Transformar a pasta drop da ponte ChatGPT em uma entrada operacional contínua para pacotes do K-Atlas Engineer."
+        },
+        {
+          "line": 7,
+          "text": "- observa arquivos .txt em local_runtime/kos_chatgpt_bridge/drop"
+        },
+        {
+          "line": 16,
+          "text": "- não faz scraping do ChatGPT"
+        },
+        {
+          "line": 24,
+          "text": "KOS_ChatGPT_Bridge_Drop_Watcher.cmd"
+        },
+        {
+          "line": 27,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\start_kos_chatgpt_bridge_drop_watcher.ps1 -Once"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_CHATGPT_BRIDGE_RUNTIME_CONTROLLER_V070E.md",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-OS ChatGPT Bridge Runtime Controller v0.70E"
+        },
+        {
+          "line": 3,
+          "text": "Controla o watcher da ponte ChatGPT."
+        },
+        {
+          "line": 6,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\kos_chatgpt_bridge_runtime_control.ps1 -Action start"
+        },
+        {
+          "line": 7,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\kos_chatgpt_bridge_runtime_control.ps1 -Action status"
+        },
+        {
+          "line": 8,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\kos_chatgpt_bridge_runtime_control.ps1 -Action stop"
+        },
+        {
+          "line": 9,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\kos_chatgpt_bridge_runtime_control.ps1 -Action restart"
+        },
+        {
+          "line": 10,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\kos_chatgpt_bridge_runtime_control.ps1 -Action logs"
+        },
+        {
+          "line": 13,
+          "text": "- nao faz scraping do ChatGPT"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_CHATGPT_CONVERSATION_BRIDGE_V070C.md",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-OS ChatGPT Conversation Bridge v0.70C"
+        },
+        {
+          "line": 4,
+          "text": "Criar uma ponte segura entre a conversa do K-Atlas Engineer no ChatGPT e o K-OS local."
+        },
+        {
+          "line": 16,
+          "text": "- não faz scraping da UI do ChatGPT"
+        },
+        {
+          "line": 23,
+          "text": "1. Abrir KOS_ChatGPT_Conversation_Bridge.cmd"
+        },
+        {
+          "line": 24,
+          "text": "2. ChatGPT abre no navegador"
+        },
+        {
+          "line": 26,
+          "text": "4. Salvar pacote .txt dentro de local_runtime/kos_chatgpt_bridge/drop"
+        },
+        {
+          "line": 29,
+          "text": "powershell -ExecutionPolicy Bypass -File scripts\\run_kos_chatgpt_conversation_bridge.ps1 -ProcessLatest"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_CHATGPT_LOCAL_BRIDGE_BASELINE_V0701.md",
+      "keywords": [
+        "GP",
+        "gp"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-OS ChatGPT Local Bridge Baseline v0.70.1"
+        },
+        {
+          "line": 5,
+          "text": "Esta baseline congela a ponte local segura entre a conversa do K-Atlas Engineer no ChatGPT e o K-OS local."
+        },
+        {
+          "line": 10,
+          "text": "- 70C ChatGPT Conversation Bridge"
+        },
+        {
+          "line": 11,
+          "text": "- 70D ChatGPT Bridge Drop Watcher"
+        },
+        {
+          "line": 12,
+          "text": "- 70E ChatGPT Bridge Runtime Controller"
+        },
+        {
+          "line": 15,
+          "text": "1. Abrir a conversa do ChatGPT."
+        },
+        {
+          "line": 23,
+          "text": "- Nao faz scraping do ChatGPT."
+        },
+        {
+          "line": 34,
+          "text": "git checkout v0.70.1-kos-chatgpt-local-bridge-baseline"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_ENGINEER_PACKET_GOVERNANCE_BASELINE_V0691.md",
+      "keywords": [
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 9,
+          "text": "- Hupmix real publish executor instalado, sem publicação executada"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_HUMAN_CONFIRMED_PUBLISH_DRY_RUN_GATE_V069F.md",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "Validar confirmacao humana para um dry-run de publicacao Hupmix, sem publicar real."
+        },
+        {
+          "line": 10,
+          "text": "- Hupmix apenas."
+        },
+        {
+          "line": 19,
+          "text": "python scripts\\run_phase69f_human_confirmed_publish_dry_run_gate.py --target hupmix --campaign-id \"teste\" --caption \"rascunho\" --asset-ref \"asset-local\" --confirmation \"YES_DRY_RUN_HUPMIX_PUBLISH_AUDIT_ONLY\""
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_HUPMIX_INSTAGRAM_AUDIT_CONNECTOR_V069D.md",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-OS Hupmix Instagram Audit Connector v0.69D"
+        },
+        {
+          "line": 4,
+          "text": "Conectar somente a conta teste Hupmix via Meta Graph API e gerar auditoria read-only."
+        },
+        {
+          "line": 7,
+          "text": "- username: hupmix"
+        },
+        {
+          "line": 17,
+          "text": "- Qualquer conta diferente de hupmix bloqueia a auditoria."
+        },
+        {
+          "line": 20,
+          "text": "python scripts\\run_phase69d_hupmix_instagram_audit.py"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_HUPMIX_REAL_PUBLISH_EXECUTOR_V069H.md",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 1,
+          "text": "﻿# K-OS Hupmix Real Publish Executor v0.69H"
+        },
+        {
+          "line": 4,
+          "text": "Instalar o executor real Hupmix-only para publicacao Instagram via Meta Graph API."
+        },
+        {
+          "line": 9,
+          "text": "- target hupmix"
+        },
+        {
+          "line": 21,
+          "text": "python scripts\\run_phase69h_hupmix_real_publish_executor.py --target hupmix --campaign-id \"teste\" --caption \"caption\" --image-url \"https://example.com/image.jpg\""
+        },
+        {
+          "line": 25,
+          "text": "python scripts\\run_phase69h_hupmix_real_publish_executor.py --target hupmix --campaign-id \"teste-real\" --caption \"caption\" --image-url \"https://URL_PUBLICA/imagem.jpg\" --operator \"operator\" --confirmation \"YES_EXECUTE_REAL_HUPMIX_INSTAGRAM_PUBLISH_NOW\" --execute-real-publish"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_ORCHESTRATOR_REQUEST_BOX_V072C.md",
+      "keywords": [
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 16,
+          "text": "- publicacao Hupmix via caminho existente"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_PHASE15_CREATIVE_ASSET_PUBLISHER.md",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "Criar uma arte PNG real para campanha e preparar uma URL publica HTTPS para o Instagram."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_PHASE8_LAUNCH_SANDBOX_GUIDE.md",
+      "keywords": [
+        "campanha"
+      ],
+      "snippets": [
+        {
+          "line": 3,
+          "text": "Objetivo: preparar uma campanha para revisao e confirmacao humana."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_PUBLISH_AUDIT_GATE_V069E.md",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "Preparar auditoria de publicacao para a conta teste Hupmix sem publicar nada."
+        },
+        {
+          "line": 7,
+          "text": "- Somente Hupmix nesta fase."
+        },
+        {
+          "line": 16,
+          "text": "python scripts\\run_phase69e_publish_audit_gate.py --target hupmix --campaign-id \"teste\" --caption \"rascunho seguro\" --asset-ref \"asset-local\""
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_PUBLISH_AUDIT_VISUAL_PANEL_V069E2.md",
+      "keywords": [
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "Adicionar um painel visual para acompanhar a trilha de publicacao segura da conta teste Hupmix."
+        },
+        {
+          "line": 19,
+          "text": "- Hupmix e a unica conta teste desta trilha."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_REAL_PUBLISH_APPROVAL_LEDGER_V069G.md",
+      "keywords": [
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 4,
+          "text": "Criar livro de aprovacao auditavel para futura publicacao real da conta teste Hupmix."
+        },
+        {
+          "line": 9,
+          "text": "- Hupmix apenas."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_REQUESTED_EXTERNAL_ACTION_GOVERNANCE_BASELINE_V0690.md",
+      "keywords": [
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 12,
+          "text": "- Hupmix Instagram read-only audit"
+        },
+        {
+          "line": 19,
+          "text": "- Hupmix é a única conta teste permitida nesta trilha."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_SOCIAL_PUBLISH_READINESS_AUDITOR_V071C.md",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 13,
+          "text": "python scripts\\run_phase71c_social_publish_readiness_auditor.py --target hupmix --asset-url https://exemplo.com/imagem.png --caption legenda-final"
+        },
+        {
+          "line": 26,
+          "text": "- Hupmix-only nesta fase."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_SOCIAL_STRATEGY_GENERATOR_V071B.md",
+      "keywords": [
+        "Hupmix",
+        "hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 12,
+          "text": "python scripts\\run_phase71b_social_strategy_generator.py --target hupmix --objective \"crescer com teste controlado\" --campaign hupmix-junho"
+        },
+        {
+          "line": 23,
+          "text": "- Hupmix-only nesta fase."
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_UNIFIED_COMMAND_COCKPIT_V072B.md",
+      "keywords": [
+        "GP",
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 11,
+          "text": "- ponte ChatGPT"
+        },
+        {
+          "line": 34,
+          "text": "- Hupmix continua como conta de teste"
+        }
+      ]
+    },
+    {
+      "path": "docs\\KOS_WEEKLY_OPERATOR_WORKSPACE_V072A.md",
+      "keywords": [
+        "Hupmix"
+      ],
+      "snippets": [
+        {
+          "line": 10,
+          "text": "- estrategias Hupmix"
+        },
+        {
+          "line": 24,
+          "text": "- Hupmix e a conta de teste"
+        }
+      ]
+    }
+  ],
+  "recommended_next_step": {
+    "name": "continuar campanha Hupmix GP/Oxy Power em rascunho",
+    "deliverables": [
+      "roteiro dos proximos videos",
+      "legendas dos proximos reels",
+      "plano de stories",
+      "checklist de assets necessarios",
+      "readiness antes de publicar",
+      "gate humano antes de qualquer post real"
+    ]
+  }
+}
