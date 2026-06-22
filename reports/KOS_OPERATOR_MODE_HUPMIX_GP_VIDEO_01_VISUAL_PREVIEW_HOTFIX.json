@@ -1,0 +1,15 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "visual_preview_hotfix",
+  "name": "hupmix_gp_video_01_animatic_preview",
+  "status": "applied",
+  "created_at": "2026-06-22T09:05:25.043992",
+  "goal": "Gerar e mostrar preview animado tipo Reel para aprovacao visual do GP_VIDEO_01.",
+  "no_new_phase": true,
+  "safety": {
+    "instagram_publish_executed": false,
+    "browser_automation": false,
+    "scraping": false,
+    "approval_is_recording_only": true
+  }
+}

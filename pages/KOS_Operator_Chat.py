@@ -409,6 +409,37 @@ def render_hupmix_gp_lousa_preview(data=None):
     st.markdown("## Lousa de aprovação visual")
     st.caption("Preview visual do GP_VIDEO_01. Isto é uma simulação para aprovação. Nada foi publicado.")
 
+    
+    preview_script = root / "scripts" / "run_kos_hupmix_gp_video_01_animatic.py"
+    preview_gif = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.gif"
+    preview_png = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png"
+
+    try:
+        if preview_script.exists():
+            subprocess = __import__("subprocess")
+            sysmod = __import__("sys")
+            subprocess.run(
+                [sysmod.executable, str(preview_script)],
+                cwd=str(root),
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=60,
+            )
+
+        if preview_gif.exists():
+            st.markdown("### Preview animado do Reel")
+            st.image(str(preview_gif), caption="Animatic visual do GP_VIDEO_01. Isto simula o vídeo para aprovação. Nada foi publicado.")
+        elif preview_png.exists():
+            st.markdown("### Storyboard visual")
+            st.image(str(preview_png), caption="Storyboard do GP_VIDEO_01. Nada foi publicado.")
+        else:
+            st.info("Preview visual ainda nao foi gerado. O roteiro permanece aprovado apenas para gravacao.")
+    except Exception as exc:
+        st.warning(f"Preview visual nao carregou: {exc}")
+
+
     components.html(html, height=790, scrolling=False)
 
     col1, col2 = st.columns(2)
