@@ -1,0 +1,156 @@
+{
+  "status": "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT_READY",
+  "created_at": "2026-06-22T14:44:52.790247",
+  "run_id": "20260622_144446",
+  "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_01 / Instagram",
+  "policy": {
+    "meta_graph_read_only": true,
+    "no_scraping": true,
+    "no_logged_browser_automation": true,
+    "no_publish": true,
+    "no_delete": true,
+    "no_comment": true,
+    "no_dm": true,
+    "no_paid_ai": true,
+    "human_gate_required": true
+  },
+  "local_state": {
+    "production_kit_json": {
+      "path": "campaigns/hupmix_gp_recovery/GP_VIDEO_01_PRODUCTION_KIT.json",
+      "exists": true
+    },
+    "video_factory_job": {
+      "path": "campaigns/hupmix_gp_recovery/GP_VIDEO_01_VIDEO_FACTORY_FREE_MODE_JOB.json",
+      "exists": true
+    },
+    "local_preview_mp4": {
+      "path": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4",
+      "exists": true
+    },
+    "local_storyboard": {
+      "path": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_STORYBOARD.png",
+      "exists": true
+    },
+    "human_review_approval": {
+      "path": "live/human_decision_center/hupmix_gp_video_01_publication_review_approval.json",
+      "exists": false
+    }
+  },
+  "local_preview_analysis": {
+    "path": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4",
+    "exists": true,
+    "size": 286341,
+    "analysis_status": "ok",
+    "frames_exported": [
+      "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW_frame_1.jpg",
+      "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW_frame_2.jpg",
+      "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW_frame_3.jpg"
+    ],
+    "metadata": {
+      "fps": 24.0,
+      "duration": 15.83,
+      "size": [
+        540,
+        960
+      ],
+      "nframes": Infinity,
+      "source_meta_keys": [
+        "codec",
+        "duration",
+        "ffmpeg_version",
+        "fps",
+        "nframes",
+        "pix_fmt",
+        "plugin",
+        "rotate",
+        "size",
+        "source_size"
+      ]
+    }
+  },
+  "instagram": {
+    "fetch_status": "KOS_HUPMIX_INSTAGRAM_FETCH_READY",
+    "ig_user_id": "17841471706662294",
+    "latest_item": {
+      "id": "18087817444971023",
+      "caption": "A SOLUÇÃO QUE FALTAVA! 💪\n\nEle chegou. O herói que sua casa precisava.\n\nOxy Power - Limpador multiuso com Oxigênio Ativo.\n✅ Sem cloro\n✅ Não tóxico\n✅ Limpa TUDO\n\n🧴 5L por apenas R$ 49,90\n📍 Passe na HupMix - Cachoeira do Bom Jesus, Floripa\n📱 WhatsApp: (48) 9950-3705\n🗺️ Como chegar: https://maps.app.goo.gl/957jFZbYrfrye84AA\n\n#OxyPower #GarotoOxyPower #HupMix #LimpezaPoderosa #OxigenioAtivo #SemCloro #Florianopolis #Limpeza #MultiUso",
+      "media_type": "VIDEO",
+      "media_url": "https://scontent-gru2-1.cdninstagram.com/o1/v/t2/f2/m86/AQMYo7c_H4DyjnWmHPq0jLZxXtCE3k_ErccAGO-hfo0KMDTsag5I1SNmg8RHy8YJSLHD6F1c0UxXb9sEZ4eWB3hKk3O4qxVlc1t6UX0.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_ohc=e4ua0yymEf8Q7kNvwHyKy6p&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTc4ODgxMjUyNzg0NTE3NzMsImFzc2V0X2FnZV9kYXlzIjo5NCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=2c0d4627f5a502a2&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8wMzQwRjhDNTRGMTAwNTk4NUFBMkY2RkVERjg0QTNBMV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzQ4NDEyRTIzNjc3RjA4MDEyNEJEQkIzMTgxMjU3OTkyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb64NuO98nGPxUCKAJDMywXQBgAAAAAAAAYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=crxclqG0dJV5QTBWbD6j7g&edm=AM6HXa8EAAAA&_nc_zt=28&oh=00_Af8QPns63kcYco9Odz3ZKjmhWsEqSzf325y3TkhRs19ccA&oe=6A3B6E82",
+      "permalink": "https://www.instagram.com/reel/DWHGjCBjLB1/",
+      "timestamp": "2026-03-20T15:35:22+0000",
+      "thumbnail_url": "https://scontent-gru2-1.cdninstagram.com/v/t51.71878-15/654430666_1458841439306286_397994980934008530_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=zrieJY4ceKAQ7kNvwEGFwIs&_nc_oc=AdoeOBglATXPAPHX0x5F9yoJFICqKit7YrWcNZjJiZ4pRkLaXue6TRC8TR3zCGl0Ad2gKG_fLrQjmzuWXP4af8Si&_nc_zt=23&_nc_ht=scontent-gru2-1.cdninstagram.com&edm=AM6HXa8EAAAA&_nc_gid=crxclqG0dJV5QTBWbD6j7g&_nc_tpa=Q5bMBQE3_bqZ_I3kqh8HTXP3HYdeXeS329_KVm3Ie6PP5tzNsJ9ijT8fh_jOSVfzFeNO1NmrzgBd1P3S&oh=00_Af_MTbtgyAtijuOuJ2BL15B2Dvx2i7EhyEnYniDRb4TIOQ&oe=6A3F3BBB"
+    },
+    "download": {
+      "status": "KOS_HUPMIX_MEDIA_DOWNLOADED",
+      "source": "latest.media_url",
+      "media_type": "VIDEO",
+      "stored_path": "local_runtime/kos_instagram_audit/hupmix/20260622_144446/18087817444971023.mp4",
+      "size": 1814743
+    },
+    "download_analysis": {
+      "path": "local_runtime/kos_instagram_audit/hupmix/20260622_144446/18087817444971023.mp4",
+      "exists": true,
+      "size": 1814743,
+      "analysis_status": "ok",
+      "frames_exported": [
+        "local_runtime/kos_instagram_audit/hupmix/20260622_144446/18087817444971023_frame_1.jpg",
+        "local_runtime/kos_instagram_audit/hupmix/20260622_144446/18087817444971023_frame_2.jpg"
+      ],
+      "metadata": {
+        "fps": 24.0,
+        "duration": 6.13,
+        "size": [
+          720,
+          1280
+        ],
+        "nframes": Infinity,
+        "source_meta_keys": [
+          "audio_codec",
+          "codec",
+          "duration",
+          "ffmpeg_version",
+          "fps",
+          "nframes",
+          "pix_fmt",
+          "plugin",
+          "rotate",
+          "size",
+          "source_size"
+        ]
+      }
+    },
+    "gp_relevance_from_caption": {
+      "score": 9,
+      "hits": [
+        "oxy",
+        "oxy power",
+        "limpeza",
+        "oxigênio ativo",
+        "sem cloro",
+        "5l",
+        "49,90",
+        "hupmix",
+        "whatsapp"
+      ],
+      "seems_gp_oxy_related": true
+    }
+  },
+  "continuity": {
+    "production_kit_loaded": true,
+    "video_job_loaded": true,
+    "scene_count": 5,
+    "campaign": "GP / Garoto Oxy Power / Oxy Power"
+  },
+  "interpretation": {
+    "where_project_stopped": "GP_VIDEO_01 possui preview MP4 local e job Video Factory. Proximo passo natural: comparar com Instagram Hupmix e registrar decisao humana.",
+    "instagram_latest_status": "A ultima publicacao Hupmix parece relacionada ao GP/Oxy Power pelos termos da legenda.",
+    "recommended_next_action": "Abrir revisao Hupmix, validar a publicacao baixada e registrar OK humano antes de qualquer proxima campanha.",
+    "requires_human_ok": true,
+    "can_act_without_publish": true
+  },
+  "outputs": {
+    "run_dir": "local_runtime/kos_instagram_audit/hupmix/20260622_144446",
+    "json_report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json",
+    "md_report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.md"
+  }
+}
