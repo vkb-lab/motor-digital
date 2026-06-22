@@ -1,0 +1,27 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS",
+  "created_at": "2026-06-22T16:41:37.629859",
+  "campaign": "Hupmix / Garoto Oxy Power / Oxy Power",
+  "rule": "Nao gerar video fake. GP_VIDEO_02 real exige footage real ou imagens reais anexadas.",
+  "assets_inbox": "content_packs/hupmix_gp_video_02/assets_inbox",
+  "required_assets": [
+    "video vertical curto do produto Oxy Power",
+    "cena de antes: piso, box, roupa, gordura ou sujeira real",
+    "cena aplicando o produto",
+    "cena de resultado/depois",
+    "opcional: foto do produto 5L e preco R$ 49,90"
+  ],
+  "shotlist": [
+    "Cena 1: continuidade do Garoto Oxy com produto real em quadro",
+    "Cena 2: problema real de limpeza",
+    "Cena 3: aplicacao do Oxy Power",
+    "Cena 4: resultado visual honesto",
+    "Cena 5: oferta 5L por R$ 49,90 + WhatsApp/loja"
+  ],
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "human_gate_required": true
+  }
+}

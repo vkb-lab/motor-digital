@@ -1540,6 +1540,256 @@ def render_kos_hupmix_next_video_production_panel():
 # KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PANEL_END
 
 
+
+# KOS_HUPMIX_GP_VIDEO_02_REAL_PRODUCTION_PANEL_BEGIN
+def render_kos_hupmix_gp_video_02_real_production_panel():
+    """Painel compacto para producao real do GP_VIDEO_02 com assets reais."""
+    import json
+    import re
+    import subprocess
+    import sys
+    from datetime import datetime
+    from pathlib import Path
+    import streamlit as st
+
+    if not st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
+        return
+
+    for key in [
+        "kos_last_operator_data",
+        "kos_last_safe_action_result",
+        "kos_last_safe_action_packet_path",
+        "kos_last_public_research_packet",
+    ]:
+        st.session_state.pop(key, None)
+
+    root = Path.cwd()
+    assets_dir = root / "content_packs" / "hupmix_gp_video_02" / "assets_inbox"
+    assets_dir.mkdir(parents=True, exist_ok=True)
+
+    audit_path = root / "reports" / "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json"
+    real_report_path = root / "reports" / "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json"
+    real_preview = root / "local_runtime" / "kos_video_previews" / "hupmix" / "gp_video_02_real" / "GP_VIDEO_02_REAL_ASSET_PREVIEW.mp4"
+    real_storyboard = root / "local_runtime" / "kos_video_previews" / "hupmix" / "gp_video_02_real" / "GP_VIDEO_02_REAL_ASSET_STORYBOARD.png"
+
+    approval_dir = root / "live" / "human_decision_center"
+    approval_dir.mkdir(parents=True, exist_ok=True)
+
+    st.markdown("## Producao real Hupmix — GP_VIDEO_02")
+    st.caption("Regra: nao gerar video fake. O proximo video so vira preview real quando houver footage/imagens reais anexadas.")
+
+    msg = st.session_state.get("kos_hupmix_next_video_message")
+    if msg:
+        st.success(msg)
+
+    audit = {}
+    if audit_path.exists():
+        try:
+            audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        except Exception:
+            audit = {}
+
+    instagram = audit.get("instagram", {})
+    latest = instagram.get("latest_item") or {}
+    download = instagram.get("download") or {}
+    downloaded_path = root / download.get("stored_path", "") if download.get("stored_path") else None
+    gp_score = instagram.get("gp_relevance_from_caption") or {}
+
+    tabs = st.tabs(["Resumo", "Referencia compacta", "Assets reais", "Preview real", "OK humano"])
+
+    with tabs[0]:
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Campanha", "Garoto Oxy")
+        c2.metric("Score Oxy", str(gp_score.get("score", 0)))
+        c3.metric("Modo", "Real assets")
+
+        st.info("O video publicado no Instagram e referencia. O GP_VIDEO_02 precisa de material novo real ou assets anexados.")
+        st.write("Pasta de entrada:")
+        st.code("content_packs/hupmix_gp_video_02/assets_inbox")
+
+    with tabs[1]:
+        st.markdown("### Referencia real do Instagram")
+        st.caption("Compacto para nao ocupar a tela. Este video nao e o GP_VIDEO_02.")
+
+        st.write("Data:", latest.get("timestamp"))
+        if latest.get("permalink"):
+            st.markdown(f"[Abrir publicacao no Instagram]({latest.get('permalink')})")
+
+        with st.expander("Ver video real de referencia", expanded=False):
+            if downloaded_path and downloaded_path.exists():
+                left, center, right = st.columns([1, 1.2, 1])
+                with center:
+                    st.video(str(downloaded_path))
+                    st.caption(download.get("stored_path"))
+            else:
+                st.warning("Video real baixado nao encontrado. Rode a auditoria Hupmix novamente.")
+
+        caption = latest.get("caption")
+        if caption:
+            with st.expander("Legenda real", expanded=False):
+                st.write(caption)
+
+    with tabs[2]:
+        st.markdown("### Anexar footage real GP_VIDEO_02")
+        st.caption("Envie videos/fotos reais do produto, antes, aplicacao e depois.")
+
+        uploads = st.file_uploader(
+            "Adicionar assets reais",
+            type=["mp4", "mov", "m4v", "avi", "webm", "jpg", "jpeg", "png", "webp"],
+            accept_multiple_files=True,
+            key="kos_gp_video_02_real_assets_upload"
+        )
+
+        if uploads:
+            saved = []
+            for file in uploads:
+                safe = re.sub(r"[^a-zA-Z0-9_.-]+", "_", file.name).strip("_")
+                if not safe:
+                    safe = "asset_real"
+                target = assets_dir / safe
+                target.write_bytes(file.getbuffer())
+                saved.append(str(target.relative_to(root)).replace("\\", "/"))
+            st.success("Assets salvos.")
+            st.json(saved)
+
+        current_assets = [p for p in sorted(assets_dir.iterdir()) if p.is_file() and not p.name.startswith(".")]
+        st.write("Assets atuais:", len(current_assets))
+
+        for p in current_assets[:20]:
+            st.caption(f"{p.name} | {p.stat().st_size} bytes")
+
+        if st.button("Auditar assets e gerar preview real", type="primary", use_container_width=True, key="kos_gp_video_02_real_asset_audit_button"):
+            result = subprocess.run(
+                [sys.executable, "scripts\\run_kos_hupmix_gp_video_02_real_asset_audit.py"],
+                cwd=str(root),
+                capture_output=True,
+                text=True,
+                timeout=240
+            )
+            st.session_state["kos_gp_video_02_real_asset_audit_result"] = {
+                "returncode": result.returncode,
+                "stdout": result.stdout[-5000:],
+                "stderr": result.stderr[-5000:]
+            }
+            if hasattr(st, "rerun"):
+                st.rerun()
+
+        result = st.session_state.get("kos_gp_video_02_real_asset_audit_result")
+        if result:
+            if result.get("returncode") == 0:
+                st.success("Auditoria finalizada.")
+            else:
+                st.error("Falha na auditoria.")
+            with st.expander("Log", expanded=False):
+                st.code(result.get("stdout") or "")
+                if result.get("stderr"):
+                    st.code(result.get("stderr"))
+
+    with tabs[3]:
+        st.markdown("### Preview real GP_VIDEO_02")
+
+        report = {}
+        if real_report_path.exists():
+            try:
+                report = json.loads(real_report_path.read_text(encoding="utf-8"))
+            except Exception:
+                report = {}
+
+        status = report.get("status", "NAO_AUDITADO")
+        st.write("Status:", status)
+
+        if status == "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_PREVIEW_READY" and real_preview.exists():
+            left, center, right = st.columns([1, 1.15, 1])
+            with center:
+                st.video(str(real_preview))
+                st.caption("Preview criado somente com assets reais anexados.")
+
+            if real_storyboard.exists():
+                with st.expander("Storyboard real", expanded=False):
+                    st.image(str(real_storyboard), use_container_width=True)
+        else:
+            st.warning("Ainda nao existe preview real. Anexe assets reais na aba anterior.")
+            st.markdown(
+                "- video vertical curto do produto\n"
+                "- cena antes\n"
+                "- cena aplicando\n"
+                "- cena depois\n"
+                "- produto/preco/CTA"
+            )
+
+        if report:
+            with st.expander("Relatorio tecnico", expanded=False):
+                st.json(report)
+
+    with tabs[4]:
+        st.markdown("### Decisao humana")
+
+        note = st.text_input(
+            "Nota",
+            placeholder="Exemplo: OK com assets reais / precisa gravar aplicacao melhor.",
+            key="kos_gp_video_02_real_decision_note"
+        )
+
+        report = {}
+        if real_report_path.exists():
+            try:
+                report = json.loads(real_report_path.read_text(encoding="utf-8"))
+            except Exception:
+                report = {}
+
+        has_real_preview = report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_PREVIEW_READY" and real_preview.exists()
+
+        c1, c2 = st.columns(2)
+
+        if c1.button("OK preview real GP_VIDEO_02", type="primary", disabled=not has_real_preview, use_container_width=True, key="kos_ok_gp_video_02_real_preview"):
+            record = {
+                "status": "HUPMIX_GP_VIDEO_02_REAL_PREVIEW_APPROVED_BY_OPERATOR",
+                "created_at": datetime.now().isoformat(),
+                "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_02 real assets",
+                "decision": {
+                    "approved": True,
+                    "note": note,
+                    "next_step": "seguir somente com gate de publicacao manual separado"
+                },
+                "assets": {
+                    "real_preview": "local_runtime/kos_video_previews/hupmix/gp_video_02_real/GP_VIDEO_02_REAL_ASSET_PREVIEW.mp4",
+                    "audit_report": "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json"
+                },
+                "policy": {
+                    "publication_executed": False,
+                    "paid_ai_used": False,
+                    "scraping_used": False,
+                    "human_gate_required": True
+                }
+            }
+            path = approval_dir / "hupmix_gp_video_02_real_preview_approval.json"
+            path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+            st.success("OK humano registrado. Nenhuma publicacao foi executada.")
+            st.json({"file": str(path.relative_to(root)).replace("\\", "/"), "status": record["status"]})
+
+        if c2.button("Pedir ajuste / gravar mais material", use_container_width=True, key="kos_adjust_gp_video_02_real_preview"):
+            record = {
+                "status": "HUPMIX_GP_VIDEO_02_REAL_PREVIEW_ADJUSTMENT_REQUESTED",
+                "created_at": datetime.now().isoformat(),
+                "scope": "Hupmix / Garoto Oxy Power / GP_VIDEO_02 real assets",
+                "decision": {
+                    "approved": False,
+                    "adjustment_required": True,
+                    "note": note
+                },
+                "policy": {
+                    "publication_executed": False,
+                    "paid_ai_used": False,
+                    "human_gate_required": True
+                }
+            }
+            path = approval_dir / "hupmix_gp_video_02_real_preview_adjustment.json"
+            path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+            st.warning("Ajuste registrado. Nenhuma publicacao foi executada.")
+            st.json({"file": str(path.relative_to(root)).replace("\\", "/"), "status": record["status"]})
+# KOS_HUPMIX_GP_VIDEO_02_REAL_PRODUCTION_PANEL_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -1661,7 +1911,7 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
 if send and is_kos_hupmix_next_video_production_request(st.session_state.get("kos_operator_request_text", "")):
     st.session_state["kos_show_hupmix_next_video_production_panel"] = True
     st.session_state["kos_show_research_continuity_center"] = False
-    st.session_state["kos_hupmix_next_video_message"] = "Producao GP_VIDEO_02 aberta em modo seguro. Nenhum Router, Safe Action, publicacao, deploy, scraping ou IA paga foi acionado."
+    st.session_state["kos_hupmix_next_video_message"] = "Producao real GP_VIDEO_02 aberta. O K-OS nao vai gerar video fake: so usa assets reais/anexos. Publicacao segue bloqueada."
     st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
     st.session_state["kos_last_operator_data"] = None
     st.session_state.pop("kos_last_safe_action_result", None)
@@ -1673,7 +1923,9 @@ if send and is_kos_hupmix_next_video_production_request(st.session_state.get("ko
 # KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PRIORITY_GATE_END
 
 if st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
-    render_kos_hupmix_next_video_production_panel()
+    render_kos_hupmix_gp_video_02_real_production_panel()
+
+
 
 
 

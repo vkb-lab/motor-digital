@@ -1,0 +1,15 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS",
+  "created_at": "2026-06-22T16:41:37.632027",
+  "assets_found": 0,
+  "assets_inbox": "content_packs/hupmix_gp_video_02/assets_inbox",
+  "preview_created": false,
+  "brief": "campaigns/hupmix_gp_recovery/GP_VIDEO_02_REAL_PRODUCTION_BRIEF.json",
+  "next_step": "Anexar footage real do produto/cenas pelo painel ou copiar para assets_inbox.",
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "human_gate_required": true
+  }
+}

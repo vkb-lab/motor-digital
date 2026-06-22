@@ -1,0 +1,22 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_REAL_PRODUCTION_BRIDGE_READY",
+  "created_at": "2026-06-22T16:41:37.374733",
+  "rule": "GP_VIDEO_02 nao deve ser tratado como video real sem assets reais.",
+  "assets_inbox": "content_packs/hupmix_gp_video_02/assets_inbox",
+  "panel": "pages/KOS_Operator_Chat.py",
+  "script": "scripts/run_kos_hupmix_gp_video_02_real_asset_audit.py",
+  "behavior": {
+    "reference_video_compact": true,
+    "no_fake_preview": true,
+    "requires_real_assets_for_preview": true,
+    "can_upload_assets_in_panel": true,
+    "can_generate_real_asset_preview": true,
+    "standard_stale_response_suppressed": true
+  },
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "human_gate_required": true
+  }
+}
