@@ -1,0 +1,25 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_PRIORITY_GATE_FIX_READY",
+  "created_at": "2026-06-22T16:22:40.629758",
+  "target": "pages/KOS_Operator_Chat.py",
+  "changed": true,
+  "fix": {
+    "gp_video_02_gate_before_research": true,
+    "research_detector_excludes_hupmix_video_production": true,
+    "clears_research_panel_when_video_production_requested": true
+  },
+  "expected_behavior": {
+    "request": "continuar produção do próximo video Garoto Oxy Hupmix",
+    "opens": "Producao Hupmix — proximo video Garoto Oxy",
+    "does_not_open": "K-OS Research & Continuity Center",
+    "skips_router": true,
+    "skips_safe_action": true
+  },
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "no_logged_browser_automation": true,
+    "human_gate_required": true
+  }
+}

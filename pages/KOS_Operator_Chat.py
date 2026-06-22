@@ -657,6 +657,32 @@ def is_kos_research_continuity_request(text: str) -> bool:
     value = unicodedata.normalize("NFKD", value)
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
 
+    production_terms = [
+        "proximo video",
+        "próximo video",
+        "novo video",
+        "nova publicacao",
+        "ligar producao",
+        "producao de video",
+        "produção de video",
+        "continuar producao",
+        "continuar produção",
+        "video condizente",
+        "gp_video_02",
+        "gp video 02",
+    ]
+
+    production_targets = [
+        "hupmix",
+        "garoto oxy",
+        "oxy power",
+        "gp_video_02",
+        "gp video 02",
+    ]
+
+    if any(term in value for term in production_terms) and any(term in value for term in production_targets):
+        return False
+
     action_terms = [
         "auditoria", "auditar", "identificar", "verificar", "pesquisar",
         "pesquisa publica", "fontes publicas", "fontes oficiais",
@@ -1632,6 +1658,24 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
         st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
         st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
 # KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
+# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PRIORITY_GATE_BEGIN
+if send and is_kos_hupmix_next_video_production_request(st.session_state.get("kos_operator_request_text", "")):
+    st.session_state["kos_show_hupmix_next_video_production_panel"] = True
+    st.session_state["kos_show_research_continuity_center"] = False
+    st.session_state["kos_hupmix_next_video_message"] = "Producao GP_VIDEO_02 aberta em modo seguro. Nenhum Router, Safe Action, publicacao, deploy, scraping ou IA paga foi acionado."
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    st.session_state.pop("kos_last_public_research_packet", None)
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_PRIORITY_GATE_END
+
+if st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
+    render_kos_hupmix_next_video_production_panel()
 
 # KOS_RESEARCH_CONTINUITY_GATE_BEGIN
 if send and is_kos_research_continuity_request(st.session_state.get("kos_operator_request_text", "")):
