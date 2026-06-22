@@ -1,0 +1,19 @@
+{
+  "status": "KOS_RUNTIME_BOUNDARY_POLICY_V1_READY",
+  "created_at": "2026-06-22T18:41:44.827253",
+  "rule": "Runtime vivo nao deve sujar Git.",
+  "git_is_for": [
+    "codigo",
+    "politicas",
+    "missoes aprovadas",
+    "registros promovidos"
+  ],
+  "local_runtime_is_for": [
+    "execucoes",
+    "last_run",
+    "eventos",
+    "logs",
+    "arquivos temporarios"
+  ],
+  "next_operational_rule": "Antes de qualquer tag/commit, rodar runtime boundary guard."
+}

@@ -8,11 +8,8 @@ import sys
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORTS = ROOT / "reports"
 RUNTIME = ROOT / "local_runtime" / "kos_capability_executor"
 EVENTS = RUNTIME / "events"
-
-REPORTS.mkdir(exist_ok=True)
 EVENTS.mkdir(parents=True, exist_ok=True)
 
 BLOCKED_TERMS = [
@@ -22,31 +19,20 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
-    "gp_video_02_capture_mission": {
-        "name": "GP_VIDEO_02 Capture Mission",
-        "script": "scripts/run_kos_hupmix_gp_video_02_capture_mission.py",
-        "report": "reports/KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1.json",
-        "autonomy_level": 2,
-        "permission": "local_readonly_report",
-        "human_gate_required": False,
-        "external_write": False
-    },
-    "operational_master_audit": {
-        "name": "Operational Master Audit",
-        "script": "scripts/run_kos_operational_master_audit.py",
-        "report": "reports/KOS_OPERATIONAL_MASTER_AUDIT_V1.json",
-        "autonomy_level": 1,
-        "permission": "local_readonly_report",
-        "human_gate_required": False,
-        "external_write": False
-    },
     "hupmix_instagram_audit": {
         "name": "Hupmix Instagram Continuity Audit",
         "script": "scripts/run_kos_hupmix_instagram_continuity_audit.py",
         "report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json",
         "autonomy_level": 3,
         "permission": "meta_graph_readonly",
-        "human_gate_required": False,
+        "external_write": False
+    },
+    "gp_video_02_capture_mission": {
+        "name": "GP_VIDEO_02 Capture Mission",
+        "script": "scripts/run_kos_hupmix_gp_video_02_capture_mission.py",
+        "report": "reports/KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1.json",
+        "autonomy_level": 2,
+        "permission": "local_readonly_report",
         "external_write": False
     },
     "gp_video_02_real_asset_audit": {
@@ -55,7 +41,14 @@ EXECUTORS = {
         "report": "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json",
         "autonomy_level": 2,
         "permission": "local_asset_render",
-        "human_gate_required": True,
+        "external_write": False
+    },
+    "operational_master_audit": {
+        "name": "Operational Master Audit",
+        "script": "scripts/run_kos_operational_master_audit.py",
+        "report": "reports/KOS_OPERATIONAL_MASTER_AUDIT_V1.json",
+        "autonomy_level": 1,
+        "permission": "local_readonly_report",
         "external_write": False
     }
 }
@@ -67,7 +60,8 @@ POLICY = {
     "paid_ai_enabled": False,
     "scraping_enabled": False,
     "logged_browser_automation_enabled": False,
-    "safe_execution_modes": ["local_readonly_report", "local_asset_render", "meta_graph_readonly"]
+    "safe_execution_modes": ["local_readonly_report", "local_asset_render", "meta_graph_readonly"],
+    "runtime_boundary": "all live execution state goes to local_runtime"
 }
 
 def now():
@@ -86,28 +80,27 @@ def load_json(path: Path):
         return None
 
 def normalize(text: str) -> str:
-    value = str(text or "").lower().strip()
     table = str.maketrans("áàãâéêíóôõúç", "aaaaeeiooouc")
-    return value.translate(table)
+    return str(text or "").lower().strip().translate(table)
 
-def has_blocked_intent(request: str):
+def blocked_hits(request: str):
     value = normalize(request)
     return [term for term in BLOCKED_TERMS if term in value]
 
 def route_request(request: str):
     value = normalize(request)
 
-    if any(term in value for term in ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]):
+    if any(x in value for x in ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]):
         return {
             "route": "hupmix_creation_pipeline",
-            "objective": "Continuar a campanha existente: auditar Hupmix, criar missao de captacao real e preparar GP_VIDEO_02.",
+            "objective": "Continuar campanha existente: referencia Instagram, missao de captacao real e GP_VIDEO_02 com assets reais.",
             "tasks": ["hupmix_instagram_audit", "gp_video_02_capture_mission", "gp_video_02_real_asset_audit"]
         }
 
-    if any(term in value for term in ["auditar tudo", "autonomia", "capacidade", "capability", "agentes", "inteligencia conectada"]):
+    if any(x in value for x in ["auditar tudo", "autonomia", "capacidades", "agentes", "inteligencia"]):
         return {
             "route": "operational_capability_audit",
-            "objective": "Atualizar auditoria operacional e registry.",
+            "objective": "Atualizar auditoria operacional.",
             "tasks": ["operational_master_audit"]
         }
 
@@ -121,26 +114,17 @@ def can_execute(executor_id: str):
     spec = EXECUTORS.get(executor_id)
     if not spec:
         return False, "executor_not_found"
-
     if spec["autonomy_level"] > POLICY["max_autonomy_level"]:
         return False, "autonomy_level_above_policy"
-
     if spec["permission"] not in POLICY["safe_execution_modes"]:
         return False, "permission_not_allowed"
-
     if spec.get("external_write"):
         return False, "external_write_blocked"
-
     if not (ROOT / spec["script"]).exists():
         return False, "script_missing"
-
     return True, "allowed"
 
-def run_executor(executor_id: str):
-    spec = EXECUTORS[executor_id]
-
-    # KOS_CAPTURE_MISSION_EXECUTOR_SKIP_BEGIN
-    # Evita sujar Git repetindo auditorias quando nada mudou.
+def skip_if_no_change(executor_id: str, spec: dict):
     if executor_id == "hupmix_instagram_audit":
         existing = load_json(ROOT / spec["report"]) or {}
         instagram = existing.get("instagram", {})
@@ -148,37 +132,24 @@ def run_executor(executor_id: str):
         download = instagram.get("download") or {}
         stored = download.get("stored_path")
         if existing.get("status") == "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT_READY" and latest and stored and (ROOT / stored).exists():
-            return {
-                "executor_id": executor_id,
-                "name": spec.get("name"),
-                "allowed": True,
-                "reason": "skipped_existing_valid_report",
-                "started_at": now(),
-                "finished_at": now(),
-                "returncode": 0,
-                "report": spec.get("report"),
-                "report_status": existing.get("status"),
-                "stderr_tail": ""
-            }
+            return "skipped_existing_valid_report", existing.get("status")
 
     if executor_id == "gp_video_02_real_asset_audit":
         assets_dir = ROOT / "content_packs" / "hupmix_gp_video_02" / "assets_inbox"
         assets = [p for p in assets_dir.iterdir() if p.is_file() and not p.name.startswith(".")] if assets_dir.exists() else []
         existing = load_json(ROOT / spec["report"]) or {}
         if not assets and existing.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
-            return {
-                "executor_id": executor_id,
-                "name": spec.get("name"),
-                "allowed": True,
-                "reason": "skipped_waiting_for_assets_no_change",
-                "started_at": now(),
-                "finished_at": now(),
-                "returncode": 0,
-                "report": spec.get("report"),
-                "report_status": existing.get("status"),
-                "stderr_tail": ""
-            }
-    # KOS_CAPTURE_MISSION_EXECUTOR_SKIP_END
+            return "skipped_waiting_for_assets_no_change", existing.get("status")
+
+    if executor_id == "gp_video_02_capture_mission":
+        existing = load_json(ROOT / spec["report"]) or {}
+        if existing.get("status") == "KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1_READY":
+            return "skipped_existing_capture_mission", existing.get("status")
+
+    return None, None
+
+def run_executor(executor_id: str):
+    spec = EXECUTORS[executor_id]
     allowed, reason = can_execute(executor_id)
 
     result = {
@@ -198,23 +169,30 @@ def run_executor(executor_id: str):
         result["finished_at"] = now()
         return result
 
-    try:
-        completed = subprocess.run(
-            [sys.executable, spec["script"]],
-            cwd=str(ROOT),
-            capture_output=True,
-            text=True,
-            timeout=300
-        )
-        result["returncode"] = completed.returncode
-        result["stderr_tail"] = (completed.stderr or "")[-2500:]
+    skip_reason, skip_status = skip_if_no_change(executor_id, spec)
+    if skip_reason:
+        result.update({
+            "reason": skip_reason,
+            "returncode": 0,
+            "report_status": skip_status,
+            "finished_at": now()
+        })
+        return result
 
-        report_data = load_json(ROOT / spec["report"])
-        if isinstance(report_data, dict):
-            result["report_status"] = report_data.get("status")
-    except Exception as exc:
-        result["returncode"] = -1
-        result["stderr_tail"] = str(exc)
+    completed = subprocess.run(
+        [sys.executable, spec["script"]],
+        cwd=str(ROOT),
+        capture_output=True,
+        text=True,
+        timeout=300
+    )
+
+    result["returncode"] = completed.returncode
+    result["stderr_tail"] = (completed.stderr or "")[-2500:]
+
+    report = load_json(ROOT / spec["report"])
+    if isinstance(report, dict):
+        result["report_status"] = report.get("status")
 
     result["finished_at"] = now()
     return result
@@ -225,65 +203,61 @@ def main():
     parser.add_argument("--no-execute", action="store_true")
     args = parser.parse_args()
 
-    request = args.request
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + uuid.uuid4().hex[:8]
-    blocked_hits = has_blocked_intent(request)
-    route = route_request(request)
+    route = route_request(args.request)
+    hits = blocked_hits(args.request)
 
     event = {
         "status": "KOS_CAPABILITY_EXECUTOR_RUN_READY",
         "run_id": run_id,
         "created_at": now(),
-        "request": request,
-        "blocked": bool(blocked_hits),
-        "blocked_hits": blocked_hits,
+        "request": args.request,
+        "blocked": bool(hits),
+        "blocked_hits": hits,
         "route": route,
         "policy": POLICY,
         "executions": [],
         "next_step": None
     }
 
-    if blocked_hits:
+    if hits:
         event["status"] = "KOS_CAPABILITY_EXECUTOR_BLOCKED_BY_POLICY"
-        event["next_step"] = "Acao externa bloqueada. Criar Human Gate separado se realmente necessario."
-    elif not args.no_execute:
+        event["next_step"] = "Acao externa bloqueada. Exige Human Gate separado."
+    elif args.no_execute:
+        event["status"] = "KOS_CAPABILITY_EXECUTOR_PLAN_READY"
+        event["next_step"] = "Plano criado sem executar."
+    else:
         for executor_id in route.get("tasks", []):
             event["executions"].append(run_executor(executor_id))
 
-        gp_report = load_json(ROOT / "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json") or {}
+        gp_report = load_json(ROOT / "reports" / "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json") or {}
 
-        if route["route"] in ["hupmix_resolution_pipeline", "hupmix_creation_pipeline"]:
+        if route["route"] == "hupmix_creation_pipeline":
             if gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
-                event["next_step"] = "Hupmix GP_VIDEO_02 aguardando assets reais em content_packs/hupmix_gp_video_02/assets_inbox."
+                event["next_step"] = "GP_VIDEO_02 tem missao de captacao criada e aguarda assets reais."
             elif gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_PREVIEW_READY":
                 event["next_step"] = "Preview real pronto. Validar no Operator Chat e registrar OK humano."
             else:
-                event["next_step"] = "Abrir estado Hupmix e revisar relatorio."
+                event["next_step"] = "Revisar estado Hupmix no orquestrador."
         else:
             event["next_step"] = "Execucao segura concluida."
-    else:
-        event["status"] = "KOS_CAPABILITY_EXECUTOR_PLAN_READY"
-        event["next_step"] = "Plano criado sem execucao."
 
     event_path = EVENTS / f"{run_id}.json"
     last_path = RUNTIME / "last_run.json"
+    status_path = RUNTIME / "status.json"
 
     event_path.write_text(json.dumps(event, ensure_ascii=False, indent=2), encoding="utf-8")
     last_path.write_text(json.dumps(event, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    status_report = {
+    status = {
         "status": "KOS_CAPABILITY_EXECUTOR_V1_READY",
+        "updated_at": now(),
         "runtime_last_run": rel(last_path),
         "runtime_events_dir": rel(EVENTS),
-        "executors": EXECUTORS,
         "policy": POLICY,
-        "note": "Runtime runs ficam em local_runtime para nao sujar Git."
+        "executors": EXECUTORS
     }
-
-    status_path = REPORTS / "KOS_CAPABILITY_EXECUTOR_V1.json"
-    old = load_json(status_path)
-    if old != status_report:
-        status_path.write_text(json.dumps(status_report, ensure_ascii=False, indent=2), encoding="utf-8")
+    status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(json.dumps({
         "status": event["status"],
@@ -293,12 +267,13 @@ def main():
         "blocked": event["blocked"],
         "executions": [
             {
-                "executor_id": item.get("executor_id"),
-                "allowed": item.get("allowed"),
-                "returncode": item.get("returncode"),
-                "report_status": item.get("report_status")
+                "executor_id": x.get("executor_id"),
+                "allowed": x.get("allowed"),
+                "reason": x.get("reason"),
+                "returncode": x.get("returncode"),
+                "report_status": x.get("report_status")
             }
-            for item in event["executions"]
+            for x in event["executions"]
         ],
         "next_step": event["next_step"],
         "event": rel(event_path),
