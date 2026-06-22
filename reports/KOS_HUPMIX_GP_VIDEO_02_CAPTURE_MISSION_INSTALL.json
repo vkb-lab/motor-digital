@@ -1,0 +1,19 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_INSTALL_READY",
+  "created_at": "2026-06-22T18:33:22.572892",
+  "created": [
+    "scripts/run_kos_hupmix_gp_video_02_capture_mission.py"
+  ],
+  "patched": [
+    "scripts/run_kos_capability_executor.py",
+    "pages/KOS_Operator_Chat.py"
+  ],
+  "behavior": {
+    "continues_existing_campaign": true,
+    "uses_instagram_reference": true,
+    "creates_capture_mission": true,
+    "does_not_generate_fake_video": true,
+    "orchestrator_shows_capture_mission": true,
+    "does_not_publish": true
+  }
+}

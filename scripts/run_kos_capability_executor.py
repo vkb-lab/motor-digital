@@ -22,6 +22,15 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
+    "gp_video_02_capture_mission": {
+        "name": "GP_VIDEO_02 Capture Mission",
+        "script": "scripts/run_kos_hupmix_gp_video_02_capture_mission.py",
+        "report": "reports/KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1.json",
+        "autonomy_level": 2,
+        "permission": "local_readonly_report",
+        "human_gate_required": False,
+        "external_write": False
+    },
     "operational_master_audit": {
         "name": "Operational Master Audit",
         "script": "scripts/run_kos_operational_master_audit.py",
@@ -90,9 +99,9 @@ def route_request(request: str):
 
     if any(term in value for term in ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]):
         return {
-            "route": "hupmix_resolution_pipeline",
-            "objective": "Auditar Hupmix e preparar continuidade GP_VIDEO_02 com assets reais.",
-            "tasks": ["hupmix_instagram_audit", "gp_video_02_real_asset_audit"]
+            "route": "hupmix_creation_pipeline",
+            "objective": "Continuar a campanha existente: auditar Hupmix, criar missao de captacao real e preparar GP_VIDEO_02.",
+            "tasks": ["hupmix_instagram_audit", "gp_video_02_capture_mission", "gp_video_02_real_asset_audit"]
         }
 
     if any(term in value for term in ["auditar tudo", "autonomia", "capacidade", "capability", "agentes", "inteligencia conectada"]):
@@ -129,6 +138,47 @@ def can_execute(executor_id: str):
 
 def run_executor(executor_id: str):
     spec = EXECUTORS[executor_id]
+
+    # KOS_CAPTURE_MISSION_EXECUTOR_SKIP_BEGIN
+    # Evita sujar Git repetindo auditorias quando nada mudou.
+    if executor_id == "hupmix_instagram_audit":
+        existing = load_json(ROOT / spec["report"]) or {}
+        instagram = existing.get("instagram", {})
+        latest = instagram.get("latest_item") or {}
+        download = instagram.get("download") or {}
+        stored = download.get("stored_path")
+        if existing.get("status") == "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT_READY" and latest and stored and (ROOT / stored).exists():
+            return {
+                "executor_id": executor_id,
+                "name": spec.get("name"),
+                "allowed": True,
+                "reason": "skipped_existing_valid_report",
+                "started_at": now(),
+                "finished_at": now(),
+                "returncode": 0,
+                "report": spec.get("report"),
+                "report_status": existing.get("status"),
+                "stderr_tail": ""
+            }
+
+    if executor_id == "gp_video_02_real_asset_audit":
+        assets_dir = ROOT / "content_packs" / "hupmix_gp_video_02" / "assets_inbox"
+        assets = [p for p in assets_dir.iterdir() if p.is_file() and not p.name.startswith(".")] if assets_dir.exists() else []
+        existing = load_json(ROOT / spec["report"]) or {}
+        if not assets and existing.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
+            return {
+                "executor_id": executor_id,
+                "name": spec.get("name"),
+                "allowed": True,
+                "reason": "skipped_waiting_for_assets_no_change",
+                "started_at": now(),
+                "finished_at": now(),
+                "returncode": 0,
+                "report": spec.get("report"),
+                "report_status": existing.get("status"),
+                "stderr_tail": ""
+            }
+    # KOS_CAPTURE_MISSION_EXECUTOR_SKIP_END
     allowed, reason = can_execute(executor_id)
 
     result = {
@@ -202,7 +252,7 @@ def main():
 
         gp_report = load_json(ROOT / "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json") or {}
 
-        if route["route"] == "hupmix_resolution_pipeline":
+        if route["route"] in ["hupmix_resolution_pipeline", "hupmix_creation_pipeline"]:
             if gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
                 event["next_step"] = "Hupmix GP_VIDEO_02 aguardando assets reais em content_packs/hupmix_gp_video_02/assets_inbox."
             elif gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_PREVIEW_READY":

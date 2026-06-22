@@ -2352,6 +2352,23 @@ def render_kos_orchestrator_mode_panel():
         st.markdown("### Hupmix GP_VIDEO_02 precisa de material real")
         st.write("Anexe videos ou fotos reais do produto, aplicacao, antes/depois.")
 
+        # KOS_CAPTURE_MISSION_INLINE_UI_BEGIN
+        mission_path = root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_02_CAPTURE_MISSION.json"
+        if mission_path.exists():
+            try:
+                mission = json.loads(mission_path.read_text(encoding="utf-8"))
+                st.markdown("### Missao de captacao criada")
+                st.write(mission.get("campaign", {}).get("objective"))
+                with st.expander("Ver takes que precisam ser captados", expanded=True):
+                    for item in mission.get("capture_mission", {}).get("required_real_assets", []):
+                        st.markdown(f"**{item.get('id')}**")
+                        st.write(item.get("description"))
+                        st.caption(item.get("instruction"))
+                st.caption("Depois da captacao, anexe os arquivos abaixo. O K-OS monta o preview real.")
+            except Exception:
+                pass
+        # KOS_CAPTURE_MISSION_INLINE_UI_END
+
         assets_dir = root / "content_packs" / "hupmix_gp_video_02" / "assets_inbox"
         assets_dir.mkdir(parents=True, exist_ok=True)
 

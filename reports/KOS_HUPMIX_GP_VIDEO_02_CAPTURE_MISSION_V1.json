@@ -1,0 +1,17 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1_READY",
+  "created_at": "2026-06-22T18:33:22.924130",
+  "mission": "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CAPTURE_MISSION.json",
+  "mission_md": "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CAPTURE_MISSION.md",
+  "assets_inbox": "content_packs/hupmix_gp_video_02/assets_inbox",
+  "based_on_instagram_reference": true,
+  "required_takes": 6,
+  "next_step": "Captar ou anexar os takes reais em content_packs/hupmix_gp_video_02/assets_inbox.",
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "no_logged_browser_automation": true,
+    "human_gate_required": true
+  }
+}

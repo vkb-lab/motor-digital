@@ -1,0 +1,117 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_READY",
+  "created_at": "2026-06-22T18:33:22.924130",
+  "campaign": {
+    "brand": "Hupmix",
+    "product": "Oxy Power 5L",
+    "character": "Garoto Oxy",
+    "price": "R$ 49,90",
+    "video_id": "GP_VIDEO_02",
+    "objective": "Continuar a campanha existente com uma nova captacao real, sem inventar footage."
+  },
+  "based_on": {
+    "instagram_reference_video": "local_runtime/kos_instagram_audit/hupmix/20260622_144446/18087817444971023.mp4",
+    "instagram_timestamp": "2026-03-20T15:35:22+0000",
+    "instagram_permalink": "https://www.instagram.com/reel/DWHGjCBjLB1/",
+    "caption_score": {
+      "score": 9,
+      "hits": [
+        "oxy",
+        "oxy power",
+        "limpeza",
+        "oxigênio ativo",
+        "sem cloro",
+        "5l",
+        "49,90",
+        "hupmix",
+        "whatsapp"
+      ],
+      "seems_gp_oxy_related": true
+    },
+    "audit_report": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json"
+  },
+  "creative_direction": {
+    "positioning": "Continuidade da campanha Garoto Oxy, agora mostrando uso real do Oxy Power.",
+    "tone": "simples, direto, demonstrativo e comercial",
+    "do_not_do": [
+      "nao gerar video fake",
+      "nao repostar o video antigo como se fosse novo",
+      "nao usar cena inventada como prova real",
+      "nao publicar sem OK humano"
+    ]
+  },
+  "capture_mission": {
+    "assets_inbox": "content_packs/hupmix_gp_video_02/assets_inbox",
+    "required_real_assets": [
+      {
+        "id": "take_01_product_intro",
+        "type": "video_or_photo",
+        "duration_target": "3-5s",
+        "description": "Produto Oxy Power 5L em quadro, com rotulo visivel.",
+        "instruction": "Gravar vertical, boa luz, produto parado ou leve movimento de mao."
+      },
+      {
+        "id": "take_02_problem_before",
+        "type": "video",
+        "duration_target": "4-6s",
+        "description": "Cena real de sujeira, gordura, piso, box, roupa ou superficie antes da limpeza.",
+        "instruction": "Mostrar problema real sem exagero. Evitar tremedeira."
+      },
+      {
+        "id": "take_03_application",
+        "type": "video",
+        "duration_target": "5-8s",
+        "description": "Aplicacao do Oxy Power na superficie.",
+        "instruction": "Mostrar o produto sendo usado. Se possivel, mao aplicando e superficie visivel."
+      },
+      {
+        "id": "take_04_action_wait_clean",
+        "type": "video",
+        "duration_target": "4-6s",
+        "description": "Produto agindo ou limpeza sendo feita.",
+        "instruction": "Mostrar pano, escova ou processo de limpeza."
+      },
+      {
+        "id": "take_05_after_result",
+        "type": "video_or_photo",
+        "duration_target": "4-6s",
+        "description": "Resultado depois da limpeza.",
+        "instruction": "Mesmo angulo aproximado da cena antes."
+      },
+      {
+        "id": "take_06_offer_cta",
+        "type": "video_or_photo",
+        "duration_target": "3-5s",
+        "description": "Produto + preco R$ 49,90 + chamada para Hupmix/WhatsApp.",
+        "instruction": "Pode ser produto na prateleira ou produto em mesa com preco."
+      }
+    ]
+  },
+  "script": {
+    "hook": "O Garoto Oxy voltou com teste real.",
+    "voice_lines": [
+      "Olha o que o Oxy Power consegue fazer no uso real.",
+      "Produto sem cloro, com oxigenio ativo e alto poder de limpeza.",
+      "Aqui e antes. Agora vamos aplicar.",
+      "Deixa agir, limpa e olha o resultado.",
+      "Oxy Power 5 litros por R$ 49,90 na HupMix."
+    ],
+    "caption_suggestion": "O Garoto Oxy voltou em teste real. Oxy Power 5L com oxigenio ativo, sem cloro e por R$ 49,90 na HupMix. Chama no WhatsApp ou passa na loja.",
+    "cta": "Chame a HupMix no WhatsApp ou passe na loja."
+  },
+  "production_rules": {
+    "format": "vertical 9:16",
+    "target_duration": "20-30s",
+    "capture_device": "celular",
+    "minimum_quality": "boa luz, audio opcional, imagem estavel",
+    "editing_after_capture": "K-OS monta preview real apenas depois dos assets reais entrarem no assets_inbox"
+  },
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_scraping": true,
+    "no_logged_browser_automation": true,
+    "human_gate_required": true
+  },
+  "next_step": "Captar ou anexar os takes reais em content_packs/hupmix_gp_video_02/assets_inbox."
+}
