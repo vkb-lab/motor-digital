@@ -476,3 +476,86 @@ try:
 except Exception as _kos_lousa_exc:
     st.warning(f"Lousa visual GP_VIDEO_01 nao carregou: {_kos_lousa_exc}")
 
+
+# KOS_OPERATOR_FLOW_DIAGNOSTIC_PANEL_BEGIN
+def render_kos_operator_flow_diagnostic_panel():
+    """Painel compacto de diagnostico do fluxo operador.
+    Le apenas reports locais. Nao executa acao externa.
+    """
+    import json
+    from pathlib import Path
+    import streamlit as st
+
+    root = Path.cwd()
+    audit_path = root / "reports" / "KOS_OPERATOR_FLOW_AUDIT.json"
+    digest_path = root / "reports" / "KOS_CODEBASE_STATIC_MAP_DIGEST.json"
+
+    with st.expander("K-OS Diagnostic: Operator Flow", expanded=False):
+        st.caption("Leitura local. Sem IA, sem API, sem publicacao, sem deploy.")
+
+        if not audit_path.exists():
+            st.warning("Relatorio Operator Flow ainda nao encontrado.")
+            return
+
+        try:
+            audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            st.error(f"Falha ao ler Operator Flow Audit: {exc}")
+            return
+
+        summary = audit.get("summary", {})
+        core_files = audit.get("core_flow_files", [])
+
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Arquivos candidatos", summary.get("candidate_python_files", 0))
+        col2.metric("Arquivos interessantes", summary.get("interesting_python_files", 0))
+        col3.metric("Arquivos core", summary.get("core_files", 0))
+
+        col4, col5, col6 = st.columns(3)
+        col4.metric("Subprocess/browser", summary.get("files_with_subprocess_or_browser", 0))
+        col5.metric("UI Streamlit", summary.get("files_with_ui_lines", 0))
+        col6.metric("Runtime/reports", summary.get("files_with_runtime_or_reports", 0))
+
+        st.markdown("### Top arquivos do fluxo")
+        rows = []
+        for item in core_files[:10]:
+            rows.append({
+                "arquivo": item.get("path", ""),
+                "score": item.get("score", 0),
+                "linhas": item.get("lines", 0),
+                "riscos": ", ".join(item.get("risk_hits", [])[:8]),
+                "ui_hits": len(item.get("ui_lines", [])),
+                "subprocess_hits": len(item.get("subprocess_lines", [])),
+                "runtime_hits": len(item.get("writes_runtime_or_reports", [])),
+            })
+
+        if rows:
+            st.dataframe(rows, use_container_width=True, hide_index=True)
+        else:
+            st.info("Nenhum arquivo core encontrado no relatorio.")
+
+        if digest_path.exists():
+            try:
+                digest = json.loads(digest_path.read_text(encoding="utf-8"))
+                risks = digest.get("top_risk_keywords", [])[:10]
+                if risks:
+                    st.markdown("### Top riscos gerais")
+                    st.dataframe(
+                        [{"risco": r[0], "ocorrencias": r[1]} for r in risks],
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+            except Exception as exc:
+                st.warning(f"Digest encontrado, mas nao foi possivel ler: {exc}")
+
+        st.info("Proximo alvo recomendado: separar UI, Router e Safe Action Executor em diagnostico permanente.")
+
+try:
+    render_kos_operator_flow_diagnostic_panel()
+except Exception as exc:
+    try:
+        import streamlit as st
+        st.warning(f"K-OS Diagnostic Panel indisponivel: {exc}")
+    except Exception:
+        pass
+# KOS_OPERATOR_FLOW_DIAGNOSTIC_PANEL_END
