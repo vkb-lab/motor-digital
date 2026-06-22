@@ -109,8 +109,8 @@ scenes = [
     {
         "title": "Continuacao do Garoto Oxy",
         "duration": 4,
-        "line": "Depois do primeiro video, vamos mostrar o Oxy Power em uso real.",
-        "screen": "Referencia: publicacao real Hupmix"
+        "line": "Novo video: manter a campanha Garoto Oxy, mas gravar outro take real do Oxy Power em uso.",
+        "screen": "Referencia real apenas como base - novo take a gravar"
     },
     {
         "title": "Prova visual",
@@ -196,20 +196,43 @@ def rounded(draw, xy, radius, fill, outline=None, width=1):
     draw.rounded_rectangle(xy, radius=radius, fill=fill, outline=outline, width=width)
 
 def paste_ref(img, scene_index):
-    if not reference_frames:
-        return
+    draw = ImageDraw.Draw(img)
 
-    ref = reference_frames[scene_index % len(reference_frames)]
-    try:
-        ref_img = Image.open(ref).convert("RGB")
-        ref_img.thumbnail((520, 390))
-        x = (WIDTH - ref_img.width) // 2
-        y = 235
-        img.paste(ref_img, (x, y))
-        draw = ImageDraw.Draw(img)
-        draw.rounded_rectangle((x-8, y-8, x+ref_img.width+8, y+ref_img.height+8), radius=24, outline=(22,108,74), width=5)
-    except Exception:
-        pass
+    # GP_VIDEO_02 deve ser um novo preview, nao um repost visual.
+    # A referencia real aparece apenas na primeira cena, em formato pequeno.
+    if scene_index == 0 and reference_frames:
+        try:
+            ref = reference_frames[0]
+            ref_img = Image.open(ref).convert("RGB")
+            ref_img.thumbnail((300, 300))
+            x = 90
+            y = 265
+            img.paste(ref_img, (x, y))
+            draw.rounded_rectangle((x-8, y-8, x+ref_img.width+8, y+ref_img.height+8), radius=22, outline=(22,108,74), width=5)
+            draw.text((420, 285), "REFERENCIA REAL", font=F_H2, fill=(22,108,74))
+            draw.text((420, 340), "nao repetir", font=F_BODY, fill=(36,48,52))
+            draw.text((420, 385), "usar como base", font=F_BODY, fill=(36,48,52))
+            draw.text((420, 430), "para novo take", font=F_BODY, fill=(36,48,52))
+            return
+        except Exception:
+            pass
+
+    labels = [
+        ("NOVO TAKE", "produto em uso real"),
+        ("ANTES", "sujeira / gordura / box / piso"),
+        ("APLICAR", "Oxy Power em acao"),
+        ("DEPOIS", "resultado claro"),
+        ("OFERTA", "5L por R$ 49,90"),
+    ]
+
+    title, subtitle = labels[min(scene_index, len(labels)-1)]
+
+    rounded(draw, (92, 260, WIDTH-92, 590), 34, fill=(238, 247, 242), outline=(22,108,74), width=5)
+    draw_center(draw, title, 345, F_H1, (22,108,74), WIDTH-170)
+    draw_center(draw, subtitle, 425, F_BODY, (36,48,52), WIDTH-170)
+
+    draw.rectangle((145, 525, WIDTH-145, 535), fill=(22,108,74))
+    draw.text((160, 545), "CENA A GRAVAR - GP_VIDEO_02", font=F_SMALL, fill=(22,108,74))
 
 def make_frame(scene, scene_index, t, total_t):
     img = Image.new("RGB", (WIDTH, HEIGHT), (246, 248, 247))

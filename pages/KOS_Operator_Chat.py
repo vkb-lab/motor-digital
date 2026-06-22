@@ -1425,22 +1425,20 @@ def render_kos_hupmix_next_video_production_panel():
                 if gen.get("stderr"):
                     st.code(gen.get("stderr"))
 
-        c_old, c_new = st.columns(2)
+        st.markdown("#### GP_VIDEO_02 continuidade — novo preview")
+        st.caption("Este bloco e o proximo video proposto. O video real do Instagram fica apenas como referencia.")
 
-        with c_old:
-            st.markdown("#### GP_VIDEO_01 local")
+        if gp02_video.exists():
+            st.video(str(gp02_video))
+            st.caption("local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_PREVIEW.mp4")
+        else:
+            st.info("Clique em Gerar / atualizar GP_VIDEO_02 local.")
+
+        with st.expander("Comparar com GP_VIDEO_01 anterior", expanded=False):
             if gp01_video.exists():
                 st.video(str(gp01_video))
             else:
                 st.warning("GP_VIDEO_01 local nao encontrado.")
-
-        with c_new:
-            st.markdown("#### GP_VIDEO_02 continuidade")
-            if gp02_video.exists():
-                st.video(str(gp02_video))
-                st.caption("local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_PREVIEW.mp4")
-            else:
-                st.info("Clique em Gerar / atualizar GP_VIDEO_02 local.")
 
         if gp02_storyboard.exists():
             with st.expander("Storyboard GP_VIDEO_02", expanded=False):
@@ -1677,6 +1675,8 @@ if send and is_kos_hupmix_next_video_production_request(st.session_state.get("ko
 if st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
     render_kos_hupmix_next_video_production_panel()
 
+
+
 # KOS_RESEARCH_CONTINUITY_GATE_BEGIN
 if send and is_kos_research_continuity_request(st.session_state.get("kos_operator_request_text", "")):
     _kos_query = st.session_state.get("kos_operator_request_text", "").strip()
@@ -1733,21 +1733,7 @@ if send and is_kos_hupmix_review_request(st.session_state.get("kos_operator_requ
 if st.session_state.get("kos_show_hupmix_review_gate", False):
     render_kos_hupmix_review_gate()
 
-# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_GATE_BEGIN
-if send and is_kos_hupmix_next_video_production_request(st.session_state.get("kos_operator_request_text", "")):
-    st.session_state["kos_show_hupmix_next_video_production_panel"] = True
-    st.session_state["kos_hupmix_next_video_message"] = "Producao do proximo video Hupmix aberta em modo seguro. Nenhum Router, Safe Action, publicacao, deploy, scraping ou IA paga foi acionado."
-    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
-    st.session_state["kos_last_operator_data"] = None
-    st.session_state.pop("kos_last_safe_action_result", None)
-    st.session_state.pop("kos_last_safe_action_packet_path", None)
-    send = False
-    if hasattr(st, "rerun"):
-        st.rerun()
-# KOS_HUPMIX_NEXT_VIDEO_PRODUCTION_GATE_END
 
-if st.session_state.get("kos_show_hupmix_next_video_production_panel", False):
-    render_kos_hupmix_next_video_production_panel()
 
 # KOS_HUPMIX_GAROTO_OXY_HISTORY_REVIEW_GATE_BEGIN
 if send and is_kos_hupmix_garoto_oxy_history_review_request(st.session_state.get("kos_operator_request_text", "")):

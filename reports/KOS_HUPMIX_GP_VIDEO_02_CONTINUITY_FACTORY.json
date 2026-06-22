@@ -1,12 +1,12 @@
 {
   "status": "KOS_HUPMIX_GP_VIDEO_02_CONTINUITY_FACTORY_READY",
-  "created_at": "2026-06-22T16:14:18.010110",
+  "created_at": "2026-06-22T16:29:14.405541",
   "job": "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CONTINUITY_FACTORY_JOB.json",
   "outputs": {
     "mp4": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_PREVIEW.mp4",
-    "mp4_size": 348855,
+    "mp4_size": 293676,
     "storyboard": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_CONTINUITY_STORYBOARD.png",
-    "storyboard_size": 102387,
+    "storyboard_size": 105699,
     "reference_frames": [
       "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_REFERENCE_FRAME_1.jpg",
       "local_runtime/kos_video_previews/hupmix/GP_VIDEO_02_REFERENCE_FRAME_2.jpg"

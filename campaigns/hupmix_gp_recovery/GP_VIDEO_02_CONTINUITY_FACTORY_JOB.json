@@ -1,6 +1,6 @@
 {
   "status": "KOS_HUPMIX_GP_VIDEO_02_CONTINUITY_FACTORY_JOB_READY",
-  "created_at": "2026-06-22T16:14:03.291237",
+  "created_at": "2026-06-22T16:28:59.691687",
   "video_id": "GP_VIDEO_02",
   "based_on": {
     "campaign": "Garoto Oxy Power / Oxy Power",
@@ -28,8 +28,8 @@
     {
       "title": "Continuacao do Garoto Oxy",
       "duration": 4,
-      "line": "Depois do primeiro video, vamos mostrar o Oxy Power em uso real.",
-      "screen": "Referencia: publicacao real Hupmix"
+      "line": "Novo video: manter a campanha Garoto Oxy, mas gravar outro take real do Oxy Power em uso.",
+      "screen": "Referencia real apenas como base - novo take a gravar"
     },
     {
       "title": "Prova visual",
