@@ -1,0 +1,56 @@
+{
+  "status": "KOS_VIDEO_FACTORY_FREE_MODE_JOB_READY",
+  "created_at": "2026-06-22T12:51:06.596048",
+  "job_id": "hupmix_gp_video_01_free_mode_v1",
+  "brand": "Hupmix",
+  "campaign": "GP / Garoto Oxy Power / Oxy Power",
+  "video_id": "GP_VIDEO_01",
+  "mode": "free_local_render",
+  "output_type": "mp4",
+  "aspect_ratio": "9:16",
+  "paid_ai_required": false,
+  "provider_call_executed": false,
+  "instagram_publish_executed": false,
+  "human_gate_required": true,
+  "scenes": [
+    {
+      "title": "A solucao que faltava",
+      "duration": 4,
+      "speaker": "Garoto Oxy",
+      "line": "A solucao que faltava para a limpeza da sua casa chegou.",
+      "screen": "Oxy Power 5L na HupMix"
+    },
+    {
+      "title": "Problema real",
+      "duration": 5,
+      "speaker": "Garoto Oxy",
+      "line": "Sujeira no piso, gordura na cozinha ou box embacado? O Oxy Power ajuda.",
+      "screen": "Antes da limpeza"
+    },
+    {
+      "title": "Aplicacao",
+      "duration": 6,
+      "speaker": "Garoto Oxy",
+      "line": "Ele usa Oxigenio Ativo para limpar de forma pratica, sem cloro e sem toxicidade.",
+      "screen": "Aplicar, espalhar e limpar"
+    },
+    {
+      "title": "Resultado",
+      "duration": 6,
+      "speaker": "Garoto Oxy",
+      "line": "Olha a diferenca. E limpeza forte para o dia a dia.",
+      "screen": "Antes e depois"
+    },
+    {
+      "title": "Oferta e chamada",
+      "duration": 6,
+      "speaker": "Garoto Oxy",
+      "line": "Oxy Power 5 litros por R$ 49,90. Passe na HupMix ou chame no WhatsApp.",
+      "screen": "R$ 49,90 | Chame no WhatsApp"
+    }
+  ],
+  "outputs": {
+    "mp4": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4",
+    "storyboard": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_STORYBOARD.png"
+  }
+}
