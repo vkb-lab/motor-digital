@@ -1,0 +1,170 @@
+{
+  "status": "KOS_CAPABILITY_REGISTRY_READY",
+  "created_at": "2026-06-22T17:12:44.158353",
+  "policy": {
+    "current_max_autonomy_level": 3,
+    "external_publish_enabled": false,
+    "external_send_enabled": false,
+    "paid_ai_enabled": false,
+    "scraping_enabled": false,
+    "logged_browser_automation_enabled": false,
+    "manual_approval_required_for_real_actions": true,
+    "default_mode": "read_only_or_local_gated"
+  },
+  "autonomy_levels": {
+    "0": {
+      "name": "Manual",
+      "description": "Operador faz tudo. K-OS apenas mostra informacao."
+    },
+    "1": {
+      "name": "Auditoria read-only",
+      "description": "K-OS le arquivos, interpreta, gera relatorios e nao altera sistemas externos."
+    },
+    "2": {
+      "name": "Execucao local gateada",
+      "description": "K-OS cria arquivos, briefings, previews e registros locais. Acoes reais exigem OK humano."
+    },
+    "3": {
+      "name": "Integracao externa read-only",
+      "description": "K-OS usa APIs oficiais em leitura, sem publicar, comentar, deletar ou enviar."
+    },
+    "4": {
+      "name": "Acao externa gateada",
+      "description": "K-OS prepara acao externa, mas so executa com gate humano separado."
+    },
+    "5": {
+      "name": "Autonomia plena",
+      "description": "Bloqueado. Publicacao, deploy e gasto automatico nao autorizados."
+    }
+  },
+  "intelligence_connected": {
+    "python_executor": true,
+    "streamlit_cockpit": true,
+    "github_memory": true,
+    "json_memory": true,
+    "meta_graph_readonly": true,
+    "local_video_render": true,
+    "file_intake": true,
+    "public_research_registry": true,
+    "paid_ai": false,
+    "logged_browser_automation": false
+  },
+  "capabilities": [
+    {
+      "id": "operator_chat",
+      "name": "K-OS Operator Chat",
+      "type": "cockpit",
+      "status": "ACTIVE",
+      "path": "pages/KOS_Operator_Chat.py",
+      "autonomy_level": 2,
+      "works_now": true,
+      "can_act_alone": false,
+      "requires_human_gate": true,
+      "what_it_does": "Entrada principal. Recebe pedido unico, escolhe rota e mantem acoes reais gateadas."
+    },
+    {
+      "id": "hupmix_instagram_readonly",
+      "name": "Hupmix Instagram Meta Graph Read-only",
+      "type": "integration",
+      "status": "KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT_READY",
+      "path": "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json",
+      "autonomy_level": 3,
+      "works_now": true,
+      "can_act_alone": true,
+      "requires_human_gate": false,
+      "what_it_does": "Consulta Instagram Hupmix via Meta Graph oficial em modo leitura e baixa midia permitida."
+    },
+    {
+      "id": "hupmix_gp_video_01_review",
+      "name": "Hupmix GP_VIDEO_01 Review",
+      "type": "campaign_video",
+      "status": "READY",
+      "path": "local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4",
+      "autonomy_level": 2,
+      "works_now": true,
+      "can_act_alone": false,
+      "requires_human_gate": true,
+      "what_it_does": "Mostra video local, storyboard e permite decisao humana."
+    },
+    {
+      "id": "hupmix_gp_video_02_real_assets",
+      "name": "Hupmix GP_VIDEO_02 Real Asset Production",
+      "type": "campaign_video",
+      "status": "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS",
+      "path": "scripts/run_kos_hupmix_gp_video_02_real_asset_audit.py",
+      "autonomy_level": 2,
+      "works_now": true,
+      "can_act_alone": false,
+      "requires_human_gate": true,
+      "what_it_does": "Nao gera video fake. Espera assets reais, audita e cria preview real local."
+    },
+    {
+      "id": "file_intake",
+      "name": "K-OS File Intake",
+      "type": "input",
+      "status": "ACTIVE",
+      "path": "content_packs/",
+      "autonomy_level": 2,
+      "works_now": true,
+      "can_act_alone": true,
+      "requires_human_gate": false,
+      "what_it_does": "Recebe anexos e direciona arquivos para assets_inbox."
+    },
+    {
+      "id": "research_continuity",
+      "name": "Research & Continuity Center",
+      "type": "research",
+      "status": "ACTIVE",
+      "path": "memory/kos_governance/",
+      "autonomy_level": 1,
+      "works_now": true,
+      "can_act_alone": true,
+      "requires_human_gate": false,
+      "what_it_does": "Registra pesquisa publica e verifica continuidade antes de criar algo novo."
+    },
+    {
+      "id": "safe_action_governance",
+      "name": "Safe Action / Human Gate",
+      "type": "governance",
+      "status": "ACTIVE",
+      "path": "local_runtime/kos_safe_actions / live/human_decision_center",
+      "autonomy_level": 2,
+      "works_now": true,
+      "can_act_alone": false,
+      "requires_human_gate": true,
+      "what_it_does": "Mantem execucoes reais bloqueadas ate aprovacao humana."
+    },
+    {
+      "id": "operator_flow_audit",
+      "name": "Operator Flow Audit",
+      "type": "audit",
+      "status": "KOS_OPERATOR_FLOW_AUDIT_READY",
+      "path": "reports/KOS_OPERATOR_FLOW_AUDIT.json",
+      "autonomy_level": 1,
+      "works_now": true,
+      "can_act_alone": true,
+      "requires_human_gate": false,
+      "what_it_does": "Audita fluxo do Operator Chat, riscos e pontos de rota."
+    },
+    {
+      "id": "codebase_static_map",
+      "name": "Codebase Static Map",
+      "type": "audit",
+      "status": "KOS_CODEBASE_STATIC_MAP_READY",
+      "path": "reports/KOS_CODEBASE_STATIC_MAP.json",
+      "autonomy_level": 1,
+      "works_now": true,
+      "can_act_alone": true,
+      "requires_human_gate": false,
+      "what_it_does": "Mapeia codigo, funcoes, classes e riscos."
+    }
+  ],
+  "routing_rules": {
+    "check_continuity_before_new_work": true,
+    "use_capability_registry_before_router": true,
+    "require_real_assets_before_real_video": true,
+    "external_publish_blocked": true,
+    "paid_ai_blocked": true,
+    "scraping_blocked": true
+  }
+}
