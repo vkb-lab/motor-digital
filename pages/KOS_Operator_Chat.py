@@ -409,6 +409,32 @@ def render_hupmix_gp_lousa_preview(data=None):
     st.markdown("## Lousa de aprovação visual")
     st.caption("Preview visual do GP_VIDEO_01. Isto é uma simulação para aprovação. Nada foi publicado.")
 
+    mp4_script = root / "scripts" / "run_kos_hupmix_gp_video_01_mp4_preview.py"
+    preview_mp4 = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4"
+
+    try:
+        if mp4_script.exists():
+            subprocess = __import__("subprocess")
+            sysmod = __import__("sys")
+            subprocess.run(
+                [sysmod.executable, str(mp4_script)],
+                cwd=str(root),
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=90,
+            )
+
+        if preview_mp4.exists():
+            st.markdown("### Vídeo preview MP4")
+            st.video(preview_mp4.read_bytes(), format="video/mp4")
+            st.caption("Este é um MP4 vertical gerado pelo K-OS para aprovação visual. Não foi publicado.")
+    except Exception as exc:
+        st.warning(f"Preview MP4 nao carregou: {exc}")
+
+
+
     
     preview_script = root / "scripts" / "run_kos_hupmix_gp_video_01_animatic.py"
     preview_gif = root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.gif"

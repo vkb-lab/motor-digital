@@ -1,0 +1,15 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "mp4_preview_hotfix",
+  "name": "hupmix_gp_video_01_mp4_preview",
+  "status": "applied",
+  "created_at": "2026-06-22T09:12:31.036886",
+  "goal": "Gerar e exibir video MP4 vertical de preview do GP_VIDEO_01 na lousa.",
+  "no_new_phase": true,
+  "safety": {
+    "instagram_publish_executed": false,
+    "browser_automation": false,
+    "scraping": false,
+    "approval_is_recording_only": true
+  }
+}
