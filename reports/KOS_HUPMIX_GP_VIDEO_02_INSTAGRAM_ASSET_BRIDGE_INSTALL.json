@@ -1,0 +1,18 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_INSTAGRAM_ASSET_BRIDGE_INSTALL_READY",
+  "created_at": "2026-06-22T18:51:32.187829",
+  "behavior": {
+    "uses_downloaded_instagram_video": true,
+    "copies_to_gp_video_02_assets_inbox": true,
+    "does_not_wait_for_manual_upload_first": true,
+    "does_not_publish": true,
+    "keeps_assets_out_of_git": true
+  },
+  "created": [
+    "scripts/run_kos_hupmix_gp_video_02_instagram_asset_bridge.py"
+  ],
+  "patched": [
+    "scripts/run_kos_capability_executor.py",
+    ".gitignore"
+  ]
+}

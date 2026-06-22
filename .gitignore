@@ -31,3 +31,5 @@ reports/security/latest_security_firewall_report.json
 reports/security/latest_security_firewall_report.md
 reports/KOS_KAIZEN_LAST_CYCLE_REPORT.json
 ops/codex/
+content_packs/**/assets_inbox/*
+!content_packs/**/assets_inbox/.gitkeep

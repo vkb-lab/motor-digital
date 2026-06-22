@@ -19,6 +19,14 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
+    "gp_video_02_instagram_asset_bridge": {
+        "name": "GP_VIDEO_02 Instagram Asset Bridge",
+        "script": "scripts/run_kos_hupmix_gp_video_02_instagram_asset_bridge.py",
+        "report": "local_runtime/kos_hupmix_gp_video_02_instagram_asset_bridge/status.json",
+        "autonomy_level": 2,
+        "permission": "local_asset_render",
+        "external_write": False
+    },
     "hupmix_instagram_audit": {
         "name": "Hupmix Instagram Continuity Audit",
         "script": "scripts/run_kos_hupmix_instagram_continuity_audit.py",
@@ -93,8 +101,8 @@ def route_request(request: str):
     if any(x in value for x in ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]):
         return {
             "route": "hupmix_creation_pipeline",
-            "objective": "Continuar campanha existente: referencia Instagram, missao de captacao real e GP_VIDEO_02 com assets reais.",
-            "tasks": ["hupmix_instagram_audit", "gp_video_02_capture_mission", "gp_video_02_real_asset_audit"]
+            "objective": "Continuar campanha existente: usar o video baixado do Instagram como asset inicial, manter missao de captacao e preparar GP_VIDEO_02 real.",
+            "tasks": ["hupmix_instagram_audit", "gp_video_02_instagram_asset_bridge", "gp_video_02_capture_mission", "gp_video_02_real_asset_audit"]
         }
 
     if any(x in value for x in ["auditar tudo", "autonomia", "capacidades", "agentes", "inteligencia"]):
