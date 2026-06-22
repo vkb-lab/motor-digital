@@ -65,6 +65,10 @@ def kos_is_social_read_request(value: str) -> bool:
 
 
 def build_social_read(packet: dict) -> dict:
+    request_text = str(packet.get("request", "")).lower()
+    if "hupmix" in request_text and ("gp_video_01" in request_text or "video_01" in request_text or "roteiro cena a cena" in request_text or "garoto oxy" in request_text or "checklist de grava" in request_text):
+        return build_hupmix_gp_video_01_production_kit(packet)
+
     request = packet.get("request", "")
 
     def clip(value, limit=900):
@@ -210,6 +214,230 @@ def build_social_read(packet: dict) -> dict:
 
 
 
+def build_hupmix_gp_video_01_production_kit(packet: dict) -> dict:
+    request = packet.get("request", "")
+
+    package_path = ROOT / "campaigns" / "hupmix_gp_recovery" / "KOS_HUPMIX_GP_CONTINUITY_PACKAGE.json"
+    kit_json_path = ROOT / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_PRODUCTION_KIT.json"
+    kit_md_path = ROOT / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_PRODUCTION_KIT.md"
+
+    if not package_path.exists():
+        return {
+            "title": "GP_VIDEO_01 Production Kit - Hupmix",
+            "summary": "Pacote base GP Hupmix nao encontrado. Nenhuma publicacao foi executada.",
+            "sections": [
+                {"title": "Pedido original", "items": [request]},
+                {"title": "Proxima acao segura", "items": [
+                    "Recuperar o pacote KOS_HUPMIX_GP_CONTINUITY_PACKAGE.json.",
+                    "Nao publicar nada."
+                ]},
+            ],
+        }
+
+    package = json.loads(package_path.read_text(encoding="utf-8"))
+    videos = package.get("videos", []) or []
+    video = next((v for v in videos if str(v.get("id", "")).upper() == "GP_VIDEO_01"), videos[0] if videos else {})
+    stories_base = package.get("stories", []) or []
+
+    final_caption = (
+        "A solução que faltava para a limpeza da sua casa chegou na HupMix. "
+        "Oxy Power limpa com Oxigênio Ativo, sem cloro e sem toxicidade. "
+        "Ideal para quem quer praticidade, rendimento e resultado de verdade. "
+        "Passe na HupMix ou chame no WhatsApp e garanta o seu Oxy Power 5L."
+    )
+
+    scenes = [
+        {
+            "scene": "Cena 1 - Gancho inicial",
+            "duration": "0s a 3s",
+            "visual": "Garoto Oxy entra em cena segurando o Oxy Power 5L.",
+            "speech": "A solução que faltava para a limpeza da sua casa chegou.",
+            "screen_text": "A solução que faltava!",
+            "take": "Plano medio, energia alta, produto visivel."
+        },
+        {
+            "scene": "Cena 2 - Dor do cliente",
+            "duration": "3s a 7s",
+            "visual": "Mostrar piso, box, bancada ou cozinha com sujeira comum.",
+            "speech": "Sujeira no piso, gordura na cozinha ou box embaçado? O Oxy Power ajuda.",
+            "screen_text": "Limpeza difícil?",
+            "take": "Take antes, aproximado, mostrando o problema."
+        },
+        {
+            "scene": "Cena 3 - Aplicacao",
+            "duration": "7s a 13s",
+            "visual": "Aplicar o produto e passar pano/esponja na superfície.",
+            "speech": "Ele usa Oxigênio Ativo para limpar de forma prática, sem cloro e sem toxicidade.",
+            "screen_text": "Oxigênio Ativo",
+            "take": "Close na aplicação e movimento de limpeza."
+        },
+        {
+            "scene": "Cena 4 - Resultado",
+            "duration": "13s a 20s",
+            "visual": "Mostrar antes e depois com corte rapido.",
+            "speech": "Olha a diferença. É limpeza forte para o dia a dia.",
+            "screen_text": "Antes e depois",
+            "take": "Comparativo visual claro, sem exagero."
+        },
+        {
+            "scene": "Cena 5 - Oferta e CTA",
+            "duration": "20s a 30s",
+            "visual": "Close no produto, preço e chamada para loja/WhatsApp.",
+            "speech": "Oxy Power 5 litros por R$ 49,90. Passe na HupMix ou chame no WhatsApp.",
+            "screen_text": "5L por R$ 49,90",
+            "take": "Produto centralizado, preço legível, CTA final."
+        }
+    ]
+
+    talks = [
+        "A solução que faltava para a limpeza da sua casa chegou.",
+        "Sujeira no piso, gordura na cozinha ou box embaçado? O Oxy Power ajuda.",
+        "Ele usa Oxigênio Ativo para limpar de forma prática, sem cloro e sem toxicidade.",
+        "Olha a diferença. É limpeza forte para o dia a dia.",
+        "Oxy Power 5 litros por R$ 49,90. Passe na HupMix ou chame no WhatsApp."
+    ]
+
+    takes = [
+        "Produto Oxy Power 5L em destaque.",
+        "Garoto Oxy segurando o produto.",
+        "Superficie suja antes da aplicação.",
+        "Aplicação do produto.",
+        "Limpeza com pano ou esponja.",
+        "Resultado depois da limpeza.",
+        "Close no preço.",
+        "Take final com CTA para HupMix/WhatsApp."
+    ]
+
+    stories = [
+        "Story 1: Enquete - Qual parte da casa dá mais trabalho para limpar?",
+        "Story 2: Bastidor curto do Garoto Oxy preparando o teste.",
+        "Story 3: Antes/depois do teste com Oxy Power.",
+        "Story 4: Oferta - Oxy Power 5L por R$ 49,90.",
+        "Story 5: CTA - Quer reservar o seu? Chame no WhatsApp ou passe na HupMix."
+    ]
+
+    checklist = [
+        "Confirmar preço atualizado antes de publicar.",
+        "Confirmar estoque do Oxy Power 5L.",
+        "Confirmar endereço, telefone ou WhatsApp correto.",
+        "Separar produto limpo e bem apresentado.",
+        "Gravar em local bem iluminado.",
+        "Capturar antes e depois real.",
+        "Evitar promessas exageradas.",
+        "Revisar legenda final.",
+        "Aprovar manualmente antes de qualquer publicação real."
+    ]
+
+    kit = {
+        "status": "KOS_HUPMIX_GP_VIDEO_01_PRODUCTION_KIT_READY",
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "brand": "Hupmix",
+        "campaign": "GP / Garoto Oxy Power / Oxy Power",
+        "video_id": "GP_VIDEO_01",
+        "title": "O heroi da limpeza chegou",
+        "format": "Reel 20-30s",
+        "base_hook": video.get("hook", "A solucao que faltava para limpar tudo sem complicar."),
+        "final_caption": final_caption,
+        "scenes": scenes,
+        "garoto_oxy_lines": talks,
+        "takes": takes,
+        "stories": stories,
+        "recording_checklist": checklist,
+        "safety": {
+            "instagram_publish_executed": False,
+            "browser_logged_account_automation_used": False,
+            "scraping_used": False,
+            "human_gate_required": True
+        }
+    }
+
+    kit_json_path.write_text(json.dumps(kit, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    lines = []
+    lines.append("# GP_VIDEO_01 Production Kit - Hupmix")
+    lines.append("")
+    lines.append("Status: roteiro final de gravação gerado. Nada foi publicado.")
+    lines.append("")
+    lines.append("## Campanha")
+    lines.append("- Marca: Hupmix")
+    lines.append("- Campanha: GP / Garoto Oxy Power / Oxy Power")
+    lines.append("- Formato: Reel 20-30s")
+    lines.append("")
+    lines.append("## Roteiro cena a cena")
+    for scene in scenes:
+        lines.append(f"### {scene['scene']}")
+        lines.append(f"- Tempo: {scene['duration']}")
+        lines.append(f"- Visual: {scene['visual']}")
+        lines.append(f"- Fala: {scene['speech']}")
+        lines.append(f"- Texto na tela: {scene['screen_text']}")
+        lines.append(f"- Take: {scene['take']}")
+        lines.append("")
+    lines.append("## Falas do Garoto Oxy")
+    for item in talks:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("## Lista de takes")
+    for item in takes:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("## Legenda final")
+    lines.append(final_caption)
+    lines.append("")
+    lines.append("## Stories de apoio")
+    for item in stories:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("## Checklist de gravação")
+    for item in checklist:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("## Guardrails")
+    lines.append("- Não publicar automaticamente.")
+    lines.append("- Não usar navegador logado.")
+    lines.append("- Não fazer scraping.")
+    lines.append("- Exigir aprovação humana antes de qualquer publicação real.")
+
+    kit_md_path.write_text("\n".join(lines), encoding="utf-8")
+
+    return {
+        "title": "GP_VIDEO_01 Production Kit - Hupmix",
+        "summary": "Roteiro final de gravação gerado a partir do pacote GP recuperado. Nenhuma publicação foi executada.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Campanha", "items": [
+                "Marca: Hupmix",
+                "Campanha: GP / Garoto Oxy Power / Oxy Power",
+                "Video: GP_VIDEO_01 - O heroi da limpeza chegou",
+                "Formato: Reel 20-30s"
+            ]},
+            {"title": "Roteiro cena a cena", "items": [
+                f"{s['scene']} | {s['duration']} | Fala: {s['speech']} | Take: {s['take']}" for s in scenes
+            ]},
+            {"title": "Falas do Garoto Oxy", "items": talks},
+            {"title": "Lista de takes", "items": takes},
+            {"title": "Legenda final", "items": [final_caption]},
+            {"title": "Stories de apoio", "items": stories},
+            {"title": "Checklist de gravacao", "items": checklist},
+            {"title": "Arquivos gerados", "items": [
+                str(kit_md_path),
+                str(kit_json_path)
+            ]},
+            {"title": "Seguranca operacional", "items": [
+                "Publicacao executada: false",
+                "Navegador logado usado: false",
+                "Scraping usado: false",
+                "Gate humano requerido: true"
+            ]},
+            {"title": "Proxima acao segura", "items": [
+                "Gravar o GP_VIDEO_01 seguindo o checklist.",
+                "Depois enviar o video final para readiness.",
+                "Nao publicar sem aprovacao humana explicita."
+            ]},
+        ],
+    }
+
+
+
 def build_hupmix_gp_continuity(packet: dict) -> dict:
     request = packet.get("request", "")
 
@@ -305,6 +533,10 @@ def build_hupmix_gp_continuity(packet: dict) -> dict:
 
 
 def build_social(packet: dict) -> dict:
+    request_text = str(packet.get("request", "")).lower()
+    if "hupmix" in request_text and ("gp_video_01" in request_text or "video_01" in request_text or "roteiro cena a cena" in request_text or "garoto oxy" in request_text or "checklist de grava" in request_text):
+        return build_hupmix_gp_video_01_production_kit(packet)
+
     request_text = str(packet.get("request", "")).lower()
     if "hupmix" in request_text and ("gp" in request_text or "garoto" in request_text or "oxy" in request_text):
         return build_hupmix_gp_continuity(packet)

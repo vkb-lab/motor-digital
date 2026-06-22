@@ -1,0 +1,15 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "campaign_production_connector_hotfix",
+  "name": "hupmix_gp_video_01_production_kit_connector",
+  "status": "applied",
+  "created_at": "2026-06-22T08:07:31.801910",
+  "goal": "Conectar pedido de roteiro final GP_VIDEO_01 ao pacote GP Hupmix recuperado.",
+  "no_new_phase": true,
+  "safety": {
+    "instagram_publish_executed": false,
+    "browser_automation": false,
+    "scraping": false,
+    "human_gate_required": true
+  }
+}
