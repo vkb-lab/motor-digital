@@ -426,6 +426,173 @@ def is_kos_read_only_lousa_request(text: str) -> bool:
 if "kos_operator_request_text" not in st.session_state:
     st.session_state["kos_operator_request_text"] = ""
 
+
+# KOS_OPERATOR_FILE_INTAKE_CENTER_BEGIN
+def render_kos_operator_file_intake_center():
+    """Centro de anexos do K-OS.
+    Salva arquivos enviados pelo operador em uma inbox governada.
+    Nao publica, nao envia para API, nao faz deploy e nao usa IA paga.
+    """
+    import hashlib
+    import json
+    from datetime import datetime
+    from pathlib import Path
+    import streamlit as st
+
+    root = Path.cwd()
+    memory_dir = root / "memory" / "kos_file_intake"
+    memory_dir.mkdir(parents=True, exist_ok=True)
+
+    index_path = memory_dir / "KOS_FILE_INTAKE_INDEX.json"
+
+    if index_path.exists():
+        try:
+            index = json.loads(index_path.read_text(encoding="utf-8"))
+        except Exception:
+            index = {"status": "KOS_FILE_INTAKE_INDEX_READY", "items": []}
+    else:
+        index = {"status": "KOS_FILE_INTAKE_INDEX_READY", "items": []}
+
+    st.markdown("## K-OS Intake Center")
+    st.caption("Anexe aqui. O K-OS salva, classifica e usa no fluxo certo. Sem publicar, sem API, sem IA paga.")
+
+    current_request = str(st.session_state.get("kos_operator_request_text", "") or "").lower()
+
+    default_route = "general_operator_inbox"
+    default_dir = root / "content_packs" / "kos_operator_uploads" / "assets_inbox"
+
+    if any(term in current_request for term in ["gp_video_01", "gp video 01", "garoto oxy", "oxy power", "hupmix"]):
+        default_route = "hupmix_gp_video_01"
+        default_dir = root / "content_packs" / "hupmix_gp_video_01" / "assets_inbox"
+
+    route = st.selectbox(
+        "Destino do anexo",
+        [
+            "hupmix_gp_video_01",
+            "general_operator_inbox",
+            "campaign_assets",
+            "memory_reference",
+            "brand_assets",
+        ],
+        index=0 if default_route == "hupmix_gp_video_01" else 1,
+        key="kos_file_intake_route",
+    )
+
+    route_dirs = {
+        "hupmix_gp_video_01": root / "content_packs" / "hupmix_gp_video_01" / "assets_inbox",
+        "general_operator_inbox": root / "content_packs" / "kos_operator_uploads" / "assets_inbox",
+        "campaign_assets": root / "content_packs" / "campaign_assets" / "assets_inbox",
+        "memory_reference": root / "memory" / "kos_file_intake" / "reference_files",
+        "brand_assets": root / "content_packs" / "brand_assets" / "assets_inbox",
+    }
+
+    target_dir = route_dirs.get(route, default_dir)
+    target_dir.mkdir(parents=True, exist_ok=True)
+
+    uploaded_files = st.file_uploader(
+        "Anexar arquivos ao K-OS",
+        accept_multiple_files=True,
+        type=[
+            "png", "jpg", "jpeg", "webp", "gif",
+            "mp4", "mov", "m4v",
+            "mp3", "wav", "m4a",
+            "pdf", "txt", "md", "json", "csv",
+            "docx", "xlsx", "pptx"
+        ],
+        key="kos_operator_file_uploader",
+    )
+
+    operator_note = st.text_input(
+        "Nota opcional para estes anexos",
+        placeholder="Exemplo: fotos reais do Oxy Power para montar o vídeo",
+        key="kos_file_intake_note",
+    )
+
+    if uploaded_files:
+        if st.button("Salvar anexos no K-OS", type="primary", use_container_width=True, key="kos_save_uploaded_files"):
+            saved = []
+            batch_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+            batch_dir = target_dir / batch_id
+            batch_dir.mkdir(parents=True, exist_ok=True)
+
+            for file in uploaded_files:
+                original_name = Path(file.name).name
+                raw = file.getbuffer()
+                digest = hashlib.sha256(bytes(raw)).hexdigest()[:16]
+
+                safe_name = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in original_name)
+                final_name = f"{digest}_{safe_name}"
+                final_path = batch_dir / final_name
+
+                final_path.write_bytes(raw)
+
+                item = {
+                    "asset_id": f"kos_asset_{batch_id}_{digest}",
+                    "created_at": datetime.now().isoformat(),
+                    "route": route,
+                    "original_name": original_name,
+                    "stored_path": str(final_path.relative_to(root)).replace("\\", "/"),
+                    "size": final_path.stat().st_size,
+                    "sha256_16": digest,
+                    "operator_note": operator_note,
+                    "source": "operator_chat_upload",
+                    "policy": {
+                        "published": False,
+                        "sent_to_external_api": False,
+                        "paid_ai_used": False,
+                        "human_gate_required": True
+                    }
+                }
+
+                index.setdefault("items", []).append(item)
+                saved.append(item)
+
+            index["status"] = "KOS_FILE_INTAKE_INDEX_READY"
+            index["updated_at"] = datetime.now().isoformat()
+            index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
+
+            st.success(f"{len(saved)} arquivo(s) salvo(s) no K-OS.")
+            st.json({
+                "route": route,
+                "batch_dir": str(batch_dir.relative_to(root)).replace("\\", "/"),
+                "files": [
+                    {
+                        "name": item["original_name"],
+                        "stored_path": item["stored_path"],
+                        "size": item["size"]
+                    }
+                    for item in saved
+                ],
+                "policy": "Arquivos salvos localmente. Nada foi publicado ou enviado para API."
+            })
+
+    recent_items = list(reversed(index.get("items", [])))[:5]
+    if recent_items:
+        with st.expander("Ultimos anexos recebidos pelo K-OS", expanded=False):
+            for item in recent_items:
+                st.markdown(f"**{item.get('original_name')}**")
+                st.caption(item.get("stored_path"))
+                st.caption(f"Destino: {item.get('route')} | Tamanho: {item.get('size')} bytes")
+
+    with st.expander("Quando o K-OS deve pedir arquivo ou pesquisar?", expanded=False):
+        st.markdown(
+            "- Se faltar foto, video, logo, print, documento ou audio: o K-OS deve pedir anexo aqui.\n"
+            "- Se faltar informacao publica atual: o K-OS deve sugerir pesquisa.\n"
+            "- Se envolver publicacao, pagamento, API ou conta logada: gate humano obrigatorio.\n"
+            "- O operador nao deve procurar pastas manualmente."
+        )
+
+try:
+    render_kos_operator_file_intake_center()
+except Exception as exc:
+    try:
+        import streamlit as st
+        st.warning(f"K-OS Intake Center indisponivel: {exc}")
+    except Exception:
+        pass
+# KOS_OPERATOR_FILE_INTAKE_CENTER_END
+
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",

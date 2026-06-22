@@ -1,0 +1,1 @@
+# K-OS Operator File Intake Center\n\nStatus: centro de anexos criado no Operator Chat.\n\n- Operador anexa arquivos direto no K-OS\n- K-OS salva em inbox governada\n- K-OS cria indice persistente\n- K-OS associa arquivos ao fluxo\n- Nada e publicado\n- Nada e enviado para API\n- IA paga nao usada\n
