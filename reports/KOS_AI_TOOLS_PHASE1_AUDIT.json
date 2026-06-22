@@ -1,0 +1,50 @@
+﻿{
+    "status":  "KOS_AI_TOOLS_PHASE1_AUDIT_READY",
+    "created_at":  "2026-06-22T11:23:29.5491686-03:00",
+    "kos_root":  "C:\\Users\\oi\\Desktop\\motor-digital",
+    "tools_root":  "C:\\Users\\oi\\Desktop\\ai-tools",
+    "policy":  {
+                   "external_tools_outside_kos":  true,
+                   "no_new_ai_connected":  true,
+                   "no_api_key_used":  true,
+                   "no_paid_ai_executed":  true,
+                   "no_deploy":  true,
+                   "no_publish":  true,
+                   "human_decision_center_required":  true
+               },
+    "tools":  [
+                  {
+                      "name":  "codebase-memory-mcp",
+                      "status":  "cloned",
+                      "purpose":  "memoria estrutural do codigo",
+                      "path":  "C:\\Users\\oi\\Desktop\\ai-tools\\codebase-memory-mcp",
+                      "package_json":  false,
+                      "pyproject":  false,
+                      "requirements":  false,
+                      "readme":  true,
+                      "latest_commit":  "53ebeb4 docs(security): coordinated-disclosure process + realistic reporting policy"
+                  },
+                  {
+                      "name":  "headroom",
+                      "status":  "cloned",
+                      "purpose":  "compressao de contexto",
+                      "path":  "C:\\Users\\oi\\Desktop\\ai-tools\\headroom",
+                      "package_json":  false,
+                      "pyproject":  true,
+                      "requirements":  false,
+                      "readme":  true,
+                      "latest_commit":  "95b2333 chore: release main (#1274)"
+                  },
+                  {
+                      "name":  "skills",
+                      "status":  "cloned",
+                      "purpose":  "biblioteca de habilidades",
+                      "path":  "C:\\Users\\oi\\Desktop\\ai-tools\\skills",
+                      "package_json":  true,
+                      "pyproject":  false,
+                      "requirements":  false,
+                      "readme":  true,
+                      "latest_commit":  "6eeb81b Merge branch \u0027main\u0027 of https://github.com/mattpocock/skills"
+                  }
+              ]
+}
