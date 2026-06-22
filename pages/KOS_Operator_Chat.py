@@ -364,6 +364,32 @@ st.title("K-OS Operator Chat")
 st.caption("Uma caixa. Um pedido. O K-OS escolhe a rota e mantem acoes reais gateadas.")
 st.info("Use esta tela como entrada principal. Nao cole a resposta do K-OS no PowerShell.")
 
+
+# KOS_READ_ONLY_DIAGNOSTIC_COMMANDS_BEGIN
+def is_kos_read_only_diagnostic_request(text: str) -> bool:
+    """Detecta comandos locais de diagnostico que nao devem acionar Router nem Safe Action."""
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+
+    patterns = [
+        "k-os diagnostic",
+        "kos diagnostic",
+        "operator flow",
+        "diagnostico do fluxo",
+        "diagnostico operator",
+        "mostrar diagnostico",
+        "painel de diagnostico",
+        "diagnostico do operator",
+        "diagnostico do operador",
+    ]
+
+    return any(pattern in value for pattern in patterns)
+# KOS_READ_ONLY_DIAGNOSTIC_COMMANDS_END
+
+
 if "kos_operator_request_text" not in st.session_state:
     st.session_state["kos_operator_request_text"] = ""
 
@@ -387,6 +413,17 @@ if advanced:
         "Modo avancado nao abre cockpits automaticamente. Para evitar erro humano, comandos tecnicos continuam ocultos."
     )
     st.write("Peca ao K-OS a acao desejada em linguagem normal.")
+
+# KOS_READ_ONLY_DIAGNOSTIC_GATE_BEGIN
+if send and is_kos_read_only_diagnostic_request(st.session_state.get("kos_operator_request_text", "")):
+    st.session_state["kos_show_operator_flow_diagnostic"] = True
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_diagnostic_read_only_message"] = "Diagnostico aberto em modo read-only. Nenhum Router, Safe Action, publicacao, deploy ou IA paga foi acionado."
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+# KOS_READ_ONLY_DIAGNOSTIC_GATE_END
 
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)
@@ -490,8 +527,11 @@ def render_kos_operator_flow_diagnostic_panel():
     audit_path = root / "reports" / "KOS_OPERATOR_FLOW_AUDIT.json"
     digest_path = root / "reports" / "KOS_CODEBASE_STATIC_MAP_DIGEST.json"
 
-    with st.expander("K-OS Diagnostic: Operator Flow", expanded=False):
+    with st.expander("K-OS Diagnostic: Operator Flow", expanded=bool(st.session_state.get("kos_show_operator_flow_diagnostic", False))):
         st.caption("Leitura local. Sem IA, sem API, sem publicacao, sem deploy.")
+        read_only_msg = st.session_state.get("kos_diagnostic_read_only_message")
+        if read_only_msg:
+            st.success(read_only_msg)
 
         if not audit_path.exists():
             st.warning("Relatorio Operator Flow ainda nao encontrado.")
