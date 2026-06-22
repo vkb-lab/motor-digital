@@ -1,0 +1,146 @@
+# K-OS Codebase Memory MCP Manifest Audit
+
+Status: auditoria criada. Nada instalado, nada compilado, nada conectado.
+
+## Ambiente
+- go: not_found
+- node: v22.16.0
+- npm: not_found
+- pnpm: not_found
+- docker: Docker version 28.0.4, build b8034c0
+
+## Manifestos encontrados
+- install.ps1 | install.ps1 | 5267 bytes
+- server.json | server.json | 927 bytes
+- graph-ui\package.json | package.json | 1148 bytes
+- scripts\setup-windows.ps1 | setup-windows.ps1 | 11082 bytes
+- test-infrastructure\Dockerfile | Dockerfile | 811 bytes
+- tools\tree-sitter-form\package.json | package.json | 533 bytes
+- tools\tree-sitter-magma\package.json | package.json | 525 bytes
+- pkg\glama\Dockerfile | Dockerfile | 1424 bytes
+- pkg\go\go.mod | go.mod | 68 bytes
+- pkg\npm\package.json | package.json | 963 bytes
+- pkg\chocolatey\tools\chocolateyInstall.ps1 | chocolateyInstall.ps1 | 924 bytes
+- pkg\chocolatey\tools\chocolateyUninstall.ps1 | chocolateyUninstall.ps1 | 262 bytes
+
+## Hints do README
+- # codebase-memory-mcp
+- [![GitHub Release](https://img.shields.io/github/v/release/DeusData/codebase-memory-mcp?style=flat&color=blue)](https://github.com/DeusData/codebase-memory-mcp/releases/latest)
+- [![CI](https://img.shields.io/github/actions/workflow/status/DeusData/codebase-memory-mcp/dry-run.yml?label=CI)](https://github.com/DeusData/codebase-memory-mcp/actions/workflows/dry-run.yml)
+- [![Tests](https://img.shields.io/badge/tests-5604_passing-brightgreen)](https://github.com/DeusData/codebase-memory-mcp)
+- [![Languages](https://img.shields.io/badge/languages-158-orange)](https://github.com/DeusData/codebase-memory-mcp)
+- [![Agents](https://img.shields.io/badge/agents-11-purple)](https://github.com/DeusData/codebase-memory-mcp)
+- [![Pure C](https://img.shields.io/badge/pure_C-zero_dependencies-blue)](https://github.com/DeusData/codebase-memory-mcp)
+- [![Platform](https://img.shields.io/badge/macOS_%7C_Linux_%7C_Windows-supported-lightgrey)](https://github.com/DeusData/codebase-memory-mcp/releases/latest)
+- [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/DeusData/codebase-memory-mcp/badge)](https://scorecard.dev/viewer/?uri=github.com/DeusData/codebase-memory-mcp)
+- [![VirusTotal](https://img.shields.io/badge/VirusTotal-scanned_every_release-brightgreen?logo=virustotal)](https://github.com/DeusData/codebase-memory-mcp/releases/latest)
+- **The fastest and most efficient code intelligence engine for AI coding agents.** Full-indexes an average repository in milliseconds, the Linux kernel (28M LOC, 75K files) in 3 minutes. Answers structural queries in under 1ms. Ships as a single static binary for macOS, Linux, and Windows — download, run `install`, done.
+- High-quality parsing through [tree-sitter](https://tree-sitter.github.io/tree-sitter/) AST analysis across all 158 languages, enhanced with [**Hybrid LSP** semantic type resolution](#hybrid-lsp) for Python, TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, and Rust — producing a persistent knowledge graph of functions, classes, call chains, HTTP routes, and cross-service links. 14 MCP tools. Zero dependencies. Plug and play across 11 coding agents.
+- > **Research** — The design and benchmarks behind this project are described in the preprint [*Codebase-Memory: Tree-Sitter-Based Knowledge Graphs for LLM Code Exploration via MCP*](https://arxiv.org/abs/2603.27277) (arXiv:2603.27277). Evaluated across 31 real-world repositories: 83% answer quality, 10× fewer tokens, 2.1× fewer tool calls vs. file-by-file exploration.
+- > **Security & Trust** — This tool reads your codebase and writes to your agent configuration files. That is what it is designed to do. If you prefer to audit before running, the [full source is here](https://github.com/DeusData/codebase-memory-mcp) — every release binary is signed, checksummed, and scanned by 70+ antivirus engines. All processing happens 100% locally; your code never leaves your machine. Found a security issue? We want to know — see [SECURITY.md](SECURITY.md). Security is Priority #1 for us.
+- <img src="docs/graph-ui-screenshot.png" alt="Graph visualization UI showing the codebase-memory-mcp knowledge graph" width="800">
+- ## Why codebase-memory-mcp
+- - **Extreme indexing speed** — Linux kernel (28M LOC, 75K files) in 3 minutes. RAM-first pipeline: LZ4 compression, in-memory SQLite, fused Aho-Corasick pattern matching. Memory released after indexing.
+- - **Plug and play** — single static binary for macOS (arm64/amd64), Linux (arm64/amd64), and Windows (amd64). No Docker, no runtime dependencies, no API keys. Download → `install` → restart agent → done.
+- - **158 languages** — vendored tree-sitter grammars compiled into the binary. Nothing to install, nothing that breaks.
+- - **11 agents, one command** — `install` auto-detects Claude Code, Codex CLI, Gemini CLI, Zed, OpenCode, Antigravity, Aider, KiloCode, VS Code, OpenClaw, and Kiro — configures MCP entries, instruction files, and pre-tool hooks for each.
+- - **Infrastructure-as-code indexing** — Dockerfiles, Kubernetes manifests, and Kustomize overlays indexed as graph nodes with cross-references. `Resource` nodes for K8s kinds, `Module` nodes for Kustomize overlays with `IMPORTS` edges to referenced resources.
+- - **14 MCP tools** — search, trace, architecture, impact analysis, Cypher queries, dead code detection, cross-service HTTP linking, ADR management, and more.
+- **One-line install** (macOS / Linux):
+- curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash
+- curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash -s -- --ui
+- **Windows** (PowerShell):
+- ```powershell
+- # 1. Download the installer
+- Invoke-WebRequest -Uri https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.ps1 -OutFile install.ps1
+- notepad install.ps1
+- .\install.ps1
+- Restart your coding agent. Say **"Index this project"** — done.
+- <summary>Manual install</summary>
+- 1. **Download** the archive for your platform from the [latest release](https://github.com/DeusData/codebase-memory-mcp/releases/latest):
+- - `codebase-memory-mcp-<os>-<arch>.tar.gz` (macOS/Linux) or `.zip` (Windows) — standard
+- - `codebase-memory-mcp-ui-<os>-<arch>.tar.gz` / `.zip` — with graph visualization
+- 2. **Extract and install** (each archive includes `install.sh` or `install.ps1`):
+- tar xzf codebase-memory-mcp-*.tar.gz
+- ./install.sh
+- Windows (PowerShell):
+- ```powershell
+- Expand-Archive codebase-memory-mcp-windows-amd64.zip -DestinationPath .
+- .\install.ps1
+- The `install` command automatically strips macOS quarantine attributes and ad-hoc signs the binary — no manual `xattr`/`codesign` needed.
+- The `install` command auto-detects all installed coding agents and configures MCP server entries, instruction files, skills, and pre-tool hooks for each.
+- codebase-memory-mcp --ui=true --port=9749
+- Open `http://localhost:9749` in your browser. The UI runs as a background thread alongside the MCP server — it's available whenever your agent is connected.
+- ### Auto-Index
+- Enable automatic indexing on MCP session start:
+- codebase-memory-mcp config set auto_index true
+- When enabled, new projects are indexed automatically on first connection. Previously-indexed projects are registered with the background watcher for ongoing git-based change detection. Configurable file limit: `config set auto_index_limit 50000`.
+- codebase-memory-mcp update
+- The MCP server also checks for updates on startup and notifies on the first tool call if a newer release is available.
+- ### Uninstall
+- codebase-memory-mcp uninstall
+- - **Semantic search** (`semantic_query`): vector search across the entire graph, powered by bundled Nomic `nomic-embed-code` embeddings (40K tokens, 768d int8) compiled into the binary — no API key, no Ollama, no Docker. 11-signal combined scoring (TF-IDF, RRI, API/Type/Decorator signatures, AST profiles, data flow, Halstead-lite, MinHash, module proximity, graph diffusion).
+- - **Code search** (`search_code`): graph-augmented grep over indexed files only
+- - **`CROSS_*` edges** link nodes across multiple repos indexed under the same store
+- - **Cross-repo architecture summary** combining services, routes, and dependencies across the indexed fleet
+- ### Indexing pipeline
+- - **Infrastructure-as-code indexing** — Dockerfiles, Kubernetes manifests, Kustomize overlays as graph nodes
+- - **[Hybrid LSP semantic type resolution](#hybrid-lsp)** for Python, TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, and Rust — a lightweight C implementation of language type-resolution algorithms, structurally inspired by and compatible with major language servers including tsserver / typescript-go, pyright, gopls, Roslyn, Eclipse JDT, and rust-analyzer (parameter binding, return-type inference, generic substitution, JSX component dispatch, JSDoc inference for plain JS files, namespace + trait + late-static-binding resolution for PHP, file-scoped namespaces + records + LINQ method syntax for C#, class-hierarchy + overload + lambda resolution for Java, extension-function + scope-function resolution for Kotlin, trait-method + UFCS resolution for Rust)
+- - **Single static binary, zero infrastructure**: SQLite-backed, persists to `~/.cache/codebase-memory-mcp/`
+- - **Auto-sync**: Background watcher detects file changes and re-indexes automatically
+- - **CLI mode**: `codebase-memory-mcp cli search_graph '{"name_pattern": ".*Handler.*"}'`
+- - **Available on**: npm, PyPI, Homebrew, Scoop, Winget, Chocolatey, AUR, `go install`
+- Commit a single compressed file to your repo and your teammates skip the reindex.
+- `.codebase-memory/graph.db.zst` is a zstd-compressed snapshot of the knowledge graph that lives next to your source. When you index, the artifact is written or refreshed; when a teammate clones the repo and runs `codebase-memory-mcp` for the first time, the artifact is decompressed and incremental indexing fills in their local diff.
+- - **Format**: SQLite database, indexes stripped, `VACUUM INTO` compacted, then zstd 1.5.7 compressed (8–13:1 ratio typical)
+- - **Best** (`zstd -9` + index strip + `VACUUM INTO`) — written on explicit `index_repository`
+- - **Bootstrap**: when no local DB exists but the artifact is present, `index_repository` imports the artifact first, then runs incremental indexing — avoiding the full reindex cost
+- - **Optional**: never committed unless you want it. Add `.codebase-memory/` to `.gitignore` if you prefer everyone to reindex from scratch.
+- codebase-memory-mcp is a **structural analysis backend** — it builds and queries the knowledge graph. It does **not** include an LLM. Instead, it relies on your MCP client (Claude Code, or any MCP-compatible agent) to be the intelligence layer.
+- codebase-memory-mcp: executes graph query, returns structured results
+- **Why no built-in LLM?** Other code graph tools embed an LLM for natural language → graph query translation. This means extra API keys, extra cost, and another model to configure. With MCP, the agent you're already talking to *is* the query translator.
+- | **Linux kernel full index** | **3 min** | 28M LOC, 75K files → 4.81M nodes, 7.72M edges |
+- | Linux kernel fast index | 1m 12s | 1.88M nodes |
+- | Django full index | ~6s | 49K nodes, 196K edges |
+- **RAM-first pipeline**: All indexing runs in memory (LZ4 HC compressed read, in-memory SQLite, single dump at end). Memory is released back to the OS after indexing completes.
+- **Token efficiency**: Five structural queries consumed ~3,400 tokens via codebase-memory-mcp versus ~412,000 tokens via file-by-file grep exploration — a **99.2% reduction**.
+- ## Installation
+- | macOS (Apple Silicon) | `codebase-memory-mcp-darwin-arm64.tar.gz` | `codebase-memory-mcp-ui-darwin-arm64.tar.gz` |
+- | macOS (Intel) | `codebase-memory-mcp-darwin-amd64.tar.gz` | `codebase-memory-mcp-ui-darwin-amd64.tar.gz` |
+- | Linux (x86_64) | `codebase-memory-mcp-linux-amd64.tar.gz` | `codebase-memory-mcp-ui-linux-amd64.tar.gz` |
+- | Linux (ARM64) | `codebase-memory-mcp-linux-arm64.tar.gz` | `codebase-memory-mcp-ui-linux-arm64.tar.gz` |
+- | Windows (x86_64) | `codebase-memory-mcp-windows-amd64.zip` | `codebase-memory-mcp-ui-windows-amd64.zip` |
+- > **Windows note**: SmartScreen may show a warning for unsigned software. Click **"More info"** → **"Run anyway"**. Verify integrity with `checksums.txt`.
+- <summary>Automated download + install</summary>
+- curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/scripts/setup.sh | bash
+- **Windows (PowerShell):**
+- ```powershell
+- irm https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/scripts/setup-windows.ps1 | iex
+- yay -S codebase-memory-mcp-bin
+- paru -S codebase-memory-mcp-bin
+- The `codebase-memory-mcp-bin` package is available at: https://aur.archlinux.org/packages/codebase-memory-mcp-bin
+- ### Install via Claude Code
+- You: "Install this MCP server: https://github.com/DeusData/codebase-memory-mcp"
+- | Requirement | Check | Install |
+- | **C compiler** (gcc or clang) | `gcc --version` or `clang --version` | macOS: `xcode-select --install`, Linux: `apt install build-essential` |
+- | **zlib** | — | macOS: included, Linux: `apt install zlib1g-dev` |
+- | **Git** | `git --version` | Pre-installed on most systems |
+- git clone https://github.com/DeusData/codebase-memory-mcp.git
+- cd codebase-memory-mcp
+- # Binary at: build/c/codebase-memory-mcp
+- ### Manual MCP Configuration
+- <summary>If you prefer not to use the install command</summary>
+- Add to `~/.claude/.mcp.json` (global) or project `.mcp.json`:
+- "mcpServers": {
+- "codebase-memory-mcp": {
+- "command": "/path/to/codebase-memory-mcp",
+- Restart your agent. Verify with `/mcp` — you should see `codebase-memory-mcp` with 14 tools.
+- `install` auto-detects and configures all installed agents:
+- | Agent | MCP Config | Instructions | Hooks |
+- | Claude Code | `.claude/.mcp.json` | 4 Skills | PreToolUse (Grep/Glob graph augment, non-blocking) |
+- | Antigravity | `.gemini/config/mcp_config.json` (shared) | `antigravity-cli/AGENTS.md` | SessionStart reminder |
+- | KiloCode | `mcp_settings.json` | `~/.kilocode/rules/` | — |
+- | VS Code | `Code/User/mcp.json` | — | — |
+- | Kiro | `.kiro/settings/mcp.json` | — | — |
+- For Claude Code, the `PreToolUse` hook intercepts `Grep`/`Glob` (never `Read` —
+- token matches indexed symbols, injects them as `additionalContext` via
