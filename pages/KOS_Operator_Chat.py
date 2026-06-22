@@ -430,14 +430,49 @@ else:
         st.caption("Ultimo pedido e historico ficam ocultos por padrao para manter a tela limpa.")
 
 
-# K-OS visual approval board render hook
+# K-OS visual approval board persistent render hook
 try:
     import json as _kos_json
+    from pathlib import Path as _KosPath
+
+    _kos_root = _KosPath(__file__).resolve().parents[1]
+    _kos_gp_kit = _kos_root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_PRODUCTION_KIT.json"
+    _kos_safe_dir = _kos_root / "local_runtime" / "kos_safe_actions"
+
     _kos_lousa_payload = st.session_state.get("kos_last_operator_data") or st.session_state.get("kos_last_safe_action_result") or {}
     _kos_lousa_request = str(st.session_state.get("kos_operator_request_text", "")) + " " + str(st.session_state.get("kos_last_operator_request", ""))
-    _kos_lousa_probe = (_kos_lousa_request + " " + _kos_json.dumps(_kos_lousa_payload, ensure_ascii=False)).lower()
-    if "gp_video_01" in _kos_lousa_probe or "garoto oxy" in _kos_lousa_probe or "roteiro cena" in _kos_lousa_probe or "gravacao" in _kos_lousa_probe or "gravação" in _kos_lousa_probe:
+
+    _kos_latest_text = ""
+    if _kos_safe_dir.exists():
+        _kos_files = sorted(_kos_safe_dir.glob("kos_safe_action_*.md"), key=lambda p: p.stat().st_mtime, reverse=True)
+        if _kos_files:
+            try:
+                _kos_latest_text = _kos_files[0].read_text(encoding="utf-8", errors="replace")
+            except Exception:
+                _kos_latest_text = ""
+
+    _kos_probe = (
+        _kos_lousa_request
+        + " "
+        + _kos_json.dumps(_kos_lousa_payload, ensure_ascii=False, default=str)
+        + " "
+        + _kos_latest_text
+    ).lower()
+
+    _kos_should_show_lousa = (
+        _kos_gp_kit.exists()
+        and (
+            "gp_video_01" in _kos_probe
+            or "garoto oxy" in _kos_probe
+            or "roteiro final de grava" in _kos_probe
+            or "o heroi da limpeza chegou" in _kos_probe
+            or "oxy power" in _kos_probe
+        )
+    )
+
+    if _kos_should_show_lousa:
         render_hupmix_gp_lousa_preview(_kos_lousa_payload)
+
 except Exception as _kos_lousa_exc:
     st.warning(f"Lousa visual GP_VIDEO_01 nao carregou: {_kos_lousa_exc}")
 

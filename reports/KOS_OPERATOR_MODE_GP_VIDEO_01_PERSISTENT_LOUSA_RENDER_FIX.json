@@ -1,0 +1,14 @@
+{
+  "mode": "K-OS Operator Mode",
+  "type": "approval_board_ui_fix",
+  "name": "gp_video_01_persistent_lousa_render",
+  "status": "applied",
+  "created_at": "2026-06-22T09:23:51.019078",
+  "goal": "Renderizar a lousa GP_VIDEO_01 mesmo apos restart do Streamlit, usando ultimo safe action local.",
+  "no_new_phase": true,
+  "safety": {
+    "instagram_publish_executed": false,
+    "approval_is_recording_only": true,
+    "human_gate_required": true
+  }
+}
