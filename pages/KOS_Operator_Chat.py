@@ -469,6 +469,76 @@ if send and is_kos_read_only_lousa_request(st.session_state.get("kos_operator_re
     send = False
 # KOS_READ_ONLY_LOUSA_GATE_END
 
+
+# KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_BEGIN
+if st.session_state.get("kos_show_gp_video_01_lousa", False):
+    from pathlib import Path as _KosPath
+    import json as _kos_json
+
+    _kos_root = _KosPath.cwd()
+    _mp4_path = _kos_root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_PREVIEW.mp4"
+    _storyboard_path = _kos_root / "local_runtime" / "kos_video_previews" / "hupmix" / "GP_VIDEO_01_STORYBOARD.png"
+    _job_path = _kos_root / "campaigns" / "hupmix_gp_recovery" / "GP_VIDEO_01_VIDEO_FACTORY_FREE_MODE_JOB.json"
+    _report_path = _kos_root / "reports" / "KOS_HUPMIX_GP_VIDEO_FACTORY_FREE_MODE_V1.json"
+
+    st.session_state["kos_gp_video_01_lousa_rendered_inline"] = True
+
+    st.markdown("## Lousa visual - GP_VIDEO_01 Hupmix")
+
+    _msg = st.session_state.get("kos_lousa_read_only_message")
+    if _msg:
+        st.success(_msg)
+
+    st.caption("Preview local. Sem IA paga. Sem publicacao. Sem deploy. Gate humano obrigatorio.")
+
+    if _mp4_path.exists():
+        st.video(str(_mp4_path))
+        st.caption("Fonte local: local_runtime/kos_video_previews/hupmix/GP_VIDEO_01_PREVIEW.mp4")
+    else:
+        st.error("MP4 local nao encontrado. Rode o Video Factory Free Mode novamente.")
+
+    _c1, _c2, _c3 = st.columns(3)
+    _c1.metric("Modo", "Free/local")
+    _c2.metric("Publicacao", "Bloqueada")
+    _c3.metric("IA paga", "Nao usada")
+
+    if _storyboard_path.exists():
+        with st.expander("Storyboard", expanded=False):
+            st.image(str(_storyboard_path), use_container_width=True)
+
+    if _report_path.exists():
+        try:
+            _report = _kos_json.loads(_report_path.read_text(encoding="utf-8"))
+            _outputs = _report.get("outputs", {})
+            with st.expander("Registro tecnico do video", expanded=False):
+                st.json({
+                    "status": _report.get("status"),
+                    "mp4": _outputs.get("mp4"),
+                    "mp4_size": _outputs.get("mp4_size"),
+                    "storyboard": _outputs.get("storyboard"),
+                    "storyboard_size": _outputs.get("storyboard_size"),
+                    "policy": _report.get("policy"),
+                })
+        except Exception as exc:
+            st.warning(f"Nao foi possivel ler o registro tecnico do video: {exc}")
+
+    if _job_path.exists():
+        try:
+            _job = _kos_json.loads(_job_path.read_text(encoding="utf-8"))
+            _scenes = _job.get("scenes", [])
+            with st.expander("Cenas do GP_VIDEO_01", expanded=False):
+                for _idx, _scene in enumerate(_scenes, start=1):
+                    st.markdown(f"**Cena {_idx}: {_scene.get('title', '')}**")
+                    st.write(_scene.get("line", ""))
+        except Exception as exc:
+            st.warning(f"Nao foi possivel ler o job do video: {exc}")
+
+    if st.button("Fechar lousa visual", key="kos_close_gp_video_01_lousa_inline", use_container_width=True):
+        st.session_state["kos_show_gp_video_01_lousa"] = False
+        st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
+        st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
+# KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
 if send:
     st.session_state.pop("kos_last_safe_action_result", None)
     st.session_state.pop("kos_last_safe_action_packet_path", None)
@@ -654,6 +724,8 @@ def render_kos_gp_video_01_lousa_read_only():
     import streamlit as st
 
     if not st.session_state.get("kos_show_gp_video_01_lousa", False):
+        return
+    if st.session_state.get("kos_gp_video_01_lousa_rendered_inline", False):
         return
 
     root = Path.cwd()
