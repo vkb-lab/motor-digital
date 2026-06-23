@@ -1,0 +1,19 @@
+{
+  "status": "KOS_PROCESS_LEARNING_ENGINE_INSTALL_READY",
+  "created_at": "2026-06-23T07:38:00.985905",
+  "purpose": "Fazer o K-OS aprender com Hupmix como caso-escola e generalizar para outras verticais.",
+  "created": [
+    "scripts/run_kos_process_learning_engine.py",
+    "memory/kos_knowledge/KOS_UNIVERSAL_PROCESS_REGISTRY.json",
+    "memory/kos_knowledge/KOS_CASE_LEARNING_HUPMIX.json",
+    "memory/kos_skills/KOS_UNIVERSAL_CAMPAIGN_CREATOR_SKILL_V1.md",
+    "memory/kos_skills/KOS_GP_CREATOR_SKILL_V2.md",
+    "memory/kos_skills/KOS_BUSINESS_AUTOMATION_FACTORY_SKILL_V1.md",
+    "memory/kos_governance/KOS_KNOWLEDGE_EXPANSION_POLICY_V1.json"
+  ],
+  "patched": [
+    "scripts/run_kos_capability_executor.py",
+    "pages/KOS_Operator_Chat.py"
+  ],
+  "rule": "Hupmix e caso-escola, nao universo. Todo projeto deve alimentar conhecimento reutilizavel."
+}

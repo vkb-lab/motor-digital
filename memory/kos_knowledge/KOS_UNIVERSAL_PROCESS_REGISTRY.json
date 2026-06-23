@@ -1,0 +1,209 @@
+{
+  "status": "KOS_UNIVERSAL_PROCESS_REGISTRY_V1_READY",
+  "version": "v1",
+  "principle": "Todo caso especifico deve gerar conhecimento reutilizavel.",
+  "case_to_pattern_rule": {
+    "case_specific": "cliente, produto, marca, ativos, campanha, contexto local",
+    "universal_pattern": "processo, fluxo, habilidade, checklist, automacao, criterio de qualidade",
+    "runtime": "execucoes, logs, previews e arquivos vivos ficam em local_runtime",
+    "git_memory": "codigo, politicas, skills, playbooks e conhecimento promovido ficam no Git"
+  },
+  "universal_process_layers": [
+    {
+      "id": "business_context_intake",
+      "name": "Captura de contexto do negocio",
+      "reusable_for": [
+        "lojas",
+        "saas",
+        "agencias",
+        "clinicas",
+        "multinacionais"
+      ],
+      "outputs": [
+        "perfil do negocio",
+        "ofertas",
+        "publico",
+        "canais",
+        "restricoes"
+      ]
+    },
+    {
+      "id": "positioning_and_social_audit",
+      "name": "Auditoria de posicionamento e canais",
+      "reusable_for": [
+        "instagram",
+        "site",
+        "whatsapp",
+        "telegram",
+        "landing pages"
+      ],
+      "outputs": [
+        "diagnostico",
+        "gaps",
+        "oportunidades",
+        "prioridades"
+      ]
+    },
+    {
+      "id": "asset_bridge",
+      "name": "Ponte de assets reais",
+      "reusable_for": [
+        "posts",
+        "videos",
+        "fotos",
+        "catalogos",
+        "depoimentos",
+        "prints"
+      ],
+      "outputs": [
+        "assets classificados",
+        "fonte",
+        "permissao",
+        "uso operacional"
+      ]
+    },
+    {
+      "id": "campaign_factory",
+      "name": "Fabrica de campanha",
+      "reusable_for": [
+        "conteudo organico",
+        "ads",
+        "promocoes",
+        "lancamentos",
+        "recuperacao comercial"
+      ],
+      "outputs": [
+        "roteiro",
+        "copy",
+        "briefing",
+        "storyboard",
+        "preview"
+      ]
+    },
+    {
+      "id": "character_or_brand_voice_system",
+      "name": "Sistema de personagem ou voz de marca",
+      "reusable_for": [
+        "mascotes",
+        "especialistas",
+        "vendedores",
+        "porta-vozes",
+        "fundadores"
+      ],
+      "outputs": [
+        "tom",
+        "falas",
+        "prompts",
+        "guia de consistencia"
+      ]
+    },
+    {
+      "id": "local_generation_and_preview",
+      "name": "Geracao local e preview",
+      "reusable_for": [
+        "video",
+        "imagem",
+        "landing",
+        "documento",
+        "campanha"
+      ],
+      "outputs": [
+        "arquivo local",
+        "preview",
+        "relatorio",
+        "gate humano"
+      ]
+    },
+    {
+      "id": "human_gate_and_governance",
+      "name": "Governanca e OK humano",
+      "reusable_for": [
+        "publicacao",
+        "deploy",
+        "envio ao cliente",
+        "IA paga",
+        "acao externa"
+      ],
+      "outputs": [
+        "decisao",
+        "auditoria",
+        "bloqueio",
+        "aprovacao"
+      ]
+    },
+    {
+      "id": "commercial_automation_layer",
+      "name": "Camada comercial automatizada",
+      "reusable_for": [
+        "telegram",
+        "whatsapp",
+        "site chat",
+        "crm",
+        "relatorios"
+      ],
+      "outputs": [
+        "atendimento",
+        "captura de lead",
+        "notificacoes",
+        "relatorios diarios"
+      ]
+    },
+    {
+      "id": "knowledge_feedback_loop",
+      "name": "Ciclo de aprendizagem",
+      "reusable_for": [
+        "todos os projetos"
+      ],
+      "outputs": [
+        "novo skill",
+        "novo playbook",
+        "novo agente",
+        "melhoria de processo"
+      ]
+    }
+  ],
+  "vertical_templates": {
+    "loja": [
+      "produto",
+      "oferta",
+      "conteudo",
+      "atendimento",
+      "whatsapp",
+      "estoque",
+      "campanha local"
+    ],
+    "saas": [
+      "persona",
+      "problema",
+      "demo",
+      "landing",
+      "onboarding",
+      "trial",
+      "suporte"
+    ],
+    "agencia": [
+      "cliente",
+      "briefing",
+      "criativo",
+      "aprovacao",
+      "calendario",
+      "relatorio"
+    ],
+    "clinica": [
+      "servico",
+      "autoridade",
+      "agenda",
+      "triagem",
+      "conteudo educativo",
+      "compliance"
+    ],
+    "multinacional": [
+      "marca",
+      "regiao",
+      "governanca",
+      "compliance",
+      "relatorios",
+      "orquestracao multi-time"
+    ]
+  }
+}

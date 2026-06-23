@@ -2238,6 +2238,16 @@ def is_kos_orchestrator_mode_request(text: str) -> bool:
         "sem monte de botao",
         "usar capacidades",
         "resolver ate o fim",
+        "aprender com esse exemplo",
+        "expandir consciencia",
+        "alimentar conhecimento",
+        "processos para outras lojas",
+        "processos para saas",
+        "processos para clinicas",
+        "processos para agencias",
+        "multinacionais",
+        "caso escola",
+        "universalizar processo",
     ]
 
     return any(term in value for term in terms)
@@ -2339,6 +2349,23 @@ def render_kos_orchestrator_mode_panel():
 
     st.markdown("### Proximo passo")
     st.info(next_step or "Aguardando novo pedido.")
+
+    # KOS_PROCESS_LEARNING_INLINE_UI_BEGIN
+    if route.get("route") == "universal_process_learning":
+        learning_path = root / "local_runtime" / "kos_process_learning_engine" / "status.json"
+        if learning_path.exists():
+            try:
+                learning = json.loads(learning_path.read_text(encoding="utf-8"))
+                st.markdown("### Aprendizado promovido")
+                st.write("Hupmix foi registrado como caso-escola. O processo agora pode ser reutilizado em lojas, SaaS, agencias, clinicas e operacoes maiores.")
+                st.json({
+                    "registry": learning.get("registry"),
+                    "case_learning": learning.get("hupmix_case_learning"),
+                    "next_step": learning.get("next_step")
+                })
+            except Exception:
+                pass
+    # KOS_PROCESS_LEARNING_INLINE_UI_END
 
     # KOS_GP_VIDEO_02_GENERATED_VIDEO_UI_BEGIN
     gen_status_path = root / "local_runtime" / "kos_hupmix_gp_video_02_local_video_generator" / "status.json"

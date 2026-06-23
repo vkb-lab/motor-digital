@@ -19,6 +19,14 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
+    "process_learning_engine": {
+        "name": "K-OS Process Learning Engine",
+        "script": "scripts/run_kos_process_learning_engine.py",
+        "report": "local_runtime/kos_process_learning_engine/status.json",
+        "autonomy_level": 2,
+        "permission": "local_readonly_report",
+        "external_write": False
+    },
     "gp_video_02_local_video_generator": {
         "name": "GP_VIDEO_02 Local Video Generator",
         "script": "scripts/run_kos_hupmix_gp_video_02_local_video_generator.py",
@@ -120,6 +128,20 @@ def blocked_hits(request: str):
 
 def route_request(request: str):
     value = normalize(request)
+
+    # KOS_PROCESS_LEARNING_ROUTE_BEGIN
+    if any(x in value for x in [
+        "aprender com", "expandir consciencia", "alimentar conhecimento",
+        "processos para outras", "universalizar", "reutilizavel",
+        "lojas saas", "clinicas", "agencias", "multinacionais",
+        "conhecimento do k-os", "caso escola", "case learning"
+    ]):
+        return {
+            "route": "universal_process_learning",
+            "objective": "Transformar caso especifico em conhecimento reutilizavel para outras verticais.",
+            "tasks": ["process_learning_engine"]
+        }
+    # KOS_PROCESS_LEARNING_ROUTE_END
 
     if any(x in value for x in ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]):
         return {
@@ -308,6 +330,8 @@ def main():
                 event["next_step"] = "Preview real pronto. Validar no Operator Chat e registrar OK humano."
             else:
                 event["next_step"] = "Revisar estado Hupmix no orquestrador."
+        elif route["route"] == "universal_process_learning":
+            event["next_step"] = "Conhecimento promovido: Hupmix virou caso-escola reutilizavel para outras verticais."
         else:
             event["next_step"] = "Execucao segura concluida."
 

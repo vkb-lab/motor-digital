@@ -1,0 +1,85 @@
+{
+  "status": "KOS_CASE_LEARNING_HUPMIX_V1_READY",
+  "case": "Hupmix / Garoto Oxy Power",
+  "role": "caso-escola para processos reutilizaveis",
+  "specific_assets": [
+    "Instagram Hupmix",
+    "video real baixado via Meta Graph read-only",
+    "Oxy Power 5L",
+    "Garoto Oxy",
+    "preco R$ 49,90",
+    "GP_VIDEO_01",
+    "GP_VIDEO_02"
+  ],
+  "learned_processes": [
+    {
+      "from_hupmix": "baixar ultimo video do Instagram",
+      "universal_pattern": "asset_bridge_public_or_owned_channel",
+      "applies_to": [
+        "lojas",
+        "clinicas",
+        "agencias",
+        "saas com redes sociais"
+      ]
+    },
+    {
+      "from_hupmix": "criar missao de captacao real",
+      "universal_pattern": "real_asset_capture_mission",
+      "applies_to": [
+        "produto fisico",
+        "servico local",
+        "depoimento",
+        "case de cliente"
+      ]
+    },
+    {
+      "from_hupmix": "gerar preview local com asset real",
+      "universal_pattern": "local_preview_generator_before_external_action",
+      "applies_to": [
+        "video",
+        "landing",
+        "post",
+        "documento comercial"
+      ]
+    },
+    {
+      "from_hupmix": "bloquear publicacao automatica",
+      "universal_pattern": "human_gate_for_external_action",
+      "applies_to": [
+        "instagram",
+        "whatsapp",
+        "email",
+        "deploy",
+        "ads"
+      ]
+    },
+    {
+      "from_hupmix": "usar personagem Garoto Oxy",
+      "universal_pattern": "brand_character_or_voice_system",
+      "applies_to": [
+        "mascote",
+        "especialista",
+        "fundador",
+        "vendedor virtual"
+      ]
+    },
+    {
+      "from_hupmix": "integrar atendimento automatizado futuro",
+      "universal_pattern": "business_command_center",
+      "applies_to": [
+        "telegram",
+        "whatsapp",
+        "chat no site",
+        "crm",
+        "notificacoes do dono"
+      ]
+    }
+  ],
+  "next_evolution": [
+    "melhorar qualidade estetica do gerador local",
+    "criar EDL para editor humano",
+    "criar prompt packs para IA visual quando autorizada",
+    "criar templates de campanha por vertical",
+    "criar score de qualidade comparavel a Manus"
+  ]
+}

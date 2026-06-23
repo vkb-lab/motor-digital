@@ -1,0 +1,11 @@
+{
+  "status": "KOS_KNOWLEDGE_EXPANSION_POLICY_V1_READY",
+  "version": "v1",
+  "rule": "Todo modulo criado para um cliente deve ser classificado em especifico, reutilizavel ou runtime.",
+  "classification": {
+    "case_specific": "marca, produto, cliente, campanha, ativo local",
+    "reusable": "processo, skill, checklist, gerador, agente, template",
+    "runtime": "execucao, preview, log, last_run, arquivos temporarios"
+  },
+  "mandatory_question_after_each_module": "O que isso ensina ao K-OS para outros negocios?"
+}
