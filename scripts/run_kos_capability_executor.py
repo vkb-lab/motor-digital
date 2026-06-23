@@ -19,6 +19,14 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
+    "gp_video_02_local_video_generator": {
+        "name": "GP_VIDEO_02 Local Video Generator",
+        "script": "scripts/run_kos_hupmix_gp_video_02_local_video_generator.py",
+        "report": "local_runtime/kos_hupmix_gp_video_02_local_video_generator/status.json",
+        "autonomy_level": 2,
+        "permission": "local_asset_render",
+        "external_write": False
+    },
     "gp_video_02_instagram_asset_bridge": {
         "name": "GP_VIDEO_02 Instagram Asset Bridge",
         "script": "scripts/run_kos_hupmix_gp_video_02_instagram_asset_bridge.py",
@@ -61,6 +69,21 @@ EXECUTORS = {
     }
 }
 
+RUNTIME_VOLATILE_TRACKED_PATHS = [
+    "campaigns/hupmix_gp_recovery/GP_VIDEO_02_REAL_PRODUCTION_BRIEF.json",
+    "campaigns/hupmix_gp_recovery/GP_VIDEO_02_REAL_PRODUCTION_BRIEF.md",
+    "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CAPTURE_MISSION.json",
+    "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CAPTURE_MISSION.md",
+    "reports/KOS_CAPABILITY_EXECUTOR_LAST_RUN.json",
+    "reports/KOS_CAPABILITY_EXECUTOR_V1.json",
+    "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json",
+    "reports/KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.md",
+    "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.json",
+    "reports/KOS_HUPMIX_INSTAGRAM_CONTINUITY_AUDIT.md",
+    "reports/KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1.json",
+    "reports/KOS_HUPMIX_GP_VIDEO_02_CAPTURE_MISSION_V1.md",
+]
+
 POLICY = {
     "max_autonomy_level": 3,
     "external_publish_enabled": False,
@@ -102,7 +125,7 @@ def route_request(request: str):
         return {
             "route": "hupmix_creation_pipeline",
             "objective": "Continuar campanha existente: usar o video baixado do Instagram como asset inicial, manter missao de captacao e preparar GP_VIDEO_02 real.",
-            "tasks": ["hupmix_instagram_audit", "gp_video_02_instagram_asset_bridge", "gp_video_02_capture_mission", "gp_video_02_real_asset_audit"]
+            "tasks": ["hupmix_instagram_audit", "gp_video_02_instagram_asset_bridge", "gp_video_02_capture_mission", "gp_video_02_real_asset_audit", "gp_video_02_local_video_generator"]
         }
 
     if any(x in value for x in ["auditar tudo", "autonomia", "capacidades", "agentes", "inteligencia"]):
@@ -205,6 +228,41 @@ def run_executor(executor_id: str):
     result["finished_at"] = now()
     return result
 
+
+def restore_runtime_volatile_tracked_files(run_id: str):
+    import shutil
+
+    archive = ROOT / "local_runtime" / "kos_archives" / f"executor_runtime_restore_{run_id}"
+    changed = []
+
+    for item in RUNTIME_VOLATILE_TRACKED_PATHS:
+        p = ROOT / item
+        proc = subprocess.run(["git", "--no-pager", "status", "--short", "--", item], cwd=str(ROOT), capture_output=True, text=True)
+        if proc.stdout.strip():
+            changed.append(item)
+
+    if not changed:
+        return {"restored": False, "changed": [], "archive": None}
+
+    archive.mkdir(parents=True, exist_ok=True)
+
+    for item in changed:
+        src = ROOT / item
+        if src.exists():
+            try:
+                shutil.copy2(src, archive / src.name)
+            except Exception:
+                pass
+
+    subprocess.run(["git", "restore", "--"] + changed, cwd=str(ROOT), capture_output=True, text=True)
+
+    return {
+        "restored": True,
+        "changed": changed,
+        "archive": rel(archive)
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--request", default="status do motor")
@@ -239,9 +297,12 @@ def main():
             event["executions"].append(run_executor(executor_id))
 
         gp_report = load_json(ROOT / "reports" / "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json") or {}
+        gen_report = load_json(ROOT / "local_runtime" / "kos_hupmix_gp_video_02_local_video_generator" / "status.json") or {}
 
         if route["route"] == "hupmix_creation_pipeline":
-            if gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
+            if gen_report.get("status") in ["KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED", "KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED_FALLBACK_COPY"]:
+                event["next_step"] = "Video local GP_VIDEO_02 gerado. Validar no Operator Chat e registrar OK humano."
+            elif gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_WAITING_FOR_REAL_ASSETS":
                 event["next_step"] = "GP_VIDEO_02 tem missao de captacao criada e aguarda assets reais."
             elif gp_report.get("status") == "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_PREVIEW_READY":
                 event["next_step"] = "Preview real pronto. Validar no Operator Chat e registrar OK humano."
@@ -249,6 +310,8 @@ def main():
                 event["next_step"] = "Revisar estado Hupmix no orquestrador."
         else:
             event["next_step"] = "Execucao segura concluida."
+
+    event["runtime_restore"] = restore_runtime_volatile_tracked_files(run_id)
 
     event_path = EVENTS / f"{run_id}.json"
     last_path = RUNTIME / "last_run.json"

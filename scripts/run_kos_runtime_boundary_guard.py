@@ -11,6 +11,7 @@ ARCHIVES.mkdir(parents=True, exist_ok=True)
 
 VOLATILE = {
     "campaigns/hupmix_gp_recovery/GP_VIDEO_02_REAL_PRODUCTION_BRIEF.json",
+    "campaigns/hupmix_gp_recovery/GP_VIDEO_02_REAL_PRODUCTION_BRIEF.md",
     "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CAPTURE_MISSION.json",
     "campaigns/hupmix_gp_recovery/GP_VIDEO_02_CAPTURE_MISSION.md",
     "reports/KOS_CAPABILITY_EXECUTOR_LAST_RUN.json",

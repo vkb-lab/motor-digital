@@ -1,0 +1,22 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATOR_INSTALL_READY",
+  "created_at": "2026-06-23T07:17:14.887070",
+  "behavior": {
+    "uses_real_instagram_asset": true,
+    "generates_local_mp4": true,
+    "shows_generated_video_in_operator": true,
+    "keeps_output_in_local_runtime": true,
+    "auto_restores_runtime_git_noise": true,
+    "does_not_publish": true,
+    "does_not_use_paid_ai": true
+  },
+  "created": [
+    "scripts/run_kos_hupmix_gp_video_02_local_video_generator.py"
+  ],
+  "patched": [
+    "scripts/run_kos_capability_executor.py",
+    "scripts/run_kos_runtime_boundary_guard.py",
+    "pages/KOS_Operator_Chat.py"
+  ],
+  "output_expected": "local_runtime/kos_video_previews/hupmix/gp_video_02_generated/GP_VIDEO_02_GENERATED.mp4"
+}
