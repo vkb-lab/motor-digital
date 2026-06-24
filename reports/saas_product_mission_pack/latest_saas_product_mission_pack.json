@@ -1,0 +1,333 @@
+{
+  "checkpoint": "47",
+  "created_at": "2026-06-24T19:24:53.735300+00:00",
+  "execution_checklist": [
+    "validar problema e publico",
+    "gerar MVP spec",
+    "gerar landing spec",
+    "gerar campanha inicial",
+    "gerar plano audiovisual",
+    "rodar smoke tests",
+    "criar deploy readiness",
+    "criar relatorio de decisao humana",
+    "aprovar proximo checkpoint"
+  ],
+  "guardrails": [
+    "sem deploy automatico",
+    "sem publicacao automatica",
+    "sem API externa real",
+    "sem mensagem em massa",
+    "sem token em texto puro",
+    "MVP apenas planejado e supervisionado"
+  ],
+  "landing_spec": {
+    "headline": "K-Atlas Mini SaaS Factory: transforme ideia em operacao digital executavel",
+    "primary_cta": "Entrar na lista de implantacao",
+    "promise": "um cockpit que transforma uma ideia em MVP operacional, campanha, memoria, relatorio e plano de deploy",
+    "secondary_cta": "Ver demonstracao operacional",
+    "sections": [
+      "hero com promessa clara",
+      "dor do mercado",
+      "como funciona",
+      "modulos do MVP",
+      "prova operacional",
+      "planos e chamada para conversa",
+      "FAQ e proximos passos"
+    ],
+    "subheadline": "Para pequenos negocios, agencias, operadores de marketing e empreendedores locais que precisam resolver: criar MVPs, landing pages, campanhas e automacoes ainda exige muita ferramenta solta e retrabalho.",
+    "visual_direction": "premium tecnico, cockpit IA, cards limpos, video hero, prova com logs"
+  },
+  "mission_payload": {
+    "auto_deploy": false,
+    "auto_publish": false,
+    "browser_automation": false,
+    "external_api_enabled": false,
+    "mass_messaging": false,
+    "mission_type": "saas_build",
+    "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+    "official_publish": false,
+    "priority": "high",
+    "product_name": "K-Atlas Mini SaaS Factory",
+    "source_pack": "saas_product_mission_pack",
+    "title": "Missao SaaS Product K-Atlas"
+  },
+  "mission_result": {
+    "checkpoint": "44",
+    "enqueue": {
+      "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+      "ok": true,
+      "status": "mission_enqueued",
+      "tasks": [
+        {
+          "action": "saas_factory_plan",
+          "created_at": "2026-06-24T19:24:53.208101+00:00",
+          "cycle_id": "mission:ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+          "status": "pending",
+          "task_id": "7e6abcf6-8506-433a-81b4-908bc2b22044",
+          "validation": {
+            "ok": true,
+            "reasons": [
+              "command_allowed"
+            ],
+            "status": "allowed"
+          }
+        },
+        {
+          "action": "deploy_assisted_check",
+          "created_at": "2026-06-24T19:24:53.208172+00:00",
+          "cycle_id": "mission:ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+          "status": "pending",
+          "task_id": "7611b853-c532-474e-b0a7-550daf73c777",
+          "validation": {
+            "ok": true,
+            "reasons": [
+              "command_allowed"
+            ],
+            "status": "allowed"
+          }
+        },
+        {
+          "action": "generate_autoreport",
+          "created_at": "2026-06-24T19:24:53.208186+00:00",
+          "cycle_id": "mission:ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+          "status": "pending",
+          "task_id": "ac1ab7f4-ee8f-44b7-b5a6-8c96cc99e6fb",
+          "validation": {
+            "ok": true,
+            "reasons": [
+              "command_allowed"
+            ],
+            "status": "allowed"
+          }
+        }
+      ],
+      "tasks_enqueued": 3
+    },
+    "ok": true,
+    "plan": {
+      "checkpoint": "44",
+      "created_at": "2026-06-24T19:24:52.767598+00:00",
+      "guardrails": [
+        "sem publicacao automatica",
+        "sem deploy automatico",
+        "sem mensagem em massa",
+        "sem API externa real",
+        "sem token em texto puro",
+        "toda execucao passa pelo Command Center"
+      ],
+      "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+      "name": "Autonomy Mission Planner",
+      "next_checkpoints": [
+        "45 - Mission Executor Bridge",
+        "46 - Social Growth Mission Pack",
+        "47 - SaaS Product Mission Pack",
+        "48 - Daily Operator Cockpit",
+        "49 - External API Adapter Readiness"
+      ],
+      "ok": true,
+      "payload": {
+        "auto_deploy": false,
+        "auto_publish": false,
+        "browser_automation": false,
+        "external_api_enabled": false,
+        "mass_messaging": false,
+        "mission_type": "saas_build",
+        "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+        "official_publish": false,
+        "priority": "high",
+        "product_name": "K-Atlas Mini SaaS Factory",
+        "source_pack": "saas_product_mission_pack",
+        "title": "Missao SaaS Product K-Atlas"
+      },
+      "status": "planned",
+      "tasks": [
+        {
+          "action": "saas_factory_plan",
+          "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+          "order": 1,
+          "payload": {
+            "action": "saas_factory_plan",
+            "auto_deploy": false,
+            "auto_publish": false,
+            "browser_automation": false,
+            "external_api_enabled": false,
+            "mass_messaging": false,
+            "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+            "mission_title": "Missao SaaS Product K-Atlas",
+            "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+            "official_publish": false
+          },
+          "status": "pending",
+          "task_id": "7e6abcf6-8506-433a-81b4-908bc2b22044",
+          "validation": {
+            "ok": true,
+            "reasons": [
+              "command_allowed"
+            ],
+            "status": "allowed"
+          }
+        },
+        {
+          "action": "deploy_assisted_check",
+          "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+          "order": 2,
+          "payload": {
+            "action": "deploy_assisted_check",
+            "auto_deploy": false,
+            "auto_publish": false,
+            "browser_automation": false,
+            "external_api_enabled": false,
+            "mass_messaging": false,
+            "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+            "mission_title": "Missao SaaS Product K-Atlas",
+            "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+            "official_publish": false
+          },
+          "status": "pending",
+          "task_id": "7611b853-c532-474e-b0a7-550daf73c777",
+          "validation": {
+            "ok": true,
+            "reasons": [
+              "command_allowed"
+            ],
+            "status": "allowed"
+          }
+        },
+        {
+          "action": "generate_autoreport",
+          "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+          "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+          "order": 3,
+          "payload": {
+            "action": "generate_autoreport",
+            "auto_deploy": false,
+            "auto_publish": false,
+            "browser_automation": false,
+            "external_api_enabled": false,
+            "mass_messaging": false,
+            "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+            "mission_title": "Missao SaaS Product K-Atlas",
+            "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+            "official_publish": false
+          },
+          "status": "pending",
+          "task_id": "ac1ab7f4-ee8f-44b7-b5a6-8c96cc99e6fb",
+          "validation": {
+            "ok": true,
+            "reasons": [
+              "command_allowed"
+            ],
+            "status": "allowed"
+          }
+        }
+      ],
+      "validation": {
+        "ok": true,
+        "reasons": [
+          "mission_payload_allowed"
+        ],
+        "status": "mission_allowed"
+      }
+    },
+    "status": "planned_and_enqueued"
+  },
+  "monetization": {
+    "model": "assinatura + setup",
+    "plans": [
+      {
+        "name": "Starter",
+        "price_range": "R$ 297 - R$ 697/mês",
+        "target": "negocio local ou criador validando MVP"
+      },
+      {
+        "name": "Operator",
+        "price_range": "R$ 997 - R$ 2.997/mês",
+        "target": "agencia, operador comercial ou time enxuto"
+      },
+      {
+        "name": "Factory",
+        "price_range": "R$ 5.000+/mês",
+        "target": "operacao que cria multiplos produtos digitais"
+      }
+    ],
+    "setup": "implantacao, personalizacao, integrações e treinamento supervisionado"
+  },
+  "mvp_modules": [
+    {
+      "description": "captura problema, publico, oferta, restricoes e objetivo comercial",
+      "module": "intake",
+      "name": "Briefing inteligente",
+      "priority": "P0"
+    },
+    {
+      "description": "transforma o briefing em plano de produto, tarefas e checkpoints",
+      "module": "planner",
+      "name": "Mission Planner",
+      "priority": "P0"
+    },
+    {
+      "description": "gera estrutura inicial do MVP, app, paginas e dados",
+      "module": "builder",
+      "name": "SaaS Builder Agent",
+      "priority": "P0"
+    },
+    {
+      "description": "gera prompts, briefs e assets planejados para audiovisual e identidade",
+      "module": "creative",
+      "name": "Creative Media Gateway",
+      "priority": "P1"
+    },
+    {
+      "description": "gera oferta, copy, calendario, canais e funil inicial",
+      "module": "campaign",
+      "name": "Campaign Pack",
+      "priority": "P1"
+    },
+    {
+      "description": "valida readiness, rollback e checklist sem deploy automatico",
+      "module": "deploy",
+      "name": "Deploy Pipeline Assistido",
+      "priority": "P1"
+    },
+    {
+      "description": "gera relatorio operacional e historico de evolucao",
+      "module": "reporting",
+      "name": "AutoReporter",
+      "priority": "P0"
+    }
+  ],
+  "name": "SaaS Product Mission Pack",
+  "next_checkpoint": "48 - Daily Operator Cockpit",
+  "ok": true,
+  "payload": {
+    "audience": "pequenos negocios, agencias, operadores de marketing e empreendedores locais",
+    "auto_deploy": false,
+    "auto_publish": false,
+    "browser_automation": false,
+    "external_api_enabled": false,
+    "market_position": "sistema operacional de agentes IA para gerar produtos digitais e operacoes comerciais",
+    "mass_messaging": false,
+    "official_publish": false,
+    "pricing_hint": "assinatura mensal + setup de implantacao",
+    "problem": "criar MVPs, landing pages, campanhas e automacoes ainda exige muita ferramenta solta e retrabalho",
+    "product_name": "K-Atlas Mini SaaS Factory",
+    "solution": "um cockpit que transforma uma ideia em MVP operacional, campanha, memoria, relatorio e plano de deploy"
+  },
+  "run_id": "7aef71f9-14a2-46e2-8e33-c5dc7f259ffe",
+  "status": "planned",
+  "validation": {
+    "ok": true,
+    "reasons": [
+      "saas_product_payload_allowed"
+    ],
+    "status": "saas_product_allowed"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "checkpoint": "44",
+  "created_at": "2026-06-24T19:24:52.767598+00:00",
+  "guardrails": [
+    "sem publicacao automatica",
+    "sem deploy automatico",
+    "sem mensagem em massa",
+    "sem API externa real",
+    "sem token em texto puro",
+    "toda execucao passa pelo Command Center"
+  ],
+  "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+  "name": "Autonomy Mission Planner",
+  "next_checkpoints": [
+    "45 - Mission Executor Bridge",
+    "46 - Social Growth Mission Pack",
+    "47 - SaaS Product Mission Pack",
+    "48 - Daily Operator Cockpit",
+    "49 - External API Adapter Readiness"
+  ],
+  "ok": true,
+  "payload": {
+    "auto_deploy": false,
+    "auto_publish": false,
+    "browser_automation": false,
+    "external_api_enabled": false,
+    "mass_messaging": false,
+    "mission_type": "saas_build",
+    "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+    "official_publish": false,
+    "priority": "high",
+    "product_name": "K-Atlas Mini SaaS Factory",
+    "source_pack": "saas_product_mission_pack",
+    "title": "Missao SaaS Product K-Atlas"
+  },
+  "status": "planned",
+  "tasks": [
+    {
+      "action": "saas_factory_plan",
+      "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+      "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+      "order": 1,
+      "payload": {
+        "action": "saas_factory_plan",
+        "auto_deploy": false,
+        "auto_publish": false,
+        "browser_automation": false,
+        "external_api_enabled": false,
+        "mass_messaging": false,
+        "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+        "mission_title": "Missao SaaS Product K-Atlas",
+        "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+        "official_publish": false
+      },
+      "status": "pending",
+      "task_id": "7e6abcf6-8506-433a-81b4-908bc2b22044",
+      "validation": {
+        "ok": true,
+        "reasons": [
+          "command_allowed"
+        ],
+        "status": "allowed"
+      }
+    },
+    {
+      "action": "deploy_assisted_check",
+      "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+      "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+      "order": 2,
+      "payload": {
+        "action": "deploy_assisted_check",
+        "auto_deploy": false,
+        "auto_publish": false,
+        "browser_automation": false,
+        "external_api_enabled": false,
+        "mass_messaging": false,
+        "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+        "mission_title": "Missao SaaS Product K-Atlas",
+        "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+        "official_publish": false
+      },
+      "status": "pending",
+      "task_id": "7611b853-c532-474e-b0a7-550daf73c777",
+      "validation": {
+        "ok": true,
+        "reasons": [
+          "command_allowed"
+        ],
+        "status": "allowed"
+      }
+    },
+    {
+      "action": "generate_autoreport",
+      "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+      "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+      "order": 3,
+      "payload": {
+        "action": "generate_autoreport",
+        "auto_deploy": false,
+        "auto_publish": false,
+        "browser_automation": false,
+        "external_api_enabled": false,
+        "mass_messaging": false,
+        "mission_id": "ce28b334-21f5-4dd0-85b6-5f9cdbc8268b",
+        "mission_title": "Missao SaaS Product K-Atlas",
+        "objective": "transformar uma ideia de SaaS em MVP operacional, landing spec, plano comercial e deploy assistido",
+        "official_publish": false
+      },
+      "status": "pending",
+      "task_id": "ac1ab7f4-ee8f-44b7-b5a6-8c96cc99e6fb",
+      "validation": {
+        "ok": true,
+        "reasons": [
+          "command_allowed"
+        ],
+        "status": "allowed"
+      }
+    }
+  ],
+  "validation": {
+    "ok": true,
+    "reasons": [
+      "mission_payload_allowed"
+    ],
+    "status": "mission_allowed"
+  }
+}
