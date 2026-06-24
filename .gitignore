@@ -39,3 +39,9 @@ local_runtime/kos_reference_imports/
 
 
 /reports/KOS_LAST_BRAIN_GATEWAY_RESULT.json
+/local_runtime/google_oauth/
+/local_runtime/google_oauth/*.json
+/local_runtime/google_oauth/*.token
+/local_runtime/google_oauth/*.secret
+/reports/gmail_operator/*_raw.json
+/CHAT.txt

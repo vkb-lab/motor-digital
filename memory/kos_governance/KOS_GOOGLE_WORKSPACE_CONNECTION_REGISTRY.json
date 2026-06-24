@@ -1,0 +1,60 @@
+{
+  "status": "KOS_GOOGLE_WORKSPACE_CONNECTION_REGISTRY_READY",
+  "version": "1.0",
+  "provider": "Google",
+  "official_google_project": {
+    "project_id": "buoyant-song-491421-v6",
+    "oauth_app": "kaizen-home",
+    "role": "oauth_e_apis_google"
+  },
+  "gmail": {
+    "connector_id": "gmail_operator",
+    "status": "prepared_not_authorized_yet",
+    "api": "Gmail API",
+    "auth_type": "OAuth 2.0 user consent",
+    "local_secret_path_expected": "local_runtime/google_oauth/client_secret.json",
+    "local_token_path_pattern": "local_runtime/google_oauth/token_gmail_<profile>.json",
+    "scopes": {
+      "readonly": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ],
+      "operator_recommended": [
+        "https://www.googleapis.com/auth/gmail.modify"
+      ],
+      "full_delete_restricted": [
+        "https://mail.google.com/"
+      ]
+    },
+    "capabilities": {
+      "read": true,
+      "reports": true,
+      "edit_labels": true,
+      "archive": true,
+      "trash": true,
+      "draft_reply": true,
+      "send": "requires_human_confirmation",
+      "permanent_delete": "blocked_by_default_requires_full_delete_scope_and_confirmation"
+    },
+    "permission_levels": {
+      "0": "status only",
+      "1": "read and reports",
+      "2": "modify labels archive trash draft",
+      "3": "send with human confirmation",
+      "4": "permanent delete locked by default"
+    },
+    "security_rules": [
+      "never_commit_client_secret",
+      "never_commit_refresh_token",
+      "send_requires_confirm_SEND_GMAIL",
+      "trash_requires_confirm_TRASH_GMAIL",
+      "permanent_delete_requires_confirm_PERMANENT_DELETE_GMAIL_and_full_delete_scope",
+      "prefer_trash_over_delete",
+      "log_sanitized_reports_only"
+    ]
+  },
+  "meta": {
+    "connector_id": "meta_instagram_operator",
+    "status": "separate_provider_not_reused_for_gmail",
+    "note": "Meta OAuth/token cannot authorize Google Gmail. Keep as separate connector."
+  }
+}
