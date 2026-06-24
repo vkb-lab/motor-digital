@@ -25,9 +25,16 @@ NOISE_TERMS = [
 
 EXTERNAL_ACTION_WORDS = [
     "publicar",
+    "publique",
+    "publica",
+    "publicação",
+    "publicacao",
     "poste",
     "postar",
     "enviar",
+    "envie",
+    "manda",
+    "mande",
     "mandar whatsapp",
     "mandar mensagem",
     "deploy",
@@ -135,7 +142,7 @@ def detect_instagram_accounts(snapshot: dict[str, Any]) -> list[str]:
         accounts.append("Casa da Limpeza: registrada em configuração local.")
 
     if "parada_atlantida" in text or "parada atlântida" in text or "parada atlantida" in text:
-        accounts.append("Parada Atlântida: reconhecida como projeto sensível e não deve receber ação externa sem confirmação.")
+        accounts.append("Parada Atlântida: reconhecida como projeto sensível e travada para ações externas.")
 
     if not accounts:
         accounts.append("Não encontrei contas Instagram nomeadas nos registries locais consultados. O próximo passo é auditar o registry de conexões.")
@@ -253,3 +260,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
