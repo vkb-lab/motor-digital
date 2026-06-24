@@ -1,0 +1,11 @@
+{
+  "status": "KOS_ROUTE_UI_ISOLATION_V1_READY",
+  "created_at": "2026-06-24T07:00:15.093082",
+  "fixed": [
+    "GP_VIDEO_02 gerado so aparece na rota hupmix_creation_pipeline",
+    "rota universal_process_learning nao herda video Hupmix",
+    "Comece por aqui deve ficar oculto quando painel especializado estiver ativo"
+  ],
+  "target": "pages/KOS_Operator_Chat.py",
+  "next_step": "Importar pacote Manus como referencia criativa e conhecimento reutilizavel."
+}

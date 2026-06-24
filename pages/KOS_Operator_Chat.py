@@ -2368,26 +2368,28 @@ def render_kos_orchestrator_mode_panel():
     # KOS_PROCESS_LEARNING_INLINE_UI_END
 
     # KOS_GP_VIDEO_02_GENERATED_VIDEO_UI_BEGIN
-    gen_status_path = root / "local_runtime" / "kos_hupmix_gp_video_02_local_video_generator" / "status.json"
-    gen_status = {}
-    if gen_status_path.exists():
-        try:
-            gen_status = json.loads(gen_status_path.read_text(encoding="utf-8"))
-        except Exception:
-            gen_status = {}
+    # Video Hupmix so pode aparecer dentro da rota Hupmix.
+    if route.get("route") == "hupmix_creation_pipeline":
+        gen_status_path = root / "local_runtime" / "kos_hupmix_gp_video_02_local_video_generator" / "status.json"
+        gen_status = {}
+        if gen_status_path.exists():
+            try:
+                gen_status = json.loads(gen_status_path.read_text(encoding="utf-8"))
+            except Exception:
+                gen_status = {}
 
-    if gen_status.get("status") in ["KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED", "KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED_FALLBACK_COPY"]:
-        generated_path = root / gen_status.get("output", "")
-        if generated_path.exists():
-            st.markdown("### Video gerado GP_VIDEO_02")
-            left, center, right = st.columns([1, 1.15, 1])
-            with center:
-                st.video(str(generated_path))
-                st.caption("Gerado localmente com asset real do Instagram. Publicacao bloqueada ate OK humano.")
-            st.info(gen_status.get("next_step", "Validar video gerado."))
-            if gen_status.get("fallback_used"):
-                st.warning("Gerador usou fallback: validacao humana obrigatoria.")
-            return
+        if gen_status.get("status") in ["KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED", "KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED_FALLBACK_COPY"]:
+            generated_path = root / gen_status.get("output", "")
+            if generated_path.exists():
+                st.markdown("### Video gerado GP_VIDEO_02")
+                left, center, right = st.columns([1, 1.15, 1])
+                with center:
+                    st.video(str(generated_path))
+                    st.caption("Gerado localmente com asset real do Instagram. Publicacao bloqueada ate OK humano.")
+                st.info(gen_status.get("next_step", "Validar video gerado."))
+                if gen_status.get("fallback_used"):
+                    st.warning("Gerador usou fallback: validacao humana obrigatoria.")
+                return
     # KOS_GP_VIDEO_02_GENERATED_VIDEO_UI_END
 
     gp_report_path = root / "reports" / "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json"
