@@ -14,17 +14,13 @@ BANNED_MAIN_MARKERS = [
     "Registry de tenants",
     "Guardrails ativos",
     "Nada foi publicado",
-    "Evid?ncia local",
     "Evidencia local",
     "Registro tecnico",
-    "Registro t?cnico",
     "Comandos internos",
-    "Limite de seguran?a",
-    "A??o segura dispon?vel",
+    "Limite de seguranca",
     "Acao segura disponivel",
     "Responda por texto",
     "Publicacao executada",
-    "Publica??o executada",
     "Navegador logado usado",
     "Scraping usado",
     "returncode=",
@@ -40,14 +36,37 @@ BANNED_MAIN_MARKERS = [
 
 STOP_MARKERS = [
     "Seguranca",
-    "Seguran?a",
-    "Evid?ncia local",
     "Evidencia local",
     "Registro tecnico",
-    "Registro t?cnico",
     "Guardrails ativos",
     "Nada foi publicado",
 ]
+
+
+def _ascii_safe(text: str) -> str:
+    replacements = {
+        "Tamb?m": "Tambem",
+        "tamb?m": "tambem",
+        "Atl?ntida": "Atlantida",
+        "atl?ntida": "atlantida",
+        "a??es": "acoes",
+        "a??o": "acao",
+        "Valida??o": "Validacao",
+        "valida??o": "validacao",
+        "M?dias": "Midias",
+        "m?dias": "midias",
+        "?ltima": "ultima",
+        "?ltimas": "ultimas",
+        "publica??o": "publicacao",
+        "Pr?ximos": "Proximos",
+        "t?cnicos": "tecnicos",
+        "t?cnico": "tecnico",
+    }
+
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+
+    return text
 
 
 def _first_match(pattern: str, text: str, default: str = "") -> str:
@@ -64,13 +83,13 @@ def _has(text: str, value: str) -> bool:
 def _format_instagram_audit(text: str) -> str | None:
     lower = text.lower()
 
-    if "instagram conectado operacionalmente" not in lower and "@hupmix" not in lower:
+    if "instagram conectado" not in lower and "@hupmix" not in lower:
         return None
 
     account = _first_match(r"Conta:\s*(@[A-Za-z0-9_.]+)", text, "@hupmix")
     ig_id = _first_match(r"IG ID:\s*([0-9]+)", text)
-    media_total = _first_match(r"Midias no perfil:\s*([0-9]+)", text) or _first_match(r"M?dias no perfil:\s*([0-9]+)", text)
-    recent = _first_match(r"Midias recentes lidas:\s*([0-9]+)", text) or _first_match(r"M?dias recentes lidas:\s*([0-9]+)", text)
+    media_total = _first_match(r"M.?dias no perfil:\s*([0-9]+)", text)
+    recent = _first_match(r"M.?dias recentes lidas:\s*([0-9]+)", text)
 
     lines: list[str] = []
 
@@ -79,30 +98,30 @@ def _format_instagram_audit(text: str) -> str | None:
     found = []
     if _has(text, "Casa da Limpeza") or _has(text, "casa_da_limpeza"):
         found.append("Casa da Limpeza: registrada localmente.")
-    if _has(text, "Parada Atlantida") or _has(text, "Parada Atl?ntida") or _has(text, "parada_atlantida"):
-        found.append("Parada Atl?ntida: travada para a??es externas.")
+    if _has(text, "Parada Atlantida") or _has(text, "Parada Atl") or _has(text, "parada_atlantida"):
+        found.append("Parada Atlantida: travada para acoes externas.")
 
     if found:
         lines.append("")
-        lines.append("Tamb?m encontrei:")
+        lines.append("Tambem encontrei:")
         for item in found:
             lines.append(f"- {item}")
 
     lines.append("")
-    lines.append("Valida??o oficial da Hupmix:")
+    lines.append("Validacao oficial da Hupmix:")
     if account:
         lines.append(f"- Conta: {account}")
     if ig_id:
         lines.append(f"- IG ID: {ig_id}")
     if media_total:
-        lines.append(f"- M?dias no perfil: {media_total}")
+        lines.append(f"- Midias no perfil: {media_total}")
     if recent:
-        lines.append(f"- M?dias recentes lidas: {recent}")
+        lines.append(f"- Midias recentes lidas: {recent}")
 
     lines.append("")
-    lines.append("Posso revisar a ?ltima publica??o, gerar uma legenda melhor ou comparar as ?ltimas postagens.")
+    lines.append("Posso revisar a ultima publicacao, gerar uma legenda melhor ou comparar as ultimas postagens.")
 
-    return "\n".join(lines).strip()
+    return _ascii_safe("\n".join(lines).strip())
 
 
 def _strip_noise(text: str) -> str:
@@ -118,7 +137,6 @@ def _strip_noise(text: str) -> str:
         if any(marker.lower() in line.lower() for marker in BANNED_MAIN_MARKERS):
             continue
 
-        # Remove linhas t?cnicas com pipes de registry.
         if "|" in line and any(x in line.lower() for x in ["target=", "status=", "provider=", "risco=", "publish"]):
             continue
 
@@ -126,7 +144,7 @@ def _strip_noise(text: str) -> str:
 
     clean = "\n".join(cleaned_lines).strip()
     clean = re.sub(r"\n{3,}", "\n\n", clean)
-    return clean
+    return _ascii_safe(clean)
 
 
 def extract_real_operator_answer(raw_text: str) -> str:
@@ -152,7 +170,7 @@ def extract_real_operator_answer(raw_text: str) -> str:
     if not clean:
         clean = _strip_noise(text)
 
-    return clean.strip()
+    return _ascii_safe(clean.strip())
 
 
 def latest_safe_action_answer(root: str | Path = ".") -> str:
@@ -178,7 +196,6 @@ def compose_for_chat(raw_text: str, root: str | Path = ".") -> dict:
         main = latest_safe_action_answer(root)
 
     return {
-        "user_response": main.strip(),
+        "user_response": _ascii_safe(main.strip()),
         "technical_evidence": raw_text.strip(),
     }
-
