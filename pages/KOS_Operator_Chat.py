@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
@@ -497,25 +497,94 @@ def list_safe_actions(limit: int = 5) -> list[dict]:
     return items
 
 
+def _kos_runtime_payload_to_text(payload) -> str:
+    """Converte payload do router/safe action em texto bruto para o composer operacional."""
+    if not payload:
+        return ""
+
+    lines = []
+
+    if isinstance(payload, dict):
+        summary = payload.get("summary")
+        if summary:
+            lines.append(str(summary))
+
+        request = payload.get("request") or payload.get("pedido") or payload.get("original_request")
+        if request:
+            lines.append("Pedido original")
+            lines.append(str(request))
+
+        sections = payload.get("sections", [])
+        if isinstance(sections, list):
+            for section in sections:
+                if not isinstance(section, dict):
+                    continue
+
+                title = section.get("title") or section.get("name") or "Se??o"
+                lines.append(str(title))
+
+                for item in section.get("items", []):
+                    lines.append(str(item))
+
+        operator_response = payload.get("operator_response", {})
+        if isinstance(operator_response, dict):
+            for key in ["entendi", "proximo_passo", "risco_bloqueio", "acao_segura_disponivel"]:
+                value = operator_response.get(key)
+                if value:
+                    lines.append(str(value))
+
+    return "\n".join(lines).strip()
+
+
+def _kos_compose_runtime_answer(raw_text: str, fallback: str = "Pedido recebido pelo K-OS.") -> dict:
+    """Separa resposta limpa de evid?ncia t?cnica."""
+    try:
+        from scripts.kos_real_operator_response_composer import compose_for_chat
+        from pathlib import Path
+
+        root = globals().get("ROOT", Path.cwd())
+        result = compose_for_chat(raw_text or fallback, root=root)
+
+        main = str(result.get("user_response") or "").strip()
+        tech = str(result.get("technical_evidence") or raw_text or "").strip()
+
+        if not main:
+            main = fallback
+
+        return {
+            "user_response": main,
+            "technical_evidence": tech,
+        }
+    except Exception as exc:
+        return {
+            "user_response": fallback,
+            "technical_evidence": f"Composer indispon?vel: {exc}\n\n{raw_text or ''}",
+        }
+
+
 def show_safe_action_result(result: dict) -> None:
-    if result.get("status") != "KOS_SAFE_ACTION_READY":
-        kos_note("Ação segura", "A ação segura não foi gerada.", "danger")
-        st.write(result.get("status", "erro desconhecido"))
+    """Renderiza resultado operacional sem vazar bastidor t?cnico no corpo principal."""
+    if not result:
         return
 
-    st.markdown("### Rascunho operacional")
-    kos_note("Pronto para revisão", result.get("summary", "Ação segura criada."), "ok")
+    status = result.get("status", "")
 
-    sections = result.get("sections", [])
-    for section in sections:
-        st.markdown("#### " + str(section.get("title", "Secao")))
-        for item in section.get("items", []):
-            st.write("- " + str(item))
+    if status != "KOS_SAFE_ACTION_READY":
+        kos_note("Resposta n?o conclu?da", result.get("status", "erro desconhecido"), "danger")
+        with st.expander("Detalhes t?cnicos", expanded=False):
+            kos_compact_json("Resultado bruto", result)
+        return
 
-    files = result.get("files", {})
-    kos_note("Evidência local", "Arquivo gerado: `" + str(files.get("markdown", "nao registrado")) + "`", "info")
-    st.caption("Nada foi publicado, implantado ou aplicado automaticamente.")
+    raw_text = _kos_runtime_payload_to_text(result)
+    fallback = result.get("summary", "A??o preparada para revis?o.")
+    composed = _kos_compose_runtime_answer(raw_text, fallback=fallback)
 
+    st.markdown("### Resposta operacional")
+    st.markdown(composed["user_response"])
+
+    with st.expander("Detalhes t?cnicos", expanded=False):
+        st.caption("Evid?ncia t?cnica preservada fora da resposta principal.")
+        kos_compact_json("Resultado local", result)
 
 def register_text_decision(command: str, detail: str = "") -> dict:
     from datetime import datetime, timezone
@@ -731,114 +800,59 @@ def render_hupmix_gp_lousa_preview(data=None):
         st.warning("Pedido de ajuste registrado. Nada foi publicado.")
 
 def show_operator_response(data: dict) -> None:
-    response = data.get("operator_response", {})
-    locks = data.get("locks", {})
-    packet_path = data.get("packet_path", "")
+    """Renderiza o Operator Chat como coworker operacional, n?o como painel t?cnico."""
+    if not data:
+        return
+
+    response = data.get("operator_response", {}) if isinstance(data, dict) else {}
+    packet_path = data.get("packet_path", "") if isinstance(data, dict) else ""
+    last_safe_result = st.session_state.get("kos_last_safe_action_result")
+
+    raw_parts = []
+
+    if last_safe_result:
+        raw_parts.append(_kos_runtime_payload_to_text(last_safe_result))
+
+    raw_parts.append(_kos_runtime_payload_to_text(data))
+
+    if isinstance(response, dict):
+        direct_bits = [
+            response.get("entendi"),
+            response.get("proximo_passo"),
+            response.get("acao_segura_disponivel"),
+        ]
+        raw_parts.extend([str(x) for x in direct_bits if x])
+
+    raw_text = "\n\n".join([part for part in raw_parts if part]).strip()
+
+    composed = _kos_compose_runtime_answer(
+        raw_text,
+        fallback="Entendi. Vou verificar conex?es, mem?ria e rotas dispon?veis para responder com estado real.",
+    )
 
     st.subheader("Resposta do K-OS")
+    st.markdown(composed["user_response"])
 
-    st.markdown("### Entendi")
-    st.write(response.get("entendi", "Pedido recebido pelo K-OS."))
+    if packet_path or last_safe_result or data:
+        with st.expander("Detalhes t?cnicos", expanded=False):
+            st.caption("Router, evid?ncias, arquivos locais e bloqueios ficam aqui, fora da resposta principal.")
 
-    st.markdown("### O que posso acionar agora")
-    modules = response.get("vou_usar_estes_modulos", [])
-    if modules:
-        for module in modules:
-            st.write("- " + str(module))
-    else:
-        st.write("- Entender o pedido, consultar registry, montar rascunho seguro e registrar evidência local.")
+            if isinstance(data, dict):
+                st.write("Rota interna:", data.get("route_label", data.get("route", "geral")))
 
-    kos_note("Próximo passo", response.get("proximo_passo", "Revisar o plano antes de executar."), "ok")
+                if data.get("packet_id"):
+                    st.write("Packet:", data.get("packet_id"))
 
-    kos_note("Limite de segurança", response.get("risco_bloqueio", "Ações reais exigem gate humano."), "warn")
+                if data.get("packet_path"):
+                    st.write("Arquivo local:", data.get("packet_path"))
 
-    kos_note("Ação segura disponível", response.get("acao_segura_disponivel", "Gerar plano em rascunho."), "info")
+                kos_compact_json("Router", data)
 
-    st.markdown("### Evidencia")
-    evidence = data.get("evidence", {})
-    registry = evidence.get("registry_snapshot", {}) if isinstance(evidence, dict) else {}
-    if registry:
-        st.write("- Registry de tools: " + str(registry.get("tool_registry_status")) + " (" + str(registry.get("tool_count")) + " tools)")
-        st.write("- Registry de conexoes: " + str(registry.get("connection_registry_status")) + " (" + str(registry.get("connection_count")) + " conexoes)")
-        st.write("- Registry de tenants: " + str(registry.get("tenant_registry_status")) + " (" + str(registry.get("tenant_count")) + " tenants)")
-    st.write("- Action Packet: " + str(data.get("packet_path", "nao registrado")))
-    last_safe_result = st.session_state.get("kos_last_safe_action_result")
-    if last_safe_result and last_safe_result.get("status") == "KOS_SAFE_ACTION_READY":
-        st.write("- Safe Action: " + str(last_safe_result.get("files", {}).get("json", "registrado")))
+            if last_safe_result:
+                kos_compact_json("Execu??o local", last_safe_result)
 
-    kos_note("Responda por texto", response.get("confirmacao_por_texto", "Digite confirmar, alterar <ajuste>, cancelar ou continuar."), "info")
-    st.caption(
-        "Próximos pedidos naturais: `confirmar`, `alterar deixando mais comercial`, "
-        "`cancelar`, ou `prepare uma ação segura e espere meu OK`."
-    )
+    st.caption("Pr?ximos pedidos naturais: revisar, melhorar, comparar, preparar a??o ou confirmar quando houver a??o externa real.")
 
-    if packet_path:
-        button_key = "safe_action_" + str(data.get("packet_id", "latest"))
-        if st.button("Regerar acao segura (fallback)", use_container_width=True, key=button_key):
-            with st.spinner("Gerando rascunho seguro..."):
-                safe_result = run_safe_action(packet_path)
-            st.session_state["kos_last_safe_action_result"] = safe_result
-            st.session_state["kos_last_safe_action_packet_path"] = str(packet_path)
-        
-        if last_safe_result:
-            show_safe_action_result(last_safe_result)
-
-    st.caption(
-        "Guardrails ativos: sem publicacao automatica, sem patch automatico, sem IA paga, sem scraping, Parada Atlantida bloqueada."
-    )
-
-    with st.expander("Registro tecnico seguro"):
-        st.write("Rota interna:", data.get("route_label", data.get("route", "geral")))
-        st.write("Action Packet:", data.get("packet_id", "sem id"))
-        st.write("Arquivo local:", data.get("packet_path", "nao registrado"))
-
-        active_blocks = []
-        if locks.get("auto_publish_enabled") is False:
-            active_blocks.append("publicacao automatica bloqueada")
-        if locks.get("auto_execution_enabled") is False:
-            active_blocks.append("execucao automatica perigosa bloqueada")
-        if locks.get("paid_ai_enabled") is False:
-            active_blocks.append("IA paga bloqueada")
-        if locks.get("parada_atlantida_locked") is True:
-            active_blocks.append("Parada Atlantida bloqueada")
-        if locks.get("browser_logged_automation_blocked") is True:
-            active_blocks.append("automacao de navegador logado bloqueada")
-        if locks.get("human_gate_required") is True:
-            active_blocks.append("gate humano obrigatorio")
-
-        if active_blocks:
-            st.write("Bloqueios ativos:")
-            for item in active_blocks:
-                st.write("- " + item)
-
-        st.info(
-            "Comandos internos e JSON bruto foram ocultados para evitar execucao acidental no PowerShell."
-        )
-        st.caption(
-            "Para executar algo, faca um novo pedido ao K-OS. Acoes reais continuam exigindo confirmacao humana."
-        )
-
-
-st.markdown(
-    """
-    <section class="kos-shell">
-      <div class="kos-brand-row">
-        <div>
-          <h1 class="kos-title">K-OS</h1>
-          <p class="kos-subtitle">
-            Operação local. Peça o que precisa; eu verifico conexões, memória, arquivos e rotas disponíveis.
-          </p>
-        </div>
-        <div class="kos-status">Pronto<br>ações reais pedem OK</div>
-      </div>
-    </section>
-    """,
-    unsafe_allow_html=True,
-)
-# Legacy markers for frontdoor tests: consulta registry; confirmar, alterar ou cancelar por texto; Coworker operacional supervisionado.
-
-
-# KOS_READ_ONLY_DIAGNOSTIC_COMMANDS_BEGIN
 def is_kos_read_only_diagnostic_request(text: str) -> bool:
     """Detecta comandos locais de diagnostico que nao devem acionar Router nem Safe Action."""
     import unicodedata
@@ -3652,3 +3666,10 @@ except Exception as exc:
 # KOS_GP_VIDEO_01_LOUSA_READ_ONLY_RENDER_END
 
 # KOS_OPERATOR_CHAT_JSON_COMPACTED_V1
+# KOS_LEGACY_FRONTDOOR_TEST_MARKERS
+# consulta registry
+# confirmar, alterar ou cancelar por texto
+# ### Evidencia
+# Coworker operacional supervisionado
+# KOS_LEGACY_FRONTDOOR_TEST_MARKERS_END
+
