@@ -24,6 +24,23 @@ def test_phase72d_policy_safe():
 def test_phase72d_page_has_single_request_box():
     page = (ROOT / "pages" / "KOS_Operator_Chat.py").read_text(encoding="utf-8-sig")
     assert "Pedido ao K-OS" in page
-    assert "Pedir ao Orquestrador" in page
-    assert "Detalhes técnicos" in page or "Detalhes tecnicos" in page
-    assert "Você não precisa procurar funcionalidades" in page
+    assert "consulta registry" in page
+    assert "confirmar, alterar ou cancelar por texto" in page
+    assert "### Evidencia" in page
+    assert "parse_text_decision" in page
+    assert "register_text_decision" in page
+
+def test_phase72d_capability_status_intent_reads_real_registries():
+    page = (ROOT / "pages" / "KOS_Operator_Chat.py").read_text(encoding="utf-8-sig")
+    assert "is_kos_capability_status_question" in page
+    assert "KOS_TOOL_REGISTRY.json" in page
+    assert "KOS_CONNECTION_REGISTRY.json" in page
+    assert "KOS_PRODUCT_CAPABILITY_PACKS.json" in page
+    assert "KOS_TENANT_REGISTRY.json" in page
+    assert "Criar SaaS/produtos" in page
+    assert "Ki-Publica/social/campanhas" in page
+    assert "Conexões Google/Meta/Supabase/Git/Render" in page
+    assert "Autonomia/agentes/runtime" in page
+    assert "Segurança/Human Gate" in page
+    assert "O que posso acionar agora" in page
+    assert "Coworker operacional supervisionado" in page

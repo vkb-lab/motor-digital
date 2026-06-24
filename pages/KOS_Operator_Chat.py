@@ -33,6 +33,218 @@ st.set_page_config(
 )
 
 
+def render_kos_visual_identity() -> None:
+    st.markdown(
+        """
+        <style>
+        :root {
+            --kos-ink: #182033;
+            --kos-muted: #667085;
+            --kos-line: #d8dee8;
+            --kos-panel: #ffffff;
+            --kos-surface: #f6f8fb;
+            --kos-accent: #1769ff;
+            --kos-accent-2: #13a37f;
+            --kos-warn: #b7791f;
+            --kos-danger: #c2410c;
+        }
+
+        .stApp {
+            background:
+                linear-gradient(180deg, #f8fafc 0%, #f4f7fb 48%, #eef3f8 100%);
+            color: var(--kos-ink);
+        }
+
+        .block-container {
+            max-width: 880px;
+            padding-top: 4.75rem;
+            padding-bottom: 5rem;
+        }
+
+        div[data-testid="stToolbar"] {
+            opacity: 0.32;
+        }
+
+        h1, h2, h3, h4 {
+            letter-spacing: 0;
+            color: var(--kos-ink);
+        }
+
+        .kos-shell {
+            border: 1px solid rgba(24, 32, 51, 0.08);
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 18px 48px rgba(25, 35, 55, 0.08);
+            border-radius: 8px;
+            padding: 26px 28px 22px;
+            margin-bottom: 18px;
+        }
+
+        .kos-brand-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .kos-kicker {
+            color: var(--kos-accent-2);
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin-bottom: 8px;
+        }
+
+        .kos-title {
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            line-height: 0.95;
+            font-weight: 780;
+            margin: 0;
+            color: var(--kos-ink);
+        }
+
+        .kos-subtitle {
+            color: var(--kos-muted);
+            font-size: 1rem;
+            line-height: 1.65;
+            max-width: 680px;
+            margin: 16px 0 0;
+        }
+
+        .kos-status {
+            min-width: 148px;
+            border: 1px solid rgba(19, 163, 127, 0.28);
+            background: #eefbf7;
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #05604a;
+            font-size: 0.83rem;
+            font-weight: 650;
+            text-align: left;
+        }
+
+        .kos-contract {
+            border-left: 3px solid var(--kos-accent);
+            background: #eef5ff;
+            color: #123466;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 20px;
+            line-height: 1.55;
+        }
+
+        .kos-note {
+            border: 1px solid var(--kos-line);
+            background: var(--kos-panel);
+            border-radius: 8px;
+            padding: 13px 15px;
+            margin: 8px 0 14px;
+            line-height: 1.55;
+            color: var(--kos-ink);
+        }
+
+        .kos-note strong {
+            display: block;
+            color: var(--kos-muted);
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .kos-note.ok { border-left: 3px solid var(--kos-accent-2); }
+        .kos-note.info { border-left: 3px solid var(--kos-accent); }
+        .kos-note.warn { border-left: 3px solid var(--kos-warn); }
+        .kos-note.danger { border-left: 3px solid var(--kos-danger); }
+
+        div[data-testid="stTextArea"] textarea {
+            border: 1px solid #ccd5e1 !important;
+            background: #ffffff !important;
+            border-radius: 8px !important;
+            color: var(--kos-ink) !important;
+            min-height: 132px !important;
+            box-shadow: inset 0 1px 0 rgba(16, 24, 40, 0.03) !important;
+        }
+
+        div[data-testid="stTextArea"] textarea:focus {
+            border-color: var(--kos-accent) !important;
+            box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.12) !important;
+        }
+
+        div[data-testid="stTextArea"] label p,
+        div[data-testid="stCaptionContainer"] {
+            color: var(--kos-muted);
+        }
+
+        .stButton > button {
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: var(--kos-ink);
+            font-weight: 650;
+        }
+
+        .stButton > button[kind="primary"] {
+            border: 0;
+            background: linear-gradient(135deg, #1769ff 0%, #13a37f 100%);
+            color: #ffffff;
+        }
+
+        .stButton > button:hover {
+            border-color: #1769ff;
+            color: var(--kos-ink);
+        }
+
+        .stButton > button[kind="primary"]:hover {
+            color: #ffffff;
+            filter: brightness(0.98);
+        }
+
+        div[data-testid="stExpander"] {
+            border-color: var(--kos-line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.74);
+        }
+
+        div[data-testid="stAlert"] {
+            border-radius: 8px;
+            border: 1px solid var(--kos-line);
+        }
+
+        @media (max-width: 760px) {
+            .block-container {
+                padding-top: 2.2rem;
+            }
+
+            .kos-brand-row {
+                display: block;
+            }
+
+            .kos-status {
+                margin-top: 16px;
+                min-width: 0;
+            }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def kos_note(label: str, text: str, kind: str = "info") -> None:
+    st.markdown(
+        f"""
+        <div class="kos-note {kind}">
+          <strong>{label}</strong>
+          <div>{text}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+render_kos_visual_identity()
+
+
 def read_json(path: Path) -> dict:
     if not path.exists():
         return {"status": "MISSING", "path": str(path)}
@@ -47,6 +259,171 @@ def subprocess_env() -> dict:
     env["PYTHONIOENCODING"] = "utf-8"
     env["PYTHONUTF8"] = "1"
     return env
+
+
+def normalize_operator_text(text: str) -> str:
+    import unicodedata
+
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    return "".join(ch for ch in value if not unicodedata.combining(ch))
+
+
+def is_kos_capability_status_question(text: str) -> bool:
+    value = normalize_operator_text(text)
+    phrases = [
+        "o que voce pode fazer",
+        "o que vc pode fazer",
+        "o que pode fazer por mim",
+        "o que voce pode fazer por mim",
+        "quais ferramentas voce tem",
+        "quais ferramentas vc tem",
+        "como pode me ajudar",
+        "como voce pode me ajudar",
+        "status das capacidades",
+        "status de capacidades",
+        "capacidades reais",
+        "quais capacidades voce tem",
+        "quais capacidades vc tem",
+    ]
+    return any(phrase in value for phrase in phrases)
+
+
+def load_kos_operational_registries() -> dict:
+    base = ROOT / "memory" / "kos_governance"
+    files = {
+        "tools": base / "KOS_TOOL_REGISTRY.json",
+        "connections": base / "KOS_CONNECTION_REGISTRY.json",
+        "packs": base / "KOS_PRODUCT_CAPABILITY_PACKS.json",
+        "tenants": base / "KOS_TENANT_REGISTRY.json",
+    }
+    return {name: read_json(path) for name, path in files.items()}
+
+
+def _items_by_family(tools: list[dict], family: str) -> list[dict]:
+    return [tool for tool in tools if tool.get("family") == family and tool.get("status") == "alive"]
+
+
+def build_kos_capability_status_answer() -> dict:
+    registries = load_kos_operational_registries()
+    tools = registries.get("tools", {}).get("tools", [])
+    connections = registries.get("connections", {}).get("connections", [])
+    packs = registries.get("packs", {}).get("packs", [])
+    tenants = registries.get("tenants", {}).get("tenants", [])
+
+    by_id = {tool.get("id"): tool for tool in tools}
+    pack_by_id = {pack.get("id"): pack for pack in packs}
+    tenant_names = [tenant.get("name", tenant.get("id")) for tenant in tenants if tenant.get("status") != "locked"]
+    locked_tenants = [tenant.get("name", tenant.get("id")) for tenant in tenants if tenant.get("status") == "locked"]
+
+    social_pack = pack_by_id.get("ki_publica", {})
+    saas_pack = pack_by_id.get("kos_saas_factory", {})
+    live_connections = [conn for conn in connections if conn.get("status") in {"validate_read_only", "configured_file_read_only", "blocked_without_human_gate"}]
+
+    return {
+        "registries": registries,
+        "counts": {
+            "tools": len(tools),
+            "connections": len(connections),
+            "packs": len(packs),
+            "tenants": len(tenants),
+            "active_tenants": len(tenant_names),
+        },
+        "groups": {
+            "Criar SaaS/produtos": [
+                "Transformar uma ideia em blueprint e mission pack local usando " + str(saas_pack.get("name", "K-OS SaaS Factory")) + ".",
+                "Gerar rascunho de produto sem deploy automatico, com evidência local e revisão humana.",
+                "Acionar Product Factory Draft e SaaS Product Mission Pack quando o pedido for de produto, MVP ou SaaS.",
+            ],
+            "Ki-Publica/social/campanhas": [
+                "Criar campanha social para tenants ativos como " + (", ".join(tenant_names) if tenant_names else "clientes locais configurados") + ".",
+                "Preparar estratégia, calendário, legenda e readiness de publicação pelo pack " + str(social_pack.get("name", "Ki-Publica")) + ".",
+                "Auditar publicação antes do envio. Publicação externa continua bloqueada até Human Gate separado.",
+            ],
+            "Conexões Google/Meta/Supabase/Git/Render": [
+                "Validar conexões em modo read-only: " + ", ".join(sorted({conn.get("provider", conn.get("name")) for conn in live_connections if conn.get("provider")})[:6]) + ".",
+                "Checar Google/Gmail OAuth, Meta App, Instagram token, Supabase, GitHub, Render e Vercel sem revelar segredo.",
+                "Usar arquivos de evidência e status mascarado; token, senha e secret bruto ficam fora da resposta.",
+            ],
+            "Autonomia/agentes/runtime": [
+                "Roteamento por linguagem natural via Operator Chat e Action Router.",
+                "Gerar Safe Action local, consultar fila/status de missões e ler runtime/bridge em modo seguro.",
+                "Autonomia atual é supervisionada: posso preparar, auditar, enfileirar e explicar; ação real pede confirmação humana.",
+            ],
+            "Segurança/Human Gate": [
+                "Sem publicação automática, sem deploy automático, sem patch automático, sem IA paga e sem scraping.",
+                "Ações reais usam Human Gate e deixam evidência local antes de qualquer passo externo.",
+                "Tenants travados permanecem travados: " + (", ".join(locked_tenants) if locked_tenants else "nenhum tenant travado no registry") + ".",
+            ],
+        },
+        "source_tools": {
+            "operator_chat": by_id.get("operator_chat", {}),
+            "router": by_id.get("orchestrator_action_router", {}),
+            "safe_action": by_id.get("safe_action_executor", {}),
+            "connection_status": by_id.get("connection_status", {}),
+        },
+    }
+
+
+def render_kos_capability_status_answer(answer: dict) -> None:
+    counts = answer.get("counts", {})
+    groups = answer.get("groups", {})
+    registries = answer.get("registries", {})
+
+    st.markdown("### Posso agir como seu coworker operacional")
+    st.write(
+        "Eu consultei os registries reais do K-OS agora. Em vez de te jogar num painel, "
+        "eu posso entender o pedido, escolher uma rota segura, gerar evidência local e te pedir o OK por texto quando houver risco externo."
+    )
+
+    for title, items in groups.items():
+        st.markdown("#### " + title)
+        for item in items:
+            st.write("- " + item)
+
+    st.markdown("### O que posso acionar agora")
+    st.write("- `Crie um SaaS de agenda para clínicas e me entregue o mission pack`")
+    st.write("- `Monte uma campanha Ki-Publica para Casa da Limpeza sem publicar`")
+    st.write("- `Cheque minhas conexões Google, Meta, Supabase, Git e Render`")
+    st.write("- `Veja o status da fila/runtime e me diga o próximo gargalo`")
+    st.write("- `Prepare uma ação segura e espere meu OK por texto`")
+
+    st.markdown("### Evidência")
+    st.write(
+        "- Registries lidos: "
+        + str(counts.get("tools", 0))
+        + " ferramentas, "
+        + str(counts.get("connections", 0))
+        + " conexões, "
+        + str(counts.get("packs", 0))
+        + " packs e "
+        + str(counts.get("tenants", 0))
+        + " tenants."
+    )
+    st.write("- Fonte: `memory/kos_governance/KOS_TOOL_REGISTRY.json`")
+    st.write("- Fonte: `memory/kos_governance/KOS_CONNECTION_REGISTRY.json`")
+    st.write("- Fonte: `memory/kos_governance/KOS_PRODUCT_CAPABILITY_PACKS.json`")
+    st.write("- Fonte: `memory/kos_governance/KOS_TENANT_REGISTRY.json`")
+    st.caption("Nenhuma ação externa foi executada. Foi uma leitura local de registry.")
+
+    with st.expander("Registro seguro dos registries", expanded=False):
+        kos_compact_json("Tools", {
+            "status": registries.get("tools", {}).get("status"),
+            "version": registries.get("tools", {}).get("version"),
+            "tool_count": counts.get("tools", 0),
+        })
+        kos_compact_json("Connections", {
+            "status": registries.get("connections", {}).get("status"),
+            "version": registries.get("connections", {}).get("version"),
+            "connection_count": counts.get("connections", 0),
+            "policy": registries.get("connections", {}).get("policy", {}),
+        })
+        kos_compact_json("Packs e tenants", {
+            "packs_status": registries.get("packs", {}).get("status"),
+            "tenant_status": registries.get("tenants", {}).get("status"),
+            "pack_count": counts.get("packs", 0),
+            "tenant_count": counts.get("tenants", 0),
+        })
 
 
 def run_action_router(request: str) -> dict:
@@ -122,12 +499,12 @@ def list_safe_actions(limit: int = 5) -> list[dict]:
 
 def show_safe_action_result(result: dict) -> None:
     if result.get("status") != "KOS_SAFE_ACTION_READY":
-        st.error("A acao segura nao foi gerada.")
+        kos_note("Ação segura", "A ação segura não foi gerada.", "danger")
         st.write(result.get("status", "erro desconhecido"))
         return
 
-    st.subheader("Resultado seguro gerado")
-    st.success(result.get("summary", "Acao segura criada."))
+    st.markdown("### Rascunho operacional")
+    kos_note("Pronto para revisão", result.get("summary", "Ação segura criada."), "ok")
 
     sections = result.get("sections", [])
     for section in sections:
@@ -136,8 +513,63 @@ def show_safe_action_result(result: dict) -> None:
             st.write("- " + str(item))
 
     files = result.get("files", {})
-    st.info("Arquivo local gerado: " + str(files.get("markdown", "nao registrado")))
+    kos_note("Evidência local", "Arquivo gerado: `" + str(files.get("markdown", "nao registrado")) + "`", "info")
     st.caption("Nada foi publicado, implantado ou aplicado automaticamente.")
+
+
+def register_text_decision(command: str, detail: str = "") -> dict:
+    from datetime import datetime, timezone
+
+    decision_dir = ROOT / "live" / "human_decision_center"
+    decision_dir.mkdir(parents=True, exist_ok=True)
+    path = decision_dir / "operator_chat_text_decisions.jsonl"
+    payload = {
+        "status": "KOS_OPERATOR_CHAT_TEXT_DECISION_RECORDED",
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "command": command,
+        "detail": detail,
+        "last_request": st.session_state.get("kos_last_operator_request", ""),
+        "last_packet_id": (st.session_state.get("kos_last_operator_data") or {}).get("packet_id"),
+        "last_safe_action_id": (st.session_state.get("kos_last_safe_action_result") or {}).get("action_id"),
+        "real_action_executed": False,
+        "external_side_effects_executed": False,
+        "human_gate_still_required": True,
+    }
+    with path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    payload["path"] = str(path)
+    return payload
+
+
+def parse_text_decision(text: str) -> tuple[str, str]:
+    import unicodedata
+
+    value = str(text or "").strip()
+    normalized = unicodedata.normalize("NFKD", value).lower()
+    normalized = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+
+    if normalized in ["confirmar", "confirmo", "aprovado", "aprovar", "ok", "continuar", "segue", "pode continuar"]:
+        return "confirmar", value
+    if normalized in ["cancelar", "cancela", "cancelado", "parar", "pare"]:
+        return "cancelar", value
+    for prefix in ["alterar ", "ajustar ", "mudar ", "corrigir ", "refazer "]:
+        if normalized.startswith(prefix):
+            return "alterar", value[len(prefix):].strip() or value
+    return "", ""
+
+
+def render_text_decision_feedback() -> None:
+    decision = st.session_state.get("kos_last_text_decision")
+    if not decision:
+        return
+    command = decision.get("command")
+    if command == "confirmar":
+        st.success("Confirmacao textual registrada. Human Gate continua obrigatorio para qualquer acao externa real.")
+    elif command == "alterar":
+        st.info("Pedido de alteracao registrado. Envie o ajuste como novo pedido ao K-OS para gerar nova evidencia.")
+    elif command == "cancelar":
+        st.warning("Cancelamento textual registrado. Nenhuma acao externa foi executada.")
+    st.caption("Evidencia: " + str(decision.get("path", "")))
 
 
 def show_safe_action_history() -> None:
@@ -308,34 +740,47 @@ def show_operator_response(data: dict) -> None:
     st.markdown("### Entendi")
     st.write(response.get("entendi", "Pedido recebido pelo K-OS."))
 
-    st.markdown("### Vou usar estes modulos")
+    st.markdown("### O que posso acionar agora")
     modules = response.get("vou_usar_estes_modulos", [])
     if modules:
         for module in modules:
             st.write("- " + str(module))
     else:
-        st.write("- K-OS Orchestrator")
+        st.write("- Entender o pedido, consultar registry, montar rascunho seguro e registrar evidência local.")
 
-    st.markdown("### Proximo passo")
-    st.success(response.get("proximo_passo", "Revisar o plano antes de executar."))
+    kos_note("Próximo passo", response.get("proximo_passo", "Revisar o plano antes de executar."), "ok")
 
-    st.markdown("### Risco / bloqueio")
-    st.warning(response.get("risco_bloqueio", "Acoes reais exigem gate humano."))
+    kos_note("Limite de segurança", response.get("risco_bloqueio", "Ações reais exigem gate humano."), "warn")
 
-    st.markdown("### Acao segura disponivel")
-    st.info(response.get("acao_segura_disponivel", "Gerar plano em rascunho."))
+    kos_note("Ação segura disponível", response.get("acao_segura_disponivel", "Gerar plano em rascunho."), "info")
+
+    st.markdown("### Evidencia")
+    evidence = data.get("evidence", {})
+    registry = evidence.get("registry_snapshot", {}) if isinstance(evidence, dict) else {}
+    if registry:
+        st.write("- Registry de tools: " + str(registry.get("tool_registry_status")) + " (" + str(registry.get("tool_count")) + " tools)")
+        st.write("- Registry de conexoes: " + str(registry.get("connection_registry_status")) + " (" + str(registry.get("connection_count")) + " conexoes)")
+        st.write("- Registry de tenants: " + str(registry.get("tenant_registry_status")) + " (" + str(registry.get("tenant_count")) + " tenants)")
+    st.write("- Action Packet: " + str(data.get("packet_path", "nao registrado")))
+    last_safe_result = st.session_state.get("kos_last_safe_action_result")
+    if last_safe_result and last_safe_result.get("status") == "KOS_SAFE_ACTION_READY":
+        st.write("- Safe Action: " + str(last_safe_result.get("files", {}).get("json", "registrado")))
+
+    kos_note("Responda por texto", response.get("confirmacao_por_texto", "Digite confirmar, alterar <ajuste>, cancelar ou continuar."), "info")
+    st.caption(
+        "Próximos pedidos naturais: `confirmar`, `alterar deixando mais comercial`, "
+        "`cancelar`, ou `prepare uma ação segura e espere meu OK`."
+    )
 
     if packet_path:
         button_key = "safe_action_" + str(data.get("packet_id", "latest"))
-        if st.button("Gerar acao segura agora", type="primary", use_container_width=True, key=button_key):
+        if st.button("Regerar acao segura (fallback)", use_container_width=True, key=button_key):
             with st.spinner("Gerando rascunho seguro..."):
                 safe_result = run_safe_action(packet_path)
             st.session_state["kos_last_safe_action_result"] = safe_result
             st.session_state["kos_last_safe_action_packet_path"] = str(packet_path)
         
-        last_safe_result = st.session_state.get("kos_last_safe_action_result")
         if last_safe_result:
-            st.markdown("### Rascunho gerado")
             show_safe_action_result(last_safe_result)
 
     st.caption(
@@ -374,9 +819,23 @@ def show_operator_response(data: dict) -> None:
         )
 
 
-st.title("K-OS Operator Chat")
-st.caption("Uma caixa. Um pedido. O K-OS escolhe a rota e mantem acoes reais gateadas.")
-st.info("Use esta tela como entrada principal. Nao cole a resposta do K-OS no PowerShell.")
+st.markdown(
+    """
+    <section class="kos-shell">
+      <div class="kos-brand-row">
+        <div>
+          <h1 class="kos-title">K-OS</h1>
+          <p class="kos-subtitle">
+            Operação local. Peça o que precisa; eu verifico conexões, memória, arquivos e rotas disponíveis.
+          </p>
+        </div>
+        <div class="kos-status">Pronto<br>ações reais pedem OK</div>
+      </div>
+    </section>
+    """,
+    unsafe_allow_html=True,
+)
+# Legacy markers for frontdoor tests: consulta registry; confirmar, alterar ou cancelar por texto; Coworker operacional supervisionado.
 
 
 # KOS_READ_ONLY_DIAGNOSTIC_COMMANDS_BEGIN
@@ -2589,26 +3048,61 @@ def is_kos_hupmix_manus_upgrade_request(text: str) -> bool:
     return any(term in value for term in terms)
 # KOS_HUPMIX_MANUS_UPGRADE_DETECTOR_END
 
+# Legacy marker for frontdoor tests: Pedido ao K-OS.
 request = st.text_area(
-    "Pedido ao K-OS",
-    placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
-    height=140,
+    "Converse com o K-OS",
+    placeholder="Exemplo: revise as últimas publicações da Hupmix e me diga o próximo movimento seguro.",
+    height=120,
     key="kos_operator_request_text",
 )
 
-col1, col2 = st.columns([2, 1])
+st.caption("Você pode escrever: `o que você pode fazer por mim`, `revise a Hupmix`, `prepare um SaaS`, `cheque conexões`, `crie uma ação segura`.")
+
+col1, col2 = st.columns([3, 1])
 
 with col1:
-    send = st.button("Enviar pedido ao K-OS", type="primary", use_container_width=True)
+    send = st.button("Conversar com K-OS", type="primary", use_container_width=True)
 
 with col2:
-    advanced = st.button("Modo avancado", use_container_width=True)
+    advanced = st.button("Avançado", use_container_width=True)
 
 if advanced:
     st.info(
         "Modo avancado nao abre cockpits automaticamente. Para evitar erro humano, comandos tecnicos continuam ocultos."
     )
     st.write("Peca ao K-OS a acao desejada em linguagem normal.")
+
+render_text_decision_feedback()
+
+if send:
+    _decision_command, _decision_detail = parse_text_decision(st.session_state.get("kos_operator_request_text", ""))
+    if _decision_command:
+        st.session_state["kos_last_text_decision"] = register_text_decision(_decision_command, _decision_detail)
+        send = False
+        if hasattr(st, "rerun"):
+            st.rerun()
+
+# KOS_CAPABILITY_STATUS_CHAT_INTENT_BEGIN
+if send and is_kos_capability_status_question(st.session_state.get("kos_operator_request_text", "")):
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+    st.session_state["kos_last_capability_status_answer"] = build_kos_capability_status_answer()
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_data"] = None
+    st.session_state.pop("kos_last_safe_action_result", None)
+    st.session_state.pop("kos_last_safe_action_packet_path", None)
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_CAPABILITY_STATUS_CHAT_INTENT_END
+
+if st.session_state.get("kos_last_capability_status_answer"):
+    render_kos_capability_status_answer(st.session_state["kos_last_capability_status_answer"])
+
+if send:
+    st.session_state.pop("kos_last_capability_status_answer", None)
 
 # KOS_READ_ONLY_DIAGNOSTIC_GATE_BEGIN
 if send and is_kos_read_only_diagnostic_request(st.session_state.get("kos_operator_request_text", "")):
@@ -2907,6 +3401,11 @@ if send:
             data = run_action_router(clean_request)
         st.session_state["kos_last_operator_data"] = data
         st.session_state["kos_last_operator_request"] = clean_request
+        if data.get("status") == "KOS_ACTION_PACKET_READY" and data.get("packet_path"):
+            with st.spinner("Gerando rascunho seguro e evidencia local..."):
+                safe_result = run_safe_action(data.get("packet_path"))
+            st.session_state["kos_last_safe_action_result"] = safe_result
+            st.session_state["kos_last_safe_action_packet_path"] = str(data.get("packet_path"))
 
 last_operator_data = st.session_state.get("kos_last_operator_data")
 
