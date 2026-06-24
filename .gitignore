@@ -38,3 +38,4 @@ content_packs/_incoming_packages/*
 local_runtime/kos_reference_imports/
 
 
+/reports/KOS_LAST_BRAIN_GATEWAY_RESULT.json
