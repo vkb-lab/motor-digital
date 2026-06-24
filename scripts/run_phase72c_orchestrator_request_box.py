@@ -21,7 +21,7 @@ SAFE_FLAGS = {
     "operator_review_required": True,
     "human_confirmation_required": True,
     "parada_atlantida_locked": True,
-    "target_test_account": "hupmix",
+    "target_test_account": "registry_resolved",
     "paid_ai_locked": True,
     "browser_scraping_enabled": False,
     "browser_logged_account_automation_used": False,
@@ -112,11 +112,14 @@ def route_plan(route: str, request: str) -> dict[str, Any]:
     }
 
     if route == "social_publish":
-        base["summary"] = "Pedido relacionado a redes sociais, estrategia, readiness ou publicacao Hupmix."
-        base["recommended_modules"] = ["71A Social Ops", "71B Social Strategy Generator", "71C Publish Readiness", "69F/69G/69H gates existentes"]
+        low = request.lower()
+        target = "casa_da_limpeza" if "casa da limpeza" in low or "ki-publica" in low or "ki publica" in low else "hupmix"
+        label = "Ki-Publica/Casa da Limpeza" if target == "casa_da_limpeza" else "Hupmix"
+        base["summary"] = "Pedido relacionado a redes sociais, estrategia, readiness ou publicacao " + label + "."
+        base["recommended_modules"] = ["Ki-Publica capability pack", "71B Social Strategy Generator", "71C Publish Readiness", "69F/69G/69H gates existentes"]
         base["safe_commands"] = [
-            "python scripts\\run_phase71b_social_strategy_generator.py --target hupmix --objective \"descrever objetivo\" --campaign hupmix-weekly",
-            "python scripts\\run_phase71c_social_publish_readiness_auditor.py --target hupmix --asset-url https://example.com/imagem.png --caption \"legenda sem publicar\"",
+            "python scripts\\run_phase71b_social_strategy_generator.py --target " + target + " --objective \"descrever objetivo\" --campaign " + target.replace("_", "-") + "-weekly",
+            "python scripts\\run_phase71c_social_publish_readiness_auditor.py --target " + target + " --asset-url https://example.com/imagem.png --caption \"legenda sem publicar\"",
             "C:\\Users\\oi\\Desktop\\KOS_Social_Ops_Control_Center.cmd",
         ]
         return base

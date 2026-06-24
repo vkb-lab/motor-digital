@@ -19,6 +19,9 @@ LATEST_PACKET = ACTION_ROUTER_DIR / "latest_action_packet.json"
 SAFE_DIR = ROOT / "local_runtime" / "kos_safe_actions"
 LATEST_SAFE_ACTION = SAFE_DIR / "latest_safe_action.json"
 EVENTS = SAFE_DIR / "events.jsonl"
+TOOL_REGISTRY = ROOT / "memory" / "kos_governance" / "KOS_TOOL_REGISTRY.json"
+CONNECTION_REGISTRY = ROOT / "memory" / "kos_governance" / "KOS_CONNECTION_REGISTRY.json"
+TENANT_REGISTRY = ROOT / "memory" / "kos_governance" / "KOS_TENANT_REGISTRY.json"
 
 
 def now_iso() -> str:
@@ -40,6 +43,38 @@ def write_json(path: Path, data: dict) -> None:
 
 def as_lines(items: list[str]) -> str:
     return "\n".join("- " + item for item in items)
+
+
+def normalize_ascii(text: str) -> str:
+    table = str.maketrans({
+        "á": "a", "à": "a", "â": "a", "ã": "a",
+        "é": "e", "ê": "e",
+        "í": "i",
+        "ó": "o", "ô": "o", "õ": "o",
+        "ú": "u",
+        "ç": "c",
+        "Á": "a", "À": "a", "Â": "a", "Ã": "a",
+        "É": "e", "Ê": "e",
+        "Í": "i",
+        "Ó": "o", "Ô": "o", "Õ": "o",
+        "Ú": "u",
+        "Ç": "c",
+    })
+    return str(text or "").lower().translate(table)
+
+
+def get_packet_tenant(packet: dict) -> dict:
+    tenant = packet.get("tenant")
+    if isinstance(tenant, dict):
+        return tenant
+    return {}
+
+
+def get_packet_pack(packet: dict) -> dict:
+    pack = packet.get("product_capability_pack")
+    if isinstance(pack, dict):
+        return pack
+    return {}
 
 
 
@@ -540,6 +575,55 @@ def build_hupmix_gp_continuity(packet: dict) -> dict:
 
 
 def build_social(packet: dict) -> dict:
+    tenant = get_packet_tenant(packet)
+    pack = get_packet_pack(packet)
+    tenant_id = str(tenant.get("id") or "")
+    tenant_name = str(tenant.get("name") or tenant_id or "Hupmix")
+    pack_name = str(pack.get("name") or "Ki-Publica")
+    if tenant_id == "casa_da_limpeza":
+        request = packet.get("request", "")
+        days = [
+            "Dia 1: apresentar a Casa da Limpeza como solucao local para rotina de limpeza.",
+            "Dia 2: dor comum do cliente: produto errado, perda de tempo e resultado fraco.",
+            "Dia 3: dica pratica com produto/servico em destaque, sem promessa exagerada.",
+            "Dia 4: bastidor de loja, atendimento ou organizacao de prateleira.",
+            "Dia 5: oferta educativa com CTA para WhatsApp ou visita, apos revisar preco/estoque.",
+            "Dia 6: prova social ou pergunta para gerar conversa.",
+            "Dia 7: resumo da semana e convite para pedir indicacao personalizada."
+        ]
+        return {
+            "title": "Rascunho seguro Ki-Publica - Casa da Limpeza",
+            "summary": "Plano social de 7 dias criado para Casa da Limpeza dentro do capability pack Ki-Publica. Nada foi publicado.",
+            "sections": [
+                {"title": "Pedido original", "items": [request]},
+                {"title": "Resolucao de contexto", "items": [
+                    "Capability pack: " + pack_name,
+                    "Tenant: " + tenant_name,
+                    "Fallback Hupmix usado: false",
+                    "Config tenant: " + str(tenant.get("config", "config/tenants/casa_da_limpeza.json")),
+                    "Permissoes: " + str(tenant.get("client_permissions", "clients/casa_da_limpeza/permissions.json")),
+                ]},
+                {"title": "Plano de 7 dias", "items": days},
+                {"title": "Evidencia consultada", "items": [
+                    str(TOOL_REGISTRY),
+                    str(TENANT_REGISTRY),
+                    "config/products/ki_publica.json",
+                    "config/tenants/casa_da_limpeza.json",
+                    "clients/casa_da_limpeza/permissions.json"
+                ]},
+                {"title": "Proximo passo por texto", "items": [
+                    "Digite confirmar para manter este rascunho como direcao.",
+                    "Digite alterar e descreva o ajuste desejado.",
+                    "Digite cancelar para encerrar sem criar nova acao."
+                ]},
+                {"title": "Bloqueios preservados", "items": [
+                    "Publicacao automatica bloqueada.",
+                    "Envio real, anuncio real, cobranca e edicao Google real bloqueados.",
+                    "Human Gate obrigatorio antes de qualquer acao externa."
+                ]},
+            ],
+        }
+
     request_text = str(packet.get("request", "")).lower()
     if "hupmix" in request_text and ("gp_video_01" in request_text or "video_01" in request_text or "roteiro cena a cena" in request_text or "garoto oxy" in request_text or "checklist de grava" in request_text):
         return build_hupmix_gp_video_01_production_kit(packet)
@@ -568,6 +652,402 @@ def build_social(packet: dict) -> dict:
             {"title": "Plano de 7 dias", "items": days},
             {"title": "Proximo passo humano", "items": ["Revisar tema, imagens e legenda antes de qualquer publicacao."]},
             {"title": "Bloqueios preservados", "items": ["Publicacao automatica bloqueada.", "Instagram real exige confirmacao humana."]},
+        ],
+    }
+
+
+def build_instagram_accounts_status(packet: dict) -> dict:
+    request = packet.get("request", "")
+    tenant_registry = read_json(TENANT_REGISTRY)
+    connection_registry = read_json(CONNECTION_REGISTRY)
+
+    instagram_connections = []
+    for item in connection_registry.get("connections", []) or []:
+        item_id = str(item.get("id", "")).lower()
+        provider = str(item.get("provider", "")).lower()
+        if "instagram" in item_id or "meta" in item_id or provider == "meta":
+            instagram_connections.append(
+                str(item.get("name", item.get("id")))
+                + " | provider=" + str(item.get("provider", "n/a"))
+                + " | status=" + str(item.get("status", "n/a"))
+                + " | risco=" + str(item.get("risk", "n/a"))
+            )
+
+    registered_accounts = []
+    for tenant in tenant_registry.get("tenants", []) or []:
+        if "ki_publica" in (tenant.get("capability_packs", []) or []):
+            publish = "publish bloqueado" if tenant.get("external_publish_enabled") is False else "publish permitido por config"
+            registered_accounts.append(
+                str(tenant.get("name", tenant.get("id")))
+                + " | target=" + str(tenant.get("default_social_target", tenant.get("id")))
+                + " | status=" + str(tenant.get("status", "unknown"))
+                + " | " + publish
+            )
+
+    audit_items = []
+    audit_script = ROOT / "scripts" / "run_phase69d_hupmix_instagram_audit.py"
+    audit_report = ROOT / "local_runtime" / "kos_instagram_audit" / "hupmix" / "latest_hupmix_instagram_audit.json"
+    if audit_script.exists():
+        try:
+            subprocess = __import__("subprocess")
+            completed = subprocess.run(
+                [sys.executable, str(audit_script)],
+                cwd=str(ROOT),
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=90,
+            )
+            audit_items.append("Auditoria Hupmix read-only executada: returncode=" + str(completed.returncode))
+        except Exception as exc:
+            audit_items.append("Auditoria Hupmix falhou antes de completar: " + str(exc))
+    else:
+        audit_items.append("Auditoria Hupmix nao encontrada: " + str(audit_script))
+
+    audit = read_json(audit_report) if audit_report.exists() else {}
+    if audit.get("status") == "KOS_HUPMIX_INSTAGRAM_AUDIT_CONNECTED":
+        audit_items.extend([
+            "Hupmix conectado via Meta Graph.",
+            "Conta: @" + str(audit.get("username", "hupmix")),
+            "IG ID: " + str(audit.get("ig_id", "")),
+            "Midias no perfil: " + str(audit.get("media_count", "nao informado")),
+            "Midias recentes lidas: " + str(audit.get("recent_media_count", "nao informado")),
+            "Publicacao executada: nao.",
+            "Navegador logado usado: nao.",
+            "Scraping usado: nao.",
+        ])
+    elif audit:
+        audit_items.extend([
+            "Hupmix nao validou como conectado agora.",
+            "Status: " + str(audit.get("status", "desconhecido")),
+            "Motivo: " + str(audit.get("reason", "ver relatorio local")),
+            "Token nao exibido.",
+        ])
+    else:
+        audit_items.append("Relatorio Hupmix ainda nao existe.")
+
+    direct = []
+    if any("Hupmix conectado" in item for item in audit_items):
+        direct.append("Instagram conectado operacionalmente agora: Hupmix.")
+    else:
+        direct.append("Nenhum Instagram validado operacionalmente agora; existem apenas registros/configuracoes.")
+
+    locked = [item for item in registered_accounts if "locked" in item.lower()]
+    if locked:
+        direct.append("Contas travadas permanecem bloqueadas: " + "; ".join(locked))
+
+    return {
+        "title": "Instagram conectados no K-OS",
+        "summary": "Auditoria de contas Instagram feita em modo read-only. Nenhum navegador, scraping ou publish foi usado.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Resposta direta", "items": direct},
+            {"title": "Contas sociais registradas no K-OS", "items": registered_accounts or ["Nenhuma conta social registrada no tenant registry."]},
+            {"title": "Conexoes Meta/Instagram no registry", "items": instagram_connections or ["Nenhuma conexao Meta/Instagram registrada."]},
+            {"title": "Validacao oficial agora", "items": audit_items},
+            {"title": "Seguranca", "items": [
+                "Token Meta/Instagram nao foi impresso.",
+                "Nenhuma publicacao foi feita.",
+                "Nenhum navegador logado foi usado.",
+                "Parada Atlantida continua travada."
+            ]},
+            {"title": "Proximo pedido natural", "items": [
+                "revise a ultima publicacao da Hupmix",
+                "gere uma legenda melhor para o ultimo reel da Hupmix sem publicar",
+                "audite as conexoes Meta e Gmail"
+            ]},
+        ],
+    }
+
+
+def build_email_ops(packet: dict) -> dict:
+    request = packet.get("request", "")
+    connection_registry = read_json(CONNECTION_REGISTRY)
+    gmail_registry = [
+        item for item in connection_registry.get("connections", []) or []
+        if "gmail" in str(item.get("id", "")).lower() or str(item.get("id", "")).lower() == "google_oauth"
+    ]
+
+    capability_items = []
+    gmail_ready = False
+    try:
+        if str(ROOT) not in sys.path:
+            sys.path.insert(0, str(ROOT))
+        from k_atlas.core.capabilities import capability_status
+        status = capability_status()
+        gmail_ready = bool(status.get("gmail_oauth"))
+        capability_items.extend([
+            "gmail_oauth: " + ("configurado" if status.get("gmail_oauth") else "nao configurado"),
+            "google_oauth: " + ("configurado" if status.get("google_oauth") else "nao configurado"),
+            "segredos lidos apenas como booleano: sim",
+        ])
+    except Exception as exc:
+        capability_items.append("Erro ao ler capabilities: " + str(exc))
+
+    registry_items = [
+        str(item.get("name", item.get("id")))
+        + " | provider=" + str(item.get("provider", "n/a"))
+        + " | status=" + str(item.get("status", "n/a"))
+        + " | risco=" + str(item.get("risk", "n/a"))
+        for item in gmail_registry
+    ]
+
+    gmail_report_items = []
+    gmail_messages = []
+    gmail_script = ROOT / "scripts" / "run_gmail_read_only_audit.py"
+    gmail_report_path = ROOT / "local_runtime" / "kos_gmail_read_only" / "latest_gmail_read_only_audit.json"
+    if gmail_script.exists():
+        try:
+            subprocess = __import__("subprocess")
+            completed = subprocess.run(
+                [sys.executable, str(gmail_script), "--limit", "10"],
+                cwd=str(ROOT),
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=90,
+            )
+            gmail_report_items.append("Gmail read-only audit executado: returncode=" + str(completed.returncode))
+        except Exception as exc:
+            gmail_report_items.append("Gmail read-only audit falhou antes de completar: " + str(exc))
+    else:
+        gmail_report_items.append("Script Gmail read-only nao encontrado: " + str(gmail_script))
+
+    gmail_report = read_json(gmail_report_path) if gmail_report_path.exists() else {}
+    gmail_status = gmail_report.get("status", "sem_relatorio")
+    gmail_report_items.append("Status: " + str(gmail_status))
+
+    if gmail_status == "KOS_GMAIL_READ_ONLY_CONNECTED":
+        gmail_report_items.extend([
+            "Conta: " + str(gmail_report.get("email_address", "nao informada")),
+            "Mensagens retornadas: " + str(gmail_report.get("messages_returned", 0)),
+            "Email enviado: nao.",
+            "Email apagado: nao.",
+            "Email arquivado: nao.",
+            "Token impresso: nao.",
+        ])
+        for msg in gmail_report.get("messages", []) or []:
+            gmail_messages.append(
+                "De: " + str(msg.get("from", ""))
+                + " | Assunto: " + str(msg.get("subject", ""))
+                + " | Data: " + str(msg.get("date", ""))
+                + " | Trecho: " + str(msg.get("snippet", ""))
+            )
+        direct = [
+            "Gmail read-only conectado e lido agora.",
+            "Foram retornadas " + str(gmail_report.get("messages_returned", 0)) + " mensagens recentes.",
+            "Nada foi enviado, apagado, arquivado ou rotulado."
+        ]
+    elif gmail_status == "KOS_GMAIL_READ_ONLY_TOKEN_MISSING":
+        direct = [
+            "Gmail/OAuth tem client configurado, mas falta token autorizado de usuário para ler inbox.",
+            "O K-OS nao deve fingir leitura de email sem esse token.",
+            "Salve o token OAuth autorizado em local_runtime/kos_secrets/gmail_token.json para ativar leitura read-only."
+        ]
+        expected = gmail_report.get("expected_token_locations", []) or []
+        gmail_report_items.extend(["Local esperado: " + str(item) for item in expected[:4]])
+    elif gmail_ready:
+        direct = [
+            "Gmail/OAuth parece configurado por variavel/secret local.",
+            "A rotina Gmail read-only existe, mas nao completou a leitura agora.",
+            "Verifique o status do relatorio local antes de qualquer triagem."
+        ]
+    else:
+        direct = [
+            "Gmail nao esta pronto para leitura real dentro do K-OS local.",
+            "O registry conhece Gmail OAuth, mas a capability booleana nao confirmou credenciais suficientes.",
+            "Por isso o pedido 'revise meus emails' nao deve fingir que leu inbox."
+        ]
+
+    return {
+        "title": "Email/Gmail no K-OS",
+        "summary": "Auditoria de readiness de email feita. Nenhum email foi lido, enviado, arquivado ou apagado.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Resposta direta", "items": direct},
+            {"title": "Status real de OAuth", "items": capability_items},
+            {"title": "Gmail read-only agora", "items": gmail_report_items},
+            {"title": "Mensagens recentes", "items": gmail_messages or ["Nenhuma mensagem foi lida nesta execução."]},
+            {"title": "Registry de conexoes de email", "items": registry_items or ["Gmail nao encontrado no connection registry."]},
+            {"title": "O que falta para funcionar de verdade", "items": [
+                "Ter token OAuth autorizado de usuario em local_runtime/kos_secrets/gmail_token.json.",
+                "Manter leitura no escopo Gmail read-only.",
+                "Ler no maximo assuntos, remetentes, datas e snippets no primeiro passo.",
+                "Pedir confirmacao antes de qualquer resposta, arquivamento, label ou delete."
+            ]},
+            {"title": "Proximo pedido natural", "items": [
+                "audite Gmail e me diga o que falta configurar",
+                "criar leitor Gmail read-only com Human Gate",
+                "quando Gmail estiver conectado, triage os ultimos 10 emails sem alterar nada"
+            ]},
+        ],
+    }
+
+
+def build_local_files_downloads(packet: dict) -> dict:
+    request = packet.get("request", "")
+    downloads = Path.home() / "Downloads"
+
+    if not downloads.exists():
+        return {
+            "title": "Organizacao de Downloads",
+            "summary": "A pasta Downloads nao foi encontrada neste usuario. Nenhum arquivo foi movido.",
+            "sections": [
+                {"title": "Pedido original", "items": [request]},
+                {"title": "Pasta procurada", "items": [str(downloads)]},
+                {"title": "Proxima acao segura", "items": ["Informe o caminho correto da pasta que quer organizar."]},
+            ],
+        }
+
+    files = [path for path in downloads.iterdir() if path.is_file()]
+    dirs = [path for path in downloads.iterdir() if path.is_dir()]
+    groups = {
+        "Imagens": [".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"],
+        "Videos": [".mp4", ".mov", ".m4v", ".avi", ".mkv"],
+        "Audio": [".mp3", ".wav", ".m4a", ".aac", ".ogg"],
+        "Documentos": [".pdf", ".doc", ".docx", ".txt", ".md", ".ppt", ".pptx"],
+        "Planilhas/dados": [".xls", ".xlsx", ".csv", ".json", ".xml"],
+        "Instaladores/compactados": [".exe", ".msi", ".zip", ".rar", ".7z"],
+        "Outros": [],
+    }
+    counts = {name: 0 for name in groups}
+    samples = {name: [] for name in groups}
+
+    def safe_file_label(path: Path) -> str:
+        name = path.name
+        low = name.lower()
+        sensitive_markers = [
+            "secret",
+            "client_secret",
+            "private_key",
+            "token",
+            "credential",
+            "certificate",
+            ".pem",
+            ".key",
+        ]
+        if any(marker in low for marker in sensitive_markers):
+            return "[nome sensivel mascarado]" + (path.suffix.lower() or "")
+        return name
+
+    def bucket_for(path: Path) -> str:
+        suffix = path.suffix.lower()
+        for name, suffixes in groups.items():
+            if suffix in suffixes:
+                return name
+        return "Outros"
+
+    for path in files:
+        bucket = bucket_for(path)
+        counts[bucket] += 1
+        if len(samples[bucket]) < 5:
+            samples[bucket].append(safe_file_label(path))
+
+    largest = sorted(files, key=lambda p: p.stat().st_size if p.exists() else 0, reverse=True)[:8]
+    largest_items = []
+    for path in largest:
+        try:
+            largest_items.append(f"{safe_file_label(path)} | {path.stat().st_size / (1024 * 1024):.1f} MB")
+        except Exception:
+            largest_items.append(path.name)
+
+    inventory_items = [
+        "Pasta: " + str(downloads),
+        "Arquivos encontrados: " + str(len(files)),
+        "Pastas existentes: " + str(len(dirs)),
+    ]
+    inventory_items.extend([name + ": " + str(count) + " arquivo(s)" for name, count in counts.items()])
+
+    sample_items = []
+    for name, values in samples.items():
+        if values:
+            sample_items.append(name + ": " + ", ".join(values))
+
+    return {
+        "title": "Inventario real da pasta Downloads",
+        "summary": "Downloads foi lida em modo inventario. Nenhum arquivo foi movido, apagado ou renomeado.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Resposta direta", "items": inventory_items},
+            {"title": "Amostras por tipo", "items": sample_items or ["Sem arquivos classificados."]},
+            {"title": "Maiores arquivos", "items": largest_items or ["Nenhum arquivo encontrado."]},
+            {"title": "Plano de organizacao supervisionado", "items": [
+                "Criar pastas sugeridas: _KOS_Imagens, _KOS_Videos, _KOS_Audio, _KOS_Documentos, _KOS_Dados, _KOS_Instaladores, _KOS_Outros.",
+                "Mover arquivos por extensao apenas depois de confirmacao humana.",
+                "Nunca apagar arquivos automaticamente.",
+                "Gerar manifest antes/depois se o operador aprovar a organizacao."
+            ]},
+            {"title": "Para executar de verdade", "items": [
+                "confirmar organizar Downloads usando esse plano",
+                "O K-OS deve gerar um manifest e pedir confirmacao final antes de mover qualquer arquivo."
+            ]},
+        ],
+    }
+
+
+def build_connections(packet: dict) -> dict:
+    request = packet.get("request", "")
+    connection_registry = read_json(CONNECTION_REGISTRY)
+    tool_registry = read_json(TOOL_REGISTRY)
+
+    capability_items = []
+    try:
+        if str(ROOT) not in sys.path:
+            sys.path.insert(0, str(ROOT))
+        from k_atlas.core.capabilities import capability_status
+        status = capability_status()
+        for key in [
+            "ai_brain",
+            "supabase_basic",
+            "supabase_admin",
+            "github_write",
+            "meta_app",
+            "instagram_publish",
+            "google_oauth",
+            "gmail_oauth",
+        ]:
+            value = status.get(key)
+            label = "configurado" if value else "nao configurado"
+            capability_items.append(key + ": " + label)
+    except Exception as exc:
+        capability_items.append("capability_status: erro de leitura - " + str(exc))
+
+    local_items = [
+        ".env: " + ("existe" if (ROOT / ".env").exists() else "nao encontrado"),
+        "render.yaml: " + ("existe" if (ROOT / "render.yaml").exists() else "nao encontrado"),
+        "vercel.json: " + ("existe" if (ROOT / "vercel.json").exists() else "nao encontrado"),
+        "Git remoto origin: " + ("configurado" if (ROOT / ".git" / "config").exists() else "nao verificado"),
+        "Token Meta local: " + ("arquivo presente, conteudo nao lido" if (ROOT / "local_runtime" / "kos_secrets" / "meta_access_token.txt").exists() else "arquivo nao encontrado"),
+    ]
+
+    registry_items = [
+        "Connection Registry: " + str(connection_registry.get("status")),
+        "Conexoes registradas: " + str(len(connection_registry.get("connections", []) or [])),
+        "Tool Registry: " + str(tool_registry.get("status")),
+        "Tools registradas: " + str(len(tool_registry.get("tools", []) or [])),
+    ]
+
+    return {
+        "title": "Diagnostico read-only de conexoes K-OS",
+        "summary": "Conexoes validadas por status booleano/arquivo local. Nenhum segredo foi exibido e nenhuma acao externa foi executada.",
+        "sections": [
+            {"title": "Pedido original", "items": [request]},
+            {"title": "Status de capacidades", "items": capability_items or ["Nenhum status retornado."]},
+            {"title": "Evidencia local sem segredo", "items": local_items},
+            {"title": "Registry consultado", "items": registry_items},
+            {"title": "Limites de seguranca", "items": [
+                "Valores de tokens, passwords, secrets e API keys nao foram impressos.",
+                "Arquivo local de token Meta nao foi aberto.",
+                "Nenhum deploy Render/Vercel foi executado.",
+                "Nenhuma publicacao, email, DM ou chamada paga foi executada."
+            ]},
+            {"title": "Proximo passo por texto", "items": [
+                "Digite confirmar para registrar este diagnostico como evidencia.",
+                "Digite alterar e diga qual conexao quer investigar em seguida.",
+                "Digite cancelar para encerrar sem acao externa."
+            ]},
         ],
     }
 
@@ -857,10 +1337,14 @@ def build_patches(packet: dict) -> dict:
 BUILDERS = {
     "social_publish": build_social,
     "social_read": build_social_read,
+    "instagram_accounts_status": build_instagram_accounts_status,
+    "email_ops": build_email_ops,
+    "local_files_downloads": build_local_files_downloads,
     "products_saas": build_saas,
     "agents_orchestration": build_agents,
     "patches": build_patches,
     "runtime_bridge": build_runtime,
+    "connections_status": build_connections,
     "admin": build_admin,
     "general": build_general,
 }
