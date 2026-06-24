@@ -1,0 +1,25 @@
+{
+  "status": "KOS_HUPMIX_MANUS_REFERENCE_IMPORTER_V1_READY",
+  "created_at": "2026-06-24T10:01:03.503616",
+  "source_zip": "content_packs/_incoming_packages/Análise dos posicionamentos das lojas no Instagram.zip",
+  "extract_dir": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f",
+  "index": "memory/kos_knowledge/KOS_HUPMIX_MANUS_REFERENCE_INDEX.json",
+  "creative_skill": "memory/kos_skills/KOS_MANUS_COMPATIBLE_CREATIVE_PRODUCTION_SKILL_V1.md",
+  "gp_skill": "memory/kos_skills/KOS_GP_CREATOR_SKILL_V3_MANUS_COMPATIBLE.md",
+  "upgrade_plan": "memory/kos_knowledge/KOS_HUPMIX_GP_VIDEO_02_MANUS_UPGRADE_PLAN.json",
+  "counts": {
+    "document": 32,
+    "image": 18,
+    "video": 5,
+    "other": 31,
+    "skill": 3,
+    "prompt": 1,
+    "automation": 10,
+    "storytelling": 5,
+    "instagram": 7,
+    "product": 7,
+    "character": 5,
+    "site": 4
+  },
+  "next_step": "Melhorar GP_VIDEO_02 usando score, briefing e prompts Manus-compatible."
+}

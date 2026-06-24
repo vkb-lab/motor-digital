@@ -1,0 +1,32 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_MANUS_UPGRADE_PLAN_READY",
+  "created_at": "2026-06-24T10:01:03.502023",
+  "current_state": "GP_VIDEO_02 tem preview tecnico gerado com asset real do Instagram.",
+  "target_state": "Criar versao Manus-compatible com roteiro, score, briefing, prompts e plano de edicao.",
+  "inputs": {
+    "document": 32,
+    "image": 18,
+    "video": 5,
+    "other": 31,
+    "skill": 3,
+    "prompt": 1,
+    "automation": 10,
+    "storytelling": 5,
+    "instagram": 7,
+    "product": 7,
+    "character": 5,
+    "site": 4
+  },
+  "next_modules": [
+    "KOS_HUPMIX_CREATIVE_REFERENCE_SCORER_V1",
+    "KOS_GP_VIDEO_EDITOR_BRIEF_GENERATOR_V1",
+    "KOS_GP_VIDEO_PROMPT_PACK_GENERATOR_V1",
+    "KOS_GP_VIDEO_02_MANUS_STYLE_PREVIEW_V1"
+  ],
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai_without_approval": true,
+    "no_fake_proof": true,
+    "human_gate_required": true
+  }
+}

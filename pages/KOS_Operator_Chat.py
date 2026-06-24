@@ -2350,6 +2350,27 @@ def render_kos_orchestrator_mode_panel():
     st.markdown("### Proximo passo")
     st.info(next_step or "Aguardando novo pedido.")
 
+    # KOS_MANUS_REFERENCE_IMPORT_INLINE_UI_BEGIN
+    if route.get("route") == "manus_reference_import":
+        manus_status_path = root / "local_runtime" / "kos_reference_imports" / "hupmix_manus" / "status.json"
+        if manus_status_path.exists():
+            try:
+                manus = json.loads(manus_status_path.read_text(encoding="utf-8"))
+                st.markdown("### Referencia Manus importada")
+                st.write("O pacote Manus/Hupmix foi convertido em referencia criativa, skill e plano de upgrade reutilizavel.")
+                st.json({
+                    "status": manus.get("status"),
+                    "index": manus.get("index"),
+                    "creative_skill": manus.get("creative_skill"),
+                    "gp_skill": manus.get("gp_skill"),
+                    "upgrade_plan": manus.get("upgrade_plan"),
+                    "counts": manus.get("counts"),
+                    "next_step": manus.get("next_step")
+                })
+            except Exception:
+                pass
+    # KOS_MANUS_REFERENCE_IMPORT_INLINE_UI_END
+
     # KOS_PROCESS_LEARNING_INLINE_UI_BEGIN
     if route.get("route") == "universal_process_learning":
         learning_path = root / "local_runtime" / "kos_process_learning_engine" / "status.json"
@@ -2378,7 +2399,7 @@ def render_kos_orchestrator_mode_panel():
             except Exception:
                 gen_status = {}
 
-        if gen_status.get("status") in ["KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED", "KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED_FALLBACK_COPY"]:
+        if route.get("route") == "hupmix_creation_pipeline" and gen_status.get("status") in ["KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED", "KOS_HUPMIX_GP_VIDEO_02_LOCAL_VIDEO_GENERATED_FALLBACK_COPY"]:
             generated_path = root / gen_status.get("output", "")
             if generated_path.exists():
                 st.markdown("### Video gerado GP_VIDEO_02")
@@ -2472,6 +2493,28 @@ def render_kos_orchestrator_mode_panel():
 
 # KOS_ORCHESTRATOR_MODE_V1_END
 
+
+
+# KOS_MANUS_REFERENCE_IMPORT_DETECTOR_BEGIN
+def is_kos_manus_reference_import_request(text: str) -> bool:
+    import unicodedata
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    terms = [
+        "manus",
+        "pacote manus",
+        "referencia manus",
+        "referencia criativa",
+        "exportar para k-os",
+        "exportar para kos",
+        "materiais do hupmix",
+        "compativel com manus",
+        "melhor que manus",
+        "importar pacote"
+    ]
+    return any(term in value for term in terms)
+# KOS_MANUS_REFERENCE_IMPORT_DETECTOR_END
 
 request = st.text_area(
     "Pedido ao K-OS",
@@ -2589,6 +2632,24 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
         st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
         st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
 # KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
+# KOS_MANUS_REFERENCE_IMPORT_PRIORITY_GATE_BEGIN
+if send and is_kos_manus_reference_import_request(st.session_state.get("kos_operator_request_text", "")):
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+    st.session_state["kos_show_orchestrator_mode_panel"] = True
+    st.session_state["kos_show_capability_executor_panel"] = False
+    st.session_state["kos_show_capability_registry_panel"] = False
+    st.session_state["kos_show_research_continuity_center"] = False
+    st.session_state["kos_show_hupmix_next_video_production_panel"] = False
+    st.session_state["kos_orchestrator_request_text"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_MANUS_REFERENCE_IMPORT_PRIORITY_GATE_END
 
 # KOS_ORCHESTRATOR_MODE_PRIORITY_GATE_BEGIN
 if send and is_kos_orchestrator_mode_request(st.session_state.get("kos_operator_request_text", "")):

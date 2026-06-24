@@ -1,0 +1,732 @@
+{
+  "status": "KOS_HUPMIX_MANUS_REFERENCE_INDEX_READY",
+  "created_at": "2026-06-24T10:01:03.492519",
+  "source_zip": "content_packs/_incoming_packages/Análise dos posicionamentos das lojas no Instagram.zip",
+  "zip_sha256": "90924ea81e2f3ecde4bd8b5cd373ca874d7c9160998f8a1ad687ff6d7d83af5a",
+  "extract_dir": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f",
+  "counts": {
+    "document": 32,
+    "image": 18,
+    "video": 5,
+    "other": 31,
+    "skill": 3,
+    "prompt": 1,
+    "automation": 10,
+    "storytelling": 5,
+    "instagram": 7,
+    "product": 7,
+    "character": 5,
+    "site": 4
+  },
+  "files": [
+    {
+      "name": "0001_organic_deathbird.sql",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/0001_organic_deathbird.sql",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 2289
+    },
+    {
+      "name": "Admin.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Admin.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 15424
+    },
+    {
+      "name": "agendamento_videos.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/agendamento_videos.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 969,
+      "excerpt": "# Agendamento Vídeos Garoto Oxy Power\n\n## Vídeo 1 - PUBLICADO (19/03/2026)\n- Reel: https://www.instagram.com/reel/DWElXZcghfM/\n- Legenda: VEM AÍ... 👀\n\n## Vídeo 2 - Agendar para 20/03/2026 (10h)\n- URL: https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725166/qguNEnqAyiHvoADn.mp4\n- Legenda: A SOLUÇÃO QUE FALTAVA! 💪\n\n## Vídeo 3 - Agendar para 21/03/2026 (10h)\n- URL: https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725166/sKcdedOVnunFScLs.mp4\n- Legenda: DONAS DE CASA, SEUS PROBLEMAS VÃO ACABAR! ✨\n\n## Vídeo 4 - Agendar para 22/03/2026 (10h)\n- URL: https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725166/AyFtYuXTDOovgRlc.mp4\n- Legenda: UMA SOLUÇÃO PARA NOSSO PLANETA 🌍\n\n## Vídeo 5 - Agendar para 23/03/2026 (10h)\n- URL: https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725166/wrxCoEgbxtpYBVbz.mp4\n- L"
+    },
+    {
+      "name": "analise_automacao.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/analise_automacao.md",
+      "type": "document",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 1499,
+      "excerpt": "# Análise de Soluções de Automação - HupMix\n\n## O que o Manus pode executar DIRETAMENTE:\n\n### 1. Chatbot com IA no site (via tRPC + LLM integrado)\n- O template do site já tem `invokeLLM` no servidor\n- Posso criar um chatbot no próprio site da HupMix que responde perguntas sobre produtos, preços, localização\n- Usa a IA já integrada no Manus, sem custo extra\n- Widget flutuante no canto da tela\n- EXECUTÁVEL AGORA\n\n### 2. Bot do Telegram\n- API gratuita, sem custo\n- Pode rodar como webhook no próprio servidor do site Manus\n- Responde com IA sobre produtos, preços, localização\n- Link direto: t.me/HupMixBot\n- EXECUTÁVEL AGORA (webhook no server Express)\n\n### 3. ManyChat para Instagram DM\n- Precisa configurar via browser\n- Plano gratuito: até 1000 contatos, automações básicas\n- Responde DMs automaticamente com fluxos pré-definidos\n- EXECUTÁVEL AGORA\n\n### 4. Agendamento de conteúdo recorrente\n- J"
+    },
+    {
+      "name": "App.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/App.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 1335
+    },
+    {
+      "name": "asset_urls.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/asset_urls.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 268,
+      "excerpt": "GAROTO_OXYPOWER_IMG=https://d2xsxph8kpxj0f.cloudfront.net/310419663028725166/YC4oXvVJ6bgPstn5aYg74f/garoto_oxypower_concept_1b19301d.png\nOXYPOWER_PRODUCT_IMG=https://d2xsxph8kpxj0f.cloudfront.net/310419663028725166/YC4oXvVJ6bgPstn5aYg74f/oxypower_product_5a8beb52.jpg"
+    },
+    {
+      "name": "asset_urls_updated.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/asset_urls_updated.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 262,
+      "excerpt": "Logo HupMix (CDN webdev): https://d2xsxph8kpxj0f.cloudfront.net/310419663028725166/YC4oXvVJ6bgPstn5aYg74f/LOGOHUPMIX_8538a4d2.jpeg\nLogo HupMix (CDN público): https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725166/aqJYdqtauTwuRQCB.jpeg"
+    },
+    {
+      "name": "auth.logout.test.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/auth.logout.test.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 1625
+    },
+    {
+      "name": "captcha_info.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/captcha_info.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 320,
+      "excerpt": "Captcha: Choose all the hats\nGrid 3x3:\nRow 1: hat (cream/white), bed/bedroom, bed/bedroom\nRow 2: hat (white/cream), clock, bag/backpack (orange)\nRow 3: cap (grey), jeans/fabric, hat (brown/cowboy style in grass)\n\nHats: position 1 (top-left), position 4 (middle-left), position 7 (bottom-left), position 9 (bottom-right)"
+    },
+    {
+      "name": "captcha_info2.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/captcha_info2.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 396,
+      "excerpt": "Captcha mudou: Choose all the buckets\nGrid 3x3:\nRow 1: blue bucket, bed, grey blanket/couch\nRow 2: grey bucket (selected - green check), fireplace, silver bucket\nRow 3: brown bucket, silver bucket, laundry basket\n\nBuckets: pos 1 (blue bucket top-left), pos 4 (grey bucket mid-left - already selected), pos 6 (silver bucket mid-right), pos 7 (brown bucket bot-left), pos 8 (silver bucket bot-mid)"
+    },
+    {
+      "name": "captcha_info3.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/captcha_info3.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 402,
+      "excerpt": "Captcha: Choose all the buckets (new grid)\nGrid 3x3:\nRow 1: yellow bucket on brick wall, cloth bag \"Restaurant\", brown bucket/barrel\nRow 2: brown handbag/purse, grey metal bucket, grey object on ground\nRow 3: white bucket (blue bg), silver bucket on ground, dark bag on brick\n\nBuckets: pos 1 (yellow bucket), pos 3 (brown bucket), pos 5 (grey metal bucket), pos 7 (white bucket), pos 8 (silver bucket)"
+    },
+    {
+      "name": "Cart.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Cart.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 9394
+    },
+    {
+      "name": "CartContext.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/CartContext.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 2200
+    },
+    {
+      "name": "ChatWidget.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/ChatWidget.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 7784
+    },
+    {
+      "name": "Checkout.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Checkout.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 12918
+    },
+    {
+      "name": "WhatsApp.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Conceito do App de Vendas e Suporte Integrado ao Instagram/WhatsApp.md",
+      "type": "document",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 9975,
+      "excerpt": "# Conceito do App de Vendas e Suporte Integrado ao Instagram/WhatsApp\n\n## 1. Introdução\n\nEste documento apresenta o conceito de um **App de Gestão de Vendas e Suporte ao Cliente** que será integrado ao Instagram Direct e WhatsApp. O objetivo é centralizar todas as operações de vendas, suporte e logística em uma única plataforma, permitindo que o usuário (HupMix) tenha visibilidade completa sobre seus pedidos, clientes e operações, enquanto os clientes recebem um atendimento integrado e consistente.\n\n## 2. Visão Geral da Plataforma\n\nA plataforma será composta por dois componentes principais:\n\n1.  **Dashboard de Gestão (para o usuário HupMix):** Painel de controle centralizado para gerenciar vendas, clientes, pedidos e suporte.\n2.  **Interface de Atendimento (para clientes):** Integração com Instagram Direct e WhatsApp para uma experiência de compra e suporte contínua.\n\n## 3. Arquitetura d"
+    },
+    {
+      "name": "const.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/const.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 643
+    },
+    {
+      "name": "DashboardLayout.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/DashboardLayout.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 1095
+    },
+    {
+      "name": "db.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/db.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 7104
+    },
+    {
+      "name": "dns_status.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/dns_status.txt",
+      "type": "document",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 532,
+      "excerpt": "DNS Status:\n- Modo avançado ativado com sucesso\n- Servidores DNS em transição (precisa esperar ~2h para poder configurar zona DNS)\n- Mensagem: \"No momento, os servidores DNS do domínio se encontram em transição. Servidores DNS externos poderão ser delegados em seu domínio em aproximadamente 2h4m45s\"\n- Link \"Configurar zona DNS\" (index 4) disponível para adicionar registros A\n- Domínio: lojahupmix.com.br no Manus (precisa verificar se é esse ou hupmix.com.br)\n- Registros A necessários: 104.18.26.246 e 104.18.27.246"
+    },
+    {
+      "name": "env.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/env.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 609
+    },
+    {
+      "name": "Estruturação do Fluxo de Atendimento Automatizado e Logística de Vendas Nacional.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Estruturação do Fluxo de Atendimento Automatizado e Logística de Vendas Nacional.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 7695,
+      "excerpt": "# Estruturação do Fluxo de Atendimento Automatizado e Logística de Vendas Nacional\n\n## 1. Introdução\n\nEste documento detalha a estratégia para automatizar o atendimento ao cliente via Instagram Direct e WhatsApp, com o objetivo de otimizar o processo de vendas do Oxy Power em nível nacional. A meta é criar um funil de vendas eficiente que qualifique leads, calcule fretes, processe pagamentos e notifique o usuário para a etapa de envio, tudo de forma orgânica e sem a necessidade inicial de um e-commerce.\n\n## 2. Visão Geral do Funil de Vendas Automatizado\n\nO funil será composto por etapas claras, desde a atração do lead até a finalização da compra e notificação para envio. A automação será focada em reduzir a carga operacional do usuário, permitindo que ele se concentre na manutenção do estoque e na logística final.\n\n```mermaid\ngraph TD\n    A[Atração Orgânica: Reels/TikTok com Garoto Oxy P"
+    },
+    {
+      "name": "garoto_oxypower_concept.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_concept.png",
+      "type": "image",
+      "tags": [
+        "character",
+        "product"
+      ],
+      "size_bytes": 1831102
+    },
+    {
+      "name": "garoto_oxypower_nobg.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_nobg.png",
+      "type": "image",
+      "tags": [
+        "character",
+        "product"
+      ],
+      "size_bytes": 1261722
+    },
+    {
+      "name": "Guia Passo a Passo - ManyChat + DNS Registro.br.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Guia Passo a Passo - ManyChat + DNS Registro.br.md",
+      "type": "document",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 5390,
+      "excerpt": "# Guia Passo a Passo - ManyChat + DNS Registro.br\n\n---\n\n## PARTE 1: Configurar ManyChat para Instagram DM\n\nO ManyChat exige login com Google ou Facebook (eu não consigo fazer por você). Mas é bem simples, siga estes passos:\n\n### Passo 1: Criar conta\n1. Acesse: **https://manychat.com**\n2. Clique em **\"GET STARTED\"**\n3. Clique em **\"Continue With Facebook\"** (recomendado, pois o Instagram é da Meta)\n4. Faça login com seu Facebook que está vinculado ao Instagram @hupmix\n\n### Passo 2: Conectar Instagram\n1. Após login, o ManyChat vai pedir para conectar um canal\n2. Escolha **\"Instagram\"**\n3. Autorize o acesso à conta @hupmix\n4. Confirme as permissões (ler mensagens, responder mensagens, ver comentários)\n\n### Passo 3: Criar Automação de Boas-Vindas\n1. No painel, vá em **\"Automation\"** > **\"New Automation\"**\n2. Escolha **\"Welcome Message\"** (mensagem de boas-vindas)\n3. Configure a mensagem:\n\n``"
+    },
+    {
+      "name": "home.test.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/home.test.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 1830
+    },
+    {
+      "name": "Home.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Home.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 18887
+    },
+    {
+      "name": "IMG_20231026_084830431_HDR.jpg",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/IMG_20231026_084830431_HDR.jpg",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 3554748
+    },
+    {
+      "name": "index.css",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/index.css",
+      "type": "other",
+      "tags": [
+        "site"
+      ],
+      "size_bytes": 5804
+    },
+    {
+      "name": "index.html",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/index.html",
+      "type": "document",
+      "tags": [
+        "site"
+      ],
+      "size_bytes": 763,
+      "excerpt": "<!doctype html>\n<html lang=\"en\">\n\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, initial-scale=1.0, maximum-scale=1\" />\n    <title>HupMix - Plataforma de Vendas Oxy Power</title>    \n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap\" rel=\"stylesheet\" />\n  </head>\n\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\n    <script\n      defer\n      src=\"%VITE_ANALYTICS_ENDPOINT%/umami\"\n      data-website-id=\"%VITE_ANALYTICS_WEBSITE_ID%\"></script>\n  </body>\n\n</html>"
+    },
+    {
+      "name": "index.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/index.ts",
+      "type": "other",
+      "tags": [
+        "site"
+      ],
+      "size_bytes": 5880
+    },
+    {
+      "name": "insta_post1_lancamento.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/insta_post1_lancamento.png",
+      "type": "image",
+      "tags": [
+        "instagram"
+      ],
+      "size_bytes": 6367280
+    },
+    {
+      "name": "insta_post2_beneficios.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/insta_post2_beneficios.png",
+      "type": "image",
+      "tags": [
+        "instagram"
+      ],
+      "size_bytes": 5745432
+    },
+    {
+      "name": "insta_post4_como_usar.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/insta_post4_como_usar.png",
+      "type": "image",
+      "tags": [
+        "instagram"
+      ],
+      "size_bytes": 5410977
+    },
+    {
+      "name": "instagram-video-storytelling.skill",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/instagram-video-storytelling.skill",
+      "type": "other",
+      "tags": [
+        "instagram",
+        "skill",
+        "storytelling"
+      ],
+      "size_bytes": 5791
+    },
+    {
+      "name": "instagram_data.json",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/instagram_data.json",
+      "type": "document",
+      "tags": [
+        "instagram"
+      ],
+      "size_bytes": 1927,
+      "excerpt": "{\n  \"account\": {\n    \"username\": \"hupmix\",\n    \"name\": \"HupMix\",\n    \"bio\": \"Produtos de limpeza | Utilidades | Piscina\\nAv. Luiz Boiteux Piazza, 2260 – Floripa\\nConverse com hupmix no WhatsApp: https://wa.me/554899503705\",\n    \"followers\": 117,\n    \"following\": 268,\n    \"posts_count\": 25\n  },\n  \"recent_posts\": [\n    {\n      \"id\": \"18058412477307963\",\n      \"type\": \"VIDEO\",\n      \"caption\": \"Tudo que você precisa para curtir o verão está aqui 🌞🏝️\\nChame no WhatsApp +55 4899503705 📞\",\n      \"likes\": 3,\n      \"comments\": 1,\n      \"posted\": \"2025-12-17T18:23:45+0000\"\n    },\n    {\n      \"id\": \"18289058002273072\",\n      \"type\": \"IMAGE\",\n      \"caption\": \"🚗✨ Tire a sujeira pesada com o poder do LIMONAX!\\n\\nChega de gordura, graxa e mau cheiro!\\nO LIMONAX limpa peças, motores, cozinhas, pisos, azulejos e muito mais — tudo com um toque cítrico refrescante\",\n      \"likes\": 5,\n      \"comments\": 0,"
+    },
+    {
+      "name": "llm.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/llm.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 7262
+    },
+    {
+      "name": "LOGOHUPMIX.jpeg",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/LOGOHUPMIX.jpeg",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 86155
+    },
+    {
+      "name": "manychat_login_info.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/manychat_login_info.md",
+      "type": "document",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 212,
+      "excerpt": "ManyChat login via Google: lojahupmix@gmail.com\nNota: Senha foi alterada há 12 meses. Senha atual no campo: #Meu153153\nO Rogger pediu para mudar para #Hupmix01 - mas isso é a senha do Google, não do ManyChat."
+    },
+    {
+      "name": "melhor_envio_api_notes.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/melhor_envio_api_notes.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 1190,
+      "excerpt": "MELHOR ENVIO API NOTES\n=====================\n\nBase URLs:\n- Sandbox: https://sandbox.melhorenvio.com.br\n- Produção: https://melhorenvio.com.br\n\nEndpoint de Cotação: POST /api/v2/me/shipment/calculate\n\nHeaders:\n- Accept: application/json\n- Content-Type: application/json\n- Authorization: Bearer {token}\n- User-Agent: HupMix (contato@hupmix.com)\n\nBody (Caso 1 - informar produtos):\n{\n  \"from\": { \"postal_code\": \"88000000\" },\n  \"to\": { \"postal_code\": \"01001000\" },\n  \"products\": [\n    {\n      \"id\": \"1\",\n      \"width\": 20,\n      \"height\": 30,\n      \"length\": 20,\n      \"weight\": 5.5,\n      \"insurance_value\": 49.90,\n      \"quantity\": 1\n    }\n  ]\n}\n\nDimensões em cm, peso em kg, valor em reais.\n\nTransportadoras disponíveis no sandbox: Correios e JadLog.\n\nDECISÃO: Como a API do Melhor Envio requer OAuth2 e token do usuário, e o processo de verificação é complexo, vou implementar um sistema de cálculo d"
+    },
+    {
+      "name": "melhorenvio.test.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/melhorenvio.test.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 1996
+    },
+    {
+      "name": "narrative-arc.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/narrative-arc.md",
+      "type": "document",
+      "tags": [
+        "storytelling"
+      ],
+      "size_bytes": 2922,
+      "excerpt": "# Storytelling Narrative Arc Template\n\n## Brand Info\n- **Brand/Product:** [name]\n- **Mascot/Character:** [name and brief description]\n- **Key Benefits:** [list 3-5]\n- **Store/CTA Location:** [address or action]\n- **WhatsApp:** [number]\n- **Maps Link:** [URL]\n- **Visual Style:** 3D Pixar-style animation\n\n## 5-Day Narrative Arc\n\n### Day 1: TEASER - \"Vem aí...\"\n- **Goal:** Create mystery and curiosity\n- **Scene:** Character silhouette, dramatic sunset, signature visual elements\n- **Emotion:** Anticipation, intrigue\n- **Caption Template:**\n```\nVEM AÍ... 👀\n\nAlgo poderoso está chegando para [transform what].\n\nPreparem-se. 💪✨\n\n#VemAí #[Brand] #[Character] #[Location] #Novidade #EmBreve\n```\n\n### Day 2: REVEAL - \"A solução que faltava\"\n- **Goal:** Reveal the character/product identity\n- **Scene:** Character emerging from shadows into light, epic reveal\n- **Emotion:** Excitement, power\n- **Caption"
+    },
+    {
+      "name": "OrderConfirmation.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/OrderConfirmation.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 5994
+    },
+    {
+      "name": "output-patterns.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/output-patterns.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 1812,
+      "excerpt": "# Output Patterns\n\nUse these patterns when skills need to produce consistent, high-quality output.\n\n## Template Pattern\n\nProvide templates for output format. Match the level of strictness to your needs.\n\n**For strict requirements (like API responses or data formats):**\n\n```markdown\n## Report structure\n\nALWAYS use this exact template structure:\n\n# [Analysis Title]\n\n## Executive summary\n[One-paragraph overview of key findings]\n\n## Key findings\n- Finding 1 with supporting data\n- Finding 2 with supporting data\n- Finding 3 with supporting data\n\n## Recommendations\n1. Specific actionable recommendation\n2. Specific actionable recommendation\n```\n\n**For flexible guidance (when adaptation is useful):**\n\n```markdown\n## Report structure\n\nHere is a sensible default format, but use your best judgment:\n\n# [Analysis Title]\n\n## Executive summary\n[Overview]\n\n## Key findings\n[Adapt sections based on what yo"
+    },
+    {
+      "name": "oxypower_product.jpg",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/oxypower_product.jpg",
+      "type": "image",
+      "tags": [
+        "product"
+      ],
+      "size_bytes": 3554748
+    },
+    {
+      "name": "oxypower_product_nobg.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/oxypower_product_nobg.png",
+      "type": "image",
+      "tags": [
+        "character",
+        "product"
+      ],
+      "size_bytes": 10122611
+    },
+    {
+      "name": "pasted_file_5DTQa4_image.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_5DTQa4_image.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 504025
+    },
+    {
+      "name": "pasted_file_aanrXi_image.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_aanrXi_image.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 277256
+    },
+    {
+      "name": "pasted_file_LGJCYg_image.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_LGJCYg_image.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 219957
+    },
+    {
+      "name": "pasted_file_o4AU0f_image.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_o4AU0f_image.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 195879
+    },
+    {
+      "name": "pasted_file_TG0UZW_image.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_TG0UZW_image.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 260534
+    },
+    {
+      "name": "pasted_file_uOr0Uj_image.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_uOr0Uj_image.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 177869
+    },
+    {
+      "name": "Plano de Ação para Otimização do Instagram da HupMix.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Plano de Ação para Otimização do Instagram da HupMix.md",
+      "type": "document",
+      "tags": [
+        "instagram",
+        "storytelling"
+      ],
+      "size_bytes": 9292,
+      "excerpt": "# Plano de Ação para Otimização do Instagram da HupMix\n\n## 1. Introdução\n\nEste documento apresenta um plano de ação detalhado, baseado nas recomendações do relatório de análise de posicionamento do Instagram da HupMix. O objetivo é fornecer um guia prático para otimizar a presença da marca na plataforma, aumentando o engajamento, o alcance e a relevância junto ao público-alvo.\n\n## 2. Objetivo Geral\n\nOtimizar o posicionamento da HupMix no Instagram, transformando-o em um canal mais dinâmico e interativo, capaz de atrair novos seguidores, fortalecer o relacionamento com a audiência existente e impulsionar as vendas por meio de uma estratégia de conteúdo diversificada e engajadora.\n\n## 3. Áreas de Foco e Ações Estratégicas\n\nO plano de ação está estruturado em torno das principais áreas identificadas para melhoria, com tarefas específicas, prazos sugeridos e métricas de sucesso para cada um"
+    },
+    {
+      "name": "Plano de Conteúdo e Roteiros de Marketing - Garoto Oxy Power.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Plano de Conteúdo e Roteiros de Marketing - Garoto Oxy Power.md",
+      "type": "document",
+      "tags": [
+        "character",
+        "product",
+        "storytelling"
+      ],
+      "size_bytes": 6779,
+      "excerpt": "# Plano de Conteúdo e Roteiros de Marketing - Garoto Oxy Power\n\n## 1. Introdução\n\nEste plano detalha a estratégia de conteúdo orgânico para o Oxy Power, utilizando o personagem \"Garoto Oxy Power\" como figura central. O objetivo é criar uma \"Saga da Limpeza\" envolvente que ressoe com o público, eduque sobre os benefícios do produto e direcione para a conversão de vendas em nível nacional.\n\n## 2. Conceito da \"Saga da Limpeza\" - Garoto Oxy Power\n\nO \"Garoto Oxy Power\" é um super-herói que surge para salvar o dia das \"dores\" da limpeza doméstica. Cada vídeo será uma mini-história onde uma pessoa (geralmente uma dona de casa) se depara com um problema de sujeira persistente, sente desespero, e então, o Garoto Oxy Power é acionado para resolver a situação com a eficácia do Oxy Power.\n\n**Elementos Chave:**\n*   **Problema:** Cenário realista de sujeira (box engordurado, roupa manchada, piso encar"
+    },
+    {
+      "name": "prompt-templates.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/prompt-templates.md",
+      "type": "document",
+      "tags": [
+        "prompt"
+      ],
+      "size_bytes": 4258,
+      "excerpt": "# Prompt Templates for Video Storytelling\n\n## Character Reference Image Prompt\n\nGenerate the character reference FIRST. All subsequent images use this as `references`.\n\n```\n3D Pixar-style animated character, a young [nationality] [gender] superhero, approximately [age] years old.\n[Physical description: skin tone, hair color/style, eye color].\nWearing [costume description with colors], with [emblem/logo] on chest.\n[Accessories: cape, mask, belt, boots with colors].\nStanding in heroic pose, confident smile.\nClean studio background, full body visible.\nHighly detailed, cinematic lighting, 8K quality.\n```\n\n## Scene Keyframe Prompts by Narrative Arc\n\n### Teaser/Mystery Scene\n```\n3D Pixar-style animation scene, dramatic backlit silhouette of [character description] standing on [location] at dusk.\nSeen only as dark mysterious silhouette against glowing [sunset/dramatic] sky.\n[City/environment] i"
+    },
+    {
+      "name": "registro_br_notes.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/registro_br_notes.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 336,
+      "excerpt": "Domínio: hupmix.com.br\nStatus: Publicado\nCriação: 20/12/2024\nExpiração: 20/12/2026\nTitular: rogger kuzer\nCPF: 050.424.669-08\nDNS: Usando servidores DNS do Registro.br\nLink para zona DNS: \"Configurar endereçamento\" (index 29)\n\nRegistros A necessários:\n- A @ 104.18.26.246\n- A @ 104.18.27.246\n\nDomínio no Manus: lojahupmix.com.br"
+    },
+    {
+      "name": " Oxy Power.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Relatório Completo - Projeto HupMix/ Oxy Power.md",
+      "type": "document",
+      "tags": [
+        "product"
+      ],
+      "size_bytes": 6575,
+      "excerpt": "# Relatório Completo - Projeto HupMix / Oxy Power\n\n**Data:** 20 de março de 2026  \n**Autor:** Manus AI\n\n---\n\n## 1. Tudo que Construímos Juntos\n\n### Site / Loja Online (lojahupmix.com.br)\n\nO site da HupMix foi construído do zero com as seguintes funcionalidades:\n\n| Funcionalidade | Status | Observação |\n|---|---|---|\n| Landing page com Garoto Oxy Power | Feito | Hero com mascote 3D, benefícios, como usar |\n| Catálogo de produtos | Feito | Oxy Power Multi-Uso 5L - R$ 49,90 |\n| Botão WhatsApp (compra) | Feito | Substitui o checkout antigo |\n| Botão \"Como Chegar\" (Google Maps) | Feito | Link direto para a loja |\n| Informação \"Somente retirada na loja\" | Feito | Em todos os produtos |\n| CTA \"Passe na HupMix e garanta o seu!\" | Feito | No hero, produtos e rodapé |\n| Bot Telegram @Hupmix_bot com IA | Feito | Responde clientes e te notifica |\n| Seção de benefícios | Feito | Sem cloro, não tóxico"
+    },
+    {
+      "name": "Relatório de Análise de Posicionamento no Instagram.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Relatório de Análise de Posicionamento no Instagram.md",
+      "type": "document",
+      "tags": [
+        "instagram"
+      ],
+      "size_bytes": 7119,
+      "excerpt": "# Relatório de Análise de Posicionamento no Instagram\n\n## 1. Introdução\n\nEste relatório apresenta uma análise do posicionamento da conta do Instagram `@hupmix`, com base nas informações públicas do perfil e nos insights de publicações recentes. O objetivo é fornecer uma compreensão clara da estratégia atual e identificar oportunidades de melhoria.\n\n## 2. Visão Geral da Conta (@hupmix)\n\n| Métrica           | Valor     |\n| :---------------- | :-------- |\n| Nome de Usuário   | @hupmix   |\n| Nome da Conta     | HupMix    |\n| Seguidores        | 117       |\n| Seguindo          | 268       |\n| Publicações       | 25        |\n\n**Bio:** Produtos de limpeza | Utilidades | Piscina\\nAv. Luiz Boiteux Piazza, 2260 – Floripa\\nConverse com hupmix no WhatsApp: https://wa.me/554899503705\n\n## 3. Análise de Conteúdo e Engajamento\n\nA conta HupMix foca na venda de produtos de limpeza, utilidades e itens para"
+    },
+    {
+      "name": "remove_bg.py",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/remove_bg.py",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 436
+    },
+    {
+      "name": "remove_bg_product.py",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/remove_bg_product.py",
+      "type": "other",
+      "tags": [
+        "product"
+      ],
+      "size_bytes": 451
+    },
+    {
+      "name": "routers.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/routers.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 11333
+    },
+    {
+      "name": "schema.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/schema.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 4387
+    },
+    {
+      "name": "Screenshot_20260317-180805.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Screenshot_20260317-180805.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 1042940
+    },
+    {
+      "name": "Screenshot_20260317-182636.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Screenshot_20260317-182636.png",
+      "type": "image",
+      "tags": [],
+      "size_bytes": 1236501
+    },
+    {
+      "name": "screenshot_notes.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/screenshot_notes.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 485,
+      "excerpt": "Landing page screenshot analysis:\n- Hero section: \"Limpeza Poderosa sem Cloro\" with Garoto Oxy Power cartoon character\n- Navigation: HupMix logo, Produtos, Benefícios, Como Usar links, cart icon, Rastrear link\n- CTA buttons: \"Comprar Agora\" (pink) and \"Saiba Mais\" (outline)\n- Social proof: 4.9/5 stars, +500 clientes satisfeitos\n- Clean white background with pink/purple accents matching Oxy Power branding\n- Server running without errors, TypeScript clean\n- All tests passing (9/9)"
+    },
+    {
+      "name": "shipping.test.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/shipping.test.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 2472
+    },
+    {
+      "name": "shipping.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/shipping.ts",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 7244
+    },
+    {
+      "name": "SKILL.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/SKILL.md",
+      "type": "document",
+      "tags": [
+        "skill"
+      ],
+      "size_bytes": 4446,
+      "excerpt": "### First Keyframe\n\n```\nfirst_keyframe_reuse = yes → Use previous clip's last keyframe (no generation)\nfirst_keyframe_reuse = no  → Generate new keyframe\n```\n\n**If generating first keyframe:**\n- [ ] Tool: `generate_image`\n- [ ] References: Appropriate Phase 4 images\n- [ ] Aspect ratio: 16:9 or 9:16\n- [ ] Prompt includes:\n  - [ ] Visual style (sub-genre + key characteristics, brief)\n  - [ ] Scene environment\n  - [ ] Framing (shot size + angle + lens)\n  - [ ] Visible content\n  - [ ] Subject appearance + outfit\n- [ ] Prompt ends with: \"no text, no watermarks, no logos, no annotations\"\n\n### Last Keyframe\n\n```\nlast_keyframe_required = no  → Skip\nlast_keyframe_required = yes:\n  last_keyframe_edit_from_first = yes → Edit mode\n  last_keyframe_edit_from_first = no  → Generate mode\n```\n\n**If EDIT mode:**\n- [ ] Tool: `generate_image_variation`\n- [ ] References: [first_keyframe, Phase 4 refs...]\n- ["
+    },
+    {
+      "name": "status_verificacao.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/status_verificacao.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 965,
+      "excerpt": "# Status da Verificação - 19/03/2026\n\n## Imagens prontas para Instagram:\n1. insta_post1_lancamento.png - Post de lançamento (JÁ PUBLICADO no carrossel)\n2. insta_post2_beneficios.png - \"Por que Oxy Power?\" com 6 benefícios (PRONTO, não publicado solo)\n3. insta_post3_promo.png - Promoção com FRETE GRÁTIS (NÃO USAR - promoção não autorizada)\n4. insta_post4_como_usar.png - \"Como Usar o Oxy Power\" em 4 passos (PRONTO, não publicado solo)\n5. insta_story_lancamento.png - Story de lançamento (contém \"RAYODER\" - erro de IA - NÃO USAR)\n6. garoto_oxypower_concept.png - Personagem Garoto Oxy Power (mascote criado)\n\n## Domínio:\n- lojahupmix.com.br: DNS NÃO RESOLVENDO (registros A não configurados no Registro.br)\n- hupmixshop-yc4oxvvj.manus.space: FUNCIONANDO normalmente\n\n## Instagram @hupmix:\n- 119 seguidores, 267 seguindo, 26 posts\n- Post de lançamento: 6 likes, 0 comentários, 18 alcance, 72 visuali"
+    },
+    {
+      "name": "storytelling_garoto_op.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/storytelling_garoto_op.md",
+      "type": "document",
+      "tags": [
+        "character",
+        "storytelling"
+      ],
+      "size_bytes": 2059,
+      "excerpt": "# Storytelling Garoto Oxy Power - 5 Vídeos\n\n## Conceito Geral\nSérie de 5 vídeos curtos (Reels/Stories) contando a saga do Garoto Oxy Power.\nNarrativa progressiva de suspense → revelação → demonstração → propósito → CTA.\nEstilo: 3D Pixar-like, colorido, vibrante, o menino super-herói com traje rosa e azul, \"OP\" no peito, bolhas de oxigênio.\n\n## Vídeo 1 - \"VEM AÍ...\" (Dia 1 - Hoje)\n- Cena: Silhueta misteriosa do Garoto OP em contraluz, bolhas de oxigênio flutuando, cidade ao fundo\n- Mood: Suspense, expectativa\n- Texto overlay: \"VEM AÍ... 👀\"\n- Narração: Algo poderoso está chegando. Prepare-se.\n- Duração: ~6s\n\n## Vídeo 2 - \"A SOLUÇÃO QUE FALTAVA\" (Dia 2)\n- Cena: Garoto OP surge das sombras revelando seu traje, pose heroica, raios de luz\n- Mood: Revelação épica\n- Texto overlay: \"A SOLUÇÃO QUE FALTAVA! 💪\"\n- Narração: Ele chegou! O Garoto Oxy Power traz a solução que você esperava.\n- Duração: ~"
+    },
+    {
+      "name": "stripe_test_result.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/stripe_test_result.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 502,
+      "excerpt": "TESTE STRIPE - SUCESSO!\n\nPagamento processado com sucesso via cartão de teste 4242 4242 4242 4242.\n\nPedido: #HMMMUTF0R5FJ04\nStatus: Pagamento Confirmado\nCliente: Teste HupMix (teste@hupmix.com, (48) 99999-9999)\nEndereço: Av Paulista, 1000, Sala 1, Bela Vista - São Paulo/SP, CEP 01310100\nSubtotal: R$ 49.90\nFrete (Buslog Rodoviário): R$ 29.04\nTotal: R$ 78.94\n\nFluxo completo testado: Landing Page -> Carrinho -> Cálculo de Frete (Melhor Envio API) -> Checkout -> Stripe -> Confirmação de Pedido"
+    },
+    {
+      "name": "telegram-business-central.skill",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram-business-central.skill",
+      "type": "other",
+      "tags": [
+        "automation",
+        "skill"
+      ],
+      "size_bytes": 9983
+    },
+    {
+      "name": "telegram-central.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram-central.ts",
+      "type": "other",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 12339
+    },
+    {
+      "name": "telegram-setup.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram-setup.md",
+      "type": "document",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 2895,
+      "excerpt": "# Telegram Bot Setup Reference\n\n## BotFather Setup\n\n1. User creates bot via @BotFather: `/newbot` → name → username\n2. BotFather returns token: `123456:ABC-DEF...`\n3. User provides token + their Chat ID (from @userinfobot)\n\n## Environment Variables\n\nAdd via `webdev_request_secrets`:\n- `TELEGRAM_BOT_TOKEN` - Bot token from BotFather\n- `TELEGRAM_OWNER_CHAT_ID` - Owner's numeric chat ID\n\nAdd to `server/_core/env.ts`:\n```ts\ntelegramBotToken: process.env.TELEGRAM_BOT_TOKEN || \"\",\ntelegramOwnerChatId: process.env.TELEGRAM_OWNER_CHAT_ID || \"\",\n```\n\n## Webhook Configuration\n\nRegister in `server/_core/index.ts` BEFORE tRPC middleware:\n\n```ts\nimport { handleTelegramWebhook, scheduleDailyReport, setTelegramBotCommands } from \"../telegram\";\n\n// Telegram webhook (raw JSON)\napp.post(\"/api/telegram/webhook\", express.json(), async (req, res) => {\n  try {\n    await handleTelegramWebhook(req.body);\n    re"
+    },
+    {
+      "name": "telegram.test.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram.test.ts",
+      "type": "other",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 11233
+    },
+    {
+      "name": "telegram.ts",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram.ts",
+      "type": "other",
+      "tags": [
+        "automation"
+      ],
+      "size_bytes": 21524
+    },
+    {
+      "name": "test_notes.txt",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/test_notes.txt",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 642,
+      "excerpt": "Teste de frete Melhor Envio - SUCESSO\nCEP: 01310-100 (São Paulo)\nResultado: 14 opções de frete retornadas em tempo real\n- Buslog Rodoviário: R$29.04 (3 dias)\n- Jadlog .Package: R$32.15 (7 dias)\n- Jadlog .Package Centralizado: R$33.33 (7 dias)\n- LATAM Cargo éFácil: R$35.27 (3 dias)\n- Jadlog .Com: R$36.07 (5 dias)\n- Total Express Standard: R$36.71 (6 dias)\n- Azul Cargo Express: R$40.10 (4 dias)\n- Loggi Express: R$40.67 (4 dias)\n- Loggi Ponto: R$42.46 (5 dias)\n- Correios PAC: R$42.51 (6 dias)\n- JeT Standard: R$44.70 (4 dias)\n- Azul Cargo Expresso: R$54.95 (3 dias)\n- Loggi Coleta: R$58.21 (5 dias)\n- Correios SEDEX: R$71.15 (2 dias)"
+    },
+    {
+      "name": "todo.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/todo.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 4253,
+      "excerpt": "# Project TODO\n\n- [x] Design system (cores, fontes, tema dark/light baseado no Oxy Power rosa/azul)\n- [x] Schema do banco de dados (produtos, pedidos, clientes, endereços, estoque)\n- [x] Landing page pública com hero do Garoto Oxy Power\n- [x] Catálogo de produtos com página de detalhes\n- [x] Carrinho de compras (adicionar, remover, quantidade)\n- [x] Formulário de endereço de entrega com validação de CEP\n- [x] Cálculo de frete via API (Correios/Melhor Envio)\n- [x] Integração Stripe (cartão, Pix, cripto)\n- [x] Fluxo de checkout completo (carrinho → endereço → frete → pagamento)\n- [x] Página de confirmação de pedido\n- [x] Dashboard admin com gestão de pedidos\n- [x] Dashboard admin com gestão de estoque\n- [x] Notificações de nova venda ao dono (via sistema de notificações)\n- [x] Estrutura de navegação (rotas públicas e admin)\n- [x] Testes unitários (vitest)\n- [x] Cálculo de frete por tabela"
+    },
+    {
+      "name": "TrackOrder.tsx",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/TrackOrder.tsx",
+      "type": "other",
+      "tags": [],
+      "size_bytes": 6243
+    },
+    {
+      "name": "vid1_vem_ai.mp4",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid1_vem_ai.mp4",
+      "type": "video",
+      "tags": [],
+      "size_bytes": 3568225
+    },
+    {
+      "name": "vid2_solucao.mp4",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid2_solucao.mp4",
+      "type": "video",
+      "tags": [],
+      "size_bytes": 4337028
+    },
+    {
+      "name": "vid3_donas_casa.mp4",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid3_donas_casa.mp4",
+      "type": "video",
+      "tags": [],
+      "size_bytes": 4296342
+    },
+    {
+      "name": "vid4_planeta.mp4",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid4_planeta.mp4",
+      "type": "video",
+      "tags": [],
+      "size_bytes": 2904507
+    },
+    {
+      "name": "vid5_hupmix.mp4",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid5_hupmix.mp4",
+      "type": "video",
+      "tags": [],
+      "size_bytes": 4670163
+    },
+    {
+      "name": "webdev-preview-1773757479.png",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/webdev-preview-1773757479.png",
+      "type": "image",
+      "tags": [
+        "site"
+      ],
+      "size_bytes": 552493
+    },
+    {
+      "name": "workflows.md",
+      "runtime_path": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/workflows.md",
+      "type": "document",
+      "tags": [],
+      "size_bytes": 816,
+      "excerpt": "# Workflow Patterns\n\n## Sequential Workflows\n\nFor complex tasks, break operations into clear, sequential steps. It is often helpful to give Manus an overview of the process towards the beginning of SKILL.md:\n\n```markdown\nFilling a PDF form involves these steps:\n\n1. Analyze the form (run analyze_form.py)\n2. Create field mapping (edit fields.json)\n3. Validate mapping (run validate_fields.py)\n4. Fill the form (run fill_form.py)\n5. Verify output (run verify_output.py)\n```\n\n## Conditional Workflows\n\nFor tasks with branching logic, guide Manus through decision points:\n\n```markdown\n1. Determine the modification type:\n   **Creating new content?** → Follow \"Creation workflow\" below\n   **Editing existing content?** → Follow \"Editing workflow\" below\n\n2. Creation workflow: [steps]\n3. Editing workflow: [steps]\n```"
+    }
+  ],
+  "principle": "Hupmix e caso-escola. O pacote Manus vira referencia criativa reutilizavel para outras verticais."
+}

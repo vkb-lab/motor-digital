@@ -1,0 +1,106 @@
+# KOS Hupmix Manus Reference Index
+
+Status: READY
+
+## Counts
+
+- document: 32
+- image: 18
+- video: 5
+- other: 31
+- skill: 3
+- prompt: 1
+- automation: 10
+- storytelling: 5
+- instagram: 7
+- product: 7
+- character: 5
+- site: 4
+
+## Arquivos
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/0001_organic_deathbird.sql` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Admin.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/agendamento_videos.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/analise_automacao.md` | document | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/App.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/asset_urls.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/asset_urls_updated.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/auth.logout.test.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/captcha_info.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/captcha_info2.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/captcha_info3.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Cart.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/CartContext.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/ChatWidget.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Checkout.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Conceito do App de Vendas e Suporte Integrado ao Instagram/WhatsApp.md` | document | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/const.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/DashboardLayout.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/db.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/dns_status.txt` | document | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/env.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Estruturação do Fluxo de Atendimento Automatizado e Logística de Vendas Nacional.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_concept.png` | image | character, product
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_nobg.png` | image | character, product
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Guia Passo a Passo - ManyChat + DNS Registro.br.md` | document | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/home.test.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Home.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/IMG_20231026_084830431_HDR.jpg` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/index.css` | other | site
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/index.html` | document | site
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/index.ts` | other | site
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/insta_post1_lancamento.png` | image | instagram
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/insta_post2_beneficios.png` | image | instagram
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/insta_post4_como_usar.png` | image | instagram
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/instagram-video-storytelling.skill` | other | instagram, skill, storytelling
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/instagram_data.json` | document | instagram
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/llm.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/LOGOHUPMIX.jpeg` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/manychat_login_info.md` | document | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/melhor_envio_api_notes.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/melhorenvio.test.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/narrative-arc.md` | document | storytelling
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/OrderConfirmation.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/output-patterns.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/oxypower_product.jpg` | image | product
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/oxypower_product_nobg.png` | image | character, product
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_5DTQa4_image.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_aanrXi_image.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_LGJCYg_image.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_o4AU0f_image.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_TG0UZW_image.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/pasted_file_uOr0Uj_image.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Plano de Ação para Otimização do Instagram da HupMix.md` | document | instagram, storytelling
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Plano de Conteúdo e Roteiros de Marketing - Garoto Oxy Power.md` | document | character, product, storytelling
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/prompt-templates.md` | document | prompt
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/registro_br_notes.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Relatório Completo - Projeto HupMix/ Oxy Power.md` | document | product
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Relatório de Análise de Posicionamento no Instagram.md` | document | instagram
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/remove_bg.py` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/remove_bg_product.py` | other | product
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/routers.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/schema.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Screenshot_20260317-180805.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/Screenshot_20260317-182636.png` | image | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/screenshot_notes.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/shipping.test.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/shipping.ts` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/SKILL.md` | document | skill
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/status_verificacao.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/storytelling_garoto_op.md` | document | character, storytelling
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/stripe_test_result.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram-business-central.skill` | other | automation, skill
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram-central.ts` | other | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram-setup.md` | document | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram.test.ts` | other | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/telegram.ts` | other | automation
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/test_notes.txt` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/todo.md` | document | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/TrackOrder.tsx` | other | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid1_vem_ai.mp4` | video | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid2_solucao.mp4` | video | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid3_donas_casa.mp4` | video | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid4_planeta.mp4` | video | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/vid5_hupmix.mp4` | video | 
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/webdev-preview-1773757479.png` | image | site
+- `local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/workflows.md` | document | 

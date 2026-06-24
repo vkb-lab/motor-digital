@@ -1,0 +1,10 @@
+{
+  "status": "KOS_MANUS_REFERENCE_IMPORT_HARD_GATE_READY",
+  "created_at": "2026-06-24T10:01:00.986386",
+  "fixed": [
+    "pedido Manus entra antes do roteador antigo",
+    "pasta _incoming_packages formalizada",
+    "importador Manus criado",
+    "Operator Chat abre orquestrador para Manus"
+  ]
+}

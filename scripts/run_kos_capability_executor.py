@@ -19,6 +19,14 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
+    "manus_reference_importer": {
+        "name": "Hupmix Manus Reference Importer",
+        "script": "scripts/run_kos_hupmix_manus_reference_importer.py",
+        "report": "local_runtime/kos_reference_imports/hupmix_manus/status.json",
+        "autonomy_level": 2,
+        "permission": "local_readonly_report",
+        "external_write": False
+    },
     "process_learning_engine": {
         "name": "K-OS Process Learning Engine",
         "script": "scripts/run_kos_process_learning_engine.py",
@@ -124,6 +132,26 @@ def normalize(text: str) -> str:
 
 def blocked_hits(request: str):
     value = normalize(request)
+
+    # KOS_MANUS_REFERENCE_IMPORT_ROUTE_HARD_GATE_BEGIN
+    if any(x in value for x in [
+        "manus",
+        "pacote manus",
+        "referencia manus",
+        "referencia criativa",
+        "exportar para k-os",
+        "exportar para kos",
+        "materiais do hupmix",
+        "compativel com manus",
+        "melhor que manus",
+        "importar pacote"
+    ]):
+        return {
+            "route": "manus_reference_import",
+            "objective": "Importar pacote Manus/Hupmix como referencia criativa e conhecimento reutilizavel.",
+            "tasks": ["manus_reference_importer"]
+        }
+    # KOS_MANUS_REFERENCE_IMPORT_ROUTE_HARD_GATE_END
     return [term for term in BLOCKED_TERMS if term in value]
 
 def route_request(request: str):
@@ -332,6 +360,8 @@ def main():
                 event["next_step"] = "Revisar estado Hupmix no orquestrador."
         elif route["route"] == "universal_process_learning":
             event["next_step"] = "Conhecimento promovido: Hupmix virou caso-escola reutilizavel para outras verticais."
+        elif route["route"] == "manus_reference_import":
+            event["next_step"] = "Pacote Manus/Hupmix importado. Proximo: melhorar GP_VIDEO_02 com score, briefing e prompts."
         else:
             event["next_step"] = "Execucao segura concluida."
 
