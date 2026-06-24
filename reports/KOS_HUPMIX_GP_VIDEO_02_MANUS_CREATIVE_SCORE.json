@@ -1,0 +1,21 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_MANUS_CREATIVE_SCORE_READY",
+  "score_total": 62,
+  "level": "technical_preview_plus_reference",
+  "criteria": {
+    "uses_real_asset": 20,
+    "has_offer": 12,
+    "has_cta": 10,
+    "character_consistency": 6,
+    "visual_strength": 6,
+    "story_arc": 8
+  },
+  "gaps": [
+    "personagem ainda nao aparece como video vivo consistente",
+    "prova visual ainda depende de asset reaproveitado",
+    "edicao ainda simples",
+    "faltam cortes dinamicos e ritmo de social video"
+  ],
+  "target_score": 85,
+  "next_upgrade": "usar referencias Manus para briefing de editor, prompts visuais e preview mais forte"
+}

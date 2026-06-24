@@ -1,0 +1,23 @@
+{
+  "status": "KOS_GP_VIDEO_02_MANUS_PROMPT_PACK_READY",
+  "purpose": "Prompts para editor humano ou IA visual futura, sem executar IA paga automaticamente.",
+  "prompts": [
+    {
+      "id": "visual_character_consistency",
+      "prompt": "Criar cena vertical 9:16 com personagem Garoto Oxy como mascote comercial amigavel, energia de vendedor local, segurando ou apontando para Oxy Power 5L, estilo social media limpo, texto grande e legivel."
+    },
+    {
+      "id": "product_offer_card",
+      "prompt": "Criar card vertical 9:16 para Oxy Power 5L na HupMix, destacar R$ 49,90, beneficios sem cloro e oxigenio ativo, CTA WhatsApp, visual de varejo promocional moderno."
+    },
+    {
+      "id": "proof_scene_direction",
+      "prompt": "Editar cena de prova real mostrando antes, aplicacao e depois sem exagero, cortes rapidos, setas ou labels discretos, mantendo credibilidade visual."
+    }
+  ],
+  "blocked": {
+    "paid_ai_auto_run": true,
+    "publishing": true,
+    "fake_proof": true
+  }
+}

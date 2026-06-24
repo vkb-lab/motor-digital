@@ -1,0 +1,51 @@
+{
+  "status": "KOS_GP_VIDEO_02_MANUS_EDITOR_BRIEF_READY",
+  "title": "GP_VIDEO_02 — Garoto Oxy Power Manus-compatible",
+  "objective": "Transformar o preview tecnico em uma peca com narrativa, personagem, produto, prova e oferta.",
+  "format": "vertical 9:16, 20-30s",
+  "structure": [
+    {
+      "scene": 1,
+      "name": "Hook",
+      "screen_text": "O Garoto Oxy voltou",
+      "duration": "2-3s"
+    },
+    {
+      "scene": 2,
+      "name": "Produto",
+      "screen_text": "Oxy Power 5L",
+      "duration": "3-4s"
+    },
+    {
+      "scene": 3,
+      "name": "Prova real",
+      "screen_text": "Teste real / resultado real",
+      "duration": "8-12s"
+    },
+    {
+      "scene": 4,
+      "name": "Beneficio",
+      "screen_text": "Sem cloro + oxigenio ativo",
+      "duration": "4-5s"
+    },
+    {
+      "scene": 5,
+      "name": "Oferta",
+      "screen_text": "R$ 49,90 na HupMix",
+      "duration": "4-5s"
+    }
+  ],
+  "editor_notes": [
+    "usar ritmo rapido",
+    "manter texto grande e legivel",
+    "nao inventar prova visual",
+    "usar produto e personagem como identidade",
+    "publicacao somente apos OK humano"
+  ],
+  "assets": {
+    "source_video": "local_runtime/kos_video_previews/hupmix/gp_video_02_generated/GP_VIDEO_02_GENERATED.mp4",
+    "character_reference": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_concept.png",
+    "product_reference": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_concept.png",
+    "manus_index": "memory/kos_knowledge/KOS_HUPMIX_MANUS_REFERENCE_INDEX.json"
+  }
+}

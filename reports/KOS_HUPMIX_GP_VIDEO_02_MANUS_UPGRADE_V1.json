@@ -1,0 +1,19 @@
+{
+  "status": "KOS_HUPMIX_GP_VIDEO_02_MANUS_UPGRADE_V1_READY",
+  "score": "reports/KOS_HUPMIX_GP_VIDEO_02_MANUS_CREATIVE_SCORE.json",
+  "brief": "campaigns/hupmix_gp_recovery/GP_VIDEO_02_MANUS_EDITOR_BRIEF.json",
+  "prompt_pack": "campaigns/hupmix_gp_recovery/GP_VIDEO_02_MANUS_PROMPT_PACK.json",
+  "preview": "local_runtime/kos_video_previews/hupmix/gp_video_02_manus_style/GP_VIDEO_02_MANUS_STYLE_PREVIEW.mp4",
+  "storyboard": "local_runtime/kos_video_previews/hupmix/gp_video_02_manus_style/GP_VIDEO_02_MANUS_STYLE_STORYBOARD.png",
+  "source_video": "local_runtime/kos_video_previews/hupmix/gp_video_02_generated/GP_VIDEO_02_GENERATED.mp4",
+  "character_reference": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_concept.png",
+  "product_reference": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f/garoto_oxypower_concept.png",
+  "fallback_used": false,
+  "error": null,
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "human_gate_required": true
+  },
+  "next_step": "Validar preview Manus-style no Operator Chat. Se aprovado, criar pacote para editor/publicacao gateada."
+}

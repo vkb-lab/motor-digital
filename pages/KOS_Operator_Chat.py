@@ -2350,6 +2350,38 @@ def render_kos_orchestrator_mode_panel():
     st.markdown("### Proximo passo")
     st.info(next_step or "Aguardando novo pedido.")
 
+    # KOS_HUPMIX_MANUS_UPGRADE_INLINE_UI_BEGIN
+    if route.get("route") == "hupmix_manus_upgrade":
+        upgrade_status_path = root / "local_runtime" / "kos_hupmix_gp_video_02_manus_upgrade" / "status.json"
+        if upgrade_status_path.exists():
+            try:
+                up = json.loads(upgrade_status_path.read_text(encoding="utf-8"))
+                st.markdown("### GP_VIDEO_02 Manus-compatible")
+                st.json({
+                    "status": up.get("status"),
+                    "score": up.get("score"),
+                    "brief": up.get("brief"),
+                    "prompt_pack": up.get("prompt_pack"),
+                    "source_video": up.get("source_video"),
+                    "character_reference": up.get("character_reference"),
+                    "product_reference": up.get("product_reference"),
+                    "next_step": up.get("next_step")
+                })
+                preview_value = up.get("preview") or ""
+                preview_path = root / preview_value
+                if preview_value and preview_path.exists():
+                    st.video(str(preview_path))
+                    st.caption("Preview local Manus-compatible. Publicacao bloqueada ate OK humano.")
+                storyboard_value = up.get("storyboard") or ""
+                storyboard_path = root / storyboard_value
+                if storyboard_value and storyboard_path.exists():
+                    with st.expander("Storyboard", expanded=False):
+                        st.image(str(storyboard_path))
+            except Exception:
+                pass
+        return
+    # KOS_HUPMIX_MANUS_UPGRADE_INLINE_UI_END
+
     # KOS_MANUS_REFERENCE_IMPORT_INLINE_UI_BEGIN
     if route.get("route") == "manus_reference_import":
         manus_status_path = root / "local_runtime" / "kos_reference_imports" / "hupmix_manus" / "status.json"
@@ -2523,6 +2555,26 @@ def is_kos_manus_reference_import_request(text: str) -> bool:
     return any(term in value for term in terms)
 # KOS_MANUS_REFERENCE_IMPORT_DETECTOR_END
 
+
+# KOS_HUPMIX_MANUS_UPGRADE_DETECTOR_BEGIN
+def is_kos_hupmix_manus_upgrade_request(text: str) -> bool:
+    import unicodedata
+    value = str(text or "").strip().lower()
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    terms = [
+        "melhorar gp_video_02",
+        "melhorar gp video 02",
+        "upgrade gp_video_02",
+        "upgrade gp video 02",
+        "usar referencia manus",
+        "manus style",
+        "manus-compatible",
+        "score briefing prompts"
+    ]
+    return any(term in value for term in terms)
+# KOS_HUPMIX_MANUS_UPGRADE_DETECTOR_END
+
 request = st.text_area(
     "Pedido ao K-OS",
     placeholder="Exemplo: Criar uma campanha Hupmix para 7 dias sem publicar automaticamente",
@@ -2639,6 +2691,24 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
         st.session_state["kos_gp_video_01_lousa_rendered_inline"] = False
         st.info("Lousa visual fechada. Faca um novo pedido ao K-OS.")
 # KOS_GP_VIDEO_01_LOUSA_INLINE_VISIBLE_END
+
+# KOS_HUPMIX_MANUS_UPGRADE_PRIORITY_GATE_BEGIN
+if send and is_kos_hupmix_manus_upgrade_request(st.session_state.get("kos_operator_request_text", "")):
+    try:
+        kos_clear_specialized_panel_noise()
+    except Exception:
+        pass
+    st.session_state["kos_show_orchestrator_mode_panel"] = True
+    st.session_state["kos_show_capability_executor_panel"] = False
+    st.session_state["kos_show_capability_registry_panel"] = False
+    st.session_state["kos_show_research_continuity_center"] = False
+    st.session_state["kos_show_hupmix_next_video_production_panel"] = False
+    st.session_state["kos_orchestrator_request_text"] = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state["kos_last_operator_request"] = st.session_state.get("kos_operator_request_text", "").strip()
+    send = False
+    if hasattr(st, "rerun"):
+        st.rerun()
+# KOS_HUPMIX_MANUS_UPGRADE_PRIORITY_GATE_END
 
 # KOS_MANUS_REFERENCE_IMPORT_PRIORITY_GATE_BEGIN
 if send and is_kos_manus_reference_import_request(st.session_state.get("kos_operator_request_text", "")):
