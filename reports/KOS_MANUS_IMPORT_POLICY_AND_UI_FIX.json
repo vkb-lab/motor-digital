@@ -1,0 +1,10 @@
+{
+  "status": "KOS_MANUS_IMPORT_POLICY_AND_UI_FIX_READY",
+  "created_at": "2026-06-24T10:07:29.376157",
+  "fixed": [
+    "manus_reference_import nao deve ser bloqueado por politica generica",
+    "blocos Hupmix/GP_VIDEO_02 nao devem aparecer em rota Manus",
+    "UI do orquestrador fica isolada por rota"
+  ],
+  "next_step": "Reiniciar Operator Chat e testar importar pacote Manus Hupmix para K-OS."
+}

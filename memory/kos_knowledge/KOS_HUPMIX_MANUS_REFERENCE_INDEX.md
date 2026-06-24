@@ -3,7 +3,6 @@
 Status: READY
 
 ## Counts
-
 - document: 32
 - image: 18
 - video: 5

@@ -1,6 +1,6 @@
 {
   "status": "KOS_HUPMIX_MANUS_REFERENCE_INDEX_READY",
-  "created_at": "2026-06-24T10:01:03.492519",
+  "created_at": "2026-06-24T10:07:29.984890",
   "source_zip": "content_packs/_incoming_packages/Análise dos posicionamentos das lojas no Instagram.zip",
   "zip_sha256": "90924ea81e2f3ecde4bd8b5cd373ca874d7c9160998f8a1ad687ff6d7d83af5a",
   "extract_dir": "local_runtime/kos_reference_imports/hupmix_manus/an_lise_dos_posicionamentos_das_lojas_no_instagram_90924ea81e2f",

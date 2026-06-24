@@ -1,6 +1,6 @@
 {
   "status": "KOS_HUPMIX_GP_VIDEO_02_MANUS_UPGRADE_PLAN_READY",
-  "created_at": "2026-06-24T10:01:03.502023",
+  "created_at": "2026-06-24T10:07:29.992047",
   "current_state": "GP_VIDEO_02 tem preview tecnico gerado com asset real do Instagram.",
   "target_state": "Criar versao Manus-compatible com roteiro, score, briefing, prompts e plano de edicao.",
   "inputs": {

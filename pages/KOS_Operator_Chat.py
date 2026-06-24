@@ -2413,6 +2413,13 @@ def render_kos_orchestrator_mode_panel():
                 return
     # KOS_GP_VIDEO_02_GENERATED_VIDEO_UI_END
 
+    # KOS_NON_HUPMIX_ROUTE_UI_RETURN_BEGIN
+    # Depois de renderizar a UI da rota atual, não deixar blocos Hupmix vazarem
+    # para rotas universais, Manus, pesquisa ou registry.
+    if route.get("route") != "hupmix_creation_pipeline":
+        return
+    # KOS_NON_HUPMIX_ROUTE_UI_RETURN_END
+
     gp_report_path = root / "reports" / "KOS_HUPMIX_GP_VIDEO_02_REAL_ASSET_AUDIT.json"
     gp_report = {}
     if gp_report_path.exists():

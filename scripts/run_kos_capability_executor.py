@@ -341,6 +341,14 @@ def main():
     route = route_request(args.request)
     hits = blocked_hits(args.request)
 
+    # KOS_MANUS_IMPORT_POLICY_OVERRIDE_BEGIN
+    # Importar pacote Manus/Hupmix é ação local/read-only.
+    # Não publica, não usa IA paga, não faz deploy e não escreve externamente.
+    # Portanto não deve cair no bloqueio genérico de política.
+    if route.get("route") == "manus_reference_import":
+        hits = []
+    # KOS_MANUS_IMPORT_POLICY_OVERRIDE_END
+
     event = {
         "status": "KOS_CAPABILITY_EXECUTOR_RUN_READY",
         "run_id": run_id,
