@@ -1,0 +1,28 @@
+{
+  "id": "ki_publica",
+  "name": "Ki-Publica",
+  "type": "kos_product_capability_pack",
+  "owner_os": "K-OS",
+  "positioning": "Capability pack social-local do K-OS para campanha, aprovacao, publicacao supervisionada e relatorio.",
+  "not_the_whole_os": true,
+  "interface": "operator_chat_only",
+  "primary_tools": [
+    "ki_publica_campaign_draft",
+    "social_publish_readiness",
+    "safe_action_executor",
+    "connection_status"
+  ],
+  "tenants": ["casa_da_limpeza", "hupmix", "parada_atlantida"],
+  "guardrails": {
+    "auto_publish_enabled": false,
+    "auto_send_enabled": false,
+    "paid_ai_enabled": false,
+    "logged_browser_automation_enabled": false,
+    "human_gate_required": true
+  },
+  "evidence": {
+    "action_packet": "local_runtime/kos_action_router/latest_action_packet.json",
+    "safe_action": "local_runtime/kos_safe_actions/latest_safe_action.json",
+    "approval_queue": "live/human_decision_center/"
+  }
+}

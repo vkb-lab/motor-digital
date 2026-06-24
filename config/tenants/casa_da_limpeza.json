@@ -1,0 +1,29 @@
+{
+  "id": "casa_da_limpeza",
+  "name": "Casa da Limpeza",
+  "capability_pack": "ki_publica",
+  "client_permissions": "clients/casa_da_limpeza/permissions.json",
+  "status": "active_local_config",
+  "routing": {
+    "social_requests_route": "social_publish",
+    "default_social_target": "casa_da_limpeza",
+    "do_not_fallback_to": ["hupmix"]
+  },
+  "permissions_summary": {
+    "can_create_campaigns": true,
+    "can_create_posts": true,
+    "can_create_landing_pages": true,
+    "can_create_saas_projects": true,
+    "can_publish_external": false,
+    "can_edit_google_real": false,
+    "can_send_dm_real": false,
+    "can_create_real_ads": false,
+    "can_charge_real_money": false
+  },
+  "guardrails": {
+    "manual_approval_required": true,
+    "external_publish_enabled": false,
+    "real_money_actions_enabled": false,
+    "evidence_required": true
+  }
+}

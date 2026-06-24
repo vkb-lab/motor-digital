@@ -1,0 +1,42 @@
+{
+  "status": "KOS_TENANT_REGISTRY_READY",
+  "version": "2026-06-24.tenant_registry_v1",
+  "tenants": [
+    {
+      "id": "casa_da_limpeza",
+      "name": "Casa da Limpeza",
+      "aliases": ["casa da limpeza", "casad limpeza", "casa limpeza"],
+      "capability_packs": ["ki_publica"],
+      "client_permissions": "clients/casa_da_limpeza/permissions.json",
+      "config": "config/tenants/casa_da_limpeza.json",
+      "default_social_target": "casa_da_limpeza",
+      "status": "active_local_config",
+      "human_gate_required": true,
+      "external_publish_enabled": false
+    },
+    {
+      "id": "hupmix",
+      "name": "Hupmix",
+      "aliases": ["hupmix", "hup mix"],
+      "capability_packs": ["ki_publica"],
+      "client_permissions": "",
+      "config": "",
+      "default_social_target": "hupmix",
+      "status": "active_case_school",
+      "human_gate_required": true,
+      "external_publish_enabled": false
+    },
+    {
+      "id": "parada_atlantida",
+      "name": "Parada Atlantida",
+      "aliases": ["parada atlantida", "parada atlântida", "paradaatlantida"],
+      "capability_packs": ["ki_publica"],
+      "client_permissions": "clients/parada_atlantida/permissions.json",
+      "config": "",
+      "default_social_target": "parada_atlantida",
+      "status": "locked",
+      "human_gate_required": true,
+      "external_publish_enabled": false
+    }
+  ]
+}

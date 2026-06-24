@@ -1,0 +1,102 @@
+{
+  "status": "KOS_CONNECTION_REGISTRY_READY",
+  "version": "2026-06-24.read_only_connection_registry_v1",
+  "policy": {
+    "no_secret_values_in_registry": true,
+    "validation_mode": "read_only",
+    "allowed_evidence": ["configured_boolean", "masked_status", "file_exists", "git_remote_present"],
+    "blocked_evidence": ["raw_token", "raw_password", "raw_secret", "local token file contents"]
+  },
+  "connections": [
+    {
+      "id": "gemini_api",
+      "name": "Gemini API",
+      "provider": "Google",
+      "required_keys": ["GEMINI_API_KEY"],
+      "validator": "k_atlas.core.capabilities:ai_brain",
+      "risk": "paid_ai_possible",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "supabase_basic",
+      "name": "Supabase Basic",
+      "provider": "Supabase",
+      "required_keys": ["SUPABASE_URL", "SUPABASE_ANON_KEY"],
+      "validator": "k_atlas.core.capabilities:supabase_basic",
+      "risk": "external_database",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "supabase_admin",
+      "name": "Supabase Admin",
+      "provider": "Supabase",
+      "required_keys": ["SUPABASE_SERVICE_ROLE_KEY"],
+      "validator": "k_atlas.core.capabilities:supabase_admin",
+      "risk": "admin_secret",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "meta_app",
+      "name": "Meta App",
+      "provider": "Meta",
+      "required_keys": ["META_CLIENT_ID", "META_CLIENT_SECRET", "META_VERIFY_TOKEN"],
+      "validator": "k_atlas.core.capabilities:meta_app",
+      "risk": "external_social_api",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "instagram_publish",
+      "name": "Instagram Publish Token",
+      "provider": "Meta",
+      "required_keys": ["INSTAGRAM_ACCESS_TOKEN"],
+      "validator": "k_atlas.core.capabilities:instagram_publish",
+      "risk": "external_publish",
+      "status": "blocked_without_human_gate"
+    },
+    {
+      "id": "google_oauth",
+      "name": "Google OAuth",
+      "provider": "Google",
+      "required_keys": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+      "validator": "k_atlas.core.capabilities:google_oauth",
+      "risk": "external_oauth",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "gmail_oauth",
+      "name": "Gmail OAuth",
+      "provider": "Google",
+      "required_keys": ["GMAIL_CLIENT_ID", "GMAIL_CLIENT_SECRET"],
+      "validator": "k_atlas.core.capabilities:gmail_oauth",
+      "risk": "external_email",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "github_write",
+      "name": "GitHub Write",
+      "provider": "GitHub",
+      "required_keys": ["GITHUB_TOKEN"],
+      "validator": "k_atlas.core.capabilities:github_write",
+      "risk": "code_write",
+      "status": "validate_read_only"
+    },
+    {
+      "id": "render_blueprint",
+      "name": "Render Blueprint",
+      "provider": "Render",
+      "required_files": ["render.yaml"],
+      "validator": "file_exists:render.yaml",
+      "risk": "deploy_possible",
+      "status": "configured_file_read_only"
+    },
+    {
+      "id": "vercel_static_routes",
+      "name": "Vercel Static Routes",
+      "provider": "Vercel",
+      "required_files": ["vercel.json"],
+      "validator": "file_exists:vercel.json",
+      "risk": "deploy_possible",
+      "status": "configured_file_read_only"
+    }
+  ]
+}

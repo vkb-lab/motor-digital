@@ -1,0 +1,44 @@
+{
+  "status": "KOS_PRODUCT_CAPABILITY_PACKS_READY",
+  "version": "2026-06-24.product_capability_packs_v1",
+  "packs": [
+    {
+      "id": "ki_publica",
+      "name": "Ki-Publica",
+      "type": "product_capability_pack",
+      "status": "ACTIVE_AS_KOS_SOCIAL_CAPABILITY_PACK",
+      "positioning": "Capability pack social-publicador dentro do K-OS, nao substitui nem reduz o K-OS.",
+      "uses": [
+        "ki_publica_campaign_draft",
+        "social_publish_readiness",
+        "safe_action_executor",
+        "connection_status",
+        "operator_chat",
+        "approval_queue",
+        "brand_profile",
+        "content_calendar",
+        "reporting"
+      ],
+      "tenants": ["casa_da_limpeza", "hupmix", "parada_atlantida"],
+      "interface": "operator_chat_only",
+      "human_gate_required": true,
+      "external_publish_enabled": false,
+      "default_route": "social_publish",
+      "evidence_required": true
+    },
+    {
+      "id": "kos_saas_factory",
+      "name": "K-OS SaaS Factory",
+      "type": "product_capability_pack",
+      "status": "ACTIVE_LOCAL_DRAFT",
+      "positioning": "Geracao local/gateada de blueprints e mission packs SaaS dentro do K-OS.",
+      "uses": ["product_factory_draft", "saas_product_mission_pack", "safe_action_executor"],
+      "tenants": [],
+      "interface": "operator_chat_only",
+      "human_gate_required": true,
+      "external_publish_enabled": false,
+      "default_route": "products_saas",
+      "evidence_required": true
+    }
+  ]
+}
