@@ -154,10 +154,28 @@ def blocked_hits(request: str):
     # KOS_MANUS_REFERENCE_IMPORT_ROUTE_HARD_GATE_END
     return [term for term in BLOCKED_TERMS if term in value]
 
+
 def route_request(request: str):
     value = normalize(request)
 
-    # KOS_PROCESS_LEARNING_ROUTE_BEGIN
+    if any(x in value for x in [
+        "manus",
+        "pacote manus",
+        "referencia manus",
+        "referencia criativa",
+        "exportar para k-os",
+        "exportar para kos",
+        "materiais do hupmix",
+        "compativel com manus",
+        "melhor que manus",
+        "importar pacote"
+    ]):
+        return {
+            "route": "manus_reference_import",
+            "objective": "Importar pacote Manus/Hupmix como referencia criativa e conhecimento reutilizavel.",
+            "tasks": ["manus_reference_importer"]
+        }
+
     if any(x in value for x in [
         "aprender com", "expandir consciencia", "alimentar conhecimento",
         "processos para outras", "universalizar", "reutilizavel",
@@ -169,7 +187,6 @@ def route_request(request: str):
             "objective": "Transformar caso especifico em conhecimento reutilizavel para outras verticais.",
             "tasks": ["process_learning_engine"]
         }
-    # KOS_PROCESS_LEARNING_ROUTE_END
 
     if any(x in value for x in ["hupmix", "garoto oxy", "oxy power", "gp_video_02", "gp video 02"]):
         return {
@@ -190,6 +207,7 @@ def route_request(request: str):
         "objective": "Motor pronto. Nenhuma tarefa operacional necessaria.",
         "tasks": []
     }
+
 
 def can_execute(executor_id: str):
     spec = EXECUTORS.get(executor_id)

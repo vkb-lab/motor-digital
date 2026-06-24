@@ -16,21 +16,32 @@ REPORTS = ROOT / "reports"
 for p in [INBOX, RUNTIME, KNOWLEDGE, SKILLS, REPORTS]:
     p.mkdir(parents=True, exist_ok=True)
 
-def rel(path: Path) -> str:
+def rel(path):
     try:
         return str(path.relative_to(ROOT)).replace("\\", "/")
     except Exception:
         return str(path).replace("\\", "/")
 
-def sha256(path: Path) -> str:
+def sha256(path):
     h = hashlib.sha256()
     with path.open("rb") as f:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
 
-def slug(value: str) -> str:
+def slug(value):
     return re.sub(r"[^a-zA-Z0-9]+", "_", value).strip("_").lower() or "package"
+
+def write_json(path, data):
+    content = json.dumps(data, ensure_ascii=False, indent=2)
+    if path.exists() and path.read_text(encoding="utf-8", errors="ignore") == content:
+        return
+    path.write_text(content, encoding="utf-8")
+
+def write_text(path, content):
+    if path.exists() and path.read_text(encoding="utf-8", errors="ignore") == content:
+        return
+    path.write_text(content, encoding="utf-8")
 
 def latest_zip():
     zips = list(INBOX.glob("*.zip"))
@@ -39,16 +50,16 @@ def latest_zip():
     zips.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     return zips[0]
 
-def safe_extract(zip_path: Path, target: Path):
+def safe_extract(zip_path, target):
     target.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(zip_path, "r") as z:
-        for m in z.infolist():
-            name = m.filename.replace("\\", "/")
+        for member in z.infolist():
+            name = member.filename.replace("\\", "/")
             if name.startswith("/") or ".." in Path(name).parts:
                 continue
-            z.extract(m, target)
+            z.extract(member, target)
 
-def classify(path: Path):
+def classify(path):
     name = path.name.lower()
     ext = path.suffix.lower()
 
@@ -56,7 +67,7 @@ def classify(path: Path):
         kind = "image"
     elif ext in [".mp4", ".mov", ".m4v", ".avi", ".webm"]:
         kind = "video"
-    elif ext in [".md", ".txt", ".html", ".json", ".csv"]:
+    elif ext in [".md", ".txt", ".html", ".htm", ".json", ".csv"]:
         kind = "document"
     else:
         kind = "other"
@@ -79,22 +90,11 @@ def classify(path: Path):
 
     return kind, sorted(set(tags))
 
-def excerpt(path: Path):
+def excerpt(path):
     try:
         return path.read_text(encoding="utf-8", errors="ignore")[:900].strip()
     except Exception:
         return ""
-
-def write_json(path: Path, data: dict):
-    content = json.dumps(data, ensure_ascii=False, indent=2)
-    if path.exists() and path.read_text(encoding="utf-8", errors="ignore") == content:
-        return
-    path.write_text(content, encoding="utf-8")
-
-def write_text(path: Path, content: str):
-    if path.exists() and path.read_text(encoding="utf-8", errors="ignore") == content:
-        return
-    path.write_text(content, encoding="utf-8")
 
 def main():
     zip_path = latest_zip()
@@ -116,7 +116,20 @@ def main():
     if not extract_dir.exists():
         safe_extract(zip_path, extract_dir)
 
-    counts = {"document":0, "image":0, "video":0, "other":0, "skill":0, "prompt":0, "automation":0, "storytelling":0, "instagram":0, "product":0, "character":0}
+    counts = {
+        "document": 0,
+        "image": 0,
+        "video": 0,
+        "other": 0,
+        "skill": 0,
+        "prompt": 0,
+        "automation": 0,
+        "storytelling": 0,
+        "instagram": 0,
+        "product": 0,
+        "character": 0
+    }
+
     files = []
 
     for path in sorted([p for p in extract_dir.rglob("*") if p.is_file()]):
@@ -151,7 +164,7 @@ def main():
 
     write_json(KNOWLEDGE / "KOS_HUPMIX_MANUS_REFERENCE_INDEX.json", index)
 
-    md = ["# KOS Hupmix Manus Reference Index", "", "Status: READY", "", "## Counts", ""]
+    md = ["# KOS Hupmix Manus Reference Index", "", "Status: READY", "", "## Counts"]
     for k, v in counts.items():
         md.append(f"- {k}: {v}")
     md.append("")

@@ -1,0 +1,11 @@
+{
+  "status": "KOS_MANUS_REFERENCE_IMPORT_ROUTE_PRIORITY_FIX_READY",
+  "created_at": "2026-06-24T10:05:09.175977",
+  "fixed": [
+    "manus_reference_import agora vem antes de Hupmix",
+    "pedido Manus nao bloqueia por policy generica",
+    "Operator Chat tem gate prioritario para Manus",
+    "importador Manus garantido"
+  ],
+  "next_step": "Reiniciar e testar no Operator Chat."
+}
