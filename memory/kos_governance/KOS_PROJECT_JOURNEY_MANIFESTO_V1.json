@@ -1,0 +1,10 @@
+﻿{
+  "status": "KOS_PROJECT_JOURNEY_MANIFESTO_V1_READY",
+  "created_at": "2026-06-24 13:57:55",
+  "scope": "K-OS / K-Atlas strategic journey documentation",
+  "mission": "Transformar inteligencia artificial em operacao real, auditavel e reutilizavel.",
+  "vision": "Virar uma SaaS/OS multiagente com cockpit, memoria persistente, automacoes, campanhas e governanca.",
+  "current_stage": "nucleo operacional funcional com necessidade de compactacao de UI, centralizacao de politica e produto minimo",
+  "next_priority": "limpar Operator Chat, separar UI/Router/Executor e criar painel CTO leve",
+  "checkpoint": "kos-safe-cto-audit-gp-manus-v1"
+}
