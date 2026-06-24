@@ -1,0 +1,15 @@
+{
+  "status": "KOS_OPERATOR_CHAT_COMPACT_UI_V1_READY",
+  "created_at": "2026-06-24T13:53:23.796390",
+  "target": "pages/KOS_Operator_Chat.py",
+  "backup": "pages/KOS_Operator_Chat.py.kos_compact_ui_backup",
+  "changed": true,
+  "removed_helper_lines": 3,
+  "effects": [
+    "JSON tecnico recolhido em expander",
+    "texto Comece por aqui removido da resposta apos rotas reais",
+    "UI mais compacta",
+    "logica critica nao alterada"
+  ],
+  "rollback": "git checkout kos-safe-cto-audit-gp-manus-v1"
+}

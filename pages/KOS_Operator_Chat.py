@@ -7,6 +7,20 @@ from pathlib import Path
 
 import streamlit as st
 
+# KOS_OPERATOR_CHAT_COMPACT_UI_HELPERS_BEGIN
+def kos_compact_json(label, payload=None, **kwargs):
+    """Renderiza JSON tecnico fechado por padrao para reduzir carga visual."""
+    try:
+        with st.expander(label, expanded=False):
+            st.json(payload, **kwargs)
+    except Exception:
+        try:
+            st.json(payload)
+        except Exception:
+            pass
+# KOS_OPERATOR_CHAT_COMPACT_UI_HELPERS_END
+
+
 ROOT = Path(__file__).resolve().parents[1]
 LATEST_PACKET = ROOT / "local_runtime" / "kos_action_router" / "latest_action_packet.json"
 SAFE_ACTIONS_DIR = ROOT / "local_runtime" / "kos_safe_actions"
@@ -617,7 +631,7 @@ def render_kos_operator_file_intake_center():
                 index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
 
                 st.success(f"{len(saved)} arquivo(s) salvo(s) no K-OS.")
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "route": route,
                     "batch_dir": str(batch_dir.relative_to(root)).replace("\\", "/"),
                     "files": [{"name": x["original_name"], "stored_path": x["stored_path"], "size": x["size"]} for x in saved],
@@ -763,7 +777,7 @@ def render_kos_research_continuity_center():
         last_packet = st.session_state.get("kos_last_public_research_packet")
         if last_packet:
             st.info("Pesquisa publica registrada automaticamente.")
-            st.json({
+            kos_compact_json("Detalhes técnicos", {
                 "request_id": last_packet.get("request_id"),
                 "path": last_packet.get("stored_path"),
                 "policy": last_packet.get("policy")
@@ -836,7 +850,7 @@ def render_kos_research_continuity_center():
                 packet = kos_register_public_research_request_packet(query, active_url=active_url, operator_request=current_request)
                 st.session_state["kos_last_public_research_packet"] = packet
                 st.success("Pesquisa publica registrada no K-OS.")
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "request_id": packet.get("request_id"),
                     "path": packet.get("stored_path"),
                     "policy": packet.get("policy")
@@ -1022,7 +1036,7 @@ def render_kos_hupmix_review_gate():
                     st.caption("Midia remota nao abriu no player. Use o link da publicacao.")
         else:
             st.warning(status)
-            st.json(latest_result)
+            kos_compact_json("Detalhes técnicos", latest_result)
 
     manual_url = st.text_input(
         "URL manual da publicacao, se necessario",
@@ -1065,7 +1079,7 @@ def render_kos_hupmix_review_gate():
         path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
         st.session_state["kos_hupmix_review_approval_record"] = record
         st.success("OK humano registrado. Nenhuma publicacao foi executada.")
-        st.json({
+        kos_compact_json("Detalhes técnicos", {
             "status": record["status"],
             "approval_file": str(path.relative_to(root)).replace("\\", "/"),
             "next_step": record["decision"]["next_step"]
@@ -1216,7 +1230,7 @@ def render_kos_hupmix_garoto_oxy_history_review():
         st.write("Onde parou:", interpretation.get("where_project_stopped"))
         st.write("Status Instagram:", interpretation.get("instagram_latest_status"))
         st.write("Proxima acao recomendada:", interpretation.get("recommended_next_action"))
-        st.json({
+        kos_compact_json("Detalhes técnicos", {
             "caption_hits": gp_score.get("hits"),
             "seems_gp_oxy_related": gp_score.get("seems_gp_oxy_related"),
             "download": download,
@@ -1263,7 +1277,7 @@ def render_kos_hupmix_garoto_oxy_history_review():
         approval_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
         st.session_state["kos_hupmix_garoto_oxy_approval_record"] = record
         st.success("OK humano registrado. Nenhuma publicacao foi executada.")
-        st.json({
+        kos_compact_json("Detalhes técnicos", {
             "status": record["status"],
             "approval_file": str(approval_path.relative_to(root)).replace("\\", "/"),
             "next_step": record["decision"]["next_step"]
@@ -1290,7 +1304,7 @@ def render_kos_hupmix_garoto_oxy_history_review():
         adjustment_path = approval_dir / "hupmix_garoto_oxy_history_adjustment.json"
         adjustment_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
         st.warning("Ajuste registrado. Nenhuma publicacao foi executada.")
-        st.json({
+        kos_compact_json("Detalhes técnicos", {
             "status": record["status"],
             "adjustment_file": str(adjustment_path.relative_to(root)).replace("\\", "/")
         })
@@ -1449,7 +1463,7 @@ def render_kos_hupmix_next_video_production_panel():
         if factory_report_path.exists():
             try:
                 factory = json.loads(factory_report_path.read_text(encoding="utf-8"))
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "status": factory.get("status"),
                     "outputs": factory.get("outputs"),
                     "next_step": factory.get("next_step"),
@@ -1509,7 +1523,7 @@ def render_kos_hupmix_next_video_production_panel():
             path = approval_dir / "hupmix_gp_video_02_direction_approval.json"
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             st.success("OK criativo registrado. Nenhuma publicacao foi executada.")
-            st.json({
+            kos_compact_json("Detalhes técnicos", {
                 "status": record["status"],
                 "file": str(path.relative_to(root)).replace("\\", "/")
             })
@@ -1533,7 +1547,7 @@ def render_kos_hupmix_next_video_production_panel():
             path = approval_dir / "hupmix_gp_video_02_direction_adjustment.json"
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             st.warning("Ajuste registrado. Nenhuma publicacao foi executada.")
-            st.json({
+            kos_compact_json("Detalhes técnicos", {
                 "status": record["status"],
                 "file": str(path.relative_to(root)).replace("\\", "/")
             })
@@ -1650,7 +1664,7 @@ def render_kos_hupmix_gp_video_02_real_production_panel():
                 target.write_bytes(file.getbuffer())
                 saved.append(str(target.relative_to(root)).replace("\\", "/"))
             st.success("Assets salvos.")
-            st.json(saved)
+            kos_compact_json("Detalhes técnicos", saved)
 
         current_assets = [p for p in sorted(assets_dir.iterdir()) if p.is_file() and not p.name.startswith(".")]
         st.write("Assets atuais:", len(current_assets))
@@ -1719,7 +1733,7 @@ def render_kos_hupmix_gp_video_02_real_production_panel():
 
         if report:
             with st.expander("Relatorio tecnico", expanded=False):
-                st.json(report)
+                kos_compact_json("Detalhes técnicos", report)
 
     with tabs[4]:
         st.markdown("### Decisao humana")
@@ -1765,7 +1779,7 @@ def render_kos_hupmix_gp_video_02_real_production_panel():
             path = approval_dir / "hupmix_gp_video_02_real_preview_approval.json"
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             st.success("OK humano registrado. Nenhuma publicacao foi executada.")
-            st.json({"file": str(path.relative_to(root)).replace("\\", "/"), "status": record["status"]})
+            kos_compact_json("Detalhes técnicos", {"file": str(path.relative_to(root)).replace("\\", "/"), "status": record["status"]})
 
         if c2.button("Pedir ajuste / gravar mais material", use_container_width=True, key="kos_adjust_gp_video_02_real_preview"):
             record = {
@@ -1786,7 +1800,7 @@ def render_kos_hupmix_gp_video_02_real_production_panel():
             path = approval_dir / "hupmix_gp_video_02_real_preview_adjustment.json"
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             st.warning("Ajuste registrado. Nenhuma publicacao foi executada.")
-            st.json({"file": str(path.relative_to(root)).replace("\\", "/"), "status": record["status"]})
+            kos_compact_json("Detalhes técnicos", {"file": str(path.relative_to(root)).replace("\\", "/"), "status": record["status"]})
 # KOS_HUPMIX_GP_VIDEO_02_REAL_PRODUCTION_PANEL_END
 
 
@@ -1962,12 +1976,12 @@ def render_kos_capability_registry_panel():
 
         st.markdown("### Resumo operacional")
         if summary:
-            st.json(summary)
+            kos_compact_json("Detalhes técnicos", summary)
         else:
             st.warning("Resumo da auditoria nao encontrado.")
 
         st.markdown("### Politica ativa")
-        st.json(policy)
+        kos_compact_json("Detalhes técnicos", policy)
 
         st.markdown("### Leitura direta")
         st.write(
@@ -1999,7 +2013,7 @@ def render_kos_capability_registry_panel():
                 st.markdown(f"#### {c.get('name')}")
                 st.write(c.get("what_it_does"))
                 st.caption(c.get("path"))
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "id": c.get("id"),
                     "status": c.get("status"),
                     "nivel": c.get("autonomy_level"),
@@ -2024,7 +2038,7 @@ def render_kos_capability_registry_panel():
 
     with tabs[3]:
         st.markdown("### Inteligencia conectada")
-        st.json(intelligence)
+        kos_compact_json("Detalhes técnicos", intelligence)
 
         st.markdown("### O que esta conectado de verdade")
         st.write("- Python executor: executa scripts locais.")
@@ -2190,7 +2204,7 @@ def render_kos_capability_executor_panel():
         if last_run_path.exists():
             try:
                 last = json.loads(last_run_path.read_text(encoding="utf-8"))
-                st.json(last)
+                kos_compact_json("Detalhes técnicos", last)
             except Exception as exc:
                 st.warning(f"Nao foi possivel ler last run: {exc}")
         else:
@@ -2201,7 +2215,7 @@ def render_kos_capability_executor_panel():
         if status_path.exists():
             try:
                 status = json.loads(status_path.read_text(encoding="utf-8"))
-                st.json(status.get("policy", status))
+                kos_compact_json("Detalhes técnicos", status.get("policy", status))
             except Exception:
                 st.warning("Status do executor ainda nao carregado.")
         else:
@@ -2357,7 +2371,7 @@ def render_kos_orchestrator_mode_panel():
             try:
                 up = json.loads(upgrade_status_path.read_text(encoding="utf-8"))
                 st.markdown("### GP_VIDEO_02 Manus-compatible")
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "status": up.get("status"),
                     "score": up.get("score"),
                     "brief": up.get("brief"),
@@ -2390,7 +2404,7 @@ def render_kos_orchestrator_mode_panel():
                 manus = json.loads(manus_status_path.read_text(encoding="utf-8"))
                 st.markdown("### Referencia Manus importada")
                 st.write("O pacote Manus/Hupmix foi convertido em referencia criativa, skill e plano de upgrade reutilizavel.")
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "status": manus.get("status"),
                     "index": manus.get("index"),
                     "creative_skill": manus.get("creative_skill"),
@@ -2411,7 +2425,7 @@ def render_kos_orchestrator_mode_panel():
                 learning = json.loads(learning_path.read_text(encoding="utf-8"))
                 st.markdown("### Aprendizado promovido")
                 st.write("Hupmix foi registrado como caso-escola. O processo agora pode ser reutilizado em lojas, SaaS, agencias, clinicas e operacoes maiores.")
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "registry": learning.get("registry"),
                     "case_learning": learning.get("hupmix_case_learning"),
                     "next_step": learning.get("next_step")
@@ -2500,7 +2514,7 @@ def render_kos_orchestrator_mode_panel():
                 saved.append(str(target.relative_to(root)).replace("\\", "/"))
 
             st.success("Assets recebidos. Reprocessando automaticamente.")
-            st.json(saved)
+            kos_compact_json("Detalhes técnicos", saved)
 
             subprocess.run(
                 [sys.executable, "scripts\\run_kos_capability_executor.py", "--request", "resolver Hupmix GP_VIDEO_02 com assets reais"],
@@ -2525,7 +2539,7 @@ def render_kos_orchestrator_mode_panel():
             st.warning("Publicacao continua bloqueada. Proximo passo exige OK humano separado.")
 
     with st.expander("Modo avancado", expanded=False):
-        st.json(last_run)
+        kos_compact_json("Detalhes técnicos", last_run)
         st.code(result.get("stdout") or "")
         if result.get("stderr"):
             st.code(result.get("stderr"))
@@ -2664,7 +2678,7 @@ if st.session_state.get("kos_show_gp_video_01_lousa", False):
             _report = _kos_json.loads(_report_path.read_text(encoding="utf-8"))
             _outputs = _report.get("outputs", {})
             with st.expander("Registro tecnico do video", expanded=False):
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "status": _report.get("status"),
                     "mp4": _outputs.get("mp4"),
                     "mp4_size": _outputs.get("mp4_size"),
@@ -2899,8 +2913,8 @@ last_operator_data = st.session_state.get("kos_last_operator_data")
 if last_operator_data and last_operator_data.get("status") == "KOS_ACTION_PACKET_READY":
     show_operator_response(last_operator_data)
 else:
-    st.markdown("### Comece por aqui")
-    st.write("Digite um pedido ao K-OS na caixa acima. O K-OS escolhe a rota e mostra a proxima acao segura.")
+    pass  # KOS_COMPACT_UI removed helper text
+    pass  # KOS_COMPACT_UI removed helper text
 
     col_home_1, col_home_2 = st.columns(2)
 
@@ -2921,7 +2935,7 @@ else:
     if show_history:
         show_safe_action_history()
     else:
-        st.caption("Ultimo pedido e historico ficam ocultos por padrao para manter a tela limpa.")
+        pass  # KOS_COMPACT_UI removed helper text
 
 
 # K-OS visual approval board persistent render hook
@@ -3106,7 +3120,7 @@ def render_kos_gp_video_01_lousa_read_only():
             report = json.loads(report_path.read_text(encoding="utf-8"))
             outputs = report.get("outputs", {})
             with st.expander("Registro tecnico do video", expanded=False):
-                st.json({
+                kos_compact_json("Detalhes técnicos", {
                     "status": report.get("status"),
                     "mp4": outputs.get("mp4"),
                     "mp4_size": outputs.get("mp4_size"),
@@ -3137,3 +3151,5 @@ except Exception as exc:
     except Exception:
         pass
 # KOS_GP_VIDEO_01_LOUSA_READ_ONLY_RENDER_END
+
+# KOS_OPERATOR_CHAT_JSON_COMPACTED_V1
