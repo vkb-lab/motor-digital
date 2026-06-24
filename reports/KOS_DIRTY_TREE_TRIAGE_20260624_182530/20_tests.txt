@@ -1,0 +1,21 @@
+﻿=== py_compile brain gateway ===
+=== brain gateway contract tests ===
+.....F                                                                   [100%]
+================================== FAILURES ===================================
+_________ test_external_action_mentions_confirmation_only_when_needed _________
+
+    def test_external_action_mentions_confirmation_only_when_needed():
+        result = answer("publique isso no instagram")
+        assert_clean(result)
+        assert "confirmaþÒo" in result.user_response.lower() or "confirmacao" in result.user_response.lower()
+>       assert result.technical_evidence["risk"] == "external_action_requires_confirmation"
+E       AssertionError: assert 'read_only_or_local_safe' == 'external_act..._confirmation'
+E         
+E         - external_action_requires_confirmation
+E         + read_only_or_local_safe
+
+tests\test_kos_brain_gateway_contract.py:57: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_kos_brain_gateway_contract.py::test_external_action_mentions_confirmation_only_when_needed
+=== operator chat tests ===
+.........                                                                [100%]

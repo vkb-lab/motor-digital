@@ -1,0 +1,6 @@
+﻿M	k_atlas/saas_factory/__init__.py
+M	pages/KOS_Operator_Chat.py
+M	scripts/run_phase72c_orchestrator_request_box.py
+M	scripts/run_phase72f_orchestrator_action_router.py
+M	scripts/run_phase72g_safe_action_executor.py
+M	tests/test_phase72d_operator_chat_frontdoor.py

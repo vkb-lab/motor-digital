@@ -1,0 +1,25 @@
+﻿ M k_atlas/saas_factory/__init__.py
+ M pages/KOS_Operator_Chat.py
+ M scripts/run_phase72c_orchestrator_request_box.py
+ M scripts/run_phase72f_orchestrator_action_router.py
+ M scripts/run_phase72g_safe_action_executor.py
+ M tests/test_phase72d_operator_chat_frontdoor.py
+?? config/products/
+?? config/tenants/
+?? docs/KOS_OPERATOR_CHAT_VISUAL_IDENTITY.md
+?? memory/kos_governance/KOS_CONNECTION_REGISTRY.json
+?? memory/kos_governance/KOS_ORCHESTRATOR_CONSCIOUSNESS_V1.md
+?? memory/kos_governance/KOS_PRODUCT_CAPABILITY_PACKS.json
+?? memory/kos_governance/KOS_TENANT_REGISTRY.json
+?? memory/kos_governance/KOS_TOOL_REGISTRY.json
+?? memory/mission_planner/
+?? memory/saas_product_mission_pack/
+?? reports/KOS_DIRTY_TREE_TRIAGE_20260624_182530/
+?? scripts/run_chatgpt_bridge_runtime_status.py
+?? scripts/run_gmail_read_only_audit.py
+?? scripts/run_mission_queue_status.py
+?? scripts/run_product_factory.py
+?? scripts/run_runtime_control_status.py
+?? scripts/run_saas_product_mission_pack.py
+?? scripts/run_weekly_operator_workspace.py
+?? tests/test_kos_operator_brain_routing.py

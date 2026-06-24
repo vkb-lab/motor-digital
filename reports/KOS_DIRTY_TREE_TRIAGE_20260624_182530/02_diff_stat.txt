@@ -1,0 +1,7 @@
+﻿ k_atlas/saas_factory/__init__.py                   |   8 +-
+ pages/KOS_Operator_Chat.py                         | 547 ++++++++++++++++++++-
+ scripts/run_phase72c_orchestrator_request_box.py   |  13 +-
+ scripts/run_phase72f_orchestrator_action_router.py | 315 +++++++++++-
+ scripts/run_phase72g_safe_action_executor.py       | 484 ++++++++++++++++++
+ tests/test_phase72d_operator_chat_frontdoor.py     |  23 +-
+ 6 files changed, 1346 insertions(+), 44 deletions(-)
