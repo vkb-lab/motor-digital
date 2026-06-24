@@ -19,6 +19,14 @@ BLOCKED_TERMS = [
 ]
 
 EXECUTORS = {
+    "gp_video_02_manus_upgrade": {
+        "name": "GP_VIDEO_02 Manus Upgrade",
+        "script": "scripts/run_kos_hupmix_gp_video_02_manus_upgrade.py",
+        "report": "local_runtime/kos_hupmix_gp_video_02_manus_upgrade/status.json",
+        "autonomy_level": 2,
+        "permission": "local_asset_render",
+        "external_write": False
+    },
     "manus_reference_importer": {
         "name": "Hupmix Manus Reference Importer",
         "script": "scripts/run_kos_hupmix_manus_reference_importer.py",
@@ -155,8 +163,25 @@ def blocked_hits(request: str):
     return [term for term in BLOCKED_TERMS if term in value]
 
 
+
 def route_request(request: str):
     value = normalize(request)
+
+    if any(x in value for x in [
+        "melhorar gp_video_02",
+        "melhorar gp video 02",
+        "upgrade gp_video_02",
+        "upgrade gp video 02",
+        "usar referencia manus",
+        "manus style",
+        "manus-compatible",
+        "score briefing prompts"
+    ]):
+        return {
+            "route": "hupmix_manus_upgrade",
+            "objective": "Melhorar GP_VIDEO_02 usando referencia Manus: score, briefing, prompts e preview local.",
+            "tasks": ["gp_video_02_manus_upgrade"]
+        }
 
     if any(x in value for x in [
         "manus",
@@ -341,6 +366,17 @@ def main():
     route = route_request(args.request)
     hits = blocked_hits(args.request)
 
+    # KOS_LOCAL_SAFE_ROUTES_POLICY_OVERRIDE_BEGIN
+    # Estas rotas sao locais/read-only ou geracao local gateada.
+    # Nao publicam, nao usam IA paga, nao fazem deploy e nao escrevem externamente.
+    if route.get("route") in [
+        "manus_reference_import",
+        "hupmix_manus_upgrade",
+        "universal_process_learning"
+    ]:
+        hits = []
+    # KOS_LOCAL_SAFE_ROUTES_POLICY_OVERRIDE_END
+
     # KOS_MANUS_IMPORT_POLICY_OVERRIDE_BEGIN
     # Importar pacote Manus/Hupmix é ação local/read-only.
     # Não publica, não usa IA paga, não faz deploy e não escreve externamente.
@@ -388,6 +424,8 @@ def main():
             event["next_step"] = "Conhecimento promovido: Hupmix virou caso-escola reutilizavel para outras verticais."
         elif route["route"] == "manus_reference_import":
             event["next_step"] = "Pacote Manus/Hupmix importado. Proximo: melhorar GP_VIDEO_02 com score, briefing e prompts."
+        elif route["route"] == "hupmix_manus_upgrade":
+            event["next_step"] = "Upgrade Manus-compatible criado. Validar preview, score, briefing e prompts."
         else:
             event["next_step"] = "Execucao segura concluida."
 

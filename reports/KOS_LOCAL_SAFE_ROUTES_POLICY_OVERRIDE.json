@@ -1,0 +1,16 @@
+{
+  "status": "KOS_LOCAL_SAFE_ROUTES_POLICY_OVERRIDE_READY",
+  "created_at": "2026-06-24T10:34:54.136512",
+  "fixed": [
+    "hupmix_manus_upgrade nao deve ser bloqueado",
+    "manus_reference_import nao deve ser bloqueado",
+    "universal_process_learning nao deve ser bloqueado"
+  ],
+  "policy": {
+    "no_publish": true,
+    "no_paid_ai": true,
+    "no_deploy": true,
+    "no_external_write": true,
+    "human_gate_required_for_publication": true
+  }
+}
