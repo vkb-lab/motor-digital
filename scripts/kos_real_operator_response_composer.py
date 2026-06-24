@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import re
 from pathlib import Path
@@ -181,3 +181,4 @@ def compose_for_chat(raw_text: str, root: str | Path = ".") -> dict:
         "user_response": main.strip(),
         "technical_evidence": raw_text.strip(),
     }
+

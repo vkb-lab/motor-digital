@@ -537,7 +537,7 @@ def _kos_runtime_payload_to_text(payload) -> str:
 
 
 def _kos_compose_runtime_answer(raw_text: str, fallback: str = "Pedido recebido pelo K-OS.") -> dict:
-    """Separa resposta limpa de evid?ncia t?cnica."""
+    """Separa resposta limpa de evidencia tecnica."""
     try:
         from scripts.kos_real_operator_response_composer import compose_for_chat
         from pathlib import Path
@@ -563,7 +563,7 @@ def _kos_compose_runtime_answer(raw_text: str, fallback: str = "Pedido recebido 
 
 
 def show_safe_action_result(result: dict) -> None:
-    """Renderiza resultado operacional sem vazar bastidor t?cnico no corpo principal."""
+    """Renderiza resultado operacional sem vazar bastidor tecnico no corpo principal."""
     if not result:
         return
 
@@ -571,7 +571,7 @@ def show_safe_action_result(result: dict) -> None:
 
     if status != "KOS_SAFE_ACTION_READY":
         kos_note("Resposta n?o conclu?da", result.get("status", "erro desconhecido"), "danger")
-        with st.expander("Detalhes t?cnicos", expanded=False):
+        with st.expander("Detalhes tecnicos", expanded=False):
             kos_compact_json("Resultado bruto", result)
         return
 
@@ -582,8 +582,8 @@ def show_safe_action_result(result: dict) -> None:
     st.markdown("### Resposta operacional")
     st.markdown(composed["user_response"])
 
-    with st.expander("Detalhes t?cnicos", expanded=False):
-        st.caption("Evid?ncia t?cnica preservada fora da resposta principal.")
+    with st.expander("Detalhes tecnicos", expanded=False):
+        st.caption("Evidencia tecnica preservada fora da resposta principal.")
         kos_compact_json("Resultado local", result)
 
 def register_text_decision(command: str, detail: str = "") -> dict:
@@ -800,7 +800,7 @@ def render_hupmix_gp_lousa_preview(data=None):
         st.warning("Pedido de ajuste registrado. Nada foi publicado.")
 
 def show_operator_response(data: dict) -> None:
-    """Renderiza o Operator Chat como coworker operacional, n?o como painel t?cnico."""
+    """Renderiza o Operator Chat como coworker operacional, n?o como painel tecnico."""
     if not data:
         return
 
@@ -830,12 +830,46 @@ def show_operator_response(data: dict) -> None:
         fallback="Entendi. Vou verificar conex?es, mem?ria e rotas dispon?veis para responder com estado real.",
     )
 
+    # KOS_REAL_OPERATOR_FORCE_RESULT_BEGIN
+    # Se o Router retornou plano generico para Instagram, usa resultado real do ultimo safe action.
+    try:
+        _main = str(composed.get("user_response", ""))
+        _raw = str(raw_text or "")
+
+        _looks_instagram = "instagram" in (_main + " " + _raw).lower()
+        _looks_generic_plan = any(x in _main.lower() for x in [
+            "listar contas instagram",
+            "auditar contas instagram",
+            "pedido original",
+            "validar, em modo read-only",
+            "mostrar evidencia sanitizada",
+        ])
+        _looks_technical_leak = any(x in _main for x in [
+            "target=",
+            "status=",
+            "provider=",
+            "risco=",
+            "returncode=",
+            "publish bloqueado",
+            "blocked_without_human_gate",
+        ])
+
+        if _looks_instagram and (_looks_generic_plan or _looks_technical_leak):
+            from scripts.kos_real_operator_response_composer import latest_safe_action_answer
+            from pathlib import Path
+            _clean_latest = latest_safe_action_answer(globals().get("ROOT", Path.cwd()))
+            if _clean_latest and len(_clean_latest.strip()) > 40:
+                composed["user_response"] = _clean_latest.strip()
+    except Exception:
+        pass
+    # KOS_REAL_OPERATOR_FORCE_RESULT_END
+
     st.subheader("Resposta do K-OS")
     st.markdown(composed["user_response"])
 
     if packet_path or last_safe_result or data:
-        with st.expander("Detalhes t?cnicos", expanded=False):
-            st.caption("Router, evid?ncias, arquivos locais e bloqueios ficam aqui, fora da resposta principal.")
+        with st.expander("Detalhes tecnicos", expanded=False):
+            st.caption("Router, evidencias, arquivos locais e bloqueios ficam aqui, fora da resposta principal.")
 
             if isinstance(data, dict):
                 st.write("Rota interna:", data.get("route_label", data.get("route", "geral")))
@@ -851,7 +885,7 @@ def show_operator_response(data: dict) -> None:
             if last_safe_result:
                 kos_compact_json("Execu??o local", last_safe_result)
 
-    st.caption("Pr?ximos pedidos naturais: revisar, melhorar, comparar, preparar a??o ou confirmar quando houver a??o externa real.")
+    st.caption("Proximos pedidos naturais: revisar, melhorar, comparar, preparar acao ou confirmar quando houver acao externa real.")
 
 def is_kos_read_only_diagnostic_request(text: str) -> bool:
     """Detecta comandos locais de diagnostico que nao devem acionar Router nem Safe Action."""
