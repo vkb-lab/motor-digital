@@ -113,6 +113,31 @@ def main():
     zip_hash = sha256(zip_path)
     extract_dir = RUNTIME / f"{slug(zip_path.stem)}_{zip_hash[:12]}"
 
+    # KOS_MANUS_IMPORT_IDEMPOTENCY_BEGIN
+    # Se o mesmo ZIP ja foi importado, nao regravar arquivos rastreados em memory/reports.
+    # Apenas atualizar status runtime e sair limpo.
+    existing_index_path = KNOWLEDGE / "KOS_HUPMIX_MANUS_REFERENCE_INDEX.json"
+    existing_report_path = REPORTS / "KOS_HUPMIX_MANUS_REFERENCE_IMPORTER_V1.json"
+    try:
+        existing_index = json.loads(existing_index_path.read_text(encoding="utf-8")) if existing_index_path.exists() else {}
+    except Exception:
+        existing_index = {}
+
+    try:
+        existing_report = json.loads(existing_report_path.read_text(encoding="utf-8")) if existing_report_path.exists() else {}
+    except Exception:
+        existing_report = {}
+
+    if existing_index.get("zip_sha256") == zip_hash and existing_report.get("status") == "KOS_HUPMIX_MANUS_REFERENCE_IMPORTER_V1_READY":
+        runtime_event = dict(existing_report)
+        runtime_event["runtime_status"] = "KOS_HUPMIX_MANUS_REFERENCE_IMPORTER_ALREADY_IMPORTED_CLEAN"
+        runtime_event["checked_at"] = datetime.now().isoformat()
+        runtime_event["next_step"] = "Pacote Manus ja importado. Prosseguir para upgrade GP_VIDEO_02 Manus-compatible."
+        write_json(RUNTIME / "status.json", runtime_event)
+        print(json.dumps(runtime_event, ensure_ascii=False, indent=2))
+        return
+    # KOS_MANUS_IMPORT_IDEMPOTENCY_END
+
     if not extract_dir.exists():
         safe_extract(zip_path, extract_dir)
 

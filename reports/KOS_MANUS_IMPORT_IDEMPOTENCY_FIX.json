@@ -1,0 +1,11 @@
+{
+  "status": "KOS_MANUS_IMPORT_IDEMPOTENCY_FIX_READY",
+  "created_at": "2026-06-24T10:14:38.310751",
+  "fixed": [
+    "mesmo ZIP Manus nao regrava memory",
+    "mesmo ZIP Manus nao regrava reports",
+    "status vivo vai para local_runtime",
+    "evita sujeira de Git por timestamp"
+  ],
+  "target": "scripts/run_kos_hupmix_manus_reference_importer.py"
+}
