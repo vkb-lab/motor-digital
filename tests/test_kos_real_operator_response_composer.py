@@ -27,9 +27,21 @@ Guardrails ativos: sem publicacao automatica.
     result = compose_for_chat(raw)
     main = result["user_response"]
 
-    assert "Instagram conectado operacionalmente agora: Hupmix" in main
+    assert "Instagram conectado agora: Hupmix" in main
+    assert "Casa da Limpeza" in main
+    assert "Parada" in main
+    assert "Hupmix" in main
+    assert "Conta" in main or "@hupmix" in main
+    assert "Posso revisar" in main or "revisar" in main.lower()
     assert "O que posso acionar agora" not in main
     assert "Safe Action" not in main
     assert "Human Gate" not in main
     assert "Guardrails ativos" not in main
     assert "Token Meta" not in main
+    assert "target=" not in main
+    assert "status=" not in main
+    assert "provider=" not in main
+    assert "risco=" not in main
+    assert "returncode=" not in main
+    assert "publish bloqueado" not in main
+
