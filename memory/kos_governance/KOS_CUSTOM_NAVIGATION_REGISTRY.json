@@ -1,0 +1,29 @@
+{
+  "status": "KOS_CUSTOM_NAVIGATION_REGISTRY_READY",
+  "version": "1.0",
+  "principle": "show_core_hide_legacy_without_deleting_pages",
+  "official_core": [
+    "app.py",
+    "pages/KOS_Operator_Chat.py",
+    "pages/KOS_Unified_Command_Cockpit.py",
+    "pages/KOS_Runtime_Health.py",
+    "pages/KOS_Mission_Queue.py",
+    "pages/KOS_Safe_Execution_Review.py",
+    "pages/KOS_Human_Approval.py",
+    "app_render.py"
+  ],
+  "legacy_groups_to_hide": [
+    "K-Atlas numbered mass pages",
+    "K-Uni Marketplace pages",
+    "old command centers",
+    "duplicated gates",
+    "granular K-OS core pages 915-976",
+    "exposed GitHub admin/vault/publish/live/deploy pages"
+  ],
+  "rules": [
+    "do_not_move_pages",
+    "do_not_remove_pages",
+    "do_not_change_app_py_in_this_step",
+    "prepare_registry_first"
+  ]
+}

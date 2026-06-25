@@ -1,0 +1,23 @@
+{
+  "status": "KOS_SEQUENTIAL_WORK_ORDER_RUNNER_READY",
+  "version": "1.0",
+  "principle": "one_command_runs_ordered_safe_work",
+  "rules": [
+    "sequential_only",
+    "stop_on_failure",
+    "scope_locked",
+    "no_external_actions",
+    "no_auto_commit",
+    "no_secret_access",
+    "report_every_step",
+    "test_every_step"
+  ],
+  "phases": [
+    "planned",
+    "running",
+    "passed",
+    "failed",
+    "blocked"
+  ],
+  "initial_sequence": "personal_data_foundation"
+}

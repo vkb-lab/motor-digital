@@ -1,0 +1,25 @@
+{
+  "status": "KOS_PERSONAL_DATA_ESTATE_GUARDIAN_READY",
+  "version": "1.0",
+  "principle": "personal_data_is_private_estate",
+  "scope": "registry_only_no_external_access",
+  "protected_domains": [
+    "identity",
+    "accounts",
+    "documents",
+    "credentials",
+    "business_memory",
+    "family_records",
+    "financial_records",
+    "health_records"
+  ],
+  "guardrails": [
+    "do_not_expose_secrets",
+    "do_not_scan_unrequested_paths",
+    "do_not_upload_private_data",
+    "human_gate_for_external_transfer",
+    "report_only_sanitized_status"
+  ],
+  "status_script": "scripts/run_personal_data_estate_status.py",
+  "skill": "memory/kos_skills/KOS_SKILL_PERSONAL_DATA_ESTATE_GUARDIAN_V1.md"
+}

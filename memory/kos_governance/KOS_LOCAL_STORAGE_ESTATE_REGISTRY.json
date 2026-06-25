@@ -1,0 +1,23 @@
+{
+  "status": "KOS_LOCAL_STORAGE_ESTATE_REGISTRY_READY",
+  "version": "1.0",
+  "principle": "local_storage_must_be_mapped_before_automation",
+  "scope": "repo_declared_paths_only",
+  "allowed_roots": [
+    "memory",
+    "reports",
+    "docs",
+    "scripts",
+    "tests",
+    "pages"
+  ],
+  "forbidden_behaviors": [
+    "full_disk_scan",
+    "mass_hashing",
+    "file_moving",
+    "file_removal",
+    "secret_reading",
+    "local_runtime_reading"
+  ],
+  "status_script": "scripts/run_local_storage_estate_status.py"
+}

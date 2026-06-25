@@ -1,0 +1,22 @@
+{
+  "status": "KOS_RENDER_CLOUD_RUNTIME_POLICY_READY",
+  "version": "1.0",
+  "principle": "render_is_read_only_mobile_observatory",
+  "cloud_entrypoint": "app_render.py",
+  "blueprint": "render.yaml",
+  "allowed": [
+    "sanitized_reports",
+    "read_only_registries",
+    "mobile_status_cards",
+    "manual_deploy_readiness"
+  ],
+  "forbidden": [
+    "deploy_execution",
+    "secret_exposure",
+    "gmail_api_call",
+    "local_runtime_access",
+    "publish_send_delete",
+    "browser_automation"
+  ],
+  "next_step": "keep Render as read-only until explicit deploy approval"
+}
