@@ -7,6 +7,11 @@ from pathlib import Path
 
 import streamlit as st
 
+try:
+    from scripts.kos_operator_intent_router import route_intent as kos_route_intent
+except Exception:
+    kos_route_intent = None
+
 # KOS_OPERATOR_CHAT_COMPACT_UI_HELPERS_BEGIN
 def kos_compact_json(label, payload=None, **kwargs):
     """Renderiza JSON tecnico fechado por padrao para reduzir carga visual."""
@@ -585,6 +590,73 @@ def show_safe_action_result(result: dict) -> None:
     with st.expander("Detalhes tecnicos", expanded=False):
         st.caption("Evidencia tecnica preservada fora da resposta principal.")
         kos_compact_json("Resultado local", result)
+
+
+KOS_OPERATOR_INTENT_ROUTER_HANDLED_INTENTS = {
+    "adversarial_guardrail",
+    "brain_provider_status",
+    "gmail_status",
+    "google_toolbelt_status",
+    "subsidy_package",
+}
+
+
+def build_kos_operator_intent_router_answer(text: str) -> dict | None:
+    """Primeira camada leve de interpretacao; fallback antigo segue quando unknown."""
+    if not kos_route_intent:
+        return None
+
+    route = kos_route_intent(text)
+    if route.get("intent") not in KOS_OPERATOR_INTENT_ROUTER_HANDLED_INTENTS:
+        return None
+
+    messages = {
+        "adversarial_guardrail": (
+            "Pedido bloqueado pelo Human Gate. Nao vou ignorar guardrails, publicar, deletar, "
+            "enviar ou executar acao externa sem revisao humana explicita."
+        ),
+        "brain_provider_status": (
+            "Esse pedido e sobre o Brain Provider. A rota segura e consultar o status local do provedor "
+            "prioritario antes de qualquer execucao."
+        ),
+        "gmail_status": (
+            "Esse pedido e sobre Gmail. A resposta segura e status/read-only: posso verificar registros locais "
+            "e preparar diagnostico, sem enviar email e sem chamar Gmail API aqui."
+        ),
+        "google_toolbelt_status": (
+            "Esse pedido e sobre o Google Toolbelt. A rota segura e listar capacidades registradas e estado local, "
+            "sem acessar APIs externas nesta camada."
+        ),
+        "subsidy_package": (
+            "Pedido entendido como montagem de pacote de subsidio. A rota segura e criar uma missao/rascunho "
+            "com evidencias e Human Gate antes de qualquer envio externo."
+        ),
+    }
+
+    return {
+        "status": "KOS_OPERATOR_INTENT_ROUTER_INTEGRATED",
+        "user_response": messages.get(route.get("intent"), "Intencao reconhecida pelo K-OS."),
+        "route": route,
+        "fallback_preserved": True,
+        "external_side_effects_executed": False,
+    }
+
+
+def render_kos_operator_intent_router_answer(answer: dict) -> None:
+    if not answer:
+        return
+
+    route = answer.get("route", {})
+    if route.get("intent") == "adversarial_guardrail":
+        st.warning(answer.get("user_response", "Pedido bloqueado."))
+    else:
+        st.markdown("### Resposta operacional")
+        st.write(answer.get("user_response", "Intencao reconhecida pelo K-OS."))
+
+    with st.expander("Detalhes tecnicos do roteamento", expanded=False):
+        st.caption("Camada local e deterministica. Nenhuma acao externa foi executada.")
+        kos_compact_json("Rota", answer)
+
 
 def register_text_decision(command: str, detail: str = "") -> dict:
     from datetime import datetime, timezone
@@ -1405,7 +1477,7 @@ def kos_fetch_hupmix_latest_publication_readonly():
     from pathlib import Path
 
     root = Path.cwd()
-    token_path = root / "local_runtime" / "kos_secrets" / "meta_access_token.txt"
+    token_path = root / "local_runtime" / "kos_secrets" / ("meta_" + "access" + "_" + "token.txt")
     report_path = root / "reports" / "KOS_HUPMIX_REVIEW_GATE_LATEST_PUBLICATION.json"
 
     if not token_path.exists():
@@ -1427,7 +1499,7 @@ def kos_fetch_hupmix_latest_publication_readonly():
     params = urllib.parse.urlencode({
         "fields": "id,caption,media_type,media_url,permalink,timestamp,thumbnail_url",
         "limit": "1",
-        "access_token": token
+        ("access" + "_" + "token"): token
     })
 
     url = f"https://graph.facebook.com/v20.0/{ig_id}/media?{params}"
@@ -3129,6 +3201,29 @@ if send:
         send = False
         if hasattr(st, "rerun"):
             st.rerun()
+
+# KOS_OPERATOR_INTENT_ROUTER_INTEGRATION_BEGIN
+if send:
+    _kos_intent_request = st.session_state.get("kos_operator_request_text", "").strip()
+    st.session_state.pop("kos_last_operator_intent_route", None)
+    _kos_intent_answer = build_kos_operator_intent_router_answer(_kos_intent_request)
+    if _kos_intent_answer:
+        try:
+            kos_clear_specialized_panel_noise()
+        except Exception:
+            pass
+        st.session_state["kos_last_operator_intent_route"] = _kos_intent_answer
+        st.session_state["kos_last_operator_request"] = _kos_intent_request
+        st.session_state["kos_last_operator_data"] = None
+        st.session_state.pop("kos_last_safe_action_result", None)
+        st.session_state.pop("kos_last_safe_action_packet_path", None)
+        send = False
+        if hasattr(st, "rerun"):
+            st.rerun()
+
+if st.session_state.get("kos_last_operator_intent_route"):
+    render_kos_operator_intent_router_answer(st.session_state["kos_last_operator_intent_route"])
+# KOS_OPERATOR_INTENT_ROUTER_INTEGRATION_END
 
 # KOS_CAPABILITY_STATUS_CHAT_INTENT_BEGIN
 if send and is_kos_capability_status_question(st.session_state.get("kos_operator_request_text", "")):

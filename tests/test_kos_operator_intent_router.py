@@ -6,7 +6,7 @@ from scripts.kos_operator_intent_router import route_intent
 def test_operator_intent_router_routes_known_intents():
     assert route_intent("abrir operator chat")["intent"] == "operator_chat"
     assert route_intent("ver runtime health")["intent"] == "runtime_health"
-    assert route_intent("status gmail")["intent"] == "runtime_health"
+    assert route_intent("status gmail")["intent"] == "gmail_status"
 
 
 def test_operator_intent_router_is_isolated_and_safe():
