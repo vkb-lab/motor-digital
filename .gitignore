@@ -45,3 +45,4 @@ local_runtime/kos_reference_imports/
 /local_runtime/google_oauth/*.secret
 /reports/gmail_operator/*_raw.json
 /CHAT.txt
+/reports/gmail_operator/
