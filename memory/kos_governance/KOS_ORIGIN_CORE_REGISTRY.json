@@ -1,0 +1,71 @@
+{
+  "status": "KOS_ORIGIN_CORE_REGISTRY_ACTIVE",
+  "version": "1.0",
+  "source_of_truth": "reports/KOS_ORIGIN_TO_DESTINATION_DOSSIER_20260625_155037.md",
+  "first_commit": "eb0db4e",
+  "first_commit_title": "Criar app.py com interface Streamlit - Torre de Controle IA",
+  "essence": "K-OS é o sistema operacional privado de Rogger para transformar visão em empresas digitais executáveis, com IA no centro, ferramentas como braços, GitHub como memória, Python como executor, Human Gate como proteção e cada projeto como matéria-prima para gerar novos unicórnios.",
+  "core_cycle": [
+    "human_intent",
+    "memory_context",
+    "routing",
+    "risk_assessment",
+    "safe_execution_or_human_gate",
+    "evidence",
+    "reusable_learning"
+  ],
+  "official_home": "app.py",
+  "cloud_readonly": "app_render.py",
+  "priority_core_files": [
+    "app.py",
+    "pages/KOS_Operator_Chat.py",
+    "pages/KOS_Unified_Command_Cockpit.py",
+    "scripts/run_phase72f_orchestrator_action_router.py",
+    "scripts/run_phase72g_safe_action_executor.py",
+    "scripts/run_kos_brain_provider_status.py",
+    "scripts/run_google_ai_toolbelt_bridge.py",
+    "scripts/run_gmail_operator.py",
+    "app_render.py",
+    "memory/kos_governance/KOS_BRAIN_PROVIDER_PRIORITY_REGISTRY.json",
+    "memory/kos_governance/KOS_GOOGLE_AI_TOOLBELT_REGISTRY.json"
+  ],
+  "core_modules": [
+    "Local Command Center",
+    "Operator Chat",
+    "Unified Command Cockpit",
+    "Brain Provider Priority",
+    "Gmail Operator",
+    "Google Toolbelt",
+    "Render Read-Only Mobile Runtime",
+    "Human Gate",
+    "Safe Execution",
+    "Mission Queue"
+  ],
+  "external_tools_role": "subordinate_tools_not_replacements",
+  "private_doctrine": "K-OS remains private and sovereign to Rogger.",
+  "legacy_to_hide": [
+    "K-Atlas numbered mass pages",
+    "K-Uni Marketplace pages",
+    "old command centers",
+    "duplicated gates",
+    "granular K-OS core pages 915-976",
+    "exposed GitHub admin/vault/publish/live/deploy pages"
+  ],
+  "dangerous_if_exposed": [
+    "raw Gmail send/trash/delete/modify flows",
+    "GitHub admin bridge",
+    "vault and credential pages",
+    "publish/live execution pages",
+    "deploy pages",
+    "safe executor without context",
+    "browser automation without explicit authorization"
+  ],
+  "destination": {
+    "private": true,
+    "local_first": true,
+    "cloud_mode": "read_only_mobile_observatory",
+    "products_are_outputs": true,
+    "external_tools_are_subordinate": true
+  },
+  "next_patch_recommended": "K-OS Custom Navigation v1"
+}
