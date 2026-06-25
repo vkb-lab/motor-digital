@@ -1,11 +1,11 @@
-﻿services:
+services:
   - type: web
-    name: k-atlas-os
+    name: kos-cloud-status
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false
-    autoDeploy: true
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: streamlit run app_render.py --server.port $PORT --server.address 0.0.0.0
+    autoDeploy: false
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
@@ -13,9 +13,13 @@
         value: render
       - key: KOS_EXTERNAL_PUBLISH_ENABLED
         value: false
+      - key: KOS_LIVE_CONNECTORS_ENABLED
+        value: false
+      - key: KOS_BROWSER_OPERATOR_ENABLED
+        value: false
 
   - type: static
     name: k-atlas-assets
     buildCommand: echo "K-Atlas static assets ready"
     staticPublishPath: public
-    autoDeploy: true
+    autoDeploy: false
