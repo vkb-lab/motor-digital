@@ -1,0 +1,153 @@
+{
+  "status": "KOS_BRAIN_PROVIDER_PRIORITY_ACTIVE",
+  "version": "1.0",
+  "principle": "K-OS must consult internal evolutionary intelligence first, then local free AI, then free daily cloud quotas, and only after that paid/external providers with approval.",
+  "routing_order": [
+    {
+      "rank": 1,
+      "id": "kos_internal_evolutionary",
+      "name": "K-OS Internal Evolutionary Intelligence",
+      "type": "internal_orchestrator",
+      "cost": "zero",
+      "token_usage": "none",
+      "enabled_by_default": true,
+      "role": "First brain layer: memory, governance, policies, registries, OrchestratorAgent, Brain Gateway and known project context.",
+      "use_for": [
+        "understand user intent",
+        "consult Bau",
+        "check project state",
+        "choose tool or provider",
+        "apply guardrails",
+        "plan execution",
+        "avoid unnecessary API calls"
+      ],
+      "must_happen_before_external_ai": true
+    },
+    {
+      "rank": 2,
+      "id": "ollama_local",
+      "name": "Ollama Local",
+      "type": "local_free_ai",
+      "cost": "zero_after_installation",
+      "token_usage": "local_only",
+      "enabled_by_default": false,
+      "activation_condition": "ollama executable found and http://localhost:11434/api/tags reachable with at least one model",
+      "role": "Local free model provider for private, iterative, non-critical reasoning.",
+      "use_for": [
+        "drafting",
+        "summarization",
+        "local reasoning",
+        "private analysis",
+        "cheap first-pass generation"
+      ],
+      "avoid_for": [
+        "high-stakes legal/financial/medical decisions",
+        "tasks requiring current internet facts",
+        "actions needing official provider APIs"
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "lmstudio_local",
+      "name": "LM Studio Local Server",
+      "type": "local_free_ai",
+      "cost": "zero_after_installation",
+      "token_usage": "local_only",
+      "enabled_by_default": false,
+      "activation_condition": "OpenAI-compatible local endpoint configured by KOS_LMSTUDIO_BASE_URL",
+      "role": "Alternative local model provider if LM Studio server is running.",
+      "use_for": [
+        "local chat completions",
+        "model comparison",
+        "private drafts"
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "localai_or_vllm",
+      "name": "LocalAI / vLLM / OpenAI-compatible local server",
+      "type": "local_free_ai",
+      "cost": "zero_after_installation",
+      "token_usage": "local_or_self_hosted",
+      "enabled_by_default": false,
+      "activation_condition": "KOS_LOCAL_OPENAI_BASE_URL configured and healthcheck reachable",
+      "role": "Advanced local/self-hosted OpenAI-compatible fallback.",
+      "use_for": [
+        "local inference",
+        "batch generation",
+        "provider testing"
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "gemini_free_guarded",
+      "name": "Gemini API Free Guarded",
+      "type": "cloud_free_quota",
+      "cost": "free_tier_first",
+      "token_usage": "daily_quota_limited",
+      "enabled_by_default": false,
+      "activation_condition": "GEMINI_API_KEY present and KOS_AI_GEMINI_ENABLED=true",
+      "budget_controls": {
+        "daily_request_budget_env": "KOS_GEMINI_DAILY_REQUEST_BUDGET",
+        "daily_token_budget_env": "KOS_GEMINI_DAILY_TOKEN_BUDGET",
+        "default_daily_request_budget": 25,
+        "default_daily_token_budget": 100000,
+        "hardcode_google_limits": false,
+        "reason": "Official free tier/rate limits change by model and account tier. K-OS uses local policy budgets and provider errors."
+      },
+      "role": "Cloud AI provider for tasks where Gemini is clearly better than local models.",
+      "use_for": [
+        "complex reasoning",
+        "Google ecosystem tasks",
+        "startup/subsidy narrative",
+        "code/design analysis",
+        "large context tasks when local model is insufficient"
+      ],
+      "human_gate": [
+        "increase_budget",
+        "enable_billing",
+        "send_sensitive_data",
+        "production_use"
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "external_paid_locked",
+      "name": "External Paid Providers Locked",
+      "type": "external_paid_or_sensitive",
+      "cost": "paid_or_sensitive",
+      "token_usage": "blocked_until_approved",
+      "enabled_by_default": false,
+      "activation_condition": "vault configured, provider enabled, budget approved, Human Gate confirmed",
+      "providers": [
+        "openai",
+        "anthropic",
+        "groq",
+        "mistral",
+        "deepseek",
+        "runway",
+        "elevenlabs",
+        "luma",
+        "sora",
+        "comfyui_remote"
+      ],
+      "role": "Last resort or specialized capability provider.",
+      "human_gate": [
+        "paid_usage",
+        "external_data_transfer",
+        "production_execution",
+        "publish_send_delete_deploy"
+      ]
+    }
+  ],
+  "decision_policy": {
+    "always_start_with_internal_context": true,
+    "prefer_zero_cost": true,
+    "prefer_local_for_private_data": true,
+    "prefer_free_cloud_for_google_stack_and_hard_reasoning": true,
+    "block_paid_by_default": true,
+    "do_not_claim_provider_active_without_healthcheck": true,
+    "log_provider_choice": true,
+    "log_reason_for_escalation": true
+  }
+}
