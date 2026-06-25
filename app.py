@@ -83,6 +83,73 @@ LEGACY_GROUPS = [
     "Paginas K-OS core granulares de checkpoints antigos",
 ]
 
+OFFICIAL_NAVIGATION = [
+    {
+        "label": "Entrar no Operator Chat",
+        "name": "KOS Operator Chat",
+        "path": "pages/KOS_Operator_Chat.py",
+        "href": "/KOS_Operator_Chat",
+        "description": "Frontdoor operacional do K-OS: intenção, roteamento, Gmail, Toolbelt, Brain, sequências e Human Gate.",
+        "primary": True,
+    },
+    {
+        "label": "Abrir Unified Command Cockpit",
+        "name": "Unified Command Cockpit",
+        "path": "pages/KOS_Unified_Command_Cockpit.py",
+        "href": "/KOS_Unified_Command_Cockpit",
+        "description": "Cockpit consolidado para comando local, filas, runtime e evidência.",
+    },
+    {
+        "label": "Ver Mission Queue",
+        "name": "Mission Queue",
+        "path": "pages/KOS_Mission_Queue.py",
+        "href": "/KOS_Mission_Queue",
+        "description": "Fila de missões e próximos passos governados.",
+    },
+    {
+        "label": "Abrir Human Approval",
+        "name": "Human Approval",
+        "path": "pages/KOS_Human_Approval.py",
+        "href": "/KOS_Human_Approval",
+        "description": "Gate humano para decisões sensíveis.",
+    },
+    {
+        "label": "Ver Runtime Health",
+        "name": "Runtime Health",
+        "path": "pages/KOS_Runtime_Health.py",
+        "href": "/KOS_Runtime_Health",
+        "description": "Saúde operacional local e estado de execução.",
+    },
+    {
+        "label": "Ver Gmail Status",
+        "name": "Gmail Status",
+        "path": "reports/KOS_GMAIL_REAL_CONNECTION_STATUS.md",
+        "href": "",
+        "description": "Status local/read-only, sem chamada Gmail API.",
+    },
+    {
+        "label": "Ver Google Toolbelt",
+        "name": "Google Toolbelt",
+        "path": "memory/kos_governance/KOS_GOOGLE_AI_TOOLBELT_REGISTRY.json",
+        "href": "",
+        "description": "Registry local das ferramentas Google subordinadas.",
+    },
+    {
+        "label": "Ver Brain Provider",
+        "name": "Brain Provider",
+        "path": "memory/kos_governance/KOS_BRAIN_PROVIDER_PRIORITY_REGISTRY.json",
+        "href": "",
+        "description": "Prioridade local de cérebro/provedor.",
+    },
+    {
+        "label": "Abrir Reports/Evidence",
+        "name": "Reports/Evidence",
+        "path": "reports/",
+        "href": "",
+        "description": "Evidências locais e relatórios auditáveis.",
+    },
+]
+
 
 def inject_style() -> None:
     st.markdown(
@@ -116,6 +183,42 @@ def inject_style() -> None:
             gap: 0.75rem;
             margin: 0.75rem 0 1rem;
         }
+        .kos-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.75rem;
+            margin: 1rem 0 1.25rem;
+        }
+        .kos-nav-action {
+            display: block;
+            min-height: 126px;
+            border: 1px solid #cfd8e6;
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 0.95rem;
+            color: #172033 !important;
+            text-decoration: none !important;
+        }
+        .kos-nav-action:hover {
+            border-color: #245bdb;
+            box-shadow: 0 8px 24px rgba(20, 36, 64, 0.08);
+        }
+        .kos-nav-action.primary {
+            border: 2px solid #245bdb;
+            background: #f3f7ff;
+            min-height: 154px;
+        }
+        .kos-nav-label {
+            display: block;
+            font-weight: 800;
+            margin-bottom: 0.45rem;
+        }
+        .kos-nav-desc {
+            display: block;
+            color: #667085;
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
         .kos-card-title {
             font-weight: 750;
             margin-bottom: 0.35rem;
@@ -134,6 +237,12 @@ def inject_style() -> None:
             font-size: 0.78rem;
             color: #172033;
             background: #f8fafc;
+        }
+        [data-testid="stSidebarNav"] {
+            display: none;
+        }
+        [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] a {
+            text-decoration: none;
         }
         </style>
         """,
@@ -186,16 +295,64 @@ def render_json_expander(label: str, payload: dict[str, Any]) -> None:
         st.code(json.dumps(payload, ensure_ascii=False, indent=2), language="json")
 
 
+def render_official_navigation(status: dict[str, Any]) -> None:
+    st.subheader("Navegação oficial K-OS")
+    st.markdown(
+        """
+        <section class="kos-warning">
+          <div class="kos-card-title">Páginas legadas em modo avançado</div>
+          <div class="kos-card-meta">
+            A navegação automática gigante do Streamlit foi reduzida visualmente nesta home.
+            As páginas legadas continuam existindo no diretório pages/ e não foram movidas nem deletadas.
+          </div>
+        </section>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    cards = ['<div class="kos-nav-grid">']
+    for item in OFFICIAL_NAVIGATION:
+        path = item["path"]
+        exists = path.endswith("/") or bool(status["core_paths"].get(path, {}).get("exists")) or (ROOT / path).exists()
+        href = item.get("href") or "#"
+        classes = "kos-nav-action primary" if item.get("primary") else "kos-nav-action"
+        badge = "found" if exists else "read-only"
+        cards.append(
+            f"""
+            <a class="{classes}" href="{html_escape(href)}" target="_self">
+              <span class="kos-nav-label">{html_escape(item["label"])}</span>
+              <span class="kos-nav-desc">{html_escape(item["description"])}</span>
+              <span class="kos-chip">{html_escape(item["name"])}</span>
+              <span class="kos-chip">{badge}</span>
+            </a>
+            """
+        )
+    cards.append("</div>")
+    st.markdown("\n".join(cards), unsafe_allow_html=True)
+
+
+def render_official_sidebar() -> None:
+    with st.sidebar:
+        st.markdown("### Navegação oficial K-OS")
+        st.markdown("[Entrar no Operator Chat](/KOS_Operator_Chat)")
+        st.markdown("[Unified Command Cockpit](/KOS_Unified_Command_Cockpit)")
+        st.markdown("[Mission Queue](/KOS_Mission_Queue)")
+        st.markdown("[Human Approval](/KOS_Human_Approval)")
+        st.markdown("[Runtime Health](/KOS_Runtime_Health)")
+        st.caption("Legado/avançado: páginas antigas seguem no diretório pages/, mas fora da navegação oficial desta home.")
+
+
 def main() -> None:
     st.set_page_config(
         page_title="K-OS Local Command Center",
         page_icon="K",
         layout="wide",
-        initial_sidebar_state="expanded",
+        initial_sidebar_state="collapsed",
     )
     inject_style()
 
     status = build_status()
+    render_official_sidebar()
 
     st.title("K-OS Local Command Center")
     st.markdown(
@@ -222,6 +379,8 @@ def main() -> None:
         st.code(status["git"]["status_short"], language="text")
     else:
         st.caption("Git status real: workspace limpo.")
+
+    render_official_navigation(status)
 
     st.subheader("Nucleo oficial")
     st.markdown('<div class="kos-grid">', unsafe_allow_html=True)

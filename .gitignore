@@ -46,3 +46,5 @@ local_runtime/kos_reference_imports/
 /reports/gmail_operator/*_raw.json
 /CHAT.txt
 /reports/gmail_operator/
+/memory/control_plane/events.jsonl
+/memory/supervisor_autopilot/autopilot_runs.json
