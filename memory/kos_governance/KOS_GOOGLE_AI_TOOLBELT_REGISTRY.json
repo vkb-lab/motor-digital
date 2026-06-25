@@ -1,0 +1,221 @@
+{
+  "status": "KOS_GOOGLE_AI_TOOLBELT_READY",
+  "version": "1.0",
+  "official_project": {
+    "organization": "kaizen-org",
+    "main_app": "kaizen-home",
+    "domain": "kaizen-org.com",
+    "google_cloud_project_id": "buoyant-song-491421-v6",
+    "google_oauth_app": "kaizen-home"
+  },
+  "principle": "K-OS must use Google tools as an orchestrated toolbelt, not as disconnected experiments.",
+  "security_rules": [
+    "do_not_commit_api_keys",
+    "do_not_commit_oauth_tokens",
+    "do_not_scrape_logged_browser_without_explicit_authorization",
+    "do_not_claim_api_access_when_tool_is_browser_only",
+    "record_prompt_input_output_and_project_context",
+    "keep_human_gate_for_publish_send_delete_deploy_paid_actions"
+  ],
+  "tool_categories": {
+    "api_connected": [
+      "gemini_api",
+      "gmail_operator"
+    ],
+    "oauth_connected_or_planned": [
+      "gmail",
+      "google_drive_planned",
+      "google_docs_planned",
+      "google_calendar_planned"
+    ],
+    "browser_assisted_labs": [
+      "stitch",
+      "pomelli",
+      "opal",
+      "mixboard",
+      "flow",
+      "flow_music_producerai",
+      "notebooklm"
+    ],
+    "development_platform": [
+      "antigravity"
+    ]
+  },
+  "tools": [
+    {
+      "id": "google_ai_studio",
+      "name": "Google AI Studio",
+      "provider": "Google",
+      "role": "Gemini prototyping, API key management, prompt-to-production experiments",
+      "url": "https://aistudio.google.com/",
+      "connection_type": "api_or_manual",
+      "api_status": "gemini_api_key_required",
+      "kos_use": [
+        "prototype prompts",
+        "test Gemini models",
+        "generate API-ready snippets",
+        "prepare model experiments",
+        "support startup subsidy narrative with Google AI stack"
+      ],
+      "human_gate": [
+        "creating_or_rotating_api_key",
+        "paid_usage",
+        "production_deploy"
+      ]
+    },
+    {
+      "id": "stitch",
+      "name": "Google Stitch",
+      "provider": "Google Labs",
+      "role": "AI UI design canvas for mobile and web screens",
+      "url": "https://stitch.withgoogle.com/",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "generate app UI concepts",
+        "turn MVP specs into screens",
+        "produce visual references for developers",
+        "support kaizen-home and K-OS cockpit design"
+      ],
+      "expected_inputs": [
+        "product brief",
+        "target user",
+        "routes",
+        "brand style",
+        "screen list"
+      ],
+      "expected_outputs": [
+        "UI concepts",
+        "screenshots",
+        "design notes",
+        "handoff assets"
+      ]
+    },
+    {
+      "id": "pomelli",
+      "name": "Pomelli",
+      "provider": "Google Labs",
+      "role": "On-brand marketing content generator",
+      "url": "https://labs.google/pomelli",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "create on-brand campaigns",
+        "generate posts and creative variations",
+        "support Casa da Limpeza, Hupmix, Ki-Publica and Portal Atlantida"
+      ]
+    },
+    {
+      "id": "opal",
+      "name": "Opal",
+      "provider": "Google Labs",
+      "role": "Build, edit and share AI mini-apps with natural language",
+      "url": "https://labs.google/",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "prototype mini-apps",
+        "turn K-OS workflows into shareable demos",
+        "validate product ideas quickly"
+      ]
+    },
+    {
+      "id": "mixboard",
+      "name": "Mixboard",
+      "provider": "Google Labs",
+      "role": "AI-powered concepting board for exploring and refining ideas",
+      "url": "https://labs.google/mixboard",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "visual brainstorming",
+        "campaign moodboards",
+        "product concept boards",
+        "startup pitch creative boards"
+      ]
+    },
+    {
+      "id": "flow",
+      "name": "Google Flow",
+      "provider": "Google Labs / Google FX",
+      "role": "AI creative studio for video, images and cinematic storytelling",
+      "url": "https://labs.google/fx/tools/flow",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "video concepts",
+        "product storytelling",
+        "campaign videos",
+        "startup demo narratives"
+      ],
+      "human_gate": [
+        "paid_credits",
+        "public_release",
+        "brand_sensitive_video"
+      ]
+    },
+    {
+      "id": "flow_music_producerai",
+      "name": "Google Flow Music / ProducerAI",
+      "provider": "Google Labs",
+      "role": "AI music studio for songs, sonic branding and music videos",
+      "url": "https://labs.google/",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "sonic identity",
+        "campaign jingles",
+        "video soundtrack prototypes",
+        "startup pitch sound branding"
+      ],
+      "human_gate": [
+        "commercial_release",
+        "copyright_sensitive_use",
+        "paid_credits"
+      ]
+    },
+    {
+      "id": "antigravity",
+      "name": "Google Antigravity",
+      "provider": "Google",
+      "role": "Agentic development platform for planning, executing and verifying software tasks",
+      "url": "https://antigravity.google/",
+      "connection_type": "desktop_or_browser_development_platform",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "agentic development",
+        "code verification",
+        "project implementation",
+        "artifact-based review",
+        "startup technical execution"
+      ]
+    },
+    {
+      "id": "notebooklm",
+      "name": "Google NotebookLM",
+      "provider": "Google",
+      "role": "Research and thinking partner grounded in uploaded sources",
+      "url": "https://notebooklm.google/",
+      "connection_type": "browser_assisted",
+      "api_status": "not_assumed",
+      "kos_use": [
+        "analyze Baú documents",
+        "summarize project context",
+        "prepare pitch research",
+        "create study guides",
+        "ground answers in sources"
+      ]
+    }
+  ],
+  "startup_subsidy_positioning": {
+    "message": "K-OS is building an agent operating system that orchestrates Google Cloud, Gemini, Gmail, Google Labs creative tools, research workflows and deployment-ready product execution.",
+    "proof_assets_to_prepare": [
+      "Google Cloud project official mapping",
+      "Gmail real connection status",
+      "Gemini API readiness",
+      "Google Labs toolbelt registry",
+      "demo workflow from idea to UI to content to code to report",
+      "Kaizen Home deploy plan"
+    ]
+  }
+}
