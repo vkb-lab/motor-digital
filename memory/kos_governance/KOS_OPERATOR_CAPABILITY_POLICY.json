@@ -1,0 +1,32 @@
+{
+  "status": "KOS_OPERATOR_CAPABILITY_POLICY_ACTIVE",
+  "version": "1.0",
+  "principle": "read_only_capabilities_can_execute_locally; modifying_actions_require_human_gate_or_remain_blocked",
+  "allowed_readonly": [
+    "gmail_status",
+    "gmail_digest",
+    "gmail_report_limited",
+    "brain_provider_status",
+    "google_toolbelt_status",
+    "work_sequence_plan",
+    "navigation_status",
+    "render_readiness_status"
+  ],
+  "requires_human_gate": [
+    "gmail_archive",
+    "gmail_label",
+    "gmail_mark_read",
+    "gmail_download_attachment",
+    "drive_create_folder",
+    "drive_move_file",
+    "local_file_hash_scan",
+    "local_file_rename"
+  ],
+  "blocked": [
+    "permanent_delete",
+    "publish_private_data",
+    "expose_tokens",
+    "send_mass_email",
+    "bypass_guardrails"
+  ]
+}

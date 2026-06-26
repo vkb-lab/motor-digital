@@ -155,6 +155,61 @@ def _headers_to_dict(headers: list[dict[str, str]]) -> dict[str, str]:
     return {h.get("name", ""): h.get("value", "") for h in headers}
 
 
+def classify_gmail_digest_category(text: str) -> str:
+    value = str(text or "").lower()
+    categories = [
+        (
+            "oportunidades/startup/crédito",
+            ["render", "credit", "credits", "startup", "grant", "subsidy", "apoio", "programa", "cloud"],
+        ),
+        (
+            "promoções/ofertas",
+            ["mercado livre", "promoção", "promocao", "oferta", "desconto", "cupom", "sale"],
+        ),
+        (
+            "serviços/infra/dev",
+            ["github", "google cloud", "supabase", "render", "vercel", "openai", "api", "billing"],
+        ),
+        (
+            "financeiro/cobrança",
+            ["payment", "invoice", "cobrança", "cobranca", "fatura", "pagamento", "receipt"],
+        ),
+        (
+            "documentos/anexos",
+            ["attachment", "anexado", "invoice", "nota fiscal", "documento", "pdf", "contrato"],
+        ),
+        (
+            "pessoal/família",
+            ["família", "familia", "fotos", "photos", "drive", "compartilhado"],
+        ),
+    ]
+    for category, words in categories:
+        if any(word in value for word in words):
+            return category
+    return "outros"
+
+
+def _payload_has_attachments(payload: dict[str, Any]) -> bool:
+    stack = [payload]
+    while stack:
+        item = stack.pop()
+        filename = str(item.get("filename") or "").strip()
+        body = item.get("body") or {}
+        if filename or body.get("attachmentId"):
+            return True
+        for part in item.get("parts") or []:
+            if isinstance(part, dict):
+                stack.append(part)
+    return False
+
+
+def _short_snippet(value: str, limit: int = 180) -> str:
+    text = " ".join(str(value or "").split())
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "…"
+
+
 def mode_report(args) -> None:
     service = load_service(args.profile, args.scope_preset, interactive=False)
 
@@ -172,15 +227,22 @@ def mode_report(args) -> None:
         ).execute()
 
         headers = _headers_to_dict(full.get("payload", {}).get("headers", []))
+        subject = headers.get("Subject", "")
+        sender = headers.get("From", "")
+        snippet = _short_snippet(full.get("snippet", ""))
+        category = classify_gmail_digest_category(" ".join([sender, subject, snippet, " ".join(full.get("labelIds", []))]))
         items.append({
             "id": full.get("id"),
             "threadId": full.get("threadId"),
+            "internalDate": full.get("internalDate"),
             "from": headers.get("From", ""),
             "to": headers.get("To", ""),
-            "subject": headers.get("Subject", ""),
+            "subject": subject,
             "date": headers.get("Date", ""),
-            "snippet": full.get("snippet", ""),
+            "snippet": snippet,
             "labelIds": full.get("labelIds", []),
+            "has_attachments": _payload_has_attachments(full.get("payload", {})),
+            "category": category,
             "sizeEstimate": full.get("sizeEstimate"),
         })
 
@@ -210,7 +272,9 @@ def mode_report(args) -> None:
             f"- Date: {item.get('date')}",
             f"- ID: `{item.get('id')}`",
             f"- Labels: {', '.join(item.get('labelIds') or [])}",
-            f"- Snippet: {item.get('snippet')}",
+            f"- Categoria: {item.get('category')}",
+            f"- Anexos: {'sim' if item.get('has_attachments') else 'nao'}",
+            f"- Resumo curto: {item.get('snippet')}",
             "",
         ])
 
@@ -219,6 +283,7 @@ def mode_report(args) -> None:
     print(json.dumps({
         "status": "KOS_GMAIL_REPORT_READY",
         "count": len(items),
+        "items": items,
         "json_report": str(json_path),
         "md_report": str(md_path),
     }, ensure_ascii=False, indent=2))

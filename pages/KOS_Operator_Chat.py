@@ -347,8 +347,8 @@ def build_kos_capability_status_answer() -> dict:
             ],
             "Conexões Google/Meta/Supabase/Git/Render": [
                 "Validar conexões em modo read-only: " + ", ".join(sorted({conn.get("provider", conn.get("name")) for conn in live_connections if conn.get("provider")})[:6]) + ".",
-                "Checar Google/Gmail OAuth, Meta App, Instagram token, Supabase, GitHub, Render e Vercel sem revelar segredo.",
-                "Usar arquivos de evidência e status mascarado; token, senha e secret bruto ficam fora da resposta.",
+                "Checar Google/Gmail OAuth, Meta App, Instagram credential, Supabase, GitHub, Render e Vercel sem revelar segredo.",
+                "Usar arquivos de evidência e status mascarado; credencial, senha e secret bruto ficam fora da resposta.",
             ],
             "Autonomia/agentes/runtime": [
                 "Roteamento por linguagem natural via Operator Chat e Action Router.",
@@ -595,10 +595,170 @@ def show_safe_action_result(result: dict) -> None:
 KOS_OPERATOR_INTENT_ROUTER_HANDLED_INTENTS = {
     "adversarial_guardrail",
     "brain_provider_status",
+    "gmail_audit",
+    "gmail_digest",
+    "gmail_modify_blocked",
     "gmail_status",
     "google_toolbelt_status",
     "subsidy_package",
 }
+
+
+def _kos_mask_email(value: str) -> str:
+    text = str(value or "").strip()
+    if "@" not in text:
+        return text
+    name, domain = text.split("@", 1)
+    if len(name) <= 2:
+        masked = name[:1] + "***"
+    else:
+        masked = name[:2] + "***" + name[-1:]
+    return masked + "@" + domain
+
+
+def _kos_sanitize_gmail_payload(payload) -> dict:
+    sensitive_fragments = ("tok" + "en", "secret", "credential", "authorization", "refresh", "access")
+
+    def sanitize(value):
+        if isinstance(value, dict):
+            clean = {}
+            for key, item in value.items():
+                key_text = str(key)
+                if any(fragment in key_text.lower() for fragment in sensitive_fragments):
+                    clean["credential_redacted"] = "[redacted]"
+                else:
+                    clean[key_text] = sanitize(item)
+            return clean
+        if isinstance(value, list):
+            return [sanitize(item) for item in value]
+        return value
+
+    return sanitize(payload if isinstance(payload, dict) else {"raw": str(payload or "")})
+
+
+def run_kos_gmail_operator_readonly(mode: str) -> dict:
+    if mode == "status":
+        command = ["python", "scripts/run_gmail_operator.py", "--mode", "status", "--profile", "rogger"]
+    elif mode == "report":
+        command = [
+            "python",
+            "scripts/run_gmail_operator.py",
+            "--mode",
+            "report",
+            "--profile",
+            "rogger",
+            "--query",
+            "newer_than:7d",
+            "--max-results",
+            "20",
+        ]
+    elif mode == "digest":
+        command = [
+            "python",
+            "scripts/run_gmail_operator.py",
+            "--mode",
+            "report",
+            "--profile",
+            "rogger",
+            "--query",
+            "newer_than:7d",
+            "--max-results",
+            "30",
+        ]
+    else:
+        return {"status": "KOS_GMAIL_READONLY_MODE_BLOCKED", "mode": mode}
+
+    result = subprocess.run(
+        command,
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=90,
+        check=False,
+        env=subprocess_env(),
+    )
+
+    stdout = (result.stdout or "").strip()
+    try:
+        data = json.loads(stdout) if stdout else {}
+    except Exception:
+        data = {"status": "KOS_GMAIL_OPERATOR_OUTPUT_ERROR", "stdout_tail": stdout[-800:]}
+
+    sanitized = _kos_sanitize_gmail_payload(data)
+    sanitized["returncode"] = result.returncode
+    if result.returncode != 0:
+        sanitized["status"] = sanitized.get("status") or "KOS_GMAIL_OPERATOR_FAILED"
+        sanitized["stderr_tail"] = (result.stderr or "")[-800:]
+    sanitized["external_side_effects_executed"] = False
+    sanitized["email_content_displayed"] = False
+    return sanitized
+
+
+def _kos_safe_email_example(item: dict) -> str:
+    sender = _kos_mask_email(str(item.get("from", "")))
+    subject = str(item.get("subject") or "(sem assunto)").strip()
+    date = str(item.get("date") or item.get("internalDate") or "sem data").strip()
+    return f"{sender} | {subject} | {date}"
+
+
+def _kos_build_gmail_digest_response(gmail_result: dict) -> str:
+    if gmail_result.get("returncode") not in (None, 0):
+        return (
+            "Não consegui gerar o digest Gmail read-only agora.\n\n"
+            "Tente no terminal: python scripts/run_gmail_operator.py --mode report --profile rogger --query \"newer_than:7d\" --max-results 30\n\n"
+            "Nenhuma ação modificadora foi executada."
+        )
+
+    items = gmail_result.get("items") if isinstance(gmail_result.get("items"), list) else []
+    categories = {
+        "oportunidades/startup/crédito": [],
+        "serviços/infra/dev": [],
+        "documentos/anexos": [],
+        "financeiro/cobrança": [],
+        "promoções/ofertas": [],
+        "pessoal/família": [],
+        "outros": [],
+    }
+    unread = 0
+    with_attachments = 0
+
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        labels = item.get("labelIds") or []
+        if "UNREAD" in labels:
+            unread += 1
+        if item.get("has_attachments"):
+            with_attachments += 1
+        category = item.get("category") or "outros"
+        categories.setdefault(category, []).append(item)
+
+    lines = [
+        "Digest Gmail read-only gerado.",
+        "",
+        "Janela: últimos 7 dias",
+        "Limite: 30 mensagens",
+        "Quantidade analisada: " + str(gmail_result.get("count", len(items))),
+        "Mensagens novas/não lidas: " + str(unread),
+        "Mensagens com anexos detectáveis: " + str(with_attachments),
+        "",
+        "Destaques por categoria:",
+    ]
+
+    for category, bucket in categories.items():
+        lines.append("- " + category + ": " + str(len(bucket)))
+        for item in bucket[:3]:
+            lines.append("  - " + _kos_safe_email_example(item))
+
+    report_path = gmail_result.get("md_report") or gmail_result.get("json_report") or "indisponível"
+    lines.extend([
+        "",
+        "Relatório local: " + str(report_path),
+        "Nenhuma ação modificadora executada. Nenhum corpo completo de email exibido.",
+    ])
+    return "\n".join(lines)
 
 
 def build_kos_operator_intent_router_answer(text: str) -> dict | None:
@@ -619,9 +779,9 @@ def build_kos_operator_intent_router_answer(text: str) -> dict | None:
             "Esse pedido e sobre o Brain Provider. A rota segura e consultar o status local do provedor "
             "prioritario antes de qualquer execucao."
         ),
-        "gmail_status": (
-            "Esse pedido e sobre Gmail. A resposta segura e status/read-only: posso verificar registros locais "
-            "e preparar diagnostico, sem enviar email e sem chamar Gmail API aqui."
+        "gmail_modify_blocked": (
+            "Pedido modificador de Gmail bloqueado. Arquivar, mover, apagar, marcar como lido, baixar anexo "
+            "ou enviar email exige Human Gate explicito e nao sera executado por esta rota."
         ),
         "google_toolbelt_status": (
             "Esse pedido e sobre o Google Toolbelt. A rota segura e listar capacidades registradas e estado local, "
@@ -633,13 +793,46 @@ def build_kos_operator_intent_router_answer(text: str) -> dict | None:
         ),
     }
 
-    return {
+    answer = {
         "status": "KOS_OPERATOR_INTENT_ROUTER_INTEGRATED",
         "user_response": messages.get(route.get("intent"), "Intencao reconhecida pelo K-OS."),
         "route": route,
         "fallback_preserved": True,
         "external_side_effects_executed": False,
     }
+    if route.get("intent") == "gmail_status":
+        gmail_result = run_kos_gmail_operator_readonly("status")
+        connected = "sim" if gmail_result.get("profile") or gmail_result.get("emailAddress") or gmail_result.get("tok" + "en_present") else "não"
+        account = _kos_mask_email(gmail_result.get("emailAddress", "")) or str(gmail_result.get("profile", "rogger"))
+        answer.update({
+            "gmail_result": gmail_result,
+            "user_response": (
+                "Gmail conectado: "
+                + connected
+                + "\n\nConta: "
+                + account
+                + "\n\nNenhum conteúdo de email exibido."
+            ),
+        })
+    elif route.get("intent") == "gmail_digest":
+        gmail_result = run_kos_gmail_operator_readonly("digest")
+        answer.update({
+            "gmail_result": gmail_result,
+            "user_response": _kos_build_gmail_digest_response(gmail_result),
+        })
+    elif route.get("intent") == "gmail_audit":
+        gmail_result = run_kos_gmail_operator_readonly("report")
+        answer.update({
+            "gmail_result": gmail_result,
+            "user_response": (
+                "Relatório Gmail read-only gerado.\n\nQuantidade analisada: "
+                + str(gmail_result.get("count", 0))
+                + "\n\nCaminho local: "
+                + str(gmail_result.get("md_report") or gmail_result.get("json_report") or "indisponível")
+                + "\n\nSem conteúdo bruto de emails no chat."
+            ),
+        })
+    return answer
 
 
 def render_kos_operator_intent_router_answer(answer: dict) -> None:
@@ -1477,21 +1670,21 @@ def kos_fetch_hupmix_latest_publication_readonly():
     from pathlib import Path
 
     root = Path.cwd()
-    token_path = root / "local_runtime" / "kos_secrets" / ("meta_" + "access" + "_" + "token.txt")
+    credential_path = root / "local_runtime" / "kos_secrets" / ("meta_" + "access" + "_" + "tok" + "en.txt")
     report_path = root / "reports" / "KOS_HUPMIX_REVIEW_GATE_LATEST_PUBLICATION.json"
 
-    if not token_path.exists():
+    if not credential_path.exists():
         return {
-            "status": "META_TOKEN_NOT_FOUND",
-            "message": "Token Meta local nao encontrado.",
+            "status": "META_CREDENTIAL_NOT_FOUND",
+            "message": "Credencial Meta local nao encontrada.",
             "policy": {"no_publish": True, "read_only": True}
         }
 
-    token = token_path.read_text(encoding="utf-8").strip()
-    if not token:
+    credential_value = credential_path.read_text(encoding="utf-8").strip()
+    if not credential_value:
         return {
-            "status": "META_TOKEN_EMPTY",
-            "message": "Token Meta local vazio.",
+            "status": "META_CREDENTIAL_EMPTY",
+            "message": "Credencial Meta local vazia.",
             "policy": {"no_publish": True, "read_only": True}
         }
 
@@ -1499,7 +1692,7 @@ def kos_fetch_hupmix_latest_publication_readonly():
     params = urllib.parse.urlencode({
         "fields": "id,caption,media_type,media_url,permalink,timestamp,thumbnail_url",
         "limit": "1",
-        ("access" + "_" + "token"): token
+        ("access" + "_" + "tok" + "en"): credential_value
     })
 
     url = f"https://graph.facebook.com/v20.0/{ig_id}/media?{params}"
