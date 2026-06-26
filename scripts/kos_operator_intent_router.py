@@ -15,8 +15,15 @@ class IntentRoute:
 
 ROUTES = [
     IntentRoute("adversarial_guardrail", "human_gate", "high", True),
+    IntentRoute("origin_core_status", "scripts/run_kos_origin_core_status.py", "low"),
     IntentRoute("brain_provider_status", "scripts/run_kos_brain_provider_status.py", "low"),
     IntentRoute("google_toolbelt_status", "scripts/run_google_ai_toolbelt_bridge.py", "low"),
+    IntentRoute("work_sequence_list", "scripts/run_kos_work_sequence.py", "low"),
+    IntentRoute("work_sequence_plan", "scripts/run_kos_work_sequence.py", "low"),
+    IntentRoute("navigation_status", "scripts/run_kos_navigation_status.py", "low"),
+    IntentRoute("personal_data_estate_status", "scripts/run_personal_data_estate_status.py", "low"),
+    IntentRoute("local_storage_status", "scripts/run_local_storage_estate_status.py", "low"),
+    IntentRoute("render_readiness_status", "scripts/run_render_deploy_readiness_status.py", "low"),
     IntentRoute("subsidy_package", "mission_queue", "medium"),
     IntentRoute("gmail_modify_blocked", "human_gate", "high", True),
     IntentRoute("gmail_audit", "scripts/run_gmail_operator.py", "low"),
@@ -66,6 +73,13 @@ KEYWORDS = {
         "modelo voce esta usando",
         "qual ia voce esta usando",
     ],
+    "origin_core_status": [
+        "origin core",
+        "nucleo de origem",
+        "fonte de verdade",
+        "essencia do k-os",
+        "essência do k-os",
+    ],
     "gmail_audit": [
         "audite meus emails",
         "auditar meus emails",
@@ -94,6 +108,40 @@ KEYWORDS = {
         "toolbelt google",
         "google existem",
         "google voce tem",
+    ],
+    "work_sequence_list": [
+        "listar sequencias",
+        "sequencias de trabalho",
+        "work sequence list",
+        "listar work sequences",
+    ],
+    "work_sequence_plan": [
+        "plano personal_data_foundation",
+        "planejar personal_data_foundation",
+        "work sequence plan",
+        "plano da sequencia",
+    ],
+    "navigation_status": [
+        "navigation status",
+        "status navegacao",
+        "navegacao customizada",
+        "custom navigation",
+    ],
+    "personal_data_estate_status": [
+        "personal data estate",
+        "dados pessoais status",
+        "status dados pessoais",
+    ],
+    "local_storage_status": [
+        "local storage status",
+        "armazenamento local status",
+        "status storage local",
+    ],
+    "render_readiness_status": [
+        "render readiness",
+        "readiness render",
+        "pronto para render",
+        "status deploy render",
     ],
     "subsidy_package": [
         "pacote de subsidio",
@@ -134,6 +182,23 @@ def route_intent(text: str) -> dict:
         "external_action": route.external_action,
         "requires_human_gate": route.risk != "low" or route.external_action,
     }
+    readonly_commands = {
+        "origin_core_status": "python scripts/run_kos_origin_core_status.py --mode status",
+        "brain_provider_status": "python scripts/run_kos_brain_provider_status.py --mode status",
+        "google_toolbelt_status": "python scripts/run_google_ai_toolbelt_bridge.py --mode audit",
+        "work_sequence_list": "python scripts/run_kos_work_sequence.py --mode list",
+        "work_sequence_plan": "python scripts/run_kos_work_sequence.py --mode plan --sequence personal_data_foundation",
+        "navigation_status": "python scripts/run_kos_navigation_status.py --mode status",
+        "personal_data_estate_status": "python scripts/run_personal_data_estate_status.py --mode status",
+        "local_storage_status": "python scripts/run_local_storage_estate_status.py --mode status",
+        "render_readiness_status": "python scripts/run_render_deploy_readiness_status.py --mode status",
+    }
+    if route.intent in readonly_commands:
+        payload.update({
+            "action_allowed": True,
+            "execution_mode": "local_readonly",
+            "suggested_command": readonly_commands[route.intent],
+        })
     if route.intent == "gmail_status":
         payload.update({
             "action_allowed": True,

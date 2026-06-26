@@ -8,17 +8,39 @@
     "gmail_report_limited",
     "brain_provider_status",
     "google_toolbelt_status",
+    "google_toolbelt_audit",
+    "work_sequence_list",
     "work_sequence_plan",
     "navigation_status",
-    "render_readiness_status"
+    "render_readiness_status",
+    "personal_data_estate_status",
+    "local_storage_status",
+    "origin_core_status"
+  ],
+  "allowed_local_generation": [
+    "generate_reports",
+    "generate_plans",
+    "generate_briefs",
+    "generate_prompts",
+    "generate_subsidy_packages",
+    "generate_checklists",
+    "generate_documentation"
   ],
   "requires_human_gate": [
+    "gmail_send",
+    "gmail_reply",
     "gmail_archive",
+    "gmail_move",
     "gmail_label",
+    "gmail_create_label",
     "gmail_mark_read",
     "gmail_download_attachment",
     "drive_create_folder",
     "drive_move_file",
+    "publish_post",
+    "deploy",
+    "database_change",
+    "production_change",
     "local_file_hash_scan",
     "local_file_rename"
   ],
@@ -26,7 +48,10 @@
     "permanent_delete",
     "publish_private_data",
     "expose_tokens",
+    "bypass_guardrails",
     "send_mass_email",
-    "bypass_guardrails"
+    "operate_payment_without_authorization",
+    "erase_history",
+    "local_runtime_direct_access"
   ]
 }

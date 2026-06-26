@@ -119,12 +119,11 @@ def mode_status(args) -> None:
         "status": "KOS_GMAIL_OPERATOR_STATUS",
         "profile": args.profile,
         "client_secret_present": CLIENT_SECRET_PATH.exists(),
-        "client_secret_path": str(CLIENT_SECRET_PATH),
         "token_present": token_path(args.profile).exists(),
-        "token_path": str(token_path(args.profile)),
         "deps": deps_status(),
         "scope_presets": SCOPES,
         "next_step": "connect" if not token_path(args.profile).exists() else "profile/report",
+        "paths_redacted": True,
     }
     print(json.dumps(data, ensure_ascii=False, indent=2))
 
